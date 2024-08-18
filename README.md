@@ -1,6 +1,6 @@
 # EventHub
 
-Lỡ vào đây rồi thì cho tớ xin 1 love (1 start) nha !!!!
+Lỡ vào đây rồi thì cho tớ xin 1 love (1 star) nha !!!!
 
 ---
 
@@ -26,7 +26,7 @@ https://eventhubsolution.vercel.app
 
 ### Screen :
 
-![screencapture-e-shop-loc-admin-2020-08-15-15_47_37](https://res.cloudinary.com/dadvtny30/image/upload/v1710426576/portfolio/xqma2tfvg4bu6r64hf24.png)
+![imagedemo](https://res.cloudinary.com/dadvtny30/image/upload/v1710426576/portfolio/xqma2tfvg4bu6r64hf24.png)
 
 ### Read the documentation
 
