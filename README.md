@@ -20,11 +20,11 @@ Please give me 1 star for reference source.
 4. Run `npm run dev` local dev environment.
 5. Visit `localhost:3000` in your browser
 
-### Demo
+#### App demo :
 
-- [app demo]: (https://eventhubsolution.vercel.app)
+https://eventhubsolution.vercel.app
 
-### Screenshots :
+### Screen :
 
 ![screencapture-e-shop-loc-admin-2020-08-15-15_47_37](https://res.cloudinary.com/dadvtny30/image/upload/v1710426576/portfolio/xqma2tfvg4bu6r64hf24.png)
 
