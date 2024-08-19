@@ -1,0 +1,33 @@
+@import 'vars';
+@import 'fonts';
+@import '../fonts/icomoon/style.css';
+@import 'global';
+@import 'elements';
+@import 'typo';
+
+.permissions-tabs > .ant-tabs-nav::before {
+  border-bottom: 0;
+}
+
+.permissions-tabs > .ant-tabs-nav .ant-tabs-tab {
+  border: 0 !important;
+}
+
+.qrcode-upload > .ant-upload {
+  width: 200px !important;
+  height: 200px !important;
+  overflow: hidden;
+}
+
+.message-upload > .ant-upload {
+  width: auto !important;
+  height: auto !important;
+  border: none !important;
+  padding: 10px;
+  margin: 0 !important;
+  border-radius: 100% !important;
+  background-color: #ebebeb !important;
+  box-shadow: 0 2px 5px #bebebe !important;
+  overflow: hidden;
+  color: black !important;
+}
