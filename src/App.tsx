@@ -1,16 +1,5 @@
-import { useState } from 'react'
-
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className=''>
-      <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-      <p>
-        Edit <code>src/App.tsx</code> and save to test HMR
-      </p>
-    </div>
-  )
+  return <h1 className='text-3xl text-red-400'>Hello world!</h1>
 }
 
 export default App
