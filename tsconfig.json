@@ -28,7 +28,7 @@
       "@db/*": ["db/*"],
       "@fonts/*": ["fonts/*"],
       "@hooks/*": ["hooks/*"],
-      "@interface/*": ["interface/*"],
+      "@interfaces/*": ["interfaces/*"],
       "@i18n/*": ["i18n/*"],
       "@layouts/*": ["layouts/*"],
       "@locales/*": ["locales/*"],

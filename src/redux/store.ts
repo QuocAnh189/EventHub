@@ -3,13 +3,19 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
+//api
+import { apiAuth } from './apis/auth.api'
+
+//slices
+import userReducer, { UserSliceKey } from '@redux/slices/user.slice'
+
 const persistConfig = {
   key: 'root',
   storage: storage
 }
 
 const combinedReducer: any = combineReducers({
-  ['key']: {}
+  [UserSliceKey]: userReducer
 })
 
 const rootReducer = (state: any, action: any) => {
@@ -19,14 +25,16 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
   reducer: {
-    persistedReducer
+    persistedReducer,
+
+    [apiAuth.reducerPath]: apiAuth.reducer
   },
 
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
       immutableCheck: false
-    }).concat([])
+    }).concat([apiAuth.middleware])
 })
 
 setupListeners(store.dispatch)
