@@ -1,0 +1,108 @@
+{
+  "not_data": {
+    "text": "Dữ liệu của bạn không có sẵn hoặc không tìm thấy"
+  },
+  "signin_btn": "Đăng nhập",
+  "notification": {
+    "title": "Thông báo",
+    "all": "Tất cả",
+    "follow": "Theo dõi",
+    "order": "Mua hàng",
+    "follow_text": "đã theo dõi bạn",
+    "order_text": "đã mua vé của bạn",
+    "hours ago": "giờ trước",
+    "accept_btn": "Chấp nhận",
+    "decline_btn": "Từ chối"
+  },
+  "message": {
+    "title": "Tin nhắn",
+    "all": "Tất cả",
+    "latest": "Gần nhất",
+    "archived": "Bỏ lỡ",
+    "reply_btn": "Phản hồi",
+    "mark_btn": "Đánh dấu"
+  },
+  "category": {
+    "label": "Danh mục",
+    "Visual Arts": "Nghệ thuật",
+    "Sports & Active Life": "Thể thao cuộc sống",
+    "Politics": "Chính trị",
+    "Performing Arts": "Thể hiện nghệ thuật",
+    "Other": "Khác",
+    "Nightlife": "Cuộc sống về đêm",
+    "Music": "Âm nhạc",
+    "Lectures & Books": "Bài giảng và sách",
+    "Kids & Family": "Gia đình",
+    "Holidays": "Kỳ nghĩ",
+    "Food & Drink": "Âm thực",
+    "Film": "Phim",
+    "Festivals & Fairs": "Lễ hội",
+    "Fashion": "Thời trang",
+    "Concerts": "Hòa nhạc",
+    "Conferences": "Hội nghị",
+    "Community": "Cộng đồng",
+    "Charities": "Từ thiện",
+    "Anniversary": "Kỉ niệm",
+    "Academic": "Học vấn"
+  },
+  "filter": {
+    "ALL": "Tất cả",
+    "PUBLIC": "Công khai",
+    "PRIVATE": "Cá nhân"
+  },
+  "footer": {
+    "left": {
+      "description": "Nơi mà mỗi sự kiện, mỗi khoẳng khắc kết nối, dễ dàng và thuận tiện",
+      "or": "hoặc"
+    },
+    "right": {
+      "box_one": {
+        "title": "Tài khoảng của tôi",
+        "sub_one": "Tài khoảng của tôi",
+        "sub_two": "Đánh giá",
+        "sub_three": "Trạng thái",
+        "sub_four": "Danh sách"
+      },
+
+      "box_two": {
+        "title": "Trợ giúp",
+        "sub_one": "Liên hệ",
+        "sub_two": "Hỏi đáp",
+        "sub_three": "Chính sách điều kiện",
+        "sub_four": "Chính sách bảo mật"
+      },
+
+      "box_three": {
+        "title": "Tính năng",
+        "sub_one": "Sơ đồ Gantt",
+        "sub_two": "Quản lý",
+        "sub_three": "Sơ đồ tư duy",
+        "sub_four": "Tự động"
+      },
+
+      "box_four": {
+        "title": "So sánh",
+        "sub_one": "với Jira",
+        "sub_two": "với Notion",
+        "sub_three": "với Trello",
+        "sub_four": "với Smartsheet"
+      }
+    }
+  },
+  "box_message": {
+    "left": {
+      "placeholder": "Tìm kiếm...",
+      "my_event": "Sự kiện của tôi",
+      "chat_event": "Trò chuyện"
+    },
+    "right": {
+      "to": "Đến",
+      "first": "Gửi tin nhắn để bắt đầu cuộc trò chuyện",
+      "nochat_text_one": "Xin chào",
+      "nochat_text_two": "Chọn một cuộc hội thoại để trò chuyện",
+      "nologin_text_one": "Xin chào bạn",
+      "nologin_text_two": "Đăng nhập để trò chuyện",
+      "placeholder": "Gửi tin nhắn"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-export interface IContextTheme {
+export type IContextTheme = {
   theme: string
   toggleTheme: () => void
 }

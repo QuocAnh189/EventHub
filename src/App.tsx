@@ -1,10 +1,64 @@
+// utils
+import { lazy, Suspense, useContext, useEffect } from 'react'
+
+//styles
 import '@styles/index.scss'
+import 'react-toastify/dist/ReactToastify.min.css'
+import ThemeStyles from '@styles/theme'
+
+//route
+import { Routes, Route } from 'react-router-dom'
+
+//context
+import { ThemeProvider } from 'styled-components'
+
+//hook
+import { ThemeContext } from './contexts/theme.context'
+
+// components
+// import MainLayout from '@layouts'
+import { Loader } from '@components/commons/Loader'
+import { ToastContainer } from 'react-toastify'
+
+//aos
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { IContextTheme } from '@interfaces/context.interface'
+
+//pages
+const Landing = lazy(() => import('@pages/landing/Landing'))
+const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
+  const { theme }: IContextTheme = useContext(ThemeContext)
+
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 900,
+      easing: 'ease-in-sine',
+      delay: 100
+    })
+    AOS.refresh()
+  }, [])
+
   return (
-    <h1 className='h-screen flex items-center justify-center text-3xl text-primary-500'>
-      Hello world!
-    </h1>
+    <ThemeProvider theme={{ theme: theme }}>
+      <ThemeStyles />
+      <ToastContainer
+        theme={theme}
+        autoClose={2000}
+        style={{ padding: '20px' }}
+      />
+      <Suspense fallback={<Loader />}>
+        <div className='main overflow-scroll no-scrollbar'>
+          <Routes>
+            <Route path='/' element={<Landing />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
+        </div>
+      </Suspense>
+    </ThemeProvider>
   )
 }
 

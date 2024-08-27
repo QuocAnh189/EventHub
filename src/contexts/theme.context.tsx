@@ -10,7 +10,7 @@ import {
 //interfaces
 import { IContextTheme } from '@interfaces/context.interface'
 
-export const ThemeContext = createContext<IContextTheme | undefined>(undefined)
+export const ThemeContext = createContext<IContextTheme | any>(undefined)
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const page = document.documentElement
