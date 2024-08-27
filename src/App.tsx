@@ -28,6 +28,7 @@ import { IContextTheme } from '@interfaces/context.interface'
 //pages
 const Landing = lazy(() => import('@pages/landing/Landing'))
 const SignIn = lazy(() => import('@pages/auth/Signin'))
+const SignUp = lazy(() => import('@pages/auth/Signup'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/signin' element={<SignIn />} />
+            <Route path='/signup' element={<SignUp />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
         </div>
