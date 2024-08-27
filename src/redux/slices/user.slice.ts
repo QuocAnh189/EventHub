@@ -1,4 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+
+//interface
 import { IUser } from '@interfaces/systems/user.interface'
 
 export const UserSliceKey = 'user'
