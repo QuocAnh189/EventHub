@@ -27,6 +27,7 @@ import { IContextTheme } from '@interfaces/context.interface'
 
 //pages
 const Landing = lazy(() => import('@pages/landing/Landing'))
+const SignIn = lazy(() => import('@pages/auth/Signin'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         <div className='main overflow-scroll no-scrollbar'>
           <Routes>
             <Route path='/' element={<Landing />} />
+            <Route path='/signin' element={<SignIn />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
         </div>

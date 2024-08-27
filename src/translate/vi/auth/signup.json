@@ -1,0 +1,23 @@
+{
+  "slogan": "Nơi mà bạn có thể tìm thấy những màn trình diễn hoàn hảo, tạo ra những khoản khắc và sự kết nối",
+  "title": "Đăng ký",
+  "session_one": {
+    "email_placeholder": "Nhập địa chỉ email",
+    "fullname_placeholder": "Nhập tên",
+    "phone_placeholder": "Nhập số điện thoại",
+    "submit_btn": "Gửi",
+    "option": "Bạn đã có tài khoảng ? Đăng nhập",
+    "back_btn": "Trở về"
+  },
+  "session_two": {
+    "password_placeholder": "Nhập mật khẩu",
+    "confirm_password_placeholder": "Xác nhận mật khẩu",
+    "signup_btn": "Đăng ký",
+    "option": "Bạn đã có tài khoảng ? Đăng nhập",
+    "back_btn": "Trở về"
+  },
+  "submit_btn": "Gửi",
+  "back_btn": "Trở về",
+  "footer_one": "©2024 Event Hub",
+  "footer_two": "Chính sách bảo mật"
+}
