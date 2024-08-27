@@ -13,7 +13,7 @@ export interface IUser {
   status: EUserStatus
   numberOfFollowers: number
   numberOfFolloweds: number
-  numberOfFavourites: number
+  numberOfFavorites: number
   numberOfCreatedEvents: number
   followingIds: string[]
   roles: string[]
