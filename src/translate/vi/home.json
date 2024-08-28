@@ -1,0 +1,54 @@
+{
+  "header": {
+    "search": "Tìm kiếm..."
+  },
+  "search home": {
+    "title": "Điểm đến đúng đắn cho bạn và bạn bè",
+    "sub_title": "Tham gia nhiều sự kiện sẽ giúp bạn khám phá rõ hơn tính cánh bản thân",
+    "explore": "Khám phá ngay",
+    "event": "Sự kiện",
+    "event_placeholder": "Nhập tên sự kiện",
+    "status": "Trạng thái",
+    "category": "Thể loại",
+    "search": "Tìm kiếm",
+    "events_to_explore": "Khám phá sự kiện",
+    "view_event_btn": "Xem",
+    "All": "Tất cả",
+    "Upcoming": "Sắp diễn ra",
+    "Opening": "Đang diễn ra",
+    "Closed": "Đã kết thúc",
+    "categories": {
+      "Visual Arts": "Nghệ thuật",
+      "Sports & Active Life": "Thể thao cuộc sống",
+      "Politics": "Chính trị",
+      "Performing Arts": "Thể hiện nghệ thuật",
+      "Other": "Khác",
+      "Nightlife": "Cuộc sống về đêm",
+      "Music": "Âm nhạc",
+      "Lectures & Books": "Bài giảng và sách",
+      "Kids & Family": "Gia đình",
+      "Holidays": "Kỳ nghĩ",
+      "Food & Drink": "Âm thực",
+      "Film": "Phim",
+      "Festivals & Fairs": "Lễ hội",
+      "Fashion": "Thời trang",
+      "Concerts": "Hòa nhạc",
+      "Conferences": "Hội nghị",
+      "Community": "Cộng đồng",
+      "Charities": "Từ thiện",
+      "Anniversary": "Kỉ niệm",
+      "Academic": "Học vấn"
+    }
+  },
+  "best events": {
+    "title": "Lựa chọn tốt nhất cho bạn"
+  },
+  "upcoming events": {
+    "title": "Sự kiện sắp diễn ra"
+  },
+  "about us": {
+    "title": "Về chúng tôi",
+    "description_one": "Quản lý sự kiện và bán vé là điểm đến hàng đầu cho các giải pháp lập kế hoạch sự kiện và bán vé liền mạch. Với đội ngũ chuyên gia tận tâm, chúng tôi chuyên tuyển chọn những trải nghiệm khó quên phù hợp với tầm nhìn riêng của bạn. Từ hội nghị công ty đến lễ hội âm nhạc và mọi thứ liên quan , chúng tôi xử lý mọi khía cạnh của việc điều phối sự kiện một cách chính xác và sáng tạo. Nền tảng bán vé thân thiện với người dùng của chúng tôi đảm bảo các giao dịch suôn sẻ cho cả người tổ chức và người tham dự, giúp việc quản lý sự kiện trở nên dễ dàng và hiệu quả.",
+    "description_two": "Cho dù bạn đang tổ chức một cuộc tụ họp nhỏ hay một buổi hoành tráng quy mô lớn, sự chú ý của chúng tôi đến từng chi tiết và cam kết hướng đến sự xuất sắc sẽ luôn đảm bảo thành công. Hãy để chúng tôi loại bỏ căng thẳng khi lập kế hoạch sự kiện để bạn có thể tập trung vào điều thực sự quan trọng: tạo ra những khoảnh khắc đáng nhớ cho khách mời của bạn."
+  }
+}

@@ -6,6 +6,9 @@ import '@styles/index.scss'
 import 'react-toastify/dist/ReactToastify.min.css'
 import ThemeStyles from '@styles/theme'
 
+//layouts
+import MainLayout from '@layouts/main'
+
 //route
 import { Routes, Route } from 'react-router-dom'
 
@@ -17,7 +20,7 @@ import { ThemeContext } from './contexts/theme.context'
 
 // components
 // import MainLayout from '@layouts'
-import { Loader } from '@components/commons/Loader'
+import { Loader } from '@components/Loader'
 import { ToastContainer } from 'react-toastify'
 
 //aos
@@ -29,6 +32,7 @@ import { IContextTheme } from '@interfaces/context.interface'
 const Landing = lazy(() => import('@pages/landing/Landing'))
 const SignIn = lazy(() => import('@pages/auth/Signin'))
 const SignUp = lazy(() => import('@pages/auth/Signup'))
+const Home = lazy(() => import('@pages/home/Home'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
@@ -47,17 +51,16 @@ function App() {
   return (
     <ThemeProvider theme={{ theme: theme }}>
       <ThemeStyles />
-      <ToastContainer
-        theme={theme}
-        autoClose={2000}
-        style={{ padding: '20px' }}
-      />
+      <ToastContainer theme={theme} autoClose={2000} style={{ padding: '20px' }} />
       <Suspense fallback={<Loader />}>
         <div className='main overflow-scroll no-scrollbar'>
           <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/signin' element={<SignIn />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/organization' element={<MainLayout />}>
+              <Route path='/organization/' element={<Home />} />
+            </Route>
             <Route path='/*' element={<NotFound />} />
           </Routes>
         </div>
