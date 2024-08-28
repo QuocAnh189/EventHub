@@ -20,3 +20,21 @@ export interface Message {
 export const initMessage = {
   type: EEnumMessageType.TEXT
 }
+
+export interface JoinChatRoomParams {
+  eventId: string
+  hostId: string
+  userId: string
+}
+
+export interface SendMessageParams {
+  userId: string
+  conversationId: string
+  content?: string
+  imageId?: string
+  imageUrl?: string
+  videoId?: string
+  videoUrl?: string
+  audioId?: string
+  audioUrl?: string
+}

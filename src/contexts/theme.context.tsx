@@ -1,11 +1,5 @@
 //hook
-import {
-  PropsWithChildren,
-  createContext,
-  useEffect,
-  useState,
-  useContext
-} from 'react'
+import { PropsWithChildren, createContext, useEffect, useState, useContext } from 'react'
 
 //interfaces
 import { IContextTheme } from '@interfaces/context.interface'
@@ -17,11 +11,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const browserTheme = window.matchMedia('(prefers-color-scheme: light)')
   const persisted = JSON.parse(localStorage.getItem('preferences') || '{}')
   const [theme, setTheme] = useState(
-    persisted && persisted.theme
-      ? persisted.theme
-      : browserTheme.matches
-      ? 'light'
-      : 'dark'
+    persisted && persisted.theme ? persisted.theme : browserTheme.matches ? 'light' : 'dark'
   )
 
   const stopTransition = () => {
@@ -56,22 +46,16 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     savePreferences()
 
-    window
-      .matchMedia('(prefers-color-scheme: light)')
-      .addEventListener('change', (event) => {
-        event.matches ? setTheme('light') : setTheme('dark')
-        stopTransition()
-        savePreferences()
-      })
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (event) => {
+      event.matches ? setTheme('light') : setTheme('dark')
+      stopTransition()
+      savePreferences()
+    })
 
     page.classList.toggle('dark', theme === 'dark')
   }, [theme])
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }
 
 export const useTheme = () => useContext(ThemeContext)

@@ -29,7 +29,7 @@ export const DrawerBase = (props: IDrawerBaseProps) => {
         }
       }}
       classes={{
-        paper: '!w-full sm:!w-[342px] flex flex-col'
+        paper: '!w-full sm:!w-[342px] flex flex-col overflow-y-hidden'
       }}
     >
       {children}

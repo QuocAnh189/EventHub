@@ -61,9 +61,13 @@ export const Sidebar = () => {
       variant={isPermanent ? 'permanent' : 'temporary'}
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
-      className='overflow-hidden'
+      className='overflow-y-hidden'
+      sx={{
+        '& .MuiDrawer-paper': {
+          overflowY: 'hidden'
+        }
+      }}
     >
-      {/* <Logo /> */}
       <button
         onClick={() => {
           navigate('/')

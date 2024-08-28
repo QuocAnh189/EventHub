@@ -3,7 +3,7 @@
     "search": "Search..."
   },
   "search home": {
-    "title": "The right desitination for you and your friends",
+    "title": "The right destination for you and your friends",
     "sub_title": "Participating in many events will help you better discover your personality",
     "explore": "Explore Now",
     "event": "Event",
@@ -15,7 +15,7 @@
     "view_event_btn": "View",
     "All": "All",
     "Upcoming": "Upcoming",
-    "Openning": "Openning",
+    "Opening": "Opening",
     "Closed": "Closed",
     "categories": {
       "Visual Arts": "Visual Arts",
@@ -43,7 +43,7 @@
   "best events": {
     "title": "Best Events to Visit"
   },
-  "upcomming events": {
+  "upcoming events": {
     "title": "Upcomming Events"
   },
   "about us": {

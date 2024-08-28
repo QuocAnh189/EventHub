@@ -35,20 +35,16 @@ module.exports = {
       },
 
       backgroundImage: {
-        'gradient-blue':
-          'linear-gradient(-150deg,rgba(85,125,254,.549) 24%,rgba(101,53,185,.541) 91%);',
-        'gradient-white':
-          'linear-gradient(270deg,#f2f2f2 0%,rgba(242,242,242,0) 100%)',
-        'gradient-purple':
-          'linear-gradient(135deg,#9a7bff,#de7cff 47%,#ffc37e)',
+        'gradient-blue': 'linear-gradient(-150deg,rgba(85,125,254,.549) 24%,rgba(101,53,185,.541) 91%);',
+        'gradient-white': 'linear-gradient(270deg,#f2f2f2 0%,rgba(242,242,242,0) 100%)',
+        'gradient-purple': 'linear-gradient(135deg,#9a7bff,#de7cff 47%,#ffc37e)',
         'gradient-primary':
           'linear-gradient(135deg,rgba(180,157,255,0) 11%,#b49dff 26%,#e4a7f9 45%,#ffd9ae 72%,rgba(255,217,174,0) 89%);',
         'gradient-middlefooter':
           'linear-gradient(135deg,#7d4dbc 12%,#5e4282 13%,#8460af 44%,#c594ff 50%,#2a1141 90%,#3c195c 97%)',
         'gradient-bgmiddlefooter':
           'linear-gradient(#091a34,rgba(9,26,52,0)),url(https://global-uploads.webflow.com/6418f5b…/6498eac…_Ellipse%20blur.webp)',
-        'gradient-titleheaderfooter':
-          'linear-gradient(135deg,#9a7bff,#de7cff 47%,#ffc37e)',
+        'gradient-titleheaderfooter': 'linear-gradient(135deg,#9a7bff,#de7cff 47%,#ffc37e)',
         'gradient-footerIntro':
           'linear-gradient(135deg,rgba(180,157,255,0) 11%,#b49dff 26%,#e4a7f9 45%,#ffd9ae 72%,rgba(255,217,174,0) 89%);'
       },
@@ -174,8 +170,5 @@ module.exports = {
       }
     }
   },
-  plugins: [
-    require('tailwind-scrollbar')({ nocompatible: true }),
-    require('daisyui')
-  ]
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true }), require('daisyui')]
 }

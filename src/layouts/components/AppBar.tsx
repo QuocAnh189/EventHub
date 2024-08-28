@@ -60,9 +60,9 @@ const LocaleMenu = (props: Props) => {
 
 const TranslatedAppBar = ({ t }: any) => {
   const navigate = useNavigate()
-  const [searchModalOpen, setSearchModalOpen] = useState(false)
-  const [notificationsPanelOpen, setNotificationsPanelOpen] = useState(false)
-  const [messagesPanelOpen, setMessagesPanelOpen] = useState(false)
+  const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false)
+  const [notificationsPanelOpen, setNotificationsPanelOpen] = useState<boolean>(false)
+  const [messagesPanelOpen, setMessagesPanelOpen] = useState<boolean>(false)
 
   const { i18n } = useTranslation()
   const [locale, setLocale] = useState(
