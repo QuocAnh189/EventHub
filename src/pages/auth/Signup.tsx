@@ -14,13 +14,7 @@ import logoText_Img from '@assets/images/common/logo_text.png'
 import { motion } from 'framer-motion'
 
 //type
-import {
-  SignUpPayload,
-  SignUpPayloadOne,
-  SignUpPayloadTwo,
-  InitSignUpOne,
-  InitSignUpTwo
-} from '@type/auth.type'
+import { SignUpPayload, SignUpPayloadOne, SignUpPayloadTwo, InitSignUpOne, InitSignUpTwo } from '@type/auth.type'
 
 //redux
 import { toast } from 'react-toastify'
@@ -38,10 +32,8 @@ const SignUp = ({ t }: any) => {
 
   const [signUp, { isLoading }] = useSignUpMutation()
 
-  const [formDataSessionOne, setFormDataSessionOne] =
-    useState<SignUpPayloadOne>(InitSignUpOne)
-  const [formDataSessionTwo, setFormDataSessionTwo] =
-    useState<SignUpPayloadTwo>(InitSignUpTwo)
+  const [formDataSessionOne, setFormDataSessionOne] = useState<SignUpPayloadOne>(InitSignUpOne)
+  const [formDataSessionTwo, setFormDataSessionTwo] = useState<SignUpPayloadTwo>(InitSignUpTwo)
 
   const [showFormSessionOne, setShowFormSessionOne] = useState<boolean>(true)
   const [showFormSessionTwo, setShowFormSessionTwo] = useState<boolean>(false)
@@ -60,18 +52,14 @@ const SignUp = ({ t }: any) => {
     }
   }, [])
 
-  const handleChangeFormSessionOne = (
-    e: ChangeEvent<HTMLInputElement> | any
-  ) => {
+  const handleChangeFormSessionOne = (e: ChangeEvent<HTMLInputElement> | any) => {
     setFormDataSessionOne({
       ...formDataSessionOne,
       [e.target.name]: e.target.value
     })
   }
 
-  const handleChangeFormSessionTwo = (
-    e: ChangeEvent<HTMLInputElement> | any
-  ) => {
+  const handleChangeFormSessionTwo = (e: ChangeEvent<HTMLInputElement> | any) => {
     setFormDataSessionTwo({
       ...formDataSessionTwo,
       [e.target.name]: e.target.value
@@ -89,12 +77,9 @@ const SignUp = ({ t }: any) => {
 
       if (result) {
         localStorage.setItem('token', JSON.stringify(result))
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL!}/auth/profile`,
-          {
-            headers: { Authorization: `Bearer ${result.accessToken}` }
-          }
-        )
+        const response = await fetch(`${import.meta.env.VITE_API_URL!}/auth/profile`, {
+          headers: { Authorization: `Bearer ${result.accessToken}` }
+        })
 
         const user = await response.json()
 
@@ -123,22 +108,12 @@ const SignUp = ({ t }: any) => {
       {width >= 1024 && (
         <div className='flex flex-col justify-center items-center lg:p-[60px]'>
           <a className='logo' href='/'>
-            <img
-              loading='lazy'
-              src={logoText_Img}
-              alt='EventHub'
-              className='w-[200px] object-cover'
-            />
+            <img loading='lazy' src={logoText_Img} alt='EventHub' className='w-[200px] object-cover' />
           </a>
           <p className='text-center tracking-[0.2px] font-semibold text-lg leading-6 max-w-[540px] my-7 mx-auto'>
             {t('slogan')}
           </p>
-          <img
-            loading='lazy'
-            className='max-w-[780px]'
-            src={authImg}
-            alt='media'
-          />
+          <img loading='lazy' className='max-w-[780px]' src={authImg} alt='media' />
         </div>
       )}
       <div className='relative w-full h-screen flex justify-center items-center'>
@@ -146,7 +121,7 @@ const SignUp = ({ t }: any) => {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.1 }}
-          className='mx-auto mt-auto flex min-h-screen w-full max-w-full flex-col overflow-hidden bg-bgPink'
+          className='mx-auto mt-auto flex min-h-screen w-full max-w-full flex-col overflow-hidden bg-pink'
         >
           <div className='absolute left-[50%] top-[50%] min-h-full w-[600px] translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-[50px] bg-white px-[100px] py-[60px] mdl:min-h-[600px]'>
             <motion.div
@@ -177,10 +152,7 @@ const SignUp = ({ t }: any) => {
             </div>
             <div className='absolute bottom-0 left-[50%] min-h-[40px] w-full translate-x-[-50%] text-center'>
               <p className='font-semibold text-textGray'>
-                {t('footer_one')} -{' '}
-                <span className='font-bold text-textBlack'>
-                  {t('footer_two')}
-                </span>
+                {t('footer_one')} - <span className='font-bold text-black'>{t('footer_two')}</span>
               </p>
             </div>
           </div>

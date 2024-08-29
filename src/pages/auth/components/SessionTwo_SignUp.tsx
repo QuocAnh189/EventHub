@@ -26,14 +26,7 @@ interface SessionTwoProps {
   disabled: boolean
 }
 const TranslatedSessionTwo = (props: SessionTwoProps) => {
-  const {
-    t,
-    formDataSessionTwo,
-    handleSubmit,
-    setFormDataSessionTwo,
-    backSession,
-    disabled
-  } = props
+  const { t, formDataSessionTwo, handleSubmit, setFormDataSessionTwo, backSession, disabled } = props
   const navigate = useNavigate()
 
   const [check, setCheck] = useState<boolean>(false)
@@ -53,7 +46,7 @@ const TranslatedSessionTwo = (props: SessionTwoProps) => {
             type={showPassWord ? 'text' : 'password'}
             value={formDataSessionTwo.password}
             name='password'
-            className='min-h-[auto] w-full rounded-2xl border bg-transparent px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] focus:border-bgBlue'
+            className='min-h-[auto] w-full rounded-2xl border bg-transparent px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] focus:border-blue-light'
             placeholder={t('session_two.password_placeholder')}
             onChange={setFormDataSessionTwo}
           />
@@ -81,7 +74,7 @@ const TranslatedSessionTwo = (props: SessionTwoProps) => {
           <input
             type={showConfirmPassWord ? 'text' : 'password'}
             name='confirmPassword'
-            className='min-h-[auto] w-full rounded-2xl border bg-transparent px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] focus:border-bgBlue'
+            className='min-h-[auto] w-full rounded-2xl border bg-transparent px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] focus:border-blue-light'
             placeholder={t('session_two.confirm_password_placeholder')}
           />
           <button
@@ -111,10 +104,9 @@ const TranslatedSessionTwo = (props: SessionTwoProps) => {
             checked={check}
           />
           <span className='ml-[10px] mt-0 inline-block h-[30px] text-sm font-semibold leading-[30px]'>
-            Accept{' '}
-            <a className='text-textBlueLight outline-none'>Terms of use </a>
+            Accept <a className='text-blue-light2 outline-none'>Terms of use </a>
             and
-            <a className='text-textBlueLight outline-none'> Privacy policy</a>
+            <a className='text-blue-light2 outline-none'> Privacy policy</a>
           </span>
         </motion.div>
 
@@ -125,14 +117,10 @@ const TranslatedSessionTwo = (props: SessionTwoProps) => {
         >
           <button
             disabled={disabled}
-            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-textWhite cursor-pointer border-gray bg-bgBlue'
+            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-white cursor-pointer border-gray bg-blue-light3'
             onClick={handleSubmit}
           >
-            {disabled ? (
-              <CircularProgress size={28} color='info' />
-            ) : (
-              t('session_two.signup_btn')
-            )}
+            {disabled ? <CircularProgress size={28} color='info' /> : t('session_two.signup_btn')}
           </button>
         </motion.div>
       </div>
@@ -145,13 +133,13 @@ const TranslatedSessionTwo = (props: SessionTwoProps) => {
       >
         <button
           onClick={() => navigate('/signin')}
-          className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+          className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
         >
           {t('session_two.option')}
         </button>
 
         <button
-          className='block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+          className='block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
           onClick={backSession}
         >
           {t('session_two.back_btn')}

@@ -8,13 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { WiDirectionRight } from 'react-icons/wi'
 import { RxDividerVertical } from 'react-icons/rx'
 import { AiOutlineMenu } from 'react-icons/ai'
-import {
-  FcHome,
-  FcManager,
-  FcViewDetails,
-  FcContacts,
-  FcFeedback
-} from 'react-icons/fc'
+import { FcHome, FcManager, FcViewDetails, FcContacts, FcFeedback } from 'react-icons/fc'
 
 //image
 import logoText_Img from '@assets/images/common/logo_text.png'
@@ -52,12 +46,7 @@ export const Navbar = () => {
               transition={{ duration: 0.5 }}
               className='flex h-full w-full items-center justify-center rounded-xl px-2'
             >
-              <img
-                loading='lazy'
-                src={logoText_Img}
-                alt=''
-                className='h-[40px] w-full object-contain'
-              />
+              <img loading='lazy' src={logoText_Img} alt='' className='h-[40px] w-full object-contain' />
             </motion.a>
           </div>
           <nav className='relative float-right hidden flex-1 flex-row items-center justify-end gap-[1em] xl:flex'>
@@ -72,7 +61,7 @@ export const Navbar = () => {
                   <div className='relative z-[900] mx-auto text-center'>
                     <div className='min-w-auto mt-1 flex w-auto gap-2 cursor-pointer flex-row items-center justify-center rounded-xl px-1 py-1 tracking-wide hover:underline'>
                       <div className='flex h-full w-full items-center justify-center'>
-                        <span className='text-4xl text-textBlack'>
+                        <span className='text-4xl text-black'>
                           <FcHome className='w-[20px]' />
                         </span>
                       </div>
@@ -91,7 +80,7 @@ export const Navbar = () => {
                   <div className='relative z-[900] mx-auto text-center'>
                     <div className='min-w-auto mt-1 flex w-auto gap-2 cursor-pointer flex-row items-center rounded-xl px-1 py-1 tracking-wide hover:underline'>
                       <div className='flex h-full w-full items-center justify-center'>
-                        <span className='text-4xl text-textBlack'>
+                        <span className='text-4xl text-black'>
                           <FcManager className='w-[20px]' />
                         </span>
                       </div>
@@ -110,7 +99,7 @@ export const Navbar = () => {
                   <div className='relative z-[900] mx-auto text-center'>
                     <div className='min-w-auto mt-1 flex w-auto gap-2 cursor-pointer flex-row items-center rounded-xl px-1 py-1 tracking-wide hover:underline'>
                       <div className='flex h-full w-full items-center justify-center'>
-                        <span className='text-4xl text-textBlack'>
+                        <span className='text-4xl text-black'>
                           <FcViewDetails className='w-[20px]' />
                         </span>
                       </div>
@@ -129,7 +118,7 @@ export const Navbar = () => {
                   <div className='relative z-[900] mx-auto text-center'>
                     <div className='min-w-auto mt-1 flex gap-2 w-auto cursor-pointer flex-row items-center rounded-xl px-1 py-1  tracking-wide hover:underline'>
                       <div className='flex h-full w-full items-center justify-center'>
-                        <span className='text-4xl text-textBlack'>
+                        <span className='text-4xl text-black'>
                           <FcFeedback className='w-[20px]' />
                         </span>
                       </div>
@@ -148,7 +137,7 @@ export const Navbar = () => {
                   <div className='relative z-[900] mx-auto text-center'>
                     <div className='min-w-auto mt-1 flex gap-2 w-auto cursor-pointer flex-row items-center rounded-xl px-1 py-1  tracking-wide hover:underline'>
                       <div className='flex h-full w-full items-center justify-center'>
-                        <span className='text-4xl text-textBlack'>
+                        <span className='text-4xl text-black'>
                           <FcContacts className='w-[20px]' />
                         </span>
                       </div>
@@ -209,7 +198,7 @@ export const Navbar = () => {
               onClick={() => {
                 navigate('organization')
               }}
-              className='alight-center relative z-[1] flex max-w-full flex-row items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary px-6 py-1 font-black text-textWhite shadow-purple hover:bg-primary-500 hover:delay-[0s] hover:duration-[0.3s] hover:ease-ease'
+              className='alight-center relative z-[1] flex max-w-full flex-row items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary px-6 py-1 font-black text-white shadow-purple hover:bg-primary-500 hover:delay-[0s] hover:duration-[0.3s] hover:ease-ease'
             >
               <motion.div
                 initial={{ y: -10, opacity: 0 }}
@@ -218,7 +207,7 @@ export const Navbar = () => {
                 className='relative -ml-3 h-10 w-10'
               >
                 <div className='absolute z-[-1] h-10 w-10 rounded-full bg-primary-500' />
-                <div className='flex h-full w-full items-center justify-center  text-4xl text-textWhite hover:text-[70px]'>
+                <div className='flex h-full w-full items-center justify-center  text-4xl text-white hover:text-[70px]'>
                   <WiDirectionRight />
                 </div>
               </motion.div>

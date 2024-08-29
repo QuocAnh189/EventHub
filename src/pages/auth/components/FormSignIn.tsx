@@ -22,10 +22,7 @@ import { LoginPayload, InitLogin, EProvider } from '@type/auth.type'
 
 //redux
 import { useAppDispatch, useAppSelector } from '@hooks/index'
-import {
-  useSignInMutation,
-  useSignInExternalMutation
-} from '@redux/apis/auth.api'
+import { useSignInMutation, useSignInExternalMutation } from '@redux/apis/auth.api'
 import { setUser } from '@redux/slices/user.slice'
 
 //motion
@@ -48,9 +45,7 @@ const TranslatedFormSignIn = (props: SignInProps) => {
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const user = useAppSelector(
-    (state: RootState) => state.persistedReducer.user.user
-  )
+  const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
 
   const [showPassWord, setShowPassWord] = useState<boolean>(false)
 
@@ -78,12 +73,9 @@ const TranslatedFormSignIn = (props: SignInProps) => {
       if (result) {
         localStorage.setItem('token', JSON.stringify(result))
 
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL!}/auth/profile`,
-          {
-            headers: { Authorization: `Bearer ${result.accessToken}` }
-          }
-        )
+        const response = await fetch(`${import.meta.env.VITE_API_URL!}/auth/profile`, {
+          headers: { Authorization: `Bearer ${result.accessToken}` }
+        })
 
         const user = await response.json()
 
@@ -133,12 +125,10 @@ const TranslatedFormSignIn = (props: SignInProps) => {
             {...register('identity')}
             type='text'
             name='identity'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-bgBlue'
+            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('login.identify_placeholder')}
           />
-          {errors.identity && (
-            <p className='mt-1 text-textError'>{errors.identity.message}</p>
-          )}
+          {errors.identity && <p className='mt-1 text-red'>{errors.identity.message}</p>}
         </motion.div>
 
         <motion.div
@@ -151,12 +141,10 @@ const TranslatedFormSignIn = (props: SignInProps) => {
             {...register('password')}
             type={showPassWord ? 'text' : 'password'}
             name='password'
-            className='min-h-[auto] w-full rounded-2xl border-[2px] bg-transparent px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-bgBlue'
+            className='min-h-[auto] w-full rounded-2xl border-[2px] bg-transparent px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('login.password_placeholder')}
           />
-          {errors.password && (
-            <p className='mt-1 text-textError'>{errors.password.message}</p>
-          )}
+          {errors.password && <p className='mt-1 text-red'>{errors.password.message}</p>}
           <button
             type='button'
             className='absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer'
@@ -180,13 +168,9 @@ const TranslatedFormSignIn = (props: SignInProps) => {
           <button
             disabled={loadingSignIn}
             type='submit'
-            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-textWhite cursor-pointer bg-bgBlue'
+            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-white cursor-pointer bg-blue-light3'
           >
-            {loadingSignIn ? (
-              <CircularProgress size={28} color='info' />
-            ) : (
-              t('login.signin_btn')
-            )}
+            {loadingSignIn ? <CircularProgress size={28} color='info' /> : t('login.signin_btn')}
           </button>
         </motion.div>
       </form>
@@ -198,7 +182,7 @@ const TranslatedFormSignIn = (props: SignInProps) => {
         >
           <button
             onClick={() => navigate('/signup')}
-            className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+            className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
           >
             {t('login.option')}
           </button>
@@ -210,7 +194,7 @@ const TranslatedFormSignIn = (props: SignInProps) => {
         >
           <button
             onClick={() => handleForgotPassword(true)}
-            className='lue block  w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+            className='lue block  w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
           >
             {t('login.forgot_text')}
           </button>
@@ -228,18 +212,8 @@ const TranslatedFormSignIn = (props: SignInProps) => {
             method='POST'
             action='https://eventhubsolutionbackendserverplan.azurewebsites.net/api/auth/external-login?provider=Google&returnUrl=http://localhost:3000/organization'
           >
-            <button
-              // onClick={() => {
-              //   handleSignInExternal(EProvider.GOOGLE)
-              // }}
-              className='flex w-full flex-row items-center justify-around rounded-2xl border-[2px] border-textPurple bg-white py-[0.8rem] font-bold text-textGray hover:bg-textPurpleBorder hover:text-textWhite'
-            >
-              <img
-                loading='lazy'
-                src={googleIcon}
-                alt=''
-                className='block h-[20px] w-[20px]'
-              />
+            <button className='flex w-full flex-row items-center justify-around rounded-2xl border-[2px] border-textPurple bg-white py-[0.8rem] font-bold text-textGray hover:bg-purple hover:text-white'>
+              <img loading='lazy' src={googleIcon} alt='' className='block h-[20px] w-[20px]' />
               <span className='inline-block'>{t('login.signin_google')}</span>
               <span />
             </button>
@@ -256,17 +230,12 @@ const TranslatedFormSignIn = (props: SignInProps) => {
             action='https://eventhubsolutionbackendserverplan.azurewebsites.net/api/auth/external-login?provider=Facebook&returnUrl=http://localhost:3000/organization'
           >
             <button
-              className='flex w-full flex-row items-center justify-around rounded-2xl border-[2px] border-textBlue bg-white py-[0.8rem] font-bold text-textGray hover:bg-bgBlue hover:text-textWhite'
+              className='flex w-full flex-row items-center justify-around rounded-2xl border-[2px] border-blue bg-white py-[0.8rem] font-bold text-textGray hover:bg-blue-light3 hover:text-white'
               onClick={() => {
                 handleSignInExternal(EProvider.FACEBOOK)
               }}
             >
-              <img
-                loading='lazy'
-                src={facebookIcon}
-                alt=''
-                className='block h-[20px] w-[20px]'
-              />
+              <img loading='lazy' src={facebookIcon} alt='' className='block h-[20px] w-[20px]' />
               <span className='inline-block'>{t('login.signin_facebook')}</span>
               <span />
             </button>

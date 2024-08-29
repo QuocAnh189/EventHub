@@ -47,7 +47,7 @@ export const Manage = () => {
             <span className='text-special'>EventHub</span> is Over Power
             <br />
           </div>
-          <div className='rounded-[60px] bg-bgBlueLight px-[30px] pb-[16px] pt-0 text-textBlue'>
+          <div className='rounded-[60px] bg-blue-light4 px-[30px] pb-[16px] pt-0 text-blue'>
             <div className='my-0 font-sans text-[4em] font-extrabold leading-[1] tracking-tight'>
               project management
             </div>

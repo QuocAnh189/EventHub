@@ -32,7 +32,7 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
             type='email'
             value={email}
             name='email'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-bgBlue'
+            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('forgot_password.email_placeholder')}
             onChange={(e) => {
               setEmail(e.target.value)
@@ -46,7 +46,7 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <button
-            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-textWhite cursor-pointer bg-bgBlue'
+            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-white cursor-pointer bg-blue-light3'
             disabled={email ? false : true}
             onClick={handleSubmit}
           >
@@ -63,7 +63,7 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
             onClick={() => {
               handleForgotPassword(false)
             }}
-            className='mt-3 block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+            className='mt-3 block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
           >
             {t('back_btn')}
           </button>
@@ -73,6 +73,4 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
   )
 }
 
-export const FormForgotPassword = withTranslation('signin')(
-  TranslatedForgotPassword
-)
+export const FormForgotPassword = withTranslation('signin')(TranslatedForgotPassword)

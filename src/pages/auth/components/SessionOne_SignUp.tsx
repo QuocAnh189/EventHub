@@ -29,10 +29,7 @@ const formSchema = z.object({
     .min(1, { message: 'Email is not empty' })
     .max(50, { message: 'Email must not exceed 50 characters' })
     .email('Email invalid'),
-  fullName: z
-    .string()
-    .min(1, 'Name is not empty')
-    .max(32, { message: 'Name must not exceed 32 characters' }),
+  fullName: z.string().min(1, 'Name is not empty').max(32, { message: 'Name must not exceed 32 characters' }),
   phoneNumber: z
     .string()
     .min(1, 'Phone is not empty')
@@ -61,9 +58,7 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
     defaultValues: formDataSessionOne
   })
 
-  const onSubmit: SubmitHandler<SignUpPayloadOne> = async (
-    data: SignUpPayloadOne
-  ) => {
+  const onSubmit: SubmitHandler<SignUpPayloadOne> = async (data: SignUpPayloadOne) => {
     try {
       const result = await validateUser(data).unwrap()
       if (result) {
@@ -97,13 +92,11 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
             {...register('email')}
             type='email'
             name='email'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-bgBlue'
+            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('session_one.email_placeholder')}
             onChange={setFormDataSessionOne}
           />
-          {errors.email && (
-            <p className='mt-1 text-textError'>{errors.email.message}</p>
-          )}
+          {errors.email && <p className='mt-1 text-red'>{errors.email.message}</p>}
         </motion.div>
 
         <motion.div
@@ -116,13 +109,11 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
             {...register('fullName')}
             type='text'
             name='fullName'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-bgBlue'
+            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('session_one.fullname_placeholder')}
             onChange={setFormDataSessionOne}
           />
-          {errors.fullName && (
-            <p className='mt-1 text-textError'>{errors.fullName.message}</p>
-          )}
+          {errors.fullName && <p className='mt-1 text-red'>{errors.fullName.message}</p>}
         </motion.div>
 
         <motion.div
@@ -135,13 +126,11 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
             {...register('phoneNumber')}
             type='text'
             name='phoneNumber'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-bgBlue'
+            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('session_one.phone_placeholder')}
             onChange={setFormDataSessionOne}
           />
-          {errors.phoneNumber && (
-            <p className='mt-1 text-textError'>{errors.phoneNumber.message}</p>
-          )}
+          {errors.phoneNumber && <p className='mt-1 text-red'>{errors.phoneNumber.message}</p>}
         </motion.div>
 
         <motion.div
@@ -152,7 +141,7 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
           <button
             disabled={isLoading}
             type='submit'
-            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-textWhite cursor-pointer bg-bgBlue'
+            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-white cursor-pointer bg-blue-light3'
           >
             {t('session_one.submit_btn')}
           </button>
@@ -167,13 +156,13 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
       >
         <button
           onClick={() => navigate('/signin')}
-          className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+          className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
         >
           {t('session_one.option')}
         </button>
 
         <button
-          className='block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+          className='block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
           onClick={() => {
             navigate(-1)
           }}

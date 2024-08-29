@@ -27,22 +27,12 @@ const SignIn = ({ t }: any) => {
       {width >= 1024 && (
         <div className='flex flex-col justify-center items-center lg:p-[60px]'>
           <a className='logo' href='/'>
-            <img
-              loading='lazy'
-              src={logoText_Img}
-              alt='EventHub'
-              className='w-[200px] object-cover'
-            />
+            <img loading='lazy' src={logoText_Img} alt='EventHub' className='w-[200px] object-cover' />
           </a>
           <p className='text-center tracking-[0.2px] font-semibold text-lg leading-6 max-w-[540px] my-7 mx-auto'>
             {t('slogan')}
           </p>
-          <img
-            loading='lazy'
-            className='max-w-[780px]'
-            src={authImg}
-            alt='media'
-          />
+          <img loading='lazy' className='max-w-[780px]' src={authImg} alt='media' />
         </div>
       )}
       <div className='relative w-full h-screen flex justify-center items-center'>
@@ -50,7 +40,7 @@ const SignIn = ({ t }: any) => {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.1 }}
-          className='mx-auto mt-auto flex min-h-screen w-full max-w-full flex-col overflow-hidden bg-bgPink'
+          className='mx-auto mt-auto flex min-h-screen w-full max-w-full flex-col overflow-hidden bg-pink'
         >
           <div className='absolute left-[50%] top-[50%] min-h-full w-[600px] translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-[50px] bg-white px-[100px] py-[60px] mdl:min-h-[600px]'>
             <motion.div
@@ -70,10 +60,7 @@ const SignIn = ({ t }: any) => {
             )}
             <div className='absolute bottom-0 left-[50%] min-h-[70px] w-full translate-x-[-50%] text-center'>
               <p className='font-semibold text-textGray'>
-                {t('footer_one')} -{' '}
-                <span className='font-bold text-textBlack'>
-                  {t('footer_two')}
-                </span>
+                {t('footer_one')} - <span className='font-bold text-black'>{t('footer_two')}</span>
               </p>
             </div>
           </div>

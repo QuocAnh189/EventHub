@@ -72,7 +72,7 @@ const TranslatedSearchHome = ({ t }: any) => {
             {t('search home.explore')}
           </button>
         </div>
-        <div className='trip_bx relative w-[95%] h-auto m-auto  before:absolute before:w-full before:h-[340px] before:rounded-[10px] before:bg-bgSearchHome before:z-[-1] before:backdrop-blur-sm'>
+        <div className='trip_bx relative w-[95%] h-auto m-auto  before:absolute before:w-full before:h-[340px] before:rounded-[10px] before:bg-search-home before:z-[-1] before:backdrop-blur-sm'>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className='flex items-center justify-center pr-[10px] bg-white rounded-md shadow-md z-[1] absolute -top-10 left-0 h-20'

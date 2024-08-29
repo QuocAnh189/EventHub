@@ -9,19 +9,14 @@ export const Feedback = () => {
     <section id='feedback'>
       <div className='relative flex flex-col items-center text-center'>
         <div className='w-full'>
-          <img
-            loading='lazy'
-            src={joyWorkImg}
-            alt=''
-            className='relative h-full w-full object-contain'
-          />
+          <img loading='lazy' src={joyWorkImg} alt='' className='relative h-full w-full object-contain' />
         </div>
         <div className='relative flex flex-col items-center justify-center gap-y-10 text-center'>
-          <h3 className='my-0 font-sans text-[2em] font-extrabold leading-[1px] tracking-[-0.025em] text-textWhite mdl:text-[4em]'>
+          <h3 className='my-0 font-sans text-[2em] font-extrabold leading-[1px] tracking-[-0.025em] text-white mdl:text-[4em]'>
             Trusted by more than
           </h3>
           <div className='flex flex-col items-center gap-4 mdl:flex-row'>
-            <span className='relative bg-gradient-titleheaderfooter bg-clip-text text-center font-sans text-[3em] font-bold text-transparent'>
+            <span className='relative bg-gradient-feedback bg-clip-text text-center font-sans text-[3em] font-bold text-transparent'>
               2,500 membership
             </span>
             <span className=''>
@@ -37,7 +32,7 @@ export const Feedback = () => {
         <div className='relative z-[1] mt-[7em] flex justify-between gap-x-5 px-20 mdl:flex-row '>
           <div className='flex flex-col flex-wrap items-center justify-center gap-5 mdl:flex-row'>
             <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-bgDark p-[1.5em] text-left shadow-blue'>
+              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
                 <div className='flex gap-x-[1em]'>
                   <img
                     loading='lazy'
@@ -46,10 +41,10 @@ export const Feedback = () => {
                     className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full object-cover'
                   />
                   <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-textWhite'>
+                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
                       Trần Ngọc Nhật Vy
                     </div>
-                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-textWhite'>
+                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-white'>
                       University of Social Sciences and Humanities
                     </div>
                   </div>
@@ -61,14 +56,13 @@ export const Feedback = () => {
                   />
                 </div>
                 <p className='text-left text-white'>
-                  Quiz offers an outstanding user experience, with its intuitive
-                  interface and smooth navigation.
+                  Quiz offers an outstanding user experience, with its intuitive interface and smooth navigation.
                 </p>
               </div>
             </div>
 
             <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-bgDark p-[1.5em] text-left shadow-blue'>
+              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
                 <div className='flex gap-x-[1em]'>
                   <img
                     loading='lazy'
@@ -77,10 +71,10 @@ export const Feedback = () => {
                     className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full object-cover    '
                   />
                   <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-textWhite'>
+                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
                       Trần Phước Anh Quốc
                     </div>
-                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-textWhite'>
+                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-white'>
                       University Of Information Technology
                     </div>
                   </div>
@@ -92,15 +86,14 @@ export const Feedback = () => {
                   />
                 </div>
                 <p className='text-left text-white'>
-                  Quiz impresses with its robust feature set. From customizable
-                  quizzes to detailed analytics, it covers everything needed for
-                  effective learning and assessment. 💪
+                  Quiz impresses with its robust feature set. From customizable quizzes to detailed analytics, it covers
+                  everything needed for effective learning and assessment. 💪
                 </p>
               </div>
             </div>
 
             <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-bgDark p-[1.5em] text-left shadow-blue'>
+              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
                 <div className='flex gap-x-[1em]'>
                   <img
                     loading='lazy'
@@ -109,10 +102,10 @@ export const Feedback = () => {
                     className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
                   />
                   <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-textWhite'>
+                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
                       Nguyễn Phước Trí
                     </div>
-                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-textWhite'>
+                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-white'>
                       University Of Information Technology
                     </div>
                   </div>
@@ -124,15 +117,14 @@ export const Feedback = () => {
                   />
                 </div>
                 <p className='text-left text-white'>
-                  This software is not only engaging but also highly
-                  educational. It's a fantastic tool for learning and testing
-                  one's knowledge.`
+                  This software is not only engaging but also highly educational. It's a fantastic tool for learning and
+                  testing one's knowledge.`
                 </p>
               </div>
             </div>
 
             <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-bgDark p-[1.5em] text-left shadow-blue'>
+              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
                 <div className='flex gap-x-[1em]'>
                   <img
                     loading='lazy'
@@ -141,10 +133,10 @@ export const Feedback = () => {
                     className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
                   />
                   <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-textWhite'>
+                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
                       Trần Vương Duy
                     </div>
-                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-textWhite'>
+                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-white'>
                       University Of Information Technology
                     </div>
                   </div>
@@ -156,14 +148,14 @@ export const Feedback = () => {
                   />
                 </div>
                 <p className='text-left text-white'>
-                  The ability to customize quizzes to align with specific
-                  educational goals and branding is a standout feature.
+                  The ability to customize quizzes to align with specific educational goals and branding is a standout
+                  feature.
                 </p>
               </div>
             </div>
 
             <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-bgDark p-[1.5em] text-left shadow-blue'>
+              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
                 <div className='flex gap-x-[1em]'>
                   <img
                     loading='lazy'
@@ -172,10 +164,10 @@ export const Feedback = () => {
                     className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
                   />
                   <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-textWhite'>
+                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
                       Lê Thị Thanh Thảo
                     </div>
-                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-textWhite'>
+                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-white'>
                       University Of Information Technology
                     </div>
                   </div>
@@ -187,14 +179,13 @@ export const Feedback = () => {
                   />
                 </div>
                 <p className='text-left text-white'>
-                  The support for various media types, such as imgs and videos,
-                  adds a dynamic element to the quizzes, making learning more
-                  engaging. 💪
+                  The support for various media types, such as imgs and videos, adds a dynamic element to the quizzes,
+                  making learning more engaging. 💪
                 </p>
               </div>
             </div>
             <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-bgDark p-[1.5em] text-left shadow-blue'>
+              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
                 <div className='flex gap-x-[1em]'>
                   <img
                     loading='lazy'
@@ -203,10 +194,10 @@ export const Feedback = () => {
                     className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
                   />
                   <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-textWhite'>
+                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
                       Mai Đình Khôi
                     </div>
-                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-textWhite'>
+                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-white'>
                       University Of Information Technology
                     </div>
                   </div>
@@ -218,8 +209,8 @@ export const Feedback = () => {
                   />
                 </div>
                 <p className='text-left text-white'>
-                  Incorporating gamification elements in quizzes adds an element
-                  of fun and motivation to the learning process.
+                  Incorporating gamification elements in quizzes adds an element of fun and motivation to the learning
+                  process.
                 </p>
               </div>
             </div>

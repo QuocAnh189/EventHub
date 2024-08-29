@@ -27,12 +27,7 @@ export const Intro = () => {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className='absolute hidden w-[10.25em] mdl:bottom-[0em] mdl:left-[-8.25em] mdl:flex xl:bottom-[0.9em] xl:left-[-9em]'
               >
-                <img
-                  loading='lazy'
-                  src={directImg}
-                  alt=''
-                  className='overflow-hidden'
-                />
+                <img loading='lazy' src={directImg} alt='' className='overflow-hidden' />
               </motion.div>
               <motion.div
                 initial={{ y: 10, opacity: 0 }}
@@ -74,8 +69,7 @@ export const Intro = () => {
               </div>
               <div className='border-l-solid -mb-6 ml-[1.13em] block border-l-[1px] border-l-textGray py-[0.63em] pl-[1.13em] mdl:max-w-[12em]'>
                 <div className='my-0 block text-[1em] font-semibold leading-[1.4]'>
-                  Uniting People, Passion, and Purpose in Every Eventful Moment
-                  Shared
+                  Uniting People, Passion, and Purpose in Every Eventful Moment Shared
                 </div>
               </div>
             </motion.div>
@@ -95,24 +89,17 @@ export const Intro = () => {
                 <div className='relative z-[-1] -ml-3 block h-9 w-9'>
                   <div className='absolute bottom-[0%] left-[0%] right-[0%] top-[0%] z-[-1] h-9 w-9 rounded-full bg-white' />
                   <div className='flex h-full w-full items-center justify-center align-middle'>
-                    <img
-                      loading='lazy'
-                      src={logoImg}
-                      className='h-3/5 w-3/5 max-w-full'
-                      alt=''
-                    />
+                    <img loading='lazy' src={logoImg} className='h-3/5 w-3/5 max-w-full' alt='' />
                   </div>
                 </div>
-                <div className='my-0 block text-[1.13em] leading-[1.45]'>
-                  Try now
-                </div>
+                <div className='my-0 block text-[1.13em] leading-[1.45]'>Try now</div>
               </button>
             </motion.div>
           </div>
         </div>
       </div>
-      <div className='absolute bottom-[-0.6em] left-[-12.4em] right-auto top-auto h-[30em] w-[34.5em] rounded-[75em] bg-gradient-footerIntro opacity-[0.6] blur-[50px]'></div>
-      <div className='absolute bottom-[-17.4em] left-auto right-[-21em] top-auto h-[37em] w-[99em] rounded-[75em] bg-gradient-footerIntro opacity-[0.6] blur-[50px]'></div>
+      <div className='absolute bottom-[-0.6em] left-[-12.4em] right-auto top-auto h-[30em] w-[34.5em] rounded-[75em] bg-gradient-intro opacity-[0.6] blur-[50px]'></div>
+      <div className='absolute bottom-[-17.4em] left-auto right-[-21em] top-auto h-[37em] w-[99em] rounded-[75em] bg-gradient-intro opacity-[0.6] blur-[50px]'></div>
     </motion.section>
   )
 }
