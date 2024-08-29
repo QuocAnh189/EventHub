@@ -6,10 +6,11 @@ import { useTheme } from '@contexts/theme.context'
 import { useState, useEffect } from 'react'
 
 // utils
+import PropTypes from 'prop-types'
 import { memo } from 'react'
 import { rgba } from 'polished'
 
-const ProgressBarComponent = ({ value = 0, color, ...props }: any) => {
+const ProgressBar = ({ value = 0, color, ...props }: any) => {
   const [hex, setHex] = useState('#fff')
   const { theme } = useTheme()
 
@@ -20,6 +21,7 @@ const ProgressBarComponent = ({ value = 0, color, ...props }: any) => {
 
   useEffect(() => {
     getHex()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme])
 
   return (
@@ -44,4 +46,9 @@ const ProgressBarComponent = ({ value = 0, color, ...props }: any) => {
   )
 }
 
-export const ProgressBar = memo(ProgressBarComponent)
+ProgressBar.propTypes = {
+  value: PropTypes.number,
+  color: PropTypes.oneOf(['accent', 'red', 'green', 'yellow', 'header'])
+}
+
+export default memo(ProgressBar)

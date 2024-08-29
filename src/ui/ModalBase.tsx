@@ -1,16 +1,17 @@
-import { ReactElement } from 'react'
-
 // components
 import Modal from '@mui/material/Modal'
 import Grow from '@mui/material/Grow'
+
+// utils
+import PropTypes from 'prop-types'
+import { ReactElement } from 'react'
 
 interface Props {
   open: boolean
   onClose: () => void
   children: ReactElement
 }
-
-export const ModalBase = (props: Props) => {
+const ModalBase = (props: Props) => {
   const { open, onClose, children } = props
 
   return (
@@ -28,3 +29,11 @@ export const ModalBase = (props: Props) => {
     </Modal>
   )
 }
+
+ModalBase.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired
+}
+
+export default ModalBase

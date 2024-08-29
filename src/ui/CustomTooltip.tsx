@@ -2,7 +2,7 @@
 import Tooltip from '@mui/material/Tooltip'
 import Fade from '@mui/material/Fade'
 
-export const CustomTooltip = ({ children, withArrow = true, ...props }: any) => {
+const CustomTooltip = ({ children, withArrow = true, ...props }: any) => {
   return (
     <Tooltip
       TransitionComponent={Fade}
@@ -21,3 +21,5 @@ export const CustomTooltip = ({ children, withArrow = true, ...props }: any) => 
     </Tooltip>
   )
 }
+
+export default CustomTooltip

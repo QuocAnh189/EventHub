@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 
 // components
 import MessageItem from './MessageItem'
-import { FilterItem, DrawerBase } from '@ui/index'
+import FilterItem from '@ui/FilterItem'
+import DrawerBase from '@ui/DrawerBase'
 
 // constants
 import { MESSAGE_OPTIONS } from '@constants/options.constant'
@@ -34,9 +35,7 @@ const MessagesPanel = (props: iMessagesPanelProps) => {
   const [filter, setFilter] = useState('all')
   const [displayed, setDisplayed] = useState(step)
 
-  const latestMessages = messages.filter((message: any) =>
-    dayjs(message.createdAt).isAfter(dayjs().subtract(1, 'day'))
-  )
+  const latestMessages = messages.filter((message: any) => dayjs(message.createdAt).isAfter(dayjs().subtract(1, 'day')))
   const archivedMessages = messages.filter((message: any) => message.archived)
 
   useEffect(() => {
@@ -60,10 +59,7 @@ const MessagesPanel = (props: iMessagesPanelProps) => {
     if (filter === 'archived') return archivedMessages
   }
 
-  const sortedData = () =>
-    filteredData()?.sort((a: any, b: any) =>
-      dayjs(b.createdAt).diff(dayjs(a.createdAt))
-    )
+  const sortedData = () => filteredData()?.sort((a: any, b: any) => dayjs(b.createdAt).diff(dayjs(a.createdAt)))
 
   return (
     <DrawerBase open={open} onOpen={onOpen} onClose={onClose} anchor='right'>
@@ -99,19 +95,11 @@ const MessagesPanel = (props: iMessagesPanelProps) => {
         {sortedData()
           ?.slice(0, displayed)
           .map((message: any, index: any) => (
-            <MessageItem
-              key={`${message.id}-${filter}`}
-              message={message}
-              index={index}
-            />
+            <MessageItem key={`${message.id}-${filter}`} message={message} index={index} />
           ))}
       </div>
       <div className='p-[30px]' ref={footerRef}>
-        <button
-          className='btn btn--secondary w-full'
-          onClick={handleLoadMore}
-          disabled={true}
-        >
+        <button className='btn btn--secondary w-full' onClick={handleLoadMore} disabled={true}>
           Load More
         </button>
       </div>

@@ -4,8 +4,7 @@ interface Props {
   date: any
   wrapperClass?: string
 }
-
-export const Timestamp = (props: Props) => {
+const Timestamp = (props: Props) => {
   const { date, wrapperClass } = props
 
   return (
@@ -18,3 +17,5 @@ export const Timestamp = (props: Props) => {
     </div>
   )
 }
+
+export default Timestamp

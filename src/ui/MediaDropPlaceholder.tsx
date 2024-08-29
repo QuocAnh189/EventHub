@@ -1,8 +1,8 @@
-interface IMediaDropPlaceholderProps {
+interface Props {
   text: string
 }
 
-export const MediaDropPlaceholder = (props: IMediaDropPlaceholderProps) => {
+const MediaDropPlaceholder = (props: Props) => {
   const { text } = props
 
   return (
@@ -12,3 +12,5 @@ export const MediaDropPlaceholder = (props: IMediaDropPlaceholderProps) => {
     </div>
   )
 }
+
+export default MediaDropPlaceholder

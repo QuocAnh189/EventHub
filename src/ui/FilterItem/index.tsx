@@ -3,7 +3,7 @@
 import { withTranslation } from 'react-i18next'
 import styles from './styles.module.scss'
 
-interface IFilterItemProps {
+interface Props {
   t: any
   type?: string
   text: string
@@ -13,7 +13,7 @@ interface IFilterItemProps {
   onClick: (value: any) => void
 }
 
-const TranslatedFilterItem = (props: IFilterItemProps) => {
+const FilterItem = (props: Props) => {
   const { t, type, qty = 0, value, active, onClick } = props
 
   return (
@@ -24,4 +24,4 @@ const TranslatedFilterItem = (props: IFilterItemProps) => {
   )
 }
 
-export const FilterItem = withTranslation('common')(TranslatedFilterItem)
+export default withTranslation('common')(FilterItem)

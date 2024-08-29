@@ -10,7 +10,9 @@ import { useTranslation, withTranslation } from 'react-i18next'
 
 // components
 import Headroom from 'react-headroom'
-import { Search, ModalBase, CustomTooltip } from '@ui/index'
+import Search from '@ui/Search'
+import ModalBase from '@ui/ModalBase'
+import CustomTooltip from '@ui/CustomTooltip'
 import NotificationsPanel from './navbar/NotificationsPanel'
 import MessagesPanel from './navbar/MessagesPanel'
 

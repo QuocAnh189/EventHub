@@ -4,8 +4,8 @@ import useMeasure from 'react-use-measure'
 
 // components
 import NotificationItem from './NotificationItem'
-
-import { FilterItem, DrawerBase } from '@ui/index'
+import FilterItem from '@ui/FilterItem'
+import DrawerBase from '@ui/DrawerBase'
 
 // constants
 import { NOTIFICATION_OPTIONS } from '@constants/options.constant'
@@ -44,15 +44,11 @@ const NotificationsPanel = (props: INotificationsPanelProps) => {
 
   const getQty = (category: any) => {
     if (category === 'all') return notifications.length
-    return notifications.filter(
-      (notification: any) => notification.category === category
-    ).length
+    return notifications.filter((notification: any) => notification.category === category).length
   }
 
   const filteredData = () => {
-    return notifications.filter((notification: any) =>
-      filter === 'all' ? true : notification.category === filter
-    )
+    return notifications.filter((notification: any) => (filter === 'all' ? true : notification.category === filter))
   }
 
   return (
@@ -90,11 +86,7 @@ const NotificationsPanel = (props: INotificationsPanelProps) => {
           .slice(0, displayed)
           .sort((a: any, b: any) => b.timestamp - a.timestamp)
           .map((notification: any, index: any) => (
-            <NotificationItem
-              key={`${filter}-${index}`}
-              notification={notification}
-              index={index}
-            />
+            <NotificationItem key={`${filter}-${index}`} notification={notification} index={index} />
           ))}
       </div>
       <div className='p-[30px]' ref={footerRef}>

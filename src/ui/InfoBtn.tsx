@@ -1,8 +1,8 @@
-interface IInfoBtnProps {
+interface Props {
   onClick?: any
 }
 
-export const InfoBtn = (props: IInfoBtnProps) => {
+const InfoBtn = (props: Props) => {
   const { onClick } = props
 
   return (
@@ -11,3 +11,5 @@ export const InfoBtn = (props: IInfoBtnProps) => {
     </button>
   )
 }
+
+export default InfoBtn

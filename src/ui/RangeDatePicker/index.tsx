@@ -5,6 +5,7 @@ import StyledRangePicker from './styles'
 import { useState, useEffect } from 'react'
 
 // utils
+import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
   disableFuture?: boolean
 }
 
-export const RangeDatePicker = (props: Props) => {
+const RangeDatePicker = (props: Props) => {
   const { id, value, onChange, innerRef, disableFuture = true } = props
   const [open, setOpen] = useState(false)
 
@@ -48,3 +49,13 @@ export const RangeDatePicker = (props: Props) => {
     />
   )
 }
+
+RangeDatePicker.propTypes = {
+  id: PropTypes.string.isRequired,
+  value: PropTypes.array,
+  onChange: PropTypes.func,
+  innerRef: PropTypes.any,
+  disableFuture: PropTypes.bool
+}
+
+export default RangeDatePicker

@@ -4,7 +4,7 @@ interface Props {
   pagination: any
 }
 
-export const Pagination = (props: Props) => {
+const Pagination = (props: Props) => {
   const { pagination } = props
 
   const groupLeftPage = [...Array(pagination.maxPage)]
@@ -87,3 +87,5 @@ export const Pagination = (props: Props) => {
     </div>
   )
 }
+
+export default Pagination

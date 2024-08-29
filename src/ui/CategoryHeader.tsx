@@ -3,8 +3,7 @@ import { ICategory } from 'interfaces/contents/category.interface'
 interface Props {
   category: ICategory
 }
-
-export const CategoryHeader = (props: Props) => {
+const CategoryHeader = (props: Props) => {
   const { category } = props
 
   return (
@@ -16,3 +15,5 @@ export const CategoryHeader = (props: Props) => {
     </div>
   )
 }
+
+export default CategoryHeader

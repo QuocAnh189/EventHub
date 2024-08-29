@@ -3,7 +3,7 @@ interface Props {
   onClick?: any
 }
 
-export const SubmenuTrigger = (props: Props) => {
+const SubmenuTrigger = (props: Props) => {
   const { className, onClick } = props
 
   return (
@@ -12,3 +12,5 @@ export const SubmenuTrigger = (props: Props) => {
     </button>
   )
 }
+
+export default SubmenuTrigger

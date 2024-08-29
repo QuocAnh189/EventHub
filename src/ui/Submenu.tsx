@@ -2,6 +2,7 @@
 import Menu from '@mui/material/Menu'
 
 // utils
+import PropTypes from 'prop-types'
 import { ReactElement } from 'react'
 
 interface Props {
@@ -10,8 +11,7 @@ interface Props {
   onClose: () => void
   anchorEl: any
 }
-
-export const Submenu = (props: Props) => {
+const Submenu = (props: Props) => {
   const { children, open, onClose, anchorEl } = props
 
   return (
@@ -43,3 +43,11 @@ export const Submenu = (props: Props) => {
     </Menu>
   )
 }
+
+Submenu.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  anchorEl: PropTypes.any
+}
+
+export default Submenu

@@ -3,8 +3,11 @@ import styled from 'styled-components/macro'
 
 // components
 import Rating from '@mui/material/Rating'
-import StarFilled from '@assets/images/icons/star_solid.svg'
-import StarEmpty from '@assets/images/icons/star_regular.svg'
+import { ReactComponent as StarFilled } from '@assets/icons/star-solid.svg'
+import { ReactComponent as StarEmpty } from '@assets/icons/star-regular.svg'
+
+// utils
+import PropTypes from 'prop-types'
 
 const StyledRating = styled(Rating)`
   gap: 15px;
@@ -18,7 +21,7 @@ const StyledRating = styled(Rating)`
   }
 `
 
-export const RatingStars = ({ rating = 0, readOnly = true, ...props }) => {
+const RatingStars = ({ rating = 0, readOnly = true, ...props }) => {
   return (
     <StyledRating
       readOnly={readOnly}
@@ -30,3 +33,10 @@ export const RatingStars = ({ rating = 0, readOnly = true, ...props }) => {
     />
   )
 }
+
+RatingStars.propTypes = {
+  rating: PropTypes.number,
+  readOnly: PropTypes.bool
+}
+
+export default RatingStars

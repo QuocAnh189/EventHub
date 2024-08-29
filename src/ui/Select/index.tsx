@@ -5,6 +5,7 @@ import { BasicSelect, MinimalSelect } from './styles'
 import { useState } from 'react'
 
 // utils
+// import PropTypes from 'prop-types'
 import { components } from 'react-select'
 import { memo } from 'react'
 
@@ -21,7 +22,7 @@ interface Props {
   isDisable?: any
 }
 
-const SelectComponent = (props: Props) => {
+const Select = (props: Props) => {
   const {
     id,
     options,
@@ -83,4 +84,4 @@ const SelectComponent = (props: Props) => {
   return variant === 'basic' ? <BasicSelect {...selectProps} /> : <MinimalSelect {...selectProps} />
 }
 
-export const Select = memo(SelectComponent)
+export default memo(Select)

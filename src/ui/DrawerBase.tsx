@@ -3,7 +3,10 @@ import { ReactNode } from 'react'
 // components
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 
-interface IDrawerBaseProps {
+// utils
+import PropTypes from 'prop-types'
+
+interface Props {
   open: boolean
   onOpen: () => void
   onClose: () => void
@@ -11,7 +14,7 @@ interface IDrawerBaseProps {
   children: ReactNode
 }
 
-export const DrawerBase = (props: IDrawerBaseProps) => {
+const DrawerBase = (props: Props) => {
   const { open, onOpen, onClose, anchor = 'left', children } = props
   return (
     <SwipeableDrawer
@@ -29,10 +32,20 @@ export const DrawerBase = (props: IDrawerBaseProps) => {
         }
       }}
       classes={{
-        paper: '!w-full sm:!w-[342px] flex flex-col overflow-y-hidden'
+        paper: '!w-full sm:!w-[342px] flex flex-col'
       }}
     >
       {children}
     </SwipeableDrawer>
   )
 }
+
+DrawerBase.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onOpen: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  anchor: PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
+  children: PropTypes.node.isRequired
+}
+
+export default DrawerBase

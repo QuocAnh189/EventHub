@@ -5,6 +5,9 @@ import theme from 'styled-theming'
 // hooks
 import { useState } from 'react'
 
+// utils
+import PropTypes from 'prop-types'
+
 const StyledLabel = styled.label`
   display: flex;
   flex-direction: column;
@@ -46,7 +49,7 @@ const StyledLabel = styled.label`
   }
 `
 
-export const PaymentMethod = ({ type = 'checkbox', option = {}, ...props }: any) => {
+const PaymentMethod = ({ type = 'checkbox', option = {}, ...props }: any) => {
   const [checkedState, setCheckedState] = useState(false)
 
   return (
@@ -68,3 +71,12 @@ export const PaymentMethod = ({ type = 'checkbox', option = {}, ...props }: any)
     </div>
   )
 }
+
+PaymentMethod.propTypes = {
+  type: PropTypes.oneOf(['checkbox', 'radio']),
+  option: PropTypes.object,
+  checked: PropTypes.bool,
+  onChange: PropTypes.func
+}
+
+export default PaymentMethod
