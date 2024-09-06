@@ -12,10 +12,7 @@ export const apiFile = createApi({
   keepUnusedDataFor: 20,
   tagTypes: ['File'],
   endpoints: (builder) => ({
-    uploadFile: builder.mutation<
-      IFileStorage,
-      { data: FormData; container: string }
-    >({
+    uploadFile: builder.mutation<IFileStorage, { data: FormData; container: string }>({
       query: ({ data, container }) => ({
         url: `/files?container=${container}`,
         method: 'POST',

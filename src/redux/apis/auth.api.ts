@@ -1,11 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import {
-  LoginPayload,
-  SignUpPayload,
-  ForgotPassPayload,
-  IParamsExternalLogin
-} from '@type/auth.type'
+import { LoginPayload, SignUpPayload, ForgotPassPayload, IParamsExternalLogin } from '@type/auth.type'
 
 //interface
 import { IAuth } from '@interfaces/systems/auth.interface'
@@ -94,9 +89,7 @@ export const apiAuth = createApi({
         url: '/auth/profile',
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${
-            JSON.parse(localStorage.getItem('token')!).accessToken
-          }`
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem('token')!).accessToken}`
         }
       }),
       transformResponse: (response: any) => response.data

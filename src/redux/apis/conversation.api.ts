@@ -34,10 +34,7 @@ export const apiConversation = createApi({
       providesTags: ['Conversation']
     }),
 
-    getMessageByConversationId: builder.query<
-      any,
-      { conversationId: string; params: IMessageParams }
-    >({
+    getMessageByConversationId: builder.query<any, { conversationId: string; params: IMessageParams }>({
       query: ({ conversationId, params }) => ({
         url: `/conversations/${conversationId}/messages`,
         method: 'GET',
@@ -75,5 +72,4 @@ export const apiConversation = createApi({
   })
 })
 
-export const { useGetConversationsQuery, useGetMessageByConversationIdQuery } =
-  apiConversation
+export const { useGetConversationsQuery, useGetMessageByConversationIdQuery } = apiConversation

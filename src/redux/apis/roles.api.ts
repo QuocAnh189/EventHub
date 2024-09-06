@@ -61,16 +61,14 @@ export const apiRole = createApi({
       providesTags: ['Role']
     }),
 
-    updatePermissionByRoleId: builder.query<any, { roleId: string; data: any }>(
-      {
-        query: ({ roleId, data }) => ({
-          url: `/roles/${roleId}/permissions`,
-          method: 'PUT',
-          body: data
-        }),
-        providesTags: ['Role']
-      }
-    )
+    updatePermissionByRoleId: builder.query<any, { roleId: string; data: any }>({
+      query: ({ roleId, data }) => ({
+        url: `/roles/${roleId}/permissions`,
+        method: 'PUT',
+        body: data
+      }),
+      providesTags: ['Role']
+    })
   })
 })
 

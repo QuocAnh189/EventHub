@@ -1,10 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //type
-import {
-  IParamsConservationHost,
-  IParamsConservationUser
-} from '@type/conversation.type'
+import { IParamsConservationHost, IParamsConservationUser } from '@type/conversation.type'
 import { IParamsEvent } from '@type/event.type'
 import { IChangePasswordPayload, IFollowPayload } from '@type/user.type'
 
@@ -46,10 +43,7 @@ export const apiUser = createApi({
       providesTags: ['User']
     }),
 
-    getEventsByUserId: builder.query<
-      any,
-      { userId: string; params: IParamsEvent }
-    >({
+    getEventsByUserId: builder.query<any, { userId: string; params: IParamsEvent }>({
       query: ({ userId, params }) => ({
         url: `/users/${userId}/events`,
         method: 'GET',
@@ -115,7 +109,7 @@ export const apiUser = createApi({
       providesTags: ['User']
     }),
 
-    getEventsFavoriteByUserId: builder.query<any, string>({
+    getEventsFavouriteByUserId: builder.query<any, string>({
       query: (userId) => ({
         url: `/users/${userId}/events/favorites`,
         method: 'GET'
@@ -123,10 +117,7 @@ export const apiUser = createApi({
       providesTags: ['User']
     }),
 
-    getEventsTrashByUserId: builder.query<
-      any,
-      { userId: string; params: IParamsEvent }
-    >({
+    getEventsTrashByUserId: builder.query<any, { userId: string; params: IParamsEvent }>({
       query: ({ userId, params }) => ({
         url: `/users/${userId}/events/trash`,
         method: 'GET',
@@ -138,10 +129,7 @@ export const apiUser = createApi({
       providesTags: ['User', 'Event']
     }),
 
-    getConversationByUser: builder.query<
-      any,
-      { userId: string; params: IParamsConservationUser }
-    >({
+    getConversationByUser: builder.query<any, { userId: string; params: IParamsConservationUser }>({
       query: ({ userId, params }) => ({
         url: `/users/${userId}/conversations-by-user`,
         method: 'GET',
@@ -152,10 +140,7 @@ export const apiUser = createApi({
       }
     }),
 
-    getConversationByHost: builder.query<
-      any,
-      { userId: string; params: IParamsConservationHost }
-    >({
+    getConversationByHost: builder.query<any, { userId: string; params: IParamsConservationHost }>({
       query: ({ userId, params }) => ({
         url: `/users/${userId}/conversations-by-host`,
         method: 'GET',
@@ -195,15 +180,11 @@ export const apiUser = createApi({
         url: `/users/${userId}/payments/accounts`,
         method: 'GET'
       }),
-      transformResponse: (response: ApiListResponse<IPaymentAccount[]>) =>
-        response.data,
+      transformResponse: (response: ApiListResponse<IPaymentAccount[]>) => response.data,
       providesTags: ['User']
     }),
 
-    createPaymentAccount: builder.mutation<
-      { id: string },
-      { userId: string; data: FormData }
-    >({
+    createPaymentAccount: builder.mutation<{ id: string }, { userId: string; data: FormData }>({
       query: ({ userId, data }) => ({
         url: `/users/${userId}/payments/accounts`,
         method: 'POST',
@@ -212,10 +193,7 @@ export const apiUser = createApi({
       invalidatesTags: ['User']
     }),
 
-    updatePaymentAccount: builder.mutation<
-      { id: string },
-      { accountId: string; userId: string; data: FormData }
-    >({
+    updatePaymentAccount: builder.mutation<{ id: string }, { accountId: string; userId: string; data: FormData }>({
       query: ({ accountId, userId, data }) => ({
         url: `/users/${userId}/payments/accounts/${accountId}`,
         method: 'PUT',
@@ -224,10 +202,7 @@ export const apiUser = createApi({
       invalidatesTags: ['User']
     }),
 
-    deletePaymentAccount: builder.mutation<
-      { id: string },
-      { accountId: string; userId: string }
-    >({
+    deletePaymentAccount: builder.mutation<{ id: string }, { accountId: string; userId: string }>({
       query: ({ accountId, userId }) => ({
         url: `/users/${userId}/payments/accounts/${accountId}`,
         method: 'DELETE'
@@ -247,7 +222,7 @@ export const {
   useChangePasswordMutation,
   useGetMenuByUserIdQuery,
   useGetReviewsByUserIdQuery,
-  useGetEventsFavoriteByUserIdQuery,
+  useGetEventsFavouriteByUserIdQuery,
   useGetEventsTrashByUserIdQuery,
   useGetConversationByUserQuery,
   useGetConversationByHostQuery,

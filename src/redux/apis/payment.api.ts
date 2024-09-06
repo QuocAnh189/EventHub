@@ -79,10 +79,7 @@ export const apiPayment = createApi({
       invalidatesTags: ['Payment']
     }),
 
-    updateOrderStatus: builder.mutation<
-      void,
-      { paymentId: string; status: EPaymentStatus }
-    >({
+    updateOrderStatus: builder.mutation<void, { paymentId: string; status: EPaymentStatus }>({
       query: ({ paymentId, status }) => ({
         url: `/payments/${paymentId}/status`,
         method: 'PATCH',
@@ -119,10 +116,7 @@ export const apiPayment = createApi({
       invalidatesTags: ['Payment']
     }),
 
-    getPaymentsByUserId: builder.query<
-      IListData<IPayment[]>,
-      { userId: string; filter?: IParamsEvent }
-    >({
+    getPaymentsByUserId: builder.query<IListData<IPayment[]>, { userId: string; filter?: IParamsEvent }>({
       query: ({ userId, filter }) => ({
         url: `/users/${userId}/payments`,
         method: 'GET',
@@ -134,10 +128,7 @@ export const apiPayment = createApi({
       }
     }),
 
-    getPaymentsByCreatorId: builder.query<
-      IListData<IPayment[]>,
-      { creatorId: string; filter?: IParamsEvent }
-    >({
+    getPaymentsByCreatorId: builder.query<IListData<IPayment[]>, { creatorId: string; filter?: IParamsEvent }>({
       query: ({ creatorId, filter }) => ({
         url: `/users/${creatorId}/payments/creator`,
         method: 'GET',

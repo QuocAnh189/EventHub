@@ -1,10 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //type
-import {
-  UpdatePermissionByRolePayload,
-  UpdatePermissionPayload
-} from '@type/permission.type'
+import { UpdatePermissionByRolePayload, UpdatePermissionPayload } from '@type/permission.type'
 
 //interface
 import { ApiResponse } from 'interfaces/common.interface'
@@ -34,8 +31,7 @@ export const apiPermission = createApi({
         method: 'GET'
       }),
       providesTags: ['Permission'],
-      transformResponse: (response: ApiResponse<IPermissionScreen[]>) =>
-        response.data
+      transformResponse: (response: ApiResponse<IPermissionScreen[]>) => response.data
     }),
     getPermissionsByRole: builder.query<IRolePermission[], void>({
       query: () => ({
@@ -43,34 +39,25 @@ export const apiPermission = createApi({
         method: 'GET'
       }),
       providesTags: ['Permission'],
-      transformResponse: (response: ApiResponse<IRolePermission[]>) =>
-        response.data
+      transformResponse: (response: ApiResponse<IRolePermission[]>) => response.data
     }),
-    updatePermission: builder.mutation<
-      IPermissionScreen[],
-      UpdatePermissionPayload
-    >({
+    updatePermission: builder.mutation<IPermissionScreen[], UpdatePermissionPayload>({
       query: (data) => ({
         url: '/permissions',
         method: 'PUT',
         body: data
       }),
       invalidatesTags: ['Permission'],
-      transformResponse: (response: ApiResponse<IPermissionScreen[]>) =>
-        response.data
+      transformResponse: (response: ApiResponse<IPermissionScreen[]>) => response.data
     }),
-    updatePermissionByRole: builder.mutation<
-      IRolePermission[],
-      UpdatePermissionByRolePayload
-    >({
+    updatePermissionByRole: builder.mutation<IRolePermission[], UpdatePermissionByRolePayload>({
       query: (data) => ({
         url: '/permissions/roles',
         method: 'PUT',
         body: data
       }),
       invalidatesTags: ['Permission'],
-      transformResponse: (response: ApiResponse<IRolePermission[]>) =>
-        response.data
+      transformResponse: (response: ApiResponse<IRolePermission[]>) => response.data
     })
   })
 })
