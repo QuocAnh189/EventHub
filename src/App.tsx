@@ -34,6 +34,7 @@ const SignIn = lazy(() => import('@pages/auth/Signin'))
 const SignUp = lazy(() => import('@pages/auth/Signup'))
 const Home = lazy(() => import('@pages/home/Home'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
+const Explore = lazy(() => import('@pages/explore/Explore'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/organization' element={<MainLayout />}>
               <Route path='/organization/' element={<Home />} />
+              <Route path='/organization/explore' element={<Explore />} />
               <Route path='/organization/settings/profile' element={<Profile />} />
             </Route>
             <Route path='/*' element={<NotFound />} />

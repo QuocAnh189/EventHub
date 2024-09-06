@@ -24,7 +24,7 @@ interface Props {
   setValue: UseFormSetValue<IParamsEvent>
 }
 
-const SidebarExplore = (props: Props) => {
+const SidebarExploreResponsive = (props: Props) => {
   const { t, watch, setValue } = props
 
   const categories = useAppSelector((state) => state.persistedReducer.category.categories)
@@ -45,39 +45,7 @@ const SidebarExplore = (props: Props) => {
   }, [categorySelect.length])
 
   return (
-    <div className='w-1/5 flex flex-col gap-6'>
-      {/* <div className='flex flex-col gap-4'>
-        <div className='flex items-center justify-between'>
-          <h1 className='text-black text-xl font-semibold text-header'>Price</h1>
-        </div>
-        <FormControl>
-          <RadioGroup
-            value={watch().priceRange?.startRange === 0 ? 'FREE' : 'PAID'}
-            row
-            aria-labelledby='demo-row-radio-buttons-group-label'
-            name='row-radio-buttons-group'
-            onChange={(e) => {
-              e.target.value === 'PAID'
-                ? setValue('priceRange', { startRange: 1000, endRange: 2000 })
-                : setValue('priceRange', { startRange: 0, endRange: 0 })
-            }}
-          >
-            <FormControlLabel
-              sx={{ color: 'var(--header)' }}
-              value='PAID'
-              control={<Radio sx={{ color: 'var(--header)' }} />}
-              label='Paid'
-            />
-            <FormControlLabel
-              sx={{ color: 'var(--header)' }}
-              value='FREE'
-              control={<Radio sx={{ color: 'var(--header)' }} />}
-              label='Free'
-            />
-          </RadioGroup>
-        </FormControl>
-      </div> */}
-
+    <div className='hidden mdl:flex flex-col gap-6 px-6'>
       <div className='flex flex-col gap-2'>
         <div className='flex items-center justify-between'>
           <h1 className='text-black text-xl font-semibold text-header'>{t('sidebar.rate.label')}</h1>
@@ -86,7 +54,6 @@ const SidebarExplore = (props: Props) => {
           aria-labelledby='demo-radio-buttons-group-label'
           defaultValue='female'
           onChange={(e: any) => {
-            // setValue('rates', e.target.value)
             if (watch().rates?.includes(e.target.value)) {
               const newAverage = watch().rates?.filter((item) => item !== e.target.value)
               setValue('rates', newAverage)
@@ -181,4 +148,4 @@ const SidebarExplore = (props: Props) => {
   )
 }
 
-export default withTranslation('explore')(SidebarExplore)
+export default withTranslation('explore')(SidebarExploreResponsive)

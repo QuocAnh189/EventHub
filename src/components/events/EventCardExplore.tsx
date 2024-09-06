@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom'
 
 //interface
-import { IEvent } from 'interfaces/contents/event.interface'
+import { IEvent } from '@interfaces/contents/event.interface'
 
 //icon
 import { FaCalendarAlt } from 'react-icons/fa'

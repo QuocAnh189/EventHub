@@ -12,7 +12,7 @@ import bitpay from '@assets/images/payment/bitpay.svg'
 import { EEventType } from './enum.constant'
 
 export interface IOptionSelect {
-  value?: string
+  value?: string | number
   label?: string
   icon?: string
   backgroundColor?: string
@@ -145,6 +145,14 @@ export const EVENT_STATUS_OPTIONS: IOptionSelect[] = [
   { value: EEventType.UPCOMING, label: 'Upcoming' },
   { value: EEventType.OPENING, label: 'Opening' },
   { value: EEventType.CLOSED, label: 'Closed' }
+]
+
+export const EVENT_RATE_OPTIONS: IOptionSelect[] = [
+  { value: 5, label: '5 start' },
+  { value: 4, label: '4 start' },
+  { value: 3, label: '3 start' },
+  { value: 2, label: '2 start' },
+  { value: 2, label: '1 start' }
 ]
 
 export const PRODUCT_TYPE_OPTIONS: IOptionSelect[] = [
