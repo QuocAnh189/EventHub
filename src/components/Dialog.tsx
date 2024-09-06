@@ -38,7 +38,7 @@ export const ConfirmDialog = (props: DialogProps) => {
           <DialogContentText id='alert-dialog-description'>{description}</DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpen(false)}>Cancle</Button>
+          <Button onClick={() => setOpen(false)}>Cancel</Button>
           <Button onClick={onHandle}>{disabled ? <CircularProgress size='20px' /> : action}</Button>
         </DialogActions>
       </Dialog>

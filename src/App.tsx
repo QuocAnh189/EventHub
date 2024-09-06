@@ -33,6 +33,7 @@ const Landing = lazy(() => import('@pages/landing/Landing'))
 const SignIn = lazy(() => import('@pages/auth/Signin'))
 const SignUp = lazy(() => import('@pages/auth/Signup'))
 const Home = lazy(() => import('@pages/home/Home'))
+const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
@@ -63,6 +64,7 @@ function App() {
             <Route path='/organization' element={<MainLayout />}>
               <Route path='/organization/' element={<Home />} />
               <Route path='/organization/explore' element={<Explore />} />
+              <Route path='/organization/event/:id' element={<EventDetail />} />
               <Route path='/organization/settings/profile' element={<Profile />} />
             </Route>
             <Route path='/*' element={<NotFound />} />

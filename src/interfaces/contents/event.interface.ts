@@ -1,8 +1,4 @@
-import {
-  EEventPaymentTicket,
-  EEventStatus,
-  EEventStyle
-} from '@constants/enum.constant'
+import { EEventPaymentTicket, EEventStatus, EEventStyle } from '@constants/enum.constant'
 import { IPriceRange } from '@interfaces/systems/price_range.interface'
 import { ITicketType } from './ticketType.interface'
 import { IUser } from 'interfaces/systems/user.interface'
@@ -28,8 +24,8 @@ export interface IEvent {
   ticketTypes: ITicketType[]
   categoryIds: string[] | any
   promotion: number
-  numberOfFavorites: number
-  isFavorite?: boolean
+  numberOfFavourites: number
+  isFavourite?: boolean
   numberOfShares: number
   numberOfSoldTickets: number
   averageRating: number

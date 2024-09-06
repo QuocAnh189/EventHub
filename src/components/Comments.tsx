@@ -14,19 +14,19 @@ import { ConfirmDialog } from './Dialog'
 import { MdStarRate } from 'react-icons/md'
 import { toast } from 'react-toastify'
 
-//interface
+//interface and type
 import { IMetadataReviewResponse, initParamsReview, IReviewEventPayload } from '@type/event.type'
+import { IReview } from 'interfaces/contents/review.interface'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'
-import { IReview } from 'interfaces/contents/review.interface'
 import { useGetReviewsByEventIdQuery, useAddReviewMutation, useDeleteReviewMutation } from '@redux/apis/event.api'
 
 //util
 import dayjs from 'dayjs'
 
 //assets
-import userDefault from '@assets/common/user_default.png'
+import userDefault from '@assets/images/common/user_default.png'
 
 interface ItemReviewsProps {
   eventId: string
@@ -164,7 +164,7 @@ const Comments = (props: Props) => {
   }
 
   return (
-    <div className='w-1/2 space-y-8 pl-[150px]'>
+    <div className='space-y-8 mdl:w-1/2 mdl:pl-[150px]'>
       <div className='w-full space-y-4'>
         <ItemReviews eventId={eventId} ownerId={ownerId} />
       </div>
