@@ -1,0 +1,63 @@
+{
+  "header": { "title_create": "Tạo sự kiện", "update_create": "Cập nhập sự kiện" },
+  "option_one": { "title": "Tạo sự kiện", "description": "Bạn sẽ tạo sự kiện bằng cách nhập dữ liệu trực tiếp" },
+  "option_two": {
+    "title": "Chọn thư mục",
+    "description": "Bạn đã có sẵn sự kiện?",
+    "example_file": "Tải thư mục tại đây"
+  },
+  "information": {
+    "event_detail": {
+      "title": "Chi tiết sự kiện",
+      "event_title": "Tên sự kiện",
+      "event_title_placeholder": "Nhập tên của sự kiện",
+      "event_category": "Thể loại sự kiện",
+      "event_category_placeholder": "Chọn thể loại của sự kiện",
+      "event_type": { "title": "Kiểu sự kiện", "label_one": "Ngẫu hứng", "label_two": "Thường niên" }
+    },
+    "event_datetime": {
+      "title": "Ngày & Giờ",
+      "seesion": { "title": "Thời gian", "label_one": "Ngày bắt đầu", "label_two": "Ngày kết thúc" }
+    },
+    "location": {
+      "title": "Chọn địa chỉ",
+      "label": "Nơi diễn ra sự kiện",
+      "placeholder": "Nhập địa chỉ của sự kiện"
+    },
+    "description": {
+      "title": "Thêm thông tin mô tả",
+      "label": "Mô tả sự kiện",
+      "placeholder": "Nhập thông tin mô tả sự kiện"
+    },
+    "reason": {
+      "title": "Lý do",
+      "label": "Lời khuyên sự kiện",
+      "placeholder": "Lời khuyên"
+    }
+  },
+  "banner": { "cover_image": "Ảnh chính", "subs_image": "Ảnh phụ" },
+  "ticket": {
+    "title": "Loại hình cho sự kiện của bạn là gì ?",
+    "option_one": { "label": "Sự kiện trả phí", "description": "Sự kiện của tôi bắt buộc thanh toán" },
+    "option_two": { "label": "Sự kiện miễn phí", "description": "Sự kiện hoàn toàn miễn phí" },
+    "ticket_title": "Bạn đang bán vé gì?",
+    "ticket_name": "Tên vé",
+    "ticket_quantity": "Số lượng vé",
+    "ticket_price": "Gía vé"
+  },
+  "review": {
+    "public": "Công khai",
+    "datet_time_label": "Ngày và giờ",
+    "ticket_information": "Thông tin vé",
+    "ticket_type": "Loại vé",
+    "ticket_sub": "Vé",
+    "location_title": "Địa điểm",
+    "organization_title": "Tổ chức bởi",
+    "description_title": "Mô tả sự kiện",
+    "reasons_event": "Lý do để tham dự sự kiện",
+    "button_create": "Tạo vé",
+    "button_update": "Cập nhập"
+  },
+  "button_back": "Trở về",
+  "button_continue": "Tiếp tục"
+}

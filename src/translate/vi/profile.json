@@ -1,0 +1,35 @@
+{
+  "header profile": {
+    "title": "Cài đặt"
+  },
+  "profile pannel": {
+    "logout": "Đăng xuất",
+    "notifications": "Thông báo",
+    "messages": "Tin nhắn",
+    "number_of_events": "Số lượng sự kiện",
+    "follwing": "Đang theo dõi",
+    "follower": "Lượt theo dõi"
+  },
+  "profile detail": {
+    "title": "Thông tin cá nhân",
+    "user_name": "Tên",
+    "gender": "Giới tính",
+    "full_name": "Tên đầy đủ",
+    "dob": "Ngày sinh",
+    "email": "Địa chỉ email",
+    "status": "Trạng thái",
+    "password": "Mật khẩu",
+    "role": "Vai trò",
+    "phone_number": "Số điện thoại",
+    "bio": "Mô tả",
+    "change_password": "Thay đổi mật khẩu",
+    "update_information": "Cập nhập thông tin",
+    "admin_panel_tools": "Công cụ quản lý",
+    "connected_apps": "Kết nối ứng dụng",
+    "payment_methods": "Phương thức thanh toán",
+    "apperance": "Tiếp cận",
+    "security_assets": "An ninh bảo mật",
+    "configuration_settings": "Thiết lập cấu hình",
+    "view_mode": "Chế độ người xem"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "title": "Thanh toán"
+  },
+  "table": {
+    "invoice": "Hóa đơn",
+    "code": "Mã code",
+    "vat": "Thuế",
+    "total": "Tổng cộng"
+  },
+  "btn_add": "Thêm tài khoảng thanh toán",
+  "modal": {
+    "title": "Cập nhập tài khoảng thanh toán",
+    "payment_method": "Phương thức thanh toán",
+    "account_number": "Số tài khoản",
+    "transfer_content": "Nội dung chuyển khoảng",
+    "qr_code": "Mã thanh toán",
+    "image_qrcode": "Tải mã thanh toán",
+    "btn_delete": "Xóa",
+    "btn_cancle": "Hủy bỏ",
+    "btn_create": "Tạo",
+    "btn_update": "Cập nhập"
+  }
+}

@@ -16,7 +16,9 @@ import { clearDataConversation, setConservation } from '@redux/slices/conservati
 import { IUser } from 'interfaces/systems/user.interface'
 
 //assets
-import userDefault from '@assets/common/user_default.png'
+import userDefault from '@assets/images/common/user_default.png'
+
+//i18
 import { withTranslation } from 'react-i18next'
 
 interface Props {
@@ -78,8 +80,8 @@ const UserProfileCard = (props: Props) => {
           onChange={handleChangeAvatar}
         />
       </div>
-      <h4>{fullName}</h4>
-      <span className='badge badge--square bg-red min-w-[96px] mt-2.5'>{roles?.join(',')}</span>
+      <h4>{fullName ? fullName : 'Tran Phuoc Anh Quoc'}</h4>
+      <span className='badge badge--square bg-red min-w-[96px] mt-2.5'>{roles?.join(',') || 'Admin'}</span>
 
       <button disabled={loadingLogout} onClick={handleSignOut} className='btn btn--secondary w-full md:max-w-[280px]'>
         {t('profile pannel.logout')}

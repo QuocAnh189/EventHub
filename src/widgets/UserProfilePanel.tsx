@@ -1,7 +1,7 @@
 import { withTranslation } from 'react-i18next'
 
 //components
-import Spring from '@components/Spring'
+import { Spring } from '@components/Spring'
 
 interface IProps {
   t: any

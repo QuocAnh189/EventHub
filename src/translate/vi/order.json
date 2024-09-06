@@ -1,0 +1,35 @@
+{
+  "header": {
+    "title": "Đơn hàng"
+  },
+  "middle": {
+    "box_one": {
+      "average_rate": "Tỉ lệ trung bình",
+      "event_view": "Lượt xem sự kiện",
+      "total_tickets": "Tổng số lượng vé"
+    },
+    "order": "Đơn hàng",
+    "box_completed": {
+      "completed": "hoàn thành"
+    },
+    "box_confirmed": {
+      "confirmed": "xác nhận"
+    },
+    "box_canceled": {
+      "canceled": "hủy bỏ"
+    },
+    "box_refunded": {
+      "refunded": "hoàn tiền"
+    }
+  },
+  "table_header": {
+    "order": "Order",
+    "event": "Event",
+    "ticket": "Ticket",
+    "category": "Category",
+    "payment": "Payment",
+    "order_status": "Order Status",
+    "rate": "Rate",
+    "actions": "Actions"
+  }
+}

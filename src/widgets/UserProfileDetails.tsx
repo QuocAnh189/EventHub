@@ -180,11 +180,11 @@ const UserProfileDetails = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className='mt-2.5'>
+        <div className='mt-2.5 flex justify-between'>
           <button className='text-btn' type='button'>
             {t('profile detail.change_password')}
           </button>
-          <button disabled={isLoading} type='submit' className='btn btn--primary w-[260px] mt-5'>
+          <button disabled={isLoading} type='submit' className='btn btn-primary w-[260px] mt-5'>
             {isLoading ? <CircularProgress size={24} /> : t('profile detail.update_information')}
           </button>
         </div>

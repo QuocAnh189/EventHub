@@ -1,0 +1,66 @@
+{
+  "header": { "title_create": "Create Event", "update_create": "Update Event" },
+  "option_one": { "title": "Create Event", "description": "You will have to create the event one way handmade" },
+  "option_two": {
+    "title": "Import Event",
+    "description": "Do you already have an event?",
+    "example_file": "Example file here"
+  },
+  "information": {
+    "event_detail": {
+      "title": "Event Details",
+      "event_title": "Event Title",
+      "event_title_placeholder": "Enter the name of the events",
+      "event_category": "Event Category",
+      "event_category_placeholder": "Enter the name of the events",
+      "event_type": { "title": "Event Title", "label_one": "Single Event", "label_two": "Recurring Event" }
+    },
+    "event_datetime": {
+      "title": "Date & Time",
+      "seesion": { "title": "Seesion", "label_one": "Start Date", "label_two": "End Date" }
+    },
+    "location": {
+      "title": "Choose Location",
+      "label": "Where will you event take place",
+      "placeholder": "Enter the name of location"
+    },
+    "description": {
+      "title": "Additional Information",
+      "label": "Event Description",
+      "placeholder": "Enter description of event"
+    },
+    "reason": {
+      "title": "Reason",
+      "label": "Event Reason",
+      "placeholder": "Reason"
+    }
+  },
+  "banner": {
+    "cover_image": "Cover Image",
+    "subs_image": "Subs Image"
+  },
+  "ticket": {
+    "title": "What type of event are you running ?",
+    "option_one": { "label": "PAID Event", "description": "My event require tickets for entry" },
+    "option_two": { "label": "FREE Event", "description": "I'm running free event" },
+    "ticket_title": "What ticket are you selling ?",
+    "ticket_name": "Ticket name",
+    "ticket_quantity": "Ticket quantity",
+    "ticket_price": "Ticket Price"
+  },
+  "review": {
+    "public": "Public",
+    "datet_time_label": "Date and Time",
+    "ticket_information": "Ticket Information",
+    "ticket_type": "Ticket type",
+    "ticket_sub": "Ticket",
+    "location_title": "Location",
+    "organization_title": "Organization By",
+    "description_title": "Event Description",
+    "reasons_event": "Reasons to attend the event",
+    "button_create": "Create Event",
+    "button_update": "Update Event"
+  },
+  "button_back": "Go back",
+  "button_continue": "Continue"
+}
