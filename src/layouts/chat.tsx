@@ -1,4 +1,5 @@
 // hooks
+import { PropsWithChildren } from 'react'
 // import { useState } from 'react'
 // import useOpenLiveChatAnimation from '@hooks/useOpenLiveChat'
 
@@ -6,7 +7,7 @@
 // import MessageIcon from './components/MessageIcon'
 // import ModalMessage from './components/ModalMessage'
 
-const ChatLayout = ({ children }: any) => {
+const ChatLayout = ({ children }: PropsWithChildren) => {
   // const [openLiveChat, setOpenLiveChat] = useState<boolean>(false)
   // const scope = useOpenLiveChatAnimation(openLiveChat)
 

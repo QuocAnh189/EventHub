@@ -12,70 +12,61 @@ import bitpay from '@assets/images/payment/bitpay.svg'
 import { EEventType } from './enum.constant'
 
 export interface IOptionSelect {
-  value: string
+  value?: string
   label?: string
-  icon?: any
+  icon?: string
+  backgroundColor?: string
 }
 
-export const EVENT_CATEGORIES = [
+export const EVENT_CATEGORIES: IOptionSelect = [
   {
-    name: 'Workshop',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505725/eventhub/category/hhganbll8tt2wofqdsn2.png',
+    label: 'Workshop',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505725/eventhub/category/hhganbll8tt2wofqdsn2.png',
     backgroundColor: '#F27BBD'
   },
   {
-    name: 'Exhibition',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
+    label: 'Exhibition',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
     backgroundColor: '#A3FFD6'
   },
   {
-    name: 'Music',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
+    label: 'Music',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
     backgroundColor: '#F3D0D7'
   },
   {
-    name: 'Sport',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',
+    label: 'Sport',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',
     backgroundColor: '#EE4266'
   },
   {
-    name: 'Culture',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505727/eventhub/category/cvpt43b4aqxcjdgoezoc.png',
+    label: 'Culture',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505727/eventhub/category/cvpt43b4aqxcjdgoezoc.png',
     backgroundColor: '#D1BB9E'
   },
   {
-    name: 'Party',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505729/eventhub/category/mqx4ehibcschz59jd81t.png',
+    label: 'Party',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505729/eventhub/category/mqx4ehibcschz59jd81t.png',
     backgroundColor: '#FFFAB7'
   },
   {
-    name: 'Education',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505730/eventhub/category/fvbuvcl1yetyimeh6v40.png',
+    label: 'Education',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505730/eventhub/category/fvbuvcl1yetyimeh6v40.png',
     backgroundColor: '#BC7FCD'
   },
   {
-    name: 'Fair',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
+    label: 'Fair',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
     backgroundColor: '#AFD198'
   },
   {
-    name: 'Festival',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505732/eventhub/category/fj0qbybujspr8crybhez.png',
+    label: 'Festival',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505732/eventhub/category/fj0qbybujspr8crybhez.png',
     backgroundColor: '#F7C566'
   },
   {
-    name: 'Enviroment',
-    iconImage:
-      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505734/eventhub/category/nubvqwxlqcu2suwgbas1.png',
+    label: 'Environment',
+    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505734/eventhub/category/nubvqwxlqcu2suwgbas1.png',
     backgroundColor: '#5DEBD7'
   }
 ]
@@ -152,7 +143,7 @@ export const MESSAGE_OPTIONS: IOptionSelect[] = [
 export const EVENT_STATUS_OPTIONS: IOptionSelect[] = [
   { value: EEventType.ALL, label: 'All' },
   { value: EEventType.UPCOMING, label: 'Upcoming' },
-  { value: EEventType.OPENING, label: 'Openning' },
+  { value: EEventType.OPENING, label: 'Opening' },
   { value: EEventType.CLOSED, label: 'Closed' }
 ]
 

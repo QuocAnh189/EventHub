@@ -1,18 +1,20 @@
 // hooks
 import { PropsWithChildren, createContext, useEffect, useRef, useState } from 'react'
 
+//components
+import { toast } from 'react-toastify'
+
 //redux
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { setSocket } from '@redux/slices/socket.slice'
+import { updateConversationUser, updateMessagesCurrent } from '@redux/slices/conservation.slice'
 
 //socket
 import { HttpTransportType, HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr'
-import { updateConversationUser, updateMessagesCurrent } from '@redux/slices/conservation.slice'
-import { IConservationResponse, IMessageResponse } from '@type/conversation.type'
-import { toast } from 'react-toastify'
 
-//interface
+//interface and types
 import { JoinChatRoomParams, SendMessageParams } from '@interfaces/websockets/message.interface'
+import { IConservationResponse, IMessageResponse } from '@type/conversation.type'
 
 const AppSocketProvider = ({ children }: PropsWithChildren) => {
   const dispatch = useAppDispatch()

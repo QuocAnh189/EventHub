@@ -47,6 +47,23 @@ const Select = (props: Props) => {
     )
   }
 
+  const Option = (props: any) => {
+    const backgroundColor = props.data.backgroundColor
+
+    return (
+      <components.Option {...props}>
+        {props.data.icon ? (
+          <div className='flex items-center justify-center gap-2'>
+            <img src={props.data.icon} alt={props.data.label} className={`w-5 h-5 p-1`} style={{ backgroundColor }} />
+            {props.data.label}
+          </div>
+        ) : (
+          props.data.label
+        )}
+      </components.Option>
+    )
+  }
+
   // select props
   const selectProps = {
     classNamePrefix: `select`,
@@ -77,7 +94,8 @@ const Select = (props: Props) => {
       containerEl?.appendChild(clonedMenuEl)
     },
     components: {
-      Control
+      Control,
+      Option
     }
   }
 

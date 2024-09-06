@@ -20,7 +20,7 @@ import { ConfirmProvider } from 'material-ui-confirm'
 //redux
 import { Provider } from 'react-redux'
 import store from '@redux/store.ts'
-import AppSocketProvider from '@contexts/socket.context.tsx'
+// import AppSocketProvider from '@contexts/socket.context.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -34,11 +34,11 @@ createRoot(document.getElementById('root')!).render(
             confirmationButtonProps: { color: 'secondary' }
           }}
         >
-          <AppSocketProvider>
-            <ChatLayout>
-              <App />
-            </ChatLayout>
-          </AppSocketProvider>
+          {/* <AppSocketProvider> */}
+          <ChatLayout>
+            <App />
+          </ChatLayout>
+          {/* </AppSocketProvider> */}
         </ConfirmProvider>
       </ThemeProvider>
     </Provider>

@@ -20,7 +20,7 @@ const TranslatedEventCardSearchHome = (props: IEventCardSearchHome) => {
   }
 
   return (
-    <div className='p-6 min-w-[300px] h-[180px] shadow-none bg-transparent hover:cursor-pointer hover:bg-body hover:rounded-lg '>
+    <div className='p-6 min-w-[300px] h-[180px] shadow-none bg-transparent hover:cursor-pointer hover:bg-body hover:rounded-lg'>
       <h3 className='mt-0 mx-0 mb-[10px] flex items-center gap-2 text-[16px] font-semibold'>
         <p className='truncate text-header'>{event?.name}</p>
         <img

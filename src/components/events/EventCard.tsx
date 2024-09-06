@@ -31,7 +31,11 @@ export const EventCard = (props: ICard) => {
       <div className='overflow-hidden'>
         <img
           loading='lazy'
-          src={event?.coverImage}
+          src={
+            event.coverImage
+              ? event.coverImage
+              : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
+          }
           alt='No image'
           className='mx-auto h-[220px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110'
         />
