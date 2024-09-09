@@ -2,9 +2,14 @@
 import { useNavigate } from 'react-router-dom'
 
 // components
-import { Spring } from '@components/Spring'
+import Spring from '@components/Spring'
+interface IProps {
+  seller: any
+  index: number
+}
 
-export const EventAnalysisItem = ({ seller, index }: any) => {
+const EventAnalysisItem = (props: IProps) => {
+  const { seller, index } = props
   const navigate = useNavigate()
 
   const handleLogoClick = () => navigate(`123`)
@@ -27,3 +32,5 @@ export const EventAnalysisItem = ({ seller, index }: any) => {
     </Spring>
   )
 }
+
+export default EventAnalysisItem

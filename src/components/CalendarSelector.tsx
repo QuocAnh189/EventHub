@@ -7,7 +7,7 @@ interface Props {
   id: string
 }
 
-export const CalendarSelector = (props: Props) => {
+const CalendarSelector = (props: Props) => {
   const { wrapperClass, label = 'Sales period', id } = props
 
   return (
@@ -19,3 +19,5 @@ export const CalendarSelector = (props: Props) => {
     </div>
   )
 }
+
+export default CalendarSelector

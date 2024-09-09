@@ -12,7 +12,8 @@ interface Props {
   isInvalid?: any
   onChange?: () => void
 }
-export const PasswordInput = (props: Props) => {
+
+const PasswordInput = (props: Props) => {
   const { innerRef, value, id, label, isInvalid } = props
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
@@ -45,3 +46,5 @@ export const PasswordInput = (props: Props) => {
     </div>
   )
 }
+
+export default PasswordInput

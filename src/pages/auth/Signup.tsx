@@ -35,8 +35,8 @@ const SignUp = ({ t }: any) => {
   const [formDataSessionOne, setFormDataSessionOne] = useState<SignUpPayloadOne>(InitSignUpOne)
   const [formDataSessionTwo, setFormDataSessionTwo] = useState<SignUpPayloadTwo>(InitSignUpTwo)
 
-  const [showFormSessionOne, setShowFormSessionOne] = useState<boolean>(false)
-  const [showFormSessionTwo, setShowFormSessionTwo] = useState<boolean>(true)
+  const [showFormSessionOne, setShowFormSessionOne] = useState<boolean>(true)
+  const [showFormSessionTwo, setShowFormSessionTwo] = useState<boolean>(false)
 
   const nextSession = useMemo(() => {
     return () => {

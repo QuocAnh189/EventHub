@@ -1,11 +1,11 @@
 // components
-import { Spring } from './Spring'
+import Spring from './Spring'
 
 interface Props {
   text?: string
 }
 
-export const Empty = (props: Props) => {
+const Empty = (props: Props) => {
   const { text = props.text || 'Nothing found' } = props
 
   return (
@@ -14,3 +14,5 @@ export const Empty = (props: Props) => {
     </Spring>
   )
 }
+
+export default Empty

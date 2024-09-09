@@ -17,7 +17,7 @@ interface Props {
   event: IEvent
 }
 
-export const EventCardExplore = (props: Props) => {
+const EventCardExplore = (props: Props) => {
   const { event } = props
   const navigate = useNavigate()
 
@@ -76,3 +76,5 @@ export const EventCardExplore = (props: Props) => {
     </button>
   )
 }
+
+export default EventCardExplore

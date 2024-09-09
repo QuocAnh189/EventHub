@@ -1,5 +1,5 @@
 // components
-import { Spring } from '@components/index'
+import Spring from '@components/Spring'
 
 // utils
 import dayjs from 'dayjs'
@@ -34,9 +34,7 @@ const NotificationItem = (props: Props) => {
         <img src={notification.user.avatar} alt={notification.user.fullName} />
       </div>
       <div>
-        <span className='h6 !text-sm truncate max-w-[210px]'>
-          {notification.user.fullName}
-        </span>
+        <span className='h6 !text-sm truncate max-w-[210px]'>{notification.user.fullName}</span>
         <p>{notification.text}</p>
         <p className='flex items-center gap-1.5 mt-1 mb-2 text-xs font-medium text-gray'>
           <span>{dayjs(notification.timestamp).fromNow()}</span>
@@ -44,12 +42,8 @@ const NotificationItem = (props: Props) => {
           <span>{notification.subcategory}</span>
         </p>
         <div className='flex gap-2.5'>
-          <button className='btn btn--outline size-xs blue'>
-            {t('notification.accept_btn')}
-          </button>
-          <button className='btn btn--outline size-xs red'>
-            {t('notification.decline_btn')}
-          </button>
+          <button className='btn btn--outline size-xs blue'>{t('notification.accept_btn')}</button>
+          <button className='btn btn--outline size-xs red'>{t('notification.decline_btn')}</button>
         </div>
       </div>
     </Spring>

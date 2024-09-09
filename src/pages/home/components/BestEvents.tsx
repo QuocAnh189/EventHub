@@ -2,7 +2,8 @@
 import { withTranslation } from 'react-i18next'
 
 //components
-import { EventCard, Loader } from '@components/index'
+import Loader from '@components/Loader'
+import EventCard from '@components/events/EventCard'
 
 //constant
 import { EEventStatus } from '@constants/enum.constant'

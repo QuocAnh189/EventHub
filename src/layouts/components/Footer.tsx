@@ -1,5 +1,7 @@
 //images
 import logoText_Img from '@assets/images/common/logo_text.png'
+
+//i18
 import { withTranslation } from 'react-i18next'
 
 const TranslatedFooter = ({ t }: any) => {

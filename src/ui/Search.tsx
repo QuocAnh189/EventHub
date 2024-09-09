@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
-import { useTranslation } from 'react-i18next'
-import PropTypes from 'prop-types'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   placeholder?: string
@@ -35,13 +33,6 @@ const Search = (props: Props) => {
       </button>
     </div>
   )
-}
-
-Search.propTypes = {
-  placeholder: PropTypes.string,
-  query: PropTypes.string,
-  setQuery: PropTypes.func,
-  wrapperClass: PropTypes.string
 }
 
 export default Search

@@ -3,7 +3,7 @@ import Spring from '@components/Spring'
 import LabeledProgressBar from '@components/LabeledProgressBar'
 
 // utils
-import { ICategory } from 'interfaces/contents/category'
+import { ICategory } from 'interfaces/contents/category.interface'
 
 interface IProps {
   categories: ICategory[]

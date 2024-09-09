@@ -1,10 +1,4 @@
-import {
-  EEventPrivacy,
-  EEventStatus,
-  EEventStyle,
-  EEventPaymentTicket,
-  EPageOrder
-} from '@constants/enum.constant'
+import { EEventPrivacy, EEventStatus, EEventStyle, EEventPaymentTicket, EPageOrder } from '@constants/enum.constant'
 import { IPriceRange } from 'interfaces/systems/price_range.interface'
 
 export interface ICreateTicketPayload {

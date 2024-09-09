@@ -1,5 +1,5 @@
 // components
-import { Spring } from './Spring'
+import Spring from './Spring'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 import Trend from '@ui/Trend'
 import Submenu from '@ui/Submenu'
@@ -8,7 +8,6 @@ import Submenu from '@ui/Submenu'
 import { useSubmenu } from '@hooks/useSubmenu'
 
 // utils
-import PropTypes from 'prop-types'
 import { numFormatter } from '@utils/helpers'
 
 interface Props {
@@ -63,14 +62,6 @@ const RevenueInfobox = (props: Props) => {
       </Submenu>
     </Spring>
   )
-}
-
-RevenueInfobox.propTypes = {
-  icon: PropTypes.oneOf(['diamond', 'tax']),
-  color: PropTypes.string,
-  label: PropTypes.string,
-  trend: PropTypes.number,
-  value: PropTypes.number
 }
 
 export default RevenueInfobox

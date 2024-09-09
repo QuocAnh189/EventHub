@@ -1,15 +1,27 @@
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
+import { validator } from '@utils/validate-image'
+
+//components
+import { Button, Form, Input, Modal, Typography, Upload, message, notification } from 'antd'
+import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
+import PaymentMethodsList from './PaymentMethodsList'
+
+//icon
+import { AiOutlineUpload } from 'react-icons/ai'
+
+//util
+import { URLtoFile } from '@utils/url-to-upload-file'
+
+//i18
+import { withTranslation } from 'react-i18next'
+
+//interface vs type
+import { IPaymentAccount } from 'interfaces/contents/payment.interface'
+
+//redux
 import { useAppSelector } from '@hooks/useRedux'
 import { useGetPaymentMethodsQuery } from '@redux/apis/payment.api'
 import { useDeletePaymentAccountMutation, useUpdatePaymentAccountMutation } from '@redux/apis/user.api'
-import { validator } from '@utils/validate-image'
-import { Button, Form, Input, Modal, Typography, Upload, message, notification } from 'antd'
-import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
-import { IPaymentAccount } from 'interfaces/contents/payment.interface'
-import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
-import { AiOutlineUpload } from 'react-icons/ai'
-import PaymentMethodsList from './PaymentMethodsList'
-import { URLtoFile } from '@utils/url-to-upload-file'
-import { withTranslation } from 'react-i18next'
 
 export interface IPaymentAccountModalProps {
   t: any

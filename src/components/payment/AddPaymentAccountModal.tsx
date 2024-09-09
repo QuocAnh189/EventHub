@@ -1,13 +1,21 @@
+import { useState } from 'react'
+import { validator } from '@utils/validate-image'
+
+//component
+import { Button, Form, Input, Modal, Typography, Upload, message, notification } from 'antd'
+import PaymentMethodsList from './PaymentMethodsList'
+
+//icon
+import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
+import { AiOutlinePlus, AiOutlineUpload } from 'react-icons/ai'
+
+//i18
+import { withTranslation } from 'react-i18next'
+
+//redux
 import { useAppSelector } from '@hooks/useRedux'
 import { useGetPaymentMethodsQuery } from '@redux/apis/payment.api'
 import { useCreatePaymentAccountMutation } from '@redux/apis/user.api'
-import { validator } from '@utils/validate-image'
-import { Button, Form, Input, Modal, Typography, Upload, message, notification } from 'antd'
-import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
-import { useState } from 'react'
-import { AiOutlinePlus, AiOutlineUpload } from 'react-icons/ai'
-import PaymentMethodsList from './PaymentMethodsList'
-import { withTranslation } from 'react-i18next'
 
 export interface CreatePaymentAccountForm {
   methodId: string

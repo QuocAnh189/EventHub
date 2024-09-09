@@ -1,6 +1,6 @@
 //components
-import { EventCard } from '@components/index'
-import { Loader } from '@components/Loader'
+import EventCard from '@components/events/EventCard'
+import Loader from '@components/Loader'
 
 //redux
 import { useGetEventsQuery } from '@redux/apis/event.api'

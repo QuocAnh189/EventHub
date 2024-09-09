@@ -5,9 +5,9 @@ import { useForm } from 'react-hook-form'
 
 //components
 import { PageHeader } from '@layouts/components/PageHeader'
-import { EventCardExplore } from '@components/events/EventCardExplore'
+import EventCardExplore from '@components/events/EventCardExplore'
 import SidebarExplore from '@components/SidebarExplore'
-import { Loader } from '@components/Loader'
+import Loader from '@components/Loader'
 // import NotData from '@components/NotData'
 import Search from '@ui/Search'
 import Select from '@ui/Select'
@@ -37,7 +37,7 @@ const event: any = {
   }
 }
 
-const ExploreScreen = ({ t }: any) => {
+const Explore = ({ t }: any) => {
   const { watch, setValue } = useForm({
     defaultValues: initParamsEvent
   })
@@ -148,4 +148,4 @@ const ExploreScreen = ({ t }: any) => {
   )
 }
 
-export default withTranslation('explore')(ExploreScreen)
+export default withTranslation('explore')(Explore)

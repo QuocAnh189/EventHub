@@ -1,4 +1,4 @@
-export const Loader = () => {
+const Loader = () => {
   return (
     <div className='flex h-screen justify-center items-center'>
       <div className='w-[150px] h-[150px] text-accent'>
@@ -33,3 +33,5 @@ export const Loader = () => {
     </div>
   )
 }
+
+export default Loader

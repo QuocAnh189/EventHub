@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 interface Props {
   defaultChecked?: boolean
   checked?: boolean
@@ -15,13 +13,6 @@ const Switch = (props: Props) => {
       <label className='switch_slider' htmlFor={id} />
     </div>
   )
-}
-
-Switch.propTypes = {
-  checked: PropTypes.bool,
-  onChange: PropTypes.func,
-  id: PropTypes.string.isRequired,
-  defaultChecked: PropTypes.bool
 }
 
 export default Switch

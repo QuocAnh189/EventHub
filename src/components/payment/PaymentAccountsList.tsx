@@ -1,6 +1,11 @@
+//component
 import { Image, Spin } from 'antd'
-import { IPaymentAccount } from 'interfaces/contents/payment.interface'
 import AddPaymentAccountModal from './AddPaymentAccountModal'
+
+//interface
+import { IPaymentAccount } from 'interfaces/contents/payment.interface'
+
+//i18
 import { withTranslation } from 'react-i18next'
 
 export interface IPaymentAccountsListProps {

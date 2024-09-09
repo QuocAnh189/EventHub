@@ -3,7 +3,7 @@ import Spring from '@components/Spring'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
 // hooks
-import { useTheme } from '@contexts/themeContext'
+import { useTheme } from '@contexts/theme.context'
 
 // utils
 import { generateGridPoints, numFormatter } from '@utils/helpers'

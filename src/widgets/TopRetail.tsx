@@ -1,6 +1,6 @@
 // components
 import TopRetailCard from '@components/TopRetailCard'
-import { ICategory } from 'interfaces/contents/category'
+import { ICategory } from 'interfaces/contents/category.interface'
 
 interface IProps {
   categories: ICategory[]

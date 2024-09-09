@@ -12,7 +12,13 @@ const placeholder = [
   { year: 2023, customers: 12345, trend: 35, revenue: 32000 }
 ]
 
-export const StatsHighlightTable = ({ data = placeholder }) => {
+interface Props {
+  data: any
+}
+
+const StatsHighlightTable = (props: Props) => {
+  const { data = placeholder } = props
+
   const { theme } = useTheme()
 
   return (
@@ -26,7 +32,7 @@ export const StatsHighlightTable = ({ data = placeholder }) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((item, index) => (
+        {data.map((item: any, index: number) => (
           <tr className={styles.table_row} key={index}>
             <td>{item.year}</td>
             <td>{commaFormatter(item.customers)}</td>
@@ -38,3 +44,5 @@ export const StatsHighlightTable = ({ data = placeholder }) => {
     </table>
   )
 }
+
+export default StatsHighlightTable

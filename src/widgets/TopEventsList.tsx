@@ -5,16 +5,16 @@ import 'swiper/css'
 import Spring from '@components/Spring'
 import CategoryHeader from '@ui/CategoryHeader'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import ProductGridItem from '@components/EventGridItem'
+import EventGridItem from '@components/events/EventGridItem'
 import { Pagination } from 'swiper/modules'
 
 //interface
-import { ICategory } from 'interfaces/contents/category'
+import { ICategory } from 'interfaces/contents/category.interface'
 
 //redux
-import { useGetEventsQuery } from '@redux/services/eventApi'
-import { initParamsEvent } from '@type/event'
-import { IEvent } from 'interfaces/contents/event'
+import { useGetEventsQuery } from '@redux/apis/event.api'
+import { initParamsEvent } from '@type/event.type'
+import { IEvent } from 'interfaces/contents/event.interface'
 
 interface Props {
   category: ICategory
@@ -53,7 +53,7 @@ const TopEventsByCategories = (props: Props) => {
         >
           {events?.items.map((event: IEvent, index: number) => (
             <SwiperSlide className='!h-auto' key={`event-${index}`}>
-              <ProductGridItem event={event} />
+              <EventGridItem event={event} />
             </SwiperSlide>
           ))}
         </Swiper>

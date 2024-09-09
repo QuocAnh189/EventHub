@@ -33,7 +33,7 @@ interface Props {
   onChange?: any
 }
 
-export const DropFiles = (props: Props) => {
+const DropFiles = (props: Props) => {
   const { wrapperClass, type = 'image', multiple = false, children, onChange } = props
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -55,3 +55,5 @@ export const DropFiles = (props: Props) => {
     </div>
   )
 }
+
+export default DropFiles

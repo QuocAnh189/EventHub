@@ -20,7 +20,7 @@ import { ThemeContext } from './contexts/theme.context'
 
 // components
 // import MainLayout from '@layouts'
-import { Loader } from '@components/Loader'
+import Loader from '@components/Loader'
 import { ToastContainer } from 'react-toastify'
 
 //aos
@@ -36,6 +36,7 @@ const Home = lazy(() => import('@pages/home/Home'))
 const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
+const Review = lazy(() => import('@pages/review/Review'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
               <Route path='/organization/' element={<Home />} />
               <Route path='/organization/explore' element={<Explore />} />
               <Route path='/organization/event/:id' element={<EventDetail />} />
+              <Route path='/organization/review' element={<Review />} />
               <Route path='/organization/settings/profile' element={<Profile />} />
             </Route>
             <Route path='/*' element={<NotFound />} />

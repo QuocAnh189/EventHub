@@ -1,6 +1,8 @@
 // components
 import Spring from '@components/Spring'
 import LabeledProgressBar from '@components/LabeledProgressBar'
+
+//i18
 import { withTranslation } from 'react-i18next'
 
 const OrdersAverageRate = ({ t }: any) => {

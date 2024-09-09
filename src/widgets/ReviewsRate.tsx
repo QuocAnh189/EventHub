@@ -5,11 +5,11 @@ import ReviewsRateItem from '@components/ReviewsRateItem'
 // utils
 import { getPercentage } from '@utils/helpers'
 
-interface IProps {
+interface Props {
   data: any
 }
 
-const ReviewsRate = (props: IProps) => {
+const ReviewsRate = (props: Props) => {
   const { data } = props
 
   return (

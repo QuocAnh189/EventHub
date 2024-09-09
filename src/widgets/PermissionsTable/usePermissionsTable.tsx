@@ -1,4 +1,4 @@
-import { COMMAND } from '@constants/command'
+import { COMMAND } from '@constants/command.constant'
 import { Checkbox } from 'antd'
 import { AnyObject } from 'antd/es/_util/type'
 import type { ColumnsType } from 'antd/es/table/interface'

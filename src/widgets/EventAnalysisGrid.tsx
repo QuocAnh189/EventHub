@@ -7,11 +7,11 @@ import { useWindowSize } from 'react-use'
 
 // components
 import Pagination from '@ui/Pagination'
-import EventAnalysisItem from '@components/EventAnalysysItem'
+import EventAnalysisItem from '@components/events/EventAnalysisItem'
 import Search from '@ui/Search'
 
 // constants
-import { SELLER_SORT_OPTIONS } from '@constants/options'
+import { SELLER_SORT_OPTIONS } from '@constants/options.constant'
 
 // utils
 import { sortSellers } from '@utils/helpers'

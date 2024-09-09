@@ -4,13 +4,7 @@ import { animated, useSpring } from '@react-spring/web'
 // hooks
 import { useInView } from 'react-intersection-observer'
 
-export const Spring = ({
-  children,
-  index = 1,
-  className,
-  type = 'fade',
-  ...props
-}: any) => {
+const Spring = ({ children, index = 1, className, type = 'fade', ...props }: any) => {
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: true
@@ -57,13 +51,10 @@ export const Spring = ({
   }
 
   return (
-    <animated.div
-      className={className ? className : ''}
-      id={props.id}
-      style={spring[type]}
-      ref={ref}
-    >
+    <animated.div className={className ? className : ''} id={props.id} style={spring[type]} ref={ref}>
       {children}
     </animated.div>
   )
 }
+
+export default Spring

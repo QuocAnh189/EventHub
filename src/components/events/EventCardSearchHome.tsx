@@ -60,4 +60,6 @@ const TranslatedEventCardSearchHome = (props: IEventCardSearchHome) => {
   )
 }
 
-export const EventCardSearchHome = withTranslation('home')(TranslatedEventCardSearchHome)
+const EventCardSearchHome = withTranslation('home')(TranslatedEventCardSearchHome)
+
+export default EventCardSearchHome

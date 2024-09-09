@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 // hooks
 import { useAppSelector } from '@hooks/useRedux'
 import { useLayoutEffect, ReactNode } from 'react'

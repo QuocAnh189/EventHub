@@ -32,7 +32,7 @@ const MessagesPanel = (props: iMessagesPanelProps) => {
   const { t, open, onOpen, onClose } = props
   const [headerRef, { height: headerHeight }] = useMeasure()
   const [footerRef, { height: footerHeight }] = useMeasure()
-  const [filter, setFilter] = useState('all')
+  const [filter, setFilter] = useState<any>('all')
   const [displayed, setDisplayed] = useState(step)
 
   const latestMessages = messages.filter((message: any) => dayjs(message.createdAt).isAfter(dayjs().subtract(1, 'day')))

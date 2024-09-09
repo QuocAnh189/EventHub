@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 //components
 import { toast } from 'react-toastify'
-import { FormToChat } from './FormToChat'
+import FormToChat from './FormToChat'
 
 //icons
 import { FaRegCalendarAlt } from 'react-icons/fa'

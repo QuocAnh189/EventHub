@@ -1,9 +1,6 @@
 // components
 import ProgressBar from '@ui/ProgressBar'
 
-// utils
-import PropTypes from 'prop-types'
-
 interface Props {
   label: string
   value: any
@@ -25,15 +22,6 @@ const LabeledProgressBar = (props: Props) => {
       {withBar && <ProgressBar value={value} color={color} />}
     </div>
   )
-}
-
-LabeledProgressBar.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  displayValue: PropTypes.string.isRequired,
-  color: PropTypes.oneOf(['accent', 'red', 'green', 'yellow', 'header']),
-  withBar: PropTypes.bool,
-  wrapperClass: PropTypes.string
 }
 
 export default LabeledProgressBar

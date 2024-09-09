@@ -1,5 +1,10 @@
+//component
 import { Spin } from 'antd'
+
+//interfaces
 import { IPaymentMethod } from '@interfaces/contents/payment.interface'
+
+//i18
 import { withTranslation } from 'react-i18next'
 
 export interface IPaymentMethodsListProps {

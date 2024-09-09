@@ -12,7 +12,7 @@ const ConversionRate = () => {
         className='grid gap-6 md:grid-cols-[minmax(0,300px)_minmax(0,1fr)] md:gap-10 md:items-start
                  xl:grid-cols-[minmax(0,260px)_minmax(0,1fr)] 2xl:grid-cols-[minmax(0,300px)_minmax(0,1fr)]'
       >
-        <StatsHighlightTable />
+        <StatsHighlightTable data={undefined} />
         <div className='flex flex-col gap-2.5 md:flex-row md:gap-[26px] lg:justify-end'>
           <div className='flex flex-col'>
             <Counter className='h3' num={32547} />

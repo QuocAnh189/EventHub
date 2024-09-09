@@ -5,7 +5,7 @@ interface Props {
   title: string
 }
 
-export const DocumentTitle = (props: Props) => {
+const DocumentTitle = (props: Props) => {
   const { title } = props
 
   return (
@@ -14,3 +14,5 @@ export const DocumentTitle = (props: Props) => {
     </Helmet>
   )
 }
+
+export default DocumentTitle

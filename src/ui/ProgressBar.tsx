@@ -21,7 +21,6 @@ const ProgressBar = ({ value = 0, color, ...props }: any) => {
 
   useEffect(() => {
     getHex()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme])
 
   return (

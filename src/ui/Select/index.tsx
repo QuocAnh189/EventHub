@@ -5,7 +5,6 @@ import { BasicSelect, MinimalSelect } from './styles'
 import { useState } from 'react'
 
 // utils
-// import PropTypes from 'prop-types'
 import { components } from 'react-select'
 import { memo } from 'react'
 

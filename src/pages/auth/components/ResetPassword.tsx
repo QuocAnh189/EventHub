@@ -94,7 +94,7 @@ const TranslatedResetPassword = (props: SessionTwoProps) => {
         <motion.div
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.6 }}
         >
           <button className='flex w-full btn hover:bg-blue-light2 bg-blue-light2 text-white' onClick={handleSubmit}>
             {t('submit_btn')}

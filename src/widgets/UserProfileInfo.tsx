@@ -2,7 +2,7 @@
 import { useAppSelector } from '@hooks/useRedux'
 
 //Spring
-import { Spring } from '@components/Spring'
+import Spring from '@components/Spring'
 
 //i18
 import { withTranslation } from 'react-i18next'

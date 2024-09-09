@@ -1,5 +1,5 @@
 // components
-import { Spring } from '@components/Spring'
+import Spring from '@components/Spring'
 
 // utils
 import { numFormatter } from '@utils/helpers'
@@ -12,6 +12,7 @@ interface Props {
   label: string
   withCurrency: boolean
 }
+
 export const EventProfileInfobox = (props: Props) => {
   const { icon = 'diamond', color = 'accent', value = 0, label = 'Lorem', withCurrency = true } = props
   return (
@@ -34,3 +35,5 @@ export const EventProfileInfobox = (props: Props) => {
     </Spring>
   )
 }
+
+export default EventProfileInfobox

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // styling
 import { withTranslation } from 'react-i18next'
 import styles from './styles.module.scss'
@@ -8,7 +7,7 @@ interface Props {
   type?: string
   text: string
   qty: number
-  value: string
+  value: string | number | undefined
   active: string
   onClick: (value: any) => void
 }

@@ -12,7 +12,7 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import CircularProgress from '@mui/material/CircularProgress'
 
-interface DialogProps {
+interface Props {
   title: string
   description: string
   open: boolean
@@ -22,7 +22,7 @@ interface DialogProps {
   disabled?: boolean
 }
 
-export const ConfirmDialog = (props: DialogProps) => {
+const ConfirmDialog = (props: Props) => {
   const { title, description, open, setOpen, action, onHandle, disabled } = props
 
   return (
@@ -45,3 +45,5 @@ export const ConfirmDialog = (props: DialogProps) => {
     </React.Fragment>
   )
 }
+
+export default ConfirmDialog

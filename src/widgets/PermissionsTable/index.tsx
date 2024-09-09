@@ -3,7 +3,7 @@ import { IPermissionScreen } from 'interfaces/systems'
 import { toast } from 'react-toastify'
 import StyledTable from './styles'
 import usePermissionsTable from './usePermissionsTable'
-import { useUpdatePermissionMutation } from '@redux/services/permissionApi'
+import { useUpdatePermissionMutation } from '@redux/apis/permission.api'
 
 interface PermissionsTableProps {
   permissions: IPermissionScreen[]

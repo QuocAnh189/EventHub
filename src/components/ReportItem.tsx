@@ -24,7 +24,13 @@ import { commaFormatter } from '@utils/helpers'
 //   }
 // ]
 
-export const ReportItem = ({ data }: any) => {
+interface Props {
+  data: any
+}
+
+const ReportItem = (props: Props) => {
+  const { data } = props
+
   return (
     <div className='flex items-center justify-between rounded-md bg-body border p-[13px] md:py-0 md:px-[26px] md:h-[80px]'>
       <div className='flex items-center gap-3 w-[100px] md:w-[150px] 2xl:w-[100px] 4xl:w-[150px]'>
@@ -41,3 +47,5 @@ export const ReportItem = ({ data }: any) => {
     </div>
   )
 }
+
+export default ReportItem

@@ -17,7 +17,7 @@ interface Props {
   prefix?: any
 }
 
-export const Counter = (props: Props) => {
+const Counter = (props: Props) => {
   const { num, className, isFormatted, decimals, suffix, prefix } = props
 
   const [countFinished, setCountFinished] = useState(false)
@@ -46,3 +46,5 @@ export const Counter = (props: Props) => {
     </CountUp>
   )
 }
+
+export default Counter

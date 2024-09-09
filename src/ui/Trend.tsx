@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types'
-
 interface Props {
   value?: number
   wrapperClass?: string
 }
+
 const Trend = (props: Props) => {
   const { value = props.value || 0, wrapperClass } = props
   const isPositive = value > 0
@@ -21,11 +20,6 @@ const Trend = (props: Props) => {
       </span>
     </div>
   )
-}
-
-Trend.propTypes = {
-  value: PropTypes.number,
-  wrapperClass: PropTypes.string
 }
 
 export default Trend

@@ -1,4 +1,7 @@
+//interface
 import { ICategory } from 'interfaces/contents/category.interface'
+
+//i18n
 import { withTranslation } from 'react-i18next'
 
 interface Props {
@@ -22,4 +25,5 @@ const TranslatedCategoryItem = (props: Props) => {
   )
 }
 
-export const CategoryItem = withTranslation('common')(TranslatedCategoryItem)
+const CategoryItem = withTranslation('common')(TranslatedCategoryItem)
+export default CategoryItem

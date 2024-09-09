@@ -2,16 +2,17 @@
 import { useTheme } from '@contexts/theme.context'
 
 // components
-import { Spring } from './Spring'
+import Spring from './Spring'
 
 // assets
 import coin from '@assets/images/dashboard/coin.png'
 
-interface ITotalBalance {
+interface Props {
   wrapperClass?: string
   imgClass?: string
 }
-const TotalBalance = (props: ITotalBalance) => {
+
+const TotalBalance = (props: Props) => {
   const { wrapperClass, imgClass } = props
   const { theme } = useTheme()
 

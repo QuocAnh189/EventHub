@@ -8,7 +8,7 @@ import Pagination from '@ui/Pagination'
 
 // data placeholder
 // import reviews from '@db/reviews'
-import { IReview } from 'interfaces/contents/review'
+import { IReview } from 'interfaces/contents/review.interface'
 import NotData from '@components/NotData'
 import { withTranslation } from 'react-i18next'
 

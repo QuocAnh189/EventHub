@@ -13,8 +13,8 @@ import LocationEvent from '@components/Location'
 import Information from '@components/Information'
 import EventsRelate from './components/EventRelate'
 import Payment from './components/Payment'
-import { Loader } from '@components/Loader'
-import { ConfirmDialog } from '@components/Dialog'
+import Loader from '@components/Loader'
+import ConfirmDialog from '@components/Dialog'
 
 //redux
 import { useGetEventByIdQuery, useFavouriteEventMutation, useUnfavouriteEventMutation } from '@redux/apis/event.api'

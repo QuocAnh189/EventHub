@@ -1,9 +1,16 @@
-import { EPaymentStatus } from '@constants/enum.constant'
-import { useAcceptOrderMutation, useRejectOrderMutation, useUpdateOrderStatusMutation } from '@redux/apis/payment.api'
-
-import { Button, Modal, Select, notification } from 'antd'
-import { IPayment } from '@interfaces/contents/payment.interface'
 import { Dispatch, SetStateAction, useState } from 'react'
+
+//constant
+import { EPaymentStatus } from '@constants/enum.constant'
+
+//components
+import { Button, Modal, Select, notification } from 'antd'
+
+//interface
+import { IPayment } from '@interfaces/contents/payment.interface'
+
+//redux
+import { useAcceptOrderMutation, useRejectOrderMutation, useUpdateOrderStatusMutation } from '@redux/apis/payment.api'
 
 export interface IStatusModalProps {
   isModalOpen: boolean

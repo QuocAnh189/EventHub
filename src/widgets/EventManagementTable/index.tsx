@@ -5,7 +5,7 @@ import { usePagination } from '@hooks/usePagination'
 // components
 import FilterItem from '@ui/FilterItem'
 import Select from '@ui/Select'
-import CardMyEvent from '@components/event/CardMyEvent'
+import CardMyEvent from '@components/events/CardMyEvent'
 import Pagination from '@ui/Pagination'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -21,22 +21,23 @@ import {
   EVENT_SELLER_OPTIONS,
   EVENT_SELECT_OPTIONS,
   IOptionSelect
-} from '@constants/options'
-import { EEventAction, EEventPrivacy } from '@constants/enum'
+} from '@constants/options.constant'
+import { EEventAction, EEventPrivacy } from '@constants/enum.constant'
 
 // data placeholder
 import { useAppSelector } from '@hooks/useRedux'
 
 // interface
-import { IEvent } from 'interfaces/contents/event'
-import { ICategory } from 'interfaces/contents/category'
+import { IEvent } from 'interfaces/contents/event.interface'
+import { ICategory } from 'interfaces/contents/category.interface'
 
 //component
-import { Loader } from '@components/Loader'
+import Loader from '@components/Loader'
+import { toast } from 'react-toastify'
 
 // types
-import { IFilterEvent, IMetadataEventReponse, IParamsEvent } from '@type/event'
-import { initFilterEvent, initParamsMyEvent } from '@type/event'
+import { IFilterEvent, IMetadataEventResponse, IParamsEvent } from '@type/event.type'
+import { initFilterEvent, initParamsMyEvent } from '@type/event.type'
 
 //redux
 import { RootState } from '@redux/store'
@@ -44,9 +45,10 @@ import {
   useMoveEventPublicMutation,
   useMoveEventPrivateMutation,
   useMoveEventTrashMutation
-} from '@redux/services/eventApi'
-import { useGetEventsByUserIdQuery } from '@redux/services/userApi'
-import { toast } from 'react-toastify'
+} from '@redux/apis/event.api'
+import { useGetEventsByUserIdQuery } from '@redux/apis/user.api'
+
+//i18
 import { withTranslation } from 'react-i18next'
 
 const EventManagement = ({ t }: any) => {
@@ -59,7 +61,7 @@ const EventManagement = ({ t }: any) => {
   const [movePrivateEvent, { isLoading: loadingPrivate }] = useMoveEventPrivateMutation()
   const [moveTrashEvent, { isLoading: loadingTrash }] = useMoveEventTrashMutation()
 
-  const [metadata, setMetadata] = useState<IMetadataEventReponse>()
+  const [metadata, setMetadata] = useState<IMetadataEventResponse>()
   const [events, setEvents] = useState<IEvent[]>([])
   const [category, setCategory] = useState<EEventPrivacy>(EEventPrivacy.ALL)
 
@@ -67,7 +69,7 @@ const EventManagement = ({ t }: any) => {
   const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [filters, setFilters] = useState<IFilterEvent>(initFilterEvent)
   const [selectedAction, setSelectedAction] = useState<EEventAction>()
-  const [eventIds, setEventIds] = useState<string[]>([])
+  const [eventIds, setEventIds] = useState<any>([])
 
   const {
     data,
@@ -107,7 +109,7 @@ const EventManagement = ({ t }: any) => {
     setEventIds(checkedAll ? events.map((item) => item.id) : [])
   }, [checkedAll])
 
-  const getQty = (category: string) => {
+  const getQty = (category: any) => {
     switch (category) {
       case 'ALL':
         return metadata?.totalCount
@@ -156,7 +158,7 @@ const EventManagement = ({ t }: any) => {
 
   const handleChecked = (id: string) => {
     if (eventIds.includes(id)) {
-      const newEventIds = eventIds.filter((eventId) => eventId !== id)
+      const newEventIds = eventIds.filter((eventId: string) => eventId !== id)
       setEventIds(newEventIds)
     } else {
       setEventIds([...eventIds, id])

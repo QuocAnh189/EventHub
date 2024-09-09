@@ -1,10 +1,15 @@
-//component
-import { AppSocketContext } from '@contexts/socket.context'
-import FormControl from '@mui/material/FormControl'
-import classNames from 'classnames'
 import { useContext } from 'react'
 
-interface IPropsFormToChat {
+//component
+import FormControl from '@mui/material/FormControl'
+
+//context
+import { AppSocketContext } from '@contexts/socket.context'
+
+//util
+import classNames from 'classnames'
+
+interface Props {
   userId: string
   eventId: string
   hostId: string
@@ -13,7 +18,7 @@ interface IPropsFormToChat {
   userFullName: string
 }
 
-export const FormToChat = (props: IPropsFormToChat) => {
+const FormToChat = (props: Props) => {
   const { userId, eventId, hostId, eventName, userEmail, userFullName } = props
 
   const { handleJoinChatRoom } = useContext(AppSocketContext)
@@ -73,3 +78,5 @@ export const FormToChat = (props: IPropsFormToChat) => {
     </div>
   )
 }
+
+export default FormToChat

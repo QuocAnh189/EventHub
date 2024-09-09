@@ -3,7 +3,7 @@ import Spring from '@components/Spring'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
 // hooks
-import { useTheme } from '@contexts/themeContext'
+import { useTheme } from '@contexts/theme.context'
 import { useWindowSize } from 'react-use'
 import { numFormatter } from '@utils/helpers'
 

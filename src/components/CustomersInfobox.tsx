@@ -1,6 +1,8 @@
 // components
-import { Spring } from './Spring'
-import { Counter } from './Counter'
+import Spring from './Spring'
+import Counter from './Counter'
+
+//i18
 import { withTranslation } from 'react-i18next'
 
 interface Props {
@@ -31,4 +33,5 @@ const TranslatedCustomersInfobox = (props: Props) => {
   )
 }
 
-export const CustomersInfobox = withTranslation('review')(TranslatedCustomersInfobox)
+const CustomersInfobox = withTranslation('review')(TranslatedCustomersInfobox)
+export default CustomersInfobox

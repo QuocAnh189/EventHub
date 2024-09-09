@@ -10,7 +10,7 @@ interface Props {
   handleCollapse?: any
 }
 
-export const EventManagementCollapseItem = (props: Props) => {
+const EventManagementCollapseItem = (props: Props) => {
   const { product, activeCollapse, handleCollapse } = props
   const { stock } = product
 
@@ -89,3 +89,5 @@ export const EventManagementCollapseItem = (props: Props) => {
     </div>
   )
 }
+
+export default EventManagementCollapseItem

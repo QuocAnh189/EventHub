@@ -1,8 +1,10 @@
+//interface
 import { ICategory } from 'interfaces/contents/category.interface'
 
 interface Props {
   category: ICategory
 }
+
 const CategoryHeader = (props: Props) => {
   const { category } = props
 

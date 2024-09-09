@@ -40,7 +40,7 @@ const ConversionRateWithChart = () => {
       </div>
       <div className='md:grid grid-cols-[minmax(0,300px)_,minmax(0,1fr)] items-center lg:grid-cols-1 xl:grid-cols-[minmax(0,300px)_,minmax(0,1fr)]'>
         <div className='flex flex-col gap-4 md:gap-8'>
-          <StatsHighlightTable />
+          <StatsHighlightTable data={undefined} />
           <div className='flex flex-col gap-3 xs:flex-row xs:gap-5 md:gap-[28px]'>
             <div className='flex flex-col'>
               <Counter className='h3' num={32547} />

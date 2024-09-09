@@ -1,11 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 //hook
 import { useEffect, useState } from 'react'
+
+//component
+import Loader from './Loader'
 
 //map
 import { setLanguage, setRegion, setKey, fromAddress } from 'react-geocode'
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api'
-import { Loader } from './Loader'
 
 setKey(import.meta.env.VITE_MAP_API_KEY)
 setLanguage('en')

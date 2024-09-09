@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 //hook
 import { useEffect, useState } from 'react'
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
@@ -10,7 +9,7 @@ import FormGroup from '@mui/material/FormGroup'
 import Divider from '@mui/material/Divider'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
-import { CategoryItem } from './CategoryItem'
+import CategoryItem from './CategoryItem'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'

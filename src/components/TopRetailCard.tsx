@@ -1,12 +1,12 @@
 // components
+import Spring from './Spring'
 import { ICategory } from 'interfaces/contents/category.interface'
-import { Spring } from './Spring'
 
-interface IProps {
+interface Props {
   category: ICategory
 }
 
-const TopRetailCard = (props: IProps) => {
+const TopRetailCard = (props: Props) => {
   const { category } = props
 
   return (

@@ -4,6 +4,7 @@ interface Props {
   date: any
   wrapperClass?: string
 }
+
 const Timestamp = (props: Props) => {
   const { date, wrapperClass } = props
 

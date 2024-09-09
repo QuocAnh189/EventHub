@@ -5,7 +5,7 @@ import { useAppDispatch } from '@hooks/useRedux'
 import { UseFormSetValue } from 'react-hook-form'
 
 // components
-import { Spring } from '@components/Spring'
+import Spring from '@components/Spring'
 
 //redux
 import { useSignOutMutation } from '@redux/apis/auth.api'

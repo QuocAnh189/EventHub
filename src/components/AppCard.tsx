@@ -1,12 +1,18 @@
 // components
-import { Spring } from './Spring'
+import Spring from './Spring'
 import Switch from '@ui/Switch'
 import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 
 // hooks
 import useMeasure from 'react-use-measure'
 
-export const AppCard = ({ app, index }: any) => {
+interface Props {
+  app: any
+  index: number
+}
+const AppCard = (props: Props) => {
+  const { app, index } = props
+
   const [titleRef, { width: titleWidth }] = useMeasure()
   const [descriptionRef, { width: descriptionWidth }] = useMeasure()
 
@@ -37,3 +43,5 @@ export const AppCard = ({ app, index }: any) => {
     </Spring>
   )
 }
+
+export default AppCard

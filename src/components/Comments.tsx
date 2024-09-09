@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider'
 import TextField from '@mui/material/TextField'
 import CircularProgress from '@mui/material/CircularProgress'
 import Pagination from '@ui/Pagination'
-import { ConfirmDialog } from './Dialog'
+import ConfirmDialog from './Dialog'
 
 //icons
 import { MdStarRate } from 'react-icons/md'
@@ -28,12 +28,12 @@ import dayjs from 'dayjs'
 //assets
 import userDefault from '@assets/images/common/user_default.png'
 
-interface ItemReviewsProps {
+interface Props {
   eventId: string
   ownerId: string
 }
 
-const ItemReviews = (props: ItemReviewsProps) => {
+const ItemReviews = (props: Props) => {
   const { eventId, ownerId } = props
 
   const user = useAppSelector((state) => state.persistedReducer.user.user)
@@ -120,7 +120,7 @@ const ItemReviews = (props: ItemReviewsProps) => {
           title='Delete Comment'
           description='Do you want to delete this message'
           open={openDialog}
-          setOpen={(value) => {
+          setOpen={(value: any) => {
             setOpenDialog(value)
           }}
           action='Ok'

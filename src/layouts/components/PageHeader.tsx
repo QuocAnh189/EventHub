@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useWindowSize } from 'react-use'
 
 // components
-import { DocumentTitle } from '@components/DocumentTitle'
+import DocumentTitle from '@components/DocumentTitle'
 
 // utils
 import dayjs from 'dayjs'

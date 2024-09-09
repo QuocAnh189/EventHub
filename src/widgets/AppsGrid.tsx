@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react'
 import { usePagination } from '@hooks/usePagination'
 
 // constants
-import { APPS_OPTIONS } from '@constants/options'
+import { APPS_OPTIONS } from '@constants/options.constant'
 
 // data placeholder
 import apps from '@db/apps'
@@ -19,7 +19,7 @@ const AppsGrid = () => {
   const [query, setQuery] = useState<string>('')
   const [category, setCategory] = useState<string>('all')
 
-  const getQty = (category: string) => {
+  const getQty = (category: any) => {
     if (category === 'all') return apps.length
     return apps.filter((app) => app.categories.includes(category)).length
   }
@@ -35,7 +35,6 @@ const AppsGrid = () => {
 
   useEffect(() => {
     pagination.goToPage(0)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, category])
 
   return (

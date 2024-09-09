@@ -1,32 +1,34 @@
 // hooks
+import { useState, useEffect } from 'react'
 import { useTheme } from '@contexts/theme.context'
 import { useWindowSize } from 'react-use'
 import useMeasure from 'react-use-measure'
-import { useState, useEffect } from 'react'
 
 // components
+import Spring from './Spring'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 import RatingStars from '@ui/RatingStars'
 import Timestamp from '@ui/Timestamp'
 import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
-import { Spring } from './Spring'
 import ModalBase from '@ui/ModalBase'
+
+// interfaces vs types
+import { IReview } from 'interfaces/contents/review.interface'
 
 // utils
 import dayjs from 'dayjs'
-import { IReview } from 'interfaces/contents/review.interface'
 
 //assets
-import userDefault from '@assets/common/user_default.png'
+import userDefault from '@assets/images/common/user_default.png'
 
-interface IUserProps {
+interface UserProps {
   userName: string
   userAvatar: string
   email: string
   wrapperClass: string
 }
 
-const User = (props: IUserProps) => {
+const User = (props: UserProps) => {
   const { userName, userAvatar, email, wrapperClass } = props
 
   return (
@@ -76,12 +78,12 @@ const EventModal = (props: IEventProps) => {
   )
 }
 
-interface IProps {
+interface Props {
   review: IReview
   index: number
 }
 
-export const Review = (props: IProps) => {
+const Review = (props: Props) => {
   const { index, review } = props
 
   const { theme } = useTheme()
@@ -171,3 +173,5 @@ export const Review = (props: IProps) => {
     </Spring>
   )
 }
+
+export default Review

@@ -14,7 +14,7 @@ interface ICard {
   event: IEvent
 }
 
-export const EventCard = (props: ICard) => {
+const EventCard = (props: ICard) => {
   const { event } = props
 
   const navigate = useNavigate()
@@ -70,3 +70,5 @@ export const EventCard = (props: ICard) => {
     </div>
   )
 }
+
+export default EventCard

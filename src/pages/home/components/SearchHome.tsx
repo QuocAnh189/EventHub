@@ -7,7 +7,9 @@ import { NavigateFunction, useNavigate } from 'react-router-dom'
 import { withTranslation } from 'react-i18next'
 
 //component
-import { EventCardSearchHome, Loader } from '@components/index'
+import EventCardSearchHome from '@components/events/EventCardSearchHome'
+import Loader from '@components/Loader'
+
 import Select from '@ui/Select'
 
 //assets

@@ -1,8 +1,8 @@
 import { ReactElement } from 'react'
 
 // components
-import { Spring } from '@components/index'
-import { Counter } from './Counter'
+import Spring from './Spring'
+import Counter from './Counter'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 import { withTranslation } from 'react-i18next'
 

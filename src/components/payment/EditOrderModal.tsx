@@ -1,8 +1,14 @@
-import { useUpdatePaymentMutation } from '@redux/apis/payment.api'
-import { UpdateOrderPayload } from '@type/payment.type'
-import { Button, Form, Input, Modal, notification } from 'antd'
-import { IPayment } from 'interfaces/contents/payment.interface'
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
+
+//components
+import { Button, Form, Input, Modal, notification } from 'antd'
+
+//type vs interface
+import { UpdateOrderPayload } from '@type/payment.type'
+import { IPayment } from 'interfaces/contents/payment.interface'
+
+//redux
+import { useUpdatePaymentMutation } from '@redux/apis/payment.api'
 
 export interface IEditOrderModalProps {
   isModalOpen: boolean
@@ -16,7 +22,7 @@ export interface UpdateOrderForm {
   customerPhone: string
 }
 
-export function EditOrderModal({ isModalOpen, setIsModalOpen, order }: IEditOrderModalProps) {
+const EditOrderModal = ({ isModalOpen, setIsModalOpen, order }: IEditOrderModalProps) => {
   const [updatePayment, { isLoading: updatePaymentLoading }] = useUpdatePaymentMutation()
 
   const [form] = Form.useForm<UpdateOrderForm>()
@@ -81,7 +87,7 @@ export function EditOrderModal({ isModalOpen, setIsModalOpen, order }: IEditOrde
             { type: 'email', message: 'Email is invalid format' }
           ]}
         >
-          <Input placeholder='Enter your emaill address' />
+          <Input placeholder='Enter your email address' />
         </Form.Item>
         <Form.Item
           name='customerPhone'
@@ -102,3 +108,5 @@ export function EditOrderModal({ isModalOpen, setIsModalOpen, order }: IEditOrde
     </Modal>
   )
 }
+
+export default EditOrderModal

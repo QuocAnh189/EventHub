@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 //hook
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -162,4 +160,5 @@ const TranslatedEventInformation = (props: Props) => {
   )
 }
 
-export const EventInformation = withTranslation('event')(TranslatedEventInformation)
+const EventInformation = withTranslation('event')(TranslatedEventInformation)
+export default EventInformation

@@ -7,7 +7,7 @@ interface IProps {
   event: IEvent
 }
 
-export const EventGridItem = (props: IProps) => {
+const EventGridItem = (props: IProps) => {
   const { event } = props
 
   return (
@@ -24,9 +24,11 @@ export const EventGridItem = (props: IProps) => {
           Sales : {event.numberOfSoldTickets || 0}
         </p>
         <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
-          Favorite : {event.numberOfFavorites || 0}
+          Favorite : {event.numberOfFavourites || 0}
         </p>
       </div>
     </NavLink>
   )
 }
+
+export default EventGridItem

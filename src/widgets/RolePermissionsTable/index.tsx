@@ -1,9 +1,14 @@
-import Empty from '@components/Empty'
-import { IFunction, IRolePermission } from 'interfaces/systems'
+//components
 import { toast } from 'react-toastify'
-import StyledTable from './styles'
 import useRolePermissionsTable from './useRolePermissionsTable'
-import { useUpdatePermissionByRoleMutation } from '@redux/services/permissionApi'
+import Empty from '@components/Empty'
+import StyledTable from './styles'
+
+//interface
+import { IFunction, IRolePermission } from 'interfaces/systems'
+
+//redux
+import { useUpdatePermissionByRoleMutation } from '@redux/apis/permission.api'
 
 interface PermissionsTableProps {
   permissions: IRolePermission[]

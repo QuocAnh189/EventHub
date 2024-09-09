@@ -2,7 +2,7 @@
 import { useTheme } from '@contexts/theme.context'
 
 // components
-import { Spring } from './Spring'
+import Spring from './Spring'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
 // utils
@@ -15,7 +15,7 @@ const data = [
   { name: 'Q4', a: 10455, b: 12584, trend: 50.14 }
 ]
 
-export const SalesVolumeChart = () => {
+const SalesVolumeChart = () => {
   const { theme } = useTheme()
   const gridPoints = generateGridPoints(40, 'x')
 
@@ -85,3 +85,5 @@ export const SalesVolumeChart = () => {
     </Spring>
   )
 }
+
+export default SalesVolumeChart
