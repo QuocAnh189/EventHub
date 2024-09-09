@@ -1,4 +1,9 @@
-export const BannerPic = ({ img }: any) => {
+interface Props {
+  img: string
+}
+
+export const BannerPic = (props: Props) => {
+  const { img } = props
   const bgImage = {
     backgroundImage: `url(${img})`,
     backgroundSize: 'cover',

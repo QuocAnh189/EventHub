@@ -1,8 +1,10 @@
+//components
+import UserFeedback from '@components/UserFeedback'
+
 //images
 import fourPeopleImg from '@assets/images/landing/four_people.webp'
 import bgPurpleImg from '@assets/images/landing/bg_gradient.webp'
 import joyWorkImg from '@assets/images/landing/joy_work.webp'
-import UserFeedback from '@components/UserFeedback'
 
 const feedbacks = [
   {

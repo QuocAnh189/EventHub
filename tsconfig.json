@@ -39,7 +39,8 @@
       "@ui/*": ["ui/*"],
       "@utils/*": ["utils/*"],
       "@widgets/*": ["widgets/*"]
-    }
+    },
+    "types": ["vite-plugin-svgr/client"]
   },
   "include": ["src", "custom.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

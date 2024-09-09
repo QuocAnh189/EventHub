@@ -1,14 +1,14 @@
 //hook
 import { useState, useRef } from 'react'
 
-// motion
+//motion
 import { motion } from 'framer-motion'
 
-// icons
+//icons
 import { AiFillEye } from 'react-icons/ai'
 import { AiFillEyeInvisible } from 'react-icons/ai'
 
-// type
+//i18n
 import { withTranslation } from 'react-i18next'
 
 //util

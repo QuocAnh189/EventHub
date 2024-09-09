@@ -1,6 +1,8 @@
+//layout
+import { Footer } from '@layouts/components'
+
 //components
 import { Navbar, Intro, Manage, AutomaticRun, Feedback, Contact } from './components'
-import { Footer } from '@layouts/components'
 
 const Landing = () => {
   return (

@@ -15,10 +15,12 @@ import { AiFillEyeInvisible } from 'react-icons/ai'
 
 // type
 import { SignUpPayloadTwo } from '@type/auth.type'
-import { withTranslation } from 'react-i18next'
 
 //util
 import classNames from 'classnames'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 interface SessionTwoProps {
   t: any

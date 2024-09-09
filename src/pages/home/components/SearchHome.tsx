@@ -3,13 +3,9 @@ import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 
-//i18
-import { withTranslation } from 'react-i18next'
-
 //component
 import EventCardSearchHome from '@components/events/EventCardSearchHome'
 import Loader from '@components/Loader'
-
 import Select from '@ui/Select'
 
 //assets
@@ -29,6 +25,9 @@ import { ICategory } from '@interfaces/contents'
 
 // utils
 import classNames from 'classnames'
+
+//i18
+import { withTranslation } from 'react-i18next'
 
 const initParam = {
   search: '',
@@ -142,7 +141,7 @@ const TranslatedSearchHome = ({ t }: any) => {
           </form>
           <div className='relative w-full h-full m-auto rounded-[10px] pb-5'>
             {isFetching ? (
-              <div className='w-full h-full flex items-center justify-center'>
+              <div className='w-full h-80 flex items-center justify-center'>
                 <Loader />
               </div>
             ) : (

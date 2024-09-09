@@ -1,11 +1,17 @@
 //hook
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 
+//component
+import Select from '@ui/Select'
+
+//constants
+import { EVENT_CATEGORIES, EVENT_RATE_OPTIONS, EVENT_STATUS_OPTIONS } from '@constants/options.constant'
+
 //redux
 import { IParamsEvent } from '@type/event.type'
+
+//i18
 import { withTranslation } from 'react-i18next'
-import Select from '@ui/Select'
-import { EVENT_CATEGORIES, EVENT_RATE_OPTIONS, EVENT_STATUS_OPTIONS } from '@constants/options.constant'
 
 interface Props {
   t: any

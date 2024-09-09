@@ -2,9 +2,6 @@
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-//Hoc
-import { withTranslation } from 'react-i18next'
-
 // components
 import { PageHeader } from '@layouts/components/PageHeader'
 import UserProfileCard from '@widgets/UserProfileCard'
@@ -25,6 +22,9 @@ import dayjs from 'dayjs'
 
 //interface
 import { IUser } from '@interfaces/systems/user.interface'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 const Profile = ({ t }: any) => {
   const dispatch = useAppDispatch()

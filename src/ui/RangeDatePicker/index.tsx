@@ -11,7 +11,7 @@ interface Props {
   id: string
   value: any
   onChange: any
-  innerRef: any
+  innerRef?: any
   disableFuture?: boolean
 }
 

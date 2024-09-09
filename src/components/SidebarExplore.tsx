@@ -11,11 +11,15 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import CategoryItem from './CategoryItem'
 
+//interface
+import { ICategory } from '@interfaces/contents'
+
 //redux
 import { useAppSelector } from '@hooks/useRedux'
 import { IParamsEvent } from '@type/event.type'
+
+//i18
 import { withTranslation } from 'react-i18next'
-import { ICategory } from '@interfaces/contents'
 
 interface Props {
   t: any

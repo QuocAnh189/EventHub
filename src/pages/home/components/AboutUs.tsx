@@ -1,4 +1,4 @@
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const TranslatedAboutUs = ({ t }: any) => {

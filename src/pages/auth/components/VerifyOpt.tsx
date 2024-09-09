@@ -3,10 +3,12 @@ import { useState } from 'react'
 
 // motion
 import { motion } from 'framer-motion'
-import { withTranslation } from 'react-i18next'
 
 //util
 import classNames from 'classnames'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 interface Props {
   t: any

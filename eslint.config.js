@@ -24,7 +24,8 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-expressions': 'off',
       'react-hooks/exhaustive-deps': 'off',
       'react-refresh/only-export-components': 'off',
-      '@typescript-eslint/no-non-null-asserted-optional-chain': 'off'
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
+      'no-useless-escape': 'off'
     }
   }
 )

@@ -1,8 +1,8 @@
-// components
-import { toast } from 'react-toastify'
-
 // hooks
 import { useDropzone } from 'react-dropzone'
+
+// components
+import { toast } from 'react-toastify'
 
 // utils
 import classNames from 'classnames'

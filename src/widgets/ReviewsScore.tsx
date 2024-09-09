@@ -2,6 +2,8 @@
 import Spring from '@components/Spring'
 import RatingStars from '@ui/RatingStars'
 import Counter from '@components/Counter'
+
+//i18n
 import { withTranslation } from 'react-i18next'
 
 interface Props {

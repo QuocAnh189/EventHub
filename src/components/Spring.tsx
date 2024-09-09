@@ -1,8 +1,8 @@
-// components
-import { animated, useSpring } from '@react-spring/web'
-
 // hooks
 import { useInView } from 'react-intersection-observer'
+
+// components
+import { animated, useSpring } from '@react-spring/web'
 
 const Spring = ({ children, index = 1, className, type = 'fade', ...props }: any) => {
   const [ref, inView] = useInView({

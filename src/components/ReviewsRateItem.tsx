@@ -15,9 +15,9 @@ const ReviewsRateItem = (props: Props) => {
         {rate} <i className='icon-star-solid text-yellow' />
       </span>
       <div className='flex-1'>
-        <ProgressBar value={value} color='yellow' />
+        <ProgressBar value={value || 0} color='yellow' />
       </div>
-      <span className='!text-header label-text w-[42px] text-right'>{value}%</span>
+      <span className='!text-header label-text w-[42px] text-right'>{value || 0}%</span>
     </div>
   )
 }

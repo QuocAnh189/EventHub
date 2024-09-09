@@ -1,5 +1,7 @@
 // components
 import Spring from './Spring'
+
+//interface
 import { ICategory } from 'interfaces/contents/category.interface'
 
 interface Props {

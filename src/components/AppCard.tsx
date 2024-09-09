@@ -1,7 +1,9 @@
+//layout
+import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
+
 // components
 import Spring from './Spring'
 import Switch from '@ui/Switch'
-import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 
 // hooks
 import useMeasure from 'react-use-measure'
@@ -10,6 +12,7 @@ interface Props {
   app: any
   index: number
 }
+
 const AppCard = (props: Props) => {
   const { app, index } = props
 

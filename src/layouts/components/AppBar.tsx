@@ -1,12 +1,11 @@
 // hooks
-import { ThemeContext } from '@contexts/theme.context'
 import { useSidebar } from '@contexts/sidebar.context'
 import { useWindowSize } from 'react-use'
 import { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-//i18
-import { useTranslation, withTranslation } from 'react-i18next'
+//context
+import { ThemeContext } from '@contexts/theme.context'
 
 // components
 import Headroom from 'react-headroom'
@@ -22,6 +21,9 @@ import { useAppSelector } from '@hooks/useRedux'
 
 //assets
 import useDefault from '@assets/images/common/user_default.png'
+
+//i18
+import { useTranslation, withTranslation } from 'react-i18next'
 
 interface Props {
   active: string

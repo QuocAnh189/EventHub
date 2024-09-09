@@ -20,14 +20,16 @@ import facebookIcon from '@assets/images/icons/facebook.png'
 import { LoginPayload, InitLogin, EProvider } from '@type/auth.type'
 
 //redux
+import { RootState } from '@redux/store'
 import { useAppDispatch, useAppSelector } from '@hooks/index'
 import { useSignInMutation, useSignInExternalMutation } from '@redux/apis/auth.api'
 import { setUser } from '@redux/slices/user.slice'
 
 //motion
 import { motion } from 'framer-motion'
+
+//i18n
 import { withTranslation } from 'react-i18next'
-import { RootState } from '@redux/store'
 
 // utils
 import classNames from 'classnames'

@@ -1,11 +1,12 @@
-// components
+//hooks
+import { useState } from 'react'
+
+//components
 import CountUp from 'react-countup'
 import VisibilitySensor from 'react-visibility-sensor'
 
-// hooks
-import { useState } from 'react'
-
-// utils
+//utils
+import PropTypes from 'prop-types'
 import { numFormatter, commaFormatter } from '@utils/helpers'
 
 interface Props {
@@ -45,6 +46,11 @@ const Counter = (props: Props) => {
       )}
     </CountUp>
   )
+}
+
+Counter.propTypes = {
+  num: PropTypes.number.isRequired,
+  className: PropTypes.string
 }
 
 export default Counter

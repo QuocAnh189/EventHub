@@ -2,6 +2,9 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+//component
+import FormToChat from '../FormToChat'
+
 //icons
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { IoLocationOutline } from 'react-icons/io5'
@@ -21,7 +24,6 @@ import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { useFollowUserMutation, useUnfollowUserMutation } from '@redux/apis/user.api'
 import { toast } from 'react-toastify'
 import { setUser } from '@redux/slices/user.slice'
-import { FormToChat } from '../FormToChat'
 
 //i18
 import { withTranslation } from 'react-i18next'

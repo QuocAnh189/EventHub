@@ -1,21 +1,23 @@
-// hooks
+//hooks
 import { useState, useEffect } from 'react'
 import { useTheme } from '@contexts/theme.context'
 import { useWindowSize } from 'react-use'
 import useMeasure from 'react-use-measure'
 
-// components
+//layout
+import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
+
+//components
 import Spring from './Spring'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 import RatingStars from '@ui/RatingStars'
 import Timestamp from '@ui/Timestamp'
-import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 import ModalBase from '@ui/ModalBase'
 
-// interfaces vs types
+//interfaces
 import { IReview } from 'interfaces/contents/review.interface'
 
-// utils
+//utils
 import dayjs from 'dayjs'
 
 //assets

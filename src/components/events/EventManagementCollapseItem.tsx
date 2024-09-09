@@ -1,6 +1,6 @@
 // components
-import Collapse from '@mui/material/Collapse'
 import { NavLink } from 'react-router-dom'
+import Collapse from '@mui/material/Collapse'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 import { Checkbox } from 'antd'
 

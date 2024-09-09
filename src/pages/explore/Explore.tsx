@@ -5,13 +5,14 @@ import { useForm } from 'react-hook-form'
 
 //components
 import { PageHeader } from '@layouts/components/PageHeader'
-import EventCardExplore from '@components/events/EventCardExplore'
-import SidebarExplore from '@components/SidebarExplore'
 import Loader from '@components/Loader'
 // import NotData from '@components/NotData'
 import Search from '@ui/Search'
 import Select from '@ui/Select'
 import Pagination from '@ui/Pagination'
+import SidebarExplore from '@components/SidebarExplore'
+import EventCardExplore from '@components/events/EventCardExplore'
+import SideBarExploreResponsive from '@components/SideBarExploreResponsive'
 
 //redux
 import { useGetEventsQuery } from '@redux/apis/event.api'
@@ -22,7 +23,6 @@ import { IEvent } from '@interfaces/contents/event.interface'
 
 //i18
 import { withTranslation } from 'react-i18next'
-import SideBarExploreResponsive from '@components/SideBarExploreResponsive'
 
 const event: any = {
   coverImage: null,

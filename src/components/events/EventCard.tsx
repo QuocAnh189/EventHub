@@ -1,6 +1,9 @@
 //hook
 import { useNavigate } from 'react-router-dom'
 
+//constant
+import { EEventPaymentTicket } from '@constants/enum.constant'
+
 //icon
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
@@ -8,13 +11,12 @@ import { IEvent } from 'interfaces/contents/event.interface'
 
 //util
 import dayjs from 'dayjs'
-import { EEventPaymentTicket } from '@constants/enum.constant'
 
-interface ICard {
+interface Props {
   event: IEvent
 }
 
-const EventCard = (props: ICard) => {
+const EventCard = (props: Props) => {
   const { event } = props
 
   const navigate = useNavigate()

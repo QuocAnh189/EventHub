@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 
 //layout
 import ProtectedLayout from '@layouts/protected'
-
-// components
 import { PageHeader } from '@layouts/components/PageHeader'
+
+//components
 import CustomersInfobox from '@components/CustomersInfobox'
 import ReviewsRate from '@widgets/ReviewsRate'
 import LatestAcceptedReviews from '@widgets/LatestAcceptedReviews'
@@ -84,7 +84,8 @@ const Review = ({ t }: any) => {
           </div>
           <ReviewsRate data={dataPercent} />
         </div>
-        {reviews && <LatestAcceptedReviews reviews={reviews!} total={metaData?.totalCount!} />}
+        {/* {reviews && <LatestAcceptedReviews reviews={reviews!} total={metaData?.totalCount!} />} */}
+        {<LatestAcceptedReviews reviews={reviews!} total={metaData?.totalCount!} />}
       </div>
     </ProtectedLayout>
   )

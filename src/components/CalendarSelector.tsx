@@ -15,7 +15,7 @@ const CalendarSelector = (props: Props) => {
       <label className='h5 w-fit' htmlFor={id}>
         {label}:
       </label>
-      <RangeDatePicker id={id} />
+      <RangeDatePicker id={id} value={10} onChange={() => {}} />
     </div>
   )
 }

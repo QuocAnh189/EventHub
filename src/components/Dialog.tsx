@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 //hook
 import React from 'react'
 

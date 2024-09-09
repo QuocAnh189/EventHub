@@ -3,18 +3,17 @@ import { useState } from 'react'
 import { useWindowSize } from 'react-use'
 
 // components
-import { FormForgotPassword, FormSignIn, VerifyOpt } from './components'
-
-// assets
-import authImg from '@assets/images/auth/bg_auth.png'
-import logoText_Img from '@assets/images/common/logo_text.png'
+import { FormForgotPassword, FormSignIn, VerifyOpt, ResetPassword } from './components'
 
 //motion
 import { motion } from 'framer-motion'
 
 //i18
 import { withTranslation } from 'react-i18next'
-import { ResetPassword } from './components/ResetPassword'
+
+// assets
+import authImg from '@assets/images/auth/bg_auth.png'
+import logoText_Img from '@assets/images/common/logo_text.png'
 
 const initSession = {
   'sign-in': false,

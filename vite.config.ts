@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import svgrPlugin from 'vite-plugin-svgr'
+import vitePluginSvgr from 'vite-plugin-svgr'
+import svgr from '@svgr/rollup'
 import macrosPlugin from 'vite-plugin-babel-macros'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), svgrPlugin(), macrosPlugin()],
+  plugins: [react(), vitePluginSvgr(), svgr({ dimensions: false, svgo: false, typescript: true }), macrosPlugin()],
   define: {
     'process.env': process.env
   },
@@ -33,5 +34,8 @@ export default defineConfig({
       '@utils': '/src/utils',
       '@widgets': '/src/widgets'
     }
+  },
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
   }
 })

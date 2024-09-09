@@ -21,10 +21,12 @@ import { SignUpPayloadOne } from '@type/auth.type'
 
 //redux
 import { useValidateUserMutation } from '@redux/apis/auth.api'
-import { withTranslation } from 'react-i18next'
 
 //util
 import classNames from 'classnames'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 const formSchema = z.object({
   email: z

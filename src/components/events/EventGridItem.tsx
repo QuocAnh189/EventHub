@@ -1,13 +1,15 @@
 // components
 import { NavLink } from 'react-router-dom'
 import RatingStars from '@ui/RatingStars'
+
+//interface
 import { IEvent } from 'interfaces/contents/event.interface'
 
-interface IProps {
+interface Props {
   event: IEvent
 }
 
-const EventGridItem = (props: IProps) => {
+const EventGridItem = (props: Props) => {
   const { event } = props
 
   return (

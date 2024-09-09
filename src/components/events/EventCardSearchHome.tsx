@@ -1,17 +1,18 @@
-import { withTranslation } from 'react-i18next'
-
 //hook
 import { useNavigate } from 'react-router-dom'
 
 //interface
 import { IEvent } from 'interfaces/contents/event.interface'
 
-interface IEventCardSearchHome {
+//i18
+import { withTranslation } from 'react-i18next'
+
+interface Props {
   t: any
   event: IEvent
 }
 
-const TranslatedEventCardSearchHome = (props: IEventCardSearchHome) => {
+const TranslatedEventCardSearchHome = (props: Props) => {
   const { t, event } = props
   const navigate = useNavigate()
 

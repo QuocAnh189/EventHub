@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 
 // components
 import Spring from '@components/Spring'
-interface IProps {
+interface Props {
   seller: any
   index: number
 }
 
-const EventAnalysisItem = (props: IProps) => {
+const EventAnalysisItem = (props: Props) => {
   const { seller, index } = props
   const navigate = useNavigate()
 

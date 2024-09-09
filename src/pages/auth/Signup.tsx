@@ -4,11 +4,8 @@ import { useWindowSize } from 'react-use'
 import { useNavigate } from 'react-router-dom'
 
 //component
+import { toast } from 'react-toastify'
 import { SessionOne, SessionTwo } from './components'
-
-// assets
-import authImg from '@assets/images/auth/bg_auth.png'
-import logoText_Img from '@assets/images/common/logo_text.png'
 
 //motion
 import { motion } from 'framer-motion'
@@ -17,13 +14,16 @@ import { motion } from 'framer-motion'
 import { SignUpPayload, SignUpPayloadOne, SignUpPayloadTwo, InitSignUpOne, InitSignUpTwo } from '@type/auth.type'
 
 //redux
-import { toast } from 'react-toastify'
 import { useAppDispatch } from '@hooks/useRedux'
 import { setUser } from '@redux/slices/user.slice'
 import { useSignUpMutation } from '@redux/apis/auth.api'
 
 //i18
 import { withTranslation } from 'react-i18next'
+
+// assets
+import authImg from '@assets/images/auth/bg_auth.png'
+import logoText_Img from '@assets/images/common/logo_text.png'
 
 const SignUp = ({ t }: any) => {
   const dispatch = useAppDispatch()
