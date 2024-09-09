@@ -8,18 +8,19 @@ import { withTranslation } from 'react-i18next'
 //util
 import classNames from 'classnames'
 
-interface ForgotProps {
+interface Props {
   t: any
   changeSession: (name: string) => void
 }
 
-const TranslatedForgotPassword = (props: ForgotProps) => {
+const TranslatedVerifyOpt = (props: Props) => {
   const { t, changeSession } = props
 
-  const [email, setEmail] = useState<string>('')
+  const [opt, setOpt] = useState<string>('')
 
   const handleSubmit = () => {
-    changeSession('verify-opt')
+    // alert(opt)
+    changeSession('reset-password')
   }
 
   return (
@@ -35,12 +36,12 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
             className={classNames(
               'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]'
             )}
-            type='email'
-            value={email}
-            name='email'
-            placeholder={t('forgot_password.email_placeholder')}
+            type='text'
+            value={opt}
+            name='opt'
+            placeholder={t('verify_opt.opt_placeholder')}
             onChange={(e) => {
-              setEmail(e.target.value)
+              setOpt(e.target.value)
             }}
           />
         </motion.div>
@@ -50,11 +51,7 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <button
-            className='flex w-full btn hover:bg-blue-light2 bg-blue-light2 text-white'
-            // disabled={email ? false : true}
-            onClick={handleSubmit}
-          >
+          <button className='flex w-full btn hover:bg-blue-light2 bg-blue-light2 text-white' onClick={handleSubmit}>
             {t('submit_btn')}
           </button>
         </motion.div>
@@ -66,7 +63,7 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
         >
           <button
             onClick={() => {
-              changeSession('sign-in')
+              changeSession('forgot-password')
             }}
             className='mt-3 block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-gray-light2 text-header'
           >
@@ -78,4 +75,4 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
   )
 }
 
-export const FormForgotPassword = withTranslation('signin')(TranslatedForgotPassword)
+export const VerifyOpt = withTranslation('signin')(TranslatedVerifyOpt)

@@ -64,7 +64,8 @@ const event: any = {
   ],
   creatorId: 1,
   isFavourite: true,
-  id: '1'
+  id: '1',
+  reasons: ['Love you 1', 'Love you 2', 'Love you 3']
 }
 
 const EventDetail = () => {

@@ -1,11 +1,7 @@
 {
   "slogan": "Nơi mà bạn có thể tìm thấy những màn trình diễn hoàn hảo, tạo ra những khoảnh khắc và sự kết nối",
-  "forgot_password_title": "Quên mật khẩu ?",
-  "login_title": "Đăng nhập",
-  "forgot_password": {
-    "email_placeholder": "Nhập địa chỉ email"
-  },
   "login": {
+    "title": "Đăng nhập",
     "identify_placeholder": "Nhập thông tin tài khoảng (email hoặc username)",
     "password_placeholder": "Mật khẩu",
     "signin_btn": "Đăng nhập",
@@ -13,6 +9,19 @@
     "forgot_text": "Tôi quên mật khẩu",
     "signin_google": "Đăng nhập với Gooogle",
     "signin_facebook": "Đăng nhập với Facebook"
+  },
+  "forgot_password": {
+    "title": "Quên mật khẩu ?",
+    "email_placeholder": "Nhập địa chỉ email"
+  },
+  "verify_opt": {
+    "title": "Xác nhận OTP",
+    "opt_placeholder": "Nhập mã Otp"
+  },
+  "reset_password": {
+    "title": "Đổi mật khẩu",
+    "password_placeholder": "Mật khẩu mới",
+    "confirm_password_placeholder": "Xác nhận mật khẩu"
   },
   "submit_btn": "Xác nhận",
   "back_btn": "Trở về",

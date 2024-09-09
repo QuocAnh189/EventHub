@@ -23,6 +23,9 @@ import { SignUpPayloadOne } from '@type/auth.type'
 import { useValidateUserMutation } from '@redux/apis/auth.api'
 import { withTranslation } from 'react-i18next'
 
+//util
+import classNames from 'classnames'
+
 const formSchema = z.object({
   email: z
     .string()
@@ -80,8 +83,8 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
   }
 
   return (
-    <div className='mt-4 flex flex-col'>
-      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col'>
+    <div className='mt-4 flex flex-col items-center'>
+      <form onSubmit={handleSubmit(onSubmit)} className='mt-4 flex flex-col w-4/5 sm:w-full'>
         <motion.div
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -90,9 +93,14 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
         >
           <input
             {...register('email')}
+            className={classNames(
+              'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]',
+              {
+                'field-input--error': errors.email
+              }
+            )}
             type='email'
             name='email'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('session_one.email_placeholder')}
             onChange={setFormDataSessionOne}
           />
@@ -106,10 +114,15 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
           className='relative mb-6'
         >
           <input
+            className={classNames(
+              'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]',
+              {
+                'field-input--error': errors.fullName
+              }
+            )}
             {...register('fullName')}
             type='text'
             name='fullName'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('session_one.fullname_placeholder')}
             onChange={setFormDataSessionOne}
           />
@@ -123,10 +136,15 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
           className='relative mb-6'
         >
           <input
+            className={classNames(
+              'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]',
+              {
+                'field-input--error': errors.phoneNumber
+              }
+            )}
             {...register('phoneNumber')}
             type='text'
             name='phoneNumber'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('session_one.phone_placeholder')}
             onChange={setFormDataSessionOne}
           />
@@ -141,7 +159,7 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
           <button
             disabled={isLoading}
             type='submit'
-            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-white cursor-pointer bg-blue-light3'
+            className='flex w-full btn hover:bg-blue-light2 bg-blue-light3 text-white'
           >
             {t('session_one.submit_btn')}
           </button>
@@ -156,13 +174,13 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
       >
         <button
           onClick={() => navigate('/signin')}
-          className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
+          className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light2 text-header'
         >
           {t('session_one.option')}
         </button>
 
         <button
-          className='block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
+          className='block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-gray-light2 text-header'
           onClick={() => {
             navigate(-1)
           }}

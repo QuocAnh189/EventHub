@@ -1,8 +1,43 @@
 //images
 import fourPeopleImg from '@assets/images/landing/four_people.webp'
 import bgPurpleImg from '@assets/images/landing/bg_gradient.webp'
-import uitLogoImg from '@assets/images/landing/logo_uit.webp'
 import joyWorkImg from '@assets/images/landing/joy_work.webp'
+import UserFeedback from '@components/UserFeedback'
+
+const feedbacks = [
+  {
+    name: 'Trần Ngọc Nhật Vy',
+    university: 'University Of Information Technology',
+    feedback: 'Quiz offers an outstanding user experience, with its intuitive interface and smooth navigation.'
+  },
+  {
+    name: 'Trần Phước Anh Quốc',
+    university: 'University Of Information Technology',
+    feedback:
+      'Quiz impresses with its robust feature set. From customizable quizzes to detailed analytics, it covers everything needed for effective learning and assessment.'
+  },
+  {
+    name: 'Mai Đình Khôi',
+    university: 'University Of Information Technology',
+    feedback: 'Quiz offers an outstanding user experience, with its intuitive interface and smooth navigation.'
+  },
+  {
+    name: 'Hồ Thị Thanh Thảo',
+    university: 'University Of Information Technology',
+    feedback: 'Quiz offers an outstanding user experience, with its intuitive interface and smooth navigation.'
+  },
+  {
+    name: 'Trần Vương Duy',
+    university: 'University Of Information Technology',
+    feedback:
+      'Quiz impresses with its robust feature set. From customizable quizzes to detailed analytics, it covers everything needed for effective learning and assessment.'
+  },
+  {
+    name: 'Trương Nguyễn Trí',
+    university: 'University Of Information Technology',
+    feedback: 'Quiz offers an outstanding user experience, with its intuitive interface and smooth navigation.'
+  }
+]
 
 export const Feedback = () => {
   return (
@@ -31,189 +66,9 @@ export const Feedback = () => {
         </div>
         <div className='relative z-[1] mt-[7em] flex justify-between gap-x-5 px-20 mdl:flex-row '>
           <div className='flex flex-col flex-wrap items-center justify-center gap-5 mdl:flex-row'>
-            <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
-                <div className='flex gap-x-[1em]'>
-                  <img
-                    loading='lazy'
-                    src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-                    alt=''
-                    className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full object-cover'
-                  />
-                  <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
-                      Trần Ngọc Nhật Vy
-                    </div>
-                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-white'>
-                      University of Social Sciences and Humanities
-                    </div>
-                  </div>
-                  <img
-                    loading='lazy'
-                    src={uitLogoImg}
-                    alt=''
-                    className='absolute right-[1.25em] top-[1em] h-[2.5em] w-auto object-contain text-white'
-                  />
-                </div>
-                <p className='text-left text-white'>
-                  Quiz offers an outstanding user experience, with its intuitive interface and smooth navigation.
-                </p>
-              </div>
-            </div>
-
-            <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
-                <div className='flex gap-x-[1em]'>
-                  <img
-                    loading='lazy'
-                    src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-                    alt=''
-                    className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full object-cover    '
-                  />
-                  <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
-                      Trần Phước Anh Quốc
-                    </div>
-                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-white'>
-                      University Of Information Technology
-                    </div>
-                  </div>
-                  <img
-                    loading='lazy'
-                    src={uitLogoImg}
-                    alt=''
-                    className='absolute right-[1.25em] top-[1em] h-[2.5em] w-auto object-contain text-white'
-                  />
-                </div>
-                <p className='text-left text-white'>
-                  Quiz impresses with its robust feature set. From customizable quizzes to detailed analytics, it covers
-                  everything needed for effective learning and assessment. 💪
-                </p>
-              </div>
-            </div>
-
-            <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
-                <div className='flex gap-x-[1em]'>
-                  <img
-                    loading='lazy'
-                    src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-                    alt=''
-                    className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
-                  />
-                  <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
-                      Nguyễn Phước Trí
-                    </div>
-                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-white'>
-                      University Of Information Technology
-                    </div>
-                  </div>
-                  <img
-                    loading='lazy'
-                    src={uitLogoImg}
-                    alt=''
-                    className='absolute right-[1.25em] top-[1em] h-[2.5em] w-auto object-contain text-white'
-                  />
-                </div>
-                <p className='text-left text-white'>
-                  This software is not only engaging but also highly educational. It's a fantastic tool for learning and
-                  testing one's knowledge.`
-                </p>
-              </div>
-            </div>
-
-            <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
-                <div className='flex gap-x-[1em]'>
-                  <img
-                    loading='lazy'
-                    src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-                    alt=''
-                    className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
-                  />
-                  <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
-                      Trần Vương Duy
-                    </div>
-                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-white'>
-                      University Of Information Technology
-                    </div>
-                  </div>
-                  <img
-                    loading='lazy'
-                    src={uitLogoImg}
-                    alt=''
-                    className='absolute right-[1.25em] top-[1em] h-[2.5em] w-auto object-contain text-white'
-                  />
-                </div>
-                <p className='text-left text-white'>
-                  The ability to customize quizzes to align with specific educational goals and branding is a standout
-                  feature.
-                </p>
-              </div>
-            </div>
-
-            <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
-                <div className='flex gap-x-[1em]'>
-                  <img
-                    loading='lazy'
-                    src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-                    alt=''
-                    className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
-                  />
-                  <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
-                      Lê Thị Thanh Thảo
-                    </div>
-                    <div className='my-0 font-sans leading-[1.45] text-[0.88] text-white'>
-                      University Of Information Technology
-                    </div>
-                  </div>
-                  <img
-                    loading='lazy'
-                    src={uitLogoImg}
-                    alt=''
-                    className='absolute right-[1.25em] top-[1em] h-[2.5em] w-auto object-contain text-white'
-                  />
-                </div>
-                <p className='text-left text-white'>
-                  The support for various media types, such as imgs and videos, adds a dynamic element to the quizzes,
-                  making learning more engaging. 💪
-                </p>
-              </div>
-            </div>
-            <div className='min-w-[400px] mdl:max-w-[32%]'>
-              <div className='relative flex flex-col gap-y-[1.5em] rounded-[2.5em] bg-dark p-[1.5em] text-left shadow-blue'>
-                <div className='flex gap-x-[1em]'>
-                  <img
-                    loading='lazy'
-                    src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-                    alt=''
-                    className='inline-block h-[3.75em] w-[3.75em] max-w-full rounded-full'
-                  />
-                  <div className='block text-left'>
-                    <div className='my-0 inline-block text-[1.38em] font-bold leading-[1.45] text-white'>
-                      Mai Đình Khôi
-                    </div>
-                    <div className=' my-0 font-sans leading-[1.45] text-[0.88] text-white'>
-                      University Of Information Technology
-                    </div>
-                  </div>
-                  <img
-                    loading='lazy'
-                    src={uitLogoImg}
-                    alt=''
-                    className='absolute right-[1.25em] top-[1em] h-[2.5em] w-auto object-contain text-white'
-                  />
-                </div>
-                <p className='text-left text-white'>
-                  Incorporating gamification elements in quizzes adds an element of fun and motivation to the learning
-                  process.
-                </p>
-              </div>
-            </div>
+            {feedbacks.map((feedback, index) => (
+              <UserFeedback key={index} {...feedback} />
+            ))}
           </div>
           <img
             loading='lazy'

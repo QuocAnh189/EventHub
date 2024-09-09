@@ -35,8 +35,8 @@ const SignUp = ({ t }: any) => {
   const [formDataSessionOne, setFormDataSessionOne] = useState<SignUpPayloadOne>(InitSignUpOne)
   const [formDataSessionTwo, setFormDataSessionTwo] = useState<SignUpPayloadTwo>(InitSignUpTwo)
 
-  const [showFormSessionOne, setShowFormSessionOne] = useState<boolean>(true)
-  const [showFormSessionTwo, setShowFormSessionTwo] = useState<boolean>(false)
+  const [showFormSessionOne, setShowFormSessionOne] = useState<boolean>(false)
+  const [showFormSessionTwo, setShowFormSessionTwo] = useState<boolean>(true)
 
   const nextSession = useMemo(() => {
     return () => {
@@ -104,8 +104,8 @@ const SignUp = ({ t }: any) => {
   }
 
   return (
-    <div className='flex-1 grid grid-cols-1 lg:grid-cols-2 4xl:grid-cols-[minmax(0,_1030px)_minmax(0,_1fr)] min-h-screen'>
-      {width >= 1024 && (
+    <div className='flex-1 grid grid-cols-1 xl:grid-cols-2 4xl:grid-cols-[minmax(0,_1030px)_minmax(0,_1fr)]'>
+      {width >= 1280 && (
         <div className='flex flex-col justify-center items-center lg:p-[60px]'>
           <a className='logo' href='/'>
             <img loading='lazy' src={logoText_Img} alt='EventHub' className='w-[200px] object-cover' />
@@ -123,7 +123,7 @@ const SignUp = ({ t }: any) => {
           transition={{ duration: 0.1 }}
           className='mx-auto mt-auto flex min-h-screen w-full max-w-full flex-col overflow-hidden bg-pink'
         >
-          <div className='absolute left-[50%] top-[50%] min-h-full w-[600px] translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-[50px] bg-white px-[100px] py-[60px] mdl:min-h-[600px]'>
+          <div className='absolute left-[50%] top-[50%] min-h-full w-[600px] translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-[50px] bg-body px-[100px] py-[60px] mdl:min-h-[600px]'>
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -151,8 +151,8 @@ const SignUp = ({ t }: any) => {
               )}
             </div>
             <div className='absolute bottom-0 left-[50%] min-h-[40px] w-full translate-x-[-50%] text-center'>
-              <p className='font-semibold text-textGray'>
-                {t('footer_one')} - <span className='font-bold text-black'>{t('footer_two')}</span>
+              <p className='font-semibold text-header'>
+                {t('footer_one')} - <span className='font-bold text-header'>{t('footer_two')}</span>
               </p>
             </div>
           </div>

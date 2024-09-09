@@ -1,6 +1,9 @@
 //assets
 import eng from '@assets/images/flags/eng.webp'
 import vn from '@assets/images/flags/vn.webp'
+import ger from '@assets/images/flags/ger.webp'
+import ita from '@assets/images/flags/ita.webp'
+import fra from '@assets/images/flags/fra.webp'
 import mc from '@assets/images/payment/mc.svg'
 import visa from '@assets/images/payment/visa.svg'
 import googlepay from '@assets/images/payment/googlepay.svg'
@@ -18,7 +21,7 @@ export interface IOptionSelect {
   backgroundColor?: string
 }
 
-export const EVENT_CATEGORIES: IOptionSelect = [
+export const EVENT_CATEGORIES: any = [
   {
     label: 'Workshop',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505725/eventhub/category/hhganbll8tt2wofqdsn2.png',
@@ -95,7 +98,10 @@ export const REVIEW_SORT_OPTIONS: IOptionSelect[] = [
 
 export const LOCALES: IOptionSelect[] = [
   { value: 'en', label: 'English (EN)', icon: eng },
-  { value: 'vn', label: 'VietNam (VN)', icon: vn }
+  { value: 'vn', label: 'VietNam (VN)', icon: vn },
+  { value: 'ge', label: 'Germany (ge)', icon: ger },
+  { value: 'ita', label: 'Italia (ita)', icon: ita },
+  { value: 'fra', label: 'France (fra)', icon: fra }
 ]
 
 export const APPS_OPTIONS: IOptionSelect[] = [

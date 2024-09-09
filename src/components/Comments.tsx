@@ -32,13 +32,14 @@ interface ItemReviewsProps {
   eventId: string
   ownerId: string
 }
+
 const ItemReviews = (props: ItemReviewsProps) => {
   const { eventId, ownerId } = props
 
   const user = useAppSelector((state) => state.persistedReducer.user.user)
 
   const [openDialog, setOpenDialog] = useState<boolean>(false)
-  const [reviewIdSlected, setReviewIdSelected] = useState<string>('')
+  const [reviewIdSelected, setReviewIdSelected] = useState<string>('')
 
   const [metadata, setMetadata] = useState<IMetadataReviewResponse>()
   const [reviews, setReviews] = useState<IReview[]>([])
@@ -46,7 +47,7 @@ const ItemReviews = (props: ItemReviewsProps) => {
   const pagination = usePagination(metadata?.totalCount, initParamsReview.size)
 
   const { data } = useGetReviewsByEventIdQuery({ ...initParamsReview, eventId, page: pagination.currentPage || 1 })
-  const [deteteReview, { isLoading: loadingDeteleReview }] = useDeleteReviewMutation()
+  const [deleteReview, { isLoading: loadingDeleteReview }] = useDeleteReviewMutation()
 
   useEffect(() => {
     if (data) {
@@ -57,7 +58,7 @@ const ItemReviews = (props: ItemReviewsProps) => {
 
   const handleDeleteReview = async (reviewId: string) => {
     try {
-      const result = await deteteReview({ eventId, reviewId }).unwrap()
+      const result = await deleteReview({ eventId, reviewId }).unwrap()
       if (result) {
         setOpenDialog(false)
       }
@@ -108,6 +109,7 @@ const ItemReviews = (props: ItemReviewsProps) => {
           <Divider />
         </div>
       ))}
+      {reviews.length === 0 && <p className='text-header text-center text-xl w-full'>No comments here</p>}
       <div className='w-full relative'>
         <div className='absolute right-0 translate-x-[50%]'>
           {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
@@ -122,9 +124,9 @@ const ItemReviews = (props: ItemReviewsProps) => {
             setOpenDialog(value)
           }}
           action='Ok'
-          disabled={loadingDeteleReview}
+          disabled={loadingDeleteReview}
           onHandle={() => {
-            handleDeleteReview(reviewIdSlected)
+            handleDeleteReview(reviewIdSelected)
           }}
         />
       )}
@@ -212,11 +214,7 @@ const Comments = (props: Props) => {
             label='Comments here'
           />
         </FormControl>
-        <button
-          disabled={isLoading}
-          onClick={handleAddReviews}
-          className='flex w-[150px] items-center justify-center px-4 py-2 bg-primary/10 text-primary font-semibold rounded-3xl hover:bg-primary hover:text-white'
-        >
+        <button disabled={isLoading} onClick={handleAddReviews} className='btn btn-primary hover:bg-primary-400 w-40'>
           {isLoading ? <CircularProgress size={24} /> : 'Post comment'}
         </button>
       </div>

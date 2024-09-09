@@ -9,7 +9,7 @@ const Landing = () => {
       <Intro />
       <Manage />
       <AutomaticRun />
-      <div className='w-screen rounded-t-[32px] bg-black px-8'>
+      <div className='w-full rounded-t-[32px] bg-black px-8'>
         <Feedback />
         <Contact />
       </div>

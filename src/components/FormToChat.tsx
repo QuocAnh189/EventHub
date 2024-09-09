@@ -21,7 +21,7 @@ export const FormToChat = (props: IPropsFormToChat) => {
   return (
     <div className='flex px-[100px] gap-8'>
       <div className='flex flex-col flex-auto gap-5 p-8 rounded-md shadow-xl bg-body'>
-        <h1 className='text-2xl font-bold text-header'>Chat Room</h1>
+        <h1 className='text-2xl font-bold text-header'>Conversation</h1>
         <p className='text-header'>
           If you have any questions or problems related to this event.
           <br />
@@ -34,13 +34,25 @@ export const FormToChat = (props: IPropsFormToChat) => {
                 <label className='field-label' htmlFor='qty'>
                   Name
                 </label>
-                <input readOnly className={classNames('field-input')} id='qty' placeholder='0' value={userFullName} />
+                <input
+                  readOnly
+                  className={classNames('field-input')}
+                  id='qty'
+                  placeholder='Enter name'
+                  value={userFullName}
+                />
               </div>
               <div className='field-wrapper'>
                 <label className='field-label' htmlFor='qty'>
                   Email
                 </label>
-                <input readOnly className={classNames('field-input')} id='qty' placeholder='0' value={userEmail} />
+                <input
+                  readOnly
+                  className={classNames('field-input')}
+                  id='qty'
+                  placeholder='Enter email'
+                  value={userEmail}
+                />
               </div>
             </div>
             <div className='field-wrapper'>
@@ -53,7 +65,7 @@ export const FormToChat = (props: IPropsFormToChat) => {
         </FormControl>
         <button
           onClick={() => handleJoinChatRoom && handleJoinChatRoom({ eventId, hostId, userId })}
-          className='px-4 py-3 rounded-3xl bg-primary font-semibold text-white w-[200px] hover:bg-primary-500'
+          className='btn btn-primary w-40 hover:bg-primary-500'
         >
           Start Chat
         </button>

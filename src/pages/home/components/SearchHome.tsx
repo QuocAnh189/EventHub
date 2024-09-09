@@ -80,15 +80,15 @@ const TranslatedSearchHome = ({ t }: any) => {
 
   return (
     <div className='w-[90%] h-[95vh] m-auto'>
-      <div className='relative w-full z-[999]'>
+      <div className='relative w-full z-[999] min-w-[300px]'>
         <video autoPlay loop muted className='absolute right-0 top-0 h-auto w-full object-cover z-[-1] rounded-md'>
           <source src={nature_vid} type='video/mp4' />
         </video>
       </div>
       <div className='relative w-full h-[90%] z-[1000]'>
-        <div className='w-[500px] h-auto text-white px-[30px] pt-[30px] pb-[100px]'>
-          <p className='text-white leading-10 font-extrabold text-[2em]'>{t('search home.title')}</p>
-          <p className='text-white mt-2 font-medium text-sm'>{t('search home.sub_title')}</p>
+        <div className='sml:w-[500px] h-auto text-white px-[30px] pt-[30px] pb-[100px]'>
+          <p className='sml:text-[2em] text-white sml:leading-10 font-extrabold'>{t('search home.title')}</p>
+          <p className='text-white mt-2 font-medium sml:text-sm'>{t('search home.sub_title')}</p>
           <button
             className='btn btn-primary mt-6'
             onClick={() => {
@@ -98,13 +98,13 @@ const TranslatedSearchHome = ({ t }: any) => {
             {t('search home.explore')}
           </button>
         </div>
-        <div className='trip_bx relative w-[95%] h-auto m-auto before:absolute before:w-full before:h-[340px] before:rounded-[10px] before:bg-input-border before:z-[-1] before:backdrop-blur-sm'>
+        <div className='trip_bx relative w-[95%] h-auto m-auto before:absolute before:w-full before:h-full lg:before:h-[340px] before:rounded-[10px] before:bg-input-border before:z-[-1] before:backdrop-blur-sm'>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className='flex items-center justify-center pr-[10px] bg-body rounded-md shadow-md z-[1] absolute -top-10 left-0 h-20'
+            className='flex items-center flex-wrap pr-[10px] bg-body rounded-md shadow-md z-[1] absolute -top-10 left-0 lg:h-20'
           >
             <div className='h-full shadow-none px-4 py-2 space-y-1'>
-              <h4 className='text-[15px] m-0 font-bold text-header'>{t('search home.event')}</h4>
+              <h4 className='text-sm m-0 font-bold text-header'>{t('search home.event')}</h4>
               <input
                 className={classNames('field-input text-header', { 'field-input--error': false })}
                 {...register('search')}
@@ -112,7 +112,7 @@ const TranslatedSearchHome = ({ t }: any) => {
                 placeholder={t('search home.event_placeholder')}
               />
             </div>
-            <div className='w-[200px] h-full shadow-none px-4 py-2 space-y-1'>
+            <div className='lg:w-[200px] h-full shadow-none px-4 py-2 space-y-1'>
               <h4 className='text-[15px] m-0 font-bold text-header'>{t('search home.status')}</h4>
               <Select
                 placeholder={t('search home.All')}
@@ -138,13 +138,13 @@ const TranslatedSearchHome = ({ t }: any) => {
               {t('search home.search')}
             </button>
           </form>
-          <div className='relative w-full h-auto m-auto rounded-[10px] pb-5'>
+          <div className='relative w-full h-full m-auto rounded-[10px] pb-5'>
             {isFetching ? (
               <div className='w-full h-full flex items-center justify-center'>
                 <Loader />
               </div>
             ) : (
-              <div className='w-full h-full pt-20 flex items-center overflow-x-auto overflow-y-hidden pb-4 no-scrollbar'>
+              <div className='w-full h-full pt-36 lg:pt-20 flex items-center overflow-x-auto overflow-y-hidden pb-4 no-scrollbar'>
                 {/* {events?.items?.map((event: IEvent, index: number) => (
                   <EventCardSearchHome key={`event-${index}`} event={event} />
                 ))} */}

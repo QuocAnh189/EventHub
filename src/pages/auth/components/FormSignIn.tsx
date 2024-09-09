@@ -30,18 +30,21 @@ import { motion } from 'framer-motion'
 import { withTranslation } from 'react-i18next'
 import { RootState } from '@redux/store'
 
+// utils
+import classNames from 'classnames'
+
 const formSchema = z.object({
-  identity: z.string().min(1, 'Identity is not empty'),
+  identity: z.string().min(1, 'Account is not empty'),
   password: z.string().min(1, 'Password is not empty')
 })
 
 interface SignInProps {
   t: any
-  handleForgotPassword: (value: boolean) => void
+  changeSession: (name: string) => void
 }
 
 const TranslatedFormSignIn = (props: SignInProps) => {
-  const { t, handleForgotPassword } = props
+  const { t, changeSession } = props
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -113,8 +116,8 @@ const TranslatedFormSignIn = (props: SignInProps) => {
   }
 
   return (
-    <div className='block h-full'>
-      <form onSubmit={handleSubmit(onSubmit)} className='mt-4 flex flex-col'>
+    <div className='flex flex-col h-full items-center'>
+      <form onSubmit={handleSubmit(onSubmit)} className='mt-4 flex flex-col w-4/5 sm:w-full'>
         <motion.div
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -122,10 +125,15 @@ const TranslatedFormSignIn = (props: SignInProps) => {
           className='relative mb-6'
         >
           <input
+            className={classNames(
+              'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]',
+              {
+                'field-input--error': errors.identity
+              }
+            )}
             {...register('identity')}
             type='text'
             name='identity'
-            className='block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
             placeholder={t('login.identify_placeholder')}
           />
           {errors.identity && <p className='mt-1 text-red'>{errors.identity.message}</p>}
@@ -135,29 +143,36 @@ const TranslatedFormSignIn = (props: SignInProps) => {
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className='relative mb-6'
+          className='mb-6'
         >
-          <input
-            {...register('password')}
-            type={showPassWord ? 'text' : 'password'}
-            name='password'
-            className='min-h-[auto] w-full rounded-2xl border-[2px] bg-transparent px-3 py-[0.8rem] font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px] border-gray focus:border-blue-light'
-            placeholder={t('login.password_placeholder')}
-          />
+          <div className='relative'>
+            <input
+              className={classNames(
+                'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]',
+                {
+                  'field-input--error': errors.identity
+                }
+              )}
+              {...register('password')}
+              type={showPassWord ? 'text' : 'password'}
+              name='password'
+              placeholder={t('login.password_placeholder')}
+            />
+            <button
+              type='button'
+              className='absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer text-header'
+              onClick={() => {
+                setShowPassWord(!showPassWord)
+              }}
+            >
+              {showPassWord ? (
+                <AiFillEye className='h-[20px] w-[20px]' />
+              ) : (
+                <AiFillEyeInvisible className=' h-[20px] w-[20px]' />
+              )}
+            </button>
+          </div>
           {errors.password && <p className='mt-1 text-red'>{errors.password.message}</p>}
-          <button
-            type='button'
-            className='absolute right-4 top-[50%] translate-y-[-50%] cursor-pointer'
-            onClick={() => {
-              setShowPassWord(!showPassWord)
-            }}
-          >
-            {showPassWord ? (
-              <AiFillEye className=' h-[20px] w-[20px]' />
-            ) : (
-              <AiFillEyeInvisible className=' h-[20px] w-[20px]' />
-            )}
-          </button>
         </motion.div>
 
         <motion.div
@@ -168,13 +183,13 @@ const TranslatedFormSignIn = (props: SignInProps) => {
           <button
             disabled={loadingSignIn}
             type='submit'
-            className='flex w-full items-center justify-center rounded-2xl py-[0.6rem] font-bold leading-7 text-white cursor-pointer bg-blue-light3'
+            className='flex w-full btn hover:bg-blue-light2 bg-blue-light3 text-white'
           >
             {loadingSignIn ? <CircularProgress size={28} color='info' /> : t('login.signin_btn')}
           </button>
         </motion.div>
       </form>
-      <div className='mt-3 flex w-full flex-col gap-y-2'>
+      <div className='w-4/5 sm:w-full mt-3 flex flex-col gap-y-2'>
         <motion.div
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -182,7 +197,7 @@ const TranslatedFormSignIn = (props: SignInProps) => {
         >
           <button
             onClick={() => navigate('/signup')}
-            className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
+            className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light2 text-header'
           >
             {t('login.option')}
           </button>
@@ -193,8 +208,8 @@ const TranslatedFormSignIn = (props: SignInProps) => {
           transition={{ duration: 0.4, delay: 0.7 }}
         >
           <button
-            onClick={() => handleForgotPassword(true)}
-            className='lue block  w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light4 hover:text-[15px]'
+            onClick={() => changeSession('forgot-password')}
+            className='block w-full py-4 text-sm font-semibold hover:rounded-[18px] hover:bg-gray-light2 text-header'
           >
             {t('login.forgot_text')}
           </button>
@@ -251,7 +266,7 @@ const TranslatedFormSignIn = (props: SignInProps) => {
             onClick={() => {
               navigate('/')
             }}
-            className='mb-3 block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-bgGrayLight hover:text-[15px]'
+            className='mb-3 block w-full py-4 text-sm font-bold hover:rounded-[18px] hover:bg-gray-light2 text-header'
           >
             {t('back_btn')}
           </button>
