@@ -19,7 +19,7 @@ const WalletBadge = (props: Props) => {
         <img src={image} alt={label} />
       </div>
       <span className='h6 !text-sm'>{label}</span>
-      <span className='h6 !text-sm ml-auto'>{numFormatter(value, 1, '$')}</span>
+      <span className='h6 !text-sm ml-auto text-center'>{numFormatter(value, 1, '$')}</span>
     </Spring>
   )
 }

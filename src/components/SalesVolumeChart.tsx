@@ -15,22 +15,27 @@ const data = [
   { name: 'Q4', a: 10455, b: 12584, trend: 50.14 }
 ]
 
-const SalesVolumeChart = () => {
+interface Props {
+  title: string
+}
+const SalesVolumeChart = (props: Props) => {
+  const { title } = props
+
   const { theme } = useTheme()
   const gridPoints = generateGridPoints(40, 'x')
 
   return (
     <Spring className='card flex flex-col h-[425px] lg:h-full md:col-span-2 lg:col-span-1'>
       <div className='flex flex-col gap-2 mb-5 sm:flex-row sm:justify-between sm:items-center'>
-        <h4>Sales Volume</h4>
+        <h4>{title}</h4>
         <div className='flex items-center gap-[18px]'>
           <div className='flex items-center gap-2.5'>
             <span className='legend-bar bg-header' />
-            <span className='label-text'>2022</span>
+            <span className='label-text text-header'>2023</span>
           </div>
           <div className='flex items-center gap-2.5'>
             <span className='legend-bar bg-green' />
-            <span className='label-text'>2023</span>
+            <span className='label-text text-header'>2024</span>
           </div>
         </div>
       </div>

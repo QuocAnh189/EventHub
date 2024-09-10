@@ -10,29 +10,32 @@ import Trend from '@ui/Trend'
 // hooks
 import { useSubmenu } from '@hooks/useSubmenu'
 
-const ConversionRateWithChart = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const ConversionRateWithChart = ({ t }: any) => {
   const { anchorEl, open, handleClick, handleClose } = useSubmenu()
 
   return (
     <Spring className='card md:col-span-2 lg:col-span-1 2xl:col-span-1'>
       <div className='flex items-center justify-between mb-1.5'>
-        <h4>Conversion Rate</h4>
+        <h4>{t('conversion-rate.title')}</h4>
         <InfoBtn onClick={handleClick} />
         <Submenu anchorEl={anchorEl} open={open} onClose={handleClose}>
           <div className='py-5 pl-6 pr-8'>
-            <p className='text-sm max-w-[160px] mb-2'>Pellentesque eget orci at lacus tincidunt maximus</p>
+            <p className='text-sm max-w-[160px] mb-2'>{t('conversion-rate.submenu.description')}</p>
             <div className='flex flex-col gap-3'>
               <button className='menu-btn subheading-2'>
                 <span className='icon-wrapper'>
                   <i className='icon icon-share-solid' />
                 </span>
-                Share
+                {t('conversion-rate.submenu.share')}
               </button>
               <button className='menu-btn subheading-2'>
                 <span className='icon-wrapper'>
                   <i className='icon icon-print-solid' />
                 </span>
-                Print
+                {t('conversion-rate.submenu.print')}
               </button>
             </div>
           </div>
@@ -44,12 +47,12 @@ const ConversionRateWithChart = () => {
           <div className='flex flex-col gap-3 xs:flex-row xs:gap-5 md:gap-[28px]'>
             <div className='flex flex-col'>
               <Counter className='h3' num={32547} />
-              <span className='label-text mt-1 mb-[6px]'>Regular Customers</span>
+              <span className='label-text mt-1 mb-[6px] text-header'>{t('conversion-rate.regular-customers')}</span>
               <Trend value={14.08} />
             </div>
             <div className='flex flex-col'>
               <Counter className='h3' num={12345} prefix='+' />
-              <span className='label-text mt-1 mb-[6px]'>New Customers</span>
+              <span className='label-text mt-1 mb-[6px] text-header'>{t('conversion-rate.new-customers')}</span>
               <Trend value={23} />
             </div>
           </div>
@@ -73,4 +76,4 @@ const ConversionRateWithChart = () => {
   )
 }
 
-export default ConversionRateWithChart
+export default withTranslation('overview_detail')(ConversionRateWithChart)

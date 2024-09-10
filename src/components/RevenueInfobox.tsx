@@ -37,7 +37,7 @@ const RevenueInfobox = (props: Props) => {
         <SubmenuTrigger onClick={handleClick} />
       </div>
       <div className='flex justify-between mb-2'>
-        <span className='label-text'>{label}</span>
+        <span className='label-text text-header'>{label}</span>
         <Trend value={trend} />
       </div>
       <span className='h3'>{numFormatter(value, 1, '$')}</span>

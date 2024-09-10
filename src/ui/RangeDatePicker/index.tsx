@@ -9,8 +9,8 @@ import dayjs from 'dayjs'
 
 interface Props {
   id: string
-  value: any
-  onChange: any
+  value?: any
+  onChange?: any
   innerRef?: any
   disableFuture?: boolean
 }

@@ -12,25 +12,17 @@ const data = [
 ]
 const COLORS = ['var(--header)', 'var(--green)']
 
-// const CustomTooltip = ({ active, payload }: any) => {
-//   if (active) {
-//     return (
-//       <div className='chart-tooltip p-3'>
-//         <p className='font-heading font-semibold text-header text-sm'>
-//           Profit {`${payload[0].name} : ${numFormatter(payload[0].value, 1, '$')}`}
-//         </p>
-//       </div>
-//     )
-//   }
+interface Props {
+  title: string
+}
 
-//   return null
-// }
+const ProfitPerformance = (props: Props) => {
+  const { title } = props
 
-const ProfitPerformance = () => {
   return (
     <Spring className='card flex flex-col h-[380px] lg:h-[300px] 2xl:h-full'>
       <div className='flex justify-between items-center'>
-        <h5>Profit Performance</h5>
+        <h5>{title}</h5>
         <InfoBtn />
       </div>
       <div className='flex-1 overflow-hidden'>

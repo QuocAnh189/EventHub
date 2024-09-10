@@ -34,6 +34,7 @@ const SignIn = lazy(() => import('@pages/auth/Signin'))
 const SignUp = lazy(() => import('@pages/auth/Signup'))
 const Home = lazy(() => import('@pages/home/Home'))
 const Overview = lazy(() => import('@pages/dashboard/Overview'))
+const OverviewDetail = lazy(() => import('@pages/dashboard/Overview-Detail'))
 const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
@@ -68,6 +69,7 @@ function App() {
             <Route path='/organization' element={<MainLayout />}>
               <Route path='/organization/' element={<Home />} />
               <Route path='/organization/dashboard/overview' element={<Overview />} />
+              <Route path='/organization/dashboard/overview-detail' element={<OverviewDetail />} />
               <Route path='/organization/explore' element={<Explore />} />
               <Route path='/organization/event/:id' element={<EventDetail />} />
               <Route path='/organization/calendar' element={<Calendar />} />
