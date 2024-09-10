@@ -1,12 +1,13 @@
 // components
-import Spring from '@components/Spring'
-import InfoBtn from '@ui/InfoBtn'
-import ReportItem from '@components/ReportItem'
 import { NavLink } from 'react-router-dom'
+import Spring from '@components/Spring'
+import ReportItem from '@components/ReportItem'
+import InfoBtn from '@ui/InfoBtn'
 import Submenu from '@ui/Submenu'
 
 // hooks
 import { useSubmenu } from '@hooks/useSubmenu'
+import { withTranslation } from 'react-i18next'
 
 const data = [
   { dataKey: 'revenue', title: 'Revenue', amount: 176120, trend: 45 },
@@ -14,25 +15,27 @@ const data = [
   { dataKey: 'profit', title: 'Profit', amount: 342558, trend: 14.56 }
 ]
 
-const TotalReport = () => {
+const TotalReport = ({ t }: any) => {
   const { anchorEl, open, handleClick, handleClose } = useSubmenu()
 
   return (
     <Spring className='card flex flex-col lg:col-span-3 xl:col-span-1'>
       <div>
         <div className='flex items-center justify-between'>
-          <h4>Total Report</h4>
+          <h4>{t('total-report.title')}</h4>
           <InfoBtn onClick={handleClick} />
         </div>
-        <p className='mt-1.5 mb-4 text-sm md:text-base'>All Periods per 01/01/2024 - 01/04/2024</p>
+        <p className='mt-1.5 mb-4 text-sm md:text-base text-header'>
+          {t('total-report.description')} 01/01/2024 - 01/10/2024
+        </p>
       </div>
       <div className='flex flex-col flex-1 gap-6 mb-6'>
-        {data.map((item, index) => (
+        {data.map((item, index: number) => (
           <ReportItem key={index} data={item} />
         ))}
       </div>
       <NavLink className='btn btn--primary' to='/organization/dashboard/overview-detail'>
-        More Details
+        {t('total-report.more-detail')}
       </NavLink>
       <Submenu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className='flex flex-col items-start gap-5 p-5'>
@@ -54,4 +57,4 @@ const TotalReport = () => {
   )
 }
 
-export default TotalReport
+export default withTranslation('overview')(TotalReport)

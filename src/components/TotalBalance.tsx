@@ -1,19 +1,23 @@
-// hooks
+//hooks
 import { useTheme } from '@contexts/theme.context'
 
-// components
+//components
 import Spring from './Spring'
 
-// assets
+//assets
 import coin from '@assets/images/dashboard/coin.png'
 
+//i18n
+import { withTranslation } from 'react-i18next'
+
 interface Props {
+  t: any
   wrapperClass?: string
   imgClass?: string
 }
 
 const TotalBalance = (props: Props) => {
-  const { wrapperClass, imgClass } = props
+  const { t, wrapperClass, imgClass } = props
   const { theme } = useTheme()
 
   return (
@@ -31,11 +35,11 @@ const TotalBalance = (props: Props) => {
         />
         <div className='flex flex-col gap-1.5 ml-4 lg:text-center xl:text-left'>
           <span className='h1'>$476,3k</span>
-          <span className='h6'>Total Balance</span>
+          <span className='h6'>{t('total-balance')}</span>
         </div>
       </div>
     </Spring>
   )
 }
 
-export default TotalBalance
+export default withTranslation('overview')(TotalBalance)

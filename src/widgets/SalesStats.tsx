@@ -1,11 +1,16 @@
-// components
+//hooks
+import { useTheme } from '@contexts/theme.context'
+import { useWindowSize } from 'react-use'
+
+//components
 import Spring from '@components/Spring'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
-// hooks
-import { useTheme } from '@contexts/theme.context'
-import { useWindowSize } from 'react-use'
+//util
 import { numFormatter } from '@utils/helpers'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 const data = [
   { name: 'Jan', revenue: 4000, expense: 2400 },
@@ -22,7 +27,7 @@ const data = [
   { name: 'Dec', revenue: 3490, expense: 4300 }
 ]
 
-const SalesStats = () => {
+const SalesStats = ({ t }: any) => {
   const { theme } = useTheme()
   const { width } = useWindowSize()
   const revenueColor = theme === 'light' ? 'var(--header)' : '#C4DEFF'
@@ -31,15 +36,15 @@ const SalesStats = () => {
   return (
     <Spring className='card flex flex-col h-[300px] md:h-[494px] lg:col-span-3 xl:col-span-1'>
       <div className='flex flex-col gap-2.5 mb-5 md:flex-row md:justify-between md:items-center'>
-        <h4>Sales Statistic 2024</h4>
+        <h4>{t('chart.title')}</h4>
         <div className='flex items-center gap-5'>
           <div className='flex items-center gap-2.5'>
             <span className='w-4 h-4 rounded-full' style={{ background: revenueColor }} />
-            <span className='font-heading font-semibold text-sm text-header'>Revenue</span>
+            <span className='font-heading font-semibold text-sm text-header'>{t('chart.revenue')}</span>
           </div>
           <div className='flex items-center gap-2.5'>
             <span className='w-4 h-4 rounded-full' style={{ background: expenseColor }} />
-            <span className='font-heading font-semibold text-sm text-header'>Expense</span>
+            <span className='font-heading font-semibold text-sm text-header'>{t('chart.expense')}</span>
           </div>
         </div>
       </div>
@@ -78,4 +83,4 @@ const SalesStats = () => {
   )
 }
 
-export default SalesStats
+export default withTranslation('overview')(SalesStats)

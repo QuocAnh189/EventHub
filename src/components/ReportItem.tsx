@@ -4,32 +4,16 @@ import Trend from '@ui/Trend'
 // utils
 import { commaFormatter } from '@utils/helpers'
 
-// assets
-// import coins from '@assets/coins.webp'
-// import credit from '@assets/credit-card.webp'
-// import wallet from '@assets/wallet.webp'
-
-// const icons = [
-//   {
-//     dataKey: 'revenue',
-//     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-//   },
-//   {
-//     dataKey: 'expense',
-//     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-//   },
-//   {
-//     dataKey: 'profit',
-//     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-//   }
-// ]
+//i18n
+import { withTranslation } from 'react-i18next'
 
 interface Props {
+  t: any
   data: any
 }
 
 const ReportItem = (props: Props) => {
-  const { data } = props
+  const { t, data } = props
 
   return (
     <div className='flex items-center justify-between rounded-md bg-body border p-[13px] md:py-0 md:px-[26px] md:h-[80px]'>
@@ -40,7 +24,7 @@ const ReportItem = (props: Props) => {
             alt={data.title}
           />
         </div>
-        <h6>{data.title}</h6>
+        <h6>{t(`total-report.${data.dataKey}`)}</h6>
       </div>
       <span className='h6 !text-sm'>${commaFormatter(data.amount)}</span>
       <Trend wrapperClass='hidden w-[90px] xs:flex' value={data.trend} />
@@ -48,4 +32,4 @@ const ReportItem = (props: Props) => {
   )
 }
 
-export default ReportItem
+export default withTranslation('overview')(ReportItem)

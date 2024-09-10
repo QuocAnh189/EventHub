@@ -1,1 +1,32 @@
-{}
+{
+  "header": {
+    "title": "Tổng quan"
+  },
+  "main-overview": {
+    "title": "Sự kiện của tôi",
+    "description": "Dưới đây là số liệu thống kê chung cho tổ chức của bạn theo thời gian.",
+    "average-rate": "Tỉ lệ trung bình 2024",
+    "income": "Thu nhập",
+    "expense": "Chi phí",
+    "orders": "Đơn hàng mới",
+    "view-profile": "Xem hồ sơ",
+    "contact": "Liên hệ",
+    "share": "Chia sẻ"
+  },
+  "total-balance": "Tổng số dư",
+  "chart": {
+    "title": "Thống kê bán hàng 2024",
+    "revenue": "Doanh thu",
+    "expense": "Chi phí"
+  },
+  "total-report": {
+    "title": "Tổng lượt báo cáo",
+    "description": "Trong khoảng",
+    "revenue": "Doanh thu",
+    "expense": "Chi phí",
+    "profit": "Lợi nhuận",
+    "more-detail": "Chi tiết hơn",
+    "share": "Chia sẻ",
+    "print": "Xuất"
+  }
+}

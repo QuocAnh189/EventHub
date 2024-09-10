@@ -1,20 +1,23 @@
+//hooks
+import { useSubmenu } from '@hooks/useSubmenu'
+
 //router
 import { NavLink } from 'react-router-dom'
 
-// components
+//components
 import Spring from '@components/Spring'
 import InfoBtn from '@ui/InfoBtn'
 import Counter from '@components/Counter'
 import Trend from '@ui/Trend'
 import Submenu from '@ui/Submenu'
 
-// hooks
-import { useSubmenu } from '@hooks/useSubmenu'
+//assets
+import logoImg from '@assets/images/common/logo.png'
 
-// assets
-import logoImg from '@assets/common/logo.png'
+//i18n
+import { withTranslation } from 'react-i18next'
 
-const MainProfileInfo = () => {
+const MainOverviewInfo = ({ t }: any) => {
   //   const { theme }: any = useTheme()
   const { anchorEl, open, handleClick, handleClose } = useSubmenu()
 
@@ -25,16 +28,16 @@ const MainProfileInfo = () => {
                  justify-center gap-6 shrink-0 md:w-[190px]'
       >
         <img className='h-20 w-auto ml-2.5' src={logoImg} alt='ShopPoint' />
-        <span className='font-heading font-bold text-xl leading-[1.1] text-header'>Organization</span>
+        <span className='font-heading font-bold text-xl leading-[1.1] text-header'>Event Hub</span>
       </div>
       <div className='flex flex-1 flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <h3>My Events</h3>
-          <p>Below are general statistics for your organization over time.</p>
+          <h3>{t('main-overview.title')}</h3>
+          <p className='text-header'>{t('main-overview.description')}</p>
         </div>
         <div className='flex flex-col gap-6'>
           <div className='flex items-center gap-4'>
-            <h5>Average Rate 2023</h5>
+            <h5>{t('main-overview.average-rate')}</h5>
             <InfoBtn onClick={handleClick} />
           </div>
           <div className='flex-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:flex justify-between xl:max-w-[670px]'>
@@ -48,7 +51,7 @@ const MainProfileInfo = () => {
                   num={15412}
                   prefix='$'
                 />
-                <span className='block label-text mb-2'>Income</span>
+                <span className='block label-text mb-2 text-header'>{t('main-overview.income')}</span>
                 <Trend value={45.21} />
               </div>
             </div>
@@ -62,7 +65,7 @@ const MainProfileInfo = () => {
                   num={53487}
                   prefix='$'
                 />
-                <span className='block label-text mb-2'>Expense</span>
+                <span className='block label-text mb-2 text-header'>{t('main-overview.expense')}</span>
                 <Trend value={-12} />
               </div>
             </div>
@@ -75,7 +78,7 @@ const MainProfileInfo = () => {
                   className='block -mt-1 font-heading font-semibold leading-[1.1] text-header text-[26px] md:text-[32px]'
                   num={5412}
                 />
-                <span className='block label-text mb-2'>New Orders</span>
+                <span className='block label-text mb-2 text-header'>{t('main-overview.orders')}</span>
                 <Trend value={14.36} />
               </div>
             </div>
@@ -88,19 +91,19 @@ const MainProfileInfo = () => {
             <span className='icon-wrapper'>
               <i className='icon icon-chart-pie-solid' />
             </span>
-            View Profile
+            {t('main-overview.view-profile')}
           </NavLink>
           <button className='menu-btn subheading-2'>
             <span className='icon-wrapper'>
               <i className='icon icon-link-solid' />
             </span>
-            Contacts
+            {t('main-overview.contact')}
           </button>
           <button className='menu-btn subheading-2'>
             <span className='icon-wrapper'>
               <i className='icon icon-share-solid' />
             </span>
-            Share
+            {t('main-overview.share')}
           </button>
         </div>
       </Submenu>
@@ -108,4 +111,4 @@ const MainProfileInfo = () => {
   )
 }
 
-export default MainProfileInfo
+export default withTranslation('overview')(MainOverviewInfo)
