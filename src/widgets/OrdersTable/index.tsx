@@ -19,7 +19,7 @@ interface Props {
 
 const OrdersTable = (props: Props) => {
   const { payments, isLoading, onClick, onChangeStatus } = props
-  const [columns] = useOrdersTable({ onClick, onChangeStatus })
+  const [columns]: any = useOrdersTable({ onClick, onChangeStatus })
 
   return (
     <Spring className='flex flex-col flex-1 w-full'>

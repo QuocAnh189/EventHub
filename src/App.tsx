@@ -36,6 +36,7 @@ const Home = lazy(() => import('@pages/home/Home'))
 const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
+const Calendar = lazy(() => import('@pages/calendar/Calendar'))
 const Order = lazy(() => import('@pages/order/index'))
 const Review = lazy(() => import('@pages/review/Review'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
@@ -67,6 +68,7 @@ function App() {
               <Route path='/organization/' element={<Home />} />
               <Route path='/organization/explore' element={<Explore />} />
               <Route path='/organization/event/:id' element={<EventDetail />} />
+              <Route path='/organization/calendar' element={<Calendar />} />
               <Route path='/organization/order' element={<Order />} />
               <Route path='/organization/review' element={<Review />} />
               <Route path='/organization/settings/profile' element={<Profile />} />
