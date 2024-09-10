@@ -1,12 +1,16 @@
-// eslint-disable-next-line no-redeclare
-import { getStatusColor } from '@utils/helpers'
-// eslint-disable-next-line no-redeclare
+//component
 import { Image } from 'antd'
+
+//interface vs type
 import { AnyObject } from 'antd/es/_util/type'
 import type { ColumnsType } from 'antd/es/table/interface'
-import { IPayment, IPaymentEvent, IPaymentMethod } from 'interfaces/contents/payment'
+import { IPayment, IPaymentEvent, IPaymentMethod } from 'interfaces/contents/payment.interface'
 
+//icons
 import { MdOutlineEditCalendar } from 'react-icons/md'
+
+//util
+import { getStatusColor } from '@utils/helpers'
 
 export interface IOrdersTableHook {
   onClick?: (order: IPayment) => void
@@ -102,7 +106,7 @@ export default function useOrdersTable({ onClick, onChangeStatus }: IOrdersTable
             alt='event-cover-image'
             preview={false}
             src={method.method.methodLogo}
-          ></Image>
+          />
           <div className='flex flex-col items-start gap-2'>
             <span>{method.method.methodName}</span>
             <span className='font-semibold'>{method.paymentAccountNumber}</span>

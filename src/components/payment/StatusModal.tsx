@@ -18,7 +18,7 @@ export interface IStatusModalProps {
   order: IPayment
 }
 
-export function StatusModal({ isModalOpen, setIsModalOpen, order }: IStatusModalProps) {
+const StatusModal = ({ isModalOpen, setIsModalOpen, order }: IStatusModalProps) => {
   const [selectedValue, setSelectedValue] = useState<string>(order.status)
 
   const [acceptOrder, { isLoading: acceptOrderLoading }] = useAcceptOrderMutation()
@@ -82,3 +82,5 @@ export function StatusModal({ isModalOpen, setIsModalOpen, order }: IStatusModal
     </Modal>
   )
 }
+
+export default StatusModal

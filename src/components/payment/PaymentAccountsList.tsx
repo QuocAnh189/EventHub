@@ -8,13 +8,15 @@ import { IPaymentAccount } from 'interfaces/contents/payment.interface'
 //i18
 import { withTranslation } from 'react-i18next'
 
-export interface IPaymentAccountsListProps {
+interface Props {
   onClick?: (account: IPaymentAccount) => void
   accounts: IPaymentAccount[]
   isLoading: boolean
 }
 
-const PaymentAccountsList = ({ isLoading, accounts, onClick }: IPaymentAccountsListProps) => {
+const PaymentAccountsList = (props: Props) => {
+  const { isLoading, accounts, onClick } = props
+
   return (
     <div className='flex flex-row flex-wrap gap-4'>
       {isLoading ? (

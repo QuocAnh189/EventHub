@@ -6,7 +6,7 @@ import { Navbar, Intro, Manage, AutomaticRun, Feedback, Contact } from './compon
 
 const Landing = () => {
   return (
-    <main className='overflow-hidden bg-gray-light3'>
+    <main className='bg-gray-light3'>
       <Navbar />
       <Intro />
       <Manage />
