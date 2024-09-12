@@ -6,6 +6,7 @@ import SIGNUP_EN from '@translate/en/auth/signup.json'
 import CATEGORY_ANALYSIS_EN from '@translate/en/dashboard/category-analysis.json'
 import CUSTOMER_EN from '@translate/en/dashboard/customer.json'
 import EVENT_ANALYSIS_EN from '@translate/en/dashboard/event-analysis.json'
+import EVENT_ANALYSIS_DETAILS_EN from '@translate/en/dashboard/event-analysis-detail.json'
 import OVERVIEW_DETAIL_EN from '@translate/en/dashboard/overview-detail.json'
 import OVERVIEW_EN from '@translate/en/dashboard/overview.json'
 import PAYMENT_EN from '@translate/en/dashboard/payment.json'
@@ -30,6 +31,7 @@ import SIGNUP_VN from '@translate/vi/auth/signup.json'
 import CATEGORY_ANALYSIS_VN from '@translate/vi/dashboard/category-analysis.json'
 import CUSTOMER_VN from '@translate/vi/dashboard/customer.json'
 import EVENT_ANALYSIS_VN from '@translate/vi/dashboard/event-analysis.json'
+import EVENT_ANALYSIS_DETAILS_VN from '@translate/vi/dashboard/event-analysis-detail.json'
 import OVERVIEW_DETAIL_VN from '@translate/vi/dashboard/overview-detail.json'
 import OVERVIEW_VN from '@translate/vi/dashboard/overview.json'
 import PAYMENT_VN from '@translate/vi/dashboard/payment.json'
@@ -57,6 +59,7 @@ const resources = {
     category_analysis: CATEGORY_ANALYSIS_EN,
     customer: CUSTOMER_EN,
     event_analysis: EVENT_ANALYSIS_EN,
+    event_analysis_detail: EVENT_ANALYSIS_DETAILS_EN,
     overview_detail: OVERVIEW_DETAIL_EN,
     overview: OVERVIEW_EN,
     payment: PAYMENT_EN,
@@ -82,6 +85,7 @@ const resources = {
     category_analysis: CATEGORY_ANALYSIS_VN,
     customer: CUSTOMER_VN,
     event_analysis: EVENT_ANALYSIS_VN,
+    event_analysis_detail: EVENT_ANALYSIS_DETAILS_VN,
     overview_detail: OVERVIEW_DETAIL_VN,
     overview: OVERVIEW_VN,
     payment: PAYMENT_VN,
@@ -114,6 +118,7 @@ i18n.use(initReactI18next).init({
     'category_analysis',
     'customer',
     'event_analysis',
+    'event_analysis_detail',
     'overview_detail',
     'overview',
     'payment',

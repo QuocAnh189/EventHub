@@ -14,10 +14,16 @@ const data = [
   { label: 'Services', value: 5000, color: 'yellow' }
 ]
 
-const SalesProfitByCategory = () => {
+interface Props {
+  translate: any
+}
+
+const SalesProfitByCategory = (props: Props) => {
+  const { translate } = props
+
   return (
     <Spring className='card flex flex-col'>
-      <h5 className='mb-4'>Sales Profit by Category</h5>
+      <h5 className='mb-4'>{translate.title}</h5>
       <div className='flex flex-1 flex-col gap-[27px] justify-between'>
         <div className='flex flex-col gap-4'>
           {data.map((item, index) => (
@@ -32,13 +38,15 @@ const SalesProfitByCategory = () => {
         </div>
         <div className='flex flex-col gap-2 sm:flex-row sm:justify-between'>
           <div className='flex flex-col gap-2'>
-            <h5>Review Rate</h5>
+            <h5>{translate.review_rate}</h5>
             <RatingStars value={3.5} />
           </div>
           <div className='sm:text-right'>
-            <p className='text-sm text-header sm:mb-1.5'>From 324 Responders</p>
+            <p className='text-sm text-header sm:mb-1.5'>
+              {translate.from} 324 {translate.response}
+            </p>
             <NavLink className='text-btn' to='/reviews'>
-              View All Reviews
+              {translate.view_all_review}
             </NavLink>
           </div>
         </div>

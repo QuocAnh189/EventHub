@@ -3,11 +3,12 @@ import Spring from '@components/Spring'
 import Trend from '@ui/Trend'
 
 interface Props {
+  title: string
   item?: any
   trend?: number
 }
 const TransactionsInfobox = (props: Props) => {
-  const { trend = 14.56 } = props
+  const { title, trend = 14.56 } = props
 
   return (
     <Spring className='card flex flex-row items-center gap-2'>
@@ -17,7 +18,7 @@ const TransactionsInfobox = (props: Props) => {
         </div>
       </div>
       <div>
-        <span className='block label-text mb-0.5'>Transactions</span>
+        <span className='block label-text mb-0.5 text-header'>{title}</span>
         <Trend value={trend} />
       </div>
     </Spring>

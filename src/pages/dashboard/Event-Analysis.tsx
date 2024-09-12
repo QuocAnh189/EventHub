@@ -7,6 +7,7 @@ import EventAnalysisGrid from '@widgets/EventAnalysisGrid'
 import { withTranslation } from 'react-i18next'
 
 const EventAnalysis = ({ t }: any) => {
+  console.log(t('search'))
   return (
     <ProtectedLayout>
       <PageHeader title={t('header.title')} />

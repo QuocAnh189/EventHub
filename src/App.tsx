@@ -36,6 +36,7 @@ const Home = lazy(() => import('@pages/home/Home'))
 const Overview = lazy(() => import('@pages/dashboard/Overview'))
 const OverviewDetail = lazy(() => import('@pages/dashboard/Overview-Detail'))
 const EventAnalysis = lazy(() => import('@pages/dashboard/Event-Analysis'))
+const EventAnalysisDetail = lazy(() => import('@pages/dashboard/Event-Analysis-Detail'))
 const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
@@ -72,6 +73,7 @@ function App() {
               <Route path='/organization/dashboard/overview' element={<Overview />} />
               <Route path='/organization/dashboard/overview-detail' element={<OverviewDetail />} />
               <Route path='/organization/dashboard/event-analysis' element={<EventAnalysis />} />
+              <Route path='/organization/dashboard/event-analysis/:id' element={<EventAnalysisDetail />} />
               <Route path='/organization/explore' element={<Explore />} />
               <Route path='/organization/event/:id' element={<EventDetail />} />
               <Route path='/organization/calendar' element={<Calendar />} />

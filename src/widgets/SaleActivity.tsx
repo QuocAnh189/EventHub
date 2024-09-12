@@ -18,12 +18,17 @@ const data = [
   { name: 'Period 7', expense: 3490, income: 4300 }
 ]
 
-const SaleActivity = () => {
+interface Props {
+  title: string
+}
+
+const SaleActivity = (props: Props) => {
+  const { title } = props
   const { theme } = useTheme()
 
   return (
     <Spring className='card flex flex-col gap-[5px] min-h-[182px]'>
-      <h5>Sale Activity</h5>
+      <h5>{title}</h5>
       <div className='flex-1'>
         <ResponsiveContainer width='100%' height='100%'>
           <BarChart data={data}>

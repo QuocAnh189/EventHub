@@ -7,7 +7,7 @@ const sellers = [
     name: 'Albo E-Store',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'albo@email.com',
     rating: 3.5,
     profit: {
@@ -24,7 +24,7 @@ const sellers = [
     name: 'Asasio',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'asasio_store@email.com',
     rating: 5,
     profit: {
@@ -41,7 +41,7 @@ const sellers = [
     name: 'Ecom',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 4,
     profit: {
@@ -58,7 +58,7 @@ const sellers = [
     name: 'Delight',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 5,
     mainCategory: 'electronics',
@@ -76,7 +76,7 @@ const sellers = [
     name: 'Data Foundry',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 2.5,
     profit: {
@@ -93,7 +93,7 @@ const sellers = [
     name: 'AV Solutions',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 4.5,
     profit: {
@@ -110,7 +110,7 @@ const sellers = [
     name: 'Whale',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -127,7 +127,7 @@ const sellers = [
     name: 'Wood Cabins',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -144,7 +144,7 @@ const sellers = [
     name: 'Academy',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -161,7 +161,7 @@ const sellers = [
     name: 'Liu & Jo',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -178,7 +178,7 @@ const sellers = [
     name: 'Oakley Store',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -195,7 +195,7 @@ const sellers = [
     name: 'Dakine LCC',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -212,7 +212,7 @@ const sellers = [
     name: 'TigerTool',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -229,7 +229,7 @@ const sellers = [
     name: 'Public Trendy',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -246,7 +246,7 @@ const sellers = [
     name: 'Market Reveal',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -263,7 +263,7 @@ const sellers = [
     name: 'Workplace Solutions',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -280,7 +280,7 @@ const sellers = [
     name: 'Arca Solutions, Inc.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -297,7 +297,7 @@ const sellers = [
     name: 'SC Project',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -314,7 +314,7 @@ const sellers = [
     name: 'Diriag Foods',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -331,7 +331,7 @@ const sellers = [
     name: 'SmartFoods LCC',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -348,7 +348,7 @@ const sellers = [
     name: 'Midimd Electronics',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -365,7 +365,7 @@ const sellers = [
     name: 'Fanellini Fashion',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -382,7 +382,7 @@ const sellers = [
     name: 'Minerva Professional',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -399,7 +399,7 @@ const sellers = [
     name: 'Cancon Industries, Inc.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -416,7 +416,7 @@ const sellers = [
     name: 'Wonder Trade',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -433,7 +433,7 @@ const sellers = [
     name: 'Imagination, Inc.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -450,7 +450,7 @@ const sellers = [
     name: 'Rinni Candle Co.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -467,7 +467,7 @@ const sellers = [
     name: 'Seluid Foods Trade',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -484,7 +484,7 @@ const sellers = [
     name: 'Agro Irilee, Inc.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -501,7 +501,7 @@ const sellers = [
     name: 'Agro Tech, Inc.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -518,7 +518,7 @@ const sellers = [
     name: 'Sorelli',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -535,7 +535,7 @@ const sellers = [
     name: 'Doneriald Aquatech, Inc.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -552,7 +552,7 @@ const sellers = [
     name: 'Hioh Tech, Inc.',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -569,7 +569,7 @@ const sellers = [
     name: 'Marco Industries',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -586,7 +586,7 @@ const sellers = [
     name: 'Tesco Trader',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {
@@ -603,7 +603,7 @@ const sellers = [
     name: 'Mintesso',
     website: 'https://1.envato.market/tf-merkulove',
     address: '53 West Cherry Hill Lane Murfreesboro, TN 37128',
-    phone: faker.phone.number('+1(###) ###-####'),
+    phone: faker.helpers.fromRegExp('+1(###) ###-####'),
     email: 'emailalbo_store@email.com',
     rating: 3,
     profit: {

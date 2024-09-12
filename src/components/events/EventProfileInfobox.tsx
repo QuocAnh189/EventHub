@@ -7,10 +7,10 @@ import classNames from 'classnames'
 
 interface Props {
   icon: string
-  color: string
-  value: number
-  label: string
-  withCurrency: boolean
+  color?: string
+  value?: number
+  label?: string
+  withCurrency?: boolean
 }
 
 export const EventProfileInfobox = (props: Props) => {
@@ -26,11 +26,11 @@ export const EventProfileInfobox = (props: Props) => {
         />
       </div>
       <div className='flex flex-col gap-0.5'>
-        <span className='h4'>
+        <span className='h4 text-center'>
           {withCurrency && '$'}
           {numFormatter(value, 1)}
         </span>
-        <span className='label-text'>{label}</span>
+        <span className='label-text text-header text-center'>{label}</span>
       </div>
     </Spring>
   )

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "title": "Chi tiết sự kiện"
+  },
+  "transaction": "Giao dịch",
+  "sale_activity": "Hoạt động thương mại",
+  "total": {
+    "expense": "Tổng chi phí",
+    "profit": "Tổng lợi nhuận"
+  },
+  "period-sales-revenue": "Doanh thu bán hàng trong kỳ",
+  "sales-profit-by-category": {
+    "title": "Lợi nhuận bán hàng theo danh mục",
+    "review_rate": "Tỉ lệ đánh giá",
+    "from": "Từ",
+    "response": "Phản hồi",
+    "view_all_reviews": "Xem tất cả đánh giá"
+  },
+  "income": "Thu nhập",
+  "new_orders": "Đơn hàng",
+  "expense": "Chi phí"
+}

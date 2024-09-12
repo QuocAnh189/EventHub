@@ -14,12 +14,12 @@ interface Props {
 const WalletBadge = (props: Props) => {
   const { value, label, image, imgClass } = props
   return (
-    <Spring className='card flex items-center !py-[13px] !pl-[18px] !pr-6'>
-      <div className={`w-[52px] h-[52px] mr-8 hidden xs:flex items-center ${imgClass || ''}`}>
+    <Spring className='card flex items-center justify-center !py-[13px] !pl-[18px] !pr-6'>
+      <div className={`w-[52px] h-[52px] hidden xs:flex items-center ${imgClass || ''}`}>
         <img src={image} alt={label} />
       </div>
       <span className='h6 !text-sm'>{label}</span>
-      <span className='h6 !text-sm ml-auto text-center'>{numFormatter(value, 1, '$')}</span>
+      <span className='h6 !text-sm ml-auto'>{numFormatter(value, 1, '$')}</span>
     </Spring>
   )
 }

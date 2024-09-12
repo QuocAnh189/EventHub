@@ -64,15 +64,19 @@ const data = [
 //   return null
 // }
 
-const PeriodSalesRevenue = () => {
+interface Props {
+  title: string
+}
+
+const PeriodSalesRevenue = (props: Props) => {
+  const { title } = props
+
   const { width } = useWindowSize()
 
   return (
     <Spring className='card flex flex-col h-[300px] md:h-[494px] lg:h-[400px] xl:h-full'>
       <div className='flex items-center justify-between mb-8'>
-        <h4>
-          <span className='hidden xs:inline'>Period</span> Sales Revenue
-        </h4>
+        <h4>{title}</h4>
         <InfoBtn />
       </div>
       <div className='flex-1 -mt-5 overflow-hidden'>
