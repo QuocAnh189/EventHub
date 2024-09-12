@@ -1,10 +1,14 @@
+//util
 import classNames from 'classnames'
 
+//interface
+import { IPagination } from '@interfaces/common.interface'
+
 interface Props {
-  pagination: any
+  pagination: IPagination
 }
 
-const Pagination = (props: Props) => {
+const Pagination = (props: Props): JSX.Element => {
   const { pagination } = props
 
   const groupLeftPage = [...Array(pagination.maxPage)]
@@ -21,13 +25,13 @@ const Pagination = (props: Props) => {
   return (
     <div className='flex flex-wrap items-center gap-[18px] pb-6 border-b border-input-border'>
       {pagination.currentPage > 1 && (
-        <button onClick={pagination.prev} aria-label='Previous page'>
+        <button onClick={pagination.prevPage} aria-label='Previous page'>
           <i className='icon icon-chevrons-left-solid' />
         </button>
       )}
       <div className='flex flex-wrap gap-2.5'>
         {pagination.maxPage <= 10 ? (
-          [...Array(pagination.maxPage)].map((_, i) => {
+          [...Array(pagination.maxPage)].map((_, i: number) => {
             return (
               <button
                 className={classNames('page-btn subheading-2', { active: i + 1 === pagination.currentPage })}
@@ -43,7 +47,7 @@ const Pagination = (props: Props) => {
         ) : (
           <div className='flex flex-row gap-2'>
             {(groupLeftPage[groupLeftPage.length - 1] < groupRightPage[0] || groupLeftPage.length === 0) &&
-              groupLeftPage.map((page, index) => {
+              groupLeftPage.map((page: number, index: number) => {
                 return (
                   <button
                     className={classNames('page-btn subheading-2', { active: page === pagination.currentPage })}
@@ -59,7 +63,7 @@ const Pagination = (props: Props) => {
 
             <div className={classNames('page-btn subheading-2')}>...</div>
 
-            {groupRightPage.map((page, index) => {
+            {groupRightPage.map((page: number, index: number) => {
               return (
                 <button
                   className={classNames('page-btn subheading-2', { active: page === pagination.currentPage })}
@@ -77,7 +81,7 @@ const Pagination = (props: Props) => {
       </div>
       {pagination.currentPage < pagination.maxPage && (
         <button
-          onClick={pagination.next}
+          onClick={pagination.nextPage}
           disabled={pagination.currentPage === pagination.maxPage}
           aria-label='Next page'
         >

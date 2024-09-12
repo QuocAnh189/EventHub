@@ -1,24 +1,24 @@
 //hook
 import { useState } from 'react'
 
-export const usePagination = (totalCount: any, itemsPerPage = 10) => {
-  const [currentPage, setCurrentPage] = useState(1)
-  const maxPage = Math.ceil(totalCount / itemsPerPage)
+export const usePagination = (totalCount: number, itemsPerPage: number = 10) => {
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const maxPage: number = Math.ceil(totalCount / itemsPerPage)
 
-  const next = () => {
-    setCurrentPage((currentPage) => Math.min(currentPage + 1, maxPage))
+  const nextPage = (): void => {
+    setCurrentPage((currentPage: number) => Math.min(currentPage + 1, maxPage))
   }
 
-  const prev = () => {
-    setCurrentPage((currentPage) => Math.max(currentPage - 1, 1))
+  const prevPage = (): void => {
+    setCurrentPage((currentPage: number) => Math.max(currentPage - 1, 1))
   }
 
-  const goToPage = (page: number) => {
-    const pageNumber = Math.max(1, page)
+  const goToPage = (page: number): void => {
+    const pageNumber: number = Math.max(1, page)
     setCurrentPage(() => Math.min(pageNumber, maxPage))
   }
 
-  const showingOf = () => {
+  const showingOf = (): JSX.Element => {
     const begin = currentPage * itemsPerPage
     const end = totalCount > itemsPerPage ? begin : totalCount
     return totalCount > 0 ? (
@@ -26,9 +26,9 @@ export const usePagination = (totalCount: any, itemsPerPage = 10) => {
         <span className='font-semibold'>{end > totalCount ? totalCount : end}</span>/{totalCount}
       </>
     ) : (
-      ''
+      <span />
     )
   }
 
-  return { next, prev, goToPage, showingOf, currentPage, setCurrentPage, maxPage }
+  return { nextPage, prevPage, goToPage, showingOf, currentPage, setCurrentPage, maxPage }
 }

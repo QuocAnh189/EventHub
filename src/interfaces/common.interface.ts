@@ -43,3 +43,13 @@ export interface IMetadata {
   hasPrevious: boolean
   hasNext: boolean
 }
+
+export interface IPagination {
+  nextPage: () => void
+  prevPage: () => void
+  goToPage: (page: number) => void
+  showingOf: () => JSX.Element
+  currentPage: number
+  setCurrentPage: (page: number) => void
+  maxPage: number
+}

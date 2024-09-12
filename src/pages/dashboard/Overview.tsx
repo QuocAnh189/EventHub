@@ -11,7 +11,7 @@ import SalesStats from '@widgets/SalesStats'
 import TotalReport from '@widgets/TotalReport'
 import TotalBalance from '@components/TotalBalance'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const Overview = ({ t }: any) => {
