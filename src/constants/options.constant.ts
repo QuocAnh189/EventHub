@@ -97,11 +97,11 @@ export const REVIEW_SORT_OPTIONS: IOptionSelect[] = [
 ]
 
 export const LOCALES: IOptionSelect[] = [
-  { value: 'en', label: 'English (EN)', icon: eng },
-  { value: 'vn', label: 'VietNam (VN)', icon: vn },
-  { value: 'ge', label: 'Germany (ge)', icon: ger },
-  { value: 'ita', label: 'Italia (ita)', icon: ita },
-  { value: 'fra', label: 'France (fra)', icon: fra }
+  { value: 'en', label: 'English', icon: eng },
+  { value: 'vn', label: 'Vietnam', icon: vn },
+  { value: 'ge', label: 'Germany', icon: ger },
+  { value: 'it', label: 'Italia', icon: ita },
+  { value: 'fr', label: 'France', icon: fra }
 ]
 
 export const APPS_OPTIONS: IOptionSelect[] = [

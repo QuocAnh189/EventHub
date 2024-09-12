@@ -11,9 +11,9 @@ import { ThemeContext } from '@contexts/theme.context'
 import Headroom from 'react-headroom'
 import Search from '@ui/Search'
 import ModalBase from '@ui/ModalBase'
-import CustomTooltip from '@ui/CustomTooltip'
-import NotificationsPanel from './navbar/NotificationsPanel'
-import MessagesPanel from './navbar/MessagesPanel'
+import NotificationsPanel from '../navbar/NotificationsPanel'
+import MessagesPanel from '../navbar/MessagesPanel'
+import SelectLanguage from '@components/SelectLanguage'
 
 // constants
 import { LOCALES } from '@constants/options.constant'
@@ -24,43 +24,7 @@ import useDefault from '@assets/images/common/user_default.png'
 
 //i18
 import { useTranslation, withTranslation } from 'react-i18next'
-
-interface Props {
-  active: string
-  setActive: (value: any) => void
-}
-
-const LocaleMenu = (props: Props) => {
-  const { active, setActive } = props
-  const { i18n } = useTranslation()
-
-  const handleChangeLangue = (value: any) => {
-    setActive(value)
-    i18n.changeLanguage(value)
-    localStorage.setItem('language', value)
-  }
-
-  return (
-    <div className='flex flex-col gap-4 p-4'>
-      {LOCALES.map((locale: any) => (
-        <button
-          key={locale.value}
-          className='group flex items-center gap-2.5 w-fit'
-          onClick={() => handleChangeLangue(locale.value)}
-        >
-          <img className='rounded-full w-5' src={locale.icon} alt={locale.label} />
-          <span
-            className={`text-sm font-medium transition group-hover:text-accent ${
-              active === locale.value ? 'text-accent' : 'text-header'
-            }`}
-          >
-            {locale.label}
-          </span>
-        </button>
-      ))}
-    </div>
-  )
-}
+import ToggleDarkLight from './switch/ToggleDarkLight'
 
 const TranslatedAppBar = ({ t }: any) => {
   const navigate = useNavigate()
@@ -80,6 +44,12 @@ const TranslatedAppBar = ({ t }: any) => {
   const user = useAppSelector((state) => state.persistedReducer.user.user)
 
   const activeLocale = LOCALES.find((l: any) => l.value === locale)
+
+  const handleChangeLangue = (value: any) => {
+    setLocale(value)
+    i18n.changeLanguage(value)
+    localStorage.setItem('language', value)
+  }
 
   useEffect(() => {
     setSearchModalOpen(false)
@@ -109,19 +79,20 @@ const TranslatedAppBar = ({ t }: any) => {
                 <i className='icon-magnifying-glass-solid' />
               </button>
             )}
-            <button
-              className='text-2xl leading-none text-gray dark:text-gray-red'
-              aria-label='Change theme'
-              onClick={toggleTheme}
-            >
-              <i className={`icon-${theme === 'light' ? 'sun-bright' : 'moon'}-regular`} />
-            </button>
+            <ToggleDarkLight theme={theme} toggleTheme={toggleTheme} />
 
-            <CustomTooltip title={<LocaleMenu active={locale!} setActive={setLocale} />}>
-              <button className='w-6 h-6 rounded-full overflow-hidden xl:w-8 xl:h-8' aria-label='Change language'>
-                <img src={activeLocale?.icon} alt={activeLocale?.label} />
-              </button>
-            </CustomTooltip>
+            <div className='z-[2000]'>
+              <SelectLanguage
+                // placeholder={t('search home.All')}
+                value={activeLocale}
+                id='status'
+                options={LOCALES || []}
+                onChange={(e: any) => {
+                  handleChangeLangue(e.value)
+                  // setActive={setLocale}
+                }}
+              />
+            </div>
             {user !== null ? (
               <>
                 <div className='relative h-fit mt-1.5 xl:self-end xl:mt-0 xl:mr-1.5'>
@@ -166,7 +137,7 @@ const TranslatedAppBar = ({ t }: any) => {
                 </div>
               </>
             ) : (
-              <button onClick={() => navigate('/signin')} className='btn btn-primary'>
+              <button onClick={() => navigate('/signin')} className='btn btn-primary w-36'>
                 {t('signin_btn')}
               </button>
             )}

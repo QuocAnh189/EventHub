@@ -32,7 +32,7 @@ const EventAnalysisGrid = (props: Props) => {
   // const data = pagination.currentItems()
 
   useEffect(() => {
-    pagination.setCurrentPage(0)
+    pagination.setCurrentPage(1)
   }, [sort])
 
   return (

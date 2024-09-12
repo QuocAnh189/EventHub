@@ -8,10 +8,10 @@
     "vat": "VAT",
     "total": "TOTAL"
   },
-  "btn_add": "Add new pyament account",
+  "btn_add": "Add new payment account",
   "modal": {
-    "title_modal_create": "Add new pyament account",
-    "title_modal_update": "Update pyament account",
+    "title_modal_create": "Add new payment account",
+    "title_modal_update": "Update payment account",
     "title": "Update payment account",
     "payment_method": "Payment Method",
     "account_number": "Account Number",

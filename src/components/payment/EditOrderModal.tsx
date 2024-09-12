@@ -10,7 +10,7 @@ import { IPayment } from 'interfaces/contents/payment.interface'
 //redux
 import { useUpdatePaymentMutation } from '@redux/apis/payment.api'
 
-export interface IEditOrderModalProps {
+export interface Props {
   isModalOpen: boolean
   setIsModalOpen: Dispatch<SetStateAction<boolean>>
   order: IPayment
@@ -22,7 +22,9 @@ export interface UpdateOrderForm {
   customerPhone: string
 }
 
-const EditOrderModal = ({ isModalOpen, setIsModalOpen, order }: IEditOrderModalProps) => {
+const EditOrderModal = (props: Props) => {
+  const { isModalOpen, setIsModalOpen, order } = props
+
   const [updatePayment, { isLoading: updatePaymentLoading }] = useUpdatePaymentMutation()
 
   const [form] = Form.useForm<UpdateOrderForm>()

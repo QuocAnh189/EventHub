@@ -37,6 +37,19 @@
   --transition: 0.3s ease-in-out;
   --element-height: 44px;
   --app-height: 100%;
+
+  --bg-color: #cde7ff;
+  --switch-width: 100px;
+  --switch-height: 45px;
+  --switch-round: 50px;
+  --switch-padding-x: 5px;
+  --switch-bg: linear-gradient(to bottom, #73bbff, #a2d1fd);
+  --switch-dark-bg: linear-gradient(to top, #2b3347, #181d27);
+  --border-width: 2px;
+  --border-gradient: linear-gradient(to bottom, #a2d1fd, #cde7ff);
+  --border-dark-gradient: linear-gradient(to bottom, #000000, #6c7384);
+  --sunmoon-size: 35px;
+  --transition-toggle: all 0.5s ease;
 }
 
 .bg-radial-blue {
