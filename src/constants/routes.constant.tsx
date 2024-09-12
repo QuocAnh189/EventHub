@@ -26,7 +26,6 @@ const ROUTES: Route[] = [
         name: 'Event Analysis',
         path: '/organization/dashboard/event-analysis'
       },
-      // { name: 'Category Analysis', path: '/organization/dashboard/category-analysis' },
       { name: 'Customer', path: '/organization/dashboard/customer' },
       { name: 'Payment', path: '/organization/dashboard/payment' }
     ]
@@ -35,10 +34,10 @@ const ROUTES: Route[] = [
     name: 'Event',
     icon: <MdEventAvailable size={20} />,
     links: [
-      { name: 'Top Events', path: '/organization/event/top-event' },
-      { name: 'My Events', path: '/organization/event/my-event' },
-      { name: 'Trash Events', path: '/organization/event/trash-event' },
-      { name: 'Create Event', path: '/organization/event/create-event' }
+      { name: 'Top Events', path: '/organization/top-event' },
+      { name: 'My Events', path: '/organization/my-event' },
+      { name: 'Trash Events', path: '/organization/trash-event' },
+      { name: 'Create Event', path: '/organization/create-event' }
     ]
   },
   {

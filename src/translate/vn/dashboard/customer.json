@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "Khách hàng"
+  },
+  "all": "Tất cả",
+  "new": "Mới",
+  "regular": "Thường xuyên",
+  "conversion_rate": {
+    "title": "Tỉ lệ chuyển đổi",
+    "year": "Năm",
+    "customers": "Khách hàng",
+    "trend": "Xu hướng",
+    "revenue": "Doanh thu"
+  },
+  "customer_retention_rate": {
+    "total_customer": "Tổng khách hàng",
+    "in": "trong",
+    "description": "Để tính CRR, hãy trừ số lượng khách hàng mới khỏi tổng số khách hàng vào cuối kỳ, chia cho số lượng khách hàng đầu kỳ và nhân với 100. Việc giữ chân khách hàng thường tiết kiệm chi phí hơn so với việc có được khách hàng mới, khiến CRR là trọng tâm thiết yếu của các công ty nhằm thúc đẩy tăng trưởng và ổn định.",
+    "new_customers": "Khách hàng mới",
+    "frequent_customers": "Khách hàng thường xuyên",
+    "idle_users": "Khách hàng nhàn rỗi",
+    "cart_abandoners": "Người bỏ giỏ hàng",
+    "which_is": "đó là",
+    "visitors": "người ghé thăm"
+  },
+  "demographic": {
+    "title": "Mô hình phân loại theo độ tuổi",
+    "age": "Tuổi",
+    "segmentation_by_gender": {
+      "title": "Phân khúc theo giới tính",
+      "description": "Tỉ lệ giới tính sẽ cho biết được sự kiện của bạn phù hợp với giới tính nào"
+    }
+  }
+}

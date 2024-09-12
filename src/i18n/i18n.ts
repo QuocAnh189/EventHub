@@ -5,8 +5,8 @@ import SIGNIN_EN from '@translate/en/auth/signin.json'
 import SIGNUP_EN from '@translate/en/auth/signup.json'
 import CATEGORY_ANALYSIS_EN from '@translate/en/dashboard/category-analysis.json'
 import CUSTOMER_EN from '@translate/en/dashboard/customer.json'
-import EVENT_ANALYSIS_EN from '@translate/en/dashboard/event-analysis.json'
 import EVENT_ANALYSIS_DETAILS_EN from '@translate/en/dashboard/event-analysis-detail.json'
+import EVENT_ANALYSIS_EN from '@translate/en/dashboard/event-analysis.json'
 import OVERVIEW_DETAIL_EN from '@translate/en/dashboard/overview-detail.json'
 import OVERVIEW_EN from '@translate/en/dashboard/overview.json'
 import PAYMENT_EN from '@translate/en/dashboard/payment.json'
@@ -16,40 +16,40 @@ import MY_EVENT_EN from '@translate/en/events/my-event.json'
 import MY_TICKET_EN from '@translate/en/events/my-ticket.json'
 import TOP_EVENT_EN from '@translate/en/events/top-event.json'
 import CALENDAR_EN from '@translate/en/calendar.json'
+import COMMON_EN from '@translate/en/common.json'
+import EXPLORE_EN from '@translate/en/explore.json'
 import HELP_EN from '@translate/en/help.json'
 import HOME_EN from '@translate/en/home.json'
-import EXPLORE_EN from '@translate/en/explore.json'
 import LANDING_EN from '@translate/en/landing.json'
 import ORDER_EN from '@translate/en/order.json'
+import PROFILE_EN from '@translate/en/profile.json'
 import REPORT_EN from '@translate/en/report.json'
 import REVIEW_EN from '@translate/en/review.json'
-import PROFILE_EN from '@translate/en/profile.json'
-import COMMON_EN from '@translate/en/common.json'
 
-import SIGNIN_VN from '@translate/vi/auth/signin.json'
-import SIGNUP_VN from '@translate/vi/auth/signup.json'
-import CATEGORY_ANALYSIS_VN from '@translate/vi/dashboard/category-analysis.json'
-import CUSTOMER_VN from '@translate/vi/dashboard/customer.json'
-import EVENT_ANALYSIS_VN from '@translate/vi/dashboard/event-analysis.json'
-import EVENT_ANALYSIS_DETAILS_VN from '@translate/vi/dashboard/event-analysis-detail.json'
-import OVERVIEW_DETAIL_VN from '@translate/vi/dashboard/overview-detail.json'
-import OVERVIEW_VN from '@translate/vi/dashboard/overview.json'
-import PAYMENT_VN from '@translate/vi/dashboard/payment.json'
-import TICKET_SALE_VN from '@translate/vi/dashboard/ticket-sale.json'
-import CREATE_EVENT_VN from '@translate/vi/events/create-event.json'
-import MY_EVENT_VN from '@translate/vi/events/my-event.json'
-import MY_TICKET_VN from '@translate/vi/events/my-ticket.json'
-import TOP_EVENT_VN from '@translate/vi/events/top-event.json'
-import CALENDAR_VN from '@translate/vi/calendar.json'
-import HELP_VN from '@translate/vi/help.json'
-import HOME_VN from '@translate/vi/home.json'
-import EXPLORE_VN from '@translate/vi/explore.json'
-import LANDING_VN from '@translate/vi/landing.json'
-import ORDER_VN from '@translate/vi/order.json'
-import REPORT_VN from '@translate/vi/report.json'
-import REVIEW_VN from '@translate/vi/review.json'
-import PROFILE_VN from '@translate/vi/profile.json'
-import COMMON_VN from '@translate/vi/common.json'
+import SIGNIN_VN from '@translate/vn/auth/signin.json'
+import SIGNUP_VN from '@translate/vn/auth/signup.json'
+import CATEGORY_ANALYSIS_VN from '@translate/vn/dashboard/category-analysis.json'
+import CUSTOMER_VN from '@translate/vn/dashboard/customer.json'
+import EVENT_ANALYSIS_VN from '@translate/vn/dashboard/event-analysis.json'
+import EVENT_ANALYSIS_DETAILS_VN from '@translate/vn/dashboard/event-analysis-detail.json'
+import OVERVIEW_DETAIL_VN from '@translate/vn/dashboard/overview-detail.json'
+import OVERVIEW_VN from '@translate/vn/dashboard/overview.json'
+import PAYMENT_VN from '@translate/vn/dashboard/payment.json'
+import TICKET_SALE_VN from '@translate/vn/dashboard/ticket-sale.json'
+import CREATE_EVENT_VN from '@translate/vn/events/create-event.json'
+import MY_EVENT_VN from '@translate/vn/events/my-event.json'
+import MY_TICKET_VN from '@translate/vn/events/my-ticket.json'
+import TOP_EVENT_VN from '@translate/vn/events/top-event.json'
+import CALENDAR_VN from '@translate/vn/calendar.json'
+import COMMON_VN from '@translate/vn/common.json'
+import EXPLORE_VN from '@translate/vn/explore.json'
+import HELP_VN from '@translate/vn/help.json'
+import HOME_VN from '@translate/vn/home.json'
+import LANDING_VN from '@translate/vn/landing.json'
+import ORDER_VN from '@translate/vn/order.json'
+import PROFILE_VN from '@translate/vn/profile.json'
+import REPORT_VN from '@translate/vn/report.json'
+import REVIEW_VN from '@translate/vn/review.json'
 
 const resources = {
   en: {
@@ -142,6 +142,14 @@ i18n.use(initReactI18next).init({
   defaultNS,
   interpolation: {
     escapeValue: false
+  },
+  backend: {
+    // loadPath: '/locales/{{lng}}/{{ns}}.json',
+    // // Thay đổi cấu hình caching
+    allowMultiLoading: false,
+    requestOptions: {
+      cache: 'no-store'
+    }
   }
 })
 
