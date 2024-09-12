@@ -9,7 +9,6 @@ import { MdOutlinePreview } from 'react-icons/md'
 import { MdMenuBook } from 'react-icons/md'
 import { BiHelpCircle } from 'react-icons/bi'
 import { IoSettingsOutline } from 'react-icons/io5'
-import { FcTodoList } from 'react-icons/fc'
 
 const ROUTES: Route[] = [
   {
@@ -54,11 +53,6 @@ const ROUTES: Route[] = [
     name: 'Reviews',
     icon: <MdOutlinePreview size={20} />,
     path: '/organization/review'
-  },
-  {
-    name: 'Todo List',
-    icon: <FcTodoList size={20} />,
-    path: '/organization/todo-list'
   },
   {
     name: 'FAQ',

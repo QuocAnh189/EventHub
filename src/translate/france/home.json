@@ -1,0 +1,54 @@
+{
+  "header": {
+    "search": "Search..."
+  },
+  "search home": {
+    "title": "The right destination for you and your friends",
+    "sub_title": "Participating in many events will help you better discover your personality",
+    "explore": "Explore Now",
+    "event": "Event",
+    "event_placeholder": "Enter you name event",
+    "status": "Status",
+    "category": "Category",
+    "search": "Search",
+    "events_to_explore": "Events to Explore",
+    "view_event_btn": "View",
+    "All": "All",
+    "Upcoming": "Upcoming",
+    "Opening": "Opening",
+    "Closed": "Closed",
+    "categories": {
+      "Visual Arts": "Visual Arts",
+      "Sports & Active Life": "Sports & Active Life",
+      "Politics": "Politics",
+      "Performing Arts": "Performing Arts",
+      "Other": "Other",
+      "Nightlife": "Nightlife",
+      "Music": "Music",
+      "Lectures & Books": "Lectures & Books",
+      "Kids & Family": "Kids & Family",
+      "Holidays": "Holidays",
+      "Food & Drink": "Food & Drink",
+      "Film": "Film",
+      "Festivals & Fairs": "Festivals & Fairs",
+      "Fashion": "Fashion",
+      "Concerts": "Concerts",
+      "Conferences": "Conferences",
+      "Community": "Community",
+      "Charities": "Charities",
+      "Anniversary": "Anniversary",
+      "Academic": "Academic"
+    }
+  },
+  "best events": {
+    "title": "Best Events to Visit"
+  },
+  "upcoming events": {
+    "title": "Upcomming Events"
+  },
+  "about us": {
+    "title": "About us",
+    "description_one": "Event Management and Ticket is your premier destination for seamless event planning and ticketing solutions. With a dedicated team of professionals, we specialize in curating unforgettable experiences tailored to your unique vision. From corporate conferences to music festivals and everything in between, we handle every aspect of event coordination with precision and creativity. Our user-friendly ticketing platform ensures smooth transactions for both organizers and attendees, making event management effortless and efficient. Trust us to bring your events to life, leaving lasting impressions and unforgettable memories.",
+    "description_two": "Whether you're organizing a small gathering or a large-scale extravaganza, our attention to detail and commitment to excellence guarantee success every time. Let us take the stress out of event planning so you can focus on what truly matters: creating memorable moments for your guests."
+  }
+}

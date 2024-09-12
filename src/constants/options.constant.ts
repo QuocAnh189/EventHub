@@ -1,9 +1,15 @@
 //assets
-import eng from '@assets/images/flags/eng.webp'
-import vn from '@assets/images/flags/vn.webp'
-import ger from '@assets/images/flags/ger.webp'
-import ita from '@assets/images/flags/ita.webp'
-import fra from '@assets/images/flags/fra.webp'
+import china from '@assets/images/flags/china.png'
+import english from '@assets/images/flags/english.png'
+import france from '@assets/images/flags/france.png'
+import germany from '@assets/images/flags/germany.png'
+import italia from '@assets/images/flags/italia.png'
+import japan from '@assets/images/flags/japan.png'
+import korea from '@assets/images/flags/korea.png'
+import russia from '@assets/images/flags/russia.png'
+import spain from '@assets/images/flags/spain.png'
+import vietnam from '@assets/images/flags/vietnam.png'
+
 import mc from '@assets/images/payment/mc.svg'
 import visa from '@assets/images/payment/visa.svg'
 import googlepay from '@assets/images/payment/googlepay.svg'
@@ -97,11 +103,16 @@ export const REVIEW_SORT_OPTIONS: IOptionSelect[] = [
 ]
 
 export const LOCALES: IOptionSelect[] = [
-  { value: 'en', label: 'English', icon: eng },
-  { value: 'vn', label: 'Vietnam', icon: vn },
-  { value: 'ge', label: 'Germany', icon: ger },
-  { value: 'it', label: 'Italia', icon: ita },
-  { value: 'fr', label: 'France', icon: fra }
+  { value: 'en', label: 'English', icon: english },
+  { value: 'cn', label: 'China', icon: china },
+  { value: 'jp', label: 'Japan', icon: japan },
+  { value: 'kr', label: 'Korea', icon: korea },
+  { value: 'ge', label: 'Germany', icon: germany },
+  { value: 'it', label: 'Italia', icon: italia },
+  { value: 'ru', label: 'Russia', icon: russia },
+  { value: 'sp', label: 'Spain', icon: spain },
+  { value: 'fr', label: 'France', icon: france },
+  { value: 'vn', label: 'Vietnam', icon: vietnam }
 ]
 
 export const APPS_OPTIONS: IOptionSelect[] = [

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "title": "Event Details"
+  },
+  "transaction": "Transactions",
+  "sale_activity": "Sale Activity",
+  "total": {
+    "expense": "Total Expense",
+    "profit": "Total Profit"
+  },
+  "period-sales-revenue": "Period Sales Revenue",
+  "sales-profit-by-category": {
+    "title": "Sales Profit by Category",
+    "review_rate": "Review Rate",
+    "from": "From",
+    "response": "Response",
+    "view_all_reviews": "View All Reviews"
+  },
+  "income": "Income",
+  "new_orders": "New Orders",
+  "expense": "Expense"
+}

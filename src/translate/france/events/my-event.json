@@ -1,0 +1,20 @@
+{
+  "header": { "title": "My Event", "trash": "Trash Event" },
+  "body": { "title": "Add new event", "link_csv": "Export CSV" },
+  "management": {
+    "label_event": "Events",
+    "label_status": "Status",
+    "label_category": "Category",
+    "label_price": "Price",
+    "filter": "Filter",
+    "clear": "Clear",
+    "search_event": "Search_Event",
+    "view_events": "View events",
+    "select_action": "Select Action",
+    "select_all": "Select All",
+    "button_edit": "Edit",
+    "button_restore": "Restore",
+    "button_trash": "Trash",
+    "button_delete": "Delete"
+  }
+}

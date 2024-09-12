@@ -81,7 +81,7 @@ const TranslatedAppBar = ({ t }: any) => {
             )}
             <ToggleDarkLight theme={theme} toggleTheme={toggleTheme} />
 
-            <div className='z-[2000]'>
+            <div className='z-[1001]'>
               <SelectLanguage
                 // placeholder={t('search home.All')}
                 value={activeLocale}

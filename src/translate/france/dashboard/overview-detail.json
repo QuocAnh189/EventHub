@@ -1,0 +1,38 @@
+{
+  "header": {
+    "title": "Revenue By Period"
+  },
+  "sales-period": "Sales period",
+  "popular-tags": {
+    "title": "Popular Tags",
+    "top-rated": "Top Rated",
+    "new-in": "New In",
+    "best-sellers": "Best Sellers",
+    "a-z": "A-Z",
+    "reviews": "Reviews"
+  },
+  "sales-volume": "Sales Volume",
+  "income": "Income",
+  "profit": "Profit",
+  "expenses": "Expenses",
+  "revenue": "Revenue",
+  "profit-performance": "Profit Performance",
+  "conversion-rate": {
+    "title": "Conversion Rate",
+    "regular-customers": "Regular Customers",
+    "new-customers": "New Customers",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "Share",
+      "print": "Print"
+    }
+  },
+  "average-referral-rate": {
+    "title": "Average Referral Rate"
+  },
+  "total": {
+    "balance": "Total Balance",
+    "expense": "Total Expense",
+    "profit": "Total Profit"
+  }
+}

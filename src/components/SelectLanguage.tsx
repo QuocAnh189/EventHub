@@ -48,7 +48,7 @@ const SelectLanguage = (props: Props) => {
       <div className='w-[160px]'>
         <components.Control className={`${variant === 'basic' ? 'field-input flex justify-between' : ''}`} {...props}>
           <div className='flex items-center justify-center gap-2'>
-            <img className='rounded-full w-5' src={icon} alt='' />
+            <img className='w-5' src={icon} alt='' />
             {children}
           </div>
 
@@ -64,7 +64,7 @@ const SelectLanguage = (props: Props) => {
     return (
       <components.Option {...props}>
         <div className='group flex items-center gap-2.5 w-fit'>
-          <img className='rounded-full w-5' src={props.data.icon} alt={props.data.label} />
+          <img className='w-5' src={props.data.icon} alt={props.data.label} />
           <span className={`text-sm font-medium transition group-hover:text-accent`}>{props.data.label}</span>
         </div>
       </components.Option>
