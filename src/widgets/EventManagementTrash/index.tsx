@@ -1,58 +1,53 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-redeclare */
-/* eslint-disable no-case-declarations */
-/* eslint-disable no-duplicate-case */
 // hooks
 import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 
-// components
+//components
+import Loader from '@components/Loader'
+import NotData from '@components/NotData'
+import CardMyEvent from '@components/events/CardMyEvent'
+import ConfirmDialog from '@components/Dialog'
+import Search from '@ui/Search'
 import Select from '@ui/Select'
-import CardMyEvent from '@components/event/CardMyEvent'
 import Pagination from '@ui/Pagination'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
-import ConfirmDialog from '@components/Dialog'
-import Search from '@ui/Search'
-import NotData from '@components/NotData'
+import { toast } from 'react-toastify'
 
-// constants
-import { EVENT_STATUS_OPTIONS, EVENT_SELLER_OPTIONS, IOptionSelect } from '@constants/options'
+//constants
+import { EVENT_STATUS_OPTIONS, EVENT_SELLER_OPTIONS, IOptionSelect } from '@constants/options.constant'
 
-// data placeholder
+//data placeholder
 import { useAppSelector } from '@hooks/useRedux'
 
-// interface
-import { IEvent } from 'interfaces/contents/event'
-import { ICategory } from 'interfaces/contents/category'
-
-//component
-import { Loader } from '@components/Loader'
-
-// types
-import { IFilterEvent, IMetadataEventReponse, IParamsEvent } from '@type/event'
-import { initFilterEvent, initParamsMyEvent } from '@type/event'
+//interface vs type
+import { IEvent } from '@interfaces/contents/event.interface'
+import { ICategory } from 'interfaces/contents/category.interface'
+import { IFilterEvent, IMetadataEventResponse, IParamsEvent } from '@type/event.type'
+import { initFilterEvent, initParamsMyEvent } from '@type/event.type'
 
 //redux
 import { RootState } from '@redux/store'
-import { useGetEventsTrashByUserIdQuery } from '@redux/services/userApi'
-import { useRestoreEventMutation } from '@redux/services/eventApi'
-import { toast } from 'react-toastify'
+import { useGetEventsTrashByUserIdQuery } from '@redux/apis/user.api'
+import { useRestoreEventMutation } from '@redux/apis/event.api'
 
-const EventManagementTrash = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const EventManagementTrash = ({ t }: any) => {
   const categories = useAppSelector((state: RootState) => state.persistedReducer.category.categories)
   const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
 
   const [fetchFilter, setFetchFilter] = useState<IParamsEvent>(initParamsMyEvent)
 
-  const [metadata, setMetadata] = useState<IMetadataEventReponse>()
+  const [metadata, setMetadata] = useState<IMetadataEventResponse>()
   const [events, setEvents] = useState<IEvent[]>([])
 
   const [checkedAll, setCheckedAll] = useState<boolean>(false)
   const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [filters, setFilters] = useState<IFilterEvent>(initFilterEvent)
-  const [eventIds, setEventIds] = useState<string[]>([])
+  const [eventIds, setEventIds] = useState<string[] | any>([])
 
   const [restoreEvent] = useRestoreEventMutation()
   const {
@@ -72,7 +67,7 @@ const EventManagementTrash = () => {
     }
   }, [data])
 
-  const pagination = usePagination(metadata?.totalCount, 4)
+  const pagination = usePagination(metadata?.totalCount!, 4)
 
   useEffect(() => {
     setEventIds(checkedAll ? events.map((item) => item.id) : [])
@@ -83,7 +78,7 @@ const EventManagementTrash = () => {
   }, [pagination.currentPage])
 
   const handleFilterSelect = ({ value, label }: IOptionSelect, name: string) => {
-    setFilters((prevState) => ({
+    setFilters((prevState: any) => ({
       ...prevState,
       [name]: { value, label }
     }))
@@ -95,7 +90,7 @@ const EventManagementTrash = () => {
 
   const handleChecked = (id: string) => {
     if (eventIds.includes(id)) {
-      const newEventIds = eventIds.filter((eventId) => eventId !== id)
+      const newEventIds = eventIds.filter((eventId: string) => eventId !== id)
       setEventIds(newEventIds)
     } else {
       setEventIds([...eventIds, id])
@@ -132,7 +127,7 @@ const EventManagementTrash = () => {
           <Select
             options={EVENT_STATUS_OPTIONS}
             value={filters?.status}
-            placeholder='Status'
+            placeholder={t('management.label_status')}
             onChange={(e: IOptionSelect) => handleFilterSelect(e, 'status')}
           />
           <Select
@@ -140,18 +135,18 @@ const EventManagementTrash = () => {
               return { value: category.id, label: category.name }
             })}
             value={filters?.category}
-            placeholder='Category'
+            placeholder={t('management.label_category')}
             onChange={(e: IOptionSelect) => handleFilterSelect(e, 'category')}
           />
           <Select
             options={EVENT_SELLER_OPTIONS}
             value={filters.eventTicketType}
-            placeholder='Price'
+            placeholder={t('management.label_price')}
             onChange={(e: any) => handleFilterSelect(e, 'eventTicketType')}
           />
           <div className='grid grid-cols-2 gap-3'>
             <button className='btn bg-primary flex text-white !gap-[5px]' onClick={handleApplyFilters}>
-              Filter
+              {t('management.filter')}
             </button>
             <button
               className='btn btn--outline blue !h-[44px]'
@@ -159,7 +154,7 @@ const EventManagementTrash = () => {
                 setFilters(initFilterEvent)
               }}
             >
-              Clear
+              {t('management.clear')}
             </button>
           </div>
         </div>
@@ -214,6 +209,24 @@ const EventManagementTrash = () => {
         </div>
       )}
 
+      <div className='flex flex-col gap-[22px]'>
+        <div className='w-full grid grid-cols-2 gap-10'>
+          {Array(4)
+            .fill(1)
+            .map((event, index: number) => (
+              <CardMyEvent
+                key={`event-${index}`}
+                event={event}
+                checkedAll={checkedAll}
+                eventIds={eventIds}
+                onChecked={handleChecked}
+                refect={handleRefect}
+              />
+            ))}
+        </div>
+        {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
+      </div>
+
       {isSuccess && events.length === 0 && <NotData />}
 
       {openDialog && (
@@ -233,4 +246,4 @@ const EventManagementTrash = () => {
   )
 }
 
-export default EventManagementTrash
+export default withTranslation('my_event')(EventManagementTrash)
