@@ -23,7 +23,10 @@ import { useAppSelector } from '@hooks/useRedux'
 import { Route } from '@interfaces/common.interface'
 import { AiFillSliders } from 'react-icons/ai'
 
-const Sidebar = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const Sidebar = ({ t }: any) => {
   const navigate = useNavigate()
   const { width } = useWindowSize()
   const { open, setOpen } = useSidebar()
@@ -88,7 +91,7 @@ const Sidebar = () => {
                     >
                       <div className='flex items-center gap-2.5'>
                         {route.icon}
-                        <span className='text'>{route.name}</span>
+                        <span className='text'>{t(`routes.${route.name}.parent`)}</span>
                       </div>
                       <button className='xl:hidden 4xl:block' aria-label='Toggle submenu'>
                         <i className='icon icon-caret-right-solid' />
@@ -101,7 +104,7 @@ const Sidebar = () => {
                             <NavLink className='submenu_item menu_item' to={link.path} key={link.name}>
                               <span className='flex items-center gap-2.5'>
                                 <i className='icon icon-circle-solid' />
-                                <span>{link.name}</span>
+                                <span>{t(`routes.${route.name}.${link.name}`)}</span>
                               </span>
                             </NavLink>
                           )
@@ -117,7 +120,7 @@ const Sidebar = () => {
                   <NavLink className='menu_item' to={route.path!}>
                     <div className='flex items-center gap-2.5'>
                       {route.icon}
-                      <span className='text'>{route.name}</span>
+                      <span className='text'>{t(`routes.${route.name}`)}</span>
                     </div>
                   </NavLink>
                   {index === ROUTES.length - 2 && <span className='menu_divider' />}
@@ -131,4 +134,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default withTranslation('common')(Sidebar)

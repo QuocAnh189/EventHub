@@ -12,55 +12,55 @@ import { IoSettingsOutline } from 'react-icons/io5'
 
 const ROUTES: Route[] = [
   {
-    name: 'Home',
+    name: 'home',
     icon: <IoHomeOutline size={20} />,
     path: '/organization'
   },
   {
-    name: 'Dashboard',
+    name: 'dashboard',
     icon: <MdDashboard size={20} />,
     links: [
-      { name: 'Overview', path: '/organization/dashboard/overview' },
+      { name: 'overview', path: '/organization/dashboard/overview' },
       {
-        name: 'Event Analysis',
+        name: 'event analysis',
         path: '/organization/dashboard/event-analysis'
       },
-      { name: 'Customer', path: '/organization/dashboard/customer' },
-      { name: 'Payment', path: '/organization/dashboard/payment' }
+      { name: 'customer', path: '/organization/dashboard/customer' },
+      { name: 'payment', path: '/organization/dashboard/payment' }
     ]
   },
   {
-    name: 'Event',
+    name: 'event',
     icon: <MdEventAvailable size={20} />,
     links: [
-      { name: 'Top Events', path: '/organization/top-event' },
-      { name: 'My Events', path: '/organization/my-event' },
-      { name: 'Trash Events', path: '/organization/trash-event' },
-      { name: 'Create Event', path: '/organization/create-event' }
+      { name: 'top events', path: '/organization/top-event' },
+      { name: 'my events', path: '/organization/my-event' },
+      { name: 'trash events', path: '/organization/trash-event' },
+      { name: 'create event', path: '/organization/create-event' }
     ]
   },
   {
-    name: 'Calendar',
+    name: 'calendar',
     icon: <FaRegCalendarAlt size={20} />,
     path: '/organization/calendar'
   },
   {
-    name: 'Orders',
+    name: 'orders',
     icon: <MdMenuBook size={20} />,
     path: '/organization/order'
   },
   {
-    name: 'Reviews',
+    name: 'reviews',
     icon: <MdOutlinePreview size={20} />,
     path: '/organization/review'
   },
   {
-    name: 'FAQ',
+    name: 'faq',
     icon: <BiHelpCircle size={20} />,
     path: '/organization/faq'
   },
   {
-    name: 'Settings',
+    name: 'settings',
     icon: <IoSettingsOutline size={20} />,
     links: [{ name: 'Profile', path: '/organization/settings/profile' }]
   }

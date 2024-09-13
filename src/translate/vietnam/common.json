@@ -104,5 +104,30 @@
       "nologin_text_two": "Đăng nhập để trò chuyện",
       "placeholder": "Gửi tin nhắn"
     }
+  },
+  "routes": {
+    "home": "Trang chủ",
+    "dashboard": {
+      "parent": "Quản lý",
+      "overview": "Tổng quan",
+      "event analysis": "Phân tích sự kiện",
+      "customer": "Khách hàng",
+      "payment": "Thanh toán"
+    },
+    "event": {
+      "parent": "Sự kiện",
+      "top events": "Sự kiện nổi bật",
+      "my events": "Sự kiện của tôi",
+      "trash events": "Thùng rác",
+      "create event": "Tạo sự kiện"
+    },
+    "calendar": "Lịch trình",
+    "orders": "Đơn hàng",
+    "reviews": "Đánh giá",
+    "faq": "Hỏi đáp",
+    "settings": {
+      "parent": "Cài đặt",
+      "profile": "Hồ sơ"
+    }
   }
 }
