@@ -12,18 +12,20 @@ import { toast } from 'react-toastify'
 import { HiPencilAlt, HiTrash } from 'react-icons/hi'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
-import { IEvent } from 'interfaces/contents/event.interface'
+
+//interfaces
+import { IEvent } from '@interfaces/contents/event.interface'
 
 //util
 import dayjs from 'dayjs'
 
 //assets
-import event_Default from '@assets/event/event-poster.png'
+import event_default from '@assets/images/event/event_poster.png'
 
 //redux
 import { useDeleteEventMutation, useMoveEventTrashMutation, useRestoreEventMutation } from '@redux/apis/event.api'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 interface Props {
@@ -35,8 +37,17 @@ interface Props {
   refect: any
 }
 
+const event = {
+  id: '1',
+  name: 'Event Name',
+  coverImage: 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg',
+  startTime: '2022-12-12T12:00:00',
+  location: 'Location',
+  isTrash: false
+}
+
 const CardMyEvent = (props: Props) => {
-  const { t, event, checkedAll, onChecked, eventIds, refect } = props
+  const { t, checkedAll, onChecked, eventIds, refect } = props
   const navigate = useNavigate()
 
   const [restoreEvent, { isLoading: loadingRestore }] = useRestoreEventMutation()
@@ -99,17 +110,16 @@ const CardMyEvent = (props: Props) => {
 
   return (
     <>
-      <div className='flex w-full h-[200px] rounded-lg bg-body shadow-2xl transition-transform hover:scale-[1.005] dark:bg-gray-800'>
-        <div className='relative flex min-w-[320px] items-center justify-between max-md:hidden'>
+      <div className='card flex flex-row w-full h-[200px] rounded-lg shadow-2xl transition-transform hover:scale-[1.005] dark:bg-gray-800'>
+        <div className='relative flex w-[400px] h-full items-center justify-between max-md:hidden'>
           <img
             loading='lazy'
             className='w-full h-full rounded-l-lg object-cover'
-            src={event.coverImage ? event.coverImage : event_Default}
+            src={event.coverImage ? event.coverImage : event_default}
             alt=''
           />
         </div>
 
-        {/* Content */}
         <div className='w-full h-full flex flex-col justify-between px-5 py-4'>
           <div>
             <p className='mb-2 line-clamp-1 text-2xl truncate text-ellipsis w-[300px] font-bold tracking-tight text-gray-900 dark:text-white max-md:text-base'>
@@ -129,7 +139,7 @@ const CardMyEvent = (props: Props) => {
             <div className='w-full justify-end flex gap-4 pt-2'>
               <button
                 onClick={event.isTrash ? handleRestoreEvent : handleEditEvent}
-                className='flex items-center justify-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                className='flex items-center justify-center rounded-lg bg-blue px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
               >
                 {event.isTrash ? (
                   loadingRestore ? (
@@ -145,10 +155,12 @@ const CardMyEvent = (props: Props) => {
 
               <button
                 onClick={handleDelete}
-                className='flex items-center justify-center rounded-lg bg-textError px-3 py-2 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800'
+                className='flex items-center justify-center rounded-lg bg-yellow px-3 py-2 text-center text-sm font-medium text-header hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800'
               >
-                <span>{event.isTrash ? t('management.button_delete') : t('management.button_trash')}</span>
-                <HiTrash className='ml-1 h-6 w-6 text-white' />
+                <span className='text-black'>
+                  {event.isTrash ? t('management.button_delete') : t('management.button_trash')}
+                </span>
+                <HiTrash className='ml-1 h-6 w-6 text-black' />
               </button>
             </div>
           </div>

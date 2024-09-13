@@ -1,20 +1,20 @@
-// hooks
+//hooks
 import { useCallback, useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 
-// components
+//components
+import NotData from '@components/NotData'
+import CardMyEvent from '@components/events/CardMyEvent'
+import ConfirmDialog from '@components/Dialog'
 import FilterItem from '@ui/FilterItem'
 import Select from '@ui/Select'
-import CardMyEvent from '@components/events/CardMyEvent'
 import Pagination from '@ui/Pagination'
+import Search from '@ui/Search'
+import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
-import ConfirmDialog from '@components/Dialog'
-import Search from '@ui/Search'
-import NotData from '@components/NotData'
 
-// constants
+//constants
 import {
   EVENT_MANAGEMENT_OPTIONS,
   EVENT_STATUS_OPTIONS,
@@ -24,10 +24,10 @@ import {
 } from '@constants/options.constant'
 import { EEventAction, EEventPrivacy } from '@constants/enum.constant'
 
-// data placeholder
+//data placeholder
 import { useAppSelector } from '@hooks/useRedux'
 
-// interface
+//interface
 import { IEvent } from 'interfaces/contents/event.interface'
 import { ICategory } from 'interfaces/contents/category.interface'
 
@@ -35,7 +35,7 @@ import { ICategory } from 'interfaces/contents/category.interface'
 import Loader from '@components/Loader'
 import { toast } from 'react-toastify'
 
-// types
+//types
 import { IFilterEvent, IMetadataEventResponse, IParamsEvent } from '@type/event.type'
 import { initFilterEvent, initParamsMyEvent } from '@type/event.type'
 
@@ -48,7 +48,7 @@ import {
 } from '@redux/apis/event.api'
 import { useGetEventsByUserIdQuery } from '@redux/apis/user.api'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const EventManagement = ({ t }: any) => {
@@ -94,7 +94,7 @@ const EventManagement = ({ t }: any) => {
     }
   }, [data])
 
-  const pagination = usePagination(dataByStatus(), 4)
+  const pagination = usePagination(dataByStatus()!, 4)
 
   useEffect(() => {
     setFetchFilter({ ...fetchFilter, page: pagination.currentPage })
@@ -357,7 +357,7 @@ const EventManagement = ({ t }: any) => {
       {events.length !== 0 && (
         <div className='flex flex-col gap-[22px]'>
           <div className='w-full grid grid-cols-2 gap-10'>
-            {events?.map((event, index) => (
+            {events?.map((event, index: number) => (
               <CardMyEvent
                 key={`event-${index}`}
                 event={event}
@@ -371,6 +371,24 @@ const EventManagement = ({ t }: any) => {
           {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
         </div>
       )}
+
+      <div className='flex flex-col gap-[22px]'>
+        <div className='w-full grid grid-cols-2 gap-10'>
+          {Array(4)
+            .fill(1)
+            .map((event, index: number) => (
+              <CardMyEvent
+                key={`event-${index}`}
+                event={event}
+                checkedAll={checkedAll}
+                eventIds={eventIds}
+                onChecked={handleChecked}
+                refect={handleRefect}
+              />
+            ))}
+        </div>
+        {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
+      </div>
 
       {isSuccess && events.length === 0 && <NotData />}
 
