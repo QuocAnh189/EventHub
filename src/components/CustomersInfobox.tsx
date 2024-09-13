@@ -14,7 +14,7 @@ interface Props {
   count?: number
 }
 
-const TranslatedCustomersInfobox = (props: Props) => {
+const CustomersInfobox = (props: Props) => {
   const { t, iconClass = 'users-solid', color = 'accent', label = 'All', suffix, count = 0 } = props
 
   return (
@@ -33,5 +33,4 @@ const TranslatedCustomersInfobox = (props: Props) => {
   )
 }
 
-const CustomersInfobox = withTranslation('review')(TranslatedCustomersInfobox)
-export default CustomersInfobox
+export default withTranslation('review')(CustomersInfobox)

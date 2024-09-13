@@ -6,7 +6,7 @@ import PhillipImg from '@assets/images/landing/manager_phillip.webp'
 //animation
 import { motion } from 'framer-motion'
 
-export const Manage = () => {
+const Manage = () => {
   return (
     <motion.section
       initial={{ y: -10, opacity: 0 }}
@@ -60,3 +60,5 @@ export const Manage = () => {
     </motion.section>
   )
 }
+
+export default Manage

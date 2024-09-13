@@ -2,7 +2,7 @@
 import ProtectedLayout from '@layouts/protected'
 
 // components
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import CustomerRetentionRate from '@widgets/CustomerRetentionRate'
 import DemographicSegmentation from '@widgets/DemographicSegmentation'
 import ConversionRate from '@widgets/ConversionRate'

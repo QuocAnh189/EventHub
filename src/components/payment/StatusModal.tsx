@@ -12,13 +12,14 @@ import { IPayment } from '@interfaces/contents/payment.interface'
 //redux
 import { useAcceptOrderMutation, useRejectOrderMutation, useUpdateOrderStatusMutation } from '@redux/apis/payment.api'
 
-export interface IStatusModalProps {
+export interface Props {
   isModalOpen: boolean
   setIsModalOpen: Dispatch<SetStateAction<boolean>>
   order: IPayment
 }
 
-const StatusModal = ({ isModalOpen, setIsModalOpen, order }: IStatusModalProps) => {
+const StatusModal = (props: Props) => {
+  const { isModalOpen, setIsModalOpen, order } = props
   const [selectedValue, setSelectedValue] = useState<string>(order.status)
 
   const [acceptOrder, { isLoading: acceptOrderLoading }] = useAcceptOrderMutation()

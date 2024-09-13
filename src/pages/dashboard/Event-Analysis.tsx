@@ -1,5 +1,5 @@
 //components
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import ProtectedLayout from '@layouts/protected'
 import EventAnalysisGrid from '@widgets/EventAnalysisGrid'
 

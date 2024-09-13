@@ -39,7 +39,7 @@ const Select = (props: Props) => {
   // custom dropdown indicator
   const Control = ({ children, ...props }: any) => {
     return (
-      <components.Control className={`${variant === 'basic' ? 'field-input' : ''}`} {...props}>
+      <components.Control className={`${variant === 'basic' ? 'field-input gap-2' : ''}`} {...props}>
         {children}
         <i className='icon icon-caret-down-solid' />
       </components.Control>

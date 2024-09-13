@@ -1,7 +1,7 @@
 //i18n
 import { withTranslation } from 'react-i18next'
 
-const TranslatedAboutUs = ({ t }: any) => {
+const AboutUs = ({ t }: any) => {
   return (
     <div className='container pt-14 text-header'>
       <div className='py-10'>
@@ -23,4 +23,4 @@ const TranslatedAboutUs = ({ t }: any) => {
   )
 }
 
-export const AboutUs = withTranslation('home')(TranslatedAboutUs)
+export default withTranslation('home')(AboutUs)

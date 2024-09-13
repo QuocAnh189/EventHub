@@ -10,12 +10,12 @@ import classNames from 'classnames'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-interface ForgotProps {
+interface Props {
   t: any
   changeSession: (name: string) => void
 }
 
-const TranslatedForgotPassword = (props: ForgotProps) => {
+const FormForgotPassword = (props: Props) => {
   const { t, changeSession } = props
 
   const [email, setEmail] = useState<string>('')
@@ -80,4 +80,4 @@ const TranslatedForgotPassword = (props: ForgotProps) => {
   )
 }
 
-export const FormForgotPassword = withTranslation('signin')(TranslatedForgotPassword)
+export default withTranslation('signin')(FormForgotPassword)

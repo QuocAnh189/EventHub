@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom'
 
 //component
 import { toast } from 'react-toastify'
-import { SessionOne, SessionTwo } from './components'
+import FormRegister from './components/FormRegister'
+import FormSetPassword from './components/FormSetPassword'
 
 //motion
 import { motion } from 'framer-motion'
@@ -134,14 +135,14 @@ const SignUp = ({ t }: any) => {
             </motion.div>
             <div className='block h-full'>
               {showFormSessionOne && (
-                <SessionOne
+                <FormRegister
                   nextSession={nextSession}
                   formDataSessionOne={formDataSessionOne}
                   setFormDataSessionOne={handleChangeFormSessionOne}
                 />
               )}
               {showFormSessionTwo && (
-                <SessionTwo
+                <FormSetPassword
                   backSession={backSession}
                   formDataSessionTwo={formDataSessionTwo}
                   setFormDataSessionTwo={handleChangeFormSessionTwo}

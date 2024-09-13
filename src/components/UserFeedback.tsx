@@ -1,3 +1,4 @@
+//assets
 import uitLogoImg from '@assets/images/landing/logo_uit.webp'
 
 interface Props {

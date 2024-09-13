@@ -2,7 +2,7 @@
 import ProtectedLayout from '@layouts/protected'
 
 //component
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import { Tabs } from 'antd'
 import Orders from './components/Orders'
 import PaymentAccounts from './PaymentAccounts'

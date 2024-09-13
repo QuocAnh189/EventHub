@@ -18,14 +18,14 @@ import { withTranslation } from 'react-i18next'
 
 const step = 6
 
-interface INotificationsPanelProps {
+interface Props {
   t: any
   open: boolean
   onOpen: () => void
   onClose: () => void
 }
 
-const NotificationsPanel = (props: INotificationsPanelProps) => {
+const NotificationsPanel = (props: Props) => {
   const { t, open, onOpen, onClose } = props
 
   const [headerRef, { height: headerHeight }] = useMeasure()

@@ -9,7 +9,7 @@ interface Props {
   category: ICategory
 }
 
-const TranslatedCategoryItem = (props: Props) => {
+const CategoryItem = (props: Props) => {
   const { t, category } = props
 
   return (
@@ -25,5 +25,4 @@ const TranslatedCategoryItem = (props: Props) => {
   )
 }
 
-const CategoryItem = withTranslation('common')(TranslatedCategoryItem)
-export default CategoryItem
+export default withTranslation('common')(CategoryItem)

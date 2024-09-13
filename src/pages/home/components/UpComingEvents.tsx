@@ -27,7 +27,7 @@ const event: any = {
   }
 }
 
-const TranslatedUpComingEvents = ({ t }: any) => {
+const UpcomingEvents = ({ t }: any) => {
   const { data: events, isFetching } = useGetEventsQuery({ takeAll: false, type: EEventStatus.UPCOMING, size: 6 })
 
   console.log(events)
@@ -60,4 +60,4 @@ const TranslatedUpComingEvents = ({ t }: any) => {
   )
 }
 
-export const UpcomingEvents = withTranslation('home')(TranslatedUpComingEvents)
+export default withTranslation('home')(UpcomingEvents)

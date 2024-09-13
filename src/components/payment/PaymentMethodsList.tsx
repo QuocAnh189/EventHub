@@ -7,14 +7,16 @@ import { IPaymentMethod } from '@interfaces/contents/payment.interface'
 //i18
 import { withTranslation } from 'react-i18next'
 
-export interface IPaymentMethodsListProps {
+export interface Props {
   onClick?: (method: IPaymentMethod) => void
   methods: IPaymentMethod[]
   isLoading: boolean
   selectedItemId: string
 }
 
-const PaymentMethodsList = ({ onClick, isLoading, methods, selectedItemId }: IPaymentMethodsListProps) => {
+const PaymentMethodsList = (props: Props) => {
+  const { onClick, isLoading, methods, selectedItemId } = props
+
   return (
     <div className='flex flex-wrap justify-center gap-4'>
       {isLoading ? (

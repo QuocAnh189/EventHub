@@ -2,7 +2,12 @@
 import { useEffect } from 'react'
 import { useAppDispatch } from '@hooks/useRedux'
 
-import { SearchHome, BestEvents, BannerPic, UpcomingEvents, AboutUs } from './components/index'
+//component
+import SearchHome from './components/SearchHome'
+import BestEvents from './components/BestEvents'
+import BannerPic from './components/BannerPic'
+import UpcomingEvents from './components/UpComingEvents'
+import AboutUs from './components/AboutUs'
 
 //assets
 import PosterOne from '@assets/images/event/event_poster.png'

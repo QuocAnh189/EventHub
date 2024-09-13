@@ -4,7 +4,7 @@ import { usePagination } from '@hooks/usePagination'
 import { useForm } from 'react-hook-form'
 
 //components
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import Loader from '@components/Loader'
 // import NotData from '@components/NotData'
 import Search from '@ui/Search'
@@ -71,7 +71,7 @@ const Explore = ({ t }: any) => {
     }
   }, [data])
 
-  const pagination = usePagination(meta?.totalCount, initParamsEvent.size)
+  const pagination = usePagination(meta?.totalCount!, initParamsEvent.size)
 
   useEffect(() => {
     setValue('page', pagination.currentPage)

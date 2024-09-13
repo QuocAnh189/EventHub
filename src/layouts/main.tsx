@@ -7,7 +7,10 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { SidebarProvider } from '@contexts/sidebar.context'
 
 // components
-import { Sidebar, AppBar, Footer, ScrollToTop } from '@layouts/components/index'
+import { ScrollToTop } from './components/ScrollToTop'
+import Sidebar from './components/sidebar/Sidebar'
+import AppBar from './components/appbar/AppBar'
+import Footer from './components/Footer'
 
 // GA
 import ReactGA from 'react-ga4'

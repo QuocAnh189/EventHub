@@ -1,8 +1,13 @@
 //layout
-import { Footer } from '@layouts/components'
+import Footer from '@layouts/components/Footer'
 
 //components
-import { Navbar, Intro, Manage, AutomaticRun, Feedback, Contact } from './components'
+import Navbar from './components/Navbar'
+import Intro from './components/Intro'
+import Manage from './components/Manage'
+import AutomaticRun from './components/AutomaticRun'
+import Feedback from './components/Feedback'
+import Contact from './components/Contact'
 
 const Landing = () => {
   return (

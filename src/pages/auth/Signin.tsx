@@ -3,7 +3,10 @@ import { useState } from 'react'
 import { useWindowSize } from 'react-use'
 
 // components
-import { FormForgotPassword, FormSignIn, VerifyOpt, ResetPassword } from './components'
+import FormForgotPassword from './components/ForgotPassword'
+import FormSignIn from './components/FormSignIn'
+import VerifyOpt from './components/VerifyOpt'
+import ResetPassword from './components/ResetPassword'
 
 //motion
 import { motion } from 'framer-motion'

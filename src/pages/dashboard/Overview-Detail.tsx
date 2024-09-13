@@ -2,7 +2,7 @@
 import ProtectedLayout from '@layouts/protected'
 
 // components
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import PopularTags from '@components/PopularTags'
 import RevenueInfobox from '@components/RevenueInfobox'
 import CalendarSelector from '@components/CalendarSelector'

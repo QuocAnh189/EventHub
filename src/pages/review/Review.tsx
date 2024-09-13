@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 
 //layout
 import ProtectedLayout from '@layouts/protected'
-import { PageHeader } from '@layouts/components/PageHeader'
 
 //components
+import PageHeader from '@layouts/components/PageHeader'
 import CustomersInfobox from '@components/CustomersInfobox'
 import ReviewsRate from '@widgets/ReviewsRate'
 import LatestAcceptedReviews from '@widgets/LatestAcceptedReviews'

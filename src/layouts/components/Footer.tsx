@@ -4,7 +4,7 @@ import logoText_Img from '@assets/images/common/logo_text.png'
 //i18
 import { withTranslation } from 'react-i18next'
 
-const TranslatedFooter = ({ t }: any) => {
+const Footer = ({ t }: any) => {
   return (
     <footer className='w-full text-body-text bg-black px-8 py-12'>
       <div className='w-full flex flex-col items-center gap-4 lg:flex-row justify-between'>
@@ -60,4 +60,4 @@ const TranslatedFooter = ({ t }: any) => {
   )
 }
 
-export const Footer = withTranslation('common')(TranslatedFooter)
+export default withTranslation('common')(Footer)

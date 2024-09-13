@@ -1,11 +1,11 @@
-interface UITruncatedTextProps {
+interface Props {
   text: string
   lines?: number
   className?: string
   width?: number
 }
 
-export const TruncatedText = (props: UITruncatedTextProps) => {
+export const TruncatedText = (props: Props) => {
   const { text, lines = 1, className, width } = props
   return (
     <span className={className ? className : ''}>

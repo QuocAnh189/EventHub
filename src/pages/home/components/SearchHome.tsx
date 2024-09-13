@@ -44,7 +44,7 @@ const mock_event: any = {
   priceRange: { startRange: 100 }
 }
 
-const TranslatedSearchHome = ({ t }: any) => {
+const SearchHome = ({ t }: any) => {
   const navigate: NavigateFunction = useNavigate()
 
   const categories = useAppSelector((state) => state.persistedReducer.category.categories)
@@ -163,4 +163,4 @@ const TranslatedSearchHome = ({ t }: any) => {
   )
 }
 
-export const SearchHome = withTranslation('home')(TranslatedSearchHome)
+export default withTranslation('home')(SearchHome)

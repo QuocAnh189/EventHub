@@ -44,7 +44,7 @@ const ItemReviews = (props: Props) => {
   const [metadata, setMetadata] = useState<IMetadataReviewResponse>()
   const [reviews, setReviews] = useState<IReview[]>([])
 
-  const pagination = usePagination(metadata?.totalCount, initParamsReview.size)
+  const pagination = usePagination(metadata?.totalCount!, initParamsReview.size)
 
   const { data } = useGetReviewsByEventIdQuery({ ...initParamsReview, eventId, page: pagination.currentPage || 1 })
   const [deleteReview, { isLoading: loadingDeleteReview }] = useDeleteReviewMutation()

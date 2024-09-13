@@ -1,6 +1,7 @@
 //hook
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 //component
 import FormToChat from '../FormToChat'
@@ -22,7 +23,6 @@ import userDefault from '@assets/common/user_default.png'
 //redux
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { useFollowUserMutation, useUnfollowUserMutation } from '@redux/apis/user.api'
-import { toast } from 'react-toastify'
 import { setUser } from '@redux/slices/user.slice'
 
 //i18
@@ -32,7 +32,7 @@ interface Props {
   event: IEvent
 }
 
-const TranslatedEventInformation = (props: Props) => {
+const EventInformation = (props: Props) => {
   const { event } = props
 
   const navigate = useNavigate()
@@ -162,5 +162,4 @@ const TranslatedEventInformation = (props: Props) => {
   )
 }
 
-const EventInformation = withTranslation('event')(TranslatedEventInformation)
-export default EventInformation
+export default withTranslation('event')(EventInformation)

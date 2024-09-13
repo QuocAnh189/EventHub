@@ -42,13 +42,14 @@ const formSchema = z.object({
     .max(12, { message: 'phone must not exceed 12 characters' })
 })
 
-interface SessionOneProps {
+interface Props {
   t: any
   formDataSessionOne: SignUpPayloadOne
   setFormDataSessionOne: (e: ChangeEvent<HTMLInputElement>) => void
   nextSession: () => void
 }
-const TranslatedSessionOne = (props: SessionOneProps) => {
+
+const FormRegister = (props: Props) => {
   const { t, formDataSessionOne, setFormDataSessionOne, nextSession } = props
 
   const navigate = useNavigate()
@@ -194,4 +195,4 @@ const TranslatedSessionOne = (props: SessionOneProps) => {
   )
 }
 
-export const SessionOne = withTranslation('signup')(TranslatedSessionOne)
+export default withTranslation('signup')(FormRegister)

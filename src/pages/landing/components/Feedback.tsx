@@ -41,7 +41,7 @@ const feedbacks = [
   }
 ]
 
-export const Feedback = () => {
+const Feedback = () => {
   return (
     <section id='feedback'>
       <div className='relative flex flex-col items-center text-center'>
@@ -83,3 +83,5 @@ export const Feedback = () => {
     </section>
   )
 }
+
+export default Feedback

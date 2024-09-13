@@ -22,7 +22,7 @@ import classNames from 'classnames'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-interface SessionTwoProps {
+interface Props {
   t: any
   formDataSessionTwo: SignUpPayloadTwo
   setFormDataSessionTwo: (e: ChangeEvent<HTMLInputElement>) => void
@@ -30,7 +30,8 @@ interface SessionTwoProps {
   backSession: () => void
   disabled: boolean
 }
-const TranslatedSessionTwo = (props: SessionTwoProps) => {
+
+const FormSetPassword = (props: Props) => {
   const { t, formDataSessionTwo, handleSubmit, setFormDataSessionTwo, backSession, disabled } = props
   const navigate = useNavigate()
 
@@ -158,4 +159,4 @@ const TranslatedSessionTwo = (props: SessionTwoProps) => {
   )
 }
 
-export const SessionTwo = withTranslation('signup')(TranslatedSessionTwo)
+export default withTranslation('signup')(FormSetPassword)

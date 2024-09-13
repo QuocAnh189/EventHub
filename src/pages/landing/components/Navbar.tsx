@@ -15,7 +15,7 @@ import logoText_Img from '@assets/images/common/logo_text.png'
 //animation
 import { motion } from 'framer-motion'
 
-export const Navbar = () => {
+const Navbar = () => {
   const navigate = useNavigate()
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -231,3 +231,5 @@ export const Navbar = () => {
     </motion.div>
   )
 }
+
+export default Navbar

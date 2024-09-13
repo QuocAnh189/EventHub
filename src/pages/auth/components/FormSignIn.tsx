@@ -39,12 +39,12 @@ const formSchema = z.object({
   password: z.string().min(1, 'Password is not empty')
 })
 
-interface SignInProps {
+interface Props {
   t: any
   changeSession: (name: string) => void
 }
 
-const TranslatedFormSignIn = (props: SignInProps) => {
+const FormSignIn = (props: Props) => {
   const { t, changeSession } = props
 
   const dispatch = useAppDispatch()
@@ -277,4 +277,4 @@ const TranslatedFormSignIn = (props: SignInProps) => {
   )
 }
 
-export const FormSignIn = withTranslation('signin')(TranslatedFormSignIn)
+export default withTranslation('signin')(FormSignIn)

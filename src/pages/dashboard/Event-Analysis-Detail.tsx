@@ -5,7 +5,7 @@ import { useWindowSize } from 'react-use'
 import ProtectedLayout from '@layouts/protected'
 
 //components
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import EventProfileInfobox from '@components/events/EventProfileInfobox'
 import WalletBadge from '@widgets/WalletBadge'
 import SaleActivity from '@widgets/SaleActivity'

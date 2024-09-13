@@ -26,7 +26,7 @@ import useDefault from '@assets/images/common/user_default.png'
 import { useTranslation, withTranslation } from 'react-i18next'
 import ToggleDarkLight from './switch/ToggleDarkLight'
 
-const TranslatedAppBar = ({ t }: any) => {
+const AppBar = ({ t }: any) => {
   const navigate = useNavigate()
   const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false)
   const [notificationsPanelOpen, setNotificationsPanelOpen] = useState<boolean>(false)
@@ -166,4 +166,4 @@ const TranslatedAppBar = ({ t }: any) => {
   )
 }
 
-export const AppBar = withTranslation('common')(TranslatedAppBar)
+export default withTranslation('common')(AppBar)

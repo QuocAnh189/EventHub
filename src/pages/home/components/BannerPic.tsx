@@ -2,7 +2,7 @@ interface Props {
   img: string
 }
 
-export const BannerPic = (props: Props) => {
+const BannerPic = (props: Props) => {
   const { img } = props
   const bgImage = {
     backgroundImage: `url(${img})`,
@@ -12,3 +12,5 @@ export const BannerPic = (props: Props) => {
   }
   return <div data-aos='zoom-in' className='h-[400px] w-4/5' style={bgImage}></div>
 }
+
+export default BannerPic

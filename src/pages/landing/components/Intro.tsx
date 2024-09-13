@@ -9,7 +9,7 @@ import logoImg from '@assets/images/common/logo.png'
 //animation
 import { motion } from 'framer-motion'
 
-export const Intro = () => {
+const Intro = () => {
   const navigate = useNavigate()
 
   return (
@@ -103,3 +103,5 @@ export const Intro = () => {
     </motion.section>
   )
 }
+
+export default Intro

@@ -1,5 +1,5 @@
 // components
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import OrdersAverageRate from '@widgets/OrdersAverageRate'
 import OrdersInfobox from '@components/OrdersInfobox'
 import OrdersTable from '@widgets/OrdersTable'

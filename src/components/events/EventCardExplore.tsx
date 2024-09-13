@@ -27,7 +27,6 @@ const EventCardExplore = (props: Props) => {
 
   return (
     <button
-      type='button'
       onClick={handleViewEvent}
       className='flex gap-2 h-[200px] items-center rounded-md shadow-lg hover:cursor-pointer'
     >

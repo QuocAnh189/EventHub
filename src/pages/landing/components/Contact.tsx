@@ -2,7 +2,7 @@
 import threePeopleImg from '@assets/images/landing/three_people.webp'
 import likeHandImg from '@assets/images/landing/hand_like.webp'
 
-export const Contact = () => {
+const Contact = () => {
   return (
     <section id='contact'>
       <div className='relative flex mx-auto px-6 pt-10 font-sans mdl:block'>
@@ -61,3 +61,5 @@ export const Contact = () => {
     </section>
   )
 }
+
+export default Contact

@@ -12,7 +12,7 @@ interface Props {
   title: string
 }
 
-export const PageHeader = (props: Props) => {
+const PageHeader = (props: Props) => {
   const { title } = props
   const [currentTime, setCurrentTime] = useState(new Date())
   const { width } = useWindowSize()
@@ -45,3 +45,5 @@ export const PageHeader = (props: Props) => {
     </>
   )
 }
+
+export default PageHeader

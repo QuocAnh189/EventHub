@@ -21,14 +21,14 @@ import { withTranslation } from 'react-i18next'
 
 const step = 6
 
-interface iMessagesPanelProps {
+interface Props {
   t: any
   open: boolean
   onOpen: () => void
   onClose: () => void
 }
 
-const MessagesPanel = (props: iMessagesPanelProps) => {
+const MessagesPanel = (props: Props) => {
   const { t, open, onOpen, onClose } = props
   const [headerRef, { height: headerHeight }] = useMeasure()
   const [footerRef, { height: footerHeight }] = useMeasure()

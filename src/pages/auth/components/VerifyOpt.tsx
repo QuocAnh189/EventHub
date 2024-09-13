@@ -15,7 +15,7 @@ interface Props {
   changeSession: (name: string) => void
 }
 
-const TranslatedVerifyOpt = (props: Props) => {
+const VerifyOpt = (props: Props) => {
   const { t, changeSession } = props
 
   const [opt, setOpt] = useState<string>('')
@@ -77,4 +77,4 @@ const TranslatedVerifyOpt = (props: Props) => {
   )
 }
 
-export const VerifyOpt = withTranslation('signin')(TranslatedVerifyOpt)
+export default withTranslation('signin')(VerifyOpt)

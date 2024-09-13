@@ -12,7 +12,7 @@ interface Props {
   event: IEvent
 }
 
-const TranslatedEventCardSearchHome = (props: Props) => {
+const EventCardSearchHome = (props: Props) => {
   const { t, event } = props
   const navigate = useNavigate()
 
@@ -61,6 +61,4 @@ const TranslatedEventCardSearchHome = (props: Props) => {
   )
 }
 
-const EventCardSearchHome = withTranslation('home')(TranslatedEventCardSearchHome)
-
-export default EventCardSearchHome
+export default withTranslation('home')(EventCardSearchHome)

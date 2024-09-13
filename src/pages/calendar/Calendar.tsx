@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // components
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import Box from '@mui/material/Box'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -24,7 +24,7 @@ import { EEventStatus } from '@constants/enum.constant'
 //utils
 import dayjs from 'dayjs'
 
-const TranslatedCalendar = ({ t }: any) => {
+const Calendar = ({ t }: any) => {
   const navigate = useNavigate()
   const { data: events } = useGetEventsQuery({ takeAll: false, type: EEventStatus.UPCOMING, size: 6 })
 
@@ -116,5 +116,4 @@ function renderEventContent(eventInfo: any) {
   )
 }
 
-const Calendar = withTranslation('calendar')(TranslatedCalendar)
-export default Calendar
+export default withTranslation('calendar')(Calendar)

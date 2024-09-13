@@ -23,7 +23,7 @@ import { useAppSelector } from '@hooks/useRedux'
 import { Route } from '@interfaces/common.interface'
 import { AiFillSliders } from 'react-icons/ai'
 
-export const Sidebar = () => {
+const Sidebar = () => {
   const navigate = useNavigate()
   const { width } = useWindowSize()
   const { open, setOpen } = useSidebar()
@@ -130,3 +130,5 @@ export const Sidebar = () => {
     </Drawer>
   )
 }
+
+export default Sidebar

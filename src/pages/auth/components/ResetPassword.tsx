@@ -14,12 +14,12 @@ import { withTranslation } from 'react-i18next'
 //util
 import classNames from 'classnames'
 
-interface SessionTwoProps {
+interface Props {
   t: any
   changeSession: (name: string) => void
 }
 
-const TranslatedResetPassword = (props: SessionTwoProps) => {
+const ResetPassword = (props: Props) => {
   const { t, changeSession } = props
 
   const password = useRef(null)
@@ -120,4 +120,4 @@ const TranslatedResetPassword = (props: SessionTwoProps) => {
   )
 }
 
-export const ResetPassword = withTranslation('signin')(TranslatedResetPassword)
+export default withTranslation('signin')(ResetPassword)

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import ProtectedLayout from '@layouts/protected'
 
 //component
-import { PageHeader } from '@layouts/components/PageHeader'
+import PageHeader from '@layouts/components/PageHeader'
 import EditOrderModal from '@components/payment/EditOrderModal'
 import OrdersTable from '@widgets/OrdersTable'
 

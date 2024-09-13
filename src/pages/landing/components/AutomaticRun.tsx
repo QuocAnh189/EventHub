@@ -8,7 +8,7 @@ import raiseHandImg from '@assets/images/landing/hand_raise.webp'
 import Marquee from 'react-fast-marquee'
 import { motion } from 'framer-motion'
 
-export const AutomaticRun = () => {
+const AutomaticRun = () => {
   return (
     <motion.section
       initial={{ y: -10, opacity: 0 }}
@@ -155,3 +155,5 @@ export const AutomaticRun = () => {
     </motion.section>
   )
 }
+
+export default AutomaticRun

@@ -27,7 +27,7 @@ const event: any = {
   }
 }
 
-const TranslatedBestEvents = ({ t }: any) => {
+const BestEvents = ({ t }: any) => {
   const { data: events, isFetching } = useGetEventsQuery({ takeAll: false, type: EEventStatus.UPCOMING, size: 6 })
 
   console.log(events)
@@ -59,4 +59,4 @@ const TranslatedBestEvents = ({ t }: any) => {
   )
 }
 
-export const BestEvents = withTranslation('home')(TranslatedBestEvents)
+export default withTranslation('home')(BestEvents)
