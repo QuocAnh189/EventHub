@@ -1,11 +1,11 @@
-// styles
+//styles
 import 'swiper/css'
 
-// components
+//components
 import Spring from '@components/Spring'
+import EventGridItem from '@components/events/EventGridItem'
 import CategoryHeader from '@ui/CategoryHeader'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import EventGridItem from '@components/events/EventGridItem'
 import { Pagination } from 'swiper/modules'
 
 //interface
@@ -14,10 +14,20 @@ import { ICategory } from 'interfaces/contents/category.interface'
 //redux
 import { useGetEventsQuery } from '@redux/apis/event.api'
 import { initParamsEvent } from '@type/event.type'
-import { IEvent } from 'interfaces/contents/event.interface'
+
+//interface
+import { IEvent } from '@interfaces/contents/event.interface'
 
 interface Props {
   category: ICategory
+}
+
+const event: any = {
+  id: 1,
+  name: 'Event Name',
+  coverImage: 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg',
+  numberOfSoldTickets: 100,
+  numberOfFavourites: 100
 }
 
 const TopEventsByCategories = (props: Props) => {
@@ -51,11 +61,18 @@ const TopEventsByCategories = (props: Props) => {
           rewind={false}
           loop
         >
-          {events?.items.map((event: IEvent, index: number) => (
+          {/* {events?.items.map((event: IEvent, index: number) => (
             <SwiperSlide className='!h-auto' key={`event-${index}`}>
               <EventGridItem event={event} />
             </SwiperSlide>
-          ))}
+          ))} */}
+          {Array(5)
+            .fill(6)
+            .map((_: IEvent, index: number) => (
+              <SwiperSlide className='!h-auto' key={`event-${index}`}>
+                <EventGridItem event={event} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </Spring>

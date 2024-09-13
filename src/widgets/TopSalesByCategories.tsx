@@ -1,28 +1,29 @@
-// components
+//components
 import Spring from '@components/Spring'
 import LabeledProgressBar from '@components/LabeledProgressBar'
 
-// utils
+//interface
 import { ICategory } from 'interfaces/contents/category.interface'
 
-interface IProps {
+interface Props {
+  label: string
   categories: ICategory[]
 }
 
-const TopSalesByCategories = (props: IProps) => {
-  const { categories } = props
+const TopSalesByCategories = (props: Props) => {
+  const { label, categories } = props
   return (
     <Spring className='card flex flex-col gap-2.5 2xl:col-span-2'>
-      <h5>Top Events by Categories</h5>
+      <h5>{label}</h5>
       <div className='flex flex-col gap-[17px]'>
-        {categories?.map((category, index) => (
+        {categories?.map((category, index: number) => (
           <LabeledProgressBar
             key={`category-${index}`}
             wrapperClass='!gap-0'
             label={category.name}
-            color={category.color}
+            color='red'
             value={70}
-            displayValue={'Event'}
+            displayValue={'80'}
           />
         ))}
       </div>

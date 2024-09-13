@@ -1,1 +1,12 @@
-{}
+{
+  "header": {
+    "title": "Top Events"
+  },
+  "top_event_category": {
+    "label": "Top Events by Categories"
+  },
+  "item": {
+    "sales": "Sales",
+    "favourite": "Favourite"
+  }
+}

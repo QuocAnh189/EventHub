@@ -3,14 +3,16 @@ import { NavLink } from 'react-router-dom'
 import RatingStars from '@ui/RatingStars'
 
 //interface
-import { IEvent } from 'interfaces/contents/event.interface'
+import { IEvent } from '@interfaces/contents/event.interface'
+import { withTranslation } from 'react-i18next'
 
 interface Props {
+  t: any
   event: IEvent
 }
 
 const EventGridItem = (props: Props) => {
-  const { event } = props
+  const { t, event } = props
 
   return (
     <NavLink to={`/organization/event/${event.id}`} className='card flex flex-col h-full hover:cursor-pointer'>
@@ -23,14 +25,14 @@ const EventGridItem = (props: Props) => {
       <RatingStars rating={4} />
       <div className='flex flex-col flex-1 gap-1 mt-1.5'>
         <p className='font-heading font-bold text-sm leading-[1.4] text-green'>
-          Sales : {event.numberOfSoldTickets || 0}
+          {t('item.sales')} : {event.numberOfSoldTickets || 0}
         </p>
         <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
-          Favorite : {event.numberOfFavourites || 0}
+          {t('item.favourite')} : {event.numberOfFavourites || 0}
         </p>
       </div>
     </NavLink>
   )
 }
 
-export default EventGridItem
+export default withTranslation('top_event')(EventGridItem)
