@@ -1,11 +1,5 @@
 # EventHub
 
-Lỡ vào đây rồi thì cho tớ xin 1 love (1 star) nha !!!!
-
----
-
-Please give me 1 star for reference source.
-
 ===========================================================
 
 ### Features :
