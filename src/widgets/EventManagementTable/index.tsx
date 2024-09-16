@@ -356,7 +356,7 @@ const EventManagement = ({ t }: any) => {
 
       {events.length !== 0 && (
         <div className='flex flex-col gap-[22px]'>
-          <div className='w-full grid grid-cols-2 gap-10'>
+          <div className='w-full grid grid-cols-1 lgl:grid-cols-2 gap-10'>
             {events?.map((event, index: number) => (
               <CardMyEvent
                 key={`event-${index}`}
@@ -373,7 +373,7 @@ const EventManagement = ({ t }: any) => {
       )}
 
       <div className='flex flex-col gap-[22px]'>
-        <div className='w-full grid grid-cols-2 gap-10'>
+        <div className='w-full grid grid-cols-1 mdl:grid-cols-2 gap-10'>
           {Array(4)
             .fill(1)
             .map((event, index: number) => (

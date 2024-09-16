@@ -47,7 +47,7 @@
   },
   "review": {
     "public": "Công khai",
-    "datet_time_label": "Ngày và giờ",
+    "date_time_label": "Ngày và giờ",
     "ticket_information": "Thông tin vé",
     "ticket_type": "Loại vé",
     "ticket_sub": "Vé",

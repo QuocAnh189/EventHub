@@ -40,6 +40,7 @@ i18n.use(initReactI18next).init({
     'event_analysis_detail',
     'overview_detail',
     'overview',
+    'common',
     'payment',
     'ticket_sale',
     'create_event',

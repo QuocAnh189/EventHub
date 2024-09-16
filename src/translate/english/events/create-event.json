@@ -12,12 +12,12 @@
       "event_title": "Event Title",
       "event_title_placeholder": "Enter the name of the events",
       "event_category": "Event Category",
-      "event_category_placeholder": "Enter the name of the events",
+      "event_category_placeholder": "Select the name of the events",
       "event_type": { "title": "Event Title", "label_one": "Single Event", "label_two": "Recurring Event" }
     },
     "event_datetime": {
       "title": "Date & Time",
-      "seesion": { "title": "Seesion", "label_one": "Start Date", "label_two": "End Date" }
+      "session": { "title": "Session", "label_one": "Start Date", "label_two": "End Date" }
     },
     "location": {
       "title": "Choose Location",
@@ -50,7 +50,7 @@
   },
   "review": {
     "public": "Public",
-    "datet_time_label": "Date and Time",
+    "date_time_label": "Date and Time",
     "ticket_information": "Ticket Information",
     "ticket_type": "Ticket type",
     "ticket_sub": "Ticket",

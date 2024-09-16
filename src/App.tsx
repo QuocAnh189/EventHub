@@ -42,6 +42,7 @@ const Payment = lazy(() => import('@pages/dashboard/Payment'))
 const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
+const CreateEvent = lazy(() => import('@pages/events/Create-Event'))
 const TopEvent = lazy(() => import('@pages/events/Top-Event'))
 const MyEvent = lazy(() => import('@pages/events/My-Event'))
 const TrashEvent = lazy(() => import('@pages/events/Trash-Event'))
@@ -83,6 +84,7 @@ function App() {
               <Route path='/organization/dashboard/payment' element={<Payment />} />
               <Route path='/organization/explore' element={<Explore />} />
               <Route path='/organization/event/:id' element={<EventDetail />} />
+              <Route path='/organization/create-event' element={<CreateEvent />} />
               <Route path='/organization/top-event' element={<TopEvent />} />
               <Route path='/organization/my-event' element={<MyEvent />} />
               <Route path='/organization/trash-event' element={<TrashEvent />} />
