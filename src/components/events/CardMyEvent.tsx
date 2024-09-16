@@ -62,7 +62,7 @@ const CardMyEvent = (props: Props) => {
   }
 
   const handleEditEvent = () => {
-    navigate(`modify-event/${event.id}`)
+    navigate(`update-event/${event.id}`)
   }
 
   const handleRestoreEvent = async () => {
