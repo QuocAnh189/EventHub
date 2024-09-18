@@ -5,6 +5,7 @@ import imageRunImg from '@assets/images/landing/image_automation.png'
 import raiseHandImg from '@assets/images/landing/hand_raise.webp'
 
 //animation
+// import Slider from 'react-slick'
 import Marquee from 'react-fast-marquee'
 import { motion } from 'framer-motion'
 
@@ -26,7 +27,6 @@ const AutomaticRun = () => {
             className='w-[70em] h-auto absolute inline-block max-w-full z-[1]'
           />
           <div className='flex flex-col gap-y-[2.75em]'>
-            {/* <div className='flex text-center'> */}
             <Marquee loop={0}>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
@@ -69,8 +69,6 @@ const AutomaticRun = () => {
                 />
               </div>
             </Marquee>
-            {/* </div> */}
-            {/* <div className='flex text-center'> */}
             <Marquee direction='right' loop={0}>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
@@ -113,7 +111,6 @@ const AutomaticRun = () => {
                 />
               </div>
             </Marquee>
-            {/* </div> */}
           </div>
           <div className='z-[2] text-center absolute top-[7.19em] flex flex-col items-center gap-10'>
             <div className='text-center block leading-[1] font-bold text-[4em] mdl:text-[6em] xl:text-[10em] tracking-[-0.025em]'>
