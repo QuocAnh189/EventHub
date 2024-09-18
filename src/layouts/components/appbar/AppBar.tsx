@@ -81,7 +81,7 @@ const AppBar = ({ t }: any) => {
             )}
             <ToggleDarkLight theme={theme} toggleTheme={toggleTheme} />
 
-            <div className='z-[1001]'>
+            <div className='z-[999]'>
               <SelectLanguage
                 // placeholder={t('search home.All')}
                 value={activeLocale}
