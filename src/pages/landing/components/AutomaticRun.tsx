@@ -5,6 +5,7 @@ import imageRunImg from '@assets/images/landing/image_automation.png'
 import raiseHandImg from '@assets/images/landing/hand_raise.webp'
 
 //animation
+// import Slider from 'react-slick'
 import Marquee from 'react-fast-marquee'
 import { motion } from 'framer-motion'
 
