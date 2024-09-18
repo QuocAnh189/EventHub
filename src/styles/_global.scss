@@ -1,0 +1,211 @@
+/* global template styles */
+
+scrollbars * {
+  &::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-md border border-solid border-input-border;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-input-border rounded-md;
+  }
+}
+
+::-webkit-scrollbar {
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  user-select: none;
+  font-family: 'Archivo', sans-serif;
+  background: var(--body);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
+  height: -webkit-fill-available;
+
+  &.no-transition * {
+    transition: none !important;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+
+  // better fit for a big screens
+  @media screen and (min-width: 2560px) {
+    &[data-ratio='1'] {
+      zoom: 1.25;
+    }
+  }
+}
+
+html,
+body {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+svg:focus,
+svg *:focus {
+  outline: none !important;
+}
+
+// iOS fix
+input[type='search'] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: none;
+  white-space: unset !important;
+}
+
+label {
+  cursor: pointer;
+}
+
+.headroom {
+  padding: 15px 15px 0;
+  z-index: 1000;
+  transition: background-color var(--transition), padding var(--transition);
+
+  &--pinned {
+    padding: 10px 15px;
+    background-color: var(--widget);
+    box-shadow: var(--shadow);
+  }
+
+  @screen xl {
+    padding: 15px 0 0;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &.fluid {
+    display: flex;
+
+    .app_content {
+      padding: 0;
+      flex-grow: 1;
+      display: flex;
+      height: auto;
+
+      .main {
+        margin: 0;
+      }
+    }
+  }
+
+  &_content {
+    // padding: 0 15px 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .main {
+      flex-grow: 1;
+      margin: 26px 0 22px;
+      display: flex;
+      flex-direction: column;
+
+      .widgets-grid {
+        display: grid;
+        gap: 20px;
+
+        @screen md {
+          gap: 26px;
+        }
+      }
+    }
+  }
+}
+
+// desktop
+@media screen and (min-width: 1366px) {
+  .headroom {
+    padding: 0;
+    position: static !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .app .app_content {
+    padding: 26px;
+  }
+}
+
+// desktop large
+@media screen and (min-width: 1920px) {
+  .app {
+    display: grid;
+    grid-template-columns: minmax(0, 374px) minmax(0, 1fr);
+
+    .app_content {
+      padding: 30px 60px 15px 45px;
+    }
+  }
+}
+
+// hide input clear button
+input[type='search']::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type='search']::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+// hide Google Maps footer
+a[href^="http://maps.google.com/maps"]
+{
+  display: none !important;
+}
+
+a[href^="https://maps.google.com/maps"]
+{
+  display: none !important;
+}
+
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+  display: none;
+}
+
+.gmnoprint div {
+  background: none !important;
+}

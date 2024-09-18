@@ -1,0 +1,23 @@
+{
+  "slogan": "Where every event finds its perfect audience, creating unforgettable moments and lasting connections",
+  "title": "Register",
+  "session_one": {
+    "email_placeholder": "Enter email",
+    "fullname_placeholder": "Enter name",
+    "phone_placeholder": "Enter phone",
+    "submit_btn": "Submit",
+    "option": "Already have an account? Sign In",
+    "back_btn": "Back"
+  },
+  "session_two": {
+    "password_placeholder": "Set password",
+    "confirm_password_placeholder": "Confirm password",
+    "signup_btn": "Signup",
+    "option": "Already have an account? Sign In",
+    "back_btn": "Back"
+  },
+  "submit_btn": "Submit",
+  "back_btn": "Back",
+  "footer_one": "©2024 Event Hub",
+  "footer_two": "Imprint & Privacy Policy"
+}

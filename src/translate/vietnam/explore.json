@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "Khám phá"
+  },
+  "sort": "Sắp xếp theo ngày",
+  "search": "Tìm kiếm sự kiện",
+  "asc": "Tăng dần",
+  "desc": "Giảm dần",
+  "sidebar": {
+    "rate": {
+      "label": "Đánh giá",
+      "star": "sao"
+    },
+    "status": {
+      "label": "Trạng thái",
+      "all": "Tất cả",
+      "upcoming": "Sắp diễn ra",
+      "opening": "Đang diễn ra",
+      "closed": "Đã kết thúc"
+    },
+    "category": {
+      "label": "Danh mục",
+      "Visual Arts": "Nghệ thuật",
+      "Sports & Active Life": "Thể thao cuộc sống",
+      "Politics": "Chính trị",
+      "Performing Arts": "Thể hiện nghệ thuật",
+      "Other": "Khác",
+      "Nightlife": "Cuộc sống về đêm",
+      "Music": "Âm nhạc",
+      "Lectures & Books": "Bài giảng và sách",
+      "Kids & Family": "Gia đình",
+      "Holidays": "Kỳ nghĩ",
+      "Food & Drink": "Âm thực",
+      "Film": "Phim",
+      "Festivals & Fairs": "Lễ hội",
+      "Fashion": "Thời trang",
+      "Concerts": "Hòa nhạc",
+      "Conferences": "Hội nghị",
+      "Community": "Cộng đồng",
+      "Charities": "Từ thiện",
+      "Anniversary": "Kỉ niệm",
+      "Academic": "Học vấn"
+    }
+  }
+}

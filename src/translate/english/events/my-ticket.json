@@ -1,0 +1,17 @@
+{
+  "header": { "title": "Sự kiện của tôi" },
+  "body": { "title": "Thêm sự kiện mới", "link_csv": "Tải xuống" },
+  "management": {
+    "label_event": "Sự kiện",
+    "label_status": "Trạng thái",
+    "label_category": "Thể loại",
+    "label_price": "Giá",
+    "filter": "Lọc",
+    "clear": "Xóa",
+    "search_event": "Tìm kiếm sự kiện",
+    "view_events": "Đang xem",
+    "select_action": "Chọn phương thức",
+    "select_all": "Chọn tất cả",
+    "no_event": "Không có sự kiện"
+  }
+}

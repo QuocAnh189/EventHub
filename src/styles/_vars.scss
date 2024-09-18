@@ -1,0 +1,65 @@
+/* theme variables and custom utility classes */
+
+:root {
+  --body-light: #f9f9f9;
+  --body-dark: #00193b;
+  --widget-light: #ffffff;
+  --widget-dark: #031123;
+  --header-light: #00193b;
+  --header-dark: #d8e9ff;
+  --text-light: #515c6b;
+  --text-dark: #e2e1e1;
+  --accent-light: #035ecf;
+  --accent-dark: #4f89fc;
+  --highlight-dark: #273241;
+  --input-border-light: #e2e1e1;
+  --input-border-dark: #354585;
+  --border-light: #f1f1f1;
+  --border-dark: rgba(53, 69, 133, 0.4);
+  --gray: #8d8d99;
+  --label: #6e757f;
+  --red: #ff5470;
+  --green: #00ba9d;
+  --yellow: #f8d518;
+  --orange: #ff6900;
+  --shadow-light: 0px 3px 14px rgba(226, 225, 225, 0.75);
+  --shadow-dark: 0px 3px 14px #00285d;
+  --shadow-glass: inset 1px 1px 2px #ffffff, inset -2px -2px 2px #003a31;
+  --radial-blue: radial-gradient(59.32% 59.32% at 50% 31.83%, rgba(62, 128, 211, 0.77) 0%, rgba(1, 40, 90, 0.77) 100%),
+    #00193b;
+  --linear-sky: linear-gradient(44deg, rgba(190, 250, 241, 0.13) 0%, rgba(3, 94, 207, 0.2) 100%), #fff;
+  --linear-blue: linear-gradient(50.81deg, #00214d 6.78%, #3e80d3 65.48%, #01285a 101.42%);
+  --linear-sm-light: linear-gradient(177deg, #00193b 0%, #035ecf 100%);
+  --linear-sm-dark: linear-gradient(177deg, #5fa3ff 0%, #035ecf 100%);
+  --glass: linear-gradient(134.73deg, rgba(1, 88, 83, 0.0001) 32.33%, rgba(0, 112, 117, 0.186708) 79.27%);
+  --body-font: 'Archivo', sans-serif;
+  --heading-font: 'Archivo SemiExpanded', sans-serif;
+  --transition: 0.3s ease-in-out;
+  --element-height: 44px;
+  --app-height: 100%;
+
+  --bg-color: #cde7ff;
+  --switch-width: 100px;
+  --switch-height: 45px;
+  --switch-round: 50px;
+  --switch-padding-x: 5px;
+  --switch-bg: linear-gradient(to bottom, #73bbff, #a2d1fd);
+  --switch-dark-bg: linear-gradient(to top, #2b3347, #181d27);
+  --border-width: 2px;
+  --border-gradient: linear-gradient(to bottom, #a2d1fd, #cde7ff);
+  --border-dark-gradient: linear-gradient(to bottom, #000000, #6c7384);
+  --sunmoon-size: 35px;
+  --transition-toggle: all 0.5s ease;
+}
+
+.bg-radial-blue {
+  background: var(--radial-blue);
+}
+
+.bg-linear-blue {
+  background: var(--linear-blue);
+}
+
+.bg-linear-sky {
+  background: var(--linear-sky);
+}

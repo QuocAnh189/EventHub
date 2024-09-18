@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "Explore"
+  },
+  "sort": "Sort by date",
+  "asc": "ASC",
+  "desc": "DESC",
+  "search": "Search Event",
+  "sidebar": {
+    "rate": {
+      "label": "Rating",
+      "star": "star"
+    },
+    "status": {
+      "label": "Status",
+      "all": "All",
+      "upcoming": "Upcoming",
+      "opening": "Opening",
+      "closed": "Closed"
+    },
+    "category": {
+      "label": "Category",
+      "Visual Arts": "Visual Arts",
+      "Sports & Active Life": "Sports & Active Life",
+      "Politics": "Politics",
+      "Performing Arts": "Performing Arts",
+      "Other": "Other",
+      "Nightlife": "Nightlife",
+      "Music": "Music",
+      "Lectures & Books": "Lectures & Books",
+      "Kids & Family": "Kids & Family",
+      "Holidays": "Holidays",
+      "Food & Drink": "Food & Drink",
+      "Film": "Film",
+      "Festivals & Fairs": "Festivals & Fairs",
+      "Fashion": "Fashion",
+      "Concerts": "Concerts",
+      "Conferences": "Conferences",
+      "Community": "Community",
+      "Charities": "Charities",
+      "Anniversary": "Anniversary",
+      "Academic": "Academic"
+    }
+  }
+}

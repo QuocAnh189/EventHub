@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "Reviews"
+  },
+  "middle": {
+    "review_score": "Review score",
+    "customers": "Customers",
+    "total": "Total",
+    "new": "New",
+    "regular": "Regular"
+  },
+  "main": {
+    "title": "Latest Accepted Reviews"
+  },
+  "modal": {
+    "date": "Date",
+    "username": "UserName",
+    "rate": "Rate"
+  }
+}

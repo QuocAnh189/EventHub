@@ -1,0 +1,24 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    .text {
+        color: var(--accent);
+        transition: color var(--transition);
+    }
+
+    &.active,
+    &:hover, &:focus {
+        .text {
+            color: var(--header);
+        }
+    }
+
+    &:not(:last-child) {
+        padding-right: 14px;
+        margin-right: 14px;
+        border-right: 2px solid var(--header);
+    }
+}

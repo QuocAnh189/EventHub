@@ -1,0 +1,5 @@
+{
+  "header": { "title": "Thời gian biểu" },
+  "body": { "events": "Các sự kiện" },
+  "status": { "closed": "Đã kết thúc", "happening": "Đang điễn ra", "upcoming": "Sắp đến" }
+}

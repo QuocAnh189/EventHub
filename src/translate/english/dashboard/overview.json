@@ -1,0 +1,32 @@
+{
+  "header": {
+    "title": "Overview"
+  },
+  "main-overview": {
+    "title": "My Events",
+    "description": "Below are general statistics for your organization over time.",
+    "average-rate": "Average Rate 2024",
+    "income": "Income",
+    "expense": "Expense",
+    "orders": "New Orders",
+    "view-profile": "View Profile",
+    "contact": "Contacts",
+    "share": "Share"
+  },
+  "total-balance": "Total Balance",
+  "chart": {
+    "title": "Sales Statistic 2024",
+    "revenue": "Revenue",
+    "expense": "Expense"
+  },
+  "total-report": {
+    "title": "Total Report",
+    "description": "All Periods per 01/01/2024 - 01/10/2024",
+    "revenue": "Revenue",
+    "expense": "Expense",
+    "profit": "Profit",
+    "more-detail": "More Details",
+    "share": "Share",
+    "print": "Print"
+  }
+}

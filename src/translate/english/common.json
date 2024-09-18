@@ -1,0 +1,133 @@
+{
+  "not_data": {
+    "text": "Sorry, data is not available or data has not been updated"
+  },
+  "signin_btn": "Sign In",
+  "notification": {
+    "title": "Notifications",
+    "all": "All",
+    "follow": "Following",
+    "order": "Orders",
+    "follow_text": "follow you",
+    "order_text": "order your event",
+    "hours ago": "hours ago",
+    "accept_btn": "Accept",
+    "decline_btn": "Decline"
+  },
+  "message": {
+    "title": "Messages",
+    "all": "All",
+    "latest": "Latest",
+    "archived": "Archived",
+    "reply_btn": "Reply",
+    "mark_btn": "Mark as read"
+  },
+  "category": {
+    "label": "Category",
+    "Visual Arts": "Visual Arts",
+    "Sports & Active Life": "Sports & Active Life",
+    "Politics": "Politics",
+    "Performing Arts": "Performing Arts",
+    "Other": "Other",
+    "Nightlife": "Nightlife",
+    "Music": "Music",
+    "Lectures & Books": "Lectures & Books",
+    "Kids & Family": "Kids & Family",
+    "Holidays": "Holidays",
+    "Food & Drink": "Food & Drink",
+    "Film": "Film",
+    "Festivals & Fairs": "Festivals & Fairs",
+    "Fashion": "Fashion",
+    "Concerts": "Concerts",
+    "Conferences": "Conferences",
+    "Community": "Community",
+    "Charities": "Charities",
+    "Anniversary": "Anniversary",
+    "Academic": "Academic"
+  },
+  "filter": {
+    "ALL": "All",
+    "PUBLIC": "Public",
+    "PRIVATE": "Private"
+  },
+  "footer": {
+    "left": {
+      "description": "Where every event , Connecting moments , easily and efficiently",
+      "or": "or"
+    },
+    "right": {
+      "box_one": {
+        "title": "My Account",
+        "sub_one": "My Account",
+        "sub_two": "Reviews",
+        "sub_three": "Status",
+        "sub_four": "Wishlist"
+      },
+
+      "box_two": {
+        "title": "Helps",
+        "sub_one": "Contact",
+        "sub_two": "Faqs",
+        "sub_three": "Terms & Condition",
+        "sub_four": "Privacy Policy"
+      },
+
+      "box_three": {
+        "title": "Features",
+        "sub_one": "Gantt Chart",
+        "sub_two": "Dashboards",
+        "sub_three": "Mind Maps",
+        "sub_four": "Automations"
+      },
+
+      "box_four": {
+        "title": "Compare",
+        "sub_one": "vs Jira",
+        "sub_two": "vs Notion",
+        "sub_three": "vs Trello",
+        "sub_four": "vs Smartsheet"
+      }
+    }
+  },
+  "box_message": {
+    "left": {
+      "placeholder": "Search...",
+      "my_event": "My Event",
+      "chat_event": "Chat Event"
+    },
+    "right": {
+      "to": "To",
+      "first": "Send a message to start the conversation",
+      "nochat_text_one": "Welcome",
+      "nochat_text_two": "Select a chat to start messaging",
+      "nologin_text_one": "Hello guy",
+      "nologin_text_two": "Login to chat",
+      "placeholder": "Send a message"
+    }
+  },
+  "routes": {
+    "home": "Home",
+    "dashboard": {
+      "parent": "Dashboard",
+      "overview": "Overview",
+      "event analysis": "Event Analysis",
+      "customer": "Customer",
+      "payment": "Payment"
+    },
+    "event": {
+      "parent": "Event",
+      "top events": "Top Events",
+      "my events": "My Events",
+      "trash events": "Trash Events",
+      "create event": "Create Event"
+    },
+    "calendar": "Calendar",
+    "orders": "Orders",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "settings": {
+      "parent": "Settings",
+      "profile": "Profile"
+    }
+  }
+}

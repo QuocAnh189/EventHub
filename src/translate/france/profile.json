@@ -1,0 +1,35 @@
+{
+  "header profile": {
+    "title": "Settings"
+  },
+  "profile pannel": {
+    "logout": "Log out",
+    "notifications": "Notifications",
+    "messages": "Messages",
+    "number_of_events": "Number of Events",
+    "follwing": "Following",
+    "follower": "Follower"
+  },
+  "profile detail": {
+    "title": "My Profile",
+    "user_name": "User Name",
+    "gender": "Gender",
+    "full_name": "Full name",
+    "dob": "Day of birth",
+    "email": "Email",
+    "status": "Status",
+    "password": "Password",
+    "role": "Role",
+    "phone_number": "Phone Number",
+    "bio": "Bio",
+    "change_password": "Change password",
+    "update_information": "Update information",
+    "admin_panel_tools": "Admin Panel Tools",
+    "connected_apps": "Connected Apps",
+    "payment_methods": "Payment Methods",
+    "apperance": "Appearance",
+    "security_assets": "Securiy_assets",
+    "configuration_settings": "Configuration Settings",
+    "view_mode": "View Mode"
+  }
+}

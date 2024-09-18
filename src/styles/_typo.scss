@@ -1,0 +1,119 @@
+/* typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.subheading-1,
+.subheading-2,
+.subheading-3 {
+  font-family: 'Archivo SemiExpanded', sans-serif;
+  color: var(--header);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.h1,
+h1 {
+  font-size: 30px;
+
+  &.extra-large {
+    font-size: 48px;
+  }
+}
+
+.h2,
+h2 {
+  font-size: 26px;
+}
+
+.h3,
+h3 {
+  font-size: 23px;
+}
+
+.h4,
+h4 {
+  font-size: 20px;
+}
+
+.h5,
+h5 {
+  font-size: 18px;
+}
+
+.h6,
+h6 {
+  font-size: 15px;
+}
+
+.subheading-1 {
+  font-size: 15px;
+}
+
+.subheading-2 {
+  font-size: 13px;
+}
+
+.subheading-3 {
+  font-size: 12px;
+}
+
+.subheading-1,
+.subheading-2,
+.subheading-3 {
+  color: var(--accent);
+}
+
+// tablet portrait
+@media screen and (min-width: 768px) {
+  .h1,
+  h1 {
+    font-size: 38px;
+
+    &.extra-large {
+      font-size: 64px;
+    }
+  }
+
+  .h2,
+  h2 {
+    font-size: 30px;
+  }
+
+  .h3,
+  h3 {
+    font-size: 28px;
+  }
+
+  .h4,
+  h4 {
+    font-size: 24px;
+  }
+
+  .h5,
+  h5 {
+    font-size: 20px;
+  }
+
+  .h6,
+  h6 {
+    font-size: 16px;
+  }
+
+  .subheading-1 {
+    font-size: 16px;
+  }
+
+  .subheading-2 {
+    font-size: 14px;
+  }
+}

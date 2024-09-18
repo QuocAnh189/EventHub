@@ -1,0 +1,35 @@
+{
+  "header": {
+    "title": "Orders"
+  },
+  "middle": {
+    "box_one": {
+      "average_rate": "Average Rate",
+      "event_view": "Event Views",
+      "total_tickets": "Total ticket"
+    },
+    "order": "Orders",
+    "box_completed": {
+      "completed": "Completed"
+    },
+    "box_confirmed": {
+      "confirmed": "Confirmed"
+    },
+    "box_canceled": {
+      "canceled": "Canceled"
+    },
+    "box_refunded": {
+      "refunded": "Refunded"
+    }
+  },
+  "table_header": {
+    "order": "Order",
+    "event": "Event",
+    "ticket": "Ticket",
+    "category": "Category",
+    "payment": "Payment",
+    "order_status": "Order Status",
+    "rate": "Rate",
+    "actions": "Actions"
+  }
+}

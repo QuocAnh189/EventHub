@@ -1,0 +1,38 @@
+{
+  "header": {
+    "title": "Doanh Thu Theo Kỳ"
+  },
+  "sales-period": "Giai đoạn bán hàng",
+  "popular-tags": {
+    "title": "Thẻ Phổ Biến",
+    "top-rated": "Được Đánh Giá Cao",
+    "new-in": "Mới Nhất",
+    "best-sellers": "Bán Chạy Nhất",
+    "a-z": "A-Z",
+    "reviews": "Đánh Giá"
+  },
+  "sales-volume": "Khối Lượng Bán Hàng",
+  "income": "Thu Nhập",
+  "profit": "Lợi Nhuận",
+  "expenses": "Chi Phí",
+  "revenue": "Doanh Thu",
+  "profit-performance": "Hiệu Suất Lợi Nhuận",
+  "conversion-rate": {
+    "title": "Tỷ Lệ Chuyển Đổi",
+    "regular-customers": "Khách Hàng Thường Xuyên",
+    "new-customers": "Khách Hàng Mới",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "Chia Sẻ",
+      "print": "In"
+    }
+  },
+  "average-referral-rate": {
+    "title": "Tỷ Lệ Giới Thiệu Trung Bình"
+  },
+  "total": {
+    "balance": "Tổng Số Dư",
+    "expense": "Tổng Chi Phí",
+    "profit": "Tổng Lợi Nhuận"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "Đánh giá"
+  },
+  "middle": {
+    "review_score": "Điểm đánh giá",
+    "customers": "Khách hàng",
+    "total": "Tổng cộng",
+    "new": "Mới nhất",
+    "regular": "Thương xuyên"
+  },
+  "main": {
+    "title": "Những đánh giá gần nhất"
+  },
+  "modal": {
+    "date": "Ngày",
+    "username": "Người dùng",
+    "rate": "Tỉ lệ"
+  }
+}
