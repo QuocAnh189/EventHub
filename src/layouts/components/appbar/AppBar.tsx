@@ -1,4 +1,4 @@
-// hooks
+//hooks
 import { useSidebar } from '@contexts/sidebar.context'
 import { useWindowSize } from 'react-use'
 import { useState, useEffect, useContext } from 'react'
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 //context
 import { ThemeContext } from '@contexts/theme.context'
 
-// components
+//components
 import Headroom from 'react-headroom'
 import Search from '@ui/Search'
 import ModalBase from '@ui/ModalBase'
@@ -15,8 +15,10 @@ import NotificationsPanel from '../navbar/NotificationsPanel'
 import MessagesPanel from '../navbar/MessagesPanel'
 import SelectLanguage from '@components/SelectLanguage'
 
-// constants
+//constants
 import { LOCALES } from '@constants/options.constant'
+
+//redux
 import { useAppSelector } from '@hooks/useRedux'
 
 //assets

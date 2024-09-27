@@ -1,8 +1,8 @@
-// components
+//components
 import Spring from '@components/Spring'
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 
-// utils
+//utils
 import { commaFormatter, getPercentage, getTotal } from '@utils/helpers'
 
 //i18n

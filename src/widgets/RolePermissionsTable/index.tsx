@@ -1,7 +1,11 @@
+//hook
+import useRolePermissionsTable from './useRolePermissionsTable'
+
 //components
 import { toast } from 'react-toastify'
-import useRolePermissionsTable from './useRolePermissionsTable'
 import Empty from '@components/Empty'
+
+//style
 import StyledTable from './styles'
 
 //interface
@@ -16,7 +20,7 @@ interface PermissionsTableProps {
 }
 
 const RolePermissionsTable = ({ permissions, functions }: PermissionsTableProps) => {
-  const [columns] = useRolePermissionsTable({ onChangePermission, functions })
+  const [columns]: any = useRolePermissionsTable({ onChangePermission, functions })
 
   const [updatePermissionByRole] = useUpdatePermissionByRoleMutation()
 
@@ -38,7 +42,7 @@ const RolePermissionsTable = ({ permissions, functions }: PermissionsTableProps)
       locale={{
         emptyText: <Empty text='No permissions found' />
       }}
-      rowKey={(record) => record.id}
+      rowKey={(record: any) => record.id}
     />
   )
 }

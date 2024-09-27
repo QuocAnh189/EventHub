@@ -1,7 +1,7 @@
-// components
+//components
 import Spring from '@components/Spring'
 
-// utils
+//utils
 import { numFormatter } from '@utils/helpers'
 
 interface Props {

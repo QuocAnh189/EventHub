@@ -1,10 +1,10 @@
-// components
+//components
 import PageHeader from '@layouts/components/PageHeader'
 import OrdersAverageRate from '@widgets/OrdersAverageRate'
 import OrdersInfobox from '@components/OrdersInfobox'
 import OrdersTable from '@widgets/OrdersTable'
 
-// constants
+//constants
 import ProtectedLayout from '@layouts/protected'
 
 //i18n

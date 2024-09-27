@@ -10,6 +10,7 @@ interface Props {
   theme: string
   toggleTheme: () => void
 }
+
 const ToggleDarkLight = (props: Props) => {
   const { theme, toggleTheme } = props
 

@@ -1,10 +1,10 @@
-//hook
+//hooks
 import { useAppSelector } from '@hooks/useRedux'
 
-//Spring
+//components
 import Spring from '@components/Spring'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const UserProfileInfo = ({ t }: any) => {

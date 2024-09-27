@@ -1,7 +1,7 @@
-// hooks
+//hooks
 import { useState } from 'react'
 
-// motion
+//motion
 import { motion } from 'framer-motion'
 
 //util

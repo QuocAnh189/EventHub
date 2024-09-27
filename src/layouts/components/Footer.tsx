@@ -1,7 +1,7 @@
 //images
 import logoText_Img from '@assets/images/common/logo_text.png'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const Footer = ({ t }: any) => {

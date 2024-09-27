@@ -1,7 +1,7 @@
 //layout
 import ProtectedLayout from '@layouts/protected'
 
-// components
+//components
 import PageHeader from '@layouts/components/PageHeader'
 import CustomerRetentionRate from '@widgets/CustomerRetentionRate'
 import DemographicSegmentation from '@widgets/DemographicSegmentation'

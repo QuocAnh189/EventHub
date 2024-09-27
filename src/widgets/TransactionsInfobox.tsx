@@ -1,4 +1,4 @@
-// components
+//components
 import Spring from '@components/Spring'
 import Trend from '@ui/Trend'
 

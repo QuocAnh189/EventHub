@@ -1,10 +1,10 @@
 // styling
 import styles from './styles.module.scss'
 
-// hooks
+//hooks
 import { useTheme } from '@contexts/theme.context'
 
-// utils
+//utils
 import { commaFormatter, numFormatter } from '@utils/helpers'
 
 //i18n

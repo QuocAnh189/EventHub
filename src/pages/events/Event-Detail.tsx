@@ -1,8 +1,8 @@
-//hook
+//hooks
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-//component
+//components
 import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'

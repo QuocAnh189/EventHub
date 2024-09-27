@@ -1,10 +1,10 @@
-//hook
+//hooks
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '@hooks/useRedux'
 import { UseFormSetValue } from 'react-hook-form'
 
-// components
+//components
 import Spring from '@components/Spring'
 
 //redux
@@ -18,7 +18,7 @@ import { IUser } from 'interfaces/systems/user.interface'
 //assets
 import userDefault from '@assets/images/common/user_default.png'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 interface Props {

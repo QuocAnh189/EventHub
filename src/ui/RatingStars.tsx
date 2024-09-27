@@ -1,7 +1,7 @@
-// styling
+//styling
 import styled from 'styled-components/macro'
 
-// components
+//components
 import Rating from '@mui/material/Rating'
 import { ReactComponent as StarFilled } from '@assets/images/icons/star_solid.svg'
 import { ReactComponent as StarEmpty } from '@assets/images/icons/star_regular.svg'

@@ -1,7 +1,7 @@
 //assets
 import dataImg from '@assets/images/common/no_data.png'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 interface Props {

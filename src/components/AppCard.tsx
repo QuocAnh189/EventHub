@@ -1,12 +1,12 @@
+//hooks
+import useMeasure from 'react-use-measure'
+
 //layout
 import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 
-// components
+//components
 import Spring from './Spring'
 import Switch from '@ui/Switch'
-
-// hooks
-import useMeasure from 'react-use-measure'
 
 interface Props {
   app: any

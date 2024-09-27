@@ -1,4 +1,7 @@
+//hook
 import { useState } from 'react'
+
+//utils
 import { validator } from '@utils/validate-image'
 
 //component
@@ -9,7 +12,7 @@ import PaymentMethodsList from './PaymentMethodsList'
 import { RcFile, UploadChangeParam, UploadFile } from 'antd/es/upload'
 import { AiOutlinePlus, AiOutlineUpload } from 'react-icons/ai'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 //redux

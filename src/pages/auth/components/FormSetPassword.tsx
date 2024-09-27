@@ -1,19 +1,19 @@
-//hook
+//hooks
 import { useState, ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-//component
+//components
 import Switch from 'react-switch'
 import CircularProgress from '@mui/material/CircularProgress'
 
-// motion
+//motion
 import { motion } from 'framer-motion'
 
-// icons
+//icons
 import { AiFillEye } from 'react-icons/ai'
 import { AiFillEyeInvisible } from 'react-icons/ai'
 
-// type
+//type
 import { SignUpPayloadTwo } from '@type/auth.type'
 
 //util

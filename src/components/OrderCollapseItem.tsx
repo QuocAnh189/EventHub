@@ -1,13 +1,13 @@
-// hooks
+//hooks
 import { useWindowSize } from 'react-use'
 
-// components
+//components
 import Collapse from '@mui/material/Collapse'
 import RatingStars from '@ui/RatingStars'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 import { NavLink } from 'react-router-dom'
 
-// utils
+//utils
 import { getStatusColor } from '@utils/helpers'
 
 interface Props {

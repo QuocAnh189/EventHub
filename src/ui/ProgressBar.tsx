@@ -1,9 +1,9 @@
-// components
-import LinearProgress from '@mui/material/LinearProgress'
-
-// hooks
+//hooks
 import { useTheme } from '@contexts/theme.context'
 import { useState, useEffect } from 'react'
+
+//components
+import LinearProgress from '@mui/material/LinearProgress'
 
 // utils
 import PropTypes from 'prop-types'

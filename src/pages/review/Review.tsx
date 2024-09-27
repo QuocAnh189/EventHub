@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { useEffect, useState } from 'react'
 
 //layout
@@ -19,7 +19,7 @@ import { IReview } from '@interfaces/contents/review.interface'
 import { useAppSelector } from '@hooks/useRedux'
 import { useGetReviewsByUserIdQuery } from '@redux/apis/user.api'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const Review = ({ t }: any) => {

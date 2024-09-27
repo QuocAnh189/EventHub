@@ -1,9 +1,9 @@
-//hook
+//hooks
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 
-//component
+//components
 import EventCardSearchHome from '@components/events/EventCardSearchHome'
 import Loader from '@components/Loader'
 import Select from '@ui/Select'

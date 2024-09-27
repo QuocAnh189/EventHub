@@ -1,6 +1,8 @@
-// styling
-import { withTranslation } from 'react-i18next'
+//styling
 import styles from './styles.module.scss'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 interface Props {
   t: any

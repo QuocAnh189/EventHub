@@ -1,4 +1,4 @@
-//layout
+//layouts
 import ProtectedLayout from '@layouts/protected'
 
 //components

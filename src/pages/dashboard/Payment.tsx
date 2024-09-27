@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { useEffect, useState } from 'react'
 
 //layout

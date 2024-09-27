@@ -1,8 +1,8 @@
-// components
+//components
 import Spring from './Spring'
 import Counter from './Counter'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 interface Props {

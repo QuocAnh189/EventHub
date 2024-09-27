@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { useNavigate } from 'react-router-dom'
 
 //constant

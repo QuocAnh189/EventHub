@@ -1,13 +1,13 @@
-import { withTranslation } from 'react-i18next'
-
 //components
 import Spring from '@components/Spring'
 
-interface IProps {
+//i18n
+import { withTranslation } from 'react-i18next'
+interface Props {
   t: any
 }
 
-const UserProfilePanel = (props: IProps) => {
+const UserProfilePanel = (props: Props) => {
   const { t } = props
 
   return (

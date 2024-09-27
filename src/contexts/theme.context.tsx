@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { PropsWithChildren, createContext, useEffect, useState, useContext } from 'react'
 
 //interfaces

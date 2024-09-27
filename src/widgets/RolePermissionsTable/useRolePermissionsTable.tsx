@@ -9,7 +9,7 @@ interface RolePermissionsTableHookProps {
 }
 
 export default function useRolePermissionsTable({ onChangePermission, functions }: RolePermissionsTableHookProps) {
-  var functionColumns = functions.map((f) => {
+  const functionColumns = functions.map((f: any) => {
     const column: ColumnType<IRolePermission | AnyObject> = {
       title: f.name,
       dataIndex: 'functionIds',

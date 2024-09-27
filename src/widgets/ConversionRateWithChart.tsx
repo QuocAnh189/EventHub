@@ -1,4 +1,7 @@
-// components
+//hooks
+import { useSubmenu } from '@hooks/useSubmenu'
+
+//components
 import Spring from '@components/Spring'
 import InfoBtn from '@ui/InfoBtn'
 import Submenu from '@ui/Submenu'
@@ -6,9 +9,6 @@ import StatsHighlightTable from '@components/stats-highlight-table'
 import GaugeChart from 'react-gauge-chart'
 import Counter from '@components/Counter'
 import Trend from '@ui/Trend'
-
-// hooks
-import { useSubmenu } from '@hooks/useSubmenu'
 
 //i18n
 import { withTranslation } from 'react-i18next'

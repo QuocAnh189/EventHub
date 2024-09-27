@@ -1,13 +1,13 @@
-// components
+//components
 import Spring from '@components/Spring'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 import Trend from '@ui/Trend'
 import Submenu from '@ui/Submenu'
 
-// hooks
+//hooks
 import { useSubmenu } from '@hooks/useSubmenu'
 
-// utils
+//utils
 import PropTypes from 'prop-types'
 import { numFormatter } from '@utils/helpers'
 

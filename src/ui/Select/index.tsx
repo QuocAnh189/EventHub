@@ -1,10 +1,10 @@
-// styled components
-import { BasicSelect, MinimalSelect } from './styles'
-
-// hooks
+//hooks
 import { useState } from 'react'
 
-// utils
+//styled components
+import { BasicSelect, MinimalSelect } from './styles'
+
+//utils
 import { components } from 'react-select'
 import { memo } from 'react'
 

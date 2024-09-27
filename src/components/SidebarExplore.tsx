@@ -1,8 +1,8 @@
-//hook
+//hooks
 import { useEffect, useState } from 'react'
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 
-//component
+//components
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'

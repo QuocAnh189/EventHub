@@ -1,4 +1,4 @@
-// components
+//components
 import Spring from './Spring'
 
 interface Props {

@@ -1,7 +1,7 @@
 //layout
 import ProtectedLayout from '@layouts/protected'
 
-// components
+//components
 import PageHeader from '@layouts/components/PageHeader'
 import PopularTags from '@components/PopularTags'
 import RevenueInfobox from '@components/RevenueInfobox'

@@ -1,10 +1,15 @@
+//hooks
 import { useState } from 'react'
+
+//i18n
 import { useTranslation } from 'react-i18next'
 
 interface Props {
   placeholder?: string
   wrapperClass?: string
   onChange?: (query: string) => void
+  query?: string
+  setQuery?: (value: string) => void
 }
 const Search = (props: Props) => {
   const { t } = useTranslation()

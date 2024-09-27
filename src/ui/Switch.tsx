@@ -4,6 +4,7 @@ interface Props {
   onChange?: () => void
   id?: any
 }
+
 const Switch = (props: Props) => {
   const { defaultChecked, checked, onChange, id } = props
 

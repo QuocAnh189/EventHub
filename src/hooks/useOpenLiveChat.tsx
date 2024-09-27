@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+//hooks
 import { useEffect } from 'react'
 import { useAnimate } from 'framer-motion'
 

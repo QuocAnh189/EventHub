@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 
 //component
@@ -19,7 +19,7 @@ import { ICreateEventPayload } from '@type/event.type'
 import eventDefault from '@assets/images/event/event_poster.png'
 import useDefault from '@assets/images/common/user_default.png'
 
-//day
+//util
 import dayjs from 'dayjs'
 
 //redux

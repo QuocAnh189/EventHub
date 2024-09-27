@@ -1,10 +1,10 @@
-//hook
+//hooks
 import { useParams } from 'react-router-dom'
 
 //page
 import ModifyEvent from '@pages/common/Modify-Create-Event'
 
-//component
+//components
 import Loader from '@components/Loader'
 import ProtectedLayout from '@layouts/protected'
 

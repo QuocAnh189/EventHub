@@ -1,18 +1,18 @@
-// hooks
+//hooks
 import { UseFormSetValue } from 'react-hook-form'
 
-//component
+//components
 import MediaDropPlaceholder from '@ui/MediaDropPlaceholder'
 import { toast } from 'react-toastify'
-
-//icon
-import { BiTrash } from 'react-icons/bi'
 
 //interface & type
 import { ICreateEventPayload } from '@type/event.type'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+
+//icon
+import { BiTrash } from 'react-icons/bi'
 
 interface Props {
   t: any

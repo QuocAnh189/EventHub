@@ -1,4 +1,4 @@
-// components
+//components
 import RangeDatePicker from '@ui/RangeDatePicker'
 
 interface Props {

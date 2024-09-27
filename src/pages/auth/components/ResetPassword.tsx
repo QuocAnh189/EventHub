@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { useState, useRef } from 'react'
 
 //motion

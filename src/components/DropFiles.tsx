@@ -1,10 +1,10 @@
-// hooks
+//hooks
 import { useDropzone } from 'react-dropzone'
 
-// components
+//components
 import { toast } from 'react-toastify'
 
-// utils
+//utils
 import classNames from 'classnames'
 import { ReactElement } from 'react'
 

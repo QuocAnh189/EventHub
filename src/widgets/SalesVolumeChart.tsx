@@ -1,11 +1,11 @@
-// components
+//components
 import Spring from '@components/Spring'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
-// hooks
+//hooks
 import { useTheme } from '@contexts/theme.context'
 
-// utils
+//utils
 import { generateGridPoints, numFormatter } from '@utils/helpers'
 
 const data = [

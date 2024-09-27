@@ -4,6 +4,8 @@ import RatingStars from '@ui/RatingStars'
 
 //interface
 import { IEvent } from '@interfaces/contents/event.interface'
+
+//i18n
 import { withTranslation } from 'react-i18next'
 
 interface Props {

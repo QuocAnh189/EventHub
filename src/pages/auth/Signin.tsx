@@ -1,8 +1,8 @@
-// hooks
+//hooks
 import { useState } from 'react'
 import { useWindowSize } from 'react-use'
 
-// components
+//components
 import FormForgotPassword from './components/ForgotPassword'
 import FormSignIn from './components/FormSignIn'
 import VerifyOpt from './components/VerifyOpt'
@@ -11,10 +11,10 @@ import ResetPassword from './components/ResetPassword'
 //motion
 import { motion } from 'framer-motion'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
-// assets
+//assets
 import authImg from '@assets/images/auth/bg_auth.png'
 import logoText_Img from '@assets/images/common/logo_text.png'
 

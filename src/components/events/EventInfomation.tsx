@@ -1,10 +1,10 @@
-//hook
+//hooks
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 //component
 import FormToChat from '../FormToChat'
+import { toast } from 'react-toastify'
 
 //icons
 import { FaRegCalendarAlt } from 'react-icons/fa'
@@ -15,6 +15,8 @@ import { IoMdAdd } from 'react-icons/io'
 
 //style
 import { IEvent } from 'interfaces/contents/event.interface'
+
+//util
 import dayjs from 'dayjs'
 
 //assets

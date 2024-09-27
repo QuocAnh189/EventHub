@@ -1,18 +1,18 @@
-// components
+//components
 import Search from '@ui/Search'
 import AppCard from '@components/AppCard'
 import FilterItem from '@ui/FilterItem'
 import Pagination from '@ui/Pagination'
 import Empty from '@components/Empty'
 
-// hooks
+//hooks
 import { useState, useEffect } from 'react'
 import { usePagination } from '@hooks/usePagination'
 
-// constants
+//constants
 import { APPS_OPTIONS } from '@constants/options.constant'
 
-// data placeholder
+//data placeholder
 import apps from '@db/apps'
 
 const AppsGrid = () => {
@@ -24,7 +24,7 @@ const AppsGrid = () => {
     return apps.filter((app) => app.categories.includes(category)).length
   }
 
-  const filteredData = () => {
+  const filteredData: any = () => {
     return apps
       .filter((app) => app.name.toLowerCase().includes(query.toLowerCase()))
       .filter((app) => (category === 'all' ? true : app.categories.includes(category)))

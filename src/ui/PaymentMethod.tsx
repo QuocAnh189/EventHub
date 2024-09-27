@@ -1,11 +1,11 @@
-// styling
+//hooks
+import { useState } from 'react'
+
+//styling
 import styled from 'styled-components/macro'
 import theme from 'styled-theming'
 
-// hooks
-import { useState } from 'react'
-
-// utils
+//utils
 import PropTypes from 'prop-types'
 
 const StyledLabel = styled.label`

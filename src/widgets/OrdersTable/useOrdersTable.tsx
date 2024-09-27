@@ -12,12 +12,12 @@ import { MdOutlineEditCalendar } from 'react-icons/md'
 //util
 import { getStatusColor } from '@utils/helpers'
 
-export interface IOrdersTableHook {
+interface Props {
   onClick?: (order: IPayment) => void
   onChangeStatus?: (order: IPayment) => void
 }
 
-export default function useOrdersTable({ onClick, onChangeStatus }: IOrdersTableHook) {
+export default function useOrdersTable({ onClick, onChangeStatus }: Props) {
   const columns: ColumnsType<IPayment | AnyObject> = [
     {
       title: 'Event',

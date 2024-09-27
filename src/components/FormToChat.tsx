@@ -1,7 +1,7 @@
-//hook
+//hooks
 import { useContext } from 'react'
 
-//component
+//components
 import FormControl from '@mui/material/FormControl'
 
 //context

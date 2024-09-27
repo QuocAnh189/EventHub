@@ -1,18 +1,18 @@
-// hooks
+//hooks
 import { useSidebar } from '@contexts/sidebar.context'
 import { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useWindowSize } from 'react-use'
 
-// styled components
+//styled components
 import Drawer from './styles'
 
-// components
+//components
 import Collapse from '@mui/material/Collapse'
 import { Fragment } from 'react'
 import { NavLink } from 'react-router-dom'
 
-// constants
+//constants
 import ROUTES from '@constants/routes.constant'
 
 //image

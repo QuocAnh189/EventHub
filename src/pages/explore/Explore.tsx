@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 import { useForm } from 'react-hook-form'

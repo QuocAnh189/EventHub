@@ -1,25 +1,25 @@
-//hook
+//hooks
 import { Control, useFieldArray, UseFormRegister, UseFormSetValue } from 'react-hook-form'
 
 //constant
 import { EEventPaymentTicket } from '@constants/enum.constant'
 
-//component
+//components
 import FormControl from '@mui/material/FormControl'
 import FormLabel from '@mui/material/FormLabel'
 import TextField from '@mui/material/TextField'
 import InputAdornment from '@mui/material/InputAdornment'
-
-//icon
-import { IoTicketOutline, IoPricetagOutline } from 'react-icons/io5'
-import { IoMdAddCircleOutline } from 'react-icons/io'
-import { CiCircleRemove } from 'react-icons/ci'
 
 //type
 import { ICreateEventPayload, InitCreateTicketPayload } from '@type/event.type'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+
+//icon
+import { IoTicketOutline, IoPricetagOutline } from 'react-icons/io5'
+import { IoMdAddCircleOutline } from 'react-icons/io'
+import { CiCircleRemove } from 'react-icons/ci'
 
 //assets
 import freeImg from '@assets/images/common/free.png'

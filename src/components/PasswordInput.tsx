@@ -1,7 +1,7 @@
-// hooks
+//hooks
 import { useState, useEffect } from 'react'
 
-// utils
+//utils
 import classNames from 'classnames'
 
 interface Props {

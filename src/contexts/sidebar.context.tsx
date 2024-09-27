@@ -1,11 +1,5 @@
-//hook
-import {
-  ReactNode,
-  useState,
-  createContext,
-  useContext,
-  useEffect
-} from 'react'
+//hooks
+import { ReactNode, useState, createContext, useContext, useEffect } from 'react'
 import { useScrollLock } from '@hooks/index'
 import { useLocation } from 'react-router-dom'
 
@@ -32,11 +26,7 @@ export const SidebarProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [open])
 
-  return (
-    <SidebarContext.Provider value={{ open, setOpen }}>
-      {children}
-    </SidebarContext.Provider>
-  )
+  return <SidebarContext.Provider value={{ open, setOpen }}>{children}</SidebarContext.Provider>
 }
 
 export const useSidebar = () => useContext(SidebarContext)

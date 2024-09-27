@@ -1,4 +1,4 @@
-//hook
+//hooks
 import { withTranslation } from 'react-i18next'
 
 //components

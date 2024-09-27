@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// components
+//components
 import PageHeader from '@layouts/components/PageHeader'
 import Box from '@mui/material/Box'
 import FullCalendar from '@fullcalendar/react'
@@ -11,7 +11,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 import ProtectedLayout from '@layouts/protected'
 

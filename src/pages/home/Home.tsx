@@ -1,8 +1,8 @@
-//hook
+//hooks
 import { useEffect } from 'react'
 import { useAppDispatch } from '@hooks/useRedux'
 
-//component
+//components
 import SearchHome from './components/SearchHome'
 import BestEvents from './components/BestEvents'
 import BannerPic from './components/BannerPic'

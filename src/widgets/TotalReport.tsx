@@ -1,12 +1,14 @@
-// components
+//hooks
+import { useSubmenu } from '@hooks/useSubmenu'
+
+//components
 import { NavLink } from 'react-router-dom'
 import Spring from '@components/Spring'
 import ReportItem from '@components/ReportItem'
 import InfoBtn from '@ui/InfoBtn'
 import Submenu from '@ui/Submenu'
 
-// hooks
-import { useSubmenu } from '@hooks/useSubmenu'
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const data = [

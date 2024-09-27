@@ -1,9 +1,9 @@
-// hooks
+//hooks
 import { useMemo, useState, ChangeEvent } from 'react'
 import { useWindowSize } from 'react-use'
 import { useNavigate } from 'react-router-dom'
 
-//component
+//components
 import { toast } from 'react-toastify'
 import FormRegister from './components/FormRegister'
 import FormSetPassword from './components/FormSetPassword'
@@ -19,7 +19,7 @@ import { useAppDispatch } from '@hooks/useRedux'
 import { setUser } from '@redux/slices/user.slice'
 import { useSignUpMutation } from '@redux/apis/auth.api'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 // assets

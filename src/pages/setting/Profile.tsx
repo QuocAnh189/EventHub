@@ -1,8 +1,8 @@
-// hooks
+//hooks
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-// components
+//components
 import PageHeader from '@layouts/components/PageHeader'
 import UserProfileCard from '@widgets/UserProfileCard'
 import UserProfileDetails from '@widgets/UserProfileDetails'

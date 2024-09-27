@@ -1,8 +1,8 @@
-// components
+//components
 import Modal from '@mui/material/Modal'
 import Grow from '@mui/material/Grow'
 
-// utils
+//utils
 import PropTypes from 'prop-types'
 import { ReactElement } from 'react'
 

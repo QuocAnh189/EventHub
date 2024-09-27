@@ -1,10 +1,10 @@
-// styled components
-import StyledRangePicker from './styles'
-
-// hooks
+//hooks
 import { useState, useEffect } from 'react'
 
-// utils
+//styled components
+import StyledRangePicker from './styles'
+
+//utils
 import dayjs from 'dayjs'
 
 interface Props {

@@ -1,15 +1,15 @@
-// hooks
+//hooks
 import useMeasure from 'react-use-measure'
 
-// components
+//components
 import Spring from '@components/Spring'
 import { TruncatedText } from './TruncatedText'
 
-// utils
+//utils
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 dayjs.extend(relativeTime)

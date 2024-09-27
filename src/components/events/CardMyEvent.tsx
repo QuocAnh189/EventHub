@@ -1,8 +1,8 @@
-//hook
+//hooks
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-//component
+//components
 import CircularProgress from '@mui/material/CircularProgress'
 import ConfirmDialog from '@components/Dialog'
 import Checkbox from '@mui/material/Checkbox'

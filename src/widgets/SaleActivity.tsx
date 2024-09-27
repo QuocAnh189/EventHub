@@ -1,8 +1,8 @@
-// components
+//components
 import Spring from '@components/Spring'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
-// hooks
+//hooks
 import { useTheme } from '@contexts/theme.context'
 
 // utils

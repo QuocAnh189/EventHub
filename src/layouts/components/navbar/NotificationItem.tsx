@@ -1,9 +1,11 @@
-// components
+//components
 import Spring from '@components/Spring'
 
-// utils
+//utils
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+
+//i18n
 import { withTranslation } from 'react-i18next'
 
 dayjs.extend(relativeTime)

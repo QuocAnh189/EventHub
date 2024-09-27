@@ -1,9 +1,9 @@
-//hook
+//hooks
 import { useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-//component
+//components
 import { toast } from 'react-toastify'
 import CircularProgress from '@mui/material/CircularProgress'
 

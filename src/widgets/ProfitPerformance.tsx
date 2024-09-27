@@ -1,9 +1,9 @@
-// components
+//components
 import Spring from '@components/Spring'
 import InfoBtn from '@ui/InfoBtn'
 import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts'
 
-// utils
+//utils
 // import { numFormatter } from '@utils/helpers'
 
 const data = [

@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
 
-// components
+//components
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 
-// utils
+//utils
 import PropTypes from 'prop-types'
 
 interface Props {

@@ -1,11 +1,11 @@
-// hooks
+//hooks
 import { useState, useEffect } from 'react'
 import { useWindowSize } from 'react-use'
 
-// components
+//components
 import DocumentTitle from '@components/DocumentTitle'
 
-// utils
+//utils
 import dayjs from 'dayjs'
 
 interface Props {

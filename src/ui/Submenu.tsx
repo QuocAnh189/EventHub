@@ -1,7 +1,7 @@
-// components
+//components
 import Menu from '@mui/material/Menu'
 
-// utils
+//utils
 import { ReactElement } from 'react'
 
 interface Props {

@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-// components
+//components
 import PageHeader from '@layouts/components/PageHeader'
 import Box from '@mui/material/Box'
 import Stepper from '@mui/material/Stepper'
@@ -18,7 +18,7 @@ import { toast } from 'react-toastify'
 import { ICreateEventPayload, InitCreateEventPayload } from '@type/event.type'
 import { IEvent } from '@interfaces/contents/event.interface'
 
-// icons
+//icons
 import { IoCreate } from 'react-icons/io5'
 import { BiImport } from 'react-icons/bi'
 

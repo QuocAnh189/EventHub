@@ -1,4 +1,4 @@
-// components
+//components
 import Spring from '@components/Spring'
 
 // data placeholder

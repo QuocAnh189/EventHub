@@ -1,7 +1,7 @@
-// components
+//components
 import Trend from '@ui/Trend'
 
-// utils
+//utils
 import { commaFormatter } from '@utils/helpers'
 
 //i18n

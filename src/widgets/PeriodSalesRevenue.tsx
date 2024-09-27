@@ -1,10 +1,10 @@
-// components
+//components
 import Spring from '@components/Spring'
 import InfoBtn from '@ui/InfoBtn'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 // import Trend from '@ui/Trend'
 
-// hooks
+//hooks
 import { useWindowSize } from 'react-use'
 
 // utils

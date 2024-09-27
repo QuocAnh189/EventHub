@@ -1,4 +1,4 @@
-// hooks
+//hooks
 import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 

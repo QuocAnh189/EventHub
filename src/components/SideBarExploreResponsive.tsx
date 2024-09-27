@@ -1,7 +1,7 @@
-//hook
+//hooks
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 
-//component
+//components
 import Select from '@ui/Select'
 
 //constants

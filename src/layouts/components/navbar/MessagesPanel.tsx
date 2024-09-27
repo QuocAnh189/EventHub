@@ -1,22 +1,22 @@
-// hooks
+//hooks
 import useMeasure from 'react-use-measure'
 import { useState, useEffect } from 'react'
 
-// components
+//components
 import MessageItem from './MessageItem'
 import FilterItem from '@ui/FilterItem'
 import DrawerBase from '@ui/DrawerBase'
 
-// constants
+//constants
 import { MESSAGE_OPTIONS } from '@constants/options.constant'
 
-// utils
+//utils
 import dayjs from 'dayjs'
 
-// data placeholder
+//data placeholder
 import messages from '@db/messages'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const step = 6

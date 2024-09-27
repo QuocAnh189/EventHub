@@ -1,19 +1,19 @@
-// hooks
+//hooks
 import { useState, useEffect } from 'react'
 import useMeasure from 'react-use-measure'
 
-// components
+//components
 import NotificationItem from './NotificationItem'
 import FilterItem from '@ui/FilterItem'
 import DrawerBase from '@ui/DrawerBase'
 
-// constants
+//constants
 import { NOTIFICATION_OPTIONS } from '@constants/options.constant'
 
-// data placeholder
+//data placeholder
 import notifications from '@db/notifications'
 
-//i18
+//i18n
 import { withTranslation } from 'react-i18next'
 
 const step = 6

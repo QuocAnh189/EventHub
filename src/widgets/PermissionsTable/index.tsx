@@ -1,8 +1,17 @@
-import Empty from '@components/Empty'
-import { IPermissionScreen } from 'interfaces/systems'
-import { toast } from 'react-toastify'
-import StyledTable from './styles'
+//hook
 import usePermissionsTable from './usePermissionsTable'
+
+//components
+import Empty from '@components/Empty'
+import { toast } from 'react-toastify'
+
+//interface
+import { IPermissionScreen } from 'interfaces/systems'
+
+//style
+import StyledTable from './styles'
+
+//redux
 import { useUpdatePermissionMutation } from '@redux/apis/permission.api'
 
 interface PermissionsTableProps {
@@ -10,7 +19,7 @@ interface PermissionsTableProps {
 }
 
 const PermissionsTable = ({ permissions }: PermissionsTableProps) => {
-  const [columns] = usePermissionsTable({ onChangePermission })
+  const [columns]: any = usePermissionsTable({ onChangePermission })
 
   const [updatePermission] = useUpdatePermissionMutation()
 
@@ -32,7 +41,7 @@ const PermissionsTable = ({ permissions }: PermissionsTableProps) => {
       locale={{
         emptyText: <Empty text='No permissions found' />
       }}
-      rowKey={(record) => record.id}
+      rowKey={(record: any) => record.id}
     />
   )
 }

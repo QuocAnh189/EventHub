@@ -1,14 +1,14 @@
-// hooks
+//hooks
 import { Controller, UseFormRegister, UseFormWatch, UseFormSetValue, Control } from 'react-hook-form'
 import { useTheme } from '@contexts/theme.context'
 
-// components
+//components
 import Spring from '@components/Spring'
 import Select from '@ui/Select'
 import { NavLink } from 'react-router-dom'
 import { PatternFormat } from 'react-number-format'
 
-// utils
+//utils
 import classNames from 'classnames'
 
 import { IUser } from 'interfaces/systems/user.interface'

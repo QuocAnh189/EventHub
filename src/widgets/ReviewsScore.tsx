@@ -1,4 +1,4 @@
-// components
+//components
 import Spring from '@components/Spring'
 import RatingStars from '@ui/RatingStars'
 import Counter from '@components/Counter'

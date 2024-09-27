@@ -1,11 +1,11 @@
-// hooks
+//hooks
 import { useTheme } from '@contexts/theme.context'
 
-// components
+//components
 import Spring from './Spring'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts'
 
-// utils
+//utils
 import { generateGridPoints, numFormatter } from '@utils/helpers'
 
 const data = [
@@ -18,6 +18,7 @@ const data = [
 interface Props {
   title: string
 }
+
 const SalesVolumeChart = (props: Props) => {
   const { title } = props
 

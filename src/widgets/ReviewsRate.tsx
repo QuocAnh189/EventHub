@@ -1,8 +1,8 @@
-// components
+//components
 import Spring from '@components/Spring'
 import ReviewsRateItem from '@components/ReviewsRateItem'
 
-// utils
+//utils
 import { getPercentage } from '@utils/helpers'
 
 interface Props {

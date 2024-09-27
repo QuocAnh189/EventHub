@@ -15,17 +15,18 @@ import { Routes, Route } from 'react-router-dom'
 //context
 import { ThemeProvider } from 'styled-components'
 
-//hook
+//context
 import { ThemeContext } from './contexts/theme.context'
 
 // components
-// import MainLayout from '@layouts'
 import Loader from '@components/Loader'
 import { ToastContainer } from 'react-toastify'
 
 //aos
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
+//interfaces
 import { IContextTheme } from '@interfaces/context.interface'
 
 //pages
