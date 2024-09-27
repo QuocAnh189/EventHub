@@ -7,11 +7,11 @@ const ProtectedLayout = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate()
   const user = useAppSelector((state) => state.persistedReducer.user.user)
 
-  // useLayoutEffect(() => {
-  //   if (user === null) {
-  //     navigate('/signin')
-  //   }
-  // }, [user])
+  useLayoutEffect(() => {
+    if (user === null) {
+      navigate('/signin')
+    }
+  }, [user])
 
   return <div>{children}</div>
 }
