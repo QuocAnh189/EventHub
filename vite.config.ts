@@ -37,6 +37,5 @@ export default defineConfig({
   },
   optimizeDeps: {
     exclude: ['js-big-decimal']
-  },
-  base: '/EventHub'
+  }
 })
