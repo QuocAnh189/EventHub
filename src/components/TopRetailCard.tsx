@@ -14,7 +14,7 @@ const TopRetailCard = (props: Props) => {
   return (
     <Spring className='card'>
       <div style={{ backgroundColor: category.color }} className={`h-[157px] flex justify-center items-center mb-6`}>
-        <img className='max-w-[120px]' src={category.iconImage} alt='img_default' />
+        <img className='max-w-[120px]' src={category.iconImageUrl} alt='img_default' />
       </div>
       <div className='flex gap-5'>
         <div className='w-full flex flex-col items-center'>

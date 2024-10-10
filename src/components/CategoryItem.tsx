@@ -18,7 +18,7 @@ const CategoryItem = (props: Props) => {
         style={{ backgroundColor: category.color }}
         className={`w-[30px] h-[30px] rounded-lg bg-[${category.color}] flex items-center justify-center`}
       >
-        <img loading='lazy' className='w-[20px] h-[20px]' src={category.iconImage} />
+        <img loading='lazy' className='w-[20px] h-[20px]' src={category.iconImageUrl} />
       </div>
       <p className='text-header'>{t(`category.${category.name}`)}</p>
     </div>

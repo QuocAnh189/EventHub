@@ -28,8 +28,8 @@ const EventCardSearchHome = (props: Props) => {
           className='w-5 h-5 ml-[5px] object-cover bg-primary rounded-sm'
           loading='lazy'
           src={
-            event?.categories[0]?.iconImage
-              ? event?.categories[0]?.iconImage
+            event?.categories[0]?.iconImageUrl
+              ? event?.categories[0]?.iconImageUrl
               : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
           }
           alt=''

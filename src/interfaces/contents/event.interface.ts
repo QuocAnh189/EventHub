@@ -1,28 +1,36 @@
 import { EEventPaymentTicket, EEventStatus, EEventStyle } from '@constants/enum.constant'
 import { ITicketType } from './ticketType.interface'
+import { IPriceRange } from '@interfaces/systems/price_range.interface'
 import { IUser } from 'interfaces/systems/user.interface'
 
 export interface IEvent {
-  id?: string
-  authorId: string | IUser
+  id: string
+  creatorId: string
+  creator: Partial<IUser>
+  creatorName: string
+  categories: any[]
+  coverImage: string
+  subImages: any[]
   name: string
-  coverImageFileName: string
-  coverImageUrl: string
   description: string
-  startTime: Date
-  endTime: Date
-  ticketTypes: ITicketType[]
+  location: string
+  priceRange: IPriceRange
+  startTime: any
+  endTime: any
   eventCycleType: EEventStyle
-  eventPaymentType: EEventPaymentTicket
-  numberOfFavorites: number
+  eventPaymentType?: EEventPaymentTicket
+  isPrivate: boolean
+  isTrash: boolean
+  ticketTypes: ITicketType[]
+  categoryIds: string[] | any
+  promotion: number
+  numberOfFavourites: number
+  isFavourite?: boolean
   numberOfShares: number
   numberOfSoldTickets: number
-  location: string
-  promotion: number
+  averageRating: number
   status: EEventStatus
-  isPrivate: boolean
-  isDeleted: boolean
-  deletedAt: Date
+  reasons: string[]
   createdAt: Date
   updatedAt: Date
 }

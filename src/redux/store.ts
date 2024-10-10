@@ -15,7 +15,6 @@ import { apiRole } from './apis/roles.api'
 import { apiTicket } from './apis/ticket.api'
 import { apiUser } from './apis/user.api'
 import { apiPermission } from './apis/permission.api'
-import { apiFile } from './apis/file.api'
 import { apiFunction } from './apis/function.api'
 
 //slices
@@ -23,9 +22,7 @@ import userReducer, { UserSliceKey } from '@redux/slices/user.slice'
 import categoryReducer, { CategorySliceKey } from './slices/category.slice'
 import eventReducer, { EventSliceKey } from './slices/event.slice'
 import socketReducer, { SocketSliceKey } from './slices/socket.slice'
-import conservationReducer, {
-  ConservationSliceKey
-} from './slices/conservation.slice'
+import conservationReducer, { ConservationSliceKey } from './slices/conservation.slice'
 
 const persistConfig = {
   key: 'root',
@@ -56,7 +53,6 @@ const store = configureStore({
     [apiMessage.reducerPath]: apiMessage.reducer,
     [apiPayment.reducerPath]: apiPayment.reducer,
     [apiConversation.reducerPath]: apiConversation.reducer,
-    [apiFile.reducerPath]: apiFile.reducer,
     [apiRole.reducerPath]: apiRole.reducer,
     [apiTicket.reducerPath]: apiTicket.reducer,
     [apiUser.reducerPath]: apiUser.reducer,
@@ -76,7 +72,6 @@ const store = configureStore({
       apiMessage.middleware,
       apiPayment.middleware,
       apiConversation.middleware,
-      apiFile.middleware,
       apiRole.middleware,
       apiTicket.middleware,
       apiUser.middleware,

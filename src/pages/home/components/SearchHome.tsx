@@ -51,7 +51,7 @@ const SearchHome = ({ t }: any) => {
   const categoriesOptions = categories?.map((category: ICategory) => ({
     value: category.id,
     label: category.name,
-    icon: category.iconImage,
+    icon: category.iconImageUrl,
     backgroundColor: category.color
   }))
 

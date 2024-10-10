@@ -11,7 +11,7 @@ const CategoryHeader = (props: Props) => {
   return (
     <div className='flex items-center gap-4'>
       <div style={{ backgroundColor: category.color }} className={`badge-icon badge-icon--sm bg-blue-500`}>
-        <img className='w-4/5 h4/5' src={category.iconImage} />
+        <img className='w-4/5 h4/5' src={category.iconImageUrl} />
       </div>
       <h5>{category.name}</h5>
     </div>

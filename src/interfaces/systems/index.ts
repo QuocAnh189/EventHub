@@ -1,6 +1,6 @@
 export * from './auth.interface'
-export * from './blob.interface'
 export * from './function.interface'
 export * from './permission.interface'
 export * from './price_range.interface'
+export * from './role.interface'
 export * from './user.interface'
