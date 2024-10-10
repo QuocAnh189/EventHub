@@ -6,8 +6,10 @@ export interface Conversation {
   userId: string
   user: ConversationUser
   lastMessage?: ConversationLastMessage
+  isDeleted: boolean
+  deletedAt: Date
   createdAt: Date
-  updatedAt?: Date
+  updatedAt: Date
 }
 
 export interface ConversationEvent {

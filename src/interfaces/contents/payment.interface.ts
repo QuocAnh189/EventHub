@@ -2,18 +2,20 @@ import { EPaymentStatus } from '@constants/enum.constant'
 
 export interface IPayment {
   id: string
-  eventId: string
-  event: IPaymentEvent
-  ticketQuantity: number
   userId: string
+  eventId: string
+  userPaymentMethodId: string
   customerName: string
   customerPhone: string
   customerEmail: string
+  event: IPaymentEvent
   totalPrice: number
   discount: number
+  ticketQuantity: number
   status: EPaymentStatus
-  userPaymentMethodId: string
   paymentMethod: IPaymentMethod
+  isDeleted: boolean
+  deletedAt: Date
   createdAt: Date
   updatedAt: Date
 }

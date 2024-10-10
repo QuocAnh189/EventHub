@@ -1,8 +1,11 @@
 export interface ICategory {
   id?: string
   name: string
-  iconImage: string
+  iconImageUrl: string
+  iconImageFileName: string
   color: string
-  createdAt?: Date
-  updatedAt?: Date
+  isDeleted: boolean
+  deletedAt: Date
+  createdAt: Date
+  updatedAt: Date
 }

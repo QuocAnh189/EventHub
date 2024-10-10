@@ -3,7 +3,7 @@ import { ICategory } from './category.interface'
 import { ICreator } from './creator.interface'
 import { ILocation } from './location.interface'
 import { ITicketType } from './ticketType.interface'
-import { IEmailContent } from './email_content.interface'
+import { IEmailContent } from './email.interface'
 
 export interface IEventDetail {
   id?: string

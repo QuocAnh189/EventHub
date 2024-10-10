@@ -4,4 +4,8 @@ export interface IFunction {
   url: string
   sortOrder: number
   parentId?: string | null
+  isDeleted: boolean
+  deletedAt: Date
+  createdAt: Date
+  updatedAt: Date
 }

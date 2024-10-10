@@ -1,1 +1,0 @@
-import{j as s}from"./index-B7v0BYK_.js";const t=e=>{const{className:i,onClick:a}=e;return s.jsx("button",{className:i||"",onClick:a,"aria-label":"Open submenu",children:s.jsx("i",{className:"icon icon-ellipsis-vertical-solid text-[24px]"})})};export{t as S};

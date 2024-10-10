@@ -4,17 +4,22 @@ export enum EEnumMessageType {
   IMAGE = 'IMAGE'
 }
 
-export interface Message {
+export interface IMessage {
   id?: string
   userId: string
+  eventId: string
   conversationId: string
-  type: EEnumMessageType
-  content?: string
-  audio?: any
-  image?: string
-  video?: string
+  content: string
+  audioFileName: string
+  audioUrl: string
+  imageFileName: string
+  imageUrl: string
+  videoFileName: string
+  videoUrl: string
+  isDeleted: boolean
+  deletedAt: Date
   createdAt: Date
-  updatedAt?: Date
+  updatedAt: Date
 }
 
 export const initMessage = {

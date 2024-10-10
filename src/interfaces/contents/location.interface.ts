@@ -1,8 +1,6 @@
 export interface ILocation {
   id?: string
-  city: string
-  district: string
-  street: string
+  name: string
   longitudeX: number
   latitudeY: number
 }
