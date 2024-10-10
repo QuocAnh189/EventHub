@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 
 //components
-import Loader from '@components/Loader'
-import NotData from '@components/NotData'
+// import Loader from '@components/Loader'
+// import NotData from '@components/NotData'
 import CardMyEvent from '@components/events/CardMyEvent'
 import ConfirmDialog from '@components/Dialog'
 import Search from '@ui/Search'
@@ -29,7 +29,7 @@ import { initFilterEvent, initParamsMyEvent } from '@type/event.type'
 
 //redux
 import { RootState } from '@redux/store'
-import { useGetEventsTrashByUserIdQuery } from '@redux/apis/user.api'
+// import { useGetEventsTrashByUserIdQuery } from '@redux/apis/user.api'
 import { useRestoreEventMutation } from '@redux/apis/event.api'
 
 //i18n
@@ -37,7 +37,7 @@ import { withTranslation } from 'react-i18next'
 
 const EventManagementTrash = ({ t }: any) => {
   const categories = useAppSelector((state: RootState) => state.persistedReducer.category.categories)
-  const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
+  // const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
 
   const [fetchFilter, setFetchFilter] = useState<IParamsEvent>(initParamsMyEvent)
 
@@ -50,22 +50,27 @@ const EventManagementTrash = ({ t }: any) => {
   const [eventIds, setEventIds] = useState<string[] | any>([])
 
   const [restoreEvent] = useRestoreEventMutation()
-  const {
-    data,
-    isSuccess,
-    isFetching: fetchingEvents,
-    refetch
-  } = useGetEventsTrashByUserIdQuery({
-    userId: user?.id!,
-    params: { ...fetchFilter }
-  })
+  // const {
+  //   data,
+  //   isSuccess,
+  //   isFetching: fetchingEvents,
+  //   refetch
+  // } = useGetEventsTrashByUserIdQuery({
+  //   userId: user?.id!,
+  //   params: { ...fetchFilter }
+  // })
+
+  // useEffect(() => {
+  //   if (data) {
+  //     setEvents(data.items)
+  //     setMetadata(data.metadata)
+  //   }
+  // }, [data])
 
   useEffect(() => {
-    if (data) {
-      setEvents(data.items)
-      setMetadata(data.metadata)
-    }
-  }, [data])
+    setEvents([])
+    setMetadata(undefined)
+  }, [])
 
   const pagination = usePagination(metadata?.totalCount!, 4)
 
@@ -104,7 +109,7 @@ const EventManagementTrash = ({ t }: any) => {
 
         if (result) {
           toast.success('Restore Event successfully')
-          refetch()
+          // refetch()
         }
       }
     } catch (e) {
@@ -113,12 +118,12 @@ const EventManagementTrash = ({ t }: any) => {
   }
 
   const handleRefect = () => {
-    refetch()
+    // refetch()
   }
 
-  if (fetchingEvents) {
-    return <Loader />
-  }
+  // if (fetchingEvents) {
+  //   return <Loader />
+  // }
 
   return (
     <div className='flex flex-col flex-1'>
@@ -227,7 +232,7 @@ const EventManagementTrash = ({ t }: any) => {
         {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
       </div>
 
-      {isSuccess && events.length === 0 && <NotData />}
+      {/* {isSuccess && events.length === 0 && <NotData />} */}
 
       {openDialog && (
         <ConfirmDialog

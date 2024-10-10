@@ -7,13 +7,19 @@ export const apiCommand = createApi({
   }),
   keepUnusedDataFor: 20,
   endpoints: (builder) => ({
-    getCommand: builder.query<any, void>({
-      query: () => ({
-        url: '/commands',
+    getCommandInFunction: builder.query<any, void>({
+      query: (functionId) => ({
+        url: `/commands/get-in-function/${functionId}`,
+        method: 'GET'
+      })
+    }),
+    getCommandNotInFunction: builder.query<any, void>({
+      query: (functionId) => ({
+        url: `/commands/get-not-in-function/${functionId}`,
         method: 'GET'
       })
     })
   })
 })
 
-export const { useGetCommandQuery } = apiCommand
+export const { useGetCommandInFunctionQuery, useLazyGetCommandNotInFunctionQuery } = apiCommand

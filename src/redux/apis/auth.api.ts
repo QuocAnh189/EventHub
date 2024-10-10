@@ -42,14 +42,14 @@ export const apiAuth = createApi({
 
     signOut: builder.mutation<any, void>({
       query: () => ({
-        url: `/auth/signout`,
+        url: '/auth/signout',
         method: 'POST'
       })
     }),
 
     signInExternal: builder.mutation<IAuth, IParamsExternalLogin>({
       query: (params) => ({
-        url: `/auth/external-login`,
+        url: '/auth/external-login',
         method: 'POST',
         params
       })

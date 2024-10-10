@@ -16,28 +16,33 @@ import { IMetadataReviewResponse } from '@type/event.type'
 import { IReview } from '@interfaces/contents/review.interface'
 
 //redux
-import { useAppSelector } from '@hooks/useRedux'
-import { useGetReviewsByUserIdQuery } from '@redux/apis/user.api'
+// import { useAppSelector } from '@hooks/useRedux'
+// import { useGetReviewsByUserIdQuery } from '@redux/apis/user.api'
 
 //i18n
 import { withTranslation } from 'react-i18next'
 
 const Review = ({ t }: any) => {
-  const user = useAppSelector((state) => state.persistedReducer.user.user)
+  // const user = useAppSelector((state) => state.persistedReducer.user.user)
 
-  const { data } = useGetReviewsByUserIdQuery(user?.id!)
+  // const { data } = useGetReviewsByUserIdQuery(user?.id!)
 
   const [average, setAverage] = useState<number>(0)
   const [reviews, setReviews] = useState<IReview[]>()
   const [dataPercent, setDataPercent] = useState<any>([])
   const [metaData, setMetaData] = useState<IMetadataReviewResponse>()
 
+  // useEffect(() => {
+  //   if (data) {
+  //     setReviews(data.items)
+  //     setMetaData(data.metadata)
+  //   }
+  // }, [data])
+
   useEffect(() => {
-    if (data) {
-      setReviews(data.items)
-      setMetaData(data.metadata)
-    }
-  }, [data])
+    setReviews([])
+    setMetaData(undefined)
+  }, [])
 
   const calculationPercent = (rate: number) => {
     const ratesPercent: any = {}

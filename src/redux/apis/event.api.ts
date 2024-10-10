@@ -38,14 +38,6 @@ export const apiEvent = createApi({
       }
     }),
 
-    getEventsByCreatorId: builder.query<Partial<IEvent>[], string>({
-      query: (userId) => ({
-        url: `/events/users/${userId}`,
-        method: 'GET'
-      }),
-      providesTags: ['Event']
-    }),
-
     getEventById: builder.query<IEvent, string>({
       query: (eventId) => ({
         url: `/events/${eventId}`,
@@ -66,9 +58,9 @@ export const apiEvent = createApi({
       invalidatesTags: ['Event']
     }),
 
-    updateEvent: builder.mutation<IEvent, { eventId: string; data: FormData }>({
-      query: ({ eventId, data }) => ({
-        url: `/events/${eventId}`,
+    updateEvent: builder.mutation<IEvent, FormData>({
+      query: (data) => ({
+        url: `/events/${data.get('id')}`,
         method: 'PUT',
         body: data
       }),
@@ -83,13 +75,37 @@ export const apiEvent = createApi({
       invalidatesTags: ['Event']
     }),
 
-    deleteEvents: builder.mutation<any, string[]>({
-      query: (ids) => ({
-        url: `/events/delele-events`,
-        method: 'PATCH',
-        body: ids
+    getEventByCreator: builder.query<any, void>({
+      query: () => ({
+        url: `/events/get-created-events`,
+        method: 'GET'
+      }),
+      providesTags: ['Event']
+    }),
+
+    deletePermanentEvent: builder.mutation<any, string>({
+      query: (eventId) => ({
+        url: `/events/delete-permanently/${eventId}`,
+        method: 'DELETE'
       }),
       invalidatesTags: ['Event']
+    }),
+
+    restoreEvent: builder.mutation<any, string[]>({
+      query: (eventIds) => ({
+        url: `/events/restore`,
+        method: 'PATCH',
+        body: eventIds
+      }),
+      invalidatesTags: ['Event']
+    }),
+
+    getTrashEvents: builder.query<any, void>({
+      query: () => ({
+        url: `/events/get-deleted-events`,
+        method: 'GET'
+      }),
+      providesTags: ['Event']
     }),
 
     addReview: builder.mutation<any, { eventId: string; data: IReviewEventPayload }>({
@@ -140,54 +156,44 @@ export const apiEvent = createApi({
 
     favouriteEvent: builder.mutation<any, IFavoriteEventPayload>({
       query: (data) => ({
-        url: `/events/${data.eventId}/favourites/subscribe`,
+        url: `/events/favourites/${data.eventId}`,
         method: 'POST',
         body: data
-      })
-      // invalidatesTags: ['Event']
+      }),
+      invalidatesTags: ['Event']
     }),
 
     unfavouriteEvent: builder.mutation<any, IFavoriteEventPayload>({
       query: (data) => ({
-        url: `/events/${data.eventId}/favourites/unsubscribe`,
+        url: `/events/favourites/${data.eventId}`,
         method: 'POST',
         body: data
-      })
-      // invalidatesTags: ['Event']
-    }),
-
-    moveEventPublic: builder.mutation<any, string[]>({
-      query: (ids) => ({
-        url: `/events/move-to-public`,
-        method: 'PATCH',
-        body: ids
       }),
       invalidatesTags: ['Event']
     }),
 
-    moveEventPrivate: builder.mutation<any, string[]>({
-      query: (ids) => ({
-        url: `/events/move-to-private`,
+    getFavouriteEvent: builder.query<any, void>({
+      query: () => ({
+        url: `/events/get-favourite-events`,
+        method: 'GET'
+      }),
+      providesTags: ['Event']
+    }),
+
+    makeEventPrivate: builder.mutation<any, string[]>({
+      query: (eventIds) => ({
+        url: `/events/move-events-private`,
         method: 'PATCH',
-        body: ids
+        body: eventIds
       }),
       invalidatesTags: ['Event']
     }),
 
-    moveEventTrash: builder.mutation<any, string[]>({
-      query: (ids) => ({
-        url: `/events/move-to-trash`,
+    makeEventPublic: builder.mutation<any, string[]>({
+      query: (eventIds) => ({
+        url: `/events/move-events-public`,
         method: 'PATCH',
-        body: ids
-      }),
-      invalidatesTags: ['Event']
-    }),
-
-    restoreEvent: builder.mutation<any, string[]>({
-      query: (ids) => ({
-        url: `/events/recover`,
-        method: 'PATCH',
-        body: ids
+        body: eventIds
       }),
       invalidatesTags: ['Event']
     })
@@ -196,12 +202,14 @@ export const apiEvent = createApi({
 
 export const {
   useGetEventsQuery,
-  useGetEventsByCreatorIdQuery,
   useGetEventByIdQuery,
   useCreateEventMutation,
   useUpdateEventMutation,
   useDeleteEventMutation,
-  useDeleteEventsMutation,
+  useGetEventByCreatorQuery,
+  useDeletePermanentEventMutation,
+  useRestoreEventMutation,
+  useGetTrashEventsQuery,
   useAddReviewMutation,
   useGetReviewsByEventIdQuery,
   useGetReviewByIdQuery,
@@ -209,8 +217,7 @@ export const {
   useDeleteReviewMutation,
   useFavouriteEventMutation,
   useUnfavouriteEventMutation,
-  useMoveEventPublicMutation,
-  useMoveEventPrivateMutation,
-  useMoveEventTrashMutation,
-  useRestoreEventMutation
+  useGetFavouriteEventQuery,
+  useMakeEventPrivateMutation,
+  useMakeEventPublicMutation
 } = apiEvent

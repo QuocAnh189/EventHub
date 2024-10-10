@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //type
-import { IConversationParams } from '@type/conversation.type'
 import { IMessageParams } from '@type/message.type'
 
 export const apiConversation = createApi({
@@ -22,16 +21,18 @@ export const apiConversation = createApi({
   keepUnusedDataFor: 20,
   tagTypes: ['Conversation', 'Message'],
   endpoints: (builder) => ({
-    getConversations: builder.query<any, IConversationParams>({
-      query: (params) => ({
-        url: '/conversations',
-        method: 'GET',
-        params
-      }),
-      transformResponse: (response: any) => {
-        return response.data
-      },
-      providesTags: ['Conversation']
+    getConversationsByEventId: builder.query<any, string>({
+      query: (eventId) => ({
+        url: `/conversations/get-by-event/${eventId}`,
+        method: 'GET'
+      })
+    }),
+
+    getConversationsByUserId: builder.query<any, string>({
+      query: (userId) => ({
+        url: `/conversations/get-by-user/${userId}`,
+        method: 'GET'
+      })
     }),
 
     getMessageByConversationId: builder.query<any, { conversationId: string; params: IMessageParams }>({
@@ -44,32 +45,12 @@ export const apiConversation = createApi({
         return response?.data
       },
       providesTags: ['Conversation']
-    }),
-
-    addMessageToConversation: builder.mutation<any, any>({
-      query: (data) => ({
-        url: ``,
-        method: 'POST',
-        body: data
-      }),
-      transformResponse: (response: any) => {
-        return response.data
-      },
-      invalidatesTags: ['Conversation', 'Message']
-    }),
-
-    recallMessageToConversation: builder.mutation<any, any>({
-      query: (data) => ({
-        url: ``,
-        method: 'POST',
-        body: data
-      }),
-      transformResponse: (response: any) => {
-        return response.data
-      },
-      invalidatesTags: ['Conversation', 'Message']
     })
   })
 })
 
-export const { useGetConversationsQuery, useGetMessageByConversationIdQuery } = apiConversation
+export const {
+  useGetConversationsByEventIdQuery,
+  useGetConversationsByUserIdQuery,
+  useGetMessageByConversationIdQuery
+} = apiConversation

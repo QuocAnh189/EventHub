@@ -5,7 +5,7 @@ import ProtectedLayout from '@layouts/protected'
 import PageHeader from '@layouts/components/PageHeader'
 import { Tabs } from 'antd'
 import Orders from './components/Orders'
-import PaymentAccounts from './PaymentAccounts'
+// import PaymentAccounts from './PaymentAccounts'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -19,7 +19,7 @@ const TAB_ITEMS = [
   {
     label: 'Payment Accounts',
     key: 'ACCOUNTS',
-    children: <PaymentAccounts />
+    children: <></>
   }
 ]
 

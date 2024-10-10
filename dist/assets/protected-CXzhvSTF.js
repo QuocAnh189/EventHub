@@ -1,1 +1,0 @@
-import{u,b as a,r as o,j as i}from"./index-BrZH0d3x.js";const c=({children:s})=>{const t=u(),e=a(r=>r.persistedReducer.user.user);return o.useLayoutEffect(()=>{e===null&&t("/signin")},[e]),i.jsx("div",{children:s})};export{c as P};

@@ -5,7 +5,6 @@ import { CategoryPayload } from '@type/category.type'
 
 //interface
 import { ICategory } from 'interfaces/contents/category.interface'
-import { IEvent } from '@interfaces/contents/event.interface'
 
 export const apiCategory = createApi({
   reducerPath: 'apiCategory',
@@ -51,14 +50,6 @@ export const apiCategory = createApi({
       providesTags: ['Category']
     }),
 
-    getEventsByCategoryId: builder.query<IEvent[], string>({
-      query: (categoryId) => ({
-        url: `/categories/${categoryId}/events`,
-        method: 'GET'
-      }),
-      providesTags: ['Category']
-    }),
-
     updateCategory: builder.mutation<ICategory, Partial<ICategory>>({
       query: (data) => ({
         url: `/categories/${data.id}`,
@@ -81,7 +72,6 @@ export const apiCategory = createApi({
 export const {
   useCreateCategoryMutation,
   useGetCategoriesQuery,
-  useGetEventsByCategoryIdQuery,
   useLazyGetCategoryByIdQuery,
   useUpdateCategoryMutation,
   useDeleteCategoryMutation

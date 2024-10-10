@@ -23,7 +23,7 @@ import dayjs from 'dayjs'
 import event_default from '@assets/images/event/event_poster.png'
 
 //redux
-import { useDeleteEventMutation, useMoveEventTrashMutation, useRestoreEventMutation } from '@redux/apis/event.api'
+import { useDeleteEventMutation, useRestoreEventMutation } from '@redux/apis/event.api'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -51,7 +51,7 @@ const CardMyEvent = (props: Props) => {
   const navigate = useNavigate()
 
   const [restoreEvent, { isLoading: loadingRestore }] = useRestoreEventMutation()
-  const [trashEvent, { isLoading: loadingTrash }] = useMoveEventTrashMutation()
+  // const [trashEvent, { isLoading: loadingTrash }] = useMoveEventTrashMutation()
   const [deleteEvent, { isLoading: loadingDelete }] = useDeleteEventMutation()
   const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [select, setSelect] = useState<boolean>(checkedAll)
@@ -83,16 +83,16 @@ const CardMyEvent = (props: Props) => {
   }
 
   const handleTrashEvent = async () => {
-    try {
-      const result = await trashEvent([event.id!]).unwrap()
-      if (result) {
-        toast.success('Move event to trash successfully')
-        refect()
-        setOpenDialog(false)
-      }
-    } catch (e) {
-      console.log(e)
-    }
+    // try {
+    //   const result = await trashEvent([event.id!]).unwrap()
+    //   if (result) {
+    //     toast.success('Move event to trash successfully')
+    //     refect()
+    //     setOpenDialog(false)
+    //   }
+    // } catch (e) {
+    //   console.log(e)
+    // }
   }
 
   const handleDeleteEvent = async () => {
@@ -177,7 +177,7 @@ const CardMyEvent = (props: Props) => {
           }}
           action={event.isTrash ? 'Delete' : 'Trash'}
           onHandle={event.isTrash ? handleDeleteEvent : handleTrashEvent}
-          disabled={event.isTrash ? loadingDelete : loadingTrash}
+          disabled={loadingDelete}
         />
       )}
     </>

@@ -11,11 +11,11 @@ import { apiEvent } from './apis/event.api'
 import { apiMessage } from './apis/message.api'
 import { apiPayment } from './apis/payment.api'
 import { apiConversation } from './apis/conversation.api'
-import { apiRole } from './apis/roles.api'
+// import { apiRole } from './apis/roles.api'
 import { apiTicket } from './apis/ticket.api'
 import { apiUser } from './apis/user.api'
-import { apiPermission } from './apis/permission.api'
-import { apiFunction } from './apis/function.api'
+// import { apiPermission } from './apis/permission.api'
+// import { apiFunction } from './apis/function.api'
 
 //slices
 import userReducer, { UserSliceKey } from '@redux/slices/user.slice'
@@ -53,11 +53,8 @@ const store = configureStore({
     [apiMessage.reducerPath]: apiMessage.reducer,
     [apiPayment.reducerPath]: apiPayment.reducer,
     [apiConversation.reducerPath]: apiConversation.reducer,
-    [apiRole.reducerPath]: apiRole.reducer,
     [apiTicket.reducerPath]: apiTicket.reducer,
-    [apiUser.reducerPath]: apiUser.reducer,
-    [apiPermission.reducerPath]: apiPermission.reducer,
-    [apiFunction.reducerPath]: apiFunction.reducer
+    [apiUser.reducerPath]: apiUser.reducer
   },
 
   middleware: (getDefaultMiddleware) =>
@@ -72,11 +69,8 @@ const store = configureStore({
       apiMessage.middleware,
       apiPayment.middleware,
       apiConversation.middleware,
-      apiRole.middleware,
       apiTicket.middleware,
-      apiUser.middleware,
-      apiPermission.middleware,
-      apiFunction.middleware
+      apiUser.middleware
     ])
 })
 

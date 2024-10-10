@@ -24,7 +24,7 @@ import userDefault from '@assets/common/user_default.png'
 
 //redux
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { useFollowUserMutation, useUnfollowUserMutation } from '@redux/apis/user.api'
+import { useFollowUserMutation, useUnFollowUserMutation } from '@redux/apis/user.api'
 import { setUser } from '@redux/slices/user.slice'
 
 //i18
@@ -52,7 +52,7 @@ const EventInformation = (props: Props) => {
   const isFollow = user?.followingIds?.includes(event.creatorId)
 
   const [followUser] = useFollowUserMutation()
-  const [unfollowUser] = useUnfollowUserMutation()
+  const [unfollowUser] = useUnFollowUserMutation()
 
   const handleFollowUser = async () => {
     if (!user) {
@@ -61,8 +61,8 @@ const EventInformation = (props: Props) => {
     }
     try {
       const result = isFollow
-        ? await unfollowUser({ followerId: user?.id!, followedId: event.creatorId }).unwrap()
-        : await followUser({ followerId: user?.id!, followedId: event.creatorId }).unwrap()
+        ? await unfollowUser(event.creatorId).unwrap()
+        : await followUser(event.creatorId).unwrap()
 
       if (result) {
         toast.success(isFollow ? 'unFollow successfully' : 'follow successfully')

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 
 //components
-import NotData from '@components/NotData'
+// import NotData from '@components/NotData'
 import CardMyEvent from '@components/events/CardMyEvent'
 import ConfirmDialog from '@components/Dialog'
 import FilterItem from '@ui/FilterItem'
@@ -32,7 +32,7 @@ import { IEvent } from 'interfaces/contents/event.interface'
 import { ICategory } from 'interfaces/contents/category.interface'
 
 //component
-import Loader from '@components/Loader'
+// import Loader from '@components/Loader'
 import { toast } from 'react-toastify'
 
 //types
@@ -41,25 +41,21 @@ import { initFilterEvent, initParamsMyEvent } from '@type/event.type'
 
 //redux
 import { RootState } from '@redux/store'
-import {
-  useMoveEventPublicMutation,
-  useMoveEventPrivateMutation,
-  useMoveEventTrashMutation
-} from '@redux/apis/event.api'
-import { useGetEventsByUserIdQuery } from '@redux/apis/user.api'
+import { useMakeEventPublicMutation, useMakeEventPrivateMutation, useDeleteEventMutation } from '@redux/apis/event.api'
+// import { useGetEventsByUserIdQuery } from '@redux/apis/user.api'
 
 //i18n
 import { withTranslation } from 'react-i18next'
 
 const EventManagement = ({ t }: any) => {
   const categories = useAppSelector((state: RootState) => state.persistedReducer.category.categories)
-  const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
+  // const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
 
   const [fetchFilter, setFetchFilter] = useState<IParamsEvent>(initParamsMyEvent)
 
-  const [movePublicEvent, { isLoading: loadingPublic }] = useMoveEventPublicMutation()
-  const [movePrivateEvent, { isLoading: loadingPrivate }] = useMoveEventPrivateMutation()
-  const [moveTrashEvent, { isLoading: loadingTrash }] = useMoveEventTrashMutation()
+  const [movePublicEvent, { isLoading: loadingPublic }] = useMakeEventPublicMutation()
+  const [movePrivateEvent, { isLoading: loadingPrivate }] = useMakeEventPrivateMutation()
+  const [moveTrashEvent, { isLoading: loadingTrash }] = useDeleteEventMutation()
 
   const [metadata, setMetadata] = useState<IMetadataEventResponse>()
   const [events, setEvents] = useState<IEvent[]>([])
@@ -71,15 +67,15 @@ const EventManagement = ({ t }: any) => {
   const [selectedAction, setSelectedAction] = useState<EEventAction>()
   const [eventIds, setEventIds] = useState<any>([])
 
-  const {
-    data,
-    isSuccess,
-    isFetching: fetchingEvents,
-    refetch
-  } = useGetEventsByUserIdQuery({
-    userId: user?.id!,
-    params: { ...fetchFilter, eventPrivacy: category }
-  })
+  // const {
+  //   data,
+  //   isSuccess,
+  //   isFetching: fetchingEvents,
+  //   refetch
+  // } = useGetEventsByUserIdQuery({
+  //   userId: user?.id!,
+  //   params: { ...fetchFilter, eventPrivacy: category }
+  // })
 
   const dataByStatus = useCallback(() => {
     if (category === 'ALL') return metadata?.totalCount
@@ -87,12 +83,17 @@ const EventManagement = ({ t }: any) => {
     if (category === 'PRIVATE') return metadata?.totalPrivate
   }, [metadata?.totalCount, metadata?.totalPublic, metadata?.totalPrivate, category])
 
+  // useEffect(() => {
+  //   if (data) {
+  //     setEvents(data.items)
+  //     setMetadata(data.metadata)
+  //   }
+  // }, [data])
+
   useEffect(() => {
-    if (data) {
-      setEvents(data.items)
-      setMetadata(data.metadata)
-    }
-  }, [data])
+    setEvents([])
+    setMetadata(undefined)
+  }, [category])
 
   const pagination = usePagination(dataByStatus()!, 4)
 
@@ -102,7 +103,7 @@ const EventManagement = ({ t }: any) => {
 
   useEffect(() => {
     setCheckedAll(false)
-    refetch()
+    // refetch()
   }, [category])
 
   useEffect(() => {
@@ -176,7 +177,7 @@ const EventManagement = ({ t }: any) => {
                 // setCategory(EEventPrivacy.ALL)
                 // setFetchFilter({ ...fetchFilter, page: 1 })
                 // pagination.goToPage(1)
-                refetch()
+                // refetch()
                 toast.success('Move to public successfully')
                 setOpenDialog(false)
               }
@@ -196,7 +197,7 @@ const EventManagement = ({ t }: any) => {
                 // setCategory(EEventPrivacy.ALL)
                 // setFetchFilter({ ...fetchFilter, page: 1 })
                 // pagination.goToPage(1)
-                refetch()
+                // refetch()
                 toast.success('Move to private successfully')
                 setOpenDialog(false)
               }
@@ -216,7 +217,7 @@ const EventManagement = ({ t }: any) => {
                 // setCategory(EEventPrivacy.ALL)
                 // setFetchFilter({ ...fetchFilter, page: 1 })
                 // pagination.goToPage(1)
-                refetch()
+                // refetch()
                 toast.success('Move to trash successfully')
                 setOpenDialog(false)
               }
@@ -249,7 +250,7 @@ const EventManagement = ({ t }: any) => {
   }
 
   const handleRefect = () => {
-    refetch()
+    // refetch()
   }
 
   return (
@@ -352,7 +353,7 @@ const EventManagement = ({ t }: any) => {
         </FormGroup>
       )}
 
-      {fetchingEvents && <Loader />}
+      {/* {fetchingEvents && <Loader />} */}
 
       {events.length !== 0 && (
         <div className='flex flex-col gap-[22px]'>
@@ -390,7 +391,7 @@ const EventManagement = ({ t }: any) => {
         {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
       </div>
 
-      {isSuccess && events.length === 0 && <NotData />}
+      {/* {isSuccess && events.length === 0 && <NotData />} */}
 
       {openDialog && (
         <ConfirmDialog

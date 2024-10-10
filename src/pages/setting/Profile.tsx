@@ -62,7 +62,7 @@ const Profile = ({ t }: any) => {
     }
 
     try {
-      const result = await updateUser({ userId: user?.id!, data: formData }).unwrap()
+      const result = await updateUser(formData).unwrap()
       if (result) {
         dispatch(setUser(result))
         toast.success('Profile updated successfully')

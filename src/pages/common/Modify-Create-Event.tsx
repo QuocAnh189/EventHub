@@ -95,9 +95,7 @@ const ModifyEvent = (props: Props) => {
     }
 
     try {
-      const result = create
-        ? await createEvent(formData).unwrap()
-        : await updateEvent({ eventId: data.id!, data: formData }).unwrap()
+      const result = create ? await createEvent(formData).unwrap() : await updateEvent(formData).unwrap()
       if (result) {
         toast.success(`${create ? 'Create' : 'Update'} event successfully`)
       }
