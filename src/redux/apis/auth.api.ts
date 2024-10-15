@@ -1,6 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { LoginPayload, SignUpPayload, ForgotPassPayload, IParamsExternalLogin } from '@type/auth.type'
+import {
+  LoginPayload,
+  SignUpPayload,
+  ForgotPassPayload,
+  IParamsExternalLogin,
+  ResetPassWordPayload
+} from '@type/auth.type'
 
 //interface
 import { IAuth } from '@interfaces/systems/auth.interface'
@@ -77,10 +83,11 @@ export const apiAuth = createApi({
       })
     }),
 
-    resetPassword: builder.mutation<IAuth, void>({
-      query: () => ({
+    resetPassword: builder.mutation<IAuth, ResetPassWordPayload>({
+      query: (data) => ({
         url: '/auth/reset-password',
-        method: 'POST'
+        method: 'POST',
+        body: data
       })
     }),
 

@@ -25,13 +25,14 @@ import { withTranslation } from 'react-i18next'
 // assets
 import authImg from '@assets/images/auth/bg_auth.png'
 import logoText_Img from '@assets/images/common/logo_text.png'
+import dayjs from 'dayjs'
 
 const SignUp = ({ t }: any) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const { width } = useWindowSize()
 
-  const [signUp, { isLoading }] = useSignUpMutation()
+  const [SignUp, { isLoading }] = useSignUpMutation()
 
   const [formDataSessionOne, setFormDataSessionOne] = useState<SignUpPayloadOne>(InitSignUpOne)
   const [formDataSessionTwo, setFormDataSessionTwo] = useState<SignUpPayloadTwo>(InitSignUpTwo)
@@ -54,6 +55,7 @@ const SignUp = ({ t }: any) => {
   }, [])
 
   const handleChangeFormSessionOne = (e: ChangeEvent<HTMLInputElement> | any) => {
+    console.log(e.target.name, e.target.value)
     setFormDataSessionOne({
       ...formDataSessionOne,
       [e.target.name]: e.target.value
@@ -74,8 +76,7 @@ const SignUp = ({ t }: any) => {
     }
 
     try {
-      const result = await signUp(formData).unwrap()
-
+      const result = await SignUp({ ...formData, dob: dayjs(formData.dob).format('DD/MM/YYYY') }).unwrap()
       if (result) {
         localStorage.setItem('token', JSON.stringify(result))
         const response = await fetch(`${import.meta.env.VITE_API_URL!}/auth/profile`, {

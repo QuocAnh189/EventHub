@@ -13,6 +13,10 @@ import { withTranslation } from 'react-i18next'
 
 //util
 import classNames from 'classnames'
+import { useResetPasswordMutation } from '@redux/apis/auth.api'
+import { toast } from 'react-toastify'
+import { Skeleton } from '@mui/material'
+import { ResetPassWordPayload } from '@type/auth.type'
 
 interface Props {
   t: any
@@ -22,13 +26,29 @@ interface Props {
 const ResetPassword = (props: Props) => {
   const { t, changeSession } = props
 
+  const [ResetPassword, { isLoading }] = useResetPasswordMutation()
+
   const password = useRef(null)
   const confirmPassword = useRef(null)
 
   const [showPassWord, setShowPassWord] = useState<boolean>(false)
   const [showConfirmPassWord, setShowConfirmPassWord] = useState<boolean>(false)
 
-  const handleSubmit = () => {}
+  const handleSubmit = async () => {
+    const data: ResetPassWordPayload = {
+      newPassword: password.current!,
+      email: '',
+      token: ''
+    }
+    try {
+      const result = await ResetPassword(data).unwrap()
+      if (result) {
+        toast.success('Reset password successfully')
+      }
+    } catch (error: any) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className='flex flex-col h-full items-center'>
@@ -97,7 +117,7 @@ const ResetPassword = (props: Props) => {
           transition={{ duration: 0.4, delay: 0.6 }}
         >
           <button className='flex w-full btn hover:bg-blue-light2 bg-blue-light2 text-white' onClick={handleSubmit}>
-            {t('submit_btn')}
+            {isLoading ? <Skeleton /> : t('submit_btn')}
           </button>
         </motion.div>
 

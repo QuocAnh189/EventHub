@@ -1,11 +1,17 @@
 //hooks
 import { useState } from 'react'
 
+//components
+import { Skeleton } from '@mui/material'
+
 //motion
 import { motion } from 'framer-motion'
 
 //util
 import classNames from 'classnames'
+
+//redux
+import { useForgotPasswordMutation } from '@redux/apis/auth.api'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -18,10 +24,18 @@ interface Props {
 const FormForgotPassword = (props: Props) => {
   const { t, changeSession } = props
 
+  const [ForgotPassword, { isLoading }] = useForgotPasswordMutation()
   const [email, setEmail] = useState<string>('')
 
-  const handleSubmit = () => {
-    changeSession('verify-opt')
+  const handleSubmit = async () => {
+    try {
+      const result = await ForgotPassword({ email }).unwrap()
+      if (result) {
+        changeSession('verify-opt')
+      }
+    } catch (error: any) {
+      console.log(error)
+    }
   }
 
   return (
@@ -54,10 +68,10 @@ const FormForgotPassword = (props: Props) => {
         >
           <button
             className='flex w-full btn hover:bg-blue-light2 bg-blue-light2 text-white'
-            // disabled={email ? false : true}
+            disabled={email ? false : true}
             onClick={handleSubmit}
           >
-            {t('submit_btn')}
+            {isLoading ? <Skeleton /> : t('submit_btn')}
           </button>
         </motion.div>
 

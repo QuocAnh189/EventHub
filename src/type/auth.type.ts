@@ -27,6 +27,7 @@ export interface SignUpPayload {
   fullName: string
   phoneNumber: string
   password: string
+  dob: string
 }
 
 export const InitSignup = {
@@ -40,12 +41,14 @@ export interface SignUpPayloadOne {
   email: string
   fullName: string
   phoneNumber: string
+  dob: string
 }
 
 export const InitSignUpOne = {
   email: '',
   fullName: '',
-  phoneNumber: ''
+  phoneNumber: '',
+  dob: ''
 } as SignUpPayloadOne
 
 export interface SignUpPayloadTwo {
@@ -58,6 +61,12 @@ export const InitSignUpTwo = {
 
 export interface ForgotPassPayload {
   email: string
+}
+
+export interface ResetPassWordPayload {
+  newPassword: string | null
+  email: string
+  token: string
 }
 
 export interface LoginResponse {

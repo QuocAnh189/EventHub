@@ -72,7 +72,7 @@ export const apiCategory = createApi({
 export const {
   useCreateCategoryMutation,
   useGetCategoriesQuery,
-  useLazyGetCategoryByIdQuery,
+  useGetCategoryByIdQuery,
   useUpdateCategoryMutation,
   useDeleteCategoryMutation
 } = apiCategory

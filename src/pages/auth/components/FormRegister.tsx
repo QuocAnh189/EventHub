@@ -54,7 +54,7 @@ const FormRegister = (props: Props) => {
 
   const navigate = useNavigate()
 
-  const [validateUser, { isLoading }] = useValidateUserMutation()
+  const [ValidateUser, { isLoading }] = useValidateUserMutation()
   const {
     register,
     handleSubmit,
@@ -66,7 +66,7 @@ const FormRegister = (props: Props) => {
 
   const onSubmit: SubmitHandler<SignUpPayloadOne> = async (data: SignUpPayloadOne) => {
     try {
-      const result = await validateUser(data).unwrap()
+      const result = await ValidateUser(data).unwrap()
       if (result) {
         nextSession()
       }
@@ -152,6 +152,27 @@ const FormRegister = (props: Props) => {
             onChange={setFormDataSessionOne}
           />
           {errors.phoneNumber && <p className='mt-1 text-red'>{errors.phoneNumber.message}</p>}
+        </motion.div>
+
+        <motion.div
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          className='relative mb-6'
+        >
+          <input
+            className={classNames(
+              'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]',
+              {
+                'field-input--error': errors.dob
+              }
+            )}
+            {...register('dob')}
+            type='date'
+            name='dob'
+            onChange={setFormDataSessionOne}
+          />
+          {errors.phoneNumber && <p className='mt-1 text-red'>{errors.dob?.message}</p>}
         </motion.div>
 
         <motion.div
