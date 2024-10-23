@@ -8,6 +8,9 @@ import { BasicSelect, MinimalSelect } from './styles'
 import { components } from 'react-select'
 import { memo } from 'react'
 
+//assets
+import image_default from '@assets/images/common/image_default.jpg'
+
 interface Props {
   id?: any
   options?: any
@@ -53,7 +56,12 @@ const Select = (props: Props) => {
       <components.Option {...props}>
         {props.data.icon ? (
           <div className='flex items-center justify-center gap-2 text-header'>
-            <img src={props.data.icon} alt={props.data.label} className={`w-5 h-5 p-1`} style={{ backgroundColor }} />
+            <img
+              src={props.data.icon ? props.data.icon : image_default}
+              alt={props.data.label}
+              className={`w-5 h-5 p-1`}
+              style={{ backgroundColor }}
+            />
             {props.data.label}
           </div>
         ) : (

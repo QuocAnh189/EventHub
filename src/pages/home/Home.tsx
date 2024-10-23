@@ -24,6 +24,7 @@ const Home = () => {
 
   useEffect(() => {
     if (isSuccess) {
+      console.log(categories)
       dispatch(setCategories(categories))
     }
   }, [isSuccess])

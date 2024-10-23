@@ -17,7 +17,7 @@ import { useAppSelector } from '@hooks/useRedux'
 
 //constant
 import { EEventStatus } from '@constants/enum.constant'
-import { EVENT_CATEGORIES, EVENT_STATUS_OPTIONS, IOptionSelect } from '@constants/options.constant'
+import { EVENT_STATUS_OPTIONS, IOptionSelect } from '@constants/options.constant'
 
 //interface
 import { IEvent } from 'interfaces/contents/event.interface'
@@ -54,8 +54,6 @@ const SearchHome = ({ t }: any) => {
     icon: category.iconImageUrl,
     backgroundColor: category.color
   }))
-
-  console.log(categoriesOptions)
 
   const { register, handleSubmit, setValue, watch } = useForm<any>({
     defaultValues: initParam,
@@ -129,7 +127,8 @@ const SearchHome = ({ t }: any) => {
               <Select
                 placeholder={t('search home.All')}
                 id='category'
-                options={EVENT_CATEGORIES}
+                // options={EVENT_CATEGORIES}
+                options={categoriesOptions}
                 onChange={(e: IOptionSelect) => {
                   setValue('IOptionSelect', e.value)
                 }}

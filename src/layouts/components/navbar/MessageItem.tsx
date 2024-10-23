@@ -25,13 +25,13 @@ const placeholder = {
   }
 }
 
-interface IMessageItemProps {
+interface IProps {
   t: any
   message: any
   index: number
 }
 
-const MessageItem = (props: IMessageItemProps) => {
+const MessageItem = (props: IProps) => {
   const { t, message = placeholder, index } = props
 
   const [ref, { width }] = useMeasure()

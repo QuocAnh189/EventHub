@@ -7,7 +7,6 @@ function useOpenLiveChatAnimation(isOpen: boolean) {
 
   useEffect(() => {
     // animate('.arrow', { rotate: isOpen ? 180 : 0 }, { duration: 0.2 })
-
     animate(
       ' .main',
       {

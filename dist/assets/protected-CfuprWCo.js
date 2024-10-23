@@ -1,0 +1,1 @@
+import{u as o,o as u,r as a,j as i}from"./index-DJCO8Dfg.js";const c=({children:s})=>{const t=o(),e=u(r=>r.persistedReducer.user.user);return a.useLayoutEffect(()=>{e===null&&t("/signin")},[e]),i.jsx("div",{children:s})};export{c as P};
