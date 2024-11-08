@@ -18,26 +18,8 @@ import { useGetPaymentsByCreatorIdQuery } from '@redux/apis/payment.api'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-const payments = [
-  {
-    event: { coverImage: '', name: 'My Event' },
-    customerName: 'Anh Quoc',
-    customerEmail: 'anhquoc18092003@gmail..com',
-    customerPhone: '0702465814',
-    ticketQuantity: 10,
-    totalPrice: 500,
-    discount: 10,
-    status: 'active',
-    paymentMethod: {
-      method: {
-        methodLogo: '',
-        methodName: 'Pay Cashier',
-        paymentAccountNumber: 'Pay Cashier'
-      }
-    },
-    createdAt: new Date().toISOString()
-  }
-]
+//data
+import payments from '@db/payment'
 
 const Orders = ({ t }: any) => {
   const user = useAppSelector((state) => state.persistedReducer.user.user)

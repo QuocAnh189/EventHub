@@ -12,6 +12,9 @@ import { MdOutlineEditCalendar } from 'react-icons/md'
 //util
 import { getStatusColor } from '@utils/helpers'
 
+//assets
+import cashier_default from '@assets/images/payment/cashier.png'
+
 interface Props {
   onClick?: (order: IPayment) => void
   onChangeStatus?: (order: IPayment) => void
@@ -105,7 +108,7 @@ export default function useOrdersTable({ onClick, onChangeStatus }: Props) {
             className='object-contain rounded-md shadow-md'
             alt='event-cover-image'
             preview={false}
-            src={method.method.methodLogo}
+            src={method.method.methodLogo || cashier_default}
           />
           <div className='flex flex-col items-start gap-2'>
             <span>{method.method.methodName}</span>
