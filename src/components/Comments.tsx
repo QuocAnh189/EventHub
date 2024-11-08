@@ -28,6 +28,9 @@ import dayjs from 'dayjs'
 //assets
 import userDefault from '@assets/images/common/user_default.png'
 
+//data
+import reviews_data from '@db/reviews'
+
 interface Props {
   eventId: string
   ownerId: string
@@ -44,7 +47,7 @@ const ItemReviews = (props: Props) => {
   const [metadata, setMetadata] = useState<IMetadataReviewResponse>()
   const [reviews, setReviews] = useState<IReview[]>([])
 
-  const pagination = usePagination(metadata?.totalCount!, initParamsReview.size)
+  const pagination = usePagination(metadata?.totalCount! || reviews_data.length, initParamsReview.size)
 
   const { data } = useGetReviewsByEventIdQuery({ ...initParamsReview, eventId, page: pagination.currentPage || 1 })
   const [deleteReview, { isLoading: loadingDeleteReview }] = useDeleteReviewMutation()
@@ -69,7 +72,7 @@ const ItemReviews = (props: Props) => {
 
   return (
     <div className='space-y-2'>
-      {reviews.map((review, index) => (
+      {reviews_data.slice(0, 3).map((review: IReview, index: number) => (
         <div key={`index${index}`} className='space-y-4'>
           <div className='flex items-center justify-between gap-2'>
             <div className='flex items-center gap-2'>

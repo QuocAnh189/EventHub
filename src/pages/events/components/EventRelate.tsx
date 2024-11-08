@@ -8,21 +8,11 @@ import { useGetEventsQuery } from '@redux/apis/event.api'
 //interfaces
 import { IEvent } from '@interfaces/contents/event.interface'
 
+//data
+import events_data from '@db/event'
+
 interface Props {
   categoryIds: string[]
-}
-
-const event: any = {
-  coverImage: null,
-  name: 'My Event',
-  startTime: '2022-12-12T12:00:00.000Z',
-  location: 'HCM',
-  description:
-    'This is a description This is a description This is a description This is a description This is a description This is a description This is a description',
-  eventPaymentType: 'PAID',
-  priceRange: {
-    startRange: 100
-  }
 }
 
 const EventsRelate = (props: Props) => {
@@ -42,11 +32,9 @@ const EventsRelate = (props: Props) => {
           {/* {events?.items?.map((event: IEvent, index: number) => (
             <EventCard key={`event-${index}`} event={event} />
           ))} */}
-          {Array(3)
-            .fill(1)
-            .map((_: IEvent, index: number) => (
-              <EventCard key={`event-${index}`} event={event} />
-            ))}
+          {events_data.slice(0, 3).map((event: IEvent, index: number) => (
+            <EventCard key={`event-${index}`} event={event} />
+          ))}
         </div>
       )}
     </div>

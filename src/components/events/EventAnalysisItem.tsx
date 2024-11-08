@@ -3,13 +3,16 @@ import { useNavigate } from 'react-router-dom'
 
 //components
 import Spring from '@components/Spring'
+
+//interfaces
+import { IEvent } from '@interfaces/contents'
 interface Props {
-  seller: any
+  event: IEvent
   index: number
 }
 
 const EventAnalysisItem = (props: Props) => {
-  const { seller, index } = props
+  const { event, index } = props
   const navigate = useNavigate()
 
   const handleViewDetail = () => navigate(`123`)
@@ -25,12 +28,8 @@ const EventAnalysisItem = (props: Props) => {
         onClick={handleViewDetail}
       >
         <div className='w-[140px] h-[120px] flex flex-col items-center justify-center gap-2'>
-          <img
-            className='h-full w-auto object-contain'
-            src='https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
-            alt={seller.name}
-          />
-          <p className='font-bold text-xl text-header'>JobFair UIT</p>
+          <img className='h-full w-auto object-contain' src={event.coverImage} alt={event.name} />
+          <p className='font-bold text-xl text-header text-justify'>{event.name}</p>
         </div>
       </div>
     </Spring>

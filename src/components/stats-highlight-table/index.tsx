@@ -11,8 +11,8 @@ import { commaFormatter, numFormatter } from '@utils/helpers'
 import { withTranslation } from 'react-i18next'
 
 const placeholder = [
-  { year: 2022, customers: 3234, trend: 10, revenue: 124000 },
-  { year: 2023, customers: 12345, trend: 35, revenue: 32000 }
+  { year: 2023, customers: 3234, trend: 10, revenue: 124000 },
+  { year: 2024, customers: 12345, trend: 35, revenue: 32000 }
 ]
 
 interface Props {

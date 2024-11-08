@@ -14,6 +14,7 @@ export interface IEvent {
   name: string
   description: string
   location: string
+  locationPath: string
   priceRange: IPriceRange
   startTime: any
   endTime: any

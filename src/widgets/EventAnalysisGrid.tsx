@@ -11,12 +11,14 @@ import Search from '@ui/Search'
 //constants
 import { SELLER_SORT_OPTIONS } from '@constants/options.constant'
 
-//utils
-import { sortSellers } from '@utils/helpers'
-
 //data placeholder
-import sellers from '@db/sellers'
 import { IPagination } from '@interfaces/common.interface'
+
+//interfaces
+import { IEvent } from '@interfaces/contents'
+
+//data
+import events from '@db/event'
 
 interface Props {
   search_label: string
@@ -27,8 +29,8 @@ const EventAnalysisGrid = (props: Props) => {
 
   const { width } = useWindowSize()
   const [sort] = useState(SELLER_SORT_OPTIONS[0])
-  const sortedSellers: any[] = sortSellers(sellers, sort.value)
-  const pagination: IPagination = usePagination(sortedSellers.length, width >= 1280 && width < 1536 ? 20 : 18)
+  // const sortedSellers: any[] = sortSellers(sellers, sort.value)
+  const pagination: IPagination = usePagination(events.length, width >= 1280 && width < 1536 ? 20 : 18)
   // const data = pagination.currentItems()
 
   useEffect(() => {
@@ -44,8 +46,8 @@ const EventAnalysisGrid = (props: Props) => {
         className='flex-1 grid content-start gap-5 mt-4 mb-8 sm:grid-cols-2 md:grid-cols-3 md:gap-[26px]
                  md:mt-[27px] xl:grid-cols-5 2xl:grid-cols-6'
       >
-        {sortedSellers.map((seller: any, index: number) => (
-          <EventAnalysisItem key={`seller-${seller.id}-${sort.value}`} seller={seller} index={index} />
+        {events.map((event: IEvent, index: number) => (
+          <EventAnalysisItem key={`seller-${event.id}-${sort.value}`} event={event} index={index} />
         ))}
       </div>
       <Pagination pagination={pagination} />

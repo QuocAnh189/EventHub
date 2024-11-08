@@ -19,7 +19,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -31,6 +31,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -58,7 +60,7 @@ const events = [
     numberOfSoldTickets: 20,
     averageRating: 4.5,
     status: EEventStatus.UPCOMING,
-    reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
+    reasons: ['This is reasons 1', 'This is reasons 2', 'This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -80,7 +82,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -92,6 +94,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -141,7 +145,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -153,6 +157,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -202,7 +208,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -214,6 +220,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -263,7 +271,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -275,6 +283,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -324,7 +334,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -336,6 +346,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -386,7 +398,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -398,6 +410,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -447,7 +461,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -459,6 +473,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -508,7 +524,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -520,6 +536,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
@@ -570,7 +588,7 @@ const events = [
     creator: {
       id: '1',
       name: 'Anh Quoc',
-      avatar: 'https://example.com/avatar.jpg',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
       email: 'anhquoc18092003@gmail.com'
     },
     subImages: [
@@ -582,6 +600,8 @@ const events = [
     description:
       'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
     location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,

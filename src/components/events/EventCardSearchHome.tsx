@@ -17,7 +17,9 @@ const EventCardSearchHome = (props: Props) => {
   const navigate = useNavigate()
 
   const handleViewEvent = () => {
-    navigate(`/organization/event/${event.id}`)
+    navigate(`/organization/event/${event.id}`, {
+      state: { event }
+    })
   }
 
   return (

@@ -24,6 +24,9 @@ import { EEventStatus } from '@constants/enum.constant'
 //utils
 import dayjs from 'dayjs'
 
+//data
+import calendar_event from '@db/calendar'
+
 const Calendar = ({ t }: any) => {
   const navigate = useNavigate()
   const { data: events } = useGetEventsQuery({ takeAll: false, type: EEventStatus.UPCOMING, size: 6 })
@@ -69,8 +72,8 @@ const Calendar = ({ t }: any) => {
               dayMaxEvents={true}
               eventClick={handleEventClick}
               eventContent={renderEventContent}
-              // initialEvents={eventCalendar}
-              events={eventCalendar}
+              // initialEvents={calendar_event}
+              events={calendar_event || eventCalendar}
             />
           </Box>
         </Box>
@@ -108,8 +111,9 @@ function renderEventContent(eventInfo: any) {
         break
     }
   }
+
   return (
-    <div className={`flex items-center gap-2 bg-${statusEvent(eventInfo.event._def.extendedProps.status)}`}>
+    <div className={`flex items-center gap-2 bg-[${statusEvent(eventInfo.event._def.extendedProps.status)}]`}>
       <img src={eventInfo.event._def.extendedProps.coverImage} className='w-10 h-10 rounded-md' />
       <p className='text-header truncate'>{eventInfo.event.title}</p>
     </div>

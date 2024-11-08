@@ -1,6 +1,6 @@
 //hooks
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 
 //components
 import Box from '@mui/material/Box'
@@ -9,7 +9,7 @@ import Tabs from '@mui/material/Tabs'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Comments from '@components/Comments'
-import LocationEvent from '@components/Location'
+// import LocationEvent from '@components/Location'
 import Information from '@components/Information'
 import EventsRelate from './components/EventRelate'
 import Payment from './components/Payment'
@@ -29,46 +29,50 @@ import { FaHeart } from 'react-icons/fa6'
 //util
 import dayjs from 'dayjs'
 
-const event: any = {
-  name: 'Event Name',
-  creator: {
-    avatar: null
-  },
-  subImages: [],
-  startTime: '2021-10-10T00:00:00.000Z',
-  endTime: '2021-10-10T00:00:00.000Z',
-  location: 'Hanoi',
-  coverImage: 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409118/eventhub/event/infflklkudlatzvf8gsz.jpg',
-  categoryIds: [1, 2, 3],
-  promotion: {
-    discount: 10,
-    discountType: 'percent',
-    discountCode: 'ABC',
-    startDate: '2021-10-10T00:00:00.000Z',
-    endDate: '2021-10-10T00:00:00.000Z',
-    description: 'Discount 10% for all tickets'
-  },
-  ticketTypes: [
-    {
-      name: 'VIP',
-      price: 100,
-      quantity: 100,
-      description: 'VIP ticket'
-    },
-    {
-      name: 'Normal',
-      price: 50,
-      quantity: 100,
-      description: 'Normal ticket'
-    }
-  ],
-  creatorId: 1,
-  isFavourite: true,
-  id: '1',
-  reasons: ['Love you 1', 'Love you 2', 'Love you 3']
-}
+// const event: any = {
+//   name: 'Event Name',
+//   creator: {
+//     avatar: null
+//   },
+//   subImages: [],
+//   startTime: '2021-10-10T00:00:00.000Z',
+//   endTime: '2021-10-10T00:00:00.000Z',
+//   location: 'Hanoi',
+//   coverImage: 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409118/eventhub/event/infflklkudlatzvf8gsz.jpg',
+//   categoryIds: [1, 2, 3],
+//   promotion: {
+//     discount: 10,
+//     discountType: 'percent',
+//     discountCode: 'ABC',
+//     startDate: '2021-10-10T00:00:00.000Z',
+//     endDate: '2021-10-10T00:00:00.000Z',
+//     description: 'Discount 10% for all tickets'
+//   },
+//   ticketTypes: [
+//     {
+//       name: 'VIP',
+//       price: 100,
+//       quantity: 100,
+//       description: 'VIP ticket'
+//     },
+//     {
+//       name: 'Normal',
+//       price: 50,
+//       quantity: 100,
+//       description: 'Normal ticket'
+//     }
+//   ],
+//   creatorId: 1,
+//   isFavourite: true,
+//   id: '1',
+//   reasons: ['Love you 1', 'Love you 2', 'Love you 3']
+// }
 
 const EventDetail = () => {
+  const location = useLocation()
+  const { event } = location.state || {}
+  console.log(event)
+
   const params = useParams()
 
   const user = useAppSelector((state) => state.persistedReducer.user.user)
@@ -162,9 +166,13 @@ const EventDetail = () => {
                 <IoLocationOutline color='gray' size='24px' />
                 <p className='max-w-[500px] text-header'>{event?.location}</p>
               </div>
-              <div className='w-4/5'>
-                <LocationEvent location={null} />
-              </div>
+              <iframe
+                className='rounded-sm sml:w-4/5'
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s'
+                height='400'
+                loading='lazy'
+              />
+              {/* <LocationEvent location={null} /> */}
             </div>
           </div>
 
