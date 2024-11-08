@@ -14,18 +14,8 @@ import { useGetEventsQuery } from '@redux/apis/event.api'
 //interface
 import { IEvent } from 'interfaces/contents/event.interface'
 
-const event: any = {
-  coverImage: null,
-  name: 'My Event',
-  startTime: '2022-12-12T12:00:00.000Z',
-  location: 'HCM',
-  description:
-    'This is a description This is a description This is a description This is a description This is a description This is a description This is a description',
-  eventPaymentType: 'PAID',
-  priceRange: {
-    startRange: 100
-  }
-}
+//data
+import events_data from '@db/event'
 
 const BestEvents = ({ t }: any) => {
   const { data: events, isFetching } = useGetEventsQuery({ takeAll: false, type: EEventStatus.UPCOMING, size: 6 })
@@ -47,11 +37,9 @@ const BestEvents = ({ t }: any) => {
             {/* {events?.items?.map((event: IEvent, index: number) => (
               <EventCard key={`event-${index}`} event={event} />
             ))} */}
-            {Array(6)
-              .fill(1)
-              .map((_: IEvent, index: number) => (
-                <EventCard key={`event-${index}`} event={event} />
-              ))}
+            {events_data.slice(0, 6).map((event: IEvent, index: number) => (
+              <EventCard key={`event-${index}`} event={event} />
+            ))}
           </div>
         )}
       </section>

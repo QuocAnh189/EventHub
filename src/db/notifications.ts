@@ -9,8 +9,7 @@ const notifications = [
     text: 'Quốc đã đặt vé của bạn',
     user: {
       fullName: 'Trần Phước Anh Quốc',
-      avatar:
-        'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     }
   },
   {
@@ -21,8 +20,7 @@ const notifications = [
     text: 'Duy đã theo dõi bạn',
     user: {
       fullName: 'Trần Vương Duy',
-      avatar:
-        'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     }
   },
   {
@@ -32,9 +30,8 @@ const notifications = [
     subcategory: 'Referral link',
     text: 'Hiền đã theo dõi bạn',
     user: {
-      fullName: 'Lê Thị Thu Hiền',
-      avatar:
-        'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+      fullName: 'Lê Thị Thanh Thảo',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     }
   },
   {
@@ -45,8 +42,7 @@ const notifications = [
     text: 'Trí đã đặt vé của bạn',
     user: {
       fullName: 'Trương Nguyễn Phước Trí',
-      avatar:
-        'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     }
   },
   {
@@ -57,8 +53,7 @@ const notifications = [
     text: 'Khôi đã đặt vé của bạn',
     user: {
       fullName: 'Mai Đình Khôi',
-      avatar:
-        'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     }
   },
   {
@@ -69,8 +64,7 @@ const notifications = [
     text: 'Trí đã theo dõi bạn',
     user: {
       fullName: 'Trương Nguyễn Phước Trí',
-      avatar:
-        'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     }
   },
   {
@@ -81,8 +75,7 @@ const notifications = [
     text: 'Chính đã theo dõi bạn',
     user: {
       fullName: 'Trần Minh Chính',
-      avatar:
-        'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     }
   }
 ]

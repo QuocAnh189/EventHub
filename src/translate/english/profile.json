@@ -30,6 +30,7 @@
     "apperance": "Appearance",
     "security_assets": "Securiy_assets",
     "configuration_settings": "Configuration Settings",
-    "view_mode": "View Mode"
+    "view_mode": "View Mode",
+    "sidebar_position": "Sidebar Position"
   }
 }

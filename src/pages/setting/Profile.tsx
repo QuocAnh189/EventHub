@@ -31,7 +31,7 @@ const Profile = ({ t }: any) => {
 
   const user = useAppSelector((state) => state.persistedReducer.user.user)
 
-  const [updateUser, { isLoading }] = useUpdateUserMutation()
+  const [UpdateUser, { isLoading }] = useUpdateUserMutation()
 
   const {
     register,
@@ -62,7 +62,7 @@ const Profile = ({ t }: any) => {
     }
 
     try {
-      const result = await updateUser(formData).unwrap()
+      const result = await UpdateUser({ userId: user?.id!, data: formData }).unwrap()
       if (result) {
         dispatch(setUser(result))
         toast.success('Profile updated successfully')

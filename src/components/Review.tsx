@@ -167,7 +167,14 @@ const Review = (props: Props) => {
             <span className='label-text'>Rate:</span>
             <RatingStars rating={review.rate} />
           </div>
-          <div className='bg-input-bg rounded-md border border-input-border h-[240px] p-4 overflow-y-auto'>
+          <p
+            className={`flex gap-4 mb-2 ${
+              review.isPositive ? 'bg-green' : 'bg-red'
+            } w-20 items-center justify-center text-white rounded-lg`}
+          >
+            {review.isPositive ? 'positive' : 'negative'}
+          </p>
+          <div className='bg-input-bg text-justify rounded-md border border-input-border h-[240px] p-4 overflow-y-auto'>
             {review.content}
           </div>
         </div>

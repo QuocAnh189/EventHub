@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 import { useForm } from 'react-hook-form'
+import { useLocation } from 'react-router-dom'
 
 //components
 import PageHeader from '@layouts/components/PageHeader'
@@ -24,20 +25,14 @@ import { IEvent } from '@interfaces/contents/event.interface'
 //i18
 import { withTranslation } from 'react-i18next'
 
-const event: any = {
-  coverImage: null,
-  name: 'My Event',
-  startTime: '2022-12-12T12:00:00.000Z',
-  location: 'HCM',
-  description:
-    'This is a description This is a description This is a description This is a description This is a description This is a description This is a description',
-  eventPaymentType: 'PAID',
-  priceRange: {
-    startRange: 100
-  }
-}
+//data
+import events_data from '@db/event'
 
 const Explore = ({ t }: any) => {
+  const location = useLocation()
+  const { query } = location.state || {}
+  console.log(query)
+
   const { watch, setValue } = useForm({
     defaultValues: initParamsEvent
   })
@@ -117,11 +112,9 @@ const Explore = ({ t }: any) => {
 
           {!isFetching && (
             <div className='w-full grid xl:grid-cols-2 gap-8 grid-rows-5'>
-              {Array(9)
-                .fill(1)
-                .map((_, index: number) => (
-                  <EventCardExplore key={`event-${index}`} event={event} />
-                ))}
+              {events_data.map((event: IEvent, index: number) => (
+                <EventCardExplore key={`event-${index}`} event={event} />
+              ))}
             </div>
           )}
 

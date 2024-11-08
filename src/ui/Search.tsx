@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 //hooks
 import { useState } from 'react'
 
@@ -12,6 +13,7 @@ interface Props {
   setQuery?: (value: string) => void
 }
 const Search = (props: Props) => {
+  const navigate = useNavigate()
   const { t } = useTranslation()
 
   const { placeholder = t('header.search'), wrapperClass, onChange } = props
@@ -22,6 +24,9 @@ const Search = (props: Props) => {
     if (onChange) {
       onChange(query)
     }
+    navigate('explore', {
+      state: { query: query }
+    })
   }
 
   return (

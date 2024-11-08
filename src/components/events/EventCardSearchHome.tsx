@@ -48,7 +48,7 @@ const EventCardSearchHome = (props: Props) => {
       <div className='flex items-center justify-between'>
         <button
           onClick={handleViewEvent}
-          className='bg-black text-white rounded-[20px] py-[6px] px-[20px] text-[12px] hover:bg-gray'
+          className='bg-primary text-white rounded-[20px] py-[6px] px-[20px] text-[12px] hover:bg-gray'
         >
           {t('search home.view_event_btn')}
         </button>

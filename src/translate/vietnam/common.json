@@ -11,7 +11,7 @@
     "follow_text": "đã theo dõi bạn",
     "order_text": "đã mua vé của bạn",
     "hours ago": "giờ trước",
-    "accept_btn": "Chấp nhận",
+    "confirm_btn": "Xác nhận",
     "decline_btn": "Từ chối"
   },
   "message": {
@@ -128,6 +128,7 @@
     "settings": {
       "parent": "Cài đặt",
       "profile": "Hồ sơ"
-    }
+    },
+    "permissions": "Quản lý cấp bậc"
   }
 }

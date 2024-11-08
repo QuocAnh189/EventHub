@@ -27,12 +27,14 @@ import useDefault from '@assets/images/common/user_default.png'
 //i18
 import { useTranslation, withTranslation } from 'react-i18next'
 import ToggleDarkLight from './switch/ToggleDarkLight'
+import InvitationPanel from '../navbar/InvitationPanel'
 
 const AppBar = ({ t }: any) => {
   const navigate = useNavigate()
   const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false)
   const [notificationsPanelOpen, setNotificationsPanelOpen] = useState<boolean>(false)
   const [messagesPanelOpen, setMessagesPanelOpen] = useState<boolean>(false)
+  const [invitePanelOpen, setInvitePanelOpen] = useState<boolean>(false)
 
   const { i18n } = useTranslation()
   const [locale, setLocale] = useState(
@@ -127,6 +129,22 @@ const AppBar = ({ t }: any) => {
                     <span className='hidden text-xs font-bold text-white dark:text-[#00193B] xl:block'>2</span>
                   </span>
                 </div>
+
+                <div className='relative h-fit mt-1.5 xl:self-end xl:mt-0 xl:mr-1.5'>
+                  <button
+                    className='text-lg leading-none text-gray dark:text-gray-red xl:text-[20px]'
+                    onClick={() => setInvitePanelOpen(true)}
+                    aria-label='Messages'
+                  >
+                    <i className='icon-user-solid' />
+                  </button>
+                  <span
+                    className='absolute w-3 h-3 rounded-full bg-green -top-1.5 -right-1.5 border-[2px] border-body
+                                  xl:w-6 xl:h-6 xl:-top-5 xl:-right-4 xl:flex xl:items-center xl:justify-center'
+                  >
+                    <span className='hidden text-xs font-bold text-white dark:text-[#00193B] xl:block'>4</span>
+                  </span>
+                </div>
                 <div className='relative'>
                   <button
                     className='h-8 w-8 rounded-full bg-accent text-widget text-sm flex items-center justify-center relative xl:w-11 xl:h-11 xl:text-lg'
@@ -163,6 +181,11 @@ const AppBar = ({ t }: any) => {
         open={messagesPanelOpen}
         onOpen={() => setMessagesPanelOpen(true)}
         onClose={() => setMessagesPanelOpen(false)}
+      />
+      <InvitationPanel
+        open={invitePanelOpen}
+        onOpen={() => setInvitePanelOpen(true)}
+        onClose={() => setInvitePanelOpen(false)}
       />
     </>
   )

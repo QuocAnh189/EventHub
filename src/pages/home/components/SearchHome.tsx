@@ -29,19 +29,15 @@ import classNames from 'classnames'
 //i18
 import { withTranslation } from 'react-i18next'
 
+//data
+import events_data from '@db/event'
+
 const initParam = {
   search: '',
   type: EEventStatus.ALL,
   categoryIds: [],
   takeAll: false,
   size: 10
-}
-
-const mock_event: any = {
-  name: 'My Event',
-  categories: [{ iconImage: null, name: 'Music' }],
-  coverImage: null,
-  priceRange: { startRange: 100 }
 }
 
 const SearchHome = ({ t }: any) => {
@@ -148,11 +144,9 @@ const SearchHome = ({ t }: any) => {
                 {/* {events?.items?.map((event: IEvent, index: number) => (
                   <EventCardSearchHome key={`event-${index}`} event={event} />
                 ))} */}
-                {Array(5)
-                  .fill(1)
-                  .map((_: IEvent, index: number) => (
-                    <EventCardSearchHome event={mock_event} key={`event-${index}`} />
-                  ))}
+                {events_data.map((event: IEvent, index: number) => (
+                  <EventCardSearchHome event={event} key={`event-${index}`} />
+                ))}
               </div>
             )}
           </div>

@@ -1,5 +1,5 @@
 //hooks
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 //layout
 import ProtectedLayout from '@layouts/protected'
@@ -22,12 +22,14 @@ import { IReview } from '@interfaces/contents/review.interface'
 //i18n
 import { withTranslation } from 'react-i18next'
 
+//data
+import reviews_data from '@db/reviews'
+
 const Review = ({ t }: any) => {
   // const user = useAppSelector((state) => state.persistedReducer.user.user)
 
   // const { data } = useGetReviewsByUserIdQuery(user?.id!)
 
-  const [average, setAverage] = useState<number>(0)
   const [reviews, setReviews] = useState<IReview[]>()
   const [dataPercent, setDataPercent] = useState<any>([])
   const [metaData, setMetaData] = useState<IMetadataReviewResponse>()
@@ -46,7 +48,7 @@ const Review = ({ t }: any) => {
 
   const calculationPercent = (rate: number) => {
     const ratesPercent: any = {}
-    reviews?.forEach((review) => {
+    reviews_data?.forEach((review) => {
       ratesPercent[rate] = review.rate === rate ? ratesPercent[rate] + 1 || 1 : ratesPercent[rate]
     })
     return ratesPercent[rate] || 0
@@ -63,11 +65,20 @@ const Review = ({ t }: any) => {
     setDataPercent(data)
   }, [reviews?.length])
 
-  useEffect(() => {
-    const calculation = reviews?.reduce((total, currentValue) => {
-      return total + currentValue.rate
+  const averageRate = useMemo(() => {
+    return Math.floor(
+      reviews_data?.reduce((total, currentValue) => {
+        return total + currentValue.rate
+      }, 0) / reviews_data.length
+    )
+  }, [reviews?.length])
+
+  const percentPositive = useMemo(() => {
+    const totalPositive = reviews_data?.reduce((total, currentValue) => {
+      return total + (currentValue.isPositive ? 1 : 0)
     }, 0)
-    setAverage(Math.floor(calculation! / metaData?.totalCount!))
+
+    return Math.floor((totalPositive! / reviews_data.length) * 100)
   }, [reviews?.length])
 
   return (
@@ -76,12 +87,22 @@ const Review = ({ t }: any) => {
       <div className='flex flex-col flex-1 gap-5 md:gap-[26px]'>
         <div className='grid grid-cols-1 gap-y-5 md:gap-y-[26px] xl:grid-cols-6 xl:gap-x-[26px]'>
           <div className='widgets-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:col-span-4'>
-            <ReviewsScore score={average} />
-            <CustomersInfobox label={t('middle.total')} count={metaData?.totalCount} color='green' suffix='' />
-            <CustomersInfobox label={t('middle.new')} count={25} suffix='%' iconClass='user-plus-solid' />
+            <ReviewsScore score={averageRate} />
             <CustomersInfobox
-              label={t('middle.regular')}
-              count={75}
+              label={t('middle.total')}
+              count={metaData?.totalCount || reviews_data.length}
+              color='green'
+              suffix=''
+            />
+            <CustomersInfobox
+              label={t('middle.positive')}
+              count={percentPositive}
+              suffix='%'
+              iconClass='user-plus-solid'
+            />
+            <CustomersInfobox
+              label={t('middle.negative')}
+              count={Math.floor(100 - percentPositive)}
               suffix='%'
               color='red'
               iconClass='user-group-crown-solid'
@@ -90,7 +111,7 @@ const Review = ({ t }: any) => {
           <ReviewsRate data={dataPercent} />
         </div>
         {/* {reviews && <LatestAcceptedReviews reviews={reviews!} total={metaData?.totalCount!} />} */}
-        {<LatestAcceptedReviews reviews={reviews!} total={metaData?.totalCount!} />}
+        {<LatestAcceptedReviews reviews={reviews_data!} total={metaData?.totalCount!} />}
       </div>
     </ProtectedLayout>
   )

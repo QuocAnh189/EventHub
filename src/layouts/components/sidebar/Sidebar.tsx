@@ -1,6 +1,6 @@
 //hooks
 import { useSidebar } from '@contexts/sidebar.context'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useWindowSize } from 'react-use'
 
@@ -19,9 +19,7 @@ import ROUTES from '@constants/routes.constant'
 import logoText_Img from '@assets/images/common/logo_text.png'
 
 //interface
-import { useAppSelector } from '@hooks/useRedux'
 import { Route } from '@interfaces/common.interface'
-import { AiFillSliders } from 'react-icons/ai'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -33,15 +31,7 @@ const Sidebar = ({ t }: any) => {
   const [active, setActive] = useState<string>('')
   const isPermanent = width >= 1920
 
-  const user = useAppSelector((state) => state.persistedReducer.user.user)
-  useLayoutEffect(() => {
-    if (user?.roles.includes('ADMIN'))
-      ROUTES.push({
-        name: 'Permissions',
-        icon: <AiFillSliders size={20} />,
-        path: '/organization/permissions'
-      })
-  }, [])
+  const type_sidebar = localStorage.getItem('type_sidebar')
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -58,7 +48,7 @@ const Sidebar = ({ t }: any) => {
   return (
     <Drawer
       id='appMenu'
-      anchor='left'
+      anchor={type_sidebar === 'left' ? 'left' : 'right'}
       transitionDuration={350}
       open={open}
       variant={isPermanent ? 'permanent' : 'temporary'}

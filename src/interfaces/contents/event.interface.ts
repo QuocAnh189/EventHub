@@ -7,7 +7,7 @@ export interface IEvent {
   id: string
   creatorId: string
   creator: Partial<IUser>
-  creatorName: string
+  // creatorName: string
   categories: any[]
   coverImage: string
   subImages: any[]
@@ -23,9 +23,8 @@ export interface IEvent {
   isTrash: boolean
   ticketTypes: ITicketType[]
   categoryIds: string[] | any
-  promotion: number
+  // promotion: number
   numberOfFavourites: number
-  isFavourite?: boolean
   numberOfShares: number
   numberOfSoldTickets: number
   averageRating: number

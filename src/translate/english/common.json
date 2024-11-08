@@ -11,7 +11,7 @@
     "follow_text": "follow you",
     "order_text": "order your event",
     "hours ago": "hours ago",
-    "accept_btn": "Accept",
+    "confirm_btn": "Confirm",
     "decline_btn": "Decline"
   },
   "message": {
@@ -20,6 +20,11 @@
     "latest": "Latest",
     "archived": "Archived",
     "reply_btn": "Reply",
+    "mark_btn": "Mark as read"
+  },
+  "invitation": {
+    "title": "Invitations",
+    "view_btn": "View",
     "mark_btn": "Mark as read"
   },
   "category": {
@@ -128,6 +133,7 @@
     "settings": {
       "parent": "Settings",
       "profile": "Profile"
-    }
+    },
+    "permissions": "Permission"
   }
 }

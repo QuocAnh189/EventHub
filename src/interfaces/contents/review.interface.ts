@@ -9,8 +9,9 @@ export interface IReview {
   eventCoverImage: string
   content: string
   rate: number
-  isDeleted: boolean
-  deletedAt: Date
+  isPositive: boolean
+  isDeleted?: boolean
+  deletedAt?: Date
   createdAt: Date
   updatedAt: Date
 }

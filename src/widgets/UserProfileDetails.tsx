@@ -15,6 +15,7 @@ import { IUser } from 'interfaces/systems/user.interface'
 import { CircularProgress } from '@mui/material'
 import { EUserStatus } from '@constants/enum.constant'
 import { withTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
 
 interface Props {
   t: any
@@ -32,6 +33,12 @@ const UserProfileDetails = (props: Props) => {
   const { t, register, watch, setValue, control, errors, isLoading, roles, status } = props
 
   const { theme, toggleTheme }: any = useTheme()
+
+  const [sidebarCurrent, setSidebarCurrent] = useState<string>(localStorage.getItem('type_sidebar')!)
+
+  useEffect(() => {
+    localStorage.setItem('type_sidebar', sidebarCurrent)
+  }, [sidebarCurrent])
 
   return (
     <Spring
@@ -186,6 +193,23 @@ const UserProfileDetails = (props: Props) => {
           <button disabled={isLoading} type='submit' className='btn btn-primary w-[260px] mt-5'>
             {isLoading ? <CircularProgress size={24} /> : t('profile detail.update_information')}
           </button>
+        </div>
+        <div className='mt-2.5 flex gap-2'>
+          <label className='field-label' htmlFor='firstName'>
+            {t('profile detail.sidebar_position')}
+          </label>
+          <Select
+            placeholder='Gender'
+            id='gender'
+            options={[
+              { value: 'left', label: 'Left' },
+              { value: 'right', label: 'Right' }
+            ]}
+            value={{ value: sidebarCurrent, label: sidebarCurrent === 'left' ? 'Left' : 'Right' }}
+            onChange={(e: any) => {
+              setSidebarCurrent(e.value)
+            }}
+          />
         </div>
       </div>
       <div>

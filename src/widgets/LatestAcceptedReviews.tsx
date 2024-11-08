@@ -16,21 +16,6 @@ import { IReview } from 'interfaces/contents/review.interface'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-const review: any = {
-  id: 1,
-  userId: '123',
-  fullName: 'Tran Phuoc Anh Quoc',
-  userAvatar: '',
-  email: 'anhquoc18092003@gail.com',
-  eventId: '321',
-  eventName: 'My Event',
-  eventCoverImage: '',
-  content: 'I don not like it',
-  rate: 4,
-  createdAt: new Date(),
-  updatedAt: new Date()
-}
-
 interface IProps {
   t: any
   reviews: IReview[]
@@ -61,11 +46,9 @@ const LatestAcceptedReviews = (props: IProps) => {
               <NotData />
             </div>
           )} */}
-          {Array(10)
-            .fill(1)
-            .map((_, index) => (
-              <Review key={`review-${index}`} review={review} index={index} />
-            ))}
+          {reviews.map((review: IReview, index: number) => (
+            <Review key={`review-${index}`} review={review} index={index} />
+          ))}
         </div>
       </div>
       {pagination.maxPage > 1 && <Pagination pagination={pagination} />}

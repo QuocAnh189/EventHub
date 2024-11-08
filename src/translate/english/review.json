@@ -6,8 +6,8 @@
     "review_score": "Review score",
     "customers": "Customers",
     "total": "Total",
-    "new": "New",
-    "regular": "Regular"
+    "positive": "Positive",
+    "negative": "Negative"
   },
   "main": {
     "title": "Latest Accepted Reviews"
