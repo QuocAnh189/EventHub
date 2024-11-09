@@ -18,16 +18,11 @@ import { initParamsEvent } from '@type/event.type'
 //interface
 import { IEvent } from '@interfaces/contents/event.interface'
 
+//data
+import events_data from '@db/event'
+
 interface Props {
   category: ICategory
-}
-
-const event: any = {
-  id: 1,
-  name: 'Event Name',
-  coverImage: 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg',
-  numberOfSoldTickets: 100,
-  numberOfFavourites: 100
 }
 
 const TopEventsByCategories = (props: Props) => {
@@ -38,6 +33,8 @@ const TopEventsByCategories = (props: Props) => {
   if (events) {
     console.log(events)
   }
+
+  const fake_data = events_data.filter((event: IEvent) => event.categories[0].name === category.name)
 
   return (
     <Spring className='flex flex-col gap-5'>
@@ -66,13 +63,11 @@ const TopEventsByCategories = (props: Props) => {
               <EventGridItem event={event} />
             </SwiperSlide>
           ))} */}
-          {Array(5)
-            .fill(6)
-            .map((_: IEvent, index: number) => (
-              <SwiperSlide className='!h-auto' key={`event-${index}`}>
-                <EventGridItem event={event} />
-              </SwiperSlide>
-            ))}
+          {fake_data.map((event: IEvent, index: number) => (
+            <SwiperSlide className='!h-auto' key={`event-${index}`}>
+              <EventGridItem event={event} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </Spring>

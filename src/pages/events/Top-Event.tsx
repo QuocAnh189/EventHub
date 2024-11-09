@@ -24,7 +24,7 @@ const TopEvent = ({ t }: any) => {
     },
     {
       id: 'b57547e1-86e2-4133-a196-5904f80cf673',
-      name: 'Food & Drink',
+      name: 'Food',
       iconImageUrl:
         'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
       iconImageFileName: '',
@@ -36,7 +36,7 @@ const TopEvent = ({ t }: any) => {
     },
     {
       id: 'acf0ac38-4e32-4456-b519-0ac009e4da1a',
-      name: 'Fashion',
+      name: 'Workshop',
       color: '#F3D0D7',
       iconImageUrl:
         'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
@@ -48,7 +48,7 @@ const TopEvent = ({ t }: any) => {
     },
     {
       id: '8ab53d26-742c-4515-8a8f-a5e2a5b86403',
-      name: 'Music',
+      name: 'Sport',
       color: '#EE4266',
       iconImageUrl:
         'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',

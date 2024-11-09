@@ -35,6 +35,9 @@ import { useRestoreEventMutation } from '@redux/apis/event.api'
 //i18n
 import { withTranslation } from 'react-i18next'
 
+//data
+import events_data from '@db/event'
+
 const EventManagementTrash = ({ t }: any) => {
   const categories = useAppSelector((state: RootState) => state.persistedReducer.category.categories)
   // const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
@@ -216,8 +219,8 @@ const EventManagementTrash = ({ t }: any) => {
 
       <div className='flex flex-col gap-[22px]'>
         <div className='w-full grid grid-cols-2 gap-10'>
-          {Array(4)
-            .fill(1)
+          {events_data
+            .filter((event) => event.isTrash)
             .map((event, index: number) => (
               <CardMyEvent
                 key={`event-${index}`}

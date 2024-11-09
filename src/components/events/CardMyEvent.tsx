@@ -37,17 +37,8 @@ interface Props {
   refect: any
 }
 
-const event = {
-  id: '1',
-  name: 'Event Name',
-  coverImage: 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg',
-  startTime: '2022-12-12T12:00:00',
-  location: 'Location',
-  isTrash: false
-}
-
 const CardMyEvent = (props: Props) => {
-  const { t, checkedAll, onChecked, eventIds, refect } = props
+  const { t, checkedAll, event, onChecked, eventIds, refect } = props
   const navigate = useNavigate()
 
   const [restoreEvent, { isLoading: loadingRestore }] = useRestoreEventMutation()

@@ -417,7 +417,7 @@ const events = [
     eventCycleType: EEventStyle.RECURRING,
     eventPaymentType: EEventPaymentTicket.PAID,
     isPrivate: false,
-    isTrash: false,
+    isTrash: true,
     ticketTypes: [
       {
         id: 1,
@@ -480,7 +480,7 @@ const events = [
     eventCycleType: EEventStyle.RECURRING,
     eventPaymentType: EEventPaymentTicket.PAID,
     isPrivate: false,
-    isTrash: false,
+    isTrash: true,
     ticketTypes: [
       {
         id: 1,
@@ -543,7 +543,7 @@ const events = [
     eventCycleType: EEventStyle.RECURRING,
     eventPaymentType: EEventPaymentTicket.PAID,
     isPrivate: false,
-    isTrash: false,
+    isTrash: true,
     ticketTypes: [
       {
         id: 1,
@@ -607,7 +607,135 @@ const events = [
     eventCycleType: EEventStyle.RECURRING,
     eventPaymentType: EEventPaymentTicket.PAID,
     isPrivate: false,
-    isTrash: false,
+    isTrash: true,
+    ticketTypes: [
+      {
+        id: 1,
+        name: 'Medium',
+        quantity: 100,
+        numberOfSoldTickets: 20,
+        price: 100
+      },
+      {
+        id: 2,
+        name: 'Vip',
+        quantity: 50,
+        numberOfSoldTickets: 10,
+        price: 150
+      }
+    ],
+    numberOfFavourites: 50,
+    numberOfShares: 100,
+    numberOfSoldTickets: 20,
+    averageRating: 4.5,
+    status: EEventStatus.UPCOMING,
+    reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+
+  {
+    id: '11',
+    name: 'Food With UEH',
+    categoryIds: ['1'],
+    categories: [
+      {
+        iconImageUrl:
+          'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
+        name: 'Food'
+      }
+    ],
+    coverImage:
+      'https://amazingfoodanddrink.com/wp-content/uploads/2022/10/a-vibrant-and-lively-outdoor-food-festival-scene-w-Im60X1KFQ12louNEI8Nj7g-2XGmCU7lRTqgxZsfmMQ7Pw.jpeg',
+    priceRange: { startRange: 160 },
+    creatorId: '1',
+    creator: {
+      id: '1',
+      name: 'Anh Quoc',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
+      email: 'anhquoc18092003@gmail.com'
+    },
+    subImages: [
+      'https://amazingfoodanddrink.com/wp-content/uploads/2022/10/a-vibrant-and-lively-outdoor-food-festival-scene-w-Im60X1KFQ12louNEI8Nj7g-2XGmCU7lRTqgxZsfmMQ7Pw.jpeg',
+      'https://amazingfoodanddrink.com/wp-content/uploads/2022/10/a-vibrant-and-lively-outdoor-food-festival-scene-w-Im60X1KFQ12louNEI8Nj7g-2XGmCU7lRTqgxZsfmMQ7Pw.jpeg',
+      'https://amazingfoodanddrink.com/wp-content/uploads/2022/10/a-vibrant-and-lively-outdoor-food-festival-scene-w-Im60X1KFQ12louNEI8Nj7g-2XGmCU7lRTqgxZsfmMQ7Pw.jpeg',
+      'https://amazingfoodanddrink.com/wp-content/uploads/2022/10/a-vibrant-and-lively-outdoor-food-festival-scene-w-Im60X1KFQ12louNEI8Nj7g-2XGmCU7lRTqgxZsfmMQ7Pw.jpeg'
+    ],
+    description:
+      'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
+    location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
+    startTime: new Date(),
+    endTime: new Date(),
+    eventCycleType: EEventStyle.RECURRING,
+    eventPaymentType: EEventPaymentTicket.PAID,
+    isPrivate: false,
+    isTrash: true,
+    ticketTypes: [
+      {
+        id: 1,
+        name: 'Medium',
+        quantity: 100,
+        numberOfSoldTickets: 20,
+        price: 100
+      },
+      {
+        id: 2,
+        name: 'Vip',
+        quantity: 50,
+        numberOfSoldTickets: 10,
+        price: 150
+      }
+    ],
+    numberOfFavourites: 50,
+    numberOfShares: 100,
+    numberOfSoldTickets: 20,
+    averageRating: 4.5,
+    status: EEventStatus.UPCOMING,
+    reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+
+  {
+    id: '12',
+    name: 'Food In Live',
+    categoryIds: ['1'],
+    categories: [
+      {
+        iconImageUrl:
+          'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
+        name: 'Food'
+      }
+    ],
+    coverImage:
+      'https://res.cloudinary.com/simpleview/image/upload/v1671206402/clients/virginia/CN15063002V_093_1dae6db0-4447-4c74-b34b-c055a48918fd.jpg',
+    priceRange: { startRange: 160 },
+    creatorId: '1',
+    creator: {
+      id: '1',
+      name: 'Anh Quoc',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
+      email: 'anhquoc18092003@gmail.com'
+    },
+    subImages: [
+      'https://res.cloudinary.com/simpleview/image/upload/v1671206402/clients/virginia/CN15063002V_093_1dae6db0-4447-4c74-b34b-c055a48918fd.jpg',
+      'https://res.cloudinary.com/simpleview/image/upload/v1671206402/clients/virginia/CN15063002V_093_1dae6db0-4447-4c74-b34b-c055a48918fd.jpg',
+      'https://res.cloudinary.com/simpleview/image/upload/v1671206402/clients/virginia/CN15063002V_093_1dae6db0-4447-4c74-b34b-c055a48918fd.jpg',
+      'https://res.cloudinary.com/simpleview/image/upload/v1671206402/clients/virginia/CN15063002V_093_1dae6db0-4447-4c74-b34b-c055a48918fd.jpg'
+    ],
+    description:
+      'This is description for Event, This is description for Event, This is description for Event, This is description for Event,This is description for Event, This is description for Event',
+    location: 'UIT Ho Chi Minh city',
+    locationPath:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
+    startTime: new Date(),
+    endTime: new Date(),
+    eventCycleType: EEventStyle.RECURRING,
+    eventPaymentType: EEventPaymentTicket.PAID,
+    isPrivate: false,
+    isTrash: true,
     ticketTypes: [
       {
         id: 1,

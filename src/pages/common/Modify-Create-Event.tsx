@@ -12,6 +12,7 @@ import InformationEventCreate from '@components/events/create/InformationEventCr
 import BannerEventCreate from '@components/events/create/BannerEventCreate'
 import TicketEventCreate from '@components/events/create/TicketEventCreate'
 import ReviewEventCreate from '@components/events/create/ReviewEventCreate'
+import DownloadSampleCSV from '@components/DownloadCSV'
 import { toast } from 'react-toastify'
 
 //interface & type
@@ -122,16 +123,16 @@ const ModifyEvent = (props: Props) => {
     setActive(0)
   }
 
-  const handleDownloadFile = () => {
-    const link = document.createElement('a')
-    link.href = '/excel/example-event-import.xlsx'
-    link.setAttribute('download', 'example-event-import.xlsx')
-    document.body.appendChild(link)
-    link.click()
+  // const handleDownloadFile = () => {
+  //   const link = document.createElement('a')
+  //   link.href = '/excel/example-event-import.xlsx'
+  //   link.setAttribute('download', 'example-event-import.xlsx')
+  //   document.body.appendChild(link)
+  //   link.click()
 
-    document.body.removeChild(link)
-    URL.revokeObjectURL('/excel/example-event-import.xlsx')
-  }
+  //   document.body.removeChild(link)
+  //   URL.revokeObjectURL('/excel/example-event-import.xlsx')
+  // }
 
   if (active === -1 && create) {
     return (
@@ -163,7 +164,7 @@ const ModifyEvent = (props: Props) => {
               <p className='font-bold text-header'>{t('option_two.title')}</p>
               <p className='text-center text-header z-[10]'>{t('option_two.description')}</p>
             </div>
-            <button onClick={handleDownloadFile} className='text-primary hover:underline z-[2] pt-2'>
+            <button onClick={DownloadSampleCSV} className='text-primary hover:underline z-[2] pt-2'>
               {t('option_two.example_file')}
             </button>
           </div>
