@@ -14,35 +14,8 @@ import ConversationHeader from '@components/message/ConversationHeader'
 import MessageInput from '@components/message/MessageInput'
 import MessageItem from '@components/message/MessageItem'
 
-const messages = [
-  {
-    sender_id: 1,
-    sender: {
-      name: 'Anh Quoc'
-    },
-    created_at: '2021-09-01T00:00:00.000Z',
-    message: 'Hello',
-    attachments: []
-  },
-  {
-    sender_id: 2,
-    sender: {
-      name: 'Dinh Khoi'
-    },
-    created_at: '2021-09-01T00:00:00.000Z',
-    message: 'Love you',
-    attachments: []
-  },
-  {
-    sender_id: 1,
-    sender: {
-      name: 'Anh Quoc'
-    },
-    created_at: '2021-09-01T00:00:00.000Z',
-    message: 'Love you ong',
-    attachments: []
-  }
-]
+//data
+import messages from '@db/messages'
 
 const ChatLayout = ({ children }: PropsWithChildren) => {
   const loadMoreIntersect = useRef(null)
@@ -79,7 +52,7 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
                   {messages.length > 0 && (
                     <div className='flex-1 flex flex-col'>
                       <div ref={loadMoreIntersect} className=''></div>
-                      {messages.map((message, index) => (
+                      {messages.map((message, index: number) => (
                         <MessageItem
                           key={index}
                           message={message}

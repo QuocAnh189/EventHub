@@ -67,7 +67,7 @@ const MessageInput = ({ conversation = null }: any) => {
         <AudioRecorder fileReady={recordedAudioReady} />
       </div>
       <div className='order-2 px-2 xs:p-0 min-w-[220px] basic-full xs:basic-0 xs:order-2 flex-1 relative'>
-        <div className='flex'>
+        <div className='flex h-full'>
           <NewMessageInput
             value={newMessage}
             onSend={onSendClick}

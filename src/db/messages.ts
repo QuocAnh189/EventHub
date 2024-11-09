@@ -6,90 +6,96 @@ const messages = [
     content: 'Sự kiện này tổ chức ở đâu vậy',
     createdAt: faker.date.recent(),
     sender: {
+      id: '1',
       fullName: 'Trần Phước Anh Quốc',
       avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     },
-    archived: false
+    receiver: {
+      id: '2',
+      fullName: 'Trần Vương Duy',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1729096963/portfolio/user/mzrgkwrrdp2rvbmvceff.jpg'
+    },
+    attachments: []
   },
   {
     id: 'message-2',
-    content: 'Sự kiện này có bao nhiêu người tham gia vậy',
+    content: 'Sự kiện này tổ chức tại thành phố Hồ Chí Minh',
     createdAt: faker.date.recent(),
     sender: {
+      id: '2',
       fullName: 'Trần Vương Duy',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1729096963/portfolio/user/mzrgkwrrdp2rvbmvceff.jpg'
+    },
+    receiver: {
+      id: '1',
+      fullName: 'Trần Phước Anh Quốc',
       avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     },
-    archived: false
+    attachments: []
   },
   {
-    id: 'message-3',
-    content: 'Tôi thấy sự kiện này bán vé đắt quá, giảm giá dược không',
+    id: 'message-1',
+    content: 'Quy mô sự kiện này gồm bao nhiêu người',
     createdAt: faker.date.recent(),
     sender: {
-      fullName: 'Mai Đình Khôi',
+      id: '1',
+      fullName: 'Trần Phước Anh Quốc',
       avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     },
-    archived: false
+    receiver: {
+      id: '2',
+      fullName: 'Trần Vương Duy',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1729096963/portfolio/user/mzrgkwrrdp2rvbmvceff.jpg'
+    },
+    attachments: []
   },
   {
-    id: 'message-5',
-    content: 'Tôi rất thích sự kiện này',
-    createdAt: faker.date.past(),
+    id: 'message-2',
+    content: 'Sự kiện có hơn 3000 người tham dự',
+    createdAt: faker.date.recent(),
     sender: {
-      fullName: 'Trương Nguyễn Phước Trí',
+      id: '2',
+      fullName: 'Trần Vương Duy',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1729096963/portfolio/user/mzrgkwrrdp2rvbmvceff.jpg'
+    },
+    receiver: {
+      id: '1',
+      fullName: 'Trần Phước Anh Quốc',
       avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     },
-    archived: true
+    attachments: []
   },
   {
-    id: 'message-6',
-    content: 'Sự kiện này nhảy hay âm nhạc vậy',
-    createdAt: faker.date.past(),
+    id: 'message-1',
+    content: 'Tại sao tôi không thấy giá của sự kiện này',
+    createdAt: faker.date.recent(),
     sender: {
-      fullName: 'Hồ Thị Thanh Thảo',
+      id: '1',
+      fullName: 'Trần Phước Anh Quốc',
       avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     },
-    archived: false
+    receiver: {
+      id: '2',
+      fullName: 'Trần Vương Duy',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1729096963/portfolio/user/mzrgkwrrdp2rvbmvceff.jpg'
+    },
+    attachments: []
   },
   {
-    id: 'message-7',
-    content: 'Trần Ngọc Nhật Vy',
-    createdAt: faker.date.past(),
+    id: 'message-2',
+    content: 'Giá của sự kiện này đang cập nhập và chúng tôi sẽ đề cập lại sau',
+    createdAt: faker.date.recent(),
     sender: {
-      fullName: 'Anh Quoc',
+      id: '2',
+      fullName: 'Trần Vương Duy',
+      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1729096963/portfolio/user/mzrgkwrrdp2rvbmvceff.jpg'
+    },
+    receiver: {
+      id: '1',
+      fullName: 'Trần Phước Anh Quốc',
       avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
     },
-    archived: false
-  },
-  {
-    id: 'message-8',
-    content: faker.lorem.paragraph(),
-    createdAt: faker.date.past(),
-    sender: {
-      fullName: 'Lê Trương Ngọc Hải',
-      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-    },
-    archived: false
-  },
-  {
-    id: 'message-9',
-    content: 'Tôi lỡ mua vé rồi nhưng không muốn tham gia nữa thì phải lam sao đây',
-    createdAt: faker.date.past(),
-    sender: {
-      fullName: 'Trần Minh Chính',
-      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-    },
-    archived: true
-  },
-  {
-    id: 'message-10',
-    content: 'Love you',
-    createdAt: faker.date.past(),
-    sender: {
-      fullName: 'Võ Xuân Thảo',
-      avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-    },
-    archived: true
+    attachments: []
   }
 ]
 

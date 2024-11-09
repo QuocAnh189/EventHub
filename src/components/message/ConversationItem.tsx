@@ -1,28 +1,26 @@
 //components
-import UserAvatar from './UserAvatar'
+import Avatar from './Avatar'
 
 //dayjs
 import dayjs from 'dayjs'
 
-const ConversationItem = ({ conversation, selectedConversation = null, online = null }: any) => {
-  let classes = 'border-transparent'
+interface IProps {
+  conversation: any
+  selectedConversation?: boolean
+  online?: boolean
+}
 
-  if (selectedConversation) {
-    if (!selectedConversation.is_group && !conversation.is_group && selectedConversation.id === conversation.id) {
-      classes = 'border-blue-500 bg-black/30'
-    }
-  }
+const ConversationItem = (prop: IProps) => {
+  const { conversation, online } = prop
 
   return (
     <a
       href=''
       className={
-        'conversation-item flex items-center p-2 gap-2 text-gray-300 transition-all cursor-pointer border-l-4 hover:bg-black/30 ' +
-        classes +
-        'pr-4'
+        'conversation-item flex items-center p-2 gap-2 text-gray-300 transition-all cursor-pointer border-l-4 hover:bg-black/30 pr-4'
       }
     >
-      <UserAvatar online={online} />
+      <Avatar imageUrl={conversation.avatarImageUrl} online={online} />
 
       <div
         className={
