@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 //i18n
-import { useTranslation } from 'react-i18next'
+import { useTranslation, withTranslation } from 'react-i18next'
 
 interface Props {
   placeholder?: string
@@ -45,4 +45,4 @@ const Search = (props: Props) => {
   )
 }
 
-export default Search
+export default withTranslation('common')(Search)

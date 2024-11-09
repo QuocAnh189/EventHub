@@ -1,1 +1,142 @@
-{}
+{
+  "header": {
+    "search": "Buscar..."
+  },
+  "not_data": {
+    "text": "Lo siento, los datos no están disponibles o no se han actualizado."
+  },
+  "signin_btn": "Iniciar sesión",
+  "notification": {
+    "title": "Notificaciones",
+    "all": "Todo",
+    "follow": "Siguiendo",
+    "order": "Pedidos",
+    "follow_text": "te sigue",
+    "order_text": "ordenó tu evento",
+    "hours ago": "hace horas",
+    "confirm_btn": "Confirmar",
+    "decline_btn": "Rechazar"
+  },
+  "message": {
+    "title": "Mensajes",
+    "all": "Todo",
+    "latest": "Últimos",
+    "archived": "Archivados",
+    "reply_btn": "Responder",
+    "mark_btn": "Marcar como leído"
+  },
+  "invitation": {
+    "title": "Invitaciones",
+    "view_btn": "Ver",
+    "mark_btn": "Marcar como leído"
+  },
+  "category": {
+    "label": "Categoría",
+    "Visual Arts": "Artes Visuales",
+    "Sports & Active Life": "Deportes y Vida Activa",
+    "Politics": "Política",
+    "Performing Arts": "Artes Escénicas",
+    "Other": "Otro",
+    "Nightlife": "Vida Nocturna",
+    "Music": "Música",
+    "Lectures & Books": "Conferencias y Libros",
+    "Kids & Family": "Niños y Familia",
+    "Holidays": "Vacaciones",
+    "Food & Drink": "Comida y Bebidas",
+    "Film": "Cine",
+    "Festivals & Fairs": "Festivales y Ferias",
+    "Fashion": "Moda",
+    "Concerts": "Conciertos",
+    "Conferences": "Conferencias",
+    "Community": "Comunidad",
+    "Charities": "Caridad",
+    "Anniversary": "Aniversario",
+    "Academic": "Académico"
+  },
+  "filter": {
+    "ALL": "Todo",
+    "PUBLIC": "Público",
+    "PRIVATE": "Privado"
+  },
+  "footer": {
+    "left": {
+      "description": "Donde cada evento conecta momentos, fácil y eficientemente.",
+      "or": "o"
+    },
+    "right": {
+      "box_one": {
+        "title": "Mi Cuenta",
+        "sub_one": "Mi Cuenta",
+        "sub_two": "Reseñas",
+        "sub_three": "Estado",
+        "sub_four": "Lista de Deseos"
+      },
+
+      "box_two": {
+        "title": "Ayuda",
+        "sub_one": "Contacto",
+        "sub_two": "Preguntas Frecuentes",
+        "sub_three": "Términos y Condiciones",
+        "sub_four": "Política de Privacidad"
+      },
+
+      "box_three": {
+        "title": "Funciones",
+        "sub_one": "Gráfico de Gantt",
+        "sub_two": "Tableros",
+        "sub_three": "Mapas Mentales",
+        "sub_four": "Automatización"
+      },
+
+      "box_four": {
+        "title": "Comparar",
+        "sub_one": "vs Jira",
+        "sub_two": "vs Notion",
+        "sub_three": "vs Trello",
+        "sub_four": "vs Smartsheet"
+      }
+    }
+  },
+  "box_message": {
+    "left": {
+      "placeholder": "Buscar...",
+      "my_event": "Mi Evento",
+      "chat_event": "Evento de Chat"
+    },
+    "right": {
+      "to": "A",
+      "first": "Envía un mensaje para comenzar la conversación",
+      "nochat_text_one": "Bienvenido",
+      "nochat_text_two": "Selecciona un chat para comenzar a mensajear",
+      "nologin_text_one": "Hola",
+      "nologin_text_two": "Inicia sesión para chatear",
+      "placeholder": "Enviar un mensaje"
+    }
+  },
+  "routes": {
+    "home": "Inicio",
+    "dashboard": {
+      "parent": "Tablero",
+      "overview": "Visión General",
+      "event analysis": "Análisis de Eventos",
+      "customer": "Clientes",
+      "payment": "Pagos"
+    },
+    "event": {
+      "parent": "Evento",
+      "top events": "Eventos Principales",
+      "my events": "Mis Eventos",
+      "trash events": "Eventos Eliminados",
+      "create event": "Crear Evento"
+    },
+    "calendar": "Calendario",
+    "orders": "Pedidos",
+    "reviews": "Reseñas",
+    "faq": "Preguntas Frecuentes",
+    "settings": {
+      "parent": "Configuraciones",
+      "profile": "Perfil"
+    },
+    "permissions": "Permisos"
+  }
+}

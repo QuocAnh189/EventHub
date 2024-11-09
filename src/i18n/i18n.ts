@@ -25,7 +25,7 @@ const resources = {
   vn: locale_vietnam
 }
 
-const defaultNS = 'home'
+const defaultNS = 'common'
 
 i18n.use(initReactI18next).init({
   resources,

@@ -1,1 +1,51 @@
-{}
+{
+  "search home": {
+    "title": "为您和您的朋友提供正确的目的地",
+    "sub_title": "参与多个活动将帮助您更好地发现您的个性",
+    "explore": "立即探索",
+    "event": "事件",
+    "event_placeholder": "请输入您的事件名称",
+    "status": "状态",
+    "category": "类别",
+    "search": "搜索",
+    "events_to_explore": "待探索的事件",
+    "view_event_btn": "查看",
+    "All": "全部",
+    "Upcoming": "即将到来",
+    "Opening": "正在开放",
+    "Closed": "已关闭",
+    "categories": {
+      "Visual Arts": "视觉艺术",
+      "Sports & Active Life": "体育与活跃生活",
+      "Politics": "政治",
+      "Performing Arts": "表演艺术",
+      "Other": "其他",
+      "Nightlife": "夜生活",
+      "Music": "音乐",
+      "Lectures & Books": "讲座与书籍",
+      "Kids & Family": "儿童与家庭",
+      "Holidays": "假期",
+      "Food & Drink": "食物与饮料",
+      "Film": "电影",
+      "Festivals & Fairs": "节日与集市",
+      "Fashion": "时尚",
+      "Concerts": "音乐会",
+      "Conferences": "会议",
+      "Community": "社区",
+      "Charities": "慈善",
+      "Anniversary": "周年纪念",
+      "Academic": "学术"
+    }
+  },
+  "best events": {
+    "title": "最佳活动推荐"
+  },
+  "upcoming events": {
+    "title": "即将到来的活动"
+  },
+  "about us": {
+    "title": "关于我们",
+    "description_one": "活动管理和票务是您无缝活动策划和票务解决方案的首选目的地。凭借一支专业的团队，我们专注于策划量身定制的难忘体验。从公司会议到音乐节，以及介于两者之间的所有活动，我们都以精确和创造力处理每一个活动协调方面。我们的用户友好票务平台确保组织者和参与者的顺畅交易，使活动管理变得轻松高效。信任我们，让您的活动焕发生命，留下难忘的印象和回忆。",
+    "description_two": "无论您是组织小型聚会还是大型盛会，我们对细节的关注和对卓越的承诺每次都能确保成功。让我们为您减轻活动策划的压力，让您专注于真正重要的事情：为您的客人创造难忘的时刻。"
+  }
+}

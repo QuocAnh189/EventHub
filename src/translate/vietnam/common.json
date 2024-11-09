@@ -1,4 +1,7 @@
 {
+  "header": {
+    "search": "Tìm kiếm..."
+  },
   "not_data": {
     "text": "Dữ liệu của bạn không có sẵn hoặc không tìm thấy"
   },
@@ -21,6 +24,11 @@
     "archived": "Bỏ lỡ",
     "reply_btn": "Phản hồi",
     "mark_btn": "Đánh dấu"
+  },
+  "invitation": {
+    "title": "Lời mời",
+    "view_btn": "Xem",
+    "mark_btn": "Đánh dấu đã đọc"
   },
   "category": {
     "label": "Danh mục",

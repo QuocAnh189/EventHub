@@ -1,1 +1,51 @@
-{}
+{
+  "search home": {
+    "title": "La destinazione giusta per te e i tuoi amici",
+    "sub_title": "Partecipare a molti eventi ti aiuterà a scoprire meglio la tua personalità",
+    "explore": "Esplora ora",
+    "event": "Evento",
+    "event_placeholder": "Inserisci il nome dell'evento",
+    "status": "Stato",
+    "category": "Categoria",
+    "search": "Cerca",
+    "events_to_explore": "Eventi da esplorare",
+    "view_event_btn": "Vedi",
+    "All": "Tutti",
+    "Upcoming": "Prossimi",
+    "Opening": "Apertura",
+    "Closed": "Chiuso",
+    "categories": {
+      "Visual Arts": "Arti Visive",
+      "Sports & Active Life": "Sport e Vita Attiva",
+      "Politics": "Politica",
+      "Performing Arts": "Arti Performative",
+      "Other": "Altro",
+      "Nightlife": "Vita Notturna",
+      "Music": "Musica",
+      "Lectures & Books": "Conferenze e Libri",
+      "Kids & Family": "Bambini e Famiglia",
+      "Holidays": "Vacanze",
+      "Food & Drink": "Cibo e Bevande",
+      "Film": "Film",
+      "Festivals & Fairs": "Festival e Fiere",
+      "Fashion": "Moda",
+      "Concerts": "Concerto",
+      "Conferences": "Conferenze",
+      "Community": "Comunità",
+      "Charities": "Beneficenza",
+      "Anniversary": "Anniversario",
+      "Academic": "Accademico"
+    }
+  },
+  "best events": {
+    "title": "Migliori eventi da visitare"
+  },
+  "upcoming events": {
+    "title": "Eventi in arrivo"
+  },
+  "about us": {
+    "title": "Chi siamo",
+    "description_one": "La gestione degli eventi e la biglietteria è la tua destinazione principale per soluzioni di pianificazione eventi e biglietti senza problemi. Con un team di professionisti dedicati, ci specializziamo nel creare esperienze indimenticabili personalizzate in base alla tua visione unica. Dalle conferenze aziendali ai festival musicali e tutto il resto, ci occupiamo di ogni aspetto della coordinazione degli eventi con precisione e creatività. La nostra piattaforma di biglietteria facile da usare garantisce transazioni fluide per organizzatori e partecipanti, rendendo la gestione degli eventi semplice ed efficiente. Affidati a noi per dare vita ai tuoi eventi e lasciare un'impressione duratura e ricordi indimenticabili.",
+    "description_two": "Che tu stia organizzando un piccolo incontro o un grande evento, la nostra attenzione ai dettagli e l'impegno per l'eccellenza garantiscono il successo ogni volta. Lascia che ci occupiamo dello stress della pianificazione degli eventi mentre tu ti concentri su ciò che conta veramente: creare momenti indimenticabili per i tuoi ospiti."
+  }
+}

@@ -1,1 +1,142 @@
-{}
+{
+  "header": {
+    "search": "Suche..."
+  },
+  "not_data": {
+    "text": "Entschuldigung, Daten sind nicht verfügbar oder wurden nicht aktualisiert."
+  },
+  "signin_btn": "Anmelden",
+  "notification": {
+    "title": "Benachrichtigungen",
+    "all": "Alle",
+    "follow": "Folgen",
+    "order": "Bestellungen",
+    "follow_text": "folgt Ihnen",
+    "order_text": "bestellt Ihr Event",
+    "hours ago": "vor Stunden",
+    "confirm_btn": "Bestätigen",
+    "decline_btn": "Ablehnen"
+  },
+  "message": {
+    "title": "Nachrichten",
+    "all": "Alle",
+    "latest": "Neueste",
+    "archived": "Archiviert",
+    "reply_btn": "Antworten",
+    "mark_btn": "Als gelesen markieren"
+  },
+  "invitation": {
+    "title": "Einladungen",
+    "view_btn": "Ansehen",
+    "mark_btn": "Als gelesen markieren"
+  },
+  "category": {
+    "label": "Kategorie",
+    "Visual Arts": "Bildende Kunst",
+    "Sports & Active Life": "Sport & Aktives Leben",
+    "Politics": "Politik",
+    "Performing Arts": "Darstellende Kunst",
+    "Other": "Sonstige",
+    "Nightlife": "Nachtleben",
+    "Music": "Musik",
+    "Lectures & Books": "Vorträge & Bücher",
+    "Kids & Family": "Kinder & Familie",
+    "Holidays": "Feiertage",
+    "Food & Drink": "Essen & Trinken",
+    "Film": "Film",
+    "Festivals & Fairs": "Festivals & Messen",
+    "Fashion": "Mode",
+    "Concerts": "Konzerte",
+    "Conferences": "Konferenzen",
+    "Community": "Gemeinschaft",
+    "Charities": "Wohltätigkeitsorganisationen",
+    "Anniversary": "Jahrestag",
+    "Academic": "Akademisch"
+  },
+  "filter": {
+    "ALL": "Alle",
+    "PUBLIC": "Öffentlich",
+    "PRIVATE": "Privat"
+  },
+  "footer": {
+    "left": {
+      "description": "Der Ort, an dem jedes Event verbindet, Momente einfach und effizient.",
+      "or": "oder"
+    },
+    "right": {
+      "box_one": {
+        "title": "Mein Konto",
+        "sub_one": "Mein Konto",
+        "sub_two": "Bewertungen",
+        "sub_three": "Status",
+        "sub_four": "Wunschliste"
+      },
+
+      "box_two": {
+        "title": "Hilfe",
+        "sub_one": "Kontakt",
+        "sub_two": "Häufig gestellte Fragen",
+        "sub_three": "Allgemeine Geschäftsbedingungen",
+        "sub_four": "Datenschutzrichtlinie"
+      },
+
+      "box_three": {
+        "title": "Funktionen",
+        "sub_one": "Gantt-Diagramm",
+        "sub_two": "Dashboards",
+        "sub_three": "Mind Maps",
+        "sub_four": "Automatisierungen"
+      },
+
+      "box_four": {
+        "title": "Vergleichen",
+        "sub_one": "vs Jira",
+        "sub_two": "vs Notion",
+        "sub_three": "vs Trello",
+        "sub_four": "vs Smartsheet"
+      }
+    }
+  },
+  "box_message": {
+    "left": {
+      "placeholder": "Suche...",
+      "my_event": "Mein Event",
+      "chat_event": "Chat-Event"
+    },
+    "right": {
+      "to": "An",
+      "first": "Senden Sie eine Nachricht, um das Gespräch zu beginnen",
+      "nochat_text_one": "Willkommen",
+      "nochat_text_two": "Wählen Sie einen Chat aus, um mit dem Messaging zu beginnen",
+      "nologin_text_one": "Hallo",
+      "nologin_text_two": "Melden Sie sich an, um zu chatten",
+      "placeholder": "Nachricht senden"
+    }
+  },
+  "routes": {
+    "home": "Startseite",
+    "dashboard": {
+      "parent": "Dashboard",
+      "overview": "Überblick",
+      "event analysis": "Ereignisanalyse",
+      "customer": "Kunde",
+      "payment": "Zahlung"
+    },
+    "event": {
+      "parent": "Ereignis",
+      "top events": "Top-Ereignisse",
+      "my events": "Meine Ereignisse",
+      "trash events": "Papierkorbevents",
+      "create event": "Ereignis erstellen"
+    },
+    "calendar": "Kalender",
+    "orders": "Bestellungen",
+    "reviews": "Bewertungen",
+    "faq": "FAQ",
+    "settings": {
+      "parent": "Einstellungen",
+      "profile": "Profil"
+    },
+    "permissions": "Berechtigungen"
+  }
+}

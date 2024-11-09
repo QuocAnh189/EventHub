@@ -1,54 +1,51 @@
 {
-  "header": {
-    "search": "Search..."
-  },
   "search home": {
-    "title": "The right destination for you and your friends",
-    "sub_title": "Participating in many events will help you better discover your personality",
-    "explore": "Explore Now",
-    "event": "Event",
-    "event_placeholder": "Enter you name event",
-    "status": "Status",
-    "category": "Category",
-    "search": "Search",
-    "events_to_explore": "Events to Explore",
-    "view_event_btn": "View",
-    "All": "All",
-    "Upcoming": "Upcoming",
-    "Opening": "Opening",
-    "Closed": "Closed",
+    "title": "La bonne destination pour vous et vos amis",
+    "sub_title": "Participer à de nombreux événements vous aidera à mieux découvrir votre personnalité",
+    "explore": "Explorer maintenant",
+    "event": "Événement",
+    "event_placeholder": "Entrez le nom de l'événement",
+    "status": "Statut",
+    "category": "Catégorie",
+    "search": "Rechercher",
+    "events_to_explore": "Événements à explorer",
+    "view_event_btn": "Voir",
+    "All": "Tous",
+    "Upcoming": "À venir",
+    "Opening": "Ouverture",
+    "Closed": "Fermé",
     "categories": {
-      "Visual Arts": "Visual Arts",
-      "Sports & Active Life": "Sports & Active Life",
-      "Politics": "Politics",
-      "Performing Arts": "Performing Arts",
-      "Other": "Other",
-      "Nightlife": "Nightlife",
-      "Music": "Music",
-      "Lectures & Books": "Lectures & Books",
-      "Kids & Family": "Kids & Family",
-      "Holidays": "Holidays",
-      "Food & Drink": "Food & Drink",
+      "Visual Arts": "Arts Visuels",
+      "Sports & Active Life": "Sports & Vie active",
+      "Politics": "Politique",
+      "Performing Arts": "Arts de la scène",
+      "Other": "Autre",
+      "Nightlife": "Vie nocturne",
+      "Music": "Musique",
+      "Lectures & Books": "Conférences et Livres",
+      "Kids & Family": "Enfants et Famille",
+      "Holidays": "Vacances",
+      "Food & Drink": "Nourriture et boissons",
       "Film": "Film",
-      "Festivals & Fairs": "Festivals & Fairs",
-      "Fashion": "Fashion",
+      "Festivals & Fairs": "Festivals et Foires",
+      "Fashion": "Mode",
       "Concerts": "Concerts",
-      "Conferences": "Conferences",
-      "Community": "Community",
-      "Charities": "Charities",
-      "Anniversary": "Anniversary",
-      "Academic": "Academic"
+      "Conferences": "Conférences",
+      "Community": "Communauté",
+      "Charities": "Œuvres de charité",
+      "Anniversary": "Anniversaire",
+      "Academic": "Académique"
     }
   },
   "best events": {
-    "title": "Best Events to Visit"
+    "title": "Meilleurs événements à visiter"
   },
   "upcoming events": {
-    "title": "Upcomming Events"
+    "title": "Événements à venir"
   },
   "about us": {
-    "title": "About us",
-    "description_one": "Event Management and Ticket is your premier destination for seamless event planning and ticketing solutions. With a dedicated team of professionals, we specialize in curating unforgettable experiences tailored to your unique vision. From corporate conferences to music festivals and everything in between, we handle every aspect of event coordination with precision and creativity. Our user-friendly ticketing platform ensures smooth transactions for both organizers and attendees, making event management effortless and efficient. Trust us to bring your events to life, leaving lasting impressions and unforgettable memories.",
-    "description_two": "Whether you're organizing a small gathering or a large-scale extravaganza, our attention to detail and commitment to excellence guarantee success every time. Let us take the stress out of event planning so you can focus on what truly matters: creating memorable moments for your guests."
+    "title": "À propos de nous",
+    "description_one": "La gestion d'événements et la billetterie sont votre destination principale pour des solutions de planification d'événements et de billetterie sans tracas. Avec une équipe de professionnels dédiée, nous nous spécialisons dans la création d'expériences inoubliables adaptées à votre vision unique. Des conférences d'entreprise aux festivals de musique et bien plus encore, nous nous occupons de chaque aspect de la coordination de l'événement avec précision et créativité. Notre plateforme de billetterie conviviale garantit des transactions fluides pour les organisateurs et les participants, rendant la gestion des événements facile et efficace. Faites-nous confiance pour donner vie à vos événements et laisser des impressions durables et des souvenirs inoubliables.",
+    "description_two": "Que vous organisiez une petite réunion ou un événement à grande échelle, notre souci du détail et notre engagement envers l'excellence garantissent le succès à chaque fois. Laissez-nous nous occuper du stress de la planification des événements, afin que vous puissiez vous concentrer sur ce qui compte vraiment : créer des moments inoubliables pour vos invités."
   }
 }

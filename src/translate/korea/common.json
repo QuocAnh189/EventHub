@@ -1,1 +1,142 @@
-{}
+{
+  "header": {
+    "search": "검색..."
+  },
+  "not_data": {
+    "text": "죄송합니다, 데이터가 이용 가능하지 않거나 업데이트되지 않았습니다."
+  },
+  "signin_btn": "로그인",
+  "notification": {
+    "title": "알림",
+    "all": "전체",
+    "follow": "팔로우",
+    "order": "주문",
+    "follow_text": "님이 팔로우합니다",
+    "order_text": "님이 귀하의 이벤트를 주문했습니다",
+    "hours ago": "시간 전",
+    "confirm_btn": "확인",
+    "decline_btn": "거절"
+  },
+  "message": {
+    "title": "메시지",
+    "all": "전체",
+    "latest": "최신",
+    "archived": "보관",
+    "reply_btn": "답장",
+    "mark_btn": "읽음으로 표시"
+  },
+  "invitation": {
+    "title": "초대",
+    "view_btn": "보기",
+    "mark_btn": "읽음으로 표시"
+  },
+  "category": {
+    "label": "카테고리",
+    "Visual Arts": "시각 예술",
+    "Sports & Active Life": "스포츠 및 액티브 라이프",
+    "Politics": "정치",
+    "Performing Arts": "공연 예술",
+    "Other": "기타",
+    "Nightlife": "나이트 라이프",
+    "Music": "음악",
+    "Lectures & Books": "강연 및 책",
+    "Kids & Family": "아이와 가족",
+    "Holidays": "휴일",
+    "Food & Drink": "음식과 음료",
+    "Film": "영화",
+    "Festivals & Fairs": "축제와 박람회",
+    "Fashion": "패션",
+    "Concerts": "콘서트",
+    "Conferences": "회의",
+    "Community": "커뮤니티",
+    "Charities": "자선",
+    "Anniversary": "기념일",
+    "Academic": "학술"
+  },
+  "filter": {
+    "ALL": "전체",
+    "PUBLIC": "공개",
+    "PRIVATE": "비공개"
+  },
+  "footer": {
+    "left": {
+      "description": "모든 이벤트가 연결되는 곳, 순간을 쉽게 그리고 효율적으로 공유하세요",
+      "or": "또는"
+    },
+    "right": {
+      "box_one": {
+        "title": "내 계정",
+        "sub_one": "내 계정",
+        "sub_two": "리뷰",
+        "sub_three": "상태",
+        "sub_four": "위시리스트"
+      },
+
+      "box_two": {
+        "title": "도움말",
+        "sub_one": "문의하기",
+        "sub_two": "자주 묻는 질문",
+        "sub_three": "이용 약관",
+        "sub_four": "개인정보 보호정책"
+      },
+
+      "box_three": {
+        "title": "기능",
+        "sub_one": "간트 차트",
+        "sub_two": "대시보드",
+        "sub_three": "마인드맵",
+        "sub_four": "자동화"
+      },
+
+      "box_four": {
+        "title": "비교",
+        "sub_one": "Jira와 비교",
+        "sub_two": "Notion과 비교",
+        "sub_three": "Trello와 비교",
+        "sub_four": "Smartsheet와 비교"
+      }
+    }
+  },
+  "box_message": {
+    "left": {
+      "placeholder": "검색...",
+      "my_event": "내 이벤트",
+      "chat_event": "채팅 이벤트"
+    },
+    "right": {
+      "to": "받는 사람",
+      "first": "대화를 시작하려면 메시지를 보내세요",
+      "nochat_text_one": "환영합니다",
+      "nochat_text_two": "메시지를 시작하려면 채팅을 선택하세요",
+      "nologin_text_one": "안녕하세요",
+      "nologin_text_two": "로그인하여 채팅하세요",
+      "placeholder": "메시지 보내기"
+    }
+  },
+  "routes": {
+    "home": "홈",
+    "dashboard": {
+      "parent": "대시보드",
+      "overview": "개요",
+      "event analysis": "이벤트 분석",
+      "customer": "고객",
+      "payment": "결제"
+    },
+    "event": {
+      "parent": "이벤트",
+      "top events": "인기 이벤트",
+      "my events": "내 이벤트",
+      "trash events": "휴지통 이벤트",
+      "create event": "이벤트 생성"
+    },
+    "calendar": "캘린더",
+    "orders": "주문",
+    "reviews": "리뷰",
+    "faq": "자주 묻는 질문",
+    "settings": {
+      "parent": "설정",
+      "profile": "프로필"
+    },
+    "permissions": "권한"
+  }
+}

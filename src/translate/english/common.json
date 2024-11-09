@@ -1,4 +1,7 @@
 {
+  "header": {
+    "search": "Search..."
+  },
   "not_data": {
     "text": "Sorry, data is not available or data has not been updated"
   },

@@ -1,87 +1,95 @@
 {
-  "not_data": {
-    "text": "Sorry, data is not available or data has not been updated"
+  "header": {
+    "search": "Rechercher..."
   },
-  "signin_btn": "Sign In",
+  "not_data": {
+    "text": "Désolé, les données ne sont pas disponibles ou n'ont pas été mises à jour."
+  },
+  "signin_btn": "Se connecter",
   "notification": {
     "title": "Notifications",
-    "all": "All",
-    "follow": "Following",
-    "order": "Orders",
-    "follow_text": "follow you",
-    "order_text": "order your event",
-    "hours ago": "hours ago",
-    "accept_btn": "Accept",
-    "decline_btn": "Decline"
+    "all": "Tout",
+    "follow": "Suivant",
+    "order": "Commandes",
+    "follow_text": "vous suit",
+    "order_text": "a commandé votre événement",
+    "hours ago": "il y a des heures",
+    "confirm_btn": "Confirmer",
+    "decline_btn": "Refuser"
   },
   "message": {
     "title": "Messages",
-    "all": "All",
-    "latest": "Latest",
-    "archived": "Archived",
-    "reply_btn": "Reply",
-    "mark_btn": "Mark as read"
+    "all": "Tout",
+    "latest": "Derniers",
+    "archived": "Archivés",
+    "reply_btn": "Répondre",
+    "mark_btn": "Marquer comme lu"
+  },
+  "invitation": {
+    "title": "Invitations",
+    "view_btn": "Voir",
+    "mark_btn": "Marquer comme lu"
   },
   "category": {
-    "label": "Category",
-    "Visual Arts": "Visual Arts",
-    "Sports & Active Life": "Sports & Active Life",
-    "Politics": "Politics",
-    "Performing Arts": "Performing Arts",
-    "Other": "Other",
-    "Nightlife": "Nightlife",
-    "Music": "Music",
-    "Lectures & Books": "Lectures & Books",
-    "Kids & Family": "Kids & Family",
-    "Holidays": "Holidays",
-    "Food & Drink": "Food & Drink",
+    "label": "Catégorie",
+    "Visual Arts": "Arts Visuels",
+    "Sports & Active Life": "Sports et Vie Active",
+    "Politics": "Politique",
+    "Performing Arts": "Arts du Spectacle",
+    "Other": "Autre",
+    "Nightlife": "Vie Nocturne",
+    "Music": "Musique",
+    "Lectures & Books": "Conférences et Livres",
+    "Kids & Family": "Enfants et Famille",
+    "Holidays": "Vacances",
+    "Food & Drink": "Nourriture et Boissons",
     "Film": "Film",
-    "Festivals & Fairs": "Festivals & Fairs",
-    "Fashion": "Fashion",
+    "Festivals & Fairs": "Festivals et Foires",
+    "Fashion": "Mode",
     "Concerts": "Concerts",
-    "Conferences": "Conferences",
-    "Community": "Community",
-    "Charities": "Charities",
-    "Anniversary": "Anniversary",
-    "Academic": "Academic"
+    "Conferences": "Conférences",
+    "Community": "Communauté",
+    "Charities": "Œuvres de charité",
+    "Anniversary": "Anniversaire",
+    "Academic": "Académique"
   },
   "filter": {
-    "ALL": "All",
+    "ALL": "Tout",
     "PUBLIC": "Public",
-    "PRIVATE": "Private"
+    "PRIVATE": "Privé"
   },
   "footer": {
     "left": {
-      "description": "Where every event , Connecting moments , easily and efficiently",
-      "or": "or"
+      "description": "Là où chaque événement connecte des moments, facilement et efficacement.",
+      "or": "ou"
     },
     "right": {
       "box_one": {
-        "title": "My Account",
-        "sub_one": "My Account",
-        "sub_two": "Reviews",
-        "sub_three": "Status",
-        "sub_four": "Wishlist"
+        "title": "Mon Compte",
+        "sub_one": "Mon Compte",
+        "sub_two": "Avis",
+        "sub_three": "Statut",
+        "sub_four": "Liste de Souhaits"
       },
 
       "box_two": {
-        "title": "Helps",
+        "title": "Aide",
         "sub_one": "Contact",
-        "sub_two": "Faqs",
-        "sub_three": "Terms & Condition",
-        "sub_four": "Privacy Policy"
+        "sub_two": "FAQ",
+        "sub_three": "Conditions Générales",
+        "sub_four": "Politique de Confidentialité"
       },
 
       "box_three": {
-        "title": "Features",
-        "sub_one": "Gantt Chart",
-        "sub_two": "Dashboards",
-        "sub_three": "Mind Maps",
-        "sub_four": "Automations"
+        "title": "Fonctionnalités",
+        "sub_one": "Diagramme de Gantt",
+        "sub_two": "Tableaux de bord",
+        "sub_three": "Cartes Mentales",
+        "sub_four": "Automatisations"
       },
 
       "box_four": {
-        "title": "Compare",
+        "title": "Comparer",
         "sub_one": "vs Jira",
         "sub_two": "vs Notion",
         "sub_three": "vs Trello",
@@ -91,18 +99,44 @@
   },
   "box_message": {
     "left": {
-      "placeholder": "Search...",
-      "my_event": "My Event",
-      "chat_event": "Chat Event"
+      "placeholder": "Rechercher...",
+      "my_event": "Mon Événement",
+      "chat_event": "Événement de Chat"
     },
     "right": {
-      "to": "To",
-      "first": "Send a message to start the conversation",
-      "nochat_text_one": "Welcome",
-      "nochat_text_two": "Select a chat to start messaging",
-      "nologin_text_one": "Hello guy",
-      "nologin_text_two": "Login to chat",
-      "placeholder": "Send a message"
+      "to": "À",
+      "first": "Envoyez un message pour commencer la conversation",
+      "nochat_text_one": "Bienvenue",
+      "nochat_text_two": "Sélectionnez un chat pour commencer à envoyer des messages",
+      "nologin_text_one": "Bonjour",
+      "nologin_text_two": "Connectez-vous pour discuter",
+      "placeholder": "Envoyer un message"
     }
+  },
+  "routes": {
+    "home": "Accueil",
+    "dashboard": {
+      "parent": "Tableau de bord",
+      "overview": "Vue d'ensemble",
+      "event analysis": "Analyse des événements",
+      "customer": "Clients",
+      "payment": "Paiement"
+    },
+    "event": {
+      "parent": "Événement",
+      "top events": "Événements principaux",
+      "my events": "Mes événements",
+      "trash events": "Événements supprimés",
+      "create event": "Créer un événement"
+    },
+    "calendar": "Calendrier",
+    "orders": "Commandes",
+    "reviews": "Avis",
+    "faq": "FAQ",
+    "settings": {
+      "parent": "Paramètres",
+      "profile": "Profil"
+    },
+    "permissions": "Permissions"
   }
 }

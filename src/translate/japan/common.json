@@ -1,1 +1,139 @@
-{}
+{
+  "header": {
+    "search": "検索..."
+  },
+  "not_data": {
+    "text": "申し訳ありませんが、データが利用できないか、更新されていません"
+  },
+  "signin_btn": "サインイン",
+  "notification": {
+    "title": "通知",
+    "all": "すべて",
+    "follow": "フォロー",
+    "order": "注文",
+    "follow_text": "があなたをフォローしました",
+    "order_text": "があなたのイベントを注文しました",
+    "hours ago": "時間前",
+    "confirm_btn": "確認",
+    "decline_btn": "辞退"
+  },
+  "message": {
+    "title": "メッセージ",
+    "all": "すべて",
+    "latest": "最新",
+    "archived": "アーカイブ",
+    "reply_btn": "返信",
+    "mark_btn": "既読にする"
+  },
+  "invitation": {
+    "title": "招待",
+    "view_btn": "表示",
+    "mark_btn": "既読にする"
+  },
+  "category": {
+    "label": "カテゴリー",
+    "Visual Arts": "視覚芸術",
+    "Sports & Active Life": "スポーツとアクティブライフ",
+    "Politics": "政治",
+    "Performing Arts": "パフォーミングアーツ",
+    "Other": "その他",
+    "Nightlife": "ナイトライフ",
+    "Music": "音楽",
+    "Lectures & Books": "講演と書籍",
+    "Kids & Family": "子供と家族",
+    "Holidays": "休日",
+    "Food & Drink": "飲食",
+    "Film": "映画",
+    "Festivals & Fairs": "フェスティバルとフェア",
+    "Fashion": "ファッション",
+    "Concerts": "コンサート",
+    "Conferences": "会議",
+    "Community": "コミュニティ",
+    "Charities": "慈善",
+    "Anniversary": "記念日",
+    "Academic": "学術"
+  },
+  "filter": {
+    "ALL": "すべて",
+    "PUBLIC": "公開",
+    "PRIVATE": "非公開"
+  },
+  "footer": {
+    "left": {
+      "description": "すべてのイベントをつなぎ、瞬間を簡単かつ効率的に共有します",
+      "or": "または"
+    },
+    "right": {
+      "box_one": {
+        "title": "マイアカウント",
+        "sub_one": "マイアカウント",
+        "sub_two": "レビュー",
+        "sub_three": "ステータス",
+        "sub_four": "ウィッシュリスト"
+      },
+      "box_two": {
+        "title": "ヘルプ",
+        "sub_one": "お問い合わせ",
+        "sub_two": "よくある質問",
+        "sub_three": "利用規約",
+        "sub_four": "プライバシーポリシー"
+      },
+      "box_three": {
+        "title": "機能",
+        "sub_one": "ガントチャート",
+        "sub_two": "ダッシュボード",
+        "sub_three": "マインドマップ",
+        "sub_four": "自動化"
+      },
+      "box_four": {
+        "title": "比較",
+        "sub_one": "Jira と比較",
+        "sub_two": "Notion と比較",
+        "sub_three": "Trello と比較",
+        "sub_four": "Smartsheet と比較"
+      }
+    }
+  },
+  "box_message": {
+    "left": {
+      "placeholder": "検索...",
+      "my_event": "マイイベント",
+      "chat_event": "イベントチャット"
+    },
+    "right": {
+      "to": "宛先",
+      "first": "メッセージを送信して会話を開始",
+      "nochat_text_one": "ようこそ",
+      "nochat_text_two": "チャットを選択してメッセージを開始",
+      "nologin_text_one": "こんにちは",
+      "nologin_text_two": "チャットするにはログインしてください",
+      "placeholder": "メッセージを送信"
+    }
+  },
+  "routes": {
+    "home": "ホーム",
+    "dashboard": {
+      "parent": "ダッシュボード",
+      "overview": "概要",
+      "event analysis": "イベント分析",
+      "customer": "顧客",
+      "payment": "支払い"
+    },
+    "event": {
+      "parent": "イベント",
+      "top events": "トップイベント",
+      "my events": "マイイベント",
+      "trash events": "ゴミ箱",
+      "create event": "イベントを作成"
+    },
+    "calendar": "カレンダー",
+    "orders": "注文",
+    "reviews": "レビュー",
+    "faq": "よくある質問",
+    "settings": {
+      "parent": "設定",
+      "profile": "プロフィール"
+    },
+    "permissions": "権限"
+  }
+}

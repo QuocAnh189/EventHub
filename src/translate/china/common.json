@@ -1,1 +1,139 @@
-{}
+{
+  "header": {
+    "search": "搜索..."
+  },
+  "not_data": {
+    "text": "抱歉，数据不可用或数据尚未更新"
+  },
+  "signin_btn": "登录",
+  "notification": {
+    "title": "通知",
+    "all": "全部",
+    "follow": "关注",
+    "order": "订单",
+    "follow_text": "关注了你",
+    "order_text": "订购了你的活动",
+    "hours ago": "小时前",
+    "confirm_btn": "确认",
+    "decline_btn": "拒绝"
+  },
+  "message": {
+    "title": "消息",
+    "all": "全部",
+    "latest": "最新",
+    "archived": "已归档",
+    "reply_btn": "回复",
+    "mark_btn": "标记为已读"
+  },
+  "invitation": {
+    "title": "邀请",
+    "view_btn": "查看",
+    "mark_btn": "标记为已读"
+  },
+  "category": {
+    "label": "类别",
+    "Visual Arts": "视觉艺术",
+    "Sports & Active Life": "运动与活跃生活",
+    "Politics": "政治",
+    "Performing Arts": "表演艺术",
+    "Other": "其他",
+    "Nightlife": "夜生活",
+    "Music": "音乐",
+    "Lectures & Books": "讲座与书籍",
+    "Kids & Family": "儿童与家庭",
+    "Holidays": "节日",
+    "Food & Drink": "美食与饮品",
+    "Film": "电影",
+    "Festivals & Fairs": "节日与展会",
+    "Fashion": "时尚",
+    "Concerts": "音乐会",
+    "Conferences": "会议",
+    "Community": "社区",
+    "Charities": "慈善",
+    "Anniversary": "周年纪念",
+    "Academic": "学术"
+  },
+  "filter": {
+    "ALL": "全部",
+    "PUBLIC": "公开",
+    "PRIVATE": "私人"
+  },
+  "footer": {
+    "left": {
+      "description": "在这里连接每一个活动，轻松高效",
+      "or": "或"
+    },
+    "right": {
+      "box_one": {
+        "title": "我的账户",
+        "sub_one": "我的账户",
+        "sub_two": "评论",
+        "sub_three": "状态",
+        "sub_four": "愿望清单"
+      },
+      "box_two": {
+        "title": "帮助",
+        "sub_one": "联系",
+        "sub_two": "常见问题",
+        "sub_three": "条款与条件",
+        "sub_four": "隐私政策"
+      },
+      "box_three": {
+        "title": "功能",
+        "sub_one": "甘特图",
+        "sub_two": "仪表盘",
+        "sub_three": "思维导图",
+        "sub_four": "自动化"
+      },
+      "box_four": {
+        "title": "对比",
+        "sub_one": "对比 Jira",
+        "sub_two": "对比 Notion",
+        "sub_three": "对比 Trello",
+        "sub_four": "对比 Smartsheet"
+      }
+    }
+  },
+  "box_message": {
+    "left": {
+      "placeholder": "搜索...",
+      "my_event": "我的活动",
+      "chat_event": "活动聊天"
+    },
+    "right": {
+      "to": "发送给",
+      "first": "发送消息开始对话",
+      "nochat_text_one": "欢迎",
+      "nochat_text_two": "选择聊天开始消息",
+      "nologin_text_one": "你好",
+      "nologin_text_two": "登录后聊天",
+      "placeholder": "发送消息"
+    }
+  },
+  "routes": {
+    "home": "首页",
+    "dashboard": {
+      "parent": "仪表盘",
+      "overview": "概览",
+      "event analysis": "活动分析",
+      "customer": "客户",
+      "payment": "付款"
+    },
+    "event": {
+      "parent": "活动",
+      "top events": "热门活动",
+      "my events": "我的活动",
+      "trash events": "回收站",
+      "create event": "创建活动"
+    },
+    "calendar": "日历",
+    "orders": "订单",
+    "reviews": "评论",
+    "faq": "常见问题",
+    "settings": {
+      "parent": "设置",
+      "profile": "个人资料"
+    },
+    "permissions": "权限"
+  }
+}
