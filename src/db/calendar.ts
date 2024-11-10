@@ -5,21 +5,21 @@ const calendar = [
     coverImage:
       'https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?cs=srgb&dl=pexels-wolfgang-1002140-2747449.jpg&fm=jpg',
     date: '2024-11-08',
-    status: 'UPCOMING'
+    status: 'CLOSED'
   },
   {
     id: '2',
     title: 'Music With UEH',
     coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ52LuXfuyFjceKAdGai9o6PTeoQr5yiQxUtA&s',
     date: '2024-11-09',
-    status: 'UPCOMING'
+    status: 'CLOSED'
   },
   {
     id: '3',
     title: 'Music In Live',
     coverImage: 'https://prankl-consulting.com/wp-content/uploads/2023/06/AdobeStock_119471366-1-1088x726.jpeg',
     date: '2024-11-10',
-    status: 'UPCOMING'
+    status: 'OPENING'
   },
   {
     id: '4',

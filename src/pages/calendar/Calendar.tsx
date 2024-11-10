@@ -104,7 +104,7 @@ function renderEventContent(eventInfo: any) {
       case EEventStatus.CLOSED:
         return '#ff5470'
       case EEventStatus.OPENING:
-        return '#ff6900'
+        return '#FFE31A'
       case EEventStatus.UPCOMING:
         return '#00ba9d'
       default:
@@ -113,7 +113,10 @@ function renderEventContent(eventInfo: any) {
   }
 
   return (
-    <div className={`flex items-center gap-2 bg-[${statusEvent(eventInfo.event._def.extendedProps.status)}]`}>
+    <div
+      style={{ backgroundColor: statusEvent(eventInfo.event._def.extendedProps.status) }}
+      className='flex items-center gap-2'
+    >
       <img src={eventInfo.event._def.extendedProps.coverImage} className='w-10 h-10 rounded-md' />
       <p className='text-header truncate'>{eventInfo.event.title}</p>
     </div>
