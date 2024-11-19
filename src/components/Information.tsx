@@ -155,15 +155,6 @@ const Information = (props: Props) => {
           userFullName={event?.creator?.fullName!}
         />
       )}
-
-      <FormToChat
-        eventId={event.id!}
-        hostId={event.creatorId}
-        userId={user?.id!}
-        eventName={event.name}
-        userEmail={event?.creator?.email!}
-        userFullName={event?.creator?.fullName!}
-      />
     </div>
   )
 }

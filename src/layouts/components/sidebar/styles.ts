@@ -3,7 +3,7 @@ import theme from 'styled-theming'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 
 const Drawer = styled(SwipeableDrawer)`
-  z-index: 1000;
+  z-index: 1001;
 
   .MuiDrawer-paper {
     padding: 35px 27px;

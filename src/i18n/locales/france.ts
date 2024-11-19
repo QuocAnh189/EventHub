@@ -1,53 +1,47 @@
-import SIGNIN_FR from '@translate/france/auth/signin.json'
-import SIGNUP_FR from '@translate/france/auth/signup.json'
-import CATEGORY_ANALYSIS_FR from '@translate/france/dashboard/category-analysis.json'
-import CUSTOMER_FR from '@translate/france/dashboard/customer.json'
-import EVENT_ANALYSIS_FR from '@translate/france/dashboard/event-analysis.json'
-import EVENT_ANALYSIS_DETAILS_FR from '@translate/france/dashboard/event-analysis-detail.json'
-import OVERVIEW_DETAIL_FR from '@translate/france/dashboard/overview-detail.json'
-import OVERVIEW_FR from '@translate/france/dashboard/overview.json'
-import PAYMENT_FR from '@translate/france/dashboard/payment.json'
-import TICKET_SALE_FR from '@translate/france/dashboard/ticket-sale.json'
-import CREATE_EVENT_FR from '@translate/france/events/create-event.json'
-import MY_EVENT_FR from '@translate/france/events/my-event.json'
-import MY_TICKET_FR from '@translate/france/events/my-ticket.json'
-import TOP_EVENT_FR from '@translate/france/events/top-event.json'
-import CALENDAR_FR from '@translate/france/calendar.json'
-import COMMON_FR from '@translate/france/common.json'
-import EXPLORE_FR from '@translate/france/explore.json'
-import HELP_FR from '@translate/france/help.json'
-import HOME_FR from '@translate/france/home.json'
-import LANDING_FR from '@translate/france/landing.json'
-import ORDER_FR from '@translate/france/order.json'
-import PROFILE_FR from '@translate/france/profile.json'
-import REPORT_FR from '@translate/france/report.json'
-import REVIEW_FR from '@translate/france/review.json'
+import LANDING_CN from '@translate/france/landing.json'
+import SIGNIN_CN from '@translate/france/auth/signin.json'
+import SIGNUP_CN from '@translate/france/auth/signup.json'
+import HOME_CN from '@translate/france/home.json'
+import EXPLORE_CN from '@translate/france/explore.json'
+import EVENT_DETAIL_CN from '@translate/france/events/event-detail.json'
+import OVERVIEW_CN from '@translate/france/dashboard/overview.json'
+import OVERVIEW_DETAIL_CN from '@translate/france/dashboard/overview-detail.json'
+import EVENT_ANALYSIS_CN from '@translate/france/dashboard/event-analysis.json'
+import EVENT_ANALYSIS_DETAILS_CN from '@translate/france/dashboard/event-analysis-detail.json'
+import CUSTOMER_CN from '@translate/france/dashboard/customer.json'
+import PAYMENT_CN from '@translate/france/dashboard/payment.json'
+import MY_FAVOURITE_CN from '@translate/france/events/my-favourite.json'
+import MY_EVENT_CN from '@translate/france/events/my-event.json'
+import TRASH_EVENT_CN from '@translate/france/events/trash-event.json'
+import CREATE_EVENT_CN from '@translate/france/events/create-event.json'
+import CALENDAR_CN from '@translate/france/calendar.json'
+import ORDER_CN from '@translate/france/order.json'
+import REVIEW_CN from '@translate/france/review.json'
+import PROFILE_CN from '@translate/france/profile.json'
+import COMMON_CN from '@translate/france/common.json'
 
 const locale_france = {
-  landing: LANDING_FR,
-  signin: SIGNIN_FR,
-  signup: SIGNUP_FR,
-  category_analysis: CATEGORY_ANALYSIS_FR,
-  customer: CUSTOMER_FR,
-  event_analysis: EVENT_ANALYSIS_FR,
-  event_analysis_detail: EVENT_ANALYSIS_DETAILS_FR,
-  overview_detail: OVERVIEW_DETAIL_FR,
-  overview: OVERVIEW_FR,
-  payment: PAYMENT_FR,
-  ticket_sale: TICKET_SALE_FR,
-  create_event: CREATE_EVENT_FR,
-  my_event: MY_EVENT_FR,
-  my_ticket: MY_TICKET_FR,
-  top_event: TOP_EVENT_FR,
-  calendar: CALENDAR_FR,
-  help: HELP_FR,
-  home: HOME_FR,
-  explore: EXPLORE_FR,
-  order: ORDER_FR,
-  report: REPORT_FR,
-  review: REVIEW_FR,
-  profile: PROFILE_FR,
-  common: COMMON_FR
+  landing: LANDING_CN,
+  signin: SIGNIN_CN,
+  signup: SIGNUP_CN,
+  home: HOME_CN,
+  explore: EXPLORE_CN,
+  event_detail: EVENT_DETAIL_CN,
+  overview: OVERVIEW_CN,
+  overview_detail: OVERVIEW_DETAIL_CN,
+  event_analysis: EVENT_ANALYSIS_CN,
+  event_analysis_detail: EVENT_ANALYSIS_DETAILS_CN,
+  customer: CUSTOMER_CN,
+  payment: PAYMENT_CN,
+  my_favourite: MY_FAVOURITE_CN,
+  my_event: MY_EVENT_CN,
+  trash_event: TRASH_EVENT_CN,
+  create_event: CREATE_EVENT_CN,
+  calendar: CALENDAR_CN,
+  order: ORDER_CN,
+  review: REVIEW_CN,
+  profile: PROFILE_CN,
+  common: COMMON_CN
 }
 
 export default locale_france

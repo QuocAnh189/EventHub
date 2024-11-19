@@ -11,7 +11,7 @@ const UserProfileInfo = ({ t }: any) => {
   const user = useAppSelector((state) => state.persistedReducer.user.user)
 
   return (
-    <Spring className='card flex items-center'>
+    <Spring className='card flex flex-col justify-center'>
       <div className='flex flex-col gap-5'>
         <div className='flex items-center gap-4 text-header'>
           <span className='icon-wrapper mt-1'>

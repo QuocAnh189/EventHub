@@ -4,7 +4,6 @@ import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 //component
 import Switch from 'react-switch'
 import { CircularProgress } from '@mui/material'
-import LocationEvent from '@components/Location'
 
 //icons
 import { IoLocationOutline } from 'react-icons/io5'
@@ -109,7 +108,6 @@ const ReviewEventCreate = (props: Props) => {
                 <IoLocationOutline color='gray' size='24px' />
                 <p className='max-w-[500px] text-header'>{watch().location}</p>
               </div>
-              {watch().location && <LocationEvent location={watch().location} />}
             </div>
 
             <div className='flex flex-col gap-8'>

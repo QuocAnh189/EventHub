@@ -121,7 +121,7 @@
     },
     "event": {
       "parent": "イベント",
-      "top events": "トップイベント",
+      "my favourite": "私のお気に入り",
       "my events": "マイイベント",
       "trash events": "ゴミ箱",
       "create event": "イベントを作成"

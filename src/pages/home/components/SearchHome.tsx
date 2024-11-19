@@ -8,9 +8,6 @@ import EventCardSearchHome from '@components/events/EventCardSearchHome'
 import Loader from '@components/Loader'
 import Select from '@ui/Select'
 
-//assets
-import nature_vid from '@assets/images/event/main.mp4'
-
 //redux
 import { useGetEventsQuery } from '@redux/apis/event.api'
 import { useAppSelector } from '@hooks/useRedux'
@@ -77,7 +74,10 @@ const SearchHome = ({ t }: any) => {
     <div className='w-[90%] h-[95vh] m-auto'>
       <div className='relative w-full z-[999] min-w-[300px]'>
         <video autoPlay loop muted className='absolute right-0 top-0 h-auto w-full object-cover z-[-1] rounded-md'>
-          <source src={nature_vid} type='video/mp4' />
+          <source
+            src='https://res.cloudinary.com/dadvtny30/video/upload/v1732007926/eventhub/event/rveczhclrpalf03p4vc3.mp4'
+            type='video/mp4'
+          />
         </video>
       </div>
       <div className='relative w-full h-[90%] z-[1000]'>

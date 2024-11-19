@@ -33,7 +33,7 @@ const ROUTES: Route[] = [
     name: 'event',
     icon: <MdEventAvailable size={20} />,
     links: [
-      { name: 'top events', path: '/organization/top-event' },
+      { name: 'my favourite', path: '/organization/my-favourite' },
       { name: 'my events', path: '/organization/my-event' },
       { name: 'trash events', path: '/organization/trash-event' },
       { name: 'create event', path: '/organization/create-event' }

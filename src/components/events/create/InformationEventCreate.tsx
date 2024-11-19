@@ -1,5 +1,5 @@
 //hooks
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //form
@@ -15,7 +15,6 @@ import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import FormLabel from '@mui/material/FormLabel'
 import InputAdornment from '@mui/material/InputAdornment'
-import LocationEvent from '@components/Location'
 // import CategoryItem from '@components/CategoryItem'
 import { toast } from 'react-toastify'
 
@@ -25,7 +24,6 @@ import { EVENT_CATEGORIES, IOptionSelect } from '@constants/options.constant'
 //icon
 import { MdDateRange } from 'react-icons/md'
 import { IoMdAddCircleOutline } from 'react-icons/io'
-import { BiSearch } from 'react-icons/bi'
 import { CiCircleRemove } from 'react-icons/ci'
 
 //constant
@@ -58,7 +56,6 @@ const InformationEvent = (props: Props) => {
 
   const categoriesStore = useAppSelector((state) => state.persistedReducer.category.categories)
 
-  const [checkMap, setCheckMap] = useState(false)
   const [enableCheckError, setEnableCheckError] = useState<boolean>(false)
 
   const {
@@ -78,14 +75,6 @@ const InformationEvent = (props: Props) => {
     control,
     name: 'categoryIds'
   })
-
-  const handleLocation = async () => {
-    setCheckMap(true)
-  }
-
-  useEffect(() => {
-    setCheckMap(false)
-  }, [watch().location])
 
   const handleNextStep = () => {
     setEnableCheckError(true)
@@ -309,16 +298,8 @@ const InformationEvent = (props: Props) => {
               id='outlined-basic'
               label={t('information.location.placeholder')}
               size='small'
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position='end' className='hover:cursor-pointer'>
-                    <BiSearch size={32} onClick={handleLocation} color='var(--header)' />
-                  </InputAdornment>
-                )
-              }}
             />
           </FormControl>
-          {checkMap && <LocationEvent location={watch().location} />}
         </div>
       </div>
 

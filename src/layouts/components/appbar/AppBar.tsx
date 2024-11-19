@@ -50,6 +50,7 @@ const AppBar = ({ t }: any) => {
   const activeLocale = LOCALES.find((l: any) => l.value === locale)
 
   const handleChangeLangue = (value: any) => {
+    console.log(value)
     setLocale(value)
     i18n.changeLanguage(value)
     localStorage.setItem('language', value)
@@ -65,7 +66,7 @@ const AppBar = ({ t }: any) => {
 
   return (
     <>
-      <Headroom style={{ zIndex: 999 }}>
+      <Headroom>
         <div className='flex items-center justify-between'>
           {width < 1920 && (
             <button className='icon text-2xl leading-none' aria-label='Open sidebar' onClick={() => setOpen(true)}>
@@ -87,13 +88,11 @@ const AppBar = ({ t }: any) => {
 
             <div className='z-[1001]'>
               <SelectLanguage
-                // placeholder={t('search home.All')}
                 value={activeLocale}
                 id='status'
                 options={LOCALES || []}
                 onChange={(e: any) => {
                   handleChangeLangue(e.value)
-                  // setActive={setLocale}
                 }}
               />
             </div>

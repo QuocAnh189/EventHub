@@ -121,7 +121,7 @@
     },
     "event": {
       "parent": "活动",
-      "top events": "热门活动",
+      "my favourite": "我的最愛",
       "my events": "我的活动",
       "trash events": "回收站",
       "create event": "创建活动"

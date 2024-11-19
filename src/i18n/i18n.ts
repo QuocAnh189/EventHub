@@ -1,5 +1,7 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
+import detector from 'i18next-browser-languagedetector'
+import backend from 'i18next-http-backend'
 
 import locale_china from './locales/china'
 import locale_english from './locales/english'
@@ -27,48 +29,53 @@ const resources = {
 
 const defaultNS = 'common'
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: localStorage.getItem('language')! || 'en',
-  ns: [
-    'landing',
-    'signin',
-    'signup',
-    'category_analysis',
-    'customer',
-    'event_analysis',
-    'event_analysis_detail',
-    'overview_detail',
-    'overview',
-    'common',
-    'payment',
-    'ticket_sale',
-    'create_event',
-    'my_event',
-    'my_ticket',
-    'top_event',
-    'my_ticket',
-    'top_event',
-    'calendar',
-    'help',
-    'home',
-    'explore',
-    'order',
-    'report',
-    'review',
-    'profile'
-  ],
-  fallbackLng: 'en',
-  defaultNS,
-  interpolation: {
-    escapeValue: false
-  },
-  backend: {
-    allowMultiLoading: false,
-    requestOptions: {
-      cache: 'no-store'
+i18n
+  .use(initReactI18next)
+  .use(detector)
+  .use(backend)
+  .init({
+    resources,
+    lng: localStorage.getItem('language')! || 'en',
+    ns: [
+      'landing',
+      'signin',
+      'signup',
+      'home',
+      'explore',
+      'event_detail',
+      'overview',
+      'overview_detail',
+      'event_analysis',
+      'event_analysis_detail',
+      'customer',
+      'payment',
+      'my_favourite',
+      'my_event',
+      'trash_event',
+      'create_event',
+      'calendar',
+      'order',
+      'review',
+      'profile',
+      'common'
+    ],
+    fallbackLng: 'en',
+    defaultNS,
+    interpolation: {
+      escapeValue: false
+    },
+    react: {
+      useSuspense: true
+    },
+    saveMissing: true,
+    backend: {
+      allowMultiLoading: false,
+      requestOptions: {
+        cache: 'no-store'
+      }
     }
-  }
-})
+  })
 
 i18n.loadNamespaces('profile')
+
+export default i18n

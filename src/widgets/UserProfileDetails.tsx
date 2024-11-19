@@ -34,7 +34,7 @@ const UserProfileDetails = (props: Props) => {
 
   const { theme, toggleTheme }: any = useTheme()
 
-  const [sidebarCurrent, setSidebarCurrent] = useState<string>(localStorage.getItem('type_sidebar')!)
+  const [sidebarCurrent, setSidebarCurrent] = useState<string>(localStorage.getItem('type_sidebar')! || 'left')
 
   useEffect(() => {
     localStorage.setItem('type_sidebar', sidebarCurrent)

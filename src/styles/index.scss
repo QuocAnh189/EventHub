@@ -1,9 +1,10 @@
-@import 'vars';
-@import 'fonts';
+@use 'sass:meta';
+@use 'vars';
+@use 'fonts';
 @import '../fonts/icomoon/style.css';
-@import 'global';
-@import 'elements';
-@import 'typo';
+@include meta.load-css('global');
+@include meta.load-css('elements');
+@include meta.load-css('typo');
 
 .permissions-tabs > .ant-tabs-nav::before {
   border-bottom: 0;

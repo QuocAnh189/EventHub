@@ -11,7 +11,7 @@ import Contact from './components/Contact'
 
 const Landing = () => {
   return (
-    <main className='bg-gray-light3'>
+    <main className='bg-gray-light3 overflow-y-scroll'>
       <Navbar />
       <Intro />
       <Manage />

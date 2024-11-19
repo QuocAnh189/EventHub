@@ -1,6 +1,9 @@
+// utils
+import { lazy } from 'react'
+
 //components
 import ProtectedLayout from '@layouts/protected'
-import ModifyEvent from '@pages/common/Modify-Create-Event'
+const ModifyEvent = lazy(() => import('@pages/events/Create-Event'))
 
 //i18n
 import { withTranslation } from 'react-i18next'

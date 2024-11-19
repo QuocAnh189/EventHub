@@ -25,7 +25,6 @@ import store from '@redux/store.ts'
 
 //i18n
 import '@i18n/i18n.ts'
-// import AppSocketProvider from '@contexts/socket.context.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -39,11 +38,9 @@ createRoot(document.getElementById('root')!).render(
             confirmationButtonProps: { color: 'secondary' }
           }}
         >
-          {/* <AppSocketProvider> */}
           <ChatLayout>
             <App />
           </ChatLayout>
-          {/* </AppSocketProvider> */}
         </ConfirmProvider>
       </ThemeProvider>
     </Provider>

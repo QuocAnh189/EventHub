@@ -124,7 +124,7 @@
     },
     "event": {
       "parent": "Evento",
-      "top events": "Eventi principali",
+      "my favourite": "Il Mio Preferito",
       "my events": "I miei eventi",
       "trash events": "Eventi nel cestino",
       "create event": "Crea evento"

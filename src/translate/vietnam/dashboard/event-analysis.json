@@ -2,5 +2,9 @@
   "header": {
     "title": "Danh sách các sự kiện"
   },
-  "search": "Tìm kiếm sự kiện"
+  "search": "Tìm kiếm sự kiện",
+  "item": {
+    "sales": "Lượt bán",
+    "favourite": "Lượt thích"
+  }
 }

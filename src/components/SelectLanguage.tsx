@@ -65,9 +65,7 @@ const SelectLanguage = (props: Props) => {
       <components.Option {...props}>
         <div className='group flex items-center gap-2.5 w-fit'>
           <img className='w-5' src={props.data.icon} alt={props.data.label} />
-          <span className={`text-sm text-header font-medium transition group-hover:text-accent`}>
-            {props.data.label}
-          </span>
+          <span className='text-sm text-header font-medium transition group-hover:text-accent'>{props.data.label}</span>
         </div>
       </components.Option>
     )

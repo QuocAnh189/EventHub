@@ -34,7 +34,7 @@ const messages = [
     attachments: []
   },
   {
-    id: 'message-1',
+    id: 'message-3',
     content: 'Quy mô sự kiện này gồm bao nhiêu người',
     createdAt: faker.date.recent(),
     sender: {
@@ -50,7 +50,7 @@ const messages = [
     attachments: []
   },
   {
-    id: 'message-2',
+    id: 'message-4',
     content: 'Sự kiện có hơn 3000 người tham dự',
     createdAt: faker.date.recent(),
     sender: {
@@ -66,7 +66,7 @@ const messages = [
     attachments: []
   },
   {
-    id: 'message-1',
+    id: 'message-5',
     content: 'Tại sao tôi không thấy giá của sự kiện này',
     createdAt: faker.date.recent(),
     sender: {
@@ -82,7 +82,7 @@ const messages = [
     attachments: []
   },
   {
-    id: 'message-2',
+    id: 'message-6',
     content: 'Giá của sự kiện này đang cập nhập và chúng tôi sẽ đề cập lại sau',
     createdAt: faker.date.recent(),
     sender: {

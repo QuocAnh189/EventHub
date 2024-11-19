@@ -26,6 +26,7 @@ import dayjs from 'dayjs'
 
 //data
 import calendar_event from '@db/calendar'
+import events_data from '@db/event'
 
 const Calendar = ({ t }: any) => {
   const navigate = useNavigate()
@@ -33,7 +34,9 @@ const Calendar = ({ t }: any) => {
 
   const [eventCalendar, setEvenCalendar] = useState([])
   const handleEventClick = (selected: any) => {
-    navigate(`/organization/event/${selected.event._def.publicId}`)
+    navigate(`/organization/event/${selected.event._def.publicId}`, {
+      state: { event: events_data.find((item: any) => item.id === selected.event._def.publicId) }
+    })
   }
 
   useEffect(() => {

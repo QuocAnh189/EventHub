@@ -25,48 +25,10 @@ import { IoShareSocialOutline, IoLocationOutline } from 'react-icons/io5'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { IoMdTime } from 'react-icons/io'
 import { FaHeart } from 'react-icons/fa6'
+import { LuClipboardType } from 'react-icons/lu'
 
 //util
 import dayjs from 'dayjs'
-
-// const event: any = {
-//   name: 'Event Name',
-//   creator: {
-//     avatar: null
-//   },
-//   subImages: [],
-//   startTime: '2021-10-10T00:00:00.000Z',
-//   endTime: '2021-10-10T00:00:00.000Z',
-//   location: 'Hanoi',
-//   coverImage: 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409118/eventhub/event/infflklkudlatzvf8gsz.jpg',
-//   categoryIds: [1, 2, 3],
-//   promotion: {
-//     discount: 10,
-//     discountType: 'percent',
-//     discountCode: 'ABC',
-//     startDate: '2021-10-10T00:00:00.000Z',
-//     endDate: '2021-10-10T00:00:00.000Z',
-//     description: 'Discount 10% for all tickets'
-//   },
-//   ticketTypes: [
-//     {
-//       name: 'VIP',
-//       price: 100,
-//       quantity: 100,
-//       description: 'VIP ticket'
-//     },
-//     {
-//       name: 'Normal',
-//       price: 50,
-//       quantity: 100,
-//       description: 'Normal ticket'
-//     }
-//   ],
-//   creatorId: 1,
-//   isFavourite: true,
-//   id: '1',
-//   reasons: ['Love you 1', 'Love you 2', 'Love you 3']
-// }
 
 const EventDetail = () => {
   const location = useLocation()
@@ -158,6 +120,10 @@ const EventDetail = () => {
                   {dayjs(event?.endTime).format('hh:mm A YYYY/MM/DD')?.toString()}
                 </p>
               </div>
+              <div className='flex items-center gap-1'>
+                <LuClipboardType color='gray' size='24px' />
+                <p className='text-header'>{event.eventCycleType.toLowerCase()}</p>
+              </div>
             </div>
 
             <div className='flex flex-col gap-2'>
@@ -172,7 +138,6 @@ const EventDetail = () => {
                 height='400'
                 loading='lazy'
               />
-              {/* <LocationEvent location={null} /> */}
             </div>
           </div>
 

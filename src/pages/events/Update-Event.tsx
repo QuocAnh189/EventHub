@@ -1,8 +1,10 @@
+import { lazy } from 'react'
+
 //hooks
 import { useParams } from 'react-router-dom'
 
 //page
-import ModifyEvent from '@pages/common/Modify-Create-Event'
+const ModifyEvent = lazy(() => import('@pages/events/Create-Event'))
 
 //components
 import Loader from '@components/Loader'

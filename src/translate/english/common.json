@@ -124,7 +124,7 @@
     },
     "event": {
       "parent": "Event",
-      "top events": "Top Events",
+      "my favourite": "My Favourite",
       "my events": "My Events",
       "trash events": "Trash Events",
       "create event": "Create Event"

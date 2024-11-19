@@ -3,7 +3,7 @@ import 'swiper/css'
 
 //components
 import Spring from '@components/Spring'
-import EventGridItem from '@components/events/EventGridItem'
+// import EventGridItem from '@components/events/EventGridItem'
 import CategoryHeader from '@ui/CategoryHeader'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -63,9 +63,9 @@ const TopEventsByCategories = (props: Props) => {
               <EventGridItem event={event} />
             </SwiperSlide>
           ))} */}
-          {fake_data.map((event: IEvent, index: number) => (
+          {fake_data.map((_: IEvent, index: number) => (
             <SwiperSlide className='!h-auto' key={`event-${index}`}>
-              <EventGridItem event={event} />
+              {/* <EventGridItem event={event} /> */}
             </SwiperSlide>
           ))}
         </Swiper>

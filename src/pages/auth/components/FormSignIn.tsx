@@ -101,7 +101,6 @@ const FormSignIn = (props: Props) => {
   }
 
   const handleSignInExternal = async (provider: EProvider) => {
-    // { provider, returnUrl: import.meta.env.VITE_URL_SOCIAL_DEV }
     try {
       const result = await SignInExternal({
         provider,

@@ -2,5 +2,9 @@
   "header": {
     "title": "Events List"
   },
-  "search": "Search Event"
+  "search": "Search Event",
+  "item": {
+    "sales": "Sales",
+    "favourite": "Favourites"
+  }
 }

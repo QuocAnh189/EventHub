@@ -124,7 +124,7 @@
     },
     "event": {
       "parent": "이벤트",
-      "top events": "인기 이벤트",
+      "my favourite": "내가 가장 좋아하는",
       "my events": "내 이벤트",
       "trash events": "휴지통 이벤트",
       "create event": "이벤트 생성"

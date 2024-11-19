@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "Danh sách yêu thích"
+  },
+  "search": "Tìm kiếm sự kiện",
+  "item": {
+    "category": "Thể loại",
+    "date": "Ngày"
+  }
+}

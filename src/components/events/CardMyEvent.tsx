@@ -19,9 +19,6 @@ import { IEvent } from '@interfaces/contents/event.interface'
 //util
 import dayjs from 'dayjs'
 
-//assets
-import event_default from '@assets/images/event/event_poster.png'
-
 //redux
 import { useDeleteEventMutation, useRestoreEventMutation } from '@redux/apis/event.api'
 
@@ -106,7 +103,11 @@ const CardMyEvent = (props: Props) => {
           <img
             loading='lazy'
             className='w-full h-full rounded-l-lg object-cover'
-            src={event.coverImage ? event.coverImage : event_default}
+            src={
+              event.coverImage
+                ? event.coverImage
+                : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
+            }
             alt=''
           />
         </div>

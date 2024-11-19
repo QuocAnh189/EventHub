@@ -124,7 +124,7 @@
     },
     "event": {
       "parent": "Ereignis",
-      "top events": "Top-Ereignisse",
+      "my favourite": "Mein Favorit",
       "my events": "Meine Ereignisse",
       "trash events": "Papierkorbevents",
       "create event": "Ereignis erstellen"

@@ -1,39 +1,40 @@
-//hooks
-import { useNavigate } from 'react-router-dom'
+// components
+import { NavLink } from 'react-router-dom'
+import RatingStars from '@ui/RatingStars'
 
-//components
-import Spring from '@components/Spring'
+//interface
+import { IEvent } from '@interfaces/contents/event.interface'
 
-//interfaces
-import { IEvent } from '@interfaces/contents'
+//i18n
+import { withTranslation } from 'react-i18next'
+
 interface Props {
+  t: any
   event: IEvent
-  index: number
 }
 
 const EventAnalysisItem = (props: Props) => {
-  const { event, index } = props
-  const navigate = useNavigate()
-
-  const handleViewDetail = () => navigate(`123`)
+  const { t, event } = props
 
   return (
-    <Spring
-      className='card flex items-center justify-center gap-1.5 !pt-[22px] !pr-5 !pb-6 !pl-6'
-      type='slideUp'
-      index={index}
-    >
-      <div
-        className='h-[136px] bg-body rounded-lg flex flex-1 items-center justify-center cursor-pointer'
-        onClick={handleViewDetail}
-      >
-        <div className='w-[140px] h-[120px] flex flex-col items-center justify-center gap-2'>
-          <img className='h-full w-auto object-contain' src={event.coverImage} alt={event.name} />
-          <p className='font-bold text-xl text-header text-justify'>{event.name}</p>
+    <NavLink to={`${event.id}`} className='card flex flex-col h-full hover:cursor-pointer'>
+      <div className='flex items-start gap-[14px] mb-2.5'>
+        <div className='img-wrapper flex flex-1 items-center justify-center'>
+          <img src={event.coverImage} alt='Anh Quoc' className='h-[150px]' />
         </div>
       </div>
-    </Spring>
+      <h6 className={`!leading-[1.4] block max-w-[180px] transition hover:text-accent mb-3`}>{event.name}</h6>
+      <RatingStars rating={4} />
+      <div className='flex flex-col flex-1 gap-1 mt-1.5'>
+        <p className='font-heading font-bold text-sm leading-[1.4] text-green'>
+          {t('item.sales')} : {event.numberOfSoldTickets || 0}
+        </p>
+        <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
+          {t('item.favourite')} : {event.numberOfFavourites || 0}
+        </p>
+      </div>
+    </NavLink>
   )
 }
 
-export default EventAnalysisItem
+export default withTranslation('event_analysis')(EventAnalysisItem)

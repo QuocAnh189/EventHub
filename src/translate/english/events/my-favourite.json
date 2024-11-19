@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "My Favourites"
+  },
+  "search": "Search Event",
+  "item": {
+    "category": "Category",
+    "date": "Date"
+  }
+}

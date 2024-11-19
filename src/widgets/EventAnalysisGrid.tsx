@@ -47,7 +47,7 @@ const EventAnalysisGrid = (props: Props) => {
                  md:mt-[27px] xl:grid-cols-5 2xl:grid-cols-6'
       >
         {events.map((event: IEvent, index: number) => (
-          <EventAnalysisItem key={`seller-${event.id}-${sort.value}`} event={event} index={index} />
+          <EventAnalysisItem key={`event-${index}-${sort.value}`} event={event} />
         ))}
       </div>
       <Pagination pagination={pagination} />
