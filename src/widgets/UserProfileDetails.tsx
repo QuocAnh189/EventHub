@@ -1,6 +1,7 @@
 //hooks
 import { Controller, UseFormRegister, UseFormWatch, UseFormSetValue, Control } from 'react-hook-form'
 import { useTheme } from '@contexts/theme.context'
+import { useWindowSize } from 'react-use'
 
 //components
 import Spring from '@components/Spring'
@@ -33,6 +34,7 @@ const UserProfileDetails = (props: Props) => {
   const { t, register, watch, setValue, control, errors, isLoading, roles, status } = props
 
   const { theme, toggleTheme }: any = useTheme()
+  const { width } = useWindowSize()
 
   const [sidebarCurrent, setSidebarCurrent] = useState<string>(localStorage.getItem('type_sidebar')! || 'left')
 
@@ -194,23 +196,25 @@ const UserProfileDetails = (props: Props) => {
             {isLoading ? <CircularProgress size={24} /> : t('profile detail.update_information')}
           </button>
         </div>
-        <div className='mt-2.5 flex gap-2'>
-          <label className='field-label' htmlFor='firstName'>
-            {t('profile detail.sidebar_position')}
-          </label>
-          <Select
-            placeholder='Gender'
-            id='gender'
-            options={[
-              { value: 'left', label: 'Left' },
-              { value: 'right', label: 'Right' }
-            ]}
-            value={{ value: sidebarCurrent, label: sidebarCurrent === 'left' ? 'Left' : 'Right' }}
-            onChange={(e: any) => {
-              setSidebarCurrent(e.value)
-            }}
-          />
-        </div>
+        {width < 1920 && (
+          <div className='mt-2.5 flex gap-2'>
+            <label className='field-label' htmlFor='firstName'>
+              {t('profile detail.sidebar_position')}
+            </label>
+            <Select
+              placeholder='Gender'
+              id='gender'
+              options={[
+                { value: 'left', label: 'Left' },
+                { value: 'right', label: 'Right' }
+              ]}
+              value={{ value: sidebarCurrent, label: sidebarCurrent === 'left' ? 'Left' : 'Right' }}
+              onChange={(e: any) => {
+                setSidebarCurrent(e.value)
+              }}
+            />
+          </div>
+        )}
       </div>
       <div>
         <h5>{t('profile detail.admin_panel_tools')}</h5>

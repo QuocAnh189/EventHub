@@ -31,7 +31,7 @@ const Sidebar = ({ t }: any) => {
   const [active, setActive] = useState<string>('')
   const isPermanent = width >= 1920
 
-  const type_sidebar = localStorage.getItem('type_sidebar')
+  const type_sidebar = localStorage.getItem('type_sidebar') || 'left'
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -48,7 +48,7 @@ const Sidebar = ({ t }: any) => {
   return (
     <Drawer
       id='appMenu'
-      anchor={type_sidebar === 'left' ? 'left' : 'right'}
+      anchor={isPermanent ? 'left' : type_sidebar === 'left' ? 'left' : 'right'}
       transitionDuration={350}
       open={open}
       variant={isPermanent ? 'permanent' : 'temporary'}
