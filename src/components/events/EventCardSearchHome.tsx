@@ -6,6 +6,7 @@ import { IEvent } from 'interfaces/contents/event.interface'
 
 //i18
 import { withTranslation } from 'react-i18next'
+import { getStatusEventColor } from '@utils/helpers'
 
 interface Props {
   t: any
@@ -13,7 +14,7 @@ interface Props {
 }
 
 const EventCardSearchHome = (props: Props) => {
-  const { t, event } = props
+  const { event } = props
   const navigate = useNavigate()
 
   const handleViewEvent = () => {
@@ -23,10 +24,14 @@ const EventCardSearchHome = (props: Props) => {
   }
 
   return (
-    <div className='p-6 min-w-[300px] h-[180px] shadow-none bg-transparent hover:cursor-pointer hover:bg-body hover:rounded-lg'>
+    <div
+      onClick={handleViewEvent}
+      className='p-6 min-w-[300px] h-[180px] shadow-none bg-transparent hover:cursor-pointer hover:bg-body hover:rounded-lg'
+    >
       <h3 className='mt-0 mx-0 mb-[10px] flex items-center gap-2 text-[16px] font-semibold'>
-        <p className='truncate text-header'>{event?.name}</p>
+        <p className='h6 truncate text-header'>{event?.name}</p>
         <img
+          style={{ backgroundColor: event.categories[0].backgroundColor }}
           className='w-5 h-5 ml-[5px] object-cover bg-primary rounded-sm'
           loading='lazy'
           src={
@@ -48,15 +53,15 @@ const EventCardSearchHome = (props: Props) => {
         alt=''
       />
       <div className='flex items-center justify-between'>
-        <button
-          onClick={handleViewEvent}
-          className='bg-primary text-white rounded-[20px] py-[6px] px-[20px] text-[12px] hover:bg-gray'
+        <span
+          className='badge-status badge-status--sm'
+          style={{ backgroundColor: `var(--${getStatusEventColor(event.status)})` }}
         >
-          {t('search home.view_event_btn')}
-        </button>
+          {event.status}
+        </span>
         <h5 className='text-[12px] font-medium m-0 mt-1 leading-4'>
           {event?.categories[0]?.name} <br />{' '}
-          <span className='text-sm font-bold'>{event.priceRange.startRange}.000 VND</span>
+          <span className='text-sm font-bold text-primary'>{event.priceRange.startRange}.000 VND</span>
         </h5>
       </div>
     </div>

@@ -15,7 +15,6 @@ import { IoTicketOutline } from 'react-icons/io5'
 import { ICreateEventPayload } from '@type/event.type'
 
 //assets
-import eventDefault from '@assets/images/event/event_poster.png'
 import useDefault from '@assets/images/common/user_default.png'
 
 //util
@@ -46,7 +45,11 @@ const ReviewEventCreate = (props: Props) => {
       <div className='flex flex-col gap-6 border-[3px] border-textGray rounded-2xl p-10'>
         <div className='h-[200px] lgl:h-[500px]'>
           <img
-            src={watch().coverImage ? URL.createObjectURL(watch().coverImage) : eventDefault}
+            src={
+              watch().coverImage
+                ? URL.createObjectURL(watch().coverImage)
+                : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
+            }
             alt=''
             loading='lazy'
             className='w-full h-full object-cover rounded-xl'

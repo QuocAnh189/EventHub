@@ -126,10 +126,11 @@
       "trash events": "ゴミ箱",
       "create event": "イベントを作成"
     },
+    "coupon": "クーポン",
+    "expense": "費用",
     "calendar": "カレンダー",
     "orders": "注文",
     "reviews": "レビュー",
-    "faq": "よくある質問",
     "settings": {
       "parent": "設定",
       "profile": "プロフィール"

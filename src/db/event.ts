@@ -9,7 +9,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
-        name: 'Music'
+        name: 'Music',
+        backgroundColor: 'orange'
       }
     ],
     coverImage:
@@ -73,7 +74,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
-        name: 'Music'
+        name: 'Music',
+        backgroundColor: 'orange'
       }
     ],
     coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ52LuXfuyFjceKAdGai9o6PTeoQr5yiQxUtA&s',
@@ -136,7 +138,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
-        name: 'Music'
+        name: 'Music',
+        backgroundColor: 'orange'
       }
     ],
     coverImage: 'https://prankl-consulting.com/wp-content/uploads/2023/06/AdobeStock_119471366-1-1088x726.jpeg',
@@ -199,7 +202,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',
-        name: 'Sport'
+        name: 'Sport',
+        backgroundColor: 'purple'
       }
     ],
     coverImage: 'https://img.freepik.com/free-vector/sport-text-banner-poster-design_1308-132612.jpg?semt=ais_hybrid',
@@ -262,7 +266,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',
-        name: 'Sport'
+        name: 'Sport',
+        backgroundColor: 'purple'
       }
     ],
     coverImage: 'https://www.electricireland.com/images/folder/homepage-spotlights/benefits-0.jpg?sfvrsn=bc86ba0d_2',
@@ -325,7 +330,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',
-        name: 'Sport'
+        name: 'Sport',
+        backgroundColor: 'purple'
       }
     ],
     coverImage: 'https://www.uit.edu.vn/sites/vi/files/uploads/images/thumbs/202011/khpm2.jpg',
@@ -388,7 +394,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
-        name: 'Workshop'
+        name: 'Workshop',
+        backgroundColor: 'green'
       }
     ],
     coverImage:
@@ -452,7 +459,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
-        name: 'Workshop'
+        name: 'Workshop',
+        backgroundColor: 'green'
       }
     ],
     coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlctaT_Xg2OpWZRHXfP5k5KZrxVch4BCEG8A&s',
@@ -515,7 +523,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
-        name: 'Workshop'
+        name: 'Workshop',
+        backgroundColor: 'green'
       }
     ],
     coverImage: 'https://vietnamteachingjobs.com/wp-content/uploads/2023/03/loi-ich-cua-work-shop-la-gi-1-750x375.jpg',
@@ -578,7 +587,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
-        name: 'Food'
+        name: 'Food',
+        backgroundColor: 'yellow'
       }
     ],
     coverImage:
@@ -642,7 +652,7 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
-        name: 'Food'
+        backgroundColor: 'yellow'
       }
     ],
     coverImage:
@@ -706,7 +716,8 @@ const events = [
       {
         iconImageUrl:
           'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
-        name: 'Food'
+        name: 'Food',
+        backgroundColor: 'yellow'
       }
     ],
     coverImage:

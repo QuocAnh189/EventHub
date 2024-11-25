@@ -36,7 +36,7 @@ const SalesStats = ({ t }: any) => {
   return (
     <Spring className='card flex flex-col h-[300px] md:h-[494px] lg:col-span-3 xl:col-span-1'>
       <div className='flex flex-col gap-2.5 mb-5 md:flex-row md:justify-between md:items-center'>
-        <h4>{t('chart.title')}</h4>
+        <h4 className='h4'>{t('chart.title')}</h4>
         <div className='flex items-center gap-5'>
           <div className='flex items-center gap-2.5'>
             <span className='w-4 h-4 rounded-full' style={{ background: revenueColor }} />

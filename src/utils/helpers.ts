@@ -1,5 +1,5 @@
-import { EPaymentStatus } from '@constants/enum.constant'
-import { EVENT_CATEGORIES } from '@constants/options.constant'
+import { EEventStatus, EPaymentStatus } from '@constants/enum.constant'
+import { PRODUCT_CATEGORIES } from '@constants/options.constant'
 
 /**
  *
@@ -97,7 +97,7 @@ export const sortSellers = (data: any, sortOption: any) => {
 }
 
 export const getCategory = (value: any) => {
-  return EVENT_CATEGORIES.find((category: any) => category.value === value)
+  return PRODUCT_CATEGORIES.find((category: any) => category.value === value)
 }
 
 export const getStatusColor = (status: any) => {
@@ -113,6 +113,26 @@ export const getStatusColor = (status: any) => {
       return 'green'
     case 'cancelled':
     case EPaymentStatus.FAILED:
+      return 'red'
+    case 'rejected':
+    case 'refunded':
+      return 'badge-status-bg'
+  }
+}
+
+export const getStatusEventColor = (status: any) => {
+  switch (status) {
+    default:
+    case 'approved':
+    case 'completed':
+    case EEventStatus.OPENING:
+      return 'yellow'
+    case 'waiting':
+    case 'confirmed':
+    case EEventStatus.UPCOMING:
+      return 'green'
+    case 'cancelled':
+    case EEventStatus.CLOSED:
       return 'red'
     case 'rejected':
     case 'refunded':

@@ -10,7 +10,7 @@ import { withTranslation } from 'react-i18next'
 const ConversionRate = ({ t }: any) => {
   return (
     <Spring className='card xl:col-span-3 2xl:pr-12 2xl:pb-[37px]'>
-      <h5 className='mb-[14px]'>{t('conversion_rate.title')}</h5>
+      <h5 className='h5 mb-[14px]'>{t('conversion_rate.title')}</h5>
       <div
         className='grid gap-6 md:grid-cols-[minmax(0,300px)_minmax(0,1fr)] md:gap-10 md:items-start
                  xl:grid-cols-[minmax(0,260px)_minmax(0,1fr)] 2xl:grid-cols-[minmax(0,300px)_minmax(0,1fr)]'

@@ -32,7 +32,7 @@ const LatestAcceptedReviews = (props: IProps) => {
     <Spring className='flex flex-1 flex-col gap-[26px]'>
       <div className='card !p-0 flex-1'>
         <div className='flex flex-col p-5 gap-2.5 md:flex-row md:justify-between md:items-center md:px-[26px]'>
-          <h5>{t('main.title')}</h5>
+          <h5 className='h5'>{t('main.title')}</h5>
         </div>
         <span className='block h-[1px] bg-input-border opacity-60' />
         <div>

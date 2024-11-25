@@ -129,10 +129,11 @@
       "trash events": "Eventi nel cestino",
       "create event": "Crea evento"
     },
+    "coupon": "Buono",
+    "expense": "Spese",
     "calendar": "Calendario",
     "orders": "Ordini",
     "reviews": "Recensioni",
-    "faq": "FAQ",
     "settings": {
       "parent": "Impostazioni",
       "profile": "Profilo"

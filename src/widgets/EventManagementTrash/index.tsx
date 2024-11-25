@@ -210,6 +210,7 @@ const EventManagementTrash = ({ t }: any) => {
                 eventIds={eventIds}
                 onChecked={handleChecked}
                 refect={handleRefect}
+                index={index}
               />
             ))}
           </div>
@@ -229,6 +230,7 @@ const EventManagementTrash = ({ t }: any) => {
                 eventIds={eventIds}
                 onChecked={handleChecked}
                 refect={handleRefect}
+                index={index}
               />
             ))}
         </div>

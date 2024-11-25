@@ -32,12 +32,12 @@ const MainOverviewInfo = ({ t }: any) => {
       </div>
       <div className='flex flex-1 flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <h3>{t('main-overview.title')}</h3>
+          <h3 className='h3'>{t('main-overview.title')}</h3>
           <p className='text-header'>{t('main-overview.description')}</p>
         </div>
         <div className='flex flex-col gap-6'>
           <div className='flex items-center gap-4'>
-            <h5>{t('main-overview.average-rate')}</h5>
+            <h5 className='h5'>{t('main-overview.average-rate')}</h5>
             <InfoBtn onClick={handleClick} />
           </div>
           <div className='flex-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:flex justify-between xl:max-w-[670px]'>
@@ -51,7 +51,7 @@ const MainOverviewInfo = ({ t }: any) => {
                   num={15412}
                   prefix='$'
                 />
-                <span className='block label-text mb-2 text-header'>{t('main-overview.income')}</span>
+                <span className='block label-text mb-2 text-header'>{t('main-overview.revenue')}</span>
                 <Trend value={45.21} />
               </div>
             </div>

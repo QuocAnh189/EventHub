@@ -76,7 +76,7 @@ const PeriodSalesRevenue = (props: Props) => {
   return (
     <Spring className='card flex flex-col h-[300px] md:h-[494px] lg:h-[400px] xl:h-full'>
       <div className='flex items-center justify-between mb-8'>
-        <h4>{title}</h4>
+        <h4 className='h4'>{title}</h4>
         <InfoBtn />
       </div>
       <div className='flex-1 -mt-5 overflow-hidden'>

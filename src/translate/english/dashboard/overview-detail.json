@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "Revenue By Period"
+    "title": "Revenue Overview"
   },
   "sales-period": "Sales period",
   "popular-tags": {
@@ -12,10 +12,10 @@
     "reviews": "Reviews"
   },
   "sales-volume": "Sales Volume",
-  "income": "Income",
-  "profit": "Profit",
-  "expenses": "Expenses",
   "revenue": "Revenue",
+  "expense": "Expense",
+  "profit": "Profit",
+  "order": "Order",
   "profit-performance": "Profit Performance",
   "conversion-rate": {
     "title": "Conversion Rate",
@@ -31,7 +31,7 @@
     "title": "Average Referral Rate"
   },
   "total": {
-    "balance": "Total Balance",
+    "revenue": "Total Revenue",
     "expense": "Total Expense",
     "profit": "Total Profit"
   }

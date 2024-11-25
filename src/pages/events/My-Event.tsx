@@ -29,7 +29,7 @@ const MyEvent = ({ t }: any) => {
           <div className='flex flex-col gap-4 md:flex-row md:gap-[14px]'>
             <button
               onClick={() => {
-                navigate('/organization/event/create-event')
+                navigate('/organization/create-event')
               }}
               className='btn btn--primary'
             >

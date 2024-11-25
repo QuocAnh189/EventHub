@@ -17,7 +17,7 @@ const ReferralRate = (props: Props) => {
 
   return (
     <Spring className='card !pt-[20px] !pb-[34px] md:col-span-2 lg:col-span-1 2xl:col-span-1'>
-      <h4 className='mb-[22px]'>{title}</h4>
+      <h4 className='h4 mb-[22px]'>{title}</h4>
       <div className='flex flex-col gap-5 md:gap-[30px]'>
         {data.map((item, index) => (
           <LabeledProgressBar

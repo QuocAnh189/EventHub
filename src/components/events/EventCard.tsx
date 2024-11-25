@@ -11,6 +11,7 @@ import { IEvent } from 'interfaces/contents/event.interface'
 
 //util
 import dayjs from 'dayjs'
+import { getStatusEventColor } from '@utils/helpers'
 
 interface Props {
   event: IEvent
@@ -27,7 +28,7 @@ const EventCard = (props: Props) => {
 
   return (
     <div
-      className='shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-slate-950 dark:text-white cursor-pointer'
+      className='card shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-slate-950 dark:text-white cursor-pointer'
       onClick={handleSelectEvent}
     >
       <div className='overflow-hidden'>
@@ -58,7 +59,12 @@ const EventCard = (props: Props) => {
         </div>
         <div className='flex items-center justify-between border-t-2 py-3 !mt-3'>
           <div className='opacity-70'>
-            <p>{event.status}</p>
+            <span
+              className='badge-status badge-status--lg'
+              style={{ backgroundColor: `var(--${getStatusEventColor(event.status)})` }}
+            >
+              {event.status}
+            </span>
           </div>
           <div className='text-primary'>
             {event.eventPaymentType === EEventPaymentTicket.PAID ? (

@@ -28,7 +28,7 @@ const SalesVolumeChart = (props: Props) => {
   return (
     <Spring className='card flex flex-col h-[425px] lg:h-full md:col-span-2 lg:col-span-1'>
       <div className='flex flex-col gap-2 mb-5 sm:flex-row sm:justify-between sm:items-center'>
-        <h4>{title}</h4>
+        <h4 className='h4'>{title}</h4>
         <div className='flex items-center gap-[18px]'>
           <div className='flex items-center gap-2.5'>
             <span className='legend-bar bg-header' />

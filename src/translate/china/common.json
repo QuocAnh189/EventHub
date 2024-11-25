@@ -126,10 +126,11 @@
       "trash events": "回收站",
       "create event": "创建活动"
     },
+    "coupon": "優惠券",
+    "expense": "費用",
     "calendar": "日历",
     "orders": "订单",
     "reviews": "评论",
-    "faq": "常见问题",
     "settings": {
       "parent": "设置",
       "profile": "个人资料"

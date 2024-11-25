@@ -129,10 +129,11 @@
       "trash events": "Événements supprimés",
       "create event": "Créer un événement"
     },
+    "coupon": "Coupon",
+    "expense": "Frais",
     "calendar": "Calendrier",
     "orders": "Commandes",
     "reviews": "Avis",
-    "faq": "FAQ",
     "settings": {
       "parent": "Paramètres",
       "profile": "Profil"

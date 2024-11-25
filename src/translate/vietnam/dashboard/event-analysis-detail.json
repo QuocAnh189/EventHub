@@ -3,20 +3,22 @@
     "title": "Chi tiết sự kiện"
   },
   "transaction": "Giao dịch",
-  "sale_activity": "Hoạt động thương mại",
+  "customer-review": "Đánh giá người dùng",
   "total": {
-    "expense": "Tổng chi phí",
-    "profit": "Tổng lợi nhuận"
+    "user": "Tổng khách hàng",
+    "order": "Tổng đơn hàng"
   },
   "period-sales-revenue": "Doanh thu bán hàng trong kỳ",
-  "sales-profit-by-category": {
-    "title": "Lợi nhuận bán hàng theo danh mục",
+  "review-by-customer": {
+    "title": "Đánh giá từ người dùng",
+    "positive": "Tích cực",
+    "negative": "Tiêu cực",
     "review_rate": "Tỉ lệ đánh giá",
     "from": "Từ",
     "response": "Phản hồi",
     "view_all_reviews": "Xem tất cả đánh giá"
   },
-  "income": "Thu nhập",
-  "new_orders": "Đơn hàng",
-  "expense": "Chi phí"
+  "revenue": "Doanh thu",
+  "expense": "Chi phí",
+  "profit": "Lợi nhuận"
 }

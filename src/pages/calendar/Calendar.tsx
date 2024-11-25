@@ -82,18 +82,18 @@ const Calendar = ({ t }: any) => {
         </Box>
         <div className='flex items-center gap-8 mt-8 px-'>
           <div className='flex items-center gap-2'>
-            <span className='w-3 h-3 bg-red rounded-lg'></span>
-            <p className='text-header'>{t('status.closed')}</p>
+            <span className='w-4 h-4 bg-red rounded-lg'></span>
+            <p className='h5 text-header'>{t('status.closed')}</p>
           </div>
 
           <div className='flex items-center gap-2'>
-            <span className='w-3 h-3 bg-yellow rounded-lg'></span>
-            <p className='text-header'>{t('status.happening')}</p>
+            <span className='w-4 h-4 bg-yellow rounded-lg'></span>
+            <p className='h5 text-header'>{t('status.happening')}</p>
           </div>
 
           <div className='flex items-center gap-2'>
-            <span className='w-3 h-3 bg-green rounded-lg'></span>
-            <p className='text-header'>{t('status.upcoming')}</p>
+            <span className='w-4 h-4 bg-green rounded-lg'></span>
+            <p className='h5 text-header'>{t('status.upcoming')}</p>
           </div>
         </div>
       </Box>

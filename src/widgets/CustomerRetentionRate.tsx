@@ -1,6 +1,6 @@
 //components
 import Spring from '@components/Spring'
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
 
 //utils
 import { commaFormatter, getPercentage, getTotal } from '@utils/helpers'
@@ -9,28 +9,26 @@ import { commaFormatter, getPercentage, getTotal } from '@utils/helpers'
 import { withTranslation } from 'react-i18next'
 
 const data = [
-  { key: 'new_customers', name: 'New Customers', value: 27153, color: 'chart-dark' },
-  { key: 'frequent_customers', name: 'Frequent Customers', value: 7587, color: 'accent' },
-  { key: 'idle_users', name: 'Idle Users', value: 5937, color: 'red' },
-  { key: 'cart_abandoners', name: 'Cart Abandoners', value: 2309, color: 'yellow' }
+  { key: 'new_customers', name: 'Frequent Customers', value: 7587, color: 'accent' },
+  { key: 'regular_customers', name: 'Cart Abandoners', value: 2309, color: 'yellow' }
 ]
 
-// const CustomTooltip = ({ active, payload }: any) => {
-//   if (active) {
-//     return (
-//       <div className='chart-tooltip p-2'>
-//         <span className='h6'>{commaFormatter(payload[0].value)}</span>
-//       </div>
-//     )
-//   }
+const CustomTooltip = ({ active, payload }: any) => {
+  if (active) {
+    return (
+      <div className='chart-tooltip p-2'>
+        <span className='h6'>{commaFormatter(payload[0].value)}</span>
+      </div>
+    )
+  }
 
-//   return null
-// }
+  return null
+}
 
 const CustomerRetentionRate = ({ t }: any) => {
   return (
     <Spring className='card xl:col-span-4'>
-      <h5 className='mb-5'>{t('customer_retention_rate.title')}</h5>
+      <h5 className='h5 mb-5'>{t('customer_retention_rate.title')}</h5>
       <div className='flex flex-col gap-[30px] md:flex-row md:items-start lg:items-center lg:gap-[70px]'>
         <div className='shrink-0 h-[220px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px]'>
           <ResponsiveContainer width='100%' height='100%'>
@@ -40,7 +38,7 @@ const CustomerRetentionRate = ({ t }: any) => {
                   <Cell key={`cell-${index}`} fill={`var(--${entry.color})`} />
                 ))}
               </Pie>
-              {/* <Tooltip content={<CustomTooltip />} /> */}
+              <Tooltip content={<CustomTooltip />} />
             </PieChart>
           </ResponsiveContainer>
         </div>

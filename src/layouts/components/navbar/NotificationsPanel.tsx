@@ -90,11 +90,7 @@ const NotificationsPanel = (props: Props) => {
           ))}
       </div>
       <div className='p-[30px]' ref={footerRef}>
-        <button
-          className='btn btn--secondary w-full'
-          onClick={handleLoadMore}
-          disabled={displayed >= filteredData().length}
-        >
+        <button className='btn btn--primary w-full' onClick={handleLoadMore}>
           Load More
         </button>
       </div>

@@ -369,6 +369,7 @@ const EventManagement = ({ t }: any) => {
                 eventIds={eventIds}
                 onChecked={handleChecked}
                 refect={handleRefect}
+                index={index}
               />
             ))}
           </div>
@@ -388,6 +389,7 @@ const EventManagement = ({ t }: any) => {
                 eventIds={eventIds}
                 onChecked={handleChecked}
                 refect={handleRefect}
+                index={index}
               />
             ))}
         </div>

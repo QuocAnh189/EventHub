@@ -5,34 +5,33 @@ import RatingStars from '@ui/RatingStars'
 import { NavLink } from 'react-router-dom'
 
 // utils
-import { getPercentage, numFormatter } from '@utils/helpers'
+import { getPercentage } from '@utils/helpers'
 
-const data = [
-  { label: 'Electronics', value: 1340, color: 'accent' },
-  { label: 'Fashion', value: 6340, color: 'red' },
-  { label: 'Food & Drinks', value: 18000, color: 'header' },
-  { label: 'Services', value: 5000, color: 'yellow' }
+const data_default = [
+  { label: 'Positive', value: 80, color: 'green' },
+  { label: 'Negative', value: 20, color: 'red' }
 ]
 
 interface Props {
   translate: any
+  data: any
 }
 
 const SalesProfitByCategory = (props: Props) => {
-  const { translate } = props
+  const { translate, data = data_default } = props
 
   return (
     <Spring className='card flex flex-col'>
-      <h5 className='mb-4'>{translate.title}</h5>
+      <h5 className='h5 mb-4'>{translate.title}</h5>
       <div className='flex flex-1 flex-col gap-[27px] justify-between'>
         <div className='flex flex-col gap-4'>
-          {data.map((item, index) => (
+          {data.map((item: any, index: number) => (
             <LabeledProgressBar
               key={index}
-              label={item.label}
+              label={item.label || item.name}
               value={getPercentage(data, item.value)}
               color={item.color}
-              displayValue={numFormatter(item.value, 2, '$')!}
+              displayValue={`${getPercentage(data, item.value)}%`}
             />
           ))}
         </div>

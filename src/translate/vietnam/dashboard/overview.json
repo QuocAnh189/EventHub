@@ -1,14 +1,14 @@
 {
   "header": {
-    "title": "Tổng quan"
+    "title": "Doanh thu tổng quan"
   },
   "main-overview": {
     "title": "Sự kiện của tôi",
     "description": "Dưới đây là số liệu thống kê chung cho tổ chức của bạn theo thời gian.",
     "average-rate": "Tỉ lệ trung bình 2024",
-    "income": "Thu nhập",
+    "revenue": "Thu nhập",
     "expense": "Chi phí",
-    "orders": "Đơn hàng mới",
+    "orders": "Tổng đơn hàng",
     "view-profile": "Xem hồ sơ",
     "contact": "Liên hệ",
     "share": "Chia sẻ"

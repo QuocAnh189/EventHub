@@ -2,7 +2,6 @@
 import PageHeader from '@layouts/components/PageHeader'
 import OrdersAverageRate from '@widgets/OrdersAverageRate'
 import OrdersInfobox from '@components/OrdersInfobox'
-import OrdersTable from '@widgets/OrdersTable'
 
 //constants
 import ProtectedLayout from '@layouts/protected'
@@ -45,7 +44,6 @@ const Orders = ({ t }: any) => {
             />
           </div>
         </div>
-        <OrdersTable />
       </div>
     </ProtectedLayout>
   )

@@ -80,6 +80,14 @@ export const EVENT_CATEGORIES: any = [
   }
 ]
 
+export const PRODUCT_CATEGORIES = [
+  { value: 'all', label: 'All Products' },
+  { value: 'electronics', label: 'Electronics', icon: 'icon-laptop-mobile-solid', color: 'accent' },
+  { value: 'food', label: 'Groceries', icon: 'icon-burger-soda-solid', color: 'header' },
+  { value: 'fashion', label: 'Fashion', icon: 'icon-shirt-solid', color: 'red' },
+  { value: 'services', label: 'Services', icon: 'icon-user-gear-solid', color: 'yellow' }
+]
+
 export const PRODUCT_SORT_OPTIONS: IOptionSelect[] = [
   { value: 'best-selling', label: 'Best Selling' },
   { value: 'available', label: 'Available' },

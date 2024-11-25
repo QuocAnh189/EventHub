@@ -9,7 +9,7 @@
     "title": "Conversion Rate",
     "year": "Year",
     "customers": "Customers",
-    "trend": "Trend",
+    "orders": "Orders",
     "revenue": "Revenue"
   },
   "customer_retention_rate": {
@@ -18,9 +18,7 @@
     "in": "in",
     "description": " To calculate CRR, subtract the number of new customers from the total customers at the end of the period, divide by the number of customers at the start, and multiply by 100. Retaining customers is often more cost-effective than acquiring new ones, making CRR an essential focus for companies aiming to foster growth and stability.",
     "new_customers": "New Customers",
-    "frequent_customers": "Frequent Customers",
-    "idle_users": "Idle Users",
-    "cart_abandoners": "Cart Abandoners",
+    "regular_customers": "Regular Customers",
     "which_is": "which is",
     "visitors": "visitors"
   },

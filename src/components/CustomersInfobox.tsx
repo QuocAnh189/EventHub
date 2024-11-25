@@ -25,7 +25,7 @@ const CustomersInfobox = (props: Props) => {
       <div className='mt-3 mb-4'>
         <Counter className='h2 md:!text-[32px]' num={count} suffix={suffix} />
       </div>
-      <h6>
+      <h6 className='h6'>
         {label}
         <span className='xl:hidden 4xl:inline'> {t('middle.customers')}</span>
       </h6>

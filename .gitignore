@@ -6,7 +6,7 @@ package-lock.json
 yarn.lock
 
 # dist
-.dist
+/dist
 
 # testing
 /coverage

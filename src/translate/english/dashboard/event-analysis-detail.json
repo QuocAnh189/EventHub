@@ -3,20 +3,22 @@
     "title": "Event Details"
   },
   "transaction": "Transactions",
-  "sale_activity": "Sale Activity",
+  "customer-review": "Customer Review",
   "total": {
-    "expense": "Total Expense",
-    "profit": "Total Profit"
+    "user": "Total User",
+    "order": "Total Order"
   },
   "period-sales-revenue": "Period Sales Revenue",
-  "sales-profit-by-category": {
-    "title": "Sales Profit by Category",
+  "review-by-customer": {
+    "title": "Review By Customer",
+    "positive": "Positive",
+    "negative": "Negative",
     "review_rate": "Review Rate",
     "from": "From",
     "response": "Response",
     "view_all_reviews": "View All Reviews"
   },
-  "income": "Income",
-  "new_orders": "New Orders",
-  "expense": "Expense"
+  "revenue": "Revenue",
+  "expense": "Expense",
+  "profit": "Profit"
 }

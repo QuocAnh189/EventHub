@@ -30,6 +30,7 @@ const MainLayout = () => {
 
   return (
     <SidebarProvider>
+      {width < 1280 && withSidebar && <AppBar />}
       <div className={`app ${!withSidebar ? 'fluid' : ''}`} ref={appRef}>
         <ScrollToTop />
         {withSidebar && <Sidebar />}

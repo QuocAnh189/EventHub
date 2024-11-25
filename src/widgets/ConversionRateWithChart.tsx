@@ -19,7 +19,7 @@ const ConversionRateWithChart = ({ t }: any) => {
   return (
     <Spring className='card md:col-span-2 lg:col-span-1 2xl:col-span-1'>
       <div className='flex items-center justify-between mb-1.5'>
-        <h4>{t('conversion-rate.title')}</h4>
+        <h4 className='h4'>{t('conversion-rate.title')}</h4>
         <InfoBtn onClick={handleClick} />
         <Submenu anchorEl={anchorEl} open={open} onClose={handleClose}>
           <div className='py-5 pl-6 pr-8'>

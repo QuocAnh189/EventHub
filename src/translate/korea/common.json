@@ -129,10 +129,11 @@
       "trash events": "휴지통 이벤트",
       "create event": "이벤트 생성"
     },
+    "coupon": "쿠폰",
+    "expense": "비용",
     "calendar": "캘린더",
     "orders": "주문",
     "reviews": "리뷰",
-    "faq": "자주 묻는 질문",
     "settings": {
       "parent": "설정",
       "profile": "프로필"

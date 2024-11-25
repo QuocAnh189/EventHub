@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress'
 import ConfirmDialog from '@components/Dialog'
 import Checkbox from '@mui/material/Checkbox'
+import Spring from '@components/Spring'
 import { toast } from 'react-toastify'
 
 //icons
@@ -32,10 +33,11 @@ interface Props {
   eventIds: string[]
   onChecked: (id: string) => void
   refect: any
+  index: number
 }
 
 const CardMyEvent = (props: Props) => {
-  const { t, checkedAll, event, onChecked, eventIds, refect } = props
+  const { t, checkedAll, event, onChecked, eventIds, refect, index } = props
   const navigate = useNavigate()
 
   const [restoreEvent, { isLoading: loadingRestore }] = useRestoreEventMutation()
@@ -97,12 +99,12 @@ const CardMyEvent = (props: Props) => {
   }
 
   return (
-    <>
+    <Spring type='slideUp' index={index}>
       <div className='card flex flex-row w-full h-[200px] rounded-lg shadow-2xl transition-transform hover:scale-[1.005] dark:bg-gray-800'>
         <div className='relative flex w-[400px] h-full items-center justify-between max-md:hidden'>
           <img
             loading='lazy'
-            className='w-full h-full rounded-l-lg object-cover'
+            className='w-full h-full rounded-l-lg object-cover transition duration-700 hover:skew-x-2 hover:scale-110'
             src={
               event.coverImage
                 ? event.coverImage
@@ -114,16 +116,16 @@ const CardMyEvent = (props: Props) => {
 
         <div className='w-full h-full flex flex-col justify-between px-5 py-4'>
           <div>
-            <p className='mb-2 line-clamp-1 text-2xl truncate text-ellipsis w-[300px] font-bold tracking-tight text-gray-900 dark:text-white max-md:text-base'>
+            <p className='h4 mb-4 line-clamp-1 text-2xl truncate text-ellipsis w-[300px] font-bold tracking-tight text-gray-900 dark:text-white max-md:text-base'>
               {event.name}
             </p>
             <div className='flex items-center gap-2 opacity-70 text-gray'>
               <FaCalendarAlt />
-              <span>{dayjs(event.startTime).format('DD/MM/YYYY dddd - hh:mm A').toString()}</span>
+              <span className='h6'>{dayjs(event.startTime).format('DD/MM/YYYY dddd - hh:mm A').toString()}</span>
             </div>
-            <div className='flex items-center gap-2 opacity-70 text-gray'>
+            <div className='flex items-center gap-2 opacity-70 text-gray mt-4'>
               <IoLocationSharp />
-              <span>{event.location}</span>
+              <span className='h6'>{event.location}</span>
             </div>
           </div>
           <div className='flex items-center justify-between'>
@@ -172,7 +174,7 @@ const CardMyEvent = (props: Props) => {
           disabled={loadingDelete}
         />
       )}
-    </>
+    </Spring>
   )
 }
 

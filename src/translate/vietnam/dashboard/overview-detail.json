@@ -12,10 +12,10 @@
     "reviews": "Đánh Giá"
   },
   "sales-volume": "Khối Lượng Bán Hàng",
-  "income": "Thu Nhập",
-  "profit": "Lợi Nhuận",
-  "expenses": "Chi Phí",
   "revenue": "Doanh Thu",
+  "expense": "Chi Phí",
+  "profit": "Lợi Nhuận",
+  "order": "Đơn hàng",
   "profit-performance": "Hiệu Suất Lợi Nhuận",
   "conversion-rate": {
     "title": "Tỷ Lệ Chuyển Đổi",
@@ -31,7 +31,7 @@
     "title": "Tỷ Lệ Giới Thiệu Trung Bình"
   },
   "total": {
-    "balance": "Tổng Số Dư",
+    "revenue": "Tổng Doanh Thu",
     "expense": "Tổng Chi Phí",
     "profit": "Tổng Lợi Nhuận"
   }

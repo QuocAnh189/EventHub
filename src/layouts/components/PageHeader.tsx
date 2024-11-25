@@ -32,7 +32,7 @@ const PageHeader = (props: Props) => {
         className='card no-hover flex flex-col gap-5 !p-5 mb-5 md:mb-[26px] md:!p-[26px] lg:!py-5 lg:flex-row
                  lg:items-center lg:gap-4'
       >
-        <h1 className='flex-1 text-center lg:text-left text-2xl font-bold'>{title}</h1>
+        <h1 className='h1 flex-1 text-center lg:text-left text-2xl font-bold'>{title}</h1>
         <div
           className='h-11 bg-body flex items-center justify-center rounded-md px-9 font-heading font-bold
                     text-header text-sm border border-input-border lg:w-[310px]'

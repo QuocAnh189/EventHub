@@ -15,7 +15,7 @@ const EventProfilePreview = ({ seller = sellers[3] }) => {
         />
       </div>
       <div className='flex flex-col items-start text-header'>
-        <h3 className='mb-3 truncate'>{seller.name}</h3>
+        <h3 className='h3 mb-3 truncate'>{seller.name}</h3>
         <a className='subheading-2' href={seller.website} target='_blank' rel='noopener noreferrer'>
           www.website.com
         </a>

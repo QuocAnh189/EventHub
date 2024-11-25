@@ -7,8 +7,9 @@ import { MdEventAvailable } from 'react-icons/md'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { MdOutlinePreview } from 'react-icons/md'
 import { MdMenuBook } from 'react-icons/md'
-import { BiHelpCircle } from 'react-icons/bi'
 import { IoSettingsOutline } from 'react-icons/io5'
+import { RiCoupon5Line } from 'react-icons/ri'
+import { GiExpense } from 'react-icons/gi'
 
 const ROUTES: Route[] = [
   {
@@ -40,6 +41,16 @@ const ROUTES: Route[] = [
     ]
   },
   {
+    name: 'coupon',
+    icon: <RiCoupon5Line size={20} />,
+    path: '/organization/coupon'
+  },
+  {
+    name: 'expense',
+    icon: <GiExpense size={20} />,
+    path: '/organization/expense'
+  },
+  {
     name: 'calendar',
     icon: <FaRegCalendarAlt size={20} />,
     path: '/organization/calendar'
@@ -53,11 +64,6 @@ const ROUTES: Route[] = [
     name: 'reviews',
     icon: <MdOutlinePreview size={20} />,
     path: '/organization/review'
-  },
-  {
-    name: 'faq',
-    icon: <BiHelpCircle size={20} />,
-    path: '/organization/faq'
   },
   {
     name: 'settings',

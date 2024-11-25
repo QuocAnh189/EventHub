@@ -95,7 +95,7 @@ const EventDetail = () => {
           />
         </div>
         <div className='flex items-center justify-between w-full'>
-          <h1 className='text-2xl text-header'>{event?.name}</h1>
+          <h1 className='h1 text-header'>{event?.name}</h1>
           <div className='flex items-center gap-2'>
             <button onClick={handleLikeEvent}>
               <FaHeart color={favourite ? 'red' : 'gray'} size='36px' />
@@ -108,7 +108,7 @@ const EventDetail = () => {
         <div className='flex flex-col mdl:flex-row justify-between'>
           <div className='flex flex-col w-full gap-4'>
             <div className='flex flex-col gap-y-3'>
-              <h4 className='text-header'>Date and Time</h4>
+              <h4 className='h4 text-header'>Date and Time</h4>
               <div className='flex items-center gap-1'>
                 <FaRegCalendarAlt color='gray' size='24px' />
                 <p className='text-header'>{dayjs(event?.startTime).format('dddd, D MMMM YYYY').toString()}</p>
@@ -127,7 +127,7 @@ const EventDetail = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-              <h4>Location</h4>
+              <h4 className='h4 text-header'>Location</h4>
               <div className='flex gap-1'>
                 <IoLocationOutline color='gray' size='24px' />
                 <p className='max-w-[500px] text-header'>{event?.location}</p>

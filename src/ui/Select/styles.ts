@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro';
-import {keyframes} from 'styled-components';
-import Select from 'react-select';
+import styled from 'styled-components/macro'
+import { keyframes } from 'styled-components'
+import Select from 'react-select'
 
 const fadeIn = keyframes`
   from {
@@ -11,7 +11,7 @@ const fadeIn = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-`;
+`
 
 const NormalizedSelect = styled(Select)`
   .select {
@@ -23,7 +23,8 @@ const NormalizedSelect = styled(Select)`
       border-radius: 4px;
       box-shadow: none;
 
-      &--is-focused, &:hover {
+      &--is-focused,
+      &:hover {
         outline: none;
       }
 
@@ -32,7 +33,7 @@ const NormalizedSelect = styled(Select)`
       }
 
       .icon {
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
       }
     }
 
@@ -84,7 +85,8 @@ const NormalizedSelect = styled(Select)`
       }
     }
 
-    &__indicator, &__indicator-separator {
+    &__indicator,
+    &__indicator-separator {
       display: none;
     }
 
@@ -92,7 +94,7 @@ const NormalizedSelect = styled(Select)`
       padding: 0;
     }
   }
-`;
+`
 
 const BasicSelect = styled(NormalizedSelect)`
   .select {
@@ -105,7 +107,8 @@ const BasicSelect = styled(NormalizedSelect)`
       width: 100%;
       transition: border-color var(--transition);
 
-      &--is-focused, &:hover {
+      &--is-focused,
+      &:hover {
         border-color: var(--accent);
       }
     }
@@ -131,7 +134,7 @@ const BasicSelect = styled(NormalizedSelect)`
       border-color: var(--red);
     }
   }
-`;
+`
 
 const MinimalSelect = styled(NormalizedSelect)`
   width: 200px;
@@ -148,7 +151,7 @@ const MinimalSelect = styled(NormalizedSelect)`
       background: transparent !important;
 
       // tablet
-      @media screen and (min-width: 768px) {
+      
         margin-left: auto;
       }
     }
@@ -162,6 +165,6 @@ const MinimalSelect = styled(NormalizedSelect)`
       display: none;
     }
   }
-`;
+`
 
-export {BasicSelect, MinimalSelect}
+export { BasicSelect, MinimalSelect }

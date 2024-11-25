@@ -129,10 +129,11 @@
       "trash events": "Papierkorbevents",
       "create event": "Ereignis erstellen"
     },
+    "coupon": "Coupon",
+    "expense": "Kosten",
     "calendar": "Kalender",
     "orders": "Bestellungen",
     "reviews": "Bewertungen",
-    "faq": "FAQ",
     "settings": {
       "parent": "Einstellungen",
       "profile": "Profil"

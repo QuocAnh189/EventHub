@@ -25,9 +25,7 @@ const BestEvents = ({ t }: any) => {
   return (
     <div className='w-full dark:bg-gray-900 dark:text-white bg-gray-50 py-10'>
       <section data-aos='fade-up' className='container'>
-        <h1 className='w-full my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-bold text-primary'>
-          {t('best events.title')}
-        </h1>
+        <h1 className='h1 my-8 border-l-8 py-2 pl-2  text-primary'>{t('best events.title')}</h1>
         {isFetching ? (
           <div className='flex h-[250px] items-center justify-center'>
             <Loader />

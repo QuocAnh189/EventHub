@@ -9,10 +9,10 @@ import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 
 //components
 import Spring from './Spring'
-import SubmenuTrigger from '@ui/SubmenuTrigger'
 import RatingStars from '@ui/RatingStars'
 import Timestamp from '@ui/Timestamp'
 import ModalBase from '@ui/ModalBase'
+import ConfirmDialog from './Dialog'
 
 //interfaces
 import { IReview } from 'interfaces/contents/review.interface'
@@ -22,6 +22,7 @@ import dayjs from 'dayjs'
 
 //assets
 import userDefault from '@assets/images/common/user_default.png'
+import { HiTrash } from 'react-icons/hi'
 
 interface UserProps {
   userName: string
@@ -91,6 +92,7 @@ const Review = (props: Props) => {
   const { theme } = useTheme()
   const { width } = useWindowSize()
   const [ref, { width: refWidth }] = useMeasure()
+  const [openDialog, setOpenDialog] = useState<boolean>(false)
   const bgColor = theme === 'light' ? 'var(--body)' : 'rgba(39,50,65,.2)'
 
   const [modalOpen, setModalOpen] = useState(false)
@@ -141,7 +143,14 @@ const Review = (props: Props) => {
             >
               <i className='icon-message-arrow-up-right-regular' />
             </button>
-            <SubmenuTrigger />
+            <button
+              onClick={() => {
+                setOpenDialog(true)
+              }}
+              className='menu-btn subheading-2'
+            >
+              <HiTrash className='ml-1 h-6 w-6 text-primary' />
+            </button>
           </div>
         </div>
       </div>
@@ -179,6 +188,19 @@ const Review = (props: Props) => {
           </div>
         </div>
       </ModalBase>
+      {openDialog && (
+        <ConfirmDialog
+          title='Delete Review'
+          description={`Are you sure want to delete this review`}
+          open={openDialog}
+          setOpen={(value) => {
+            setOpenDialog(value)
+          }}
+          action='Delete'
+          onHandle={() => {}}
+          disabled={false}
+        />
+      )}
     </Spring>
   )
 }

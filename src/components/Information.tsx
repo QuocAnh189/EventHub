@@ -75,32 +75,32 @@ const Information = (props: Props) => {
       <div className='flex justify-center bg-body flex-wrap'>
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <FaRegCalendarAlt color='#3D56F0' size={50} />
-          <p className='font-semibold text-header'>Time</p>
+          <p className='h6 text-header'>Time</p>
           <p className='text-sm text-header'>{dayjs(event?.startTime).format('dddd, DD/MM/YYYY hh:mm A').toString()}</p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <IoLocationOutline color='#3D56F0' size={50} />
-          <p className='font-semibold text-header'>Location</p>
+          <p className='h6 text-header'>Location</p>
           <p className='text-sm text-header'>{event?.location}</p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <IoMdTime color='#3D56F0' size={50} />
-          <p className='font-semibold text-header'>Happen</p>
+          <p className='h6 text-header'>Happen</p>
           <p className='text-sm text-header'>9 day</p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <FaUsers color='#3D56F0' size={50} />
-          <p className='font-semibold text-header'>Participant</p>
+          <p className='h6 text-header'>Participant</p>
           <p className='text-sm text-header'>{event?.ticketTypes.length ? totalQuantity : 0}</p>
         </div>
       </div>
 
       <div className='flex flex-col px-[100px] gap-8'>
         <div className='space-y-2'>
-          <h5>Organization By</h5>
+          <h5 className='h5'>Organization By</h5>
           <div className='flex items-center gap-3'>
             <img
               src={event?.creator.avatar ? event?.creator.avatar : userDefault}
@@ -118,9 +118,9 @@ const Information = (props: Props) => {
         </div>
 
         <div className='space-y-1'>
-          <h5>Event Description</h5>
+          <h5 className='h4'> Description</h5>
           <p className='text-header'>{event?.description}</p>
-          <h6 className='text-header'>3 Reasons to attend the event:</h6>
+          <h6 className='h4 text-header'>3 Reasons to attend the event:</h6>
 
           {event?.reasons?.map((reason: string, index: number) => (
             <p key={`reason-${index}`} className='text-header'>
