@@ -1,10 +1,26 @@
 import * as XLSX from 'xlsx'
 import { saveAs } from 'file-saver'
+import { EEventPaymentTicket, EEventStyle } from '@constants/enum.constant'
 
 const DownloadSampleExcel = () => {
   const sampleData = [
-    { Name: 'John Doe', Email: 'johndoe@example.com', Phone: '123-456-7890' },
-    { Name: 'Jane Smith', Email: 'janesmith@example.com', Phone: '098-765-4321' }
+    {
+      Name: 'Happy New Year 2025',
+      EventCycleType: EEventStyle.RECURRING,
+      StartTime: '2025-01-01T07:00',
+      EndTime: '2025-01-02T17:00',
+      location: 'University Of Information Technology',
+      pathLocation:
+        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s',
+      description: 'This is description for the events',
+      reasons: JSON.stringify(['Reason 1', 'Reason 2', 'Reason 3', 'Reason 4', 'Reason 5']),
+      eventPaymentType: EEventPaymentTicket.PAID,
+      ticketTypes: JSON.stringify([
+        { name: 'VIP', quantity: 100, price: 100000 },
+        { name: 'Normal', quantity: 1000, price: 50000 }
+      ]),
+      isPrivate: false
+    }
   ]
 
   // Chuyển đổi dữ liệu thành một worksheet
@@ -21,7 +37,7 @@ const DownloadSampleExcel = () => {
   const blob = new Blob([excelBuffer], {
     type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
   })
-  saveAs(blob, 'sample.xlsx')
+  saveAs(blob, 'event_create_sample.xlsx')
 }
 
 export default DownloadSampleExcel

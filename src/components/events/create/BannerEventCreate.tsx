@@ -3,7 +3,6 @@ import { UseFormSetValue } from 'react-hook-form'
 
 //components
 import MediaDropPlaceholder from '@ui/MediaDropPlaceholder'
-import { toast } from 'react-toastify'
 
 //interface & type
 import { ICreateEventPayload } from '@type/event.type'
@@ -26,22 +25,13 @@ const BannerEvent = (props: Props) => {
 
   const convertCoverImageToBase64 = (e: any) => {
     const image = e.target.files[0]
-
     setValue('coverImage', image)
   }
 
   const convertSubImageToBase64 = (e: any, index: number) => {
-    const newSubImage: any = [...subImage]
+    const newSubImage: any[] = [...subImage]
     newSubImage[index] = e.target.files[0]
     setValue('eventSubImages', newSubImage)
-  }
-
-  const handleNextStep = () => {
-    if (coverImage && subImage.some((image) => image)) {
-      setActive(2)
-    } else {
-      toast.error('Please choose image for event')
-    }
   }
 
   return (
@@ -112,7 +102,10 @@ const BannerEvent = (props: Props) => {
                     onClick={() => {
                       const newsubImage: any = [...subImage]
                       newsubImage[index] = ''
-                      setValue('eventSubImages', newsubImage)
+                      setValue(
+                        'eventSubImages',
+                        newsubImage.filter((item: any) => item !== '')
+                      )
                     }}
                     color={subImage[index] ? 'white' : '#333'}
                   />
@@ -124,6 +117,7 @@ const BannerEvent = (props: Props) => {
       </div>
       <div className='absolute flex items-center gap-4 right-8'>
         <button
+          type='button'
           className='btn bg-textGray hover:text-white'
           onClick={() => {
             setActive(0)
@@ -131,7 +125,13 @@ const BannerEvent = (props: Props) => {
         >
           {t('button_back')}
         </button>
-        <button className=' btn btn-primary ' onClick={handleNextStep}>
+        <button
+          type='button'
+          className='btn btn-primary'
+          onClick={() => {
+            setActive(2)
+          }}
+        >
           {t('button_continue')}
         </button>
       </div>

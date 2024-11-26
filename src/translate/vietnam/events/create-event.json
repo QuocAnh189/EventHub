@@ -7,22 +7,22 @@
     "example_file": "Tải thư mục tại đây"
   },
   "information": {
-    "event_detail": {
-      "title": "Chi tiết sự kiện",
-      "event_title": "Tên sự kiện",
-      "event_title_placeholder": "Nhập tên của sự kiện",
-      "event_category": "Thể loại sự kiện",
-      "event_category_placeholder": "Chọn thể loại của sự kiện",
-      "event_type": { "title": "Kiểu sự kiện", "label_one": "Ngẫu hứng", "label_two": "Thường niên" }
+    "event": {
+      "name": "Tên sự kiện",
+      "name_placeholder": "Nhập tên của sự kiện",
+      "category": "Thể loại",
+      "category_placeholder": "Chọn thể loại của sự kiện",
+      "type": { "name": "Kiểu sự kiện", "single_event": "Đơn sự kiện", "recurring_event": "Thường niên" }
     },
-    "event_datetime": {
+    "datetime": {
       "title": "Ngày & Giờ",
-      "seesion": { "title": "Thời gian", "label_one": "Ngày bắt đầu", "label_two": "Ngày kết thúc" }
+      "session": { "title": "Thời gian", "start_time": "Bắt đầu", "end_time": "Kết thúc" }
     },
     "location": {
       "title": "Chọn địa chỉ",
       "label": "Nơi diễn ra sự kiện",
-      "placeholder": "Nhập địa chỉ của sự kiện"
+      "placeholder": "Nhập địa chỉ của sự kiện",
+      "path_placeholder": "Nhập đường dẫn địa chỉ (Google Map)"
     },
     "description": {
       "title": "Thêm thông tin mô tả",
@@ -35,21 +35,24 @@
       "placeholder": "Lời khuyên"
     }
   },
-  "banner": { "cover_image": "Ảnh chính", "subs_image": "Ảnh phụ" },
+  "banner": { "cover_image": "Ảnh sự kiện", "subs_image": "Ảnh phụ" },
   "ticket": {
     "title": "Loại hình cho sự kiện của bạn là gì ?",
-    "option_one": { "label": "Sự kiện trả phí", "description": "Sự kiện của tôi bắt buộc thanh toán" },
+    "option_one": { "label": "Sự kiện trả phí", "description": "Sự kiện bao gồm những vé thanh toán" },
     "option_two": { "label": "Sự kiện miễn phí", "description": "Sự kiện hoàn toàn miễn phí" },
-    "ticket_title": "Bạn đang bán vé gì?",
+    "ticket_title": "Những loại vé của bạn và gì ?",
     "ticket_name": "Tên vé",
+    "ticket_name_placeholder": "Nhập tên",
     "ticket_quantity": "Số lượng vé",
-    "ticket_price": "Gía vé"
+    "ticket_price": "Giá vé"
   },
   "review": {
     "public": "Công khai",
     "date_time_label": "Ngày và giờ",
     "ticket_information": "Thông tin vé",
     "ticket_type": "Loại vé",
+    "free": "Miễn phí",
+    "fee": "Trả phí",
     "ticket_sub": "Vé",
     "location_title": "Địa điểm",
     "organization_title": "Tổ chức bởi",

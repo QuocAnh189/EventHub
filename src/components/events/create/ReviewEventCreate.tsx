@@ -9,7 +9,6 @@ import { CircularProgress } from '@mui/material'
 import { IoLocationOutline } from 'react-icons/io5'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { IoMdTime } from 'react-icons/io'
-import { IoTicketOutline } from 'react-icons/io5'
 
 //type
 import { ICreateEventPayload } from '@type/event.type'
@@ -50,15 +49,15 @@ const ReviewEventCreate = (props: Props) => {
                 ? URL.createObjectURL(watch().coverImage)
                 : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
             }
-            alt=''
+            alt='coverImage'
             loading='lazy'
             className='w-full h-full object-cover rounded-xl'
           />
         </div>
         <div className='w-full flex items-center justify-between'>
-          <h1 className='tex-sm mdl:text-xl'>{watch().name}</h1>
+          <h1 className='h1'>{watch().name}</h1>
           <div className='flex items-center gap-2'>
-            <p className='mdl:text-xl font-bold text-header'>{t('review.public')}:</p>
+            <p className='h5 text-header'>{t('review.public')}:</p>
             <Switch
               onChange={() => {
                 setValue('isPrivate', !watch().isPrivate)
@@ -71,7 +70,7 @@ const ReviewEventCreate = (props: Props) => {
           <div className='w-full flex flex-col gap-4'>
             <div className='flex justify-between'>
               <div className='flex flex-col gap-y-3'>
-                <h4 className='text-header'>{t('review.date_time_label')}</h4>
+                <h4 className='h5 text-header'>{t('review.date_time_label')}</h4>
                 <div className='flex items-center gap-1'>
                   <FaRegCalendarAlt color='gray' size='24px' />
 
@@ -87,11 +86,11 @@ const ReviewEventCreate = (props: Props) => {
                 </div>
               </div>
               <div className='flex flex-col gap-2 items-end'>
-                <h3 className='text-sm mdl:text-xl font-bold mb-4 text-header'>{t('review.ticket_information')}</h3>
+                <h3 className='h5 mb-4 text-header'>{t('review.ticket_information')}</h3>
                 <div className='flex items-center gap-1 text-[12px] mdl:text-sm text-right'>
-                  <IoTicketOutline size='24px' color='gray' />
-                  <p className='text-header'>
-                    {t('ticket_type')}: {watch().eventPaymentType}/{t('review.ticket_sub')}
+                  <p className='h6 text-header'>
+                    {t('review.ticket_type')}:{' '}
+                    {watch().eventPaymentType === 'FREE' ? t('review.free') : t('review.fee')}
                   </p>
                 </div>
                 {watch().ticketTypes.map((ticket, index: number) => (
@@ -106,32 +105,41 @@ const ReviewEventCreate = (props: Props) => {
             </div>
 
             <div className='flex flex-col gap-2'>
-              <h4 className='text-header'>{t('review.location_title')}</h4>
+              <h4 className='h5 text-header'>{t('review.location_title')}</h4>
               <div className='flex gap-1'>
                 <IoLocationOutline color='gray' size='24px' />
                 <p className='max-w-[500px] text-header'>{watch().location}</p>
               </div>
+              <iframe
+                className='rounded-sm w-full'
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240416691!2d106.80047917509012!3d10.870008889284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715500492989!5m2!1svi!2s'
+                height='250'
+                loading='lazy'
+              />
             </div>
 
             <div className='flex flex-col gap-8'>
               <div className='space-y-2'>
-                <h5>{t('review.organization_title')}</h5>
+                <h5 className='h5'>{t('review.organization_title')}</h5>
                 <div className='flex items-center gap-3'>
                   <img
                     src={user?.avatar ? user.avatar : useDefault}
                     alt=''
                     className='w-[50px] h-[50px] object-cover rounded-full'
                   />
-                  <p className='font-semibold text-header'>{user?.userName || user?.fullName}</p>
+                  <p className='font-semibold text-header'>{user?.fullName || user?.userName}</p>
                 </div>
               </div>
 
               <div className='space-y-1'>
-                <h5>{t('review.description_title')}</h5>
+                <h5 className='h5'>{t('review.description_title')}</h5>
                 <p className='text-header'>{watch().description}</p>
-                <h6>
+              </div>
+
+              <div className='space-y-1'>
+                <h5 className='h5'>
                   {watch().reasons.length} {t('review.reasons_event')}:
-                </h6>
+                </h5>
                 {watch().reasons.map((reason, index: number) => (
                   <p key={`reason-${index}`} className='text-header'>
                     {index + 1}. {reason}.
@@ -140,7 +148,7 @@ const ReviewEventCreate = (props: Props) => {
               </div>
             </div>
 
-            <div className='w-full flex items-center gap-8 justify-center'>
+            <div className='w-full flex items-center gap-8 justify-center flex-wrap'>
               {watch().eventSubImages.map(
                 (image: any, index: number) =>
                   image && (
@@ -159,6 +167,7 @@ const ReviewEventCreate = (props: Props) => {
       </div>
       <div className='w-full flex items-center gap-4 justify-end mt-10'>
         <button
+          type='button'
           className='btn bg-textGray hover:text-white'
           onClick={() => {
             setActive(2)

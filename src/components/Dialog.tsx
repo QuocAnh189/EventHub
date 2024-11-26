@@ -35,14 +35,6 @@ const ConfirmDialog = (props: Props) => {
             {disabled ? <CircularProgress size='20px' /> : <span className='text-white'>{action}</span>}
           </button>
         </div>
-        {/* <DialogTitle id='alert-dialog-title'>{title}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id='alert-dialog-description'>{description}</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button onClick={onHandle}>{disabled ? <CircularProgress size='20px' /> : action}</Button>
-        </DialogActions> */}
       </div>
     </ModalBase>
   )

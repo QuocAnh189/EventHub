@@ -7,22 +7,22 @@
     "example_file": "Example file here"
   },
   "information": {
-    "event_detail": {
-      "title": "Event Details",
-      "event_title": "Event Title",
-      "event_title_placeholder": "Enter the name of the events",
-      "event_category": "Event Category",
-      "event_category_placeholder": "Select the name of the events",
-      "event_type": { "title": "Event Title", "label_one": "Single Event", "label_two": "Recurring Event" }
+    "event": {
+      "name": "Name",
+      "name_placeholder": "Enter the name of the events",
+      "category": "Category",
+      "category_placeholder": "Select the category of the events",
+      "type": { "name": "Event Style", "single_event": "Single Event", "recurring_event": "Recurring Event" }
     },
-    "event_datetime": {
+    "datetime": {
       "title": "Date & Time",
-      "session": { "title": "Session", "label_one": "Start Date", "label_two": "End Date" }
+      "session": { "title": "Session", "start_time": "Start Time", "end_time": "End Time" }
     },
     "location": {
       "title": "Choose Location",
       "label": "Where will you event take place",
-      "placeholder": "Enter the name of location"
+      "placeholder": "Enter the name of location",
+      "path_placeholder": "Enter the path location (Google Map)"
     },
     "description": {
       "title": "Additional Information",
@@ -32,7 +32,7 @@
     "reason": {
       "title": "Reason",
       "label": "Event Reason",
-      "placeholder": "Reason"
+      "placeholder": "Enter Reason"
     }
   },
   "banner": {
@@ -41,10 +41,11 @@
   },
   "ticket": {
     "title": "What type of event are you running ?",
-    "option_one": { "label": "PAID Event", "description": "My event require tickets for entry" },
+    "option_one": { "label": "PAID Event", "description": "My event include tickets for entry" },
     "option_two": { "label": "FREE Event", "description": "I'm running free event" },
     "ticket_title": "What ticket are you selling ?",
     "ticket_name": "Ticket name",
+    "ticket_name_placeholder": "Enter name",
     "ticket_quantity": "Ticket quantity",
     "ticket_price": "Ticket Price"
   },
@@ -53,6 +54,8 @@
     "date_time_label": "Date and Time",
     "ticket_information": "Ticket Information",
     "ticket_type": "Ticket type",
+    "free": "Free",
+    "fee": "Fee",
     "ticket_sub": "Ticket",
     "location_title": "Location",
     "organization_title": "Organization By",

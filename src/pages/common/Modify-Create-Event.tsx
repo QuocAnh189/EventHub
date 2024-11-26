@@ -1,6 +1,8 @@
 //hook
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { formEventSchema } from '@utils/validation'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 //components
 import PageHeader from '@layouts/components/PageHeader'
@@ -36,7 +38,7 @@ import { URLtoFile } from '@utils/url_to_file'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-const step = ['Information', 'Banner Image', 'Set Ticket', 'Review']
+const CREATE_STEP = ['Information', 'Banner Image', 'Set Ticket', 'Review']
 
 interface Props {
   t: any
@@ -55,7 +57,16 @@ const ModifyEvent = (props: Props) => {
 
   const [active, setActive] = useState<number>(create ? -1 : 0)
 
-  const { control, register, handleSubmit, watch, setValue, reset } = useForm<ICreateEventPayload>({
+  const {
+    control,
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    reset,
+    formState: { errors }
+  } = useForm<ICreateEventPayload>({
+    resolver: zodResolver(formEventSchema),
     defaultValues: event ? { ...event, creatorId: user?.id } : { ...InitCreateEventPayload, creatorId: user?.id },
     mode: 'onChange'
   })
@@ -79,6 +90,11 @@ const ModifyEvent = (props: Props) => {
       ConvertToFile()
     }
   }, [event])
+
+  useEffect(() => {
+    const messages = Object.values(errors)
+    messages.map((message: any) => toast.error(message.message))
+  }, [errors])
 
   const onSubmit: SubmitHandler<ICreateEventPayload> = async (data: ICreateEventPayload | any) => {
     const formData: any = new FormData()
@@ -107,32 +123,24 @@ const ModifyEvent = (props: Props) => {
 
   const handleFileImport = (e: any) => {
     e.preventDefault()
-    readXlsxFile(e.target.files[0]).then((rows: any) => {
-      setValue('name', rows[1][0].toString())
-      setValue('categoryIds', JSON.parse(rows[1][1].toString()))
-      setValue('eventCycleType', rows[1][2].toString())
-      setValue('startTime', rows[1][3].toString())
-      setValue('endTime', rows[1][4].toString())
-      setValue('location', rows[1][5].toString())
-      setValue('description', rows[1][6].toString())
-      setValue('reasons', JSON.parse(rows[1][7].toString()))
-      setValue('eventSubImages', JSON.parse(rows[1][8].toString()))
-      setValue('eventPaymentType', rows[1][9].toString())
-      setValue('ticketTypes', JSON.parse(rows[1][10].toString()))
-    })
-    setActive(0)
+    readXlsxFile(e.target.files[0])
+      .then((rows: any) => {
+        setValue('name', rows[1][0].toString())
+        setValue('eventCycleType', rows[1][1].toString())
+        setValue('startTime', rows[1][2].toString())
+        setValue('endTime', rows[1][3].toString())
+        setValue('location', rows[1][4].toString())
+        setValue('pathLocation', rows[1][5].toString())
+        setValue('description', rows[1][6].toString())
+        setValue('reasons', JSON.parse(rows[1][7].toString()))
+        setValue('eventPaymentType', rows[1][8].toString())
+        setValue('ticketTypes', JSON.parse(rows[1][9].toString()))
+        setValue('isPrivate', JSON.parse(rows[1][10].toString()))
+      })
+      .then(() => {
+        setActive(0)
+      })
   }
-
-  // const handleDownloadFile = () => {
-  //   const link = document.createElement('a')
-  //   link.href = '/excel/example-event-import.xlsx'
-  //   link.setAttribute('download', 'example-event-import.xlsx')
-  //   document.body.appendChild(link)
-  //   link.click()
-
-  //   document.body.removeChild(link)
-  //   URL.revokeObjectURL('/excel/example-event-import.xlsx')
-  // }
 
   if (active === -1 && create) {
     return (
@@ -148,8 +156,8 @@ const ModifyEvent = (props: Props) => {
               className='w-[300px] h-[200px] rounded-lg flex flex-col items-center justify-center gap-2 hover:cursor-pointer'
             >
               <IoCreate size={42} color='var(--header)' />
-              <p className='font-bold text-header'>{t('option_one.title')}</p>
-              <p className='text-center px-4 text-header'>{t('option_one.description')}</p>
+              <p className='h4 font-bold text-header'>{t('option_one.title')}</p>
+              <p className='h6 text-center px-4 text-header'>{t('option_one.description')}</p>
             </button>
           </div>
           <div className='card flex items-center justify-center'>
@@ -161,8 +169,8 @@ const ModifyEvent = (props: Props) => {
             />
             <div className='absolute z-[0] h-full w-full rounded-lg flex flex-col items-center justify-center gap-2'>
               <BiImport size={42} color='var(--header)' />
-              <p className='font-bold text-header'>{t('option_two.title')}</p>
-              <p className='text-center text-header z-[10]'>{t('option_two.description')}</p>
+              <p className='h4 font-bold text-header'>{t('option_two.title')}</p>
+              <p className='h6 text-center text-header z-[10]'>{t('option_two.description')}</p>
             </div>
             <button onClick={DownloadSampleCSV} className='text-primary hover:underline z-[2] pt-2'>
               {t('option_two.example_file')}
@@ -178,10 +186,10 @@ const ModifyEvent = (props: Props) => {
       <PageHeader title={title} />
       <Box sx={{ width: '100%' }}>
         <Stepper activeStep={active} alternativeLabel>
-          {step.map((label: string, index: number) => (
+          {CREATE_STEP.map((label: string, index: number) => (
             <Step key={`step-${index}`}>
               <StepLabel>
-                <p className='text-header'>{label}</p>
+                <p className='h5 text-header'>{label}</p>
               </StepLabel>
             </Step>
           ))}
@@ -192,6 +200,7 @@ const ModifyEvent = (props: Props) => {
         {active === 0 && (
           <InformationEventCreate
             register={register}
+            errors={errors}
             setValue={setValue}
             watch={watch}
             control={control}
@@ -222,6 +231,7 @@ const ModifyEvent = (props: Props) => {
             setActive={(value) => {
               setActive(value)
             }}
+            ticketTypes={watch().ticketTypes}
           />
         )}
 

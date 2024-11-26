@@ -21,7 +21,8 @@ import bitpay from '@assets/images/payment/bitpay.svg'
 import { EEventType } from './enum.constant'
 
 export interface IOptionSelect {
-  value?: string | number
+  id?: string
+  value?: any
   label?: string
   icon?: string
   backgroundColor?: string
@@ -29,54 +30,74 @@ export interface IOptionSelect {
 
 export const EVENT_CATEGORIES: any = [
   {
-    label: 'Workshop',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505725/eventhub/category/hhganbll8tt2wofqdsn2.png',
-    backgroundColor: '#F27BBD'
+    id: '1',
+    name: 'Workshop',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505725/eventhub/category/hhganbll8tt2wofqdsn2.png',
+    color: '#F27BBD'
   },
   {
-    label: 'Exhibition',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
-    backgroundColor: '#A3FFD6'
+    id: '2',
+    name: 'Exhibition',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/dze7rcjxmhbiyuxp0nms.png',
+    color: '#A3FFD6'
   },
   {
-    label: 'Music',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
-    backgroundColor: '#F3D0D7'
+    id: '3',
+    name: 'Music',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505724/eventhub/category/ltf9kjwcm9flsr9kava1.png',
+    color: '#F3D0D7'
   },
   {
-    label: 'Sport',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',
-    backgroundColor: '#EE4266'
+    id: '4',
+    name: 'Sport',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505726/eventhub/category/zs0q5wmitcvihqjgm0ov.png',
+    color: '#EE4266'
   },
   {
-    label: 'Culture',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505727/eventhub/category/cvpt43b4aqxcjdgoezoc.png',
-    backgroundColor: '#D1BB9E'
+    id: '5',
+    name: 'Culture',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505727/eventhub/category/cvpt43b4aqxcjdgoezoc.png',
+    color: '#D1BB9E'
   },
   {
-    label: 'Party',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505729/eventhub/category/mqx4ehibcschz59jd81t.png',
-    backgroundColor: '#FFFAB7'
+    id: '6',
+    name: 'Party',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505729/eventhub/category/mqx4ehibcschz59jd81t.png',
+    color: '#FFFAB7'
   },
   {
-    label: 'Education',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505730/eventhub/category/fvbuvcl1yetyimeh6v40.png',
-    backgroundColor: '#BC7FCD'
+    id: '7',
+    name: 'Education',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505730/eventhub/category/fvbuvcl1yetyimeh6v40.png',
+    color: '#BC7FCD'
   },
   {
-    label: 'Fair',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
-    backgroundColor: '#AFD198'
+    id: '8',
+    name: 'Fair',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505731/eventhub/category/xngndezflobwdhyds2dl.png',
+    color: '#AFD198'
   },
   {
-    label: 'Festival',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505732/eventhub/category/fj0qbybujspr8crybhez.png',
-    backgroundColor: '#F7C566'
+    id: '9',
+    name: 'Festival',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505732/eventhub/category/fj0qbybujspr8crybhez.png',
+    color: '#F7C566'
   },
   {
-    label: 'Environment',
-    icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1713505734/eventhub/category/nubvqwxlqcu2suwgbas1.png',
-    backgroundColor: '#5DEBD7'
+    id: '10',
+    name: 'Environment',
+    iconImageUrl:
+      'https://res.cloudinary.com/dadvtny30/image/upload/v1713505734/eventhub/category/nubvqwxlqcu2suwgbas1.png',
+    color: '#5DEBD7'
   }
 ]
 

@@ -9,7 +9,7 @@ export interface ICreateTicketPayload {
 
 export const InitCreateTicketPayload = {
   name: '',
-  quantity: 100,
+  quantity: 0,
   price: 0
 } as ICreateTicketPayload
 
@@ -22,6 +22,7 @@ export interface ICreateEventPayload {
   startTime: any
   endTime: any
   location: any
+  pathLocation: string
   description: string
   reasons: string[]
   coverImage: any
@@ -38,10 +39,11 @@ export const InitCreateEventPayload = {
   startTime: null,
   endTime: null,
   location: '',
+  pathLocation: '',
   description: '',
   reasons: [],
   coverImage: '',
-  eventSubImages: ['', '', '', ''],
+  eventSubImages: [],
   eventPaymentType: EEventPaymentTicket.FREE,
   ticketTypes: [],
   isPrivate: false
