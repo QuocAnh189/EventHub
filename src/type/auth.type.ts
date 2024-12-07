@@ -1,6 +1,6 @@
 export enum EProvider {
-  GOOGLE = 'Google',
-  FACEBOOK = 'Facebook'
+  GOOGLE = 'google',
+  FACEBOOK = 'facebook'
 }
 
 export interface LoginPayload {
@@ -24,7 +24,7 @@ export interface OAuthLoginPayload {
 
 export interface SignUpPayload {
   email: string
-  fullName: string
+  userName: string
   phoneNumber: string
   password: string
   dob: string
@@ -32,21 +32,21 @@ export interface SignUpPayload {
 
 export const InitSignup = {
   email: '',
-  fullName: '',
+  userName: '',
   phoneNumber: '',
   password: ''
 } as SignUpPayload
 
 export interface SignUpPayloadOne {
   email: string
-  fullName: string
+  userName: string
   phoneNumber: string
   dob: string
 }
 
 export const InitSignUpOne = {
   email: '',
-  fullName: '',
+  userName: '',
   phoneNumber: '',
   dob: ''
 } as SignUpPayloadOne

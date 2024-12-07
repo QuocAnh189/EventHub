@@ -17,12 +17,12 @@ import googleIcon from '@assets/images/icons/google.png'
 import facebookIcon from '@assets/images/icons/facebook.png'
 
 //type
-import { LoginPayload, InitLogin, EProvider } from '@type/auth.type'
+import { LoginPayload, InitLogin } from '@type/auth.type'
 
 //redux
 import { RootState } from '@redux/store'
 import { useAppDispatch, useAppSelector } from '@hooks/index'
-import { useSignInMutation, useSignInExternalMutation } from '@redux/apis/auth.api'
+import { useSignInMutation } from '@redux/apis/auth.api'
 import { setUser } from '@redux/slices/user.slice'
 
 //motion
@@ -53,7 +53,6 @@ const FormSignIn = (props: Props) => {
 
   const [showPassWord, setShowPassWord] = useState<boolean>(false)
 
-  const [SignInExternal] = useSignInExternalMutation()
   const [signIn, { isLoading: loadingSignIn }] = useSignInMutation()
 
   useLayoutEffect(() => {
@@ -97,21 +96,6 @@ const FormSignIn = (props: Props) => {
         default:
           break
       }
-    }
-  }
-
-  const handleSignInExternal = async (provider: EProvider) => {
-    try {
-      const result = await SignInExternal({
-        provider,
-        returnUrl: 'http://localhost:3000/organization'
-      }).unwrap()
-
-      if (result) {
-        console.log(result)
-      }
-    } catch (e) {
-      console.log(e)
     }
   }
 
@@ -219,15 +203,12 @@ const FormSignIn = (props: Props) => {
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.8 }}
-          onClick={() => {
-            handleSignInExternal(EProvider.GOOGLE)
-          }}
         >
-          <form
-            method='POST'
-            action='https://eventhubsolutionbackendserverplan.azurewebsites.net/api/auth/external-login?provider=Google&returnUrl=http://localhost:3000/organization'
-          >
-            <button className='flex w-full flex-row items-center justify-around rounded-2xl border-[2px] border-textPurple bg-white py-[0.8rem] font-bold text-textGray hover:bg-purple hover:text-white'>
+          <form method='POST' action='http://localhost:8888/api/v1/auth/external-login?provider=google'>
+            <button
+              type='submit'
+              className='flex w-full flex-row items-center justify-around rounded-2xl border-[2px] border-textPurple bg-white py-[0.8rem] font-bold text-textGray hover:bg-purple hover:text-white'
+            >
               <img loading='lazy' src={googleIcon} alt='' className='block h-[20px] w-[20px]' />
               <span className='inline-block'>{t('login.signin_google')}</span>
               <span />
@@ -240,15 +221,10 @@ const FormSignIn = (props: Props) => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.8 }}
         >
-          <form
-            method='POST'
-            action='https://eventhubsolutionbackendserverplan.azurewebsites.net/api/auth/external-login?provider=Facebook&returnUrl=http://localhost:3000/organization'
-          >
+          <form method='POST' action='http://localhost:8888/api/v1/auth/external-login?provider=facebook'>
             <button
+              type='submit'
               className='flex w-full flex-row items-center justify-around rounded-2xl border-[2px] border-blue bg-white py-[0.8rem] font-bold text-textGray hover:bg-blue-light3 hover:text-white'
-              onClick={() => {
-                handleSignInExternal(EProvider.FACEBOOK)
-              }}
             >
               <img loading='lazy' src={facebookIcon} alt='' className='block h-[20px] w-[20px]' />
               <span className='inline-block'>{t('login.signin_facebook')}</span>

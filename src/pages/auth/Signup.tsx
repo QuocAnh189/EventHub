@@ -55,7 +55,6 @@ const SignUp = ({ t }: any) => {
   }, [])
 
   const handleChangeFormSessionOne = (e: ChangeEvent<HTMLInputElement> | any) => {
-    console.log(e.target.name, e.target.value)
     setFormDataSessionOne({
       ...formDataSessionOne,
       [e.target.name]: e.target.value
@@ -93,8 +92,8 @@ const SignUp = ({ t }: any) => {
     } catch (error: any) {
       const message = error.data.message
       switch (message) {
-        case 'Email already exists':
-          toast.error('Email already exists')
+        case 'email already exists':
+          toast.error('email already exists')
           break
         case 'Phone number already exists':
           toast.error('Phone already exists')

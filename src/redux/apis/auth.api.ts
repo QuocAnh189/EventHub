@@ -25,7 +25,10 @@ export const apiAuth = createApi({
         url: '/auth/validate-user',
         method: 'POST',
         body: data
-      })
+      }),
+      transformErrorResponse: (error) => {
+        return error.data
+      }
     }),
 
     signUp: builder.mutation<IAuth, SignUpPayload>({

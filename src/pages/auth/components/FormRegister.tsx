@@ -34,7 +34,7 @@ const formSchema = z.object({
     .min(1, { message: 'Email is not empty' })
     .max(50, { message: 'Email must not exceed 50 characters' })
     .email('Email invalid'),
-  fullName: z.string().min(1, 'Name is not empty').max(32, { message: 'Name must not exceed 32 characters' }),
+  userName: z.string().min(1, 'Name is not empty').max(32, { message: 'Name must not exceed 32 characters' }),
   phoneNumber: z
     .string()
     .min(1, 'Phone is not empty')
@@ -65,6 +65,7 @@ const FormRegister = (props: Props) => {
   })
 
   const onSubmit: SubmitHandler<SignUpPayloadOne> = async (data: SignUpPayloadOne) => {
+    console.log(data)
     try {
       const result = await ValidateUser(data).unwrap()
       if (result) {
@@ -73,13 +74,17 @@ const FormRegister = (props: Props) => {
     } catch (error: any) {
       const message = error.data.message
       switch (message) {
-        case 'Email already exists':
+        case 'email already exists':
           toast.error('Email already exists')
           break
-        case 'Phone number already exists':
-          toast.error('Phone already exists')
+        case 'username already exists':
+          toast.error('Username already exists')
+          break
+        case 'phoneNumber already exists':
+          toast.error('Phone number already exists')
           break
         default:
+          toast.error('Something went wrong')
           break
       }
     }
@@ -120,16 +125,16 @@ const FormRegister = (props: Props) => {
             className={classNames(
               'field-input text-header block min-h-[auto] w-full rounded-2xl border-[2px] px-3 py-6 font-semibold placeholder-gray-400 outline-none placeholder:italic focus:border-[2px]',
               {
-                'field-input--error': errors.fullName
+                'field-input--error': errors.userName
               }
             )}
-            {...register('fullName')}
+            {...register('userName')}
             type='text'
-            name='fullName'
+            name='userName'
             placeholder={t('session_one.fullname_placeholder')}
             onChange={setFormDataSessionOne}
           />
-          {errors.fullName && <p className='mt-1 text-red'>{errors.fullName.message}</p>}
+          {errors.userName && <p className='mt-1 text-red'>{errors.userName.message}</p>}
         </motion.div>
 
         <motion.div
