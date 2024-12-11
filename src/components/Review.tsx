@@ -106,9 +106,9 @@ const Review = (props: Props) => {
       <div className='p-5' style={{ backgroundColor: index % 2 === 0 ? bgColor : 'var(--widget)' }}>
         <div className='flex items-center justify-between'>
           <User
-            userName={review.fullName}
-            userAvatar={review.userAvatar}
-            email={review.email}
+            userName={review.user.fullName}
+            userAvatar={review.user.avatarUrl}
+            email={review.user.email}
             wrapperClass='gap-5 md:gap-[30px] md:w-[300px]'
           />
           {width >= 768 && (
@@ -163,14 +163,14 @@ const Review = (props: Props) => {
           >
             <i className='icon-circle-xmark-regular' />
           </button>
-          <EventModal coverImage={review.eventCoverImage} name={review.eventName} wrapperClass='gap-4 mb-5' />
+          <EventModal coverImage={review.event.coverImageUrl} name={review.event.name} wrapperClass='gap-4 mb-5' />
           <p className='flex gap-4 mb-2'>
             <span className='label-text'>Date: </span>
             <span className='text-sm font-medium'>{dayjs(review.createdAt).format('DD/MM/YYYY, hh:mm A')}</span>
           </p>
           <p className='flex gap-4 mb-2'>
             <span className='label-text'>UserName: </span>
-            <span className='text-sm font-medium'>{review.fullName}</span>
+            <span className='text-sm font-medium'>{review.user.userName}</span>
           </p>
           <div className='flex gap-4 mb-6'>
             <span className='label-text'>Rate:</span>

@@ -1,22 +1,29 @@
-import { EGender, EUserStatus } from '@constants/enum.constant'
+import { EGender } from '@constants/enum.constant'
 
 export interface IUser {
   id?: string
-  userName: string
+  avatarUrl: string
   email: string
+  userName: string
+  fullName: string
   phoneNumber: number
   dob: any
-  fullName: string
   gender: EGender
   bio: string
-  avatar: string
-  status: EUserStatus
-  numberOfFollowers: number
-  numberOfFolloweds: number
-  numberOfFavorites: number
-  numberOfCreatedEvents: number
-  followingIds: string[]
-  roles: string[]
-  createdAt: Date
-  updateAp: Date
+  totalEvent: number
+  totalFollower: number
+  totalFollowing: number
+  roles: IRole[]
+}
+
+export interface IUserFollower {
+  id?: string
+  avatarUrl: string
+  email: string
+  userName: string
+}
+
+interface IRole {
+  id: string
+  name: string
 }

@@ -2,19 +2,19 @@
 import { useNavigate } from 'react-router-dom'
 
 //interface
-import { IEvent } from '@interfaces/contents/event.interface'
+import { ICardEvent } from '@interfaces/contents/event.interface'
 
 //icon
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
-import { IoMdTime } from 'react-icons/io'
 import { BiPurchaseTagAlt } from 'react-icons/bi'
 
 //util
 import dayjs from 'dayjs'
+import RatingStars from '@ui/RatingStars'
 
 interface Props {
-  event: IEvent
+  event: ICardEvent
 }
 
 const EventCardExplore = (props: Props) => {
@@ -32,14 +32,14 @@ const EventCardExplore = (props: Props) => {
   return (
     <button
       onClick={handleViewEvent}
-      className='flex gap-2 h-[200px] items-center rounded-md shadow-lg hover:cursor-pointer'
+      className='card flex flex-row gap-2 h-[200px] items-center rounded-md shadow-lg hover:cursor-pointer'
     >
       <div className='w-1/2 h-full flex flex-1'>
         <img
           loading='lazy'
           src={
-            event.coverImage
-              ? event.coverImage
+            event.coverImageUrl
+              ? event.coverImageUrl
               : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
           }
           alt=''
@@ -56,24 +56,13 @@ const EventCardExplore = (props: Props) => {
           <IoLocationSharp size={20} color='var(--header)' />
           <p className='line-clamp-1 text-left text-header'>{event.location}</p>
         </div>
-        <div className='flex items-center gap-2'>
-          <IoMdTime size={20} color='var(--header)' />
-          <p className='text-header'>
-            {dayjs(event.startTime).format('hh:mm A').toString()} - {dayjs(event.endTime).format('hh:mm A').toString()}
-          </p>
-        </div>
 
         <div className='flex items-center gap-1'>
           <BiPurchaseTagAlt color='#3D56F0' size='24px' />
-          <p className='text-primary text-xl'>{event.priceRange.startRange}.000 VND</p>
+          <p className='text-primary text-xl'>100.000 VND</p>
         </div>
         <div className='flex items-center gap-1 label-text leading-none w-[30px] hover:cursor-pointer pb-2'>
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <i
-              key={`rate-${index}`}
-              className={`icon-star-solid text-${item <= event.averageRating ? 'yellow' : 'gray'}`}
-            />
-          ))}
+          <RatingStars value={event.averageRate} />
         </div>
       </div>
     </button>

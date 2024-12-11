@@ -21,9 +21,8 @@ import { LoginPayload, InitLogin } from '@type/auth.type'
 
 //redux
 import { RootState } from '@redux/store'
-import { useAppDispatch, useAppSelector } from '@hooks/index'
+import { useAppSelector } from '@hooks/index'
 import { useSignInMutation } from '@redux/apis/auth.api'
-import { setUser } from '@redux/slices/user.slice'
 
 //motion
 import { motion } from 'framer-motion'
@@ -47,7 +46,6 @@ interface Props {
 const FormSignIn = (props: Props) => {
   const { t, changeSession } = props
 
-  const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
 
@@ -75,17 +73,7 @@ const FormSignIn = (props: Props) => {
       const result = await signIn(data).unwrap()
       if (result) {
         localStorage.setItem('token', JSON.stringify(result))
-
-        const response = await fetch(`${import.meta.env.VITE_API_URL!}/auth/profile`, {
-          headers: { Authorization: `Bearer ${result.accessToken}` }
-        })
-
-        const user = await response.json()
-
-        if (user) {
-          dispatch(setUser(user.data))
-          navigate('/organization')
-        }
+        navigate('/organization')
       }
     } catch (error: any) {
       const message = error.data.message
@@ -94,6 +82,7 @@ const FormSignIn = (props: Props) => {
           toast.error('Your account or password is wrong')
           break
         default:
+          toast.error('Some thing went wrong')
           break
       }
     }

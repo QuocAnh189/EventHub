@@ -48,7 +48,7 @@ const TicketEventCreate = (props: Props) => {
 
   const handleNextStep = () => {
     let isContinue = true
-    if (eventTicketType === EEventPaymentTicket.PAID && tickets.length === 0) {
+    if (eventTicketType === EEventPaymentTicket.Paid && tickets.length === 0) {
       isContinue = false
       toast.error('Please add at least one ticket')
     }
@@ -81,48 +81,48 @@ const TicketEventCreate = (props: Props) => {
         <p className='h4 mdl:text-xl font-bold tracking-wider text-header'>{t('ticket.title')}</p>
         <div className='flex flex-col mdl:flex-row mdl:items-center gap-8'>
           <div
-            onClick={() => setValue('eventPaymentType', EEventPaymentTicket.PAID)}
+            onClick={() => setValue('eventPaymentType', EEventPaymentTicket.Paid)}
             className={`border-[2px] border-solid ${
-              eventTicketType === EEventPaymentTicket.PAID ? 'border-primary' : 'border-textGray'
+              eventTicketType === EEventPaymentTicket.Paid ? 'border-primary' : 'border-textGray'
             } rounded-lg py-4 px-12 flex flex-col items-center justify-center hover:cursor-pointer`}
           >
             <img loading='lazy' src={feeImg} alt='' className='w-[42px] text-header' />
             <p
               className={`h5 my-2 font-bold  text-${
-                eventTicketType === EEventPaymentTicket.PAID ? 'primary' : 'header'
+                eventTicketType === EEventPaymentTicket.Paid ? 'primary' : 'header'
               }`}
             >
               {t('ticket.option_one.label')}
             </p>
-            <p className={`h6 ${eventTicketType === EEventPaymentTicket.PAID ? 'text-primary' : 'text-header'}`}>
+            <p className={`h6 ${eventTicketType === EEventPaymentTicket.Paid ? 'text-primary' : 'text-header'}`}>
               {t('ticket.option_one.description')}
             </p>
           </div>
           <div
             onClick={() => {
-              setValue('eventPaymentType', EEventPaymentTicket.FREE)
+              setValue('eventPaymentType', EEventPaymentTicket.Free)
               // setValue('ticketTypes', [] as any)
             }}
             className={`border-[2px] border-solid ${
-              eventTicketType === EEventPaymentTicket.FREE ? 'border-primary' : 'border-textGray'
+              eventTicketType === EEventPaymentTicket.Free ? 'border-primary' : 'border-textGray'
             } rounded-lg py-4 px-12 flex flex-col items-center justify-center hover:cursor-pointer`}
           >
             <img loading='lazy' src={noFeeImg} alt='' className='w-[42px] text-header' />
             <p
               className={`h5 my-2 font-bold text-${
-                eventTicketType === EEventPaymentTicket.FREE ? 'primary' : 'header'
+                eventTicketType === EEventPaymentTicket.Free ? 'primary' : 'header'
               }`}
             >
               {t('ticket.option_two.label')}
             </p>
-            <p className={`h6 ${eventTicketType === EEventPaymentTicket.FREE ? 'text-primary' : 'text-header'}`}>
+            <p className={`h6 ${eventTicketType === EEventPaymentTicket.Free ? 'text-primary' : 'text-header'}`}>
               {t('ticket.option_two.description')}
             </p>
           </div>
         </div>
       </div>
 
-      {eventTicketType === EEventPaymentTicket.PAID && (
+      {eventTicketType === EEventPaymentTicket.Paid && (
         <div className='space-y-4'>
           <div className='flex items-center gap-2'>
             <p className='mdl:text-xl font-bold tracking-wider text-header h5'>{t('ticket.ticket_title')}</p>

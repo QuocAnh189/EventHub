@@ -20,13 +20,14 @@ import userDefault from '@assets/images/common/user_default.png'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import { IRole } from '@interfaces/systems'
 
 interface Props {
   t: any
   avatar: string
   fullName: string
   setValue: UseFormSetValue<IUser>
-  roles: string[]
+  roles: IRole[]
 }
 
 const UserProfileCard = (props: Props) => {
@@ -40,7 +41,7 @@ const UserProfileCard = (props: Props) => {
   const handleChangeAvatar = (e: any) => {
     const image = e.target.files[0]
     setAvatarUser(URL.createObjectURL(image))
-    setValue('avatar', image)
+    setValue('avatarUrl', image)
   }
 
   const handleSignOut = async () => {
@@ -81,7 +82,9 @@ const UserProfileCard = (props: Props) => {
         />
       </div>
       <h4>{fullName ? fullName : 'Tran Phuoc Anh Quoc'}</h4>
-      <span className='badge badge--square bg-red min-w-[96px] mt-2.5'>{roles?.join(',') || 'Admin'}</span>
+      <span className='badge badge--square bg-red min-w-[96px] mt-2.5 text-white'>
+        {roles.map((role: IRole) => role.name).join(', ') || 'Admin'}
+      </span>
 
       <button disabled={loadingLogout} onClick={handleSignOut} className='btn btn--secondary w-full md:max-w-[280px]'>
         {t('profile pannel.logout')}

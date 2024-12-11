@@ -1,4 +1,4 @@
-import { EEventPrivacy, EEventStatus, EEventStyle, EEventPaymentTicket, EPageOrder } from '@constants/enum.constant'
+import { EEventVisibility, EEventStatus, EEventStyle, EEventPaymentTicket, EPageOrder } from '@constants/enum.constant'
 import { IPriceRange } from 'interfaces/systems/price_range.interface'
 
 export interface ICreateTicketPayload {
@@ -44,7 +44,7 @@ export const InitCreateEventPayload = {
   reasons: [],
   coverImage: '',
   eventSubImages: [],
-  eventPaymentType: EEventPaymentTicket.FREE,
+  eventPaymentType: EEventPaymentTicket.Free,
   ticketTypes: [],
   isPrivate: false
 } as ICreateEventPayload
@@ -68,46 +68,54 @@ export interface IFilterEvent {
 }
 
 export const initFilterEvent = {
-  status: EEventStatus.ALL,
+  status: EEventStatus.All,
   category: null,
   eventTicketType: null
 } as IFilterEvent
 
 export interface IParamsEvent {
-  type?: EEventStatus
+  status?: EEventStatus
   location?: string | null
   categoryIds: string[]
-  eventPrivacy?: EEventPrivacy
+  eventPrivacy?: EEventVisibility
   page?: number
-  size?: number
+  pageSize?: number
   takeAll?: boolean
   order?: EPageOrder
   priceRange?: IPriceRange
   search?: string
   rates?: number[]
+  orderDesc?: boolean
+  minRate?: number
 }
 
 export const initParamsMyEvent = {
-  type: EEventStatus.ALL,
   location: '',
-  eventPrivacy: EEventPrivacy.ALL,
+  eventPrivacy: EEventVisibility.All,
   page: 1,
-  size: 4,
+  pageSize: 4,
   takeAll: false,
   search: '',
-  order: 'ASC'
+  status: EEventStatus.All,
+  order: 'ASC',
+  orderDesc: false,
+  minRate: 0
 } as IParamsEvent
 
 export const initParamsEvent = {
   page: 1,
-  type: EEventStatus.ALL,
-  categoryIds: [],
-  size: 12,
-  takeAll: false,
+  pageSize: 12,
+  orderDesc: false,
   search: '',
-  order: 'ASC',
-  priceRange: { startRange: 20, endRange: 1000 },
-  rates: []
+  categoryIds: [],
+  status: EEventStatus.All,
+  minRate: 0
+  // type: EEventStatus.All,
+  // takeAll: false,
+  // search: '',
+  // order: 'ASC',
+  // priceRange: { startRange: 20, endRange: 1000 },
+  // rates: []
 } as IParamsEvent
 
 export interface IMetadataEventResponse {

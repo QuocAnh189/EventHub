@@ -125,14 +125,14 @@ export const getStatusEventColor = (status: any) => {
     default:
     case 'approved':
     case 'completed':
-    case EEventStatus.OPENING:
+    case EEventStatus.Opening:
       return 'yellow'
     case 'waiting':
     case 'confirmed':
-    case EEventStatus.UPCOMING:
+    case EEventStatus.Upcoming:
       return 'green'
     case 'cancelled':
-    case EEventStatus.CLOSED:
+    case EEventStatus.Closed:
       return 'red'
     case 'rejected':
     case 'refunded':

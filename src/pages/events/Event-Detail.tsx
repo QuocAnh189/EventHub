@@ -1,6 +1,6 @@
 //hooks
-import { useEffect, useState } from 'react'
-import { useParams, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 //components
 import Box from '@mui/material/Box'
@@ -31,23 +31,19 @@ import { LuClipboardType } from 'react-icons/lu'
 import dayjs from 'dayjs'
 
 const EventDetail = () => {
-  const location = useLocation()
-  const { event } = location.state || {}
-  console.log(event)
-
   const params = useParams()
 
   const user = useAppSelector((state) => state.persistedReducer.user.user)
-  const { data: _event, isFetching, refetch } = useGetEventByIdQuery(params.id!)
-  console.log(_event)
-  useEffect(() => {
-    refetch()
-  }, [])
+  const { data: event, isFetching } = useGetEventByIdQuery(params.id!)
+
+  // useEffect(() => {
+  //   refetch()
+  // }, [])
 
   const [likeEvent] = useFavouriteEventMutation()
   const [unlikeEvent] = useUnfavouriteEventMutation()
 
-  const [favourite, setFavourite] = useState(event?.isFavourite)
+  const [favourite, setFavourite] = useState(false)
 
   const [value, setValue] = useState<string>('1')
   const [openDialog, setOpenDialog] = useState<boolean>(false)
@@ -56,9 +52,9 @@ const EventDetail = () => {
     setValue(newValue)
   }
 
-  useEffect(() => {
-    setFavourite(event?.isFavourite)
-  }, [event?.isFavourite])
+  // useEffect(() => {
+  //   setFavourite(event?.isFavourite)
+  // }, [event?.isFavourite])
 
   const handleLikeEvent = async () => {
     setFavourite(!favourite)
@@ -85,8 +81,8 @@ const EventDetail = () => {
         <div className='h-[500px]'>
           <img
             src={
-              event?.coverImage
-                ? event.coverImage
+              event?.coverImageUrl
+                ? event.coverImageUrl
                 : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409118/eventhub/event/infflklkudlatzvf8gsz.jpg'
             }
             alt=''
@@ -122,7 +118,7 @@ const EventDetail = () => {
               </div>
               <div className='flex items-center gap-1'>
                 <LuClipboardType color='gray' size='24px' />
-                <p className='text-header'>{event.eventCycleType.toLowerCase()}</p>
+                <p className='text-header'>{event?.eventCycleType}</p>
               </div>
             </div>
 
@@ -141,7 +137,7 @@ const EventDetail = () => {
             </div>
           </div>
 
-          <Payment promotion={event?.promotion!} ticketTypes={event?.ticketTypes!} />
+          <Payment ticketTypes={null} />
         </div>
       </div>
 
@@ -157,12 +153,12 @@ const EventDetail = () => {
             <Information event={event!} />
           </TabPanel>
           <TabPanel value='2' sx={{ width: '100%' }}>
-            <Comments eventId={event?.id!} ownerId={event?.creatorId!} />
+            <Comments eventId={event?.id!} ownerId={event?.creator.id!} />
           </TabPanel>
         </TabContext>
       </div>
 
-      <EventsRelate categoryIds={event?.categoryIds} />
+      <EventsRelate categoryId={event?.categories[0].id!} />
 
       {openDialog && (
         <ConfirmDialog

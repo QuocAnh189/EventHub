@@ -54,9 +54,9 @@
     "Academic": "Academic"
   },
   "filter": {
-    "ALL": "All",
-    "PUBLIC": "Public",
-    "PRIVATE": "Private"
+    "All": "All",
+    "Public": "Public",
+    "Private": "Private"
   },
   "footer": {
     "left": {
@@ -136,7 +136,9 @@
     "reviews": "Reviews",
     "settings": {
       "parent": "Settings",
-      "profile": "Profile"
+      "profile": "Profile",
+      "follower": "Follower",
+      "following": "Following"
     },
     "permissions": "Permission"
   }

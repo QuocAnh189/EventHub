@@ -2,11 +2,19 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //interface
 import { IReview } from '@interfaces/contents/review.interface'
+import { IListData } from '@interfaces/common.interface'
 
 export const apiReview = createApi({
   reducerPath: 'apiReview',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API_URL
+    baseUrl: import.meta.env.VITE_API_URL,
+    prepareHeaders: (headers) => {
+      const token = JSON.parse(localStorage.getItem('token')!)?.accessToken
+      if (token) {
+        headers.set('authorization', `Bearer ${token}`)
+      }
+      return headers
+    }
   }),
   keepUnusedDataFor: 20,
   tagTypes: ['Review'],
@@ -19,11 +27,15 @@ export const apiReview = createApi({
       providesTags: ['Review']
     }),
 
-    getReviewsByEventId: builder.query<IReview[], string>({
-      query: (eventId) => ({
+    getReviewsByEventId: builder.query<IListData<IReview>, { eventId: string; params: any }>({
+      query: ({ eventId, params }) => ({
         url: `/reviews/get-by-event/${eventId}`,
-        method: 'GET'
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Review']
     }),
 
@@ -32,6 +44,18 @@ export const apiReview = createApi({
         url: `/reviews/get-by-user/${userId}`,
         method: 'GET'
       }),
+      providesTags: ['Review']
+    }),
+
+    getReviewsByCreatedEvents: builder.query<IListData<IReview>, any>({
+      query: (params) => ({
+        url: '/reviews/get-by-created-events',
+        method: 'GET',
+        params
+      }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Review']
     }),
 
@@ -58,7 +82,8 @@ export const apiReview = createApi({
 export const {
   useGetReviewsQuery,
   useGetReviewsByEventIdQuery,
-  useLazyGetReviewsByUserIdQuery,
+  useGetReviewsByUserIdQuery,
+  useGetReviewsByCreatedEventsQuery,
   useUpdateReviewMutation,
   useDeleteReviewMutation
 } = apiReview

@@ -54,12 +54,7 @@ const Sidebar = ({ t }: any) => {
       variant={isPermanent ? 'permanent' : 'temporary'}
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
-      className='overflow-y-hidden'
-      sx={{
-        '& .MuiDrawer-paper': {
-          overflowY: 'hidden'
-        }
-      }}
+      className='overflow-y-scroll'
     >
       <button
         onClick={() => {

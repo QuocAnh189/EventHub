@@ -1,3 +1,4 @@
+import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //type
@@ -65,36 +66,55 @@ export const apiUser = createApi({
       invalidatesTags: ['User']
     }),
 
-    getFollowerByUserId: builder.query<any, string>({
-      query: (userId) => ({
+    getFollowerByUserId: builder.query<IListData<any>, { userId: string; params: any }>({
+      query: ({ userId, params }) => ({
         url: `/users/${userId}/followers`,
-        method: 'GET'
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['User']
     }),
 
-    getFollowingByUserId: builder.query<any, string>({
-      query: (userId) => ({
-        url: `/users/${userId}/followers`,
-        method: 'GET'
+    getFollowingByUserId: builder.query<IListData<any>, { userId: string; params: any }>({
+      query: ({ userId, params }) => ({
+        url: `/users/${userId}/followings`,
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['User']
     }),
 
     followUser: builder.mutation<any, string>({
-      query: (followedUserId) => ({
-        url: `/users/follow/${followedUserId}`,
+      query: (followeeId) => ({
+        url: `/users/follow/${followeeId}`,
         method: 'PATCH'
       }),
       invalidatesTags: ['User']
     }),
 
     unFollowUser: builder.mutation<any, string>({
-      query: (followedUserId) => ({
-        url: `/users/unfollow/${followedUserId}`,
+      query: (followeeId) => ({
+        url: `/users/unfollow/${followeeId}`,
         method: 'PATCH'
       }),
       invalidatesTags: ['User']
+    }),
+
+    checkFollower: builder.query<any, string>({
+      query: (followeeId) => ({
+        url: `/users/check-follower/${followeeId}`,
+        method: 'GET'
+      }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
+      providesTags: ['User']
     })
   })
 })
@@ -108,5 +128,6 @@ export const {
   useGetFollowerByUserIdQuery,
   useGetFollowingByUserIdQuery,
   useFollowUserMutation,
-  useUnFollowUserMutation
+  useUnFollowUserMutation,
+  useCheckFollowerQuery
 } = apiUser

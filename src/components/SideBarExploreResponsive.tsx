@@ -1,26 +1,18 @@
-//hooks
-import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
-
 //components
 import Select from '@ui/Select'
 
 //constants
 import { EVENT_CATEGORIES, EVENT_RATE_OPTIONS, EVENT_STATUS_OPTIONS } from '@constants/options.constant'
 
-//redux
-import { IParamsEvent } from '@type/event.type'
-
 //i18
 import { withTranslation } from 'react-i18next'
 
 interface Props {
   t: any
-  watch: UseFormWatch<IParamsEvent>
-  setValue: UseFormSetValue<IParamsEvent>
 }
 
 const SidebarExploreResponsive = (props: Props) => {
-  const { t, setValue } = props
+  const { t } = props
 
   return (
     <div className='w-full flex items-center gap-4 pb-4 px-4 mdl:hidden'>
@@ -30,7 +22,8 @@ const SidebarExploreResponsive = (props: Props) => {
           placeholder={t('asc')}
           options={EVENT_RATE_OPTIONS || []}
           onChange={(value: any) => {
-            setValue('order', value.value)
+            // setValue('order', value.value)
+            console.log(value)
           }}
         />
       </div>
@@ -41,7 +34,7 @@ const SidebarExploreResponsive = (props: Props) => {
           placeholder={t('asc')}
           options={EVENT_STATUS_OPTIONS || []}
           onChange={(value: any) => {
-            setValue('order', value.value)
+            console.log(value)
           }}
         />
       </div>
@@ -52,7 +45,7 @@ const SidebarExploreResponsive = (props: Props) => {
           placeholder={t('asc')}
           options={EVENT_CATEGORIES || []}
           onChange={(value: any) => {
-            setValue('order', value.value)
+            console.log(value)
           }}
         />
       </div>

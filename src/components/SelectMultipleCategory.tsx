@@ -49,15 +49,18 @@ const SelectMultipleCategory = (props: Props) => {
 
     return (
       <components.Control className={`${variant === 'basic' ? 'field-input gap-2' : ''}`} {...props}>
-        <div className='flex items-center gap-4'>
-          {selectedCategories.map((category: any) => (
-            <div className='relative flex items-center justify-center gap-2 bg-primary-400 text-white p-1 rounded-md'>
+        <div className='flex h-full w-full items-center gap-4'>
+          {selectedCategories.map((category: any, index: number) => (
+            <div
+              key={index}
+              className='relative flex items-center justify-center gap-2 bg-primary-400 p-1 text-white rounded-md'
+            >
               <button
                 type='button'
                 className='absolute top-1 right-[2px] icon text-[18px] transition hover:text-red'
                 onClick={() => {
-                  console.log(category.id)
                   removeCategory(category.id)
+                  console.log('remove category')
                 }}
                 aria-label='Close'
               >

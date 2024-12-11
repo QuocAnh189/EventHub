@@ -1,7 +1,7 @@
 //hook
 import { useState } from 'react'
 
-export const usePagination = (totalCount: number, itemsPerPage: number = 10) => {
+export const usePagination = (totalCount: number = 0, itemsPerPage: number = 10) => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const maxPage: number = Math.ceil(totalCount / itemsPerPage)
 

@@ -8,6 +8,7 @@ import { apiAuth } from './apis/auth.api'
 import { apiCategory } from './apis/category.api'
 import { apiCommand } from './apis/command.api'
 import { apiEvent } from './apis/event.api'
+import { apiReview } from './apis/review.api'
 import { apiMessage } from './apis/message.api'
 import { apiPayment } from './apis/payment.api'
 import { apiConversation } from './apis/conversation.api'
@@ -50,6 +51,7 @@ const store = configureStore({
     [apiCategory.reducerPath]: apiCategory.reducer,
     [apiCommand.reducerPath]: apiCommand.reducer,
     [apiEvent.reducerPath]: apiEvent.reducer,
+    [apiReview.reducerPath]: apiReview.reducer,
     [apiMessage.reducerPath]: apiMessage.reducer,
     [apiPayment.reducerPath]: apiPayment.reducer,
     [apiConversation.reducerPath]: apiConversation.reducer,
@@ -66,6 +68,7 @@ const store = configureStore({
       apiCategory.middleware,
       apiCommand.middleware,
       apiEvent.middleware,
+      apiReview.middleware,
       apiMessage.middleware,
       apiPayment.middleware,
       apiConversation.middleware,

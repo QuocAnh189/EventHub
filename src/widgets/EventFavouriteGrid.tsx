@@ -1,24 +1,23 @@
 //hooks
+import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
-import { useState, useEffect } from 'react'
-import { useWindowSize } from 'react-use'
+import { useDebounce } from '@hooks/useDebounce'
 
 //components
 import EventFavouriteItem from '@components/events/EventFavouriteItem'
 import Pagination from '@ui/Pagination'
-import Search from '@ui/Search'
-
-//constants
-import { SELLER_SORT_OPTIONS } from '@constants/options.constant'
 
 //data placeholder
 import { IPagination } from '@interfaces/common.interface'
 
 //interfaces
-import { IEvent } from '@interfaces/contents'
+import { IEventFavorite } from '@interfaces/contents'
 
-//data
-import events from '@db/event'
+// //data
+// import events from '@db/event'
+
+//redux
+import { useGetFavouriteEventQuery } from '@redux/apis/event.api'
 
 interface Props {
   search_label: string
@@ -27,30 +26,43 @@ interface Props {
 const EventFavouriteGrid = (props: Props) => {
   const { search_label } = props
 
-  const { width } = useWindowSize()
-  const [sort] = useState(SELLER_SORT_OPTIONS[0])
-  // const sortedSellers: any[] = sortSellers(sellers, sort.value)
-  const pagination: IPagination = usePagination(events.length, width >= 1280 && width < 1536 ? 20 : 18)
-  // const data = pagination.currentItems()
+  const [params, setParams] = useState({ page: 1, pageSize: 12, search: '' })
+  const [search, setSearch] = useState('')
+  const debouncedSearchTerm = useDebounce(search, 500)
+
+  const { data } = useGetFavouriteEventQuery(params)
+
+  const pagination: IPagination = usePagination(data?.metadata.totalCount, data?.metadata.pageSize)
 
   useEffect(() => {
-    pagination.setCurrentPage(1)
-  }, [sort])
+    setParams({ ...params, page: pagination.currentPage })
+  }, [pagination.currentPage])
+
+  useEffect(() => {
+    setParams({ ...params, search: debouncedSearchTerm })
+  }, [debouncedSearchTerm])
 
   return (
     <div className='flex flex-1 flex-col'>
       <div className='flex justify-end'>
-        <Search wrapperClass='lg:w-[326px]' placeholder={search_label} />
+        <input
+          className='field-input w-[300px]'
+          type='search'
+          placeholder={search_label}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
       <div
         className='flex-1 grid content-start gap-5 mt-4 mb-8 sm:grid-cols-2 md:grid-cols-3 md:gap-[26px]
                  md:mt-[27px] xl:grid-cols-5 2xl:grid-cols-6'
       >
-        {events.map((event: IEvent, index: number) => (
-          <EventFavouriteItem key={`event-${index}-${sort.value}`} event={event} index={index} />
+        {data?.items.map((event: IEventFavorite, index: number) => (
+          <EventFavouriteItem key={`event-${index}`} event={event} index={index} />
         ))}
       </div>
-      <Pagination pagination={pagination} />
+
+      {pagination && pagination.maxPage > 1 && <Pagination pagination={pagination} />}
     </div>
   )
 }

@@ -90,7 +90,7 @@ const ReviewEventCreate = (props: Props) => {
                 <div className='flex items-center gap-1 text-[12px] mdl:text-sm text-right'>
                   <p className='h6 text-header'>
                     {t('review.ticket_type')}:{' '}
-                    {watch().eventPaymentType === 'FREE' ? t('review.free') : t('review.fee')}
+                    {watch().eventPaymentType === 'Free' ? t('review.free') : t('review.fee')}
                   </p>
                 </div>
                 {watch().ticketTypes.map((ticket, index: number) => (

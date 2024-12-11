@@ -33,7 +33,7 @@ import { useCreateEventMutation, useUpdateEventMutation } from '@redux/apis/even
 import { useAppSelector } from '@hooks/useRedux'
 
 //util
-import { URLtoFile } from '@utils/url_to_file'
+// import { URLtoFile } from '@utils/url_to_file'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -65,31 +65,31 @@ const ModifyEvent = (props: Props) => {
     setValue,
     reset,
     formState: { errors }
-  } = useForm<ICreateEventPayload>({
+  } = useForm<any>({
     resolver: zodResolver(formEventSchema),
     defaultValues: event ? { ...event, creatorId: user?.id } : { ...InitCreateEventPayload, creatorId: user?.id },
     mode: 'onChange'
   })
 
-  useEffect(() => {
-    if (event) {
-      const ConvertToFile = async () => {
-        try {
-          const fileCoverImage = event.coverImage ? await URLtoFile(event?.coverImage) : ''
-          const fileSubImageOne = event?.subImages[0] ? await URLtoFile(event?.subImages[0]) : ''
-          const fileSubImageTwo = event?.subImages[1] ? await URLtoFile(event?.subImages[1]) : ''
-          const fileSubImageThree = event?.subImages[2] ? await URLtoFile(event?.subImages[2]) : ''
-          const fileSubImageFour = event?.subImages[3] ? await URLtoFile(event?.subImages[3]) : ''
+  // useEffect(() => {
+  //   if (event) {
+  //     const ConvertToFile = async () => {
+  //       try {
+  //         const fileCoverImage = event.coverImage ? await URLtoFile(event?.coverImage) : ''
+  //         const fileSubImageOne = event?.subImages[0] ? await URLtoFile(event?.subImages[0]) : ''
+  //         const fileSubImageTwo = event?.subImages[1] ? await URLtoFile(event?.subImages[1]) : ''
+  //         const fileSubImageThree = event?.subImages[2] ? await URLtoFile(event?.subImages[2]) : ''
+  //         const fileSubImageFour = event?.subImages[3] ? await URLtoFile(event?.subImages[3]) : ''
 
-          setValue('coverImage', fileCoverImage)
-          setValue('eventSubImages', [fileSubImageOne, fileSubImageTwo, fileSubImageThree, fileSubImageFour])
-        } catch (e) {
-          console.log(e)
-        }
-      }
-      ConvertToFile()
-    }
-  }, [event])
+  //         setValue('coverImage', fileCoverImage)
+  //         setValue('eventSubImages', [fileSubImageOne, fileSubImageTwo, fileSubImageThree, fileSubImageFour])
+  //       } catch (e) {
+  //         console.log(e)
+  //       }
+  //     }
+  //     ConvertToFile()
+  //   }
+  // }, [event])
 
   useEffect(() => {
     const messages = Object.values(errors)

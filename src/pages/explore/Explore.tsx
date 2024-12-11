@@ -1,14 +1,11 @@
 //hooks
 import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
-import { useForm } from 'react-hook-form'
-import { useLocation } from 'react-router-dom'
+import { useDebounce } from '@hooks/useDebounce'
 
 //components
 import PageHeader from '@layouts/components/PageHeader'
 import Loader from '@components/Loader'
-// import NotData from '@components/NotData'
-import Search from '@ui/Search'
 import Select from '@ui/Select'
 import Pagination from '@ui/Pagination'
 import SidebarExplore from '@components/SidebarExplore'
@@ -19,64 +16,37 @@ import SideBarExploreResponsive from '@components/SideBarExploreResponsive'
 import { useGetEventsQuery } from '@redux/apis/event.api'
 
 //interfaces vs type
-import { IMetadataEventResponse, initParamsEvent } from '@type/event.type'
-import { IEvent } from '@interfaces/contents/event.interface'
+import { initParamsEvent, IParamsEvent } from '@type/event.type'
+import { ICardEvent } from '@interfaces/contents/event.interface'
 
 //i18
 import { withTranslation } from 'react-i18next'
 
-//data
-import events_data from '@db/event'
+// //data
+// import events_data from '@db/event'
 
 const Explore = ({ t }: any) => {
-  const location = useLocation()
-  const { query } = location.state || {}
-  console.log(query)
+  const [params, setParams] = useState<IParamsEvent>(initParamsEvent)
+  const [search, setSearch] = useState('')
+  const debouncedSearchTerm = useDebounce(search, 500)
 
-  const { watch, setValue } = useForm({
-    defaultValues: initParamsEvent
-  })
+  const { data, isFetching } = useGetEventsQuery(params)
 
-  const { data, isFetching, refetch } = useGetEventsQuery(watch())
+  const pagination = usePagination(data?.metadata?.totalCount, data?.metadata?.pageSize)
 
   useEffect(() => {
-    setValue('page', 1)
-  }, [
-    watch().type,
-    watch().search,
-    watch().categoryIds,
-    watch().order,
-    watch().priceRange?.startRange,
-    watch().rates?.length
-  ])
-
-  useEffect(() => {
-    refetch()
-  }, [watch().page])
-
-  const [meta, setMeta] = useState<IMetadataEventResponse>()
-  const [events, setEvents] = useState<IEvent[]>([])
-
-  console.log(events)
-
-  useEffect(() => {
-    if (data) {
-      setMeta(data.metadata)
-      setEvents(data?.items)
-    }
-  }, [data])
-
-  const pagination = usePagination(meta?.totalCount!, initParamsEvent.size)
-
-  useEffect(() => {
-    setValue('page', pagination.currentPage)
+    setParams((prev) => ({ ...prev, page: pagination.currentPage }))
   }, [pagination.currentPage])
+
+  useEffect(() => {
+    setParams({ ...params, search: debouncedSearchTerm })
+  }, [debouncedSearchTerm])
 
   return (
     <div className='w-full'>
       <PageHeader title={t('header.title')} />
       <form className='flex gap-8 py-8'>
-        <SidebarExplore watch={watch} setValue={setValue} />
+        <SidebarExplore params={params} setParams={setParams} />
         <div className='relative flex flex-1 flex-col items-center mb-10'>
           <div className='w-full flex items-center justify-between pb-4 px-4 mdl:px-0'>
             <div className='flex items-center gap-2'>
@@ -88,21 +58,21 @@ const Explore = ({ t }: any) => {
                   { value: 'DESC', label: t('desc') }
                 ]}
                 onChange={(value: any) => {
-                  setValue('order', value.value)
+                  setParams((prev) => ({ ...prev, orderDesc: value.value === 'ASC' ? true : false }))
                 }}
               />
             </div>
 
-            <Search
-              wrapperClass='lg:w-[326px]'
-              placeholder={t('search')}
-              onChange={(query: string) => {
-                setValue('search', query)
-              }}
+            <input
+              className='field-input w-[300px] md:w-[400px]'
+              type='search'
+              placeholder='Search...'
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
 
-          <SideBarExploreResponsive watch={watch} setValue={setValue} />
+          <SideBarExploreResponsive />
 
           {isFetching && (
             <div className='relative w-full h-[300px] flex items-center justify-center'>
@@ -112,28 +82,19 @@ const Explore = ({ t }: any) => {
 
           {!isFetching && (
             <div className='w-full grid xl:grid-cols-2 gap-8 grid-rows-5'>
-              {events_data.map((event: IEvent, index: number) => (
+              {data?.items.map((event: ICardEvent, index: number) => (
                 <EventCardExplore key={`event-${index}`} event={event} />
               ))}
             </div>
           )}
-
-          {/* {events.length !== 0 && !isFetching ? (
-            <div className='w-full grid grid-cols-2 gap-8 grid-rows-5'>
-              {Array(9)
-                .fill(1)
-                .map((_, index: number) => (
-                  <EventCardExplore key={`event-${index}`} event={event} />
-                ))}
+          {data?.items.length === 0 && !isFetching && (
+            <div className='w-full flex items-center justify-center'>
+              <p>No events here</p>
             </div>
-          ) : (
-            <div className='relative w-full h-[300px] flex items-center justify-center mt-20'>
-              <NotData />
-            </div>
-          )} */}
+          )}
 
-          <div className='absolute w-full -bottom-20 left-0 right-0 flex items-center justify-center'>
-            {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
+          <div className='absolute w-full -bottom-10 left-0 right-0 flex items-center justify-center'>
+            {pagination && pagination.maxPage > 1 && <Pagination pagination={pagination} />}
           </div>
         </div>
       </form>

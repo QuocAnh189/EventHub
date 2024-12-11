@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 //components
 import { toast } from 'react-toastify'
 import FormToChat from './FormToChat'
+import { CircularProgress } from '@mui/material'
 
 //icons
 import { FaRegCalendarAlt } from 'react-icons/fa'
@@ -12,9 +13,10 @@ import { IoLocationOutline } from 'react-icons/io5'
 import { IoMdTime } from 'react-icons/io'
 import { FaUsers } from 'react-icons/fa'
 import { IoMdAdd } from 'react-icons/io'
+import { RiSubtractLine } from 'react-icons/ri'
 
 //interfaces
-import { IEvent } from 'interfaces/contents/event.interface'
+import { IEvent, IReason, ISubImage } from 'interfaces/contents/event.interface'
 
 //util
 import dayjs from 'dayjs'
@@ -23,9 +25,8 @@ import dayjs from 'dayjs'
 import userDefault from '@assets/images/common/user_default.png'
 
 //redux
-import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
-import { useFollowUserMutation, useUnFollowUserMutation } from '@redux/apis/user.api'
-import { setUser } from '@redux/slices/user.slice'
+import { useAppSelector } from '@hooks/useRedux'
+import { useFollowUserMutation, useUnFollowUserMutation, useCheckFollowerQuery } from '@redux/apis/user.api'
 
 interface Props {
   event: IEvent
@@ -36,20 +37,20 @@ const Information = (props: Props) => {
 
   const navigate = useNavigate()
 
-  const dispatch = useAppDispatch()
   const user = useAppSelector((state) => state.persistedReducer.user.user)
 
+  const { data: isFollow } = useCheckFollowerQuery(event?.creator.id!)
+
   const totalQuantity = useMemo(() => {
-    const calculation = event?.ticketTypes?.reduce((total: any, currentValue: any) => {
-      return total + currentValue.quantity
-    }, 0)
-    return calculation
+    // const calculation = event?.ticketTypes?.reduce((total: any, currentValue: any) => {
+    //   return total + currentValue.quantity
+    // }, 0)
+    // return calculation
+    return 100
   }, [])
 
-  const isFollow = user?.followingIds?.includes(event?.creatorId)
-
-  const [followUser] = useFollowUserMutation()
-  const [unfollowUser] = useUnFollowUserMutation()
+  const [FollowUser, { isLoading: loadingFollower }] = useFollowUserMutation()
+  const [UnfollowUser, { isLoading: loadingUnFollower }] = useUnFollowUserMutation()
 
   const handleFollowUser = async () => {
     if (!user) {
@@ -58,14 +59,14 @@ const Information = (props: Props) => {
     }
     try {
       const result = isFollow
-        ? await unfollowUser(event?.creatorId).unwrap()
-        : await followUser(event?.creatorId).unwrap()
+        ? await UnfollowUser(event?.creator.id).unwrap()
+        : await FollowUser(event?.creator.id).unwrap()
 
       if (result) {
-        toast.success(isFollow ? 'unFollow successfully' : 'follow successfully')
-        dispatch(setUser(result))
+        toast.success(isFollow ? 'UnFollow successfully' : 'Follow successfully')
       }
     } catch (e) {
+      toast.error('Something went wrong')
       console.log(e)
     }
   }
@@ -94,7 +95,7 @@ const Information = (props: Props) => {
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <FaUsers color='#3D56F0' size={50} />
           <p className='h6 text-header'>Participant</p>
-          <p className='text-sm text-header'>{event?.ticketTypes.length ? totalQuantity : 0}</p>
+          <p className='text-sm text-header'>{totalQuantity || 200}</p>
         </div>
       </div>
 
@@ -103,15 +104,21 @@ const Information = (props: Props) => {
           <h5 className='h5'>Organization By</h5>
           <div className='flex items-center gap-3'>
             <img
-              src={event?.creator.avatar ? event?.creator.avatar : userDefault}
+              src={event?.creator.avatarUrl ? event?.creator.avatarUrl : userDefault}
               alt=''
               className='w-[50px] h-[50px] object-cover rounded-full'
             />
             <div>
-              <p className='font-semibold text-header'>{event?.creator.fullName}</p>
-              <button onClick={handleFollowUser} className='flex items-center gap-1 px-2 py-1 rounded-md bg-primary'>
-                <IoMdAdd color='white' size={24} />
-                <p className='text-white'>{isFollow ? 'unfollow' : 'follow'}</p>
+              <p className='font-semibold text-header'>{event?.creator.userName}</p>
+              <button onClick={handleFollowUser}>
+                {loadingFollower || loadingUnFollower ? (
+                  <CircularProgress size={24} color='primary' />
+                ) : (
+                  <div className='flex items-center gap-1 px-2 py-1 rounded-md bg-primary hover:bg-primary-300'>
+                    {isFollow ? <RiSubtractLine color='white' size={24} /> : <IoMdAdd color='white' size={24} />}
+                    <p className='text-white'>{isFollow ? 'Unfollow' : 'Follow'}</p>
+                  </div>
+                )}
               </button>
             </div>
           </div>
@@ -122,33 +129,33 @@ const Information = (props: Props) => {
           <p className='text-header'>{event?.description}</p>
           <h6 className='h4 text-header'>3 Reasons to attend the event:</h6>
 
-          {event?.reasons?.map((reason: string, index: number) => (
+          {event?.reasons?.map((reason: IReason, index: number) => (
             <p key={`reason-${index}`} className='text-header'>
-              {index + 1}. {reason}
+              {index + 1}. {reason.content}
             </p>
           ))}
         </div>
       </div>
 
       <div className='flex items-center justify-center w-full gap-8'>
-        {event?.subImages.map(
-          (image: any, index: number) =>
-            image && (
-              <img
-                key={`subimage-${index}`}
-                loading='lazy'
-                className='h-[200px] w-[200px] rounded-lg'
-                src={image || ''}
-                alt=''
-              />
-            )
-        )}
+        {event?.subImages.map((item: ISubImage, index: number) => (
+          <img
+            key={`subimage-${index}`}
+            loading='lazy'
+            className='h-[200px] w-[200px] rounded-lg'
+            src={
+              item.imageUrl ||
+              'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
+            }
+            alt=''
+          />
+        ))}
       </div>
 
       {user?.id !== event?.creator?.id && (
         <FormToChat
           eventId={event.id!}
-          hostId={event.creatorId}
+          hostId={event.creator.id!}
           userId={user?.id!}
           eventName={event.name}
           userEmail={event?.creator?.email!}

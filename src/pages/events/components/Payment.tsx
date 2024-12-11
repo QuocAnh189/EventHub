@@ -8,14 +8,13 @@ import { Button, Divider } from 'antd'
 import { ITicketType } from '@interfaces/contents/ticketType.interface'
 
 interface IProps {
-  promotion: number
-  ticketTypes: ITicketType[]
+  ticketTypes: ITicketType[] | null
 }
 
 const Payment = (props: IProps) => {
   const navigate = useNavigate()
 
-  const { promotion, ticketTypes } = props
+  const { ticketTypes } = props
 
   return (
     <div className='flex flex-col gap-3 p-6 rounded-md bg-primary-100 mdl:w-[400px]'>
@@ -31,14 +30,6 @@ const Payment = (props: IProps) => {
             )}
           </div>
         ))}
-        {promotion && promotion > 0.0 ? (
-          <div className='flex justify-between'>
-            <span className='font-bold text-black'>DISCOUNT</span>
-            <span className='text-rose-700'>{`${promotion * 100} %`}</span>
-          </div>
-        ) : (
-          <></>
-        )}
       </div>
       <Divider type='horizontal' />
       <Button

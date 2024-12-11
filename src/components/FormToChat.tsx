@@ -1,9 +1,6 @@
 //hooks
 import { useContext } from 'react'
 
-//components
-import FormControl from '@mui/material/FormControl'
-
 //context
 import { AppSocketContext } from '@contexts/socket.context'
 
@@ -33,42 +30,40 @@ const FormToChat = (props: Props) => {
           <br />
           Do not hesitate to contact me.
         </p>
-        <FormControl>
-          <div className='flex flex-col gap-3'>
-            <div className='flex items-center gap-4 text-header'>
-              <div className='field-wrapper'>
-                <label className='field-label' htmlFor='qty'>
-                  Name
-                </label>
-                <input
-                  readOnly
-                  className={classNames('field-input')}
-                  id='qty'
-                  placeholder='Enter name'
-                  value={userFullName}
-                />
-              </div>
-              <div className='field-wrapper'>
-                <label className='field-label' htmlFor='qty'>
-                  Email
-                </label>
-                <input
-                  readOnly
-                  className={classNames('field-input')}
-                  id='qty'
-                  placeholder='Enter email'
-                  value={userEmail}
-                />
-              </div>
+        <div className='flex flex-col gap-3'>
+          <div className='flex items-center gap-4 text-header'>
+            <div className='field-wrapper'>
+              <label className='field-label' htmlFor='qty'>
+                Name
+              </label>
+              <input
+                readOnly
+                className={classNames('field-input')}
+                id='qty'
+                placeholder='Enter name'
+                value={userFullName}
+              />
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='qty'>
-                Event
+                Email
               </label>
-              <input readOnly className={classNames('field-input')} id='qty' value={eventName} />
+              <input
+                readOnly
+                className={classNames('field-input')}
+                id='qty'
+                placeholder='Enter email'
+                value={userEmail}
+              />
             </div>
           </div>
-        </FormControl>
+          <div className='field-wrapper'>
+            <label className='field-label' htmlFor='qty'>
+              Event
+            </label>
+            <input readOnly className={classNames('field-input')} id='qty' value={eventName} />
+          </div>
+        </div>
         <button
           onClick={() => handleJoinChatRoom && handleJoinChatRoom({ eventId, hostId, userId })}
           className='btn btn-primary w-40 hover:bg-primary-500'

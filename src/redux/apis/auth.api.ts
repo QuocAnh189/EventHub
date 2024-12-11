@@ -52,7 +52,10 @@ export const apiAuth = createApi({
     signOut: builder.mutation<any, void>({
       query: () => ({
         url: '/auth/signout',
-        method: 'POST'
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem('token')!).accessToken}`
+        }
       })
     }),
 

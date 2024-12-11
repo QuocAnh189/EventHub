@@ -45,6 +45,8 @@ const Customer = lazy(() => import('@pages/dashboard/Customer'))
 const Payment = lazy(() => import('@pages/dashboard/Payment'))
 const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
+const Follower = lazy(() => import('@pages/setting/Follower'))
+const Following = lazy(() => import('@pages/setting/Following'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
 const CreateEvent = lazy(() => import('@pages/events/Create-Event'))
 const UpdateEvent = lazy(() => import('@pages/events/Update-Event'))
@@ -106,6 +108,8 @@ function App() {
               <Route path='/organization/order' element={<Order />} />
               <Route path='/organization/review' element={<Review />} />
               <Route path='/organization/settings/profile' element={<Profile />} />
+              <Route path='/organization/settings/follower' element={<Follower />} />
+              <Route path='/organization/settings/following' element={<Following />} />
             </Route>
             <Route path='/*' element={<NotFound />} />
           </Routes>

@@ -14,9 +14,9 @@ import classNames from 'classnames'
 
 import { IUser } from 'interfaces/systems/user.interface'
 import { CircularProgress } from '@mui/material'
-import { EUserStatus } from '@constants/enum.constant'
 import { withTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
+import { IRole } from '@interfaces/systems'
 
 interface Props {
   t: any
@@ -26,12 +26,11 @@ interface Props {
   control: Control<IUser>
   errors: any
   isLoading: boolean
-  roles: string[]
-  status: EUserStatus
+  roles: IRole[]
 }
 
 const UserProfileDetails = (props: Props) => {
-  const { t, register, watch, setValue, control, errors, isLoading, roles, status } = props
+  const { t, register, watch, setValue, control, errors, isLoading, roles } = props
 
   const { theme, toggleTheme }: any = useTheme()
   const { width } = useWindowSize()
@@ -164,7 +163,7 @@ const UserProfileDetails = (props: Props) => {
                 type='text'
                 id='Status'
                 placeholder='Status'
-                value={status}
+                value='Active'
               />
             </div>
             <div className='field-wrapper'>
@@ -177,7 +176,7 @@ const UserProfileDetails = (props: Props) => {
                 type='text'
                 id='role'
                 placeholder='Role'
-                value={roles}
+                value={roles.map((role: IRole) => role.name).join(', ')}
               />
             </div>
             <div className='field-wrapper'>
@@ -192,7 +191,7 @@ const UserProfileDetails = (props: Props) => {
           <button className='text-btn' type='button'>
             {t('profile detail.change_password')}
           </button>
-          <button disabled={isLoading} type='submit' className='btn btn-primary w-[260px] mt-5'>
+          <button disabled={isLoading} type='submit' className='btn btn-primary hover:bg-primary-400 w-[260px] mt-5'>
             {isLoading ? <CircularProgress size={24} /> : t('profile detail.update_information')}
           </button>
         </div>
@@ -223,30 +222,27 @@ const UserProfileDetails = (props: Props) => {
             <span className='icon-wrapper'>
               <i className='icon icon-window-solid' />
             </span>
-            <span>
-              {t('profile detail.connected_apps')}
-              <span className='subheading-2'>(12)</span>
-            </span>
+            <span>{t('profile detail.connected_apps')}</span>
           </NavLink>
-          <NavLink className='tool-btn text-header' to='/connected-apps'>
+          <NavLink className='tool-btn text-header' to='/payment-method'>
             <span className='icon-wrapper'>
               <i className='icon icon-money-check-dollar-pen-solid' style={{ fontSize: 16 }} />
             </span>
             {t('profile detail.payment_methods')}
           </NavLink>
-          <NavLink className='tool-btn text-header' to='/connected-apps'>
+          <NavLink className='tool-btn text-header' to='/appearance'>
             <span className='icon-wrapper'>
               <i className='icon icon-screwdriver-wrench-solid' />
             </span>
-            {t('profile detail.apperance')}
+            {t('profile detail.appearance')}
           </NavLink>
-          <NavLink className='tool-btn text-header' to='/connected-apps'>
+          <NavLink className='tool-btn text-header' to='/security-assets'>
             <span className='icon-wrapper'>
               <i className='icon icon-shield-halved-solid' />
             </span>
             {t('profile detail.security_assets')}
           </NavLink>
-          <NavLink className='tool-btn text-header' to='/connected-apps'>
+          <NavLink className='tool-btn text-header' to='/configuration-settings'>
             <span className='icon-wrapper'>
               <i className='icon icon-sliders-solid' />
             </span>

@@ -1,23 +1,21 @@
-export enum EEventPrivacy {
-  ALL = 'ALL',
-  PUBLIC = 'PUBLIC',
-  PRIVATE = 'PRIVATE',
-  TRASH = 'TRASH'
+export enum EEventVisibility {
+  All = 'All',
+  Public = 'Public',
+  Private = 'Private'
 }
 
 export enum EEventAction {
-  ALL = 'ALL',
-  PUBLIC = 'PUBLIC',
-  PRIVATE = 'PRIVATE',
-  TRASH = 'TRASH',
-  DELETE = 'DELETE'
+  All = 'All',
+  Public = 'Public',
+  Private = 'Private',
+  Trash = 'Trash'
 }
 
 export enum EEventStatus {
-  ALL = 'ALL',
-  OPENING = 'OPENING',
-  UPCOMING = 'UPCOMING',
-  CLOSED = 'CLOSED'
+  All = 'All',
+  Opening = 'Opening',
+  Upcoming = 'Upcoming',
+  Closed = 'Closed'
 }
 
 export enum EEventType {
@@ -33,14 +31,14 @@ export enum EEventStyle {
 }
 
 export enum EEventPaymentTicket {
-  PAID = 'PAID',
-  FREE = 'FREE'
+  Paid = 'Paid',
+  Free = 'Free'
 }
 
 export enum EGender {
-  MALE = 'MALE',
-  FEMALE = 'FEMALE',
-  OTHER = 'OTHER'
+  MALE = 'Male',
+  FEMALE = 'Female',
+  OTHER = 'Other'
 }
 
 export enum EPageOrder {

@@ -1,10 +1,11 @@
+import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //type
 import { IFavoriteEventPayload, IParamsEvent, IParamsReview, IReviewEventPayload } from '@type/event.type'
 
 //interface
-import { IEvent } from 'interfaces/contents/event.interface'
+import { IEvent, IEventFavorite } from 'interfaces/contents/event.interface'
 import queryString from 'query-string'
 
 export const apiEvent = createApi({
@@ -26,9 +27,9 @@ export const apiEvent = createApi({
 
   tagTypes: ['Event', 'Review'],
   endpoints: (builder) => ({
-    getEvents: builder.query<any, IParamsEvent | any>({
+    getEvents: builder.query<IListData<any>, IParamsEvent | any>({
       query: (params) => ({
-        url: '/events',
+        url: '/events/',
         method: 'GET',
         params
       }),
@@ -75,11 +76,24 @@ export const apiEvent = createApi({
       invalidatesTags: ['Event']
     }),
 
-    getEventByCreator: builder.query<any, void>({
-      query: () => ({
-        url: `/events/get-created-events`,
-        method: 'GET'
+    deleteMultipleEvent: builder.mutation<any, string[]>({
+      query: (ids) => ({
+        url: `/events/`,
+        method: 'DELETE',
+        body: { ids }
       }),
+      invalidatesTags: ['Event']
+    }),
+
+    getEventByCreator: builder.query<IListData<any>, any>({
+      query: (params) => ({
+        url: `/events/get-created-events`,
+        method: 'GET',
+        params
+      }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Event']
     }),
 
@@ -92,19 +106,23 @@ export const apiEvent = createApi({
     }),
 
     restoreEvent: builder.mutation<any, string[]>({
-      query: (eventIds) => ({
-        url: `/events/restore`,
+      query: (ids) => ({
+        url: '/events/restore',
         method: 'PATCH',
-        body: eventIds
+        body: { ids }
       }),
       invalidatesTags: ['Event']
     }),
 
-    getTrashEvents: builder.query<any, void>({
-      query: () => ({
+    getTrashEvents: builder.query<IListData<any>, IParamsEvent | any>({
+      query: (params) => ({
         url: `/events/get-deleted-events`,
-        method: 'GET'
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Event']
     }),
 
@@ -172,28 +190,32 @@ export const apiEvent = createApi({
       invalidatesTags: ['Event']
     }),
 
-    getFavouriteEvent: builder.query<any, void>({
-      query: () => ({
+    getFavouriteEvent: builder.query<IListData<IEventFavorite>, IParamsEvent | any>({
+      query: (params) => ({
         url: `/events/get-favourite-events`,
-        method: 'GET'
+        method: 'GET',
+        params
       }),
-      providesTags: ['Event']
+      providesTags: ['Event'],
+      transformResponse: (response: any) => {
+        return response.data
+      }
     }),
 
     makeEventPrivate: builder.mutation<any, string[]>({
-      query: (eventIds) => ({
-        url: `/events/move-events-private`,
+      query: (ids) => ({
+        url: `/events/make-events-private`,
         method: 'PATCH',
-        body: eventIds
+        body: { ids }
       }),
       invalidatesTags: ['Event']
     }),
 
     makeEventPublic: builder.mutation<any, string[]>({
-      query: (eventIds) => ({
-        url: `/events/move-events-public`,
+      query: (ids) => ({
+        url: `/events/make-events-public`,
         method: 'PATCH',
-        body: eventIds
+        body: { ids }
       }),
       invalidatesTags: ['Event']
     })
@@ -206,6 +228,7 @@ export const {
   useCreateEventMutation,
   useUpdateEventMutation,
   useDeleteEventMutation,
+  useDeleteMultipleEventMutation,
   useGetEventByCreatorQuery,
   useDeletePermanentEventMutation,
   useRestoreEventMutation,

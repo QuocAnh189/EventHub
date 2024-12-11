@@ -1,10 +1,6 @@
-//hooks
-import { usePagination } from '@hooks/usePagination'
-
 //components
 import Spring from '@components/Spring'
 import Review from '@components/Review'
-// import NotData from '@components/NotData'
 import Pagination from '@ui/Pagination'
 
 // data placeholder
@@ -15,18 +11,15 @@ import { IReview } from 'interfaces/contents/review.interface'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import { IPagination } from '@interfaces/common.interface'
 
 interface IProps {
   t: any
   reviews: IReview[]
-  total: number
+  pagination: IPagination
 }
 const LatestAcceptedReviews = (props: IProps) => {
-  const { t, reviews, total } = props
-
-  console.log(reviews)
-
-  const pagination: any = usePagination(total, 4)
+  const { t, reviews, pagination } = props
 
   return (
     <Spring className='flex flex-1 flex-col gap-[26px]'>
@@ -36,22 +29,17 @@ const LatestAcceptedReviews = (props: IProps) => {
         </div>
         <span className='block h-[1px] bg-input-border opacity-60' />
         <div>
-          {/* {reviews.length !== 0 ? (
-            reviews.map((_: IReview, index: number) => (
-              <Review key={`review-${review.id}`} review={review} index={index} />
-             
-            ))
-          ) : (
-            <div className='h-[500px]'>
-              <NotData />
-            </div>
-          )} */}
           {reviews.map((review: IReview, index: number) => (
             <Review key={`review-${index}`} review={review} index={index} />
           ))}
+          {reviews.length === 0 && (
+            <div className='h-[500px]'>
+              <p>There is no review</p>
+            </div>
+          )}
         </div>
       </div>
-      {pagination.maxPage > 1 && <Pagination pagination={pagination} />}
+      {pagination && pagination.maxPage > 1 && <Pagination pagination={pagination} />}
     </Spring>
   )
 }

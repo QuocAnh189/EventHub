@@ -11,12 +11,13 @@ interface Props {
   onChange?: (query: string) => void
   query?: string
   setQuery?: (value: string) => void
+  explore?: boolean
 }
 const Search = (props: Props) => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
-  const { placeholder = t('header.search'), wrapperClass, onChange } = props
+  const { placeholder = t('header.search'), wrapperClass, onChange, explore } = props
 
   const [query, setQuery] = useState<string>('')
 
@@ -24,9 +25,11 @@ const Search = (props: Props) => {
     if (onChange) {
       onChange(query)
     }
-    navigate('explore', {
-      state: { query: query }
-    })
+    if (explore) {
+      navigate('explore', {
+        state: { query: query }
+      })
+    }
   }
 
   return (

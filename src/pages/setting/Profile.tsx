@@ -29,7 +29,7 @@ import { withTranslation } from 'react-i18next'
 const Profile = ({ t }: any) => {
   const dispatch = useAppDispatch()
 
-  const user = useAppSelector((state) => state.persistedReducer.user.user)
+  const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
   const [UpdateUser, { isLoading }] = useUpdateUserMutation()
 
@@ -42,15 +42,15 @@ const Profile = ({ t }: any) => {
     watch
   } = useForm<IUser>({
     defaultValues: {
-      id: user?.id,
-      avatar: user?.avatar,
-      userName: user?.userName,
-      fullName: user?.fullName,
-      email: user?.email,
-      phoneNumber: user?.phoneNumber,
-      gender: user?.gender,
-      dob: dayjs(user?.dob).format('YYYY-MM-DD'),
-      bio: user?.bio
+      id: user.id,
+      avatarUrl: user.avatarUrl,
+      email: user.email,
+      userName: user.userName,
+      fullName: user.fullName,
+      phoneNumber: user.phoneNumber,
+      gender: user.gender,
+      dob: dayjs(user.dob).format('YYYY-MM-DD'),
+      bio: user.bio
     }
   })
 
@@ -81,12 +81,7 @@ const Profile = ({ t }: any) => {
         className='widgets-grid md:!grid-cols-2 xl:!grid-cols-[340px,_minmax(0,1fr)]'
       >
         <div className='widgets-grid md:!grid-cols-2 md:col-span-2 xl:!grid-cols-1 xl:col-span-1'>
-          <UserProfileCard
-            avatar={watch().avatar}
-            setValue={setValue}
-            fullName={user?.fullName!}
-            roles={user?.roles!}
-          />
+          <UserProfileCard avatar={watch().avatarUrl} setValue={setValue} fullName={user.fullName} roles={user.roles} />
           <div className='widgets-grid'>
             <UserProfilePanel />
             <UserProfileInfo />
@@ -99,8 +94,7 @@ const Profile = ({ t }: any) => {
           control={control}
           errors={errors}
           isLoading={isLoading}
-          roles={user?.roles!}
-          status={user?.status!}
+          roles={user.roles}
         />
       </form>
     </ProtectedLayout>

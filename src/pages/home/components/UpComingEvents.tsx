@@ -12,15 +12,13 @@ import { EEventStatus } from '@constants/enum.constant'
 import { useGetEventsQuery } from '@redux/apis/event.api'
 
 //interface
-import { IEvent } from 'interfaces/contents/event.interface'
+import { ICardEvent } from 'interfaces/contents/event.interface'
 
 //data
-import events_data from '@db/event'
+// import events_data from '@db/event'
 
 const UpcomingEvents = ({ t }: any) => {
-  const { data: events, isFetching } = useGetEventsQuery({ takeAll: false, type: EEventStatus.UPCOMING, size: 6 })
-
-  console.log(events)
+  const { data: events, isFetching } = useGetEventsQuery({ pageSize: 6, type: EEventStatus.Upcoming, page: 2 })
 
   return (
     <div className='w-full dark:bg-gray-900 dark:text-white bg-gray-50 py-10'>
@@ -32,11 +30,7 @@ const UpcomingEvents = ({ t }: any) => {
           </div>
         ) : (
           <div className='grid grid-cols-1 mdl:grid-cols-2 lgl:grid-cols-3 gap-4'>
-            {/* {events?.items?.map((event: IEvent, index: number) => (
-              <EventCard key={`event-${index}`} event={event} />
-            ))} */}
-
-            {events_data.slice(3, 9).map((event: IEvent, index: number) => (
+            {events?.items.map((event: ICardEvent, index: number) => (
               <EventCard key={`event-${index}`} event={event} />
             ))}
           </div>

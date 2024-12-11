@@ -12,18 +12,26 @@ import AboutUs from './components/AboutUs'
 //redux
 import { useGetCategoriesQuery } from '@redux/apis/category.api'
 import { setCategories } from '@redux/slices/category.slice'
+import { useGetProfileQuery } from '@redux/apis/auth.api'
+import { setUser } from '@redux/slices/user.slice'
 
 const Home = () => {
   const dispatch = useAppDispatch()
 
-  const { data: categories, isSuccess } = useGetCategoriesQuery()
+  const { data: profile, isSuccess: isSuccessProfile } = useGetProfileQuery()
+  const { data: categories, isSuccess: isSuccessCategories } = useGetCategoriesQuery()
 
   useEffect(() => {
-    if (isSuccess) {
-      console.log(categories)
+    if (isSuccessProfile) {
+      dispatch(setUser(profile))
+    }
+  }, [isSuccessProfile])
+
+  useEffect(() => {
+    if (isSuccessCategories) {
       dispatch(setCategories(categories))
     }
-  }, [isSuccess])
+  }, [isSuccessCategories])
 
   return (
     <div className='flex flex-col items-center'>

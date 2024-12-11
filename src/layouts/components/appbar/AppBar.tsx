@@ -28,6 +28,9 @@ import { useTranslation, withTranslation } from 'react-i18next'
 import ToggleDarkLight from './switch/ToggleDarkLight'
 import InvitationPanel from '../navbar/InvitationPanel'
 
+//interfaces
+import { IUser } from '@interfaces/systems'
+
 const AppBar = ({ t }: any) => {
   const navigate = useNavigate()
   const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false)
@@ -43,7 +46,7 @@ const AppBar = ({ t }: any) => {
   const { theme, toggleTheme }: any = useContext(ThemeContext)
   const { setOpen } = useSidebar()
 
-  const user = useAppSelector((state) => state.persistedReducer.user.user)
+  const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
   const activeLocale = LOCALES.find((l: any) => l.value === locale)
 
@@ -132,7 +135,10 @@ const AppBar = ({ t }: any) => {
                     onClick={() => navigate('settings/profile')}
                     aria-label='Account menu'
                   >
-                    <img src={user?.avatar ? user.avatar : useDefault} className='object cover rounded-full h-full' />
+                    <img
+                      src={user.avatarUrl ? user.avatarUrl : useDefault}
+                      className='object cover rounded-full h-full'
+                    />
                   </button>
                   <span className='badge-online' />
                 </div>

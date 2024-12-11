@@ -1,7 +1,7 @@
 //hooks
 import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
+import { useDebounce } from '@hooks/useDebounce'
 
 //components
 import EventCardSearchHome from '@components/events/EventCardSearchHome'
@@ -17,7 +17,7 @@ import { EEventStatus } from '@constants/enum.constant'
 import { EVENT_STATUS_OPTIONS, IOptionSelect } from '@constants/options.constant'
 
 //interface
-import { IEvent } from 'interfaces/contents/event.interface'
+import { ICardSearchHome } from 'interfaces/contents/event.interface'
 import { ICategory } from '@interfaces/contents'
 
 // utils
@@ -26,16 +26,20 @@ import classNames from 'classnames'
 //i18
 import { withTranslation } from 'react-i18next'
 
-//data
-import events_data from '@db/event'
+interface IParamsEvents {
+  search: string
+  status: EEventStatus
+  categoryIds: string[]
+  size: number
+}
 
 const initParam = {
   search: '',
-  type: EEventStatus.ALL,
+  status: EEventStatus.All,
   categoryIds: [],
   takeAll: false,
   size: 10
-}
+} as IParamsEvents
 
 const SearchHome = ({ t }: any) => {
   const navigate: NavigateFunction = useNavigate()
@@ -48,27 +52,14 @@ const SearchHome = ({ t }: any) => {
     backgroundColor: category.color
   }))
 
-  const { register, handleSubmit, setValue, watch } = useForm<any>({
-    defaultValues: initParam,
-    mode: 'onSubmit'
-  })
-
-  const [filter, setFilter] = useState(initParam)
-  const { data: events, isFetching, refetch } = useGetEventsQuery(filter)
-
-  console.log(events)
+  const [params, setParams] = useState(initParam)
+  const [search, setSearch] = useState('')
+  const debouncedSearchTerm = useDebounce(search, 500)
+  const { data, isFetching } = useGetEventsQuery(params)
 
   useEffect(() => {
-    console.log(watch())
-  }, [])
-
-  useEffect(() => {
-    refetch()
-  }, [filter])
-
-  const onSubmit = async (data: any) => {
-    setFilter(data)
-  }
+    setParams({ ...params, search: debouncedSearchTerm })
+  }, [debouncedSearchTerm])
 
   return (
     <div className='w-[90%] h-[95vh] m-auto'>
@@ -93,18 +84,16 @@ const SearchHome = ({ t }: any) => {
             {t('search home.explore')}
           </button>
         </div>
-        <div className='trip_bx relative w-[95%] h-auto m-auto before:absolute before:w-full before:h-full lg:before:h-[340px] before:rounded-[10px] before:bg-input-border before:z-[-1] before:backdrop-blur-sm'>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className='flex items-center flex-wrap pr-[10px] bg-body rounded-md shadow-md z-[1] absolute -top-10 left-0 lg:h-20'
-          >
+        <div className='trip_bx bg-primary-200 relative w-[95%] h-[340px] m-auto before:absolute before:w-full before:rounded-[10px] before:bg-input-border before:z-[-1] before:backdrop-blur-sm rounded-xl'>
+          <div className='flex items-center flex-wrap pr-[10px] bg-body rounded-md shadow-md z-[1] absolute -top-10 left-0 lg:h-20'>
             <div className='h-full shadow-none px-4 py-2 space-y-1'>
               <h4 className='text-sm m-0 font-bold text-header'>{t('search home.event')}</h4>
               <input
                 className={classNames('field-input text-header', { 'field-input--error': false })}
-                {...register('search')}
                 type='text'
                 placeholder={t('search home.event_placeholder')}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
             </div>
             <div className='lg:w-[200px] h-full shadow-none px-4 py-2 space-y-1'>
@@ -114,26 +103,22 @@ const SearchHome = ({ t }: any) => {
                 id='status'
                 options={EVENT_STATUS_OPTIONS || []}
                 onChange={(e: IOptionSelect) => {
-                  setValue('type', e.value)
+                  setParams({ ...params, status: e.value })
                 }}
               />
             </div>
-            <div className='w-[200px] h-full shadow-none px-4 py-2 space-y-1'>
+            <div className='w-[300px] h-full shadow-none px-4 py-2 space-y-1'>
               <h4 className='text-[15px] m-0 font-bold text-header'>{t('search home.category')}</h4>
               <Select
                 placeholder={t('search home.All')}
                 id='category'
-                // options={EVENT_CATEGORIES}
                 options={categoriesOptions}
                 onChange={(e: IOptionSelect) => {
-                  setValue('IOptionSelect', e.value)
+                  setParams({ ...params, categoryIds: [e.value] })
                 }}
               />
             </div>
-            <button className='btn btn-primary mt-1' type='submit'>
-              {t('search home.search')}
-            </button>
-          </form>
+          </div>
           <div className='relative w-full h-full m-auto rounded-[10px] pb-5'>
             {isFetching ? (
               <div className='w-full h-80 flex items-center justify-center'>
@@ -141,11 +126,8 @@ const SearchHome = ({ t }: any) => {
               </div>
             ) : (
               <div className='w-full h-full pt-36 lg:pt-20 flex items-center overflow-x-auto overflow-y-hidden pb-4 no-scrollbar'>
-                {/* {events?.items?.map((event: IEvent, index: number) => (
+                {data?.items.map((event: ICardSearchHome, index: number) => (
                   <EventCardSearchHome key={`event-${index}`} event={event} />
-                ))} */}
-                {events_data.map((event: IEvent, index: number) => (
-                  <EventCardSearchHome event={event} key={`event-${index}`} />
                 ))}
               </div>
             )}

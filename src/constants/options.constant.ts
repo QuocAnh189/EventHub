@@ -18,7 +18,7 @@ import paypal from '@assets/images/payment/paypal.svg'
 import bitpay from '@assets/images/payment/bitpay.svg'
 
 //enum
-import { EEventType } from './enum.constant'
+import { EEventStatus } from './enum.constant'
 
 export interface IOptionSelect {
   id?: string
@@ -152,9 +152,9 @@ export const APPS_OPTIONS: IOptionSelect[] = [
 ]
 
 export const EVENT_MANAGEMENT_OPTIONS: IOptionSelect[] = [
-  { value: 'ALL', label: 'All' },
-  { value: 'PUBLIC', label: 'Published' },
-  { value: 'PRIVATE', label: 'Privated' }
+  { value: 'All', label: 'All' },
+  { value: 'Public', label: 'Public' },
+  { value: 'Private', label: 'Private' }
 ]
 
 export const ORDER_SORT_OPTIONS: IOptionSelect[] = [
@@ -187,10 +187,10 @@ export const MESSAGE_OPTIONS: IOptionSelect[] = [
 ]
 
 export const EVENT_STATUS_OPTIONS: IOptionSelect[] = [
-  { value: EEventType.ALL, label: 'All' },
-  { value: EEventType.UPCOMING, label: 'Upcoming' },
-  { value: EEventType.OPENING, label: 'Opening' },
-  { value: EEventType.CLOSED, label: 'Closed' }
+  { value: EEventStatus.All, label: 'All' },
+  { value: EEventStatus.Upcoming, label: 'Upcoming' },
+  { value: EEventStatus.Opening, label: 'Opening' },
+  { value: EEventStatus.Closed, label: 'Closed' }
 ]
 
 export const EVENT_RATE_OPTIONS: IOptionSelect[] = [
@@ -216,8 +216,9 @@ export const TRANSACTIONS_SORT_OPTIONS: IOptionSelect[] = [
 ]
 
 export const EVENT_SELLER_OPTIONS: IOptionSelect[] = [
-  { value: 'FREE', label: 'Free' },
-  { value: 'FEE', label: 'Buy Ticket' }
+  { value: 'All', label: 'All' },
+  { value: 'Free', label: 'Free' },
+  { value: 'Paid', label: 'Paid' }
 ]
 
 export const PRODUCT_ADDITIONAL_OPTIONS: IOptionSelect[] = [
@@ -229,9 +230,9 @@ export const PRODUCT_ADDITIONAL_OPTIONS: IOptionSelect[] = [
 ]
 
 export const EVENT_SELECT_OPTIONS: IOptionSelect[] = [
-  { value: 'PUBLIC', label: 'Move to Publics' },
-  { value: 'PRIVATE', label: 'Move to Privates' },
-  { value: 'TRASH', label: 'Move to Trash' }
+  { value: 'Public', label: 'Move to Publics' },
+  { value: 'Private', label: 'Move to Privates' },
+  { value: 'Trash', label: 'Move to Trash' }
 ]
 
 export const PROMOTIONAL_OPTIONS: IOptionSelect[] = [

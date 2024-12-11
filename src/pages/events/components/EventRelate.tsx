@@ -6,21 +6,16 @@ import Loader from '@components/Loader'
 import { useGetEventsQuery } from '@redux/apis/event.api'
 
 //interfaces
-import { IEvent } from '@interfaces/contents/event.interface'
-
-//data
-import events_data from '@db/event'
+import { ICardEvent } from '@interfaces/contents/event.interface'
 
 interface Props {
-  categoryIds: string[]
+  categoryId: string
 }
 
 const EventsRelate = (props: Props) => {
-  const { categoryIds } = props
+  const { categoryId } = props
 
-  const { data: events, isFetching } = useGetEventsQuery({ page: 1, categoryIds, takeAll: false, size: 3 })
-
-  console.log(events)
+  const { data: events, isFetching } = useGetEventsQuery({ pageSize: 3, categoryId: categoryId })
 
   return (
     <div className='flex flex-col items-center px-[150px] py-8 gap-6'>
@@ -29,10 +24,7 @@ const EventsRelate = (props: Props) => {
         <Loader />
       ) : (
         <div className='grid grid-flow-col auto-cols-fr gap-4'>
-          {/* {events?.items?.map((event: IEvent, index: number) => (
-            <EventCard key={`event-${index}`} event={event} />
-          ))} */}
-          {events_data.slice(0, 3).map((event: IEvent, index: number) => (
+          {events?.items.map((event: ICardEvent, index: number) => (
             <EventCard key={`event-${index}`} event={event} />
           ))}
         </div>

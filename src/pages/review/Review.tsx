@@ -1,5 +1,5 @@
 //hooks
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 //layout
 import ProtectedLayout from '@layouts/protected'
@@ -11,75 +11,41 @@ import ReviewsRate from '@widgets/ReviewsRate'
 import LatestAcceptedReviews from '@widgets/LatestAcceptedReviews'
 import ReviewsScore from '@widgets/ReviewsScore'
 
-//interface vs type
-import { IMetadataReviewResponse } from '@type/event.type'
-import { IReview } from '@interfaces/contents/review.interface'
-
-//redux
-// import { useAppSelector } from '@hooks/useRedux'
-// import { useGetReviewsByUserIdQuery } from '@redux/apis/user.api'
-
 //i18n
 import { withTranslation } from 'react-i18next'
 
-//data
-import reviews_data from '@db/reviews'
+// //data
+// import reviews_data from '@db/reviews'
+
+//redux
+import { useGetReviewsByCreatedEventsQuery } from '@redux/apis/review.api'
+
+//util
+import { usePagination } from '@hooks/usePagination'
+import { IPagination } from '@interfaces/common.interface'
+
+type TotalPerNumberRate = {
+  rate: number
+  value: number
+}
+interface IStatistics {
+  averageRate: number
+  totalPositive: number
+  totalNegative: number
+  totalPerNumberRate: TotalPerNumberRate[]
+}
 
 const Review = ({ t }: any) => {
-  // const user = useAppSelector((state) => state.persistedReducer.user.user)
+  const [params, setParams] = useState({ pageSize: 10, page: 1 })
 
-  // const { data } = useGetReviewsByUserIdQuery(user?.id!)
+  const { data } = useGetReviewsByCreatedEventsQuery(params)
 
-  const [reviews, setReviews] = useState<IReview[]>()
-  const [dataPercent, setDataPercent] = useState<any>([])
-  const [metaData, setMetaData] = useState<IMetadataReviewResponse>()
-
-  // useEffect(() => {
-  //   if (data) {
-  //     setReviews(data.items)
-  //     setMetaData(data.metadata)
-  //   }
-  // }, [data])
-
+  const pagination: IPagination = usePagination(data?.metadata?.totalCount, data?.metadata.pageSize)
   useEffect(() => {
-    setReviews([])
-    setMetaData(undefined)
-  }, [])
+    setParams({ ...params, page: pagination.currentPage })
+  }, [pagination.currentPage])
 
-  const calculationPercent = (rate: number) => {
-    const ratesPercent: any = {}
-    reviews_data?.forEach((review) => {
-      ratesPercent[rate] = review.rate === rate ? ratesPercent[rate] + 1 || 1 : ratesPercent[rate]
-    })
-    return ratesPercent[rate] || 0
-  }
-
-  useEffect(() => {
-    const data = [
-      { rate: 1, value: calculationPercent(1) },
-      { rate: 2, value: calculationPercent(2) },
-      { rate: 3, value: calculationPercent(3) },
-      { rate: 4, value: calculationPercent(4) },
-      { rate: 5, value: calculationPercent(5) }
-    ]
-    setDataPercent(data)
-  }, [reviews?.length])
-
-  const averageRate = useMemo(() => {
-    return Math.floor(
-      reviews_data?.reduce((total, currentValue) => {
-        return total + currentValue.rate
-      }, 0) / reviews_data.length
-    )
-  }, [reviews?.length])
-
-  const percentPositive = useMemo(() => {
-    const totalPositive = reviews_data?.reduce((total, currentValue) => {
-      return total + (currentValue.isPositive ? 1 : 0)
-    }, 0)
-
-    return Math.floor((totalPositive! / reviews_data.length) * 100)
-  }, [reviews?.length])
+  const statistic: IStatistics = data?.statistic
 
   return (
     <ProtectedLayout>
@@ -87,31 +53,30 @@ const Review = ({ t }: any) => {
       <div className='flex flex-col flex-1 gap-5 md:gap-[26px]'>
         <div className='grid grid-cols-1 gap-y-5 md:gap-y-[26px] xl:grid-cols-6 xl:gap-x-[26px]'>
           <div className='widgets-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:col-span-4'>
-            <ReviewsScore score={averageRate} />
+            <ReviewsScore score={statistic?.averageRate || 0} />
             <CustomersInfobox
               label={t('middle.total')}
-              count={metaData?.totalCount || reviews_data.length}
+              count={data?.metadata.totalCount || 0}
               color='green'
               suffix=''
             />
             <CustomersInfobox
               label={t('middle.positive')}
-              count={percentPositive}
+              count={Math.round((statistic?.totalPositive * 100) / data?.metadata.totalCount!)}
               suffix='%'
               iconClass='user-plus-solid'
             />
             <CustomersInfobox
               label={t('middle.negative')}
-              count={Math.floor(100 - percentPositive)}
+              count={Math.round((statistic?.totalNegative * 100) / data?.metadata.totalCount!)}
               suffix='%'
               color='red'
               iconClass='user-group-crown-solid'
             />
           </div>
-          <ReviewsRate data={dataPercent} />
+          <ReviewsRate data={statistic?.totalPerNumberRate} />
         </div>
-        {/* {reviews && <LatestAcceptedReviews reviews={reviews!} total={metaData?.totalCount!} />} */}
-        {<LatestAcceptedReviews reviews={reviews_data!} total={metaData?.totalCount!} />}
+        {<LatestAcceptedReviews reviews={data?.items || []} pagination={pagination} />}
       </div>
     </ProtectedLayout>
   )

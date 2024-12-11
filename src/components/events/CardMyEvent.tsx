@@ -15,7 +15,7 @@ import { FaCalendarAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
 
 //interfaces
-import { IEvent } from '@interfaces/contents/event.interface'
+import { IMyEvent } from '@interfaces/contents/event.interface'
 
 //util
 import dayjs from 'dayjs'
@@ -28,26 +28,21 @@ import { withTranslation } from 'react-i18next'
 
 interface Props {
   t: any
-  event: IEvent
-  checkedAll: boolean
+  event: IMyEvent
   eventIds: string[]
   onChecked: (id: string) => void
-  refect: any
   index: number
 }
 
 const CardMyEvent = (props: Props) => {
-  const { t, checkedAll, event, onChecked, eventIds, refect, index } = props
+  const { t, event, onChecked, eventIds, index } = props
   const navigate = useNavigate()
 
-  const [restoreEvent, { isLoading: loadingRestore }] = useRestoreEventMutation()
-  // const [trashEvent, { isLoading: loadingTrash }] = useMoveEventTrashMutation()
-  const [deleteEvent, { isLoading: loadingDelete }] = useDeleteEventMutation()
+  const [RestoreEvent, { isLoading: loadingRestore }] = useRestoreEventMutation()
+  const [TrashEvent, { isLoading: loadingTrash }] = useDeleteEventMutation()
   const [openDialog, setOpenDialog] = useState<boolean>(false)
-  const [select, setSelect] = useState<boolean>(checkedAll)
 
   const handleChange = () => {
-    setSelect(!select)
     onChecked(event.id!)
   }
 
@@ -57,40 +52,21 @@ const CardMyEvent = (props: Props) => {
 
   const handleRestoreEvent = async () => {
     try {
-      const result = await restoreEvent([event.id!]).unwrap()
+      const result = await RestoreEvent([event.id!]).unwrap()
 
       if (result) {
         toast.success('Restore Event successfully')
-        refect()
       }
     } catch (e) {
       console.log(e)
     }
   }
 
-  const handleDelete = () => {
-    setOpenDialog(true)
-  }
-
   const handleTrashEvent = async () => {
-    // try {
-    //   const result = await trashEvent([event.id!]).unwrap()
-    //   if (result) {
-    //     toast.success('Move event to trash successfully')
-    //     refect()
-    //     setOpenDialog(false)
-    //   }
-    // } catch (e) {
-    //   console.log(e)
-    // }
-  }
-
-  const handleDeleteEvent = async () => {
     try {
-      const result = await deleteEvent(event.id!).unwrap()
+      const result = await TrashEvent(event.id).unwrap()
       if (result) {
-        toast.success('Delete event successfully')
-        refect()
+        toast.success('Move event to trash successfully')
         setOpenDialog(false)
       }
     } catch (e) {
@@ -106,8 +82,8 @@ const CardMyEvent = (props: Props) => {
             loading='lazy'
             className='w-full h-full rounded-l-lg object-cover transition duration-700 hover:skew-x-2 hover:scale-110'
             src={
-              event.coverImage
-                ? event.coverImage
+              event.coverImageUrl
+                ? event.coverImageUrl
                 : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
             }
             alt=''
@@ -125,17 +101,17 @@ const CardMyEvent = (props: Props) => {
             </div>
             <div className='flex items-center gap-2 opacity-70 text-gray mt-4'>
               <IoLocationSharp />
-              <span className='h6'>{event.location}</span>
+              <span className='h6 line-clamp-1'>{event.location}</span>
             </div>
           </div>
           <div className='flex items-center justify-between'>
             <Checkbox checked={eventIds.includes(event.id!)} onChange={handleChange} sx={{ color: 'var(--header)' }} />
             <div className='w-full justify-end flex gap-4 pt-2'>
               <button
-                onClick={event.isTrash ? handleRestoreEvent : handleEditEvent}
+                onClick={event.deletedAt ? handleRestoreEvent : handleEditEvent}
                 className='flex items-center justify-center rounded-lg bg-blue px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
               >
-                {event.isTrash ? (
+                {event.deletedAt ? (
                   loadingRestore ? (
                     <CircularProgress size={24} />
                   ) : (
@@ -147,15 +123,17 @@ const CardMyEvent = (props: Props) => {
                 <HiPencilAlt className='ml-2 h-6 w-6 text-white' />
               </button>
 
-              <button
-                onClick={handleDelete}
-                className='flex items-center justify-center rounded-lg bg-yellow px-3 py-2 text-center text-sm font-medium text-header hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800'
-              >
-                <span className='text-black'>
-                  {event.isTrash ? t('management.button_delete') : t('management.button_trash')}
-                </span>
-                <HiTrash className='ml-1 h-6 w-6 text-black' />
-              </button>
+              {!event.deletedAt && (
+                <button
+                  onClick={() => {
+                    setOpenDialog(true)
+                  }}
+                  className='flex items-center justify-center rounded-lg bg-yellow px-3 py-2 text-center text-sm font-medium text-header hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800'
+                >
+                  <span className='text-black'>{t('management.button_trash')}</span>
+                  <HiTrash className='ml-1 h-6 w-6 text-black' />
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -164,14 +142,14 @@ const CardMyEvent = (props: Props) => {
       {openDialog && (
         <ConfirmDialog
           title='Delete Event'
-          description={`Are you sure want to ${event.isTrash ? 'Delete' : 'Trash'} this event`}
+          description={`Are you sure want to Trash this event`}
           open={openDialog}
           setOpen={(value) => {
             setOpenDialog(value)
           }}
-          action={event.isTrash ? 'Delete' : 'Trash'}
-          onHandle={event.isTrash ? handleDeleteEvent : handleTrashEvent}
-          disabled={loadingDelete}
+          action={event.deletedAt ? 'Delete' : 'Trash'}
+          onHandle={handleTrashEvent}
+          disabled={loadingTrash}
         />
       )}
     </Spring>

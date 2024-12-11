@@ -1,36 +1,83 @@
-import { EEventPaymentTicket, EEventStatus, EEventStyle } from '@constants/enum.constant'
-import { ITicketType } from './ticketType.interface'
-import { IPriceRange } from '@interfaces/systems/price_range.interface'
-import { IUser } from 'interfaces/systems/user.interface'
+import { EEventPaymentTicket, EEventStyle } from '@constants/enum.constant'
+import { ICategory } from './category.interface'
 
 export interface IEvent {
   id: string
-  creatorId: string
-  creator: Partial<IUser>
-  // creatorName: string
-  categories: any[]
-  coverImage: string
-  subImages: any[]
+  creator: {
+    id: string
+    avatarUrl: string
+    email: string
+    fullName: string
+    userName: string
+  }
   name: string
   description: string
+  coverImageUrl: string
   location: string
   locationPath: string
-  priceRange: IPriceRange
-  startTime: any
-  endTime: any
+  startTime: string
+  endTime: string
   eventCycleType: EEventStyle
-  eventPaymentType?: EEventPaymentTicket
+  eventPaymentType: EEventPaymentTicket
   isPrivate: boolean
-  isTrash: boolean
-  ticketTypes: ITicketType[]
-  categoryIds: string[] | any
-  // promotion: number
-  numberOfFavourites: number
-  numberOfShares: number
-  numberOfSoldTickets: number
-  averageRating: number
-  status: EEventStatus
-  reasons: string[]
-  createdAt: Date
-  updatedAt: Date
+  categories: ICategory[]
+  subImages: ISubImage[]
+  averageRate: number
+  reasons: IReason[]
+  // ticketTypes: ITicketType[]
+  // numberOfFavourites: number
+  // numberOfShares: number
+  // numberOfSoldTickets: number
+  // status: EEventStatus
+  // priceRange: IPriceRange
+}
+
+export interface IReason {
+  id: string
+  content: string
+}
+
+export interface ISubImage {
+  id: string
+  imageUrl: string
+}
+
+export interface ICardEvent {
+  id: string
+  coverImageUrl: string
+  name: string
+  startTime: string
+  location: string
+  description: string
+  eventPaymentType: string
+  averageRate: number
+  endTime: string
+}
+
+export interface ICardSearchHome {
+  id: string
+  coverImageUrl: string
+  name: string
+  eventPaymentType: string
+  categories: ICategory[]
+  averageRate: number
+}
+
+export interface IEventFavorite {
+  id: string
+  name: string
+  coverImageUrl: string
+  startTime: string
+  averageRate: number
+  categories: ICategory[]
+}
+
+export interface IMyEvent {
+  id: string
+  name: string
+  coverImageUrl: string
+  startTime: string
+  location: string
+  isPrivate: boolean
+  deletedAt: any
 }

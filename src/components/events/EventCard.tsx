@@ -7,14 +7,17 @@ import { EEventPaymentTicket } from '@constants/enum.constant'
 //icon
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
-import { IEvent } from 'interfaces/contents/event.interface'
 
 //util
 import dayjs from 'dayjs'
 import { getStatusEventColor } from '@utils/helpers'
 
+//interface
+import { ICardEvent } from '@interfaces/contents'
+import RatingStars from '@ui/RatingStars'
+
 interface Props {
-  event: IEvent
+  event: ICardEvent
 }
 
 const EventCard = (props: Props) => {
@@ -23,7 +26,7 @@ const EventCard = (props: Props) => {
   const navigate = useNavigate()
 
   const handleSelectEvent = () => {
-    navigate(`/organization/event/${event.id})`)
+    navigate(`/organization/event/${event.id}`)
   }
 
   return (
@@ -35,8 +38,8 @@ const EventCard = (props: Props) => {
         <img
           loading='lazy'
           src={
-            event.coverImage
-              ? event.coverImage
+            event.coverImageUrl
+              ? event.coverImageUrl
               : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
           }
           alt='No image'
@@ -53,7 +56,7 @@ const EventCard = (props: Props) => {
           </div>
           <div className='flex items-center gap-2 opacity-70'>
             <IoLocationSharp />
-            <span>{event.location}</span>
+            <span className='line-clamp-1'>{event.location}</span>
           </div>
           <p className='line-clamp-2 pt-2'>{event.description}</p>
         </div>
@@ -61,17 +64,19 @@ const EventCard = (props: Props) => {
           <div className='opacity-70'>
             <span
               className='badge-status badge-status--lg'
-              style={{ backgroundColor: `var(--${getStatusEventColor(event.status)})` }}
+              style={{ backgroundColor: `var(--${getStatusEventColor('Upcoming')})` }}
             >
-              {event.status}
+              {/* {event.status} */}
+              Upcoming
             </span>
           </div>
-          <div className='text-primary'>
-            {event.eventPaymentType === EEventPaymentTicket.PAID ? (
-              <p className='text-2xl font-bold'>{event.priceRange.startRange}.000 VND</p>
+          <div className='text-primary text-right'>
+            {event.eventPaymentType === EEventPaymentTicket.Paid ? (
+              <p className='text-2xl font-bold'>100.000 VND</p>
             ) : (
               <p className='text-2xl font-bold'>{event.eventPaymentType}</p>
             )}
+            <RatingStars rating={event.averageRate} />
           </div>
         </div>
       </div>

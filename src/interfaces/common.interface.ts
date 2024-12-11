@@ -30,8 +30,9 @@ export interface ApiListResponse<TData> {
 }
 
 export interface IListData<T> {
-  items: T
+  items: T[]
   metadata: IMetadata
+  statistic?: any
 }
 
 export interface IMetadata {
