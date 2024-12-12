@@ -38,6 +38,9 @@ import { useAppSelector } from '@hooks/useRedux'
 //i18n
 import { withTranslation } from 'react-i18next'
 
+//data
+import createdSampleData from '@data/created_sample'
+
 const CREATE_STEP = ['Information', 'Banner Image', 'Set Ticket', 'Review']
 
 interface Props {
@@ -172,7 +175,12 @@ const ModifyEvent = (props: Props) => {
               <p className='h4 font-bold text-header'>{t('option_two.title')}</p>
               <p className='h6 text-center text-header z-[10]'>{t('option_two.description')}</p>
             </div>
-            <button onClick={DownloadSampleCSV} className='text-primary hover:underline z-[2] pt-2'>
+            <button
+              onClick={() => {
+                DownloadSampleCSV({ data: createdSampleData })
+              }}
+              className='text-primary hover:underline z-[2] pt-2'
+            >
               {t('option_two.example_file')}
             </button>
           </div>

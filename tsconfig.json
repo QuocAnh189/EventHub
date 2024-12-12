@@ -25,6 +25,7 @@
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
       "@contexts/*": ["contexts/*"],
+      "@data/*": ["data/*"],
       "@db/*": ["db/*"],
       "@fonts/*": ["fonts/*"],
       "@hooks/*": ["hooks/*"],

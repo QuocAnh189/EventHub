@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom'
 import RatingStars from '@ui/RatingStars'
 import Spring from '@components/Spring'
+import { CircularProgress } from '@mui/material'
 
 //interface
 import { IEventFavorite } from '@interfaces/contents/event.interface'
@@ -16,10 +17,12 @@ interface Props {
   t: any
   event: IEventFavorite
   index: number
+  onRemove: (id: string) => void
+  isLoading: boolean
 }
 
 const EventFavouriteItem = (props: Props) => {
-  const { t, event, index } = props
+  const { t, event, index, onRemove, isLoading } = props
 
   return (
     <Spring type='slideUp' index={index}>
@@ -45,7 +48,9 @@ const EventFavouriteItem = (props: Props) => {
           <NavLink to={`/organization/event/${event.id}`} className='btn btn--outline blue !text-sm'>
             View
           </NavLink>
-          <button className='btn btn--outline red !text-sm'>Delete</button>
+          <button onClick={() => onRemove(event.id)} className='btn btn--outline red !text-sm'>
+            {isLoading ? <CircularProgress size={20} /> : 'Remove'}
+          </button>
         </div>
       </div>
     </Spring>

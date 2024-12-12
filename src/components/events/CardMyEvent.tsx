@@ -21,7 +21,7 @@ import { IMyEvent } from '@interfaces/contents/event.interface'
 import dayjs from 'dayjs'
 
 //redux
-import { useDeleteEventMutation, useRestoreEventMutation } from '@redux/apis/event.api'
+import { useDeleteEventMutation } from '@redux/apis/event.api'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -32,13 +32,14 @@ interface Props {
   eventIds: string[]
   onChecked: (id: string) => void
   index: number
+  onRestore?: (id: string) => void
+  loadingRestore?: boolean
 }
 
 const CardMyEvent = (props: Props) => {
-  const { t, event, onChecked, eventIds, index } = props
+  const { t, event, onChecked, eventIds, index, onRestore, loadingRestore } = props
   const navigate = useNavigate()
 
-  const [RestoreEvent, { isLoading: loadingRestore }] = useRestoreEventMutation()
   const [TrashEvent, { isLoading: loadingTrash }] = useDeleteEventMutation()
   const [openDialog, setOpenDialog] = useState<boolean>(false)
 
@@ -48,18 +49,6 @@ const CardMyEvent = (props: Props) => {
 
   const handleEditEvent = () => {
     navigate(`update-event/${event.id}`)
-  }
-
-  const handleRestoreEvent = async () => {
-    try {
-      const result = await RestoreEvent([event.id!]).unwrap()
-
-      if (result) {
-        toast.success('Restore Event successfully')
-      }
-    } catch (e) {
-      console.log(e)
-    }
   }
 
   const handleTrashEvent = async () => {
@@ -108,7 +97,7 @@ const CardMyEvent = (props: Props) => {
             <Checkbox checked={eventIds.includes(event.id!)} onChange={handleChange} sx={{ color: 'var(--header)' }} />
             <div className='w-full justify-end flex gap-4 pt-2'>
               <button
-                onClick={event.deletedAt ? handleRestoreEvent : handleEditEvent}
+                onClick={event.deletedAt ? () => onRestore && onRestore(event.id)! : handleEditEvent}
                 className='flex items-center justify-center rounded-lg bg-blue px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
               >
                 {event.deletedAt ? (

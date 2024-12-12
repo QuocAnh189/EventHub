@@ -15,10 +15,11 @@ import EventsRelate from './components/EventRelate'
 import Payment from './components/Payment'
 import Loader from '@components/Loader'
 import ConfirmDialog from '@components/Dialog'
+import { toast } from 'react-toastify'
 
 //redux
 import { useGetEventByIdQuery, useFavouriteEventMutation, useUnfavouriteEventMutation } from '@redux/apis/event.api'
-import { useAppSelector } from '@hooks/useRedux'
+import { useCheckFavouriteQuery } from '@redux/apis/event.api'
 
 //icons
 import { IoShareSocialOutline, IoLocationOutline } from 'react-icons/io5'
@@ -33,17 +34,11 @@ import dayjs from 'dayjs'
 const EventDetail = () => {
   const params = useParams()
 
-  const user = useAppSelector((state) => state.persistedReducer.user.user)
   const { data: event, isFetching } = useGetEventByIdQuery(params.id!)
+  const { data: isFavourite } = useCheckFavouriteQuery(params.id!)
 
-  // useEffect(() => {
-  //   refetch()
-  // }, [])
-
-  const [likeEvent] = useFavouriteEventMutation()
-  const [unlikeEvent] = useUnfavouriteEventMutation()
-
-  const [favourite, setFavourite] = useState(false)
+  const [FavouriteEvent] = useFavouriteEventMutation()
+  const [UnFavouriteEvent] = useUnfavouriteEventMutation()
 
   const [value, setValue] = useState<string>('1')
   const [openDialog, setOpenDialog] = useState<boolean>(false)
@@ -52,21 +47,15 @@ const EventDetail = () => {
     setValue(newValue)
   }
 
-  // useEffect(() => {
-  //   setFavourite(event?.isFavourite)
-  // }, [event?.isFavourite])
-
   const handleLikeEvent = async () => {
-    setFavourite(!favourite)
     try {
-      const result = favourite
-        ? await unlikeEvent({ eventId: event?.id!, userId: user?.id! })
-        : await likeEvent({ eventId: event?.id!, userId: user?.id! })
+      const result = isFavourite ? await UnFavouriteEvent(params.id!) : FavouriteEvent(params.id!)
 
       if (result) {
-        console.log(result)
+        toast.success(isFavourite ? 'UnFavourite event successfully' : 'Favourite event successfully')
       }
     } catch (e) {
+      toast.error('Something went wrong')
       console.log(e)
     }
   }
@@ -94,7 +83,7 @@ const EventDetail = () => {
           <h1 className='h1 text-header'>{event?.name}</h1>
           <div className='flex items-center gap-2'>
             <button onClick={handleLikeEvent}>
-              <FaHeart color={favourite ? 'red' : 'gray'} size='36px' />
+              {isFavourite != undefined && <FaHeart color={isFavourite ? 'red' : 'gray'} size='36px' />}
             </button>
             <button>
               <IoShareSocialOutline color='gray' size='36px' />

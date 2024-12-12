@@ -1,7 +1,7 @@
 import { Route } from '@interfaces/common.interface'
 
 //icon
-import { IoHomeOutline } from 'react-icons/io5'
+import { IoHomeOutline, IoTicket } from 'react-icons/io5'
 import { MdDashboard } from 'react-icons/md'
 import { MdEventAvailable } from 'react-icons/md'
 import { FaRegCalendarAlt } from 'react-icons/fa'
@@ -9,7 +9,6 @@ import { MdOutlinePreview } from 'react-icons/md'
 import { MdMenuBook } from 'react-icons/md'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { RiCoupon5Line } from 'react-icons/ri'
-import { GiExpense } from 'react-icons/gi'
 
 const ROUTES: Route[] = [
   {
@@ -46,9 +45,9 @@ const ROUTES: Route[] = [
     path: '/organization/coupon'
   },
   {
-    name: 'expense',
-    icon: <GiExpense size={20} />,
-    path: '/organization/expense'
+    name: 'ticket',
+    icon: <IoTicket size={20} />,
+    path: '/organization/ticket'
   },
   {
     name: 'calendar',

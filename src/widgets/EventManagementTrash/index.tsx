@@ -72,8 +72,30 @@ const EventManagementTrash = ({ t }: any) => {
       const result = await RestoreEvents(eventIds).unwrap()
 
       if (result) {
+        if ((data?.items.length === eventIds.length || data?.items.length === 1) && pagination.currentPage > 1) {
+          setParams({ ...params, page: pagination.currentPage - 1 })
+          pagination.setCurrentPage(pagination.currentPage - 1)
+        }
         toast.success('Restore events successfully')
-        setEventIds([])
+      }
+    } catch (e) {
+      toast.error('Some thing went wrong')
+      console.log(e)
+    } finally {
+      setEventIds([])
+    }
+  }
+
+  const handleRestoreEvent = async (id: string) => {
+    try {
+      const result = await RestoreEvents([id]).unwrap()
+
+      if (result) {
+        if (data?.items.length === 1 && pagination.currentPage > 1) {
+          setParams({ ...params, page: pagination.currentPage - 1 })
+          pagination.setCurrentPage(pagination.currentPage - 1)
+        }
+        toast.success('Restore Event successfully')
       }
     } catch (e) {
       toast.error('Some thing went wrong')
@@ -112,6 +134,8 @@ const EventManagementTrash = ({ t }: any) => {
               eventIds={eventIds}
               onChecked={handleChecked}
               index={index}
+              onRestore={(id: string) => handleRestoreEvent(id)}
+              loadingRestore={isLoading}
             />
           ))}
         </div>

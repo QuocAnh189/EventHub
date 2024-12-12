@@ -45,7 +45,7 @@ const Follower = () => {
           <div className='flex items-center justify-between'>
             <h5>My Follower</h5>
             <input
-              className='field-input w-[300px] md:w-[400px]'
+              className='field-input w-[300px] md:w-[300px]'
               type='search'
               placeholder='Search...'
               value={search}

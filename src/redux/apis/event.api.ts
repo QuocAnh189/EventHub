@@ -2,7 +2,7 @@ import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //type
-import { IFavoriteEventPayload, IParamsEvent, IParamsReview, IReviewEventPayload } from '@type/event.type'
+import { IParamsEvent, IParamsReview, IReviewEventPayload } from '@type/event.type'
 
 //interface
 import { IEvent, IEventFavorite } from 'interfaces/contents/event.interface'
@@ -23,7 +23,7 @@ export const apiEvent = createApi({
       return headers
     }
   }),
-  keepUnusedDataFor: 2,
+  keepUnusedDataFor: 20,
 
   tagTypes: ['Event', 'Review'],
   endpoints: (builder) => ({
@@ -88,6 +88,18 @@ export const apiEvent = createApi({
     getEventByCreator: builder.query<IListData<any>, any>({
       query: (params) => ({
         url: `/events/get-created-events`,
+        method: 'GET',
+        params
+      }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
+      providesTags: ['Event']
+    }),
+
+    getEventAnalysisByCreator: builder.query<IListData<any>, any>({
+      query: (params) => ({
+        url: '/events/get-created-events-analysis',
         method: 'GET',
         params
       }),
@@ -172,20 +184,18 @@ export const apiEvent = createApi({
       invalidatesTags: ['Review']
     }),
 
-    favouriteEvent: builder.mutation<any, IFavoriteEventPayload>({
-      query: (data) => ({
-        url: `/events/favourites/${data.eventId}`,
-        method: 'POST',
-        body: data
+    favouriteEvent: builder.mutation<any, string>({
+      query: (eventId) => ({
+        url: `/events/favourite/${eventId}`,
+        method: 'PATCH'
       }),
       invalidatesTags: ['Event']
     }),
 
-    unfavouriteEvent: builder.mutation<any, IFavoriteEventPayload>({
-      query: (data) => ({
-        url: `/events/favourites/${data.eventId}`,
-        method: 'POST',
-        body: data
+    unfavouriteEvent: builder.mutation<any, string>({
+      query: (eventId) => ({
+        url: `/events/unfavourite/${eventId}`,
+        method: 'PATCH'
       }),
       invalidatesTags: ['Event']
     }),
@@ -194,7 +204,7 @@ export const apiEvent = createApi({
       query: (params) => ({
         url: `/events/get-favourite-events`,
         method: 'GET',
-        params
+        params: params
       }),
       providesTags: ['Event'],
       transformResponse: (response: any) => {
@@ -218,6 +228,17 @@ export const apiEvent = createApi({
         body: { ids }
       }),
       invalidatesTags: ['Event']
+    }),
+
+    checkFavourite: builder.query<any, string>({
+      query: (eventId) => ({
+        url: `/events/check-favourite/${eventId}`,
+        method: 'GET'
+      }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
+      providesTags: ['Event']
     })
   })
 })
@@ -230,6 +251,7 @@ export const {
   useDeleteEventMutation,
   useDeleteMultipleEventMutation,
   useGetEventByCreatorQuery,
+  useGetEventAnalysisByCreatorQuery,
   useDeletePermanentEventMutation,
   useRestoreEventMutation,
   useGetTrashEventsQuery,
@@ -242,5 +264,6 @@ export const {
   useUnfavouriteEventMutation,
   useGetFavouriteEventQuery,
   useMakeEventPrivateMutation,
-  useMakeEventPublicMutation
+  useMakeEventPublicMutation,
+  useCheckFavouriteQuery
 } = apiEvent

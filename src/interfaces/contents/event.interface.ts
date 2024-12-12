@@ -81,3 +81,12 @@ export interface IMyEvent {
   isPrivate: boolean
   deletedAt: any
 }
+
+export interface IMyEventAnalysis {
+  id: string
+  name: string
+  coverImageUrl: string
+  averageRate: number
+  totalSale: number
+  totalFavourite: number
+}

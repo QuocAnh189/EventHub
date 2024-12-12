@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 import { useDebounce } from '@hooks/useDebounce'
+import { useNavigate } from 'react-router-dom'
 
 //components
 import CardMyEvent from '@components/events/CardMyEvent'
@@ -9,6 +10,7 @@ import ConfirmDialog from '@components/Dialog'
 import FilterItem from '@ui/FilterItem'
 import Select from '@ui/Select'
 import Pagination from '@ui/Pagination'
+import DownloadSampleExcel from '@components/DownloadCSV'
 
 //constants
 import {
@@ -65,6 +67,7 @@ const initParams = {
 } as IParamMyEvent
 
 const EventManagement = ({ t }: any) => {
+  const navigate = useNavigate()
   const categories = useAppSelector((state: RootState) => state.persistedReducer.category.categories)
 
   const [params, setParams] = useState<IParamMyEvent>(initParams)
@@ -75,7 +78,7 @@ const EventManagement = ({ t }: any) => {
 
   const [MovePublicEvent, { isLoading: loadingPublic }] = useMakeEventPublicMutation()
   const [MovePrivateEvent, { isLoading: loadingPrivate }] = useMakeEventPrivateMutation()
-  const [moveTrashEvents] = useDeleteMultipleEventMutation()
+  const [MoveTrashEvents] = useDeleteMultipleEventMutation()
 
   const [visibility, setVisibility] = useState<EEventVisibility>(EEventVisibility.All)
 
@@ -171,11 +174,19 @@ const EventManagement = ({ t }: any) => {
     try {
       const result = await MovePublicEvent(ids).unwrap()
       if (result) {
+        console.log(data?.items.length, ids.length)
+        if (data?.items.length === ids.length && pagination.currentPage > 1) {
+          setParams({ ...params, page: pagination.currentPage - 1 })
+          pagination.setCurrentPage(pagination.currentPage - 1)
+        }
         toast.success('Move to public successfully')
         setOpenDialog(false)
       }
     } catch (e) {
+      toast.success('Move event to trash successfully')
       console.log(e)
+    } finally {
+      setEventIds([])
     }
   }
 
@@ -183,30 +194,64 @@ const EventManagement = ({ t }: any) => {
     try {
       const result = await MovePrivateEvent(ids).unwrap()
       if (result) {
+        if (data?.items.length === ids.length && pagination.currentPage > 1) {
+          setParams({ ...params, page: pagination.currentPage - 1 })
+          pagination.setCurrentPage(pagination.currentPage - 1)
+        }
         toast.success('Move to private successfully')
         setOpenDialog(false)
       }
     } catch (e) {
+      toast.success('Move event to trash successfully')
       console.log(e)
+    } finally {
+      setEventIds([])
     }
   }
 
   const handleTrashEvents = async (ids: string[]) => {
     try {
       if (eventIds.length) {
-        const result = await moveTrashEvents(ids).unwrap()
+        const result = await MoveTrashEvents(ids).unwrap()
         if (result) {
+          if (data?.items.length === ids.length && pagination.currentPage > 1) {
+            setParams({ ...params, page: pagination.currentPage - 1 })
+            pagination.setCurrentPage(pagination.currentPage - 1)
+          }
           toast.success('Move events to trash successfully')
           setOpenDialog(false)
         }
       }
     } catch (e) {
+      toast.success('Move event to trash successfully')
       console.log(e)
+    } finally {
+      setEventIds([])
     }
   }
 
   return (
     <div className='flex flex-col flex-1'>
+      <div className='flex flex-col-reverse gap-4 mb-5 md:flex-col lg:flex-row lg:justify-between'>
+        <div className='flex flex-col gap-4 md:flex-row md:gap-[14px]'>
+          <button
+            onClick={() => {
+              navigate('/organization/create-event')
+            }}
+            className='btn btn--primary'
+          >
+            {t('body.title')} <i className='icon-circle-plus-regular' />
+          </button>
+          <button
+            onClick={() => {
+              DownloadSampleExcel({ data: data?.items || [] })
+            }}
+            className='btn btn--outline blue !h-[44px]'
+          >
+            {t('body.link_csv')} <i className='icon-file-export-solid' />
+          </button>
+        </div>
+      </div>
       <div className='flex flex-wrap gap-2 mb-4'>
         <span className='text-header'>{t('management.label_event')}:</span>
         <div>
@@ -221,6 +266,7 @@ const EventManagement = ({ t }: any) => {
               onClick={(value) => {
                 setVisibility(value)
                 setParams({ ...params, visibility: value, page: 1 })
+                pagination.setCurrentPage(1)
               }}
             />
           ))}
@@ -264,7 +310,7 @@ const EventManagement = ({ t }: any) => {
         </div>
 
         <input
-          className='field-input w-[300px] md:w-[400px]'
+          className='field-input w-[300px] md:w-[300px]'
           type='search'
           placeholder='Search...'
           value={search}

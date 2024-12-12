@@ -1,5 +1,5 @@
 //hook
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //components
@@ -25,34 +25,43 @@ import { EEventStatus } from '@constants/enum.constant'
 import dayjs from 'dayjs'
 
 //data
-import calendar_event from '@db/calendar'
 import events_data from '@db/event'
+import { IEvent } from '@interfaces/contents'
+
+interface IPramsEventCalendar {
+  pageSize: number
+  startTimeRange: string
+  endTimeRange: string
+}
+
+const initParams = {
+  pageSize: 400,
+  startTimeRange: dayjs(new Date()).format('YYYY-MM-DD'),
+  endTimeRange: dayjs(new Date()).format('YYYY-MM-DD')
+}
 
 const Calendar = ({ t }: any) => {
   const navigate = useNavigate()
-  const { data: events } = useGetEventsQuery({ takeAll: false, type: EEventStatus.UPCOMING, size: 6 })
+  const [params, setParams] = useState<IPramsEventCalendar>(initParams)
+  const { data } = useGetEventsQuery(params)
 
-  const [eventCalendar, setEvenCalendar] = useState([])
+  console.log('data', data)
+
   const handleEventClick = (selected: any) => {
     navigate(`/organization/event/${selected.event._def.publicId}`, {
       state: { event: events_data.find((item: any) => item.id === selected.event._def.publicId) }
     })
   }
 
-  useEffect(() => {
-    if (events) {
-      const formatEvents = events?.items.map((item: any) => {
-        return {
-          id: item.id,
-          title: item.name,
-          coverImage: item.coverImage,
-          date: dayjs(item.startTime).format('YYYY-MM-DD').toString(),
-          status: item.status
-        }
-      })
-      setEvenCalendar(formatEvents)
-    }
-  }, [events])
+  const handleDatesSet = (info: any) => {
+    const startDate = dayjs(info.start).format('YYYY-MM-DD')
+    const endDate = dayjs(info.end).format('YYYY-MM-DD')
+
+    console.log('startDate', startDate)
+    console.log('endDate', endDate)
+
+    setParams({ ...params, startTimeRange: startDate, endTimeRange: endDate })
+  }
 
   return (
     <ProtectedLayout>
@@ -76,7 +85,16 @@ const Calendar = ({ t }: any) => {
               eventClick={handleEventClick}
               eventContent={renderEventContent}
               // initialEvents={calendar_event}
-              events={calendar_event || eventCalendar}
+              events={data?.items.map((item: IEvent) => {
+                return {
+                  id: item.id,
+                  title: item.name,
+                  coverImage: item.coverImageUrl,
+                  date: dayjs(item.startTime).format('YYYY-MM-DD').toString(),
+                  status: 'Upcoming'
+                }
+              })}
+              datesSet={(info) => handleDatesSet(info)}
             />
           </Box>
         </Box>
@@ -104,11 +122,11 @@ const Calendar = ({ t }: any) => {
 function renderEventContent(eventInfo: any) {
   const statusEvent = (status: EEventStatus) => {
     switch (status) {
-      case EEventStatus.CLOSED:
+      case EEventStatus.Closed:
         return '#ff5470'
-      case EEventStatus.OPENING:
+      case EEventStatus.Opening:
         return '#FFE31A'
-      case EEventStatus.UPCOMING:
+      case EEventStatus.Upcoming:
         return '#00ba9d'
       default:
         break

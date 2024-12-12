@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { usePagination } from '@hooks/usePagination'
 import { useDebounce } from '@hooks/useDebounce'
+import { toast } from 'react-toastify'
 
 //components
 import EventFavouriteItem from '@components/events/EventFavouriteItem'
@@ -18,6 +19,7 @@ import { IEventFavorite } from '@interfaces/contents'
 
 //redux
 import { useGetFavouriteEventQuery } from '@redux/apis/event.api'
+import { useUnfavouriteEventMutation } from '@redux/apis/event.api'
 
 interface Props {
   search_label: string
@@ -31,6 +33,7 @@ const EventFavouriteGrid = (props: Props) => {
   const debouncedSearchTerm = useDebounce(search, 500)
 
   const { data } = useGetFavouriteEventQuery(params)
+  const [UnFavouriteEvent, { isLoading }] = useUnfavouriteEventMutation()
 
   const pagination: IPagination = usePagination(data?.metadata.totalCount, data?.metadata.pageSize)
 
@@ -41,6 +44,22 @@ const EventFavouriteGrid = (props: Props) => {
   useEffect(() => {
     setParams({ ...params, search: debouncedSearchTerm })
   }, [debouncedSearchTerm])
+
+  const handleUnFavouriteEvent = async (id: string) => {
+    try {
+      const result = await UnFavouriteEvent(id).unwrap()
+
+      if (result) {
+        if (data?.items.length === 1 && pagination.currentPage > 1) {
+          setParams({ ...params, page: pagination.currentPage - 1 })
+        }
+        toast.success('Remove event from whist list successfully')
+      }
+    } catch (e) {
+      toast.error('Something went wrong')
+      console.log(e)
+    }
+  }
 
   return (
     <div className='flex flex-1 flex-col'>
@@ -58,7 +77,13 @@ const EventFavouriteGrid = (props: Props) => {
                  md:mt-[27px] xl:grid-cols-5 2xl:grid-cols-6'
       >
         {data?.items.map((event: IEventFavorite, index: number) => (
-          <EventFavouriteItem key={`event-${index}`} event={event} index={index} />
+          <EventFavouriteItem
+            key={`event-${index}`}
+            event={event}
+            index={index}
+            onRemove={() => handleUnFavouriteEvent(event.id)}
+            isLoading={isLoading}
+          />
         ))}
       </div>
 

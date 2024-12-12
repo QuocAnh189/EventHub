@@ -1,12 +1,12 @@
 //component
 import PageHeader from '@layouts/components/PageHeader'
 import ProtectedLayout from '@layouts/protected'
-const Expense = () => {
+const MyTicket = () => {
   return (
     <ProtectedLayout>
-      <PageHeader title='Expense' />
+      <PageHeader title='My Ticket' />
     </ProtectedLayout>
   )
 }
 
-export default Expense
+export default MyTicket

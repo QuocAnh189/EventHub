@@ -55,8 +55,7 @@ const MyEvent = lazy(() => import('@pages/events/My-Event'))
 const TrashEvent = lazy(() => import('@pages/events/Trash-Event'))
 const Coupon = lazy(() => import('@pages/coupon/Coupon'))
 const CouponEvent = lazy(() => import('@pages/coupon/CouponEvent'))
-const Expense = lazy(() => import('@pages/expense/Expense'))
-const ExpenseEvent = lazy(() => import('@pages/expense/ExpenseEvent'))
+const MyTicket = lazy(() => import('@pages/ticket/MyTicket'))
 const Calendar = lazy(() => import('@pages/calendar/Calendar'))
 const Order = lazy(() => import('@pages/order/index'))
 const Review = lazy(() => import('@pages/review/Review'))
@@ -102,8 +101,7 @@ function App() {
               <Route path='/organization/trash-event' element={<TrashEvent />} />
               <Route path='/organization/coupon' element={<Coupon />} />
               <Route path='/organization/coupon/:id/events' element={<CouponEvent />} />
-              <Route path='/organization/expense' element={<Expense />} />
-              <Route path='/organization/expense/:eventId' element={<ExpenseEvent />} />
+              <Route path='/organization/ticket' element={<MyTicket />} />
               <Route path='/organization/calendar' element={<Calendar />} />
               <Route path='/organization/order' element={<Order />} />
               <Route path='/organization/review' element={<Review />} />
