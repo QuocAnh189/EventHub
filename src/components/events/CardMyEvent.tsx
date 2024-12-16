@@ -25,6 +25,7 @@ import { useDeleteEventMutation } from '@redux/apis/event.api'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import ModalApplyCoupon from '@pages/events/components/ModalApplyCoupon'
 
 interface Props {
   t: any
@@ -40,8 +41,9 @@ const CardMyEvent = (props: Props) => {
   const { t, event, onChecked, eventIds, index, onRestore, loadingRestore } = props
   const navigate = useNavigate()
 
-  const [TrashEvent, { isLoading: loadingTrash }] = useDeleteEventMutation()
+  const [modalCoupons, setModalCoupons] = useState<boolean>(false)
   const [openDialog, setOpenDialog] = useState<boolean>(false)
+  const [TrashEvent, { isLoading: loadingTrash }] = useDeleteEventMutation()
 
   const handleChange = () => {
     onChecked(event.id!)
@@ -79,7 +81,17 @@ const CardMyEvent = (props: Props) => {
           />
         </div>
 
-        <div className='w-full h-full flex flex-col justify-between px-5 py-4'>
+        <div className='relative w-full h-full flex flex-col justify-between px-5 pt-2 pb-4'>
+          {!event.deletedAt && (
+            <button
+              className='absolute text-btn right-0 -top-2'
+              onClick={() => {
+                setModalCoupons(true)
+              }}
+            >
+              Apply Coupon
+            </button>
+          )}
           <div>
             <p className='h4 mb-4 line-clamp-1 text-2xl truncate text-ellipsis w-[300px] font-bold tracking-tight text-gray-900 dark:text-white max-md:text-base'>
               {event.name}
@@ -127,6 +139,15 @@ const CardMyEvent = (props: Props) => {
           </div>
         </div>
       </div>
+
+      {modalCoupons && (
+        <ModalApplyCoupon
+          modalOpen={modalCoupons}
+          setModalOpen={setModalCoupons}
+          couponsIds={event.coupons.map((item) => item.id)}
+          eventId={event.id}
+        />
+      )}
 
       {openDialog && (
         <ConfirmDialog

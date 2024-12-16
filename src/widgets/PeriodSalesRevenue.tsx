@@ -14,38 +14,31 @@ import { numFormatter } from '@utils/helpers'
 const data = [
   {
     date: new Date(2023, 8, 12),
-    value: 1554,
-    trend: 14.56
+    value: 1554
   },
   {
     date: new Date(2023, 8, 14),
-    value: 2741,
-    trend: 25.11
+    value: 2741
   },
   {
     date: new Date(2023, 8, 16),
-    value: 1088,
-    trend: -12.56
+    value: 1088
   },
   {
     date: new Date(2023, 8, 18),
-    value: 1541,
-    trend: 8.25
+    value: 1541
   },
   {
     date: new Date(2023, 8, 20),
-    value: 3874,
-    trend: 0.23
+    value: 3874
   },
   {
     date: new Date(2023, 8, 22),
-    value: 2390,
-    trend: -0.23
+    value: 2390
   },
   {
     date: new Date(2023, 8, 24),
-    value: 3490,
-    trend: -1.15
+    value: 3490
   }
 ]
 

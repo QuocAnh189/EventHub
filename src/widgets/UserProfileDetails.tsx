@@ -2,35 +2,40 @@
 import { Controller, UseFormRegister, UseFormWatch, UseFormSetValue, Control } from 'react-hook-form'
 import { useTheme } from '@contexts/theme.context'
 import { useWindowSize } from 'react-use'
+import { useEffect, useState } from 'react'
 
 //components
 import Spring from '@components/Spring'
 import Select from '@ui/Select'
 import { NavLink } from 'react-router-dom'
 import { PatternFormat } from 'react-number-format'
+import Loading from '@components/Loading'
 
 //utils
 import classNames from 'classnames'
 
-import { IUser } from 'interfaces/systems/user.interface'
-import { CircularProgress } from '@mui/material'
+//i18n
 import { withTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
+
+//interface
+import { IUpdateUserProfilePayload } from '@dtos/user.dto'
 import { IRole } from '@interfaces/systems'
+import { GENDER_OPTIONS } from '@constants/options.constant'
 
 interface Props {
   t: any
-  register: UseFormRegister<IUser>
-  watch: UseFormWatch<IUser>
-  setValue: UseFormSetValue<IUser>
-  control: Control<IUser>
+  register: UseFormRegister<IUpdateUserProfilePayload>
+  watch: UseFormWatch<IUpdateUserProfilePayload>
+  setValue: UseFormSetValue<IUpdateUserProfilePayload>
+  control: Control<IUpdateUserProfilePayload>
   errors: any
   isLoading: boolean
   roles: IRole[]
+  setModalOpen: (value: boolean) => void
 }
 
 const UserProfileDetails = (props: Props) => {
-  const { t, register, watch, setValue, control, errors, isLoading, roles } = props
+  const { t, register, watch, setValue, control, errors, isLoading, roles, setModalOpen } = props
 
   const { theme, toggleTheme }: any = useTheme()
   const { width } = useWindowSize()
@@ -40,6 +45,8 @@ const UserProfileDetails = (props: Props) => {
   useEffect(() => {
     localStorage.setItem('type_sidebar', sidebarCurrent)
   }, [sidebarCurrent])
+
+  console.log(watch())
 
   return (
     <Spring
@@ -130,11 +137,7 @@ const UserProfileDetails = (props: Props) => {
               <Select
                 placeholder='Gender'
                 id='gender'
-                options={[
-                  { value: 'MALE', label: 'MALE' },
-                  { value: 'FEMALE', label: 'FEMALE' },
-                  { value: 'OTHER', label: 'OTHER' }
-                ]}
+                options={GENDER_OPTIONS}
                 value={{ value: watch().gender, label: watch().gender }}
                 onChange={(e: any) => {
                   setValue('gender', e.value)
@@ -176,7 +179,7 @@ const UserProfileDetails = (props: Props) => {
                 type='text'
                 id='role'
                 placeholder='Role'
-                value={roles.map((role: IRole) => role.name).join(', ')}
+                value={roles?.map((role: IRole) => role.name).join(', ')}
               />
             </div>
             <div className='field-wrapper'>
@@ -188,11 +191,11 @@ const UserProfileDetails = (props: Props) => {
           </div>
         </div>
         <div className='mt-2.5 flex justify-between'>
-          <button className='text-btn' type='button'>
+          <button onClick={() => setModalOpen(true)} className='text-btn' type='button'>
             {t('profile detail.change_password')}
           </button>
           <button disabled={isLoading} type='submit' className='btn btn-primary hover:bg-primary-400 w-[260px] mt-5'>
-            {isLoading ? <CircularProgress size={24} /> : t('profile detail.update_information')}
+            {isLoading ? <Loading /> : t('profile detail.update_information')}
           </button>
         </div>
         {width < 1920 && (

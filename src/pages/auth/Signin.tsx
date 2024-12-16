@@ -15,7 +15,7 @@ import { motion } from 'framer-motion'
 import { withTranslation } from 'react-i18next'
 
 //assets
-import authImg from '@assets/images/auth/bg_auth.png'
+import auth_Img from '@assets/images/auth/bg_auth.png'
 import logoText_Img from '@assets/images/common/logo_text.png'
 
 const initSession = {
@@ -44,7 +44,7 @@ const SignIn = ({ t }: any) => {
           <p className='text-center text-header tracking-[0.2px] font-semibold text-lg leading-6 max-w-[540px] my-7 mx-auto'>
             {t('slogan')}
           </p>
-          <img loading='lazy' className='max-w-[780px]' src={authImg} alt='media' />
+          <img loading='lazy' className='max-w-[780px]' src={auth_Img} alt='media' />
         </div>
       )}
       <div className='relative w-full h-screen flex justify-center items-center'>

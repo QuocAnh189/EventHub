@@ -91,7 +91,7 @@ const Calendar = ({ t }: any) => {
                   title: item.name,
                   coverImage: item.coverImageUrl,
                   date: dayjs(item.startTime).format('YYYY-MM-DD').toString(),
-                  status: 'Upcoming'
+                  status: StatusEvent(item.startTime)
                 }
               })}
               datesSet={(info) => handleDatesSet(info)}
@@ -117,6 +117,16 @@ const Calendar = ({ t }: any) => {
       </Box>
     </ProtectedLayout>
   )
+}
+
+const StatusEvent = (day: any) => {
+  if (dayjs(day).format('DD/MM/YY') < dayjs(new Date()).format('DD/MM/YY')) {
+    return 'Closed'
+  } else if (dayjs(day).format('DD/MM/YY') === dayjs(new Date()).format('DD/MM/YY')) {
+    return 'Opening'
+  } else {
+    return 'Upcoming'
+  }
 }
 
 function renderEventContent(eventInfo: any) {

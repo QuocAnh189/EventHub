@@ -1,7 +1,5 @@
+import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
-//type
-import { IMessageParams } from '@type/message.type'
 
 export const apiConversation = createApi({
   reducerPath: 'apiConversation',
@@ -21,36 +19,40 @@ export const apiConversation = createApi({
   keepUnusedDataFor: 20,
   tagTypes: ['Conversation', 'Message'],
   endpoints: (builder) => ({
-    getConversationsByEventId: builder.query<any, string>({
-      query: (eventId) => ({
-        url: `/conversations/get-by-event/${eventId}`,
-        method: 'GET'
-      })
+    getConversationsByOrganizerId: builder.query<IListData<any>, { organizerId: string; params: any }>({
+      query: ({ organizerId, params }) => ({
+        url: `/conversations/get-by-organizer/${organizerId}`,
+        method: 'GET',
+        params
+      }),
+      transformResponse: (response: any) => response.data,
+      providesTags: ['Conversation']
     }),
 
-    getConversationsByUserId: builder.query<any, string>({
-      query: (userId) => ({
+    getConversationsByUserId: builder.query<IListData<any>, { userId: string; params: any }>({
+      query: ({ userId, params }) => ({
         url: `/conversations/get-by-user/${userId}`,
-        method: 'GET'
-      })
+        method: 'GET',
+        params
+      }),
+      transformResponse: (response: any) => response.data,
+      providesTags: ['Conversation']
     }),
 
-    getMessageByConversationId: builder.query<any, { conversationId: string; params: IMessageParams }>({
+    getMessageByConversationId: builder.query<any, { conversationId: string; params: any }>({
       query: ({ conversationId, params }) => ({
         url: `/conversations/${conversationId}/messages`,
         method: 'GET',
         params
       }),
-      transformResponse: (response: any) => {
-        return response?.data
-      },
+      transformResponse: (response: any) => response?.data,
       providesTags: ['Conversation']
     })
   })
 })
 
 export const {
-  useGetConversationsByEventIdQuery,
+  useGetConversationsByOrganizerIdQuery,
   useGetConversationsByUserIdQuery,
   useGetMessageByConversationIdQuery
 } = apiConversation

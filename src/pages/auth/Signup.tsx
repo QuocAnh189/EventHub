@@ -11,8 +11,14 @@ import FormSetPassword from './components/FormSetPassword'
 //motion
 import { motion } from 'framer-motion'
 
-//type
-import { SignUpPayload, SignUpPayloadOne, SignUpPayloadTwo, InitSignUpOne, InitSignUpTwo } from '@type/auth.type'
+//dtos
+import {
+  SignUpPayload,
+  SignUpPayloadOne,
+  SignUpPayloadTwo,
+  InitSignUpPayloadOne,
+  InitSignUpPayloadTwo
+} from '@dtos/auth.dto'
 
 //redux
 import { useAppDispatch } from '@hooks/useRedux'
@@ -25,6 +31,8 @@ import { withTranslation } from 'react-i18next'
 // assets
 import authImg from '@assets/images/auth/bg_auth.png'
 import logoText_Img from '@assets/images/common/logo_text.png'
+
+//util
 import dayjs from 'dayjs'
 
 const SignUp = ({ t }: any) => {
@@ -34,8 +42,8 @@ const SignUp = ({ t }: any) => {
 
   const [SignUp, { isLoading }] = useSignUpMutation()
 
-  const [formDataSessionOne, setFormDataSessionOne] = useState<SignUpPayloadOne>(InitSignUpOne)
-  const [formDataSessionTwo, setFormDataSessionTwo] = useState<SignUpPayloadTwo>(InitSignUpTwo)
+  const [formDataSessionOne, setFormDataSessionOne] = useState<SignUpPayloadOne>(InitSignUpPayloadOne)
+  const [formDataSessionTwo, setFormDataSessionTwo] = useState<SignUpPayloadTwo>(InitSignUpPayloadTwo)
 
   const [showFormSessionOne, setShowFormSessionOne] = useState<boolean>(true)
   const [showFormSessionTwo, setShowFormSessionTwo] = useState<boolean>(false)
@@ -78,7 +86,7 @@ const SignUp = ({ t }: any) => {
       const result = await SignUp({ ...formData, dob: dayjs(formData.dob).format('DD/MM/YYYY') }).unwrap()
       if (result) {
         localStorage.setItem('token', JSON.stringify(result))
-        const response = await fetch(`${import.meta.env.VITE_API_URL!}/auth/profile`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL!}/users/profile`, {
           headers: { Authorization: `Bearer ${result.accessToken}` }
         })
 

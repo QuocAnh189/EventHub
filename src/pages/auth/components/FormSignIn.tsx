@@ -8,8 +8,8 @@ import { toast } from 'react-toastify'
 import CircularProgress from '@mui/material/CircularProgress'
 
 //validate
-import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { formSchemaSignIn } from '@utils/validation'
 
 //icons
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
@@ -17,12 +17,13 @@ import googleIcon from '@assets/images/icons/google.png'
 import facebookIcon from '@assets/images/icons/facebook.png'
 
 //type
-import { LoginPayload, InitLogin } from '@type/auth.type'
+import { SignInPayload, InitLoginPayload } from '@dtos/auth.dto'
 
 //redux
 import { RootState } from '@redux/store'
-import { useAppSelector } from '@hooks/index'
+import { useAppDispatch, useAppSelector } from '@hooks/index'
 import { useSignInMutation } from '@redux/apis/auth.api'
+import { setUser } from '@redux/slices/user.slice'
 
 //motion
 import { motion } from 'framer-motion'
@@ -33,11 +34,6 @@ import { withTranslation } from 'react-i18next'
 // utils
 import classNames from 'classnames'
 
-const formSchema = z.object({
-  identity: z.string().min(1, 'Account is not empty'),
-  password: z.string().min(1, 'Password is not empty')
-})
-
 interface Props {
   t: any
   changeSession: (name: string) => void
@@ -45,13 +41,14 @@ interface Props {
 
 const FormSignIn = (props: Props) => {
   const { t, changeSession } = props
+  const dispatch = useAppDispatch()
 
   const navigate = useNavigate()
   const user = useAppSelector((state: RootState) => state.persistedReducer.user.user)
 
   const [showPassWord, setShowPassWord] = useState<boolean>(false)
 
-  const [signIn, { isLoading: loadingSignIn }] = useSignInMutation()
+  const [SignIn, { isLoading: loadingSignIn }] = useSignInMutation()
 
   useLayoutEffect(() => {
     if (user) {
@@ -63,22 +60,31 @@ const FormSignIn = (props: Props) => {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm<LoginPayload>({
-    resolver: zodResolver(formSchema),
-    defaultValues: InitLogin
+  } = useForm<SignInPayload>({
+    resolver: zodResolver(formSchemaSignIn),
+    defaultValues: InitLoginPayload
   })
 
-  const onSubmit: SubmitHandler<LoginPayload> = async (data: LoginPayload) => {
+  const onSubmit: SubmitHandler<SignInPayload> = async (data: SignInPayload) => {
     try {
-      const result = await signIn(data).unwrap()
+      const result = await SignIn(data).unwrap()
       if (result) {
         localStorage.setItem('token', JSON.stringify(result))
-        navigate('/organization')
+        const response = await fetch(`${import.meta.env.VITE_API_URL!}/users/profile`, {
+          headers: { Authorization: `Bearer ${result.accessToken}` }
+        })
+
+        const user = await response.json()
+
+        if (user) {
+          dispatch(setUser(user.data))
+          navigate('/organization')
+        }
       }
     } catch (error: any) {
       const message = error.data.message
       switch (message) {
-        case 'Invalid credentials':
+        case 'invalid credentials':
           toast.error('Your account or password is wrong')
           break
         default:

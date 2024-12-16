@@ -9,8 +9,7 @@ import Pagination from '@ui/Pagination'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'
-import { useGetReviewsByEventIdQuery } from '@redux/apis/review.api'
-import { useAddReviewMutation } from '@redux/apis/event.api'
+import { useAddReviewMutation, useGetReviewsByEventIdQuery } from '@redux/apis/review.api'
 
 //util
 import classNames from 'classnames'
@@ -22,7 +21,7 @@ import { usePagination } from '@hooks/usePagination'
 
 //interface
 import { IUser } from '@interfaces/systems'
-import { IReviewEventPayload } from '@type/event.type'
+// import { IReviewEventPayload } from '@type/event.type'
 
 const initParams = {
   page: 1,
@@ -40,19 +39,26 @@ const Comments = (props: Props) => {
 
   const [params, setParams] = useState(initParams)
   const { data } = useGetReviewsByEventIdQuery({ eventId, params })
-  const [addReview, { isLoading }] = useAddReviewMutation()
+  const [AddReview, { isLoading }] = useAddReviewMutation()
 
   const [rate, setRate] = useState<number>(0.0)
   const [content, setContent] = useState<string>('')
 
   const handleAddReviews = async () => {
-    const data: IReviewEventPayload = { userId: user?.id!, eventId, content, rate }
+    const formData = new FormData()
+    formData.append('userId', user?.id!)
+    formData.append('eventId', eventId)
+    formData.append('content', content)
+    formData.append('rate', rate.toString())
+
+    // const data: IReviewEventPayload = { userId: user?.id!, eventId, content, rate }
     try {
-      const result = await addReview({ eventId, data }).unwrap()
+      const result = await AddReview(formData).unwrap()
       if (result) {
-        toast.success('Add review successfully')
         setRate(0)
         setContent('')
+        console.log('result', result)
+        toast.success('Add review successfully')
       }
     } catch (e: any) {
       if (e.data.errors[0] === 'Rate is required') {

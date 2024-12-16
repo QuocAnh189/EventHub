@@ -36,7 +36,8 @@ const ROUTES: Route[] = [
       { name: 'my favourite', path: '/organization/my-favourite' },
       { name: 'my events', path: '/organization/my-event' },
       { name: 'trash events', path: '/organization/trash-event' },
-      { name: 'create event', path: '/organization/create-event' }
+      { name: 'create event', path: '/organization/create-event' },
+      { name: 'my expense', path: '/organization/my-expense' }
     ]
   },
   {

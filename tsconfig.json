@@ -27,6 +27,7 @@
       "@contexts/*": ["contexts/*"],
       "@data/*": ["data/*"],
       "@db/*": ["db/*"],
+      "@dtos/*": ["dtos/*"],
       "@fonts/*": ["fonts/*"],
       "@hooks/*": ["hooks/*"],
       "@interfaces/*": ["interfaces/*"],

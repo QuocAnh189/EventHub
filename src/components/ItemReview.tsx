@@ -1,9 +1,14 @@
+//hooks
 import { useState } from 'react'
+import { useSubmenu } from '@hooks/useSubmenu'
 
 //component
 import RatingStars from '@ui/RatingStars'
 import ConfirmDialog from './Dialog'
 import { Divider } from '@mui/material'
+import Submenu from '@ui/Submenu'
+import SubmenuTrigger from '@ui/SubmenuTrigger'
+import ModalUpdate from '@pages/review/components/ModalUpdate'
 
 //interfaces
 import { IReview } from '@interfaces/contents'
@@ -13,7 +18,8 @@ import userDefault from '@assets/images/common/user_default.png'
 import dayjs from 'dayjs'
 
 //redux
-import { useDeleteReviewMutation } from '@redux/apis/event.api'
+import { useDeleteReviewMutation } from '@redux/apis/review.api'
+import { toast } from 'react-toastify'
 
 interface Props {
   index: number
@@ -24,17 +30,22 @@ interface Props {
 
 const ItemReview = (props: Props) => {
   const { index, review, ownerId, userId } = props
-  const [openDialog, setOpenDialog] = useState<boolean>(false)
 
-  const [deleteReview, { isLoading: loadingDeleteReview }] = useDeleteReviewMutation()
+  const { anchorEl, open, handleClick, handleClose } = useSubmenu()
+  const [openDialog, setOpenDialog] = useState<boolean>(false)
+  const [modalUpdate, setModalUpdate] = useState<boolean>(false)
+
+  const [DeleteReview, { isLoading: loadingDeleteReview }] = useDeleteReviewMutation()
 
   const handleDeleteReview = async () => {
     try {
-      const result = await deleteReview({ eventId: review.eventId, reviewId: review.id }).unwrap()
+      const result = await DeleteReview(review.id).unwrap()
       if (result) {
+        toast.success('Delete review successfully')
         setOpenDialog(false)
       }
     } catch (e) {
+      toast.error('Something went wrong')
       console.log(e)
     }
   }
@@ -60,25 +71,45 @@ const ItemReview = (props: Props) => {
         </div>
         <p className='text-sm text-gray500'>{dayjs(review.createdAt).format('DD/MM/YYYY hh:mm A').toString()}</p>
       </div>
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center justify-between gap-2'>
         <p className='text-gray500'>{review.content}.</p>
         {review.user.id === userId && (
-          <button
-            onClick={() => {
-              setOpenDialog(true)
-            }}
-            className='font-medium text-header hover:underline text-textError'
-          >
-            Delete
-          </button>
+          <div>
+            <SubmenuTrigger onClick={handleClick} />
+            <Submenu anchorEl={anchorEl} open={open} onClose={handleClose}>
+              <div className='py-5 pl-6 pr-8'>
+                <div className='flex flex-col gap-3'>
+                  <button onClick={() => setModalUpdate(true)} className='menu-btn subheading-2'>
+                    <span className='icon-wrapper'>
+                      <i className='icon icon-user' />
+                    </span>
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => {
+                      setOpenDialog(true)
+                    }}
+                    className='menu-btn subheading-2'
+                  >
+                    <span className='icon-wrapper'>
+                      <i className='icon icon-user' />
+                    </span>
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </Submenu>
+          </div>
         )}
       </div>
       <Divider />
 
+      <ModalUpdate modalOpen={modalUpdate} setModalOpen={setModalUpdate} review={review} />
+
       {openDialog && (
         <ConfirmDialog
           title='Delete Comment'
-          description='Do you want to delete this message'
+          description='Do you want to delete this comment ?'
           open={openDialog}
           setOpen={(value: any) => {
             setOpenDialog(value)

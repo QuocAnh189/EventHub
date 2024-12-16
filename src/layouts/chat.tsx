@@ -14,8 +14,13 @@ import ConversationHeader from '@components/message/ConversationHeader'
 import MessageInput from '@components/message/MessageInput'
 import MessageItem from '@components/message/MessageItem'
 
-//data
-import messages from '@db/messages'
+// //data
+// import messages from '@db/messages'
+
+//redux
+import { useAppSelector } from '@hooks/useRedux'
+import { useGetMessageByConversationIdQuery } from '@redux/apis/conversation.api'
+import { IMessage } from '@interfaces/contents/conversation.interface'
 
 const ChatLayout = ({ children }: PropsWithChildren) => {
   const loadMoreIntersect = useRef(null)
@@ -26,6 +31,11 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
   const handleOpenLiveChat = () => {
     setOpenLiveChat(!openLiveChat)
   }
+
+  const [params] = useState({ pageSize: 10 })
+  const conversation = useAppSelector((state) => state.persistedReducer.conversation.conversation)
+
+  const { data } = useGetMessageByConversationIdQuery({ conversationId: conversation.id, params })
 
   return (
     <div className='relative min-h-screen bg-body'>
@@ -42,17 +52,22 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
 
             {true && (
               <>
-                <ConversationHeader />
+                <ConversationHeader
+                  imageUrl={conversation.event.coverImageUrl}
+                  title={conversation.event.name}
+                  userFullName={conversation?.user?.fullName}
+                  organizerFullName={conversation?.organizer?.fullName}
+                />
                 <div ref={messagesCtrRef} className='flex-1 overflow-y-auto p-5'>
-                  {messages.length === 0 && (
+                  {data && data.items?.length === 0 && (
                     <div className='flex justify-center items-center h-full'>
                       <div className='text-lg text-slate-200'>No messages found</div>
                     </div>
                   )}
-                  {messages.length > 0 && (
+                  {data && data.items?.length > 0 && (
                     <div className='flex-1 flex flex-col'>
                       <div ref={loadMoreIntersect} className=''></div>
-                      {messages.map((message, index: number) => (
+                      {data.items?.map((message: IMessage, index: number) => (
                         <MessageItem
                           key={index}
                           message={message}

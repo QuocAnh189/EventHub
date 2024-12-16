@@ -1,5 +1,6 @@
 //hooks
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import useMeasure from 'react-use-measure'
 
 //components
@@ -15,6 +16,8 @@ import notifications from '@db/notifications'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import { useGetNotificationFollowingsQuery } from '@redux/apis/user.api'
+import { INotificationFollowing } from '@interfaces/systems/notification.interface'
 
 const step = 6
 
@@ -28,18 +31,19 @@ interface Props {
 const NotificationsPanel = (props: Props) => {
   const { t, open, onOpen, onClose } = props
 
+  const navigate = useNavigate()
+
   const [headerRef, { height: headerHeight }] = useMeasure()
   const [footerRef, { height: footerHeight }] = useMeasure()
-  const [filter, setFilter] = useState('all')
+  const [filter, setFilter] = useState<string>('follow')
   const [displayed, setDisplayed] = useState(step)
 
-  useEffect(() => {
-    setFilter('all')
-    setDisplayed(step)
-  }, [open])
+  const [params, setParams] = useState({ pageSize: 6 })
+  const { data: notification_followings } = useGetNotificationFollowingsQuery(params)
 
   const handleLoadMore = () => {
     setDisplayed(displayed + step)
+    setParams({ pageSize: params.pageSize + 6 })
   }
 
   const getQty = (category: any) => {
@@ -47,8 +51,9 @@ const NotificationsPanel = (props: Props) => {
     return notifications.filter((notification: any) => notification.category === category).length
   }
 
-  const filteredData = () => {
-    return notifications.filter((notification: any) => (filter === 'all' ? true : notification.category === filter))
+  const handleViewProfile = (id: string) => {
+    navigate(`/organization/profile/${id}`)
+    onClose()
   }
 
   return (
@@ -82,15 +87,23 @@ const NotificationsPanel = (props: Props) => {
         className='h-full overflow-y-auto flex-1'
         style={{ height: `calc(100vh - ${headerHeight + footerHeight}px)` }}
       >
-        {filteredData()
-          .slice(0, displayed)
-          .sort((a: any, b: any) => b.timestamp - a.timestamp)
-          .map((notification: any, index: any) => (
-            <NotificationItem key={`${filter}-${index}`} notification={notification} index={index} />
+        {filter === 'follow' &&
+          notification_followings?.items &&
+          notification_followings?.items.map((notification: INotificationFollowing, index: number) => (
+            <NotificationItem
+              key={`notification-${index}`}
+              notification={notification}
+              index={index}
+              onView={handleViewProfile}
+            />
           ))}
       </div>
       <div className='p-[30px]' ref={footerRef}>
-        <button className='btn btn--primary w-full' onClick={handleLoadMore}>
+        <button
+          className='btn btn--primary w-full'
+          onClick={handleLoadMore}
+          disabled={notification_followings?.items.length === notification_followings?.metadata.totalCount}
+        >
           Load More
         </button>
       </div>

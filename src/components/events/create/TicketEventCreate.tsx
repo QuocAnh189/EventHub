@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 import { EEventPaymentTicket } from '@constants/enum.constant'
 
 //type
-import { ICreateEventPayload, InitCreateTicketPayload } from '@type/event.type'
+import { ICreateEventPayload, InitCreateTicketPayload } from '@dtos/event.dto'
 
 //i18n
 import { withTranslation } from 'react-i18next'

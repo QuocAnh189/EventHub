@@ -18,7 +18,7 @@ import DownloadSampleCSV from '@components/DownloadCSV'
 import { toast } from 'react-toastify'
 
 //interface & type
-import { ICreateEventPayload, InitCreateEventPayload } from '@type/event.type'
+import { ICreateEventPayload, InitCreateEventPayload } from '@dtos/event.dto'
 import { IEvent } from '@interfaces/contents/event.interface'
 
 //icons

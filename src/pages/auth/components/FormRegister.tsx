@@ -3,11 +3,8 @@ import { ChangeEvent } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 
-//constant
-import { PHONE_REGEX } from '@constants/regex.constant'
-
 //validate
-import * as z from 'zod'
+import { formSchemaSignUp } from '@utils/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 // components
@@ -16,8 +13,8 @@ import { toast } from 'react-toastify'
 //motion
 import { motion } from 'framer-motion'
 
-//type
-import { SignUpPayloadOne } from '@type/auth.type'
+//dto
+import { SignUpPayloadOne } from '@dtos/auth.dto'
 
 //redux
 import { useValidateUserMutation } from '@redux/apis/auth.api'
@@ -27,20 +24,6 @@ import classNames from 'classnames'
 
 //i18n
 import { withTranslation } from 'react-i18next'
-
-const formSchema = z.object({
-  email: z
-    .string()
-    .min(1, { message: 'Email is not empty' })
-    .max(50, { message: 'Email must not exceed 50 characters' })
-    .email('Email invalid'),
-  userName: z.string().min(1, 'Name is not empty').max(32, { message: 'Name must not exceed 32 characters' }),
-  phoneNumber: z
-    .string()
-    .min(1, 'Phone is not empty')
-    .regex(PHONE_REGEX, 'Phone is invalid')
-    .max(12, { message: 'phone must not exceed 12 characters' })
-})
 
 interface Props {
   t: any
@@ -60,7 +43,7 @@ const FormRegister = (props: Props) => {
     handleSubmit,
     formState: { errors }
   } = useForm<SignUpPayloadOne>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchemaSignUp),
     defaultValues: formDataSessionOne
   })
 

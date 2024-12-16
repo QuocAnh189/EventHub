@@ -1,4 +1,24 @@
 import * as z from 'zod'
+import { PHONE_REGEX } from '@constants/regex.constant'
+
+export const formSchemaSignIn = z.object({
+  identity: z.string().min(1, 'Account is not empty'),
+  password: z.string().min(1, 'Password is not empty')
+})
+
+export const formSchemaSignUp = z.object({
+  email: z
+    .string()
+    .min(1, { message: 'Email is not empty' })
+    .max(50, { message: 'Email must not exceed 50 characters' })
+    .email('Email invalid'),
+  userName: z.string().min(1, 'Name is not empty').max(32, { message: 'Name must not exceed 32 characters' }),
+  phoneNumber: z
+    .string()
+    .min(1, 'Phone is not empty')
+    .regex(PHONE_REGEX, 'Phone is invalid')
+    .max(12, { message: 'phone must not exceed 12 characters' })
+})
 
 export const formEventSchema = z.object({
   name: z

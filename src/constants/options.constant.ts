@@ -109,6 +109,12 @@ export const PRODUCT_CATEGORIES = [
   { value: 'services', label: 'Services', icon: 'icon-user-gear-solid', color: 'yellow' }
 ]
 
+export const GENDER_OPTIONS = [
+  { value: 'Male', label: 'Male' },
+  { value: 'Female', label: 'Female' },
+  { value: 'Other', label: 'Other' }
+]
+
 export const PRODUCT_SORT_OPTIONS: IOptionSelect[] = [
   { value: 'best-selling', label: 'Best Selling' },
   { value: 'available', label: 'Available' },
@@ -175,7 +181,7 @@ export const PAYMENT_OPTIONS: IOptionSelect[] = [
 ]
 
 export const NOTIFICATION_OPTIONS: IOptionSelect[] = [
-  { value: 'all', label: 'All' },
+  // { value: 'all', label: 'All' },
   { value: 'follow', label: 'Following' },
   { value: 'order', label: 'Orders' }
 ]

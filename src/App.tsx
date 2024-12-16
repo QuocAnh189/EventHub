@@ -45,6 +45,7 @@ const Customer = lazy(() => import('@pages/dashboard/Customer'))
 const Payment = lazy(() => import('@pages/dashboard/Payment'))
 const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
+const UserInformation = lazy(() => import('@pages/common/UserInfo'))
 const Follower = lazy(() => import('@pages/setting/Follower'))
 const Following = lazy(() => import('@pages/setting/Following'))
 const Explore = lazy(() => import('@pages/explore/Explore'))
@@ -53,6 +54,8 @@ const UpdateEvent = lazy(() => import('@pages/events/Update-Event'))
 const MyFavourite = lazy(() => import('@pages/events/My-Favourite'))
 const MyEvent = lazy(() => import('@pages/events/My-Event'))
 const TrashEvent = lazy(() => import('@pages/events/Trash-Event'))
+const MyExpense = lazy(() => import('@pages/events/My-Expense'))
+const MyExpenseDetail = lazy(() => import('@pages/events/My-Expense-Detail'))
 const Coupon = lazy(() => import('@pages/coupon/Coupon'))
 const CouponEvent = lazy(() => import('@pages/coupon/CouponEvent'))
 const MyTicket = lazy(() => import('@pages/ticket/MyTicket'))
@@ -99,6 +102,8 @@ function App() {
               <Route path='/organization/my-favourite' element={<MyFavourite />} />
               <Route path='/organization/my-event' element={<MyEvent />} />
               <Route path='/organization/trash-event' element={<TrashEvent />} />
+              <Route path='/organization/my-expense' element={<MyExpense />} />
+              <Route path='/organization/my-expense/:id' element={<MyExpenseDetail />} />
               <Route path='/organization/coupon' element={<Coupon />} />
               <Route path='/organization/coupon/:id/events' element={<CouponEvent />} />
               <Route path='/organization/ticket' element={<MyTicket />} />
@@ -106,6 +111,7 @@ function App() {
               <Route path='/organization/order' element={<Order />} />
               <Route path='/organization/review' element={<Review />} />
               <Route path='/organization/settings/profile' element={<Profile />} />
+              <Route path='/organization/profile/:id' element={<UserInformation />} />
               <Route path='/organization/settings/follower' element={<Follower />} />
               <Route path='/organization/settings/following' element={<Following />} />
             </Route>

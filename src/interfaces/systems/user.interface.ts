@@ -1,12 +1,12 @@
 import { EGender } from '@constants/enum.constant'
 
 export interface IUser {
-  id?: string
+  id: string
   avatarUrl: string
   email: string
   userName: string
   fullName: string
-  phoneNumber: number
+  phoneNumber: string
   dob: any
   gender: EGender
   bio: string

@@ -59,20 +59,28 @@ export const apiReview = createApi({
       providesTags: ['Review']
     }),
 
-    updateReview: builder.mutation<IReview, IReview>({
+    addReview: builder.mutation<any, any>({
       query: (data) => ({
-        url: `/reviews/${data.id}`,
-        method: 'PUT',
+        url: `/reviews/`,
+        method: 'POST',
         body: data
       }),
       invalidatesTags: ['Review']
     }),
 
-    deleteReview: builder.mutation<string, IReview>({
-      query: (data) => ({
-        url: `/reviews/${data.id}`,
-        method: 'DELETE',
-        body: data
+    updateReview: builder.mutation<IReview, any>({
+      query: (formData) => ({
+        url: `/reviews/${formData.get('id')}`,
+        method: 'PUT',
+        body: formData
+      }),
+      invalidatesTags: ['Review']
+    }),
+
+    deleteReview: builder.mutation<string, string>({
+      query: (id) => ({
+        url: `/reviews/${id}`,
+        method: 'DELETE'
       }),
       invalidatesTags: ['Review']
     })
@@ -84,6 +92,7 @@ export const {
   useGetReviewsByEventIdQuery,
   useGetReviewsByUserIdQuery,
   useGetReviewsByCreatedEventsQuery,
+  useAddReviewMutation,
   useUpdateReviewMutation,
   useDeleteReviewMutation
 } = apiReview

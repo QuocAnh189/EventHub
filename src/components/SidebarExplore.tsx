@@ -19,14 +19,13 @@ import { useAppSelector } from '@hooks/useRedux'
 import { withTranslation } from 'react-i18next'
 
 //interface
-import { IParamsEvent } from '@type/event.type'
 import { EEventStatus } from '@constants/enum.constant'
 import RatingStars from '@ui/RatingStars'
 
 interface Props {
   t: any
-  params: IParamsEvent
-  setParams: Dispatch<SetStateAction<IParamsEvent>>
+  params: any
+  setParams: Dispatch<SetStateAction<any>>
 }
 
 const SidebarExploreResponsive = (props: Props) => {

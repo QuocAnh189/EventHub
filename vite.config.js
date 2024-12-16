@@ -27,6 +27,7 @@ export default defineConfig({
       '@contexts': '/src/contexts',
       '@data': '/src/data',
       '@db': '/src/db',
+      '@dtos': '/src/dtos',
       '@fonts': '/src/fonts',
       '@hooks': '/src/hooks',
       '@i18n': '/src/i18n',

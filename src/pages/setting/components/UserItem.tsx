@@ -1,9 +1,11 @@
 // hooks
 import { useSubmenu } from '@hooks/useSubmenu'
+import { useNavigate } from 'react-router-dom'
 
 //component
 import Spring from '@components/Spring'
 import Submenu from '@ui/Submenu'
+import Loading from '@components/Loading'
 import SubmenuTrigger from '@ui/SubmenuTrigger'
 
 //interface
@@ -12,6 +14,10 @@ import { IUserFollower } from '@interfaces/systems'
 //assets
 import defaultAvatar from '@assets/images/common/user_default.png'
 
+//redux
+import { useUnFollowUserMutation } from '@redux/apis/user.api'
+import { toast } from 'react-toastify'
+
 interface Props {
   index: number
   user: IUserFollower
@@ -19,6 +25,23 @@ interface Props {
 }
 const UserItem = (props: Props) => {
   const { index, user, following } = props
+
+  const navigate = useNavigate()
+
+  const [UnfollowUser, { isLoading }] = useUnFollowUserMutation()
+
+  const handleUnfollowUser = async () => {
+    try {
+      const result = await UnfollowUser(user.id!).unwrap()
+
+      if (result) {
+        toast.success('UnFollow successfully')
+      }
+    } catch (e) {
+      console.log(e)
+      toast.error('Something went wrong')
+    }
+  }
 
   const { anchorEl, open, handleClick, handleClose } = useSubmenu()
   return (
@@ -35,18 +58,23 @@ const UserItem = (props: Props) => {
         <Submenu anchorEl={anchorEl} open={open} onClose={handleClose}>
           <div className='py-5 pl-6 pr-8'>
             <div className='flex flex-col gap-3'>
-              <button className='menu-btn subheading-2'>
+              <button
+                onClick={() => {
+                  navigate(`/organization/profile/${user.id}`)
+                }}
+                className='menu-btn subheading-2'
+              >
                 <span className='icon-wrapper'>
                   <i className='icon icon-user' />
                 </span>
                 View Profile
               </button>
               {following && (
-                <button className='menu-btn subheading-2'>
+                <button onClick={handleUnfollowUser} className='menu-btn subheading-2'>
                   <span className='icon-wrapper'>
                     <i className='icon icon-user' />
                   </span>
-                  Unfollow
+                  {isLoading ? <Loading /> : 'Unfollow'}
                 </button>
               )}
             </div>

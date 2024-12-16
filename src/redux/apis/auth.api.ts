@@ -1,16 +1,16 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import {
-  LoginPayload,
+  SignInPayload,
   SignUpPayload,
+  SignUpPayloadOne,
   ForgotPassPayload,
   IParamsExternalLogin,
   ResetPassWordPayload
-} from '@type/auth.type'
+} from '@dtos/auth.dto'
 
 //interface
 import { IAuth } from '@interfaces/systems/auth.interface'
-import { IUser } from 'interfaces/systems/user.interface'
 
 export const apiAuth = createApi({
   reducerPath: 'apiAuth',
@@ -20,7 +20,7 @@ export const apiAuth = createApi({
   keepUnusedDataFor: 20,
 
   endpoints: (builder) => ({
-    validateUser: builder.mutation<IAuth, any>({
+    validateUser: builder.mutation<any, SignUpPayloadOne>({
       query: (data) => ({
         url: '/auth/validate-user',
         method: 'POST',
@@ -37,15 +37,21 @@ export const apiAuth = createApi({
         method: 'POST',
         body: data
       }),
+      transformErrorResponse: (error) => {
+        return error.data
+      },
       transformResponse: (response: any) => response.data
     }),
 
-    signIn: builder.mutation<IAuth, LoginPayload>({
+    signIn: builder.mutation<IAuth, SignInPayload>({
       query: (data) => ({
         url: '/auth/signin',
         method: 'POST',
         body: data
       }),
+      transformErrorResponse: (error) => {
+        return error.data
+      },
       transformResponse: (response: any) => response.data
     }),
 
@@ -95,17 +101,6 @@ export const apiAuth = createApi({
         method: 'POST',
         body: data
       })
-    }),
-
-    getProfile: builder.query<IUser, void>({
-      query: () => ({
-        url: '/auth/profile',
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${JSON.parse(localStorage.getItem('token')!).accessToken}`
-        }
-      }),
-      transformResponse: (response: any) => response.data
     })
   })
 })
@@ -119,6 +114,5 @@ export const {
   useExternalAuthCallBackQuery,
   useRefreshTokenMutation,
   useForgotPasswordMutation,
-  useResetPasswordMutation,
-  useGetProfileQuery
+  useResetPasswordMutation
 } = apiAuth

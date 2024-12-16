@@ -1,4 +1,5 @@
 //hooks
+import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
@@ -8,6 +9,7 @@ import UserProfileCard from '@widgets/UserProfileCard'
 import UserProfileDetails from '@widgets/UserProfileDetails'
 import UserProfilePanel from '@widgets/UserProfilePanel'
 import UserProfileInfo from '@widgets/UserProfileInfo'
+import ModalChangePassword from './components/ModalChangePassword'
 import { toast } from 'react-toastify'
 
 //layout
@@ -22,6 +24,7 @@ import dayjs from 'dayjs'
 
 //interface
 import { IUser } from '@interfaces/systems/user.interface'
+import { IUpdateUserProfilePayload } from '@dtos/user.dto'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -31,6 +34,7 @@ const Profile = ({ t }: any) => {
 
   const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [UpdateUser, { isLoading }] = useUpdateUserMutation()
 
   const {
@@ -40,7 +44,7 @@ const Profile = ({ t }: any) => {
     control,
     setValue,
     watch
-  } = useForm<IUser>({
+  } = useForm<IUpdateUserProfilePayload>({
     defaultValues: {
       id: user.id,
       avatarUrl: user.avatarUrl,
@@ -54,18 +58,18 @@ const Profile = ({ t }: any) => {
     }
   })
 
-  const onSubmit: SubmitHandler<IUser> = async (data: any) => {
+  const onSubmit: SubmitHandler<IUpdateUserProfilePayload> = async (data: IUpdateUserProfilePayload) => {
     const formData = new FormData()
 
     for (const key in data) {
-      formData.append(key, data[key])
+      formData.append(key, data[key as keyof IUpdateUserProfilePayload] as string)
     }
 
     try {
-      const result = await UpdateUser({ userId: user?.id!, data: formData }).unwrap()
+      const result = await UpdateUser({ userId: user?.id!, formData: formData }).unwrap()
       if (result) {
-        dispatch(setUser(result))
         toast.success('Profile updated successfully')
+        dispatch(setUser(result))
       }
     } catch (err) {
       console.log(err)
@@ -84,7 +88,12 @@ const Profile = ({ t }: any) => {
           <UserProfileCard avatar={watch().avatarUrl} setValue={setValue} fullName={user.fullName} roles={user.roles} />
           <div className='widgets-grid'>
             <UserProfilePanel />
-            <UserProfileInfo />
+            <UserProfileInfo
+              email={user.email}
+              totalEvent={user.totalEvent}
+              totalFollower={user.totalFollower}
+              totalFollowing={user.totalFollowing}
+            />
           </div>
         </div>
         <UserProfileDetails
@@ -95,8 +104,10 @@ const Profile = ({ t }: any) => {
           errors={errors}
           isLoading={isLoading}
           roles={user.roles}
+          setModalOpen={setModalOpen}
         />
       </form>
+      <ModalChangePassword modalOpen={modalOpen} setModalOpen={setModalOpen} />
     </ProtectedLayout>
   )
 }

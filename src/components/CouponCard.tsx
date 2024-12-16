@@ -9,26 +9,20 @@ import ModalUpdateCoupon from '@pages/coupon/components/ModalUpdate'
 
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
-
-const data = {
-  id: '1',
-  name: 'Coupon Name Name',
-  description: 'Coupon Description Coupon Description Coupon Description Coupon Description',
-  percent: 20,
-  expireDate: '2023-12-31',
-  usageLimit: 100,
-  usageCount: 50
-}
+import ConfirmDialog from './Dialog'
 
 interface Props {
-  coupon?: ICoupon
+  coupon: ICoupon
   index: number
+  onDelete: (id: string) => void
+  isDeleteLoading: boolean
 }
 
 const CouponCard = (props: Props) => {
-  const { coupon = data, index } = props
+  const { coupon, index, onDelete, isDeleteLoading } = props
 
-  const [modalOpen, setModalOpen] = useState(false)
+  const [openDialog, setOpenDialog] = useState<boolean>(false)
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [titleRef, { width: titleWidth }] = useMeasure()
   const [descriptionRef, { width: descriptionWidth }] = useMeasure()
 
@@ -41,18 +35,14 @@ const CouponCard = (props: Props) => {
               className='w-11 h-11 rounded-lg bg-white border border-solid border-input-border flex
                          justify-center items-center'
             >
-              <img
-                className='h-9 w-auto'
-                src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
-                alt={coupon.name}
-              />
+              <img className='h-9 w-auto' src={coupon.coverImageUrl} alt={coupon.name} />
             </div>
             <h6 className='h6 max-w-[165px] w-full leading-[1.4]' ref={titleRef}>
               <TruncatedText text={coupon.name} width={titleWidth} lines={2} />
             </h6>
           </div>
           <div className='flex items-center justify-center bg-primary-600 w-12 h-12 rounded-full'>
-            <p className='text-white font-bold'>20%</p>
+            <p className='text-white font-bold'>{coupon.percentageValue}%</p>
           </div>
         </div>
         <p className='text-sm flex-1 max-w-[300px]' ref={descriptionRef}>
@@ -62,10 +52,28 @@ const CouponCard = (props: Props) => {
           <button className='text-btn' onClick={() => setModalOpen(true)}>
             View Edit
           </button>
-          <button className='text-btn text-error'>Delete</button>
+          <button onClick={() => setOpenDialog(true)} className='text-btn text-error'>
+            Delete
+          </button>
         </div>
       </Spring>
-      <ModalUpdateCoupon modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      {coupon && <ModalUpdateCoupon modalOpen={modalOpen} setModalOpen={setModalOpen} coupon={coupon} />}
+      {openDialog && (
+        <ConfirmDialog
+          title='Delete Coupon'
+          description={`Are you sure want to delete this coupon`}
+          open={openDialog}
+          setOpen={(value) => {
+            setOpenDialog(value)
+          }}
+          action='Delete'
+          onHandle={() => {
+            setOpenDialog(false)
+            onDelete(coupon.id)
+          }}
+          disabled={isDeleteLoading}
+        />
+      )}
     </>
   )
 }

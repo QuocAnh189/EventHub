@@ -1,16 +1,18 @@
 //hooks
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import useMeasure from 'react-use-measure'
+import { useNavigate } from 'react-router-dom'
 
 //components
 import DrawerBase from '@ui/DrawerBase'
-
-//data placeholder
-import invitations from '@db/invitation'
+import InvitationItem from './InvitationItem'
 
 //i18n
 import { withTranslation } from 'react-i18next'
-import InvitationItem from './InvitationItem'
+
+//redux
+import { useGetInvitationsQuery } from '@redux/apis/user.api'
+import { IInvitation } from '@interfaces/systems/invitation.interface'
 
 const step = 6
 
@@ -24,18 +26,23 @@ interface Props {
 const InvitationsPanel = (props: Props) => {
   const { t, open, onOpen, onClose } = props
 
+  const navigate = useNavigate()
+
   const [headerRef, { height: headerHeight }] = useMeasure()
   const [footerRef, { height: footerHeight }] = useMeasure()
-  const [filter, setFilter] = useState('all')
   const [displayed, setDisplayed] = useState(step)
 
-  useEffect(() => {
-    setFilter('all')
-    setDisplayed(step)
-  }, [open])
+  const [params, setParams] = useState({ pageSize: 6 })
+  const { data } = useGetInvitationsQuery(params)
 
   const handleLoadMore = () => {
     setDisplayed(displayed + step)
+    setParams({ pageSize: params.pageSize + 6 })
+  }
+
+  const handleViewEvent = (id: string) => {
+    navigate(`/organization/event/${id}`)
+    onClose()
   }
 
   return (
@@ -56,12 +63,16 @@ const InvitationsPanel = (props: Props) => {
         className='h-full overflow-y-auto flex-1'
         style={{ height: `calc(100vh - ${headerHeight + footerHeight}px)` }}
       >
-        {invitations.map((invitation, index) => (
-          <InvitationItem key={`${filter}-${index}`} invitation={invitation} index={index} />
+        {data?.items.map((invitation: IInvitation, index: number) => (
+          <InvitationItem key={`invitation-${index}`} invitation={invitation} index={index} onView={handleViewEvent} />
         ))}
       </div>
       <div className='p-[30px]' ref={footerRef}>
-        <button className='btn btn--secondary w-full' onClick={handleLoadMore} disabled={true}>
+        <button
+          className='btn btn-primary w-full'
+          onClick={handleLoadMore}
+          disabled={data?.items.length === data?.metadata.totalCount}
+        >
           Load More
         </button>
       </div>

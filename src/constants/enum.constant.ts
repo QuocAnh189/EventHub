@@ -36,9 +36,9 @@ export enum EEventPaymentTicket {
 }
 
 export enum EGender {
-  MALE = 'Male',
-  FEMALE = 'Female',
-  OTHER = 'Other'
+  Male = 'Male',
+  Female = 'Female',
+  Other = 'Other'
 }
 
 export enum EPageOrder {

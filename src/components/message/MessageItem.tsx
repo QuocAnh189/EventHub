@@ -7,32 +7,48 @@ import dayjs from 'dayjs'
 import MessageAttachments from './MessageAttachments'
 import MessageOptionsDropdown from './MessageOptionsDropdown'
 
-const MessageItem = ({ message, attachmentClick }: any) => {
-  const currentUser: any = {
-    id: '1'
-  }
+//interface
+import { IMessage } from '@interfaces/contents/conversation.interface'
+
+//redux
+import { useAppSelector } from '@hooks/useRedux'
+import { IUser } from '@interfaces/systems'
+
+interface IProps {
+  message: IMessage
+}
+
+const MessageItem = (props: IProps) => {
+  const { message } = props
+
+  const conversation = useAppSelector((state) => state.persistedReducer.conversation.conversation)
+  const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
   return (
-    <div className={'chat ' + (message.sender.id === currentUser.id ? 'chat-end' : 'chat-start')}>
-      {<Avatar imageUrl={message.sender.avatar} />}
+    <div className={'chat ' + (message.senderId === user.id ? 'chat-end' : 'chat-start')}>
+      {
+        <Avatar
+          imageUrl={
+            message.senderId === user.id
+              ? user.avatarUrl
+              : conversation.user?.avatarUrl || conversation.organizer?.avatarUrl
+          }
+        />
+      }
 
       <div className='chat-header'>
-        {message.sender.fullName}
+        {message.senderId === user.id ? user.fullName : conversation.user?.fullName || conversation.organizer?.fullName}
 
-        <time className='text-xs opacity-50 ml-2'>{dayjs(message.created_at).format('DD/MM h:mm A')}</time>
+        <time className='text-xs opacity-50 ml-2'>{dayjs(message.createdAt).format('DD/MM h:mm A')}</time>
       </div>
 
-      <div
-        className={
-          'chat-bubble relative ' + (message.sender.id === currentUser.id ? ' chat-bubble-info' : ' chat-start')
-        }
-      >
-        {message.sender_id === currentUser.id && <MessageOptionsDropdown />}
+      <div className={'chat-bubble relative ' + (message.senderId === user.id ? ' chat-bubble-info' : ' chat-start')}>
+        {message.senderId === user.id && <MessageOptionsDropdown />}
         <div className='chat-message'>
           <div className='chat-message-content'>
             <ReactMarkdown>{message.content}</ReactMarkdown>
           </div>
-          <MessageAttachments attachments={message?.attachments} attachmentClick={attachmentClick} />
+          <MessageAttachments attachments={[]} attachmentClick={() => {}} />
         </div>
       </div>
     </div>

@@ -1,8 +1,6 @@
+import { IChangePasswordsPayload } from '@dtos/user.dto'
 import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
-//type
-import { IChangePasswordPayload } from '@type/user.type'
 
 //interface
 import { IUser } from 'interfaces/systems/user.interface'
@@ -22,47 +20,63 @@ export const apiUser = createApi({
     }
   }),
   keepUnusedDataFor: 20,
-  tagTypes: ['User', 'Event'],
+  tagTypes: ['User'],
   endpoints: (builder) => ({
-    getUsers: builder.query<IUser[], void>({
-      query: () => ({
+    getUsers: builder.query<IUser[], any>({
+      query: (params) => ({
         url: '/users',
-        method: 'GET'
+        method: 'GET',
+        params: params
       }),
       providesTags: ['User']
     }),
 
-    getUserById: builder.query<any, string>({
+    getProfile: builder.query<IUser, void>({
+      query: () => ({
+        url: '/users/profile',
+        method: 'GET'
+      }),
+      providesTags: ['User'],
+      transformResponse: (response: any) => response.data
+    }),
+
+    getUserById: builder.query<IUser, string>({
       query: (userId) => ({
         url: `/users/${userId}`,
         method: 'GET'
       }),
+      transformResponse: (response: any) => response.data,
       providesTags: ['User']
     }),
 
-    createUser: builder.mutation<IUser, Partial<IUser>>({
-      query: (data) => ({
+    createUser: builder.mutation<IUser, FormData>({
+      query: (formData) => ({
         url: '/users',
         method: 'GET',
-        body: data
+        body: formData
       }),
       invalidatesTags: ['User']
     }),
 
-    updateUser: builder.mutation<IUser, { userId: string; data: any }>({
-      query: ({ userId, data }) => ({
+    updateUser: builder.mutation<IUser, { userId: string; formData: FormData }>({
+      query: ({ userId, formData }) => ({
         url: `/users/${userId}`,
         method: 'PUT',
-        body: data
-      })
+        body: formData
+      }),
+      transformResponse: (response: any) => response.data,
+      invalidatesTags: ['User']
     }),
 
-    changePassword: builder.mutation<any, IChangePasswordPayload>({
+    changePassword: builder.mutation<any, IChangePasswordsPayload>({
       query: (data) => ({
-        url: `/users/${data.userId}/change-password`,
+        url: `/users/change-password`,
         method: 'PATCH',
         body: data
       }),
+      transformErrorResponse: (error) => {
+        return error.data
+      },
       invalidatesTags: ['User']
     }),
 
@@ -115,12 +129,33 @@ export const apiUser = createApi({
         return response.data
       },
       providesTags: ['User']
+    }),
+
+    getInvitations: builder.query<IListData<any>, any>({
+      query: (params) => ({
+        url: '/users/invitations',
+        method: 'GET',
+        params
+      }),
+      providesTags: ['User'],
+      transformResponse: (response: any) => response.data
+    }),
+
+    getNotificationFollowings: builder.query<IListData<any>, any>({
+      query: (params) => ({
+        url: '/users/notification-following',
+        method: 'GET',
+        params
+      }),
+      providesTags: ['User'],
+      transformResponse: (response: any) => response.data
     })
   })
 })
 
 export const {
   useGetUsersQuery,
+  useGetProfileQuery,
   useGetUserByIdQuery,
   useCreateUserMutation,
   useUpdateUserMutation,
@@ -129,5 +164,7 @@ export const {
   useGetFollowingByUserIdQuery,
   useFollowUserMutation,
   useUnFollowUserMutation,
-  useCheckFollowerQuery
+  useCheckFollowerQuery,
+  useGetInvitationsQuery,
+  useGetNotificationFollowingsQuery
 } = apiUser

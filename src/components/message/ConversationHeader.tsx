@@ -1,14 +1,22 @@
 //components
 import Avatar from './Avatar'
 
-const ConversationHeader = () => {
+interface IProps {
+  imageUrl: string
+  title: string
+  organizerFullName?: string
+  userFullName?: string
+}
+const ConversationHeader = (props: IProps) => {
+  const { imageUrl, title, organizerFullName, userFullName } = props
   return (
     <div className='p-3 flex justify-between items-center border-b border-slate-700'>
       <div className='flex items-center gap-3'>
-        <Avatar imageUrl='https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?cs=srgb&dl=pexels-wolfgang-1002140-2747449.jpg&fm=jpg' />
+        <Avatar imageUrl={imageUrl} />
         <div className=''>
-          <h3 className='text-gray-500'>Music With UIT</h3>
-          <p className='text-header'>Author: Trần Phước Anh Quốc</p>
+          <h3 className='text-gray-500'>{title}</h3>
+          {organizerFullName && <p className='text-header'>Organizer: {organizerFullName}</p>}
+          {userFullName && <p className='text-header'>User: {userFullName}</p>}
         </div>
       </div>
     </div>

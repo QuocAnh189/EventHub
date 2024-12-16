@@ -1,10 +1,10 @@
 export interface ICoupon {
-  id?: string
+  id: string
+  coverImageUrl: string
   name: string
   description: string
-  coverImageUrl: string
-  percent: number
+  minQuantity: number
+  minPrice: number
+  percentageValue: number
   expireDate: string
-  usageLimit: number
-  usageCount: number
 }

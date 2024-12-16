@@ -1,27 +1,76 @@
+//hook
+import { useForm, SubmitHandler } from 'react-hook-form'
+
 //components
 import ModalBase from '@ui/ModalBase'
 import MediaDropPlaceholder from '@ui/MediaDropPlaceholder'
+import { toast } from 'react-toastify'
 
 //icon
 import { BiTrash } from 'react-icons/bi'
 
 //util
 import classNames from 'classnames'
+import dayjs from 'dayjs'
+
+//interface
+import { ICoupon } from '@interfaces/contents/coupon.interface'
+
+//redux
+import { useUpdateCouponMutation } from '@redux/apis/coupon.api'
+import Loading from '@components/Loading'
 
 interface IProps {
   modalOpen: boolean
   setModalOpen: (value: boolean) => void
+  coupon: ICoupon
 }
 
 const ModalUpdateCoupon = (props: IProps) => {
-  const { modalOpen, setModalOpen } = props
+  const { modalOpen, setModalOpen, coupon } = props
 
-  const coverImage = false
+  const [UpdateCoupon, { isLoading }] = useUpdateCouponMutation()
+
+  const { register, handleSubmit, watch } = useForm<ICoupon>({
+    defaultValues: {
+      id: coupon.id,
+      name: coupon.name,
+      description: coupon.description,
+      coverImageUrl: coupon.coverImageUrl,
+      minPrice: coupon.minPrice,
+      minQuantity: coupon.minQuantity,
+      percentageValue: coupon.percentageValue,
+      expireDate: dayjs(coupon.expireDate).format('YYYY-MM-DD')
+    }
+  })
+
+  const onSubmit: SubmitHandler<ICoupon> = async (data: ICoupon) => {
+    const formData = new FormData()
+    for (const key in data) {
+      formData.append(key, data[key as keyof ICoupon] as any)
+    }
+
+    try {
+      const result = await UpdateCoupon(formData).unwrap()
+      if (result) {
+        console.log(result)
+        toast.success('Coupon updated successfully')
+        setModalOpen(false)
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error('Something went wrong')
+    }
+  }
 
   return (
     <ModalBase open={modalOpen} onClose={() => setModalOpen(false)}>
-      <div className='card relative no-hover flex flex-col w-full max-w-[400px] will-change-transform'>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className='card relative no-hover flex flex-col w-full max-w-[400px] will-change-transform'
+      >
         <button
+          type='button'
           className='absolute top-5 right-5 icon text-[18px] transition hover:text-red'
           onClick={() => setModalOpen(false)}
           aria-label='Close'
@@ -33,8 +82,10 @@ const ModalUpdateCoupon = (props: IProps) => {
           <div className='relative lg:w-full h-[100px] flex items-center justify-center text-white rounded-xl media-dropzone 2xl:col-span-2'>
             <img
               loading='lazy'
-              className={`absolute h-full w-full rounded-[8px] outline-none opacity-${coverImage ? '1' : '0'}`}
-              src={coverImage ? URL.createObjectURL(coverImage) : ''}
+              className={`absolute h-full w-full rounded-[8px] outline-none opacity-${
+                watch().coverImageUrl ? '1' : '0'
+              }`}
+              src={watch().coverImageUrl}
             />
             <input
               aria-label=''
@@ -46,7 +97,7 @@ const ModalUpdateCoupon = (props: IProps) => {
               alt='No avatar'
               onClick={(event: any) => (event.target.value = null)}
             />
-            {!coverImage ? (
+            {!watch().coverImageUrl ? (
               <div className='absolute'>
                 <MediaDropPlaceholder text='CoverImage' />
               </div>
@@ -72,7 +123,7 @@ const ModalUpdateCoupon = (props: IProps) => {
               id='name'
               defaultValue=''
               placeholder='Enter name'
-              // {...register('brandName', { required: true })}
+              {...register('name', { required: true })}
             />
           </div>
           <div className='field-wrapper'>
@@ -86,7 +137,7 @@ const ModalUpdateCoupon = (props: IProps) => {
               id='description'
               defaultValue=''
               placeholder='Enter description'
-              // {...register('description', { required: true })}
+              {...register('description', { required: true })}
             />
           </div>
           <div className='flex items-center justify-between gap-4'>
@@ -96,9 +147,9 @@ const ModalUpdateCoupon = (props: IProps) => {
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
-                id='dimensions'
+                id='minPrice'
                 defaultValue=''
-                // {...register('dimensions', { required: true })}
+                {...register('minPrice', { required: true })}
               />
             </div>
             <div className='field-wrapper'>
@@ -108,7 +159,7 @@ const ModalUpdateCoupon = (props: IProps) => {
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
                 id='weight'
-                // {...register('weight', { required: true, pattern: /^[0-9]*$/ })}
+                {...register('minQuantity', { required: true })}
               />
             </div>
             <div className='field-wrapper'>
@@ -118,7 +169,7 @@ const ModalUpdateCoupon = (props: IProps) => {
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
                 id='weight'
-                // {...register('weight', { required: true, pattern: /^[0-9]*$/ })}
+                {...register('percentageValue', { required: true })}
               />
             </div>
           </div>
@@ -130,14 +181,16 @@ const ModalUpdateCoupon = (props: IProps) => {
               type='date'
               className={classNames('field-input', { 'field-input--error': false })}
               id='name'
-              defaultValue=''
+              value={dayjs(coupon.expireDate).format('YYYY-MM-DD')}
               placeholder='Enter name'
-              // {...register('brandName', { required: true })}
+              {...register('expireDate', { required: true })}
             />
           </div>
-          <button className='btn btn-primary hover:bg-primary-300'>Update Coupon</button>
+          <button type='submit' className='btn btn-primary hover:bg-primary-300'>
+            {isLoading ? <Loading /> : 'Update'}
+          </button>
         </div>
-      </div>
+      </form>
     </ModalBase>
   )
 }

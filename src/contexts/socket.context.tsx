@@ -7,14 +7,13 @@ import { toast } from 'react-toastify'
 //redux
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { setSocket } from '@redux/slices/socket.slice'
-import { updateConversationUser, updateMessagesCurrent } from '@redux/slices/conservation.slice'
+import { updateConversationUser, updateMessagesCurrent } from '@redux/slices/conversation.slice'
 
 //socket
 import { HttpTransportType, HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr'
 
 //interface and types
 import { JoinChatRoomParams, SendMessageParams } from '@interfaces/websockets/message.interface'
-import { IConservationResponse, IMessageResponse } from '@type/conversation.type'
 
 const AppSocketProvider = ({ children }: PropsWithChildren) => {
   const dispatch = useAppDispatch()
@@ -36,12 +35,12 @@ const AppSocketProvider = ({ children }: PropsWithChildren) => {
         .build()
 
       try {
-        conn.on('JoinChatRoom', (conversation: IConservationResponse) => {
+        conn.on('JoinChatRoom', (conversation: any) => {
           console.log('🚀 ~ conn.on ~ conversation:', conversation)
           dispatch(updateConversationUser(conversation))
         })
 
-        conn.on('ReceiveMessage', (result: IMessageResponse) => {
+        conn.on('ReceiveMessage', (result: any) => {
           console.log('🚀 ~ conn.on ~ result:', result)
           dispatch(updateMessagesCurrent(result))
         })

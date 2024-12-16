@@ -12,20 +12,11 @@ import AboutUs from './components/AboutUs'
 //redux
 import { useGetCategoriesQuery } from '@redux/apis/category.api'
 import { setCategories } from '@redux/slices/category.slice'
-import { useGetProfileQuery } from '@redux/apis/auth.api'
-import { setUser } from '@redux/slices/user.slice'
 
 const Home = () => {
   const dispatch = useAppDispatch()
 
-  const { data: profile, isSuccess: isSuccessProfile } = useGetProfileQuery()
   const { data: categories, isSuccess: isSuccessCategories } = useGetCategoriesQuery()
-
-  useEffect(() => {
-    if (isSuccessProfile) {
-      dispatch(setUser(profile))
-    }
-  }, [isSuccessProfile])
 
   useEffect(() => {
     if (isSuccessCategories) {

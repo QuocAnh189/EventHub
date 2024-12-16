@@ -17,7 +17,7 @@ const ReviewsScore = (props: Props) => {
   return (
     <Spring className='card flex flex-col items-start md:items-center md:!pt-11'>
       <RatingStars value={score} />
-      <Counter className='h2 md:!text-[32px] my-[17px]' num={score} decimals={1} />
+      <Counter className='h2 md:!text-[32px] my-[17px] ml-[80%]' num={score} decimals={2} />
       <span className='h6'>{t('middle.review_score')}</span>
     </Spring>
   )

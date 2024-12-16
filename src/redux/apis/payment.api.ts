@@ -1,10 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { EPaymentStatus } from '@constants/enum.constant'
 
-//type
-import { IParamsEvent } from '@type/event.type'
-import { CheckoutPayload, UpdateOrderPayload } from '@type/payment.type'
-
 //interface
 import { ApiListResponse, IListData } from 'interfaces/common.interface'
 import { IPayment, IPaymentMethod } from 'interfaces/contents/payment.interface'
@@ -52,7 +48,7 @@ export const apiPayment = createApi({
       invalidatesTags: ['Payment']
     }),
 
-    updatePayment: builder.mutation<void, UpdateOrderPayload>({
+    updatePayment: builder.mutation<void, any>({
       query: ({ paymentId, ...payload }) => ({
         url: `/payments/${paymentId}`,
         method: 'PATCH',
@@ -101,13 +97,13 @@ export const apiPayment = createApi({
         url: `/payments/payment-methods`,
         method: 'GET'
       }),
-      transformResponse: (response: ApiListResponse<IPaymentMethod[]>) => {
+      transformResponse: (response: any) => {
         return response.data.items
       },
       providesTags: ['Payment']
     }),
 
-    checkout: builder.mutation<{ id: string }, CheckoutPayload>({
+    checkout: builder.mutation<{ id: string }, any>({
       query: (data) => ({
         url: `/payments/checkout`,
         method: 'POST',
@@ -116,7 +112,7 @@ export const apiPayment = createApi({
       invalidatesTags: ['Payment']
     }),
 
-    getPaymentsByUserId: builder.query<IListData<IPayment[]>, { userId: string; filter?: IParamsEvent }>({
+    getPaymentsByUserId: builder.query<IListData<IPayment[]>, { userId: string; filter?: any }>({
       query: ({ userId, filter }) => ({
         url: `/users/${userId}/payments`,
         method: 'GET',
@@ -128,7 +124,7 @@ export const apiPayment = createApi({
       }
     }),
 
-    getPaymentsByCreatorId: builder.query<IListData<IPayment[]>, { creatorId: string; filter?: IParamsEvent }>({
+    getPaymentsByCreatorId: builder.query<IListData<IPayment[]>, { creatorId: string; filter?: any }>({
       query: ({ creatorId, filter }) => ({
         url: `/users/${creatorId}/payments/creator`,
         method: 'GET',

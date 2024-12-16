@@ -1,8 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-//type
-import { CategoryPayload } from '@type/category.type'
-
 //interface
 import { ICategory } from 'interfaces/contents/category.interface'
 
@@ -24,7 +21,7 @@ export const apiCategory = createApi({
   keepUnusedDataFor: 20,
   tagTypes: ['Category'],
   endpoints: (builder) => ({
-    createCategory: builder.mutation<ICategory, CategoryPayload>({
+    createCategory: builder.mutation<ICategory, any>({
       query: (data) => ({
         url: '/categories',
         method: 'POST',

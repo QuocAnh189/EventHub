@@ -3,15 +3,30 @@ export enum EProvider {
   FACEBOOK = 'facebook'
 }
 
-export interface LoginPayload {
+export interface SignInPayload {
   identity: string
   password: string
 }
 
-export const InitLogin = {
+export const InitLoginPayload = {
   identity: '',
   password: ''
-} as LoginPayload
+} as SignInPayload
+
+export interface SignUpPayload {
+  email: string
+  userName: string
+  phoneNumber: string
+  password: string
+  dob: string
+}
+
+export const InitSignupPayload = {
+  email: '',
+  userName: '',
+  phoneNumber: '',
+  password: ''
+} as SignUpPayload
 
 export interface OAuthLoginPayload {
   email: string
@@ -22,21 +37,6 @@ export interface OAuthLoginPayload {
   tokenExpiredDate: Date
 }
 
-export interface SignUpPayload {
-  email: string
-  userName: string
-  phoneNumber: string
-  password: string
-  dob: string
-}
-
-export const InitSignup = {
-  email: '',
-  userName: '',
-  phoneNumber: '',
-  password: ''
-} as SignUpPayload
-
 export interface SignUpPayloadOne {
   email: string
   userName: string
@@ -44,7 +44,7 @@ export interface SignUpPayloadOne {
   dob: string
 }
 
-export const InitSignUpOne = {
+export const InitSignUpPayloadOne = {
   email: '',
   userName: '',
   phoneNumber: '',
@@ -55,7 +55,7 @@ export interface SignUpPayloadTwo {
   password: string
 }
 
-export const InitSignUpTwo = {
+export const InitSignUpPayloadTwo = {
   password: ''
 } as SignUpPayloadTwo
 

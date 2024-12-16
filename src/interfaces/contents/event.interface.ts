@@ -1,5 +1,6 @@
 import { EEventPaymentTicket, EEventStyle } from '@constants/enum.constant'
 import { ICategory } from './category.interface'
+import { ICoupon } from './coupon.interface'
 
 export interface IEvent {
   id: string
@@ -80,6 +81,7 @@ export interface IMyEvent {
   location: string
   isPrivate: boolean
   deletedAt: any
+  coupons: ICoupon[]
 }
 
 export interface IMyEventAnalysis {

@@ -8,44 +8,39 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-dayjs.extend(relativeTime)
+//interface
+import { INotificationFollowing } from '@interfaces/systems/notification.interface'
 
-const placeholder = {
-  timestamp: new Date(),
-  subcategory: 'Offers',
-  text: 'Joined to discount program',
-  user: {
-    firstName: 'J.',
-    lastName: 'Davidson',
-    avatar: 'https://placehold.it/100x100'
-  }
-}
+dayjs.extend(relativeTime)
 
 interface Props {
   t: any
-  notification: any
+  notification: INotificationFollowing
   index: number
+  onView: (id: string) => void
 }
 
 const NotificationItem = (props: Props) => {
-  const { t, notification = placeholder, index } = props
+  const { notification, index, onView } = props
 
   return (
     <Spring className='notification with-border flex gap-6' index={index}>
       <div className='w-[36px] h-[36px] shrink-0 rounded-md bg-body overflow-hidden'>
-        <img src={notification.user.avatar} alt={notification.user.fullName} />
+        <img src={notification.follower.avatarUrl} alt={notification.follower.fullName} />
       </div>
       <div>
-        <span className='h6 !text-sm truncate max-w-[210px]'>{notification.user.fullName}</span>
-        <p>{notification.text}</p>
+        <span className='h6 !text-sm truncate max-w-[210px]'>{notification.follower.fullName}</span>
+        <p>
+          <span>{notification.follower.userName}</span> đã theo dõi bạn
+        </p>
         <p className='flex items-center gap-1.5 mt-1 mb-2 text-xs font-medium text-gray'>
-          <span>{dayjs(notification.timestamp).fromNow()}</span>
+          <span>{dayjs(notification.createdAt).fromNow()}</span>
           <i className='icon-circle-solid text-[4px]' />
-          <span>{notification.subcategory}</span>
         </p>
         <div className='flex gap-2.5'>
-          <button className='btn btn--outline size-xs blue'>{t('notification.confirm_btn')}</button>
-          <button className='btn btn--outline size-xs red'>{t('notification.decline_btn')}</button>
+          <button className='text-btn' onClick={() => onView(notification.follower.id)}>
+            View Profile
+          </button>
         </div>
       </div>
     </Spring>

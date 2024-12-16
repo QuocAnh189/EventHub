@@ -1,6 +1,9 @@
 //hooks
 import { useState, useRef } from 'react'
 
+//component
+import Loading from '@components/Loading'
+
 //motion
 import { motion } from 'framer-motion'
 
@@ -11,12 +14,13 @@ import { AiFillEyeInvisible } from 'react-icons/ai'
 //i18n
 import { withTranslation } from 'react-i18next'
 
+//dto
+import { ResetPassWordPayload } from '@dtos/auth.dto'
+
 //util
 import classNames from 'classnames'
 import { useResetPasswordMutation } from '@redux/apis/auth.api'
 import { toast } from 'react-toastify'
-import { Skeleton } from '@mui/material'
-import { ResetPassWordPayload } from '@type/auth.type'
 
 interface Props {
   t: any
@@ -117,7 +121,7 @@ const ResetPassword = (props: Props) => {
           transition={{ duration: 0.4, delay: 0.6 }}
         >
           <button className='flex w-full btn hover:bg-blue-light2 bg-blue-light2 text-white' onClick={handleSubmit}>
-            {isLoading ? <Skeleton /> : t('submit_btn')}
+            {isLoading ? <Loading /> : t('submit_btn')}
           </button>
         </motion.div>
 

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 //components
 import Switch from 'react-switch'
-import CircularProgress from '@mui/material/CircularProgress'
+import Loading from '@components/Loading'
 
 //motion
 import { motion } from 'framer-motion'
@@ -14,7 +14,7 @@ import { AiFillEye } from 'react-icons/ai'
 import { AiFillEyeInvisible } from 'react-icons/ai'
 
 //type
-import { SignUpPayloadTwo } from '@type/auth.type'
+import { SignUpPayloadTwo } from '@dtos/auth.dto'
 
 //util
 import classNames from 'classnames'
@@ -130,7 +130,7 @@ const FormSetPassword = (props: Props) => {
             disabled={disabled}
             onClick={handleSubmit}
           >
-            {disabled ? <CircularProgress size={28} color='info' /> : t('session_two.signup_btn')}
+            {disabled ? <Loading /> : t('session_two.signup_btn')}
           </button>
         </motion.div>
       </div>

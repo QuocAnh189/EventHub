@@ -10,10 +10,10 @@ import Spring from '@components/Spring'
 //redux
 import { useSignOutMutation } from '@redux/apis/auth.api'
 import { setUser } from '@redux/slices/user.slice'
-import { clearDataConversation, setConservation } from '@redux/slices/conservation.slice'
+import { setConversation } from '@redux/slices/conversation.slice'
 
 //interface
-import { IUser } from 'interfaces/systems/user.interface'
+import { IUpdateUserProfilePayload } from '@dtos/user.dto'
 
 //assets
 import userDefault from '@assets/images/common/user_default.png'
@@ -22,15 +22,15 @@ import userDefault from '@assets/images/common/user_default.png'
 import { withTranslation } from 'react-i18next'
 import { IRole } from '@interfaces/systems'
 
-interface Props {
+interface IProps {
   t: any
   avatar: string
   fullName: string
-  setValue: UseFormSetValue<IUser>
+  setValue: UseFormSetValue<IUpdateUserProfilePayload>
   roles: IRole[]
 }
 
-const UserProfileCard = (props: Props) => {
+const UserProfileCard = (props: IProps) => {
   const { t, avatar, setValue, fullName, roles } = props
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -41,7 +41,7 @@ const UserProfileCard = (props: Props) => {
   const handleChangeAvatar = (e: any) => {
     const image = e.target.files[0]
     setAvatarUser(URL.createObjectURL(image))
-    setValue('avatarUrl', image)
+    setValue('newAvatar', image)
   }
 
   const handleSignOut = async () => {
@@ -49,9 +49,8 @@ const UserProfileCard = (props: Props) => {
     if (result) {
       localStorage.removeItem('token')
       dispatch(setUser(null))
-      dispatch(setConservation(null))
+      dispatch(setConversation(null))
       // dispatch(setSocket(null))
-      dispatch(clearDataConversation())
       navigate('/')
     }
   }
@@ -83,7 +82,7 @@ const UserProfileCard = (props: Props) => {
       </div>
       <h4>{fullName ? fullName : 'Tran Phuoc Anh Quoc'}</h4>
       <span className='badge badge--square bg-red min-w-[96px] mt-2.5 text-white'>
-        {roles.map((role: IRole) => role.name).join(', ') || 'Admin'}
+        {roles?.map((role: IRole) => role.name).join(', ') || 'Admin'}
       </span>
 
       <button disabled={loadingLogout} onClick={handleSignOut} className='btn btn--secondary w-full md:max-w-[280px]'>

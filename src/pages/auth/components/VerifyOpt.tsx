@@ -21,7 +21,6 @@ const VerifyOpt = (props: Props) => {
   const [opt, setOpt] = useState<string>('')
 
   const handleSubmit = () => {
-    // alert(opt)
     changeSession('reset-password')
   }
 

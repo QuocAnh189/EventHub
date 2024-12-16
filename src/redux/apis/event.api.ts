@@ -2,7 +2,7 @@ import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //type
-import { IParamsEvent, IParamsReview, IReviewEventPayload } from '@type/event.type'
+import { IReviewEventPayload } from '@dtos/event.dto'
 
 //interface
 import { IEvent, IEventFavorite } from 'interfaces/contents/event.interface'
@@ -27,7 +27,7 @@ export const apiEvent = createApi({
 
   tagTypes: ['Event', 'Review'],
   endpoints: (builder) => ({
-    getEvents: builder.query<IListData<any>, IParamsEvent | any>({
+    getEvents: builder.query<IListData<any>, any | any>({
       query: (params) => ({
         url: '/events/',
         method: 'GET',
@@ -126,7 +126,7 @@ export const apiEvent = createApi({
       invalidatesTags: ['Event']
     }),
 
-    getTrashEvents: builder.query<IListData<any>, IParamsEvent | any>({
+    getTrashEvents: builder.query<IListData<any>, any | any>({
       query: (params) => ({
         url: `/events/get-deleted-events`,
         method: 'GET',
@@ -147,7 +147,7 @@ export const apiEvent = createApi({
       invalidatesTags: ['Review']
     }),
 
-    getReviewsByEventId: builder.query<any, IParamsReview>({
+    getReviewsByEventId: builder.query<any, any>({
       query: (params) => ({
         url: `/events/${params.eventId}/reviews`,
         method: 'GET',
@@ -200,7 +200,7 @@ export const apiEvent = createApi({
       invalidatesTags: ['Event']
     }),
 
-    getFavouriteEvent: builder.query<IListData<IEventFavorite>, IParamsEvent | any>({
+    getFavouriteEvent: builder.query<IListData<IEventFavorite>, any | any>({
       query: (params) => ({
         url: `/events/get-favourite-events`,
         method: 'GET',
@@ -239,6 +239,15 @@ export const apiEvent = createApi({
         return response.data
       },
       providesTags: ['Event']
+    }),
+
+    applyCoupons: builder.mutation<any, { eventId: string; ids: string[] }>({
+      query: ({ eventId, ids }) => ({
+        url: `/events/apply-coupons/${eventId}`,
+        method: 'PATCH',
+        body: { ids }
+      }),
+      invalidatesTags: ['Event']
     })
   })
 })
@@ -265,5 +274,6 @@ export const {
   useGetFavouriteEventQuery,
   useMakeEventPrivateMutation,
   useMakeEventPublicMutation,
-  useCheckFavouriteQuery
+  useCheckFavouriteQuery,
+  useApplyCouponsMutation
 } = apiEvent

@@ -15,18 +15,15 @@ import SideBarExploreResponsive from '@components/SideBarExploreResponsive'
 //redux
 import { useGetEventsQuery } from '@redux/apis/event.api'
 
-//interfaces vs type
-import { initParamsEvent, IParamsEvent } from '@type/event.type'
+//interfaces
+import { initParamsEvent } from '@dtos/event.dto'
 import { ICardEvent } from '@interfaces/contents/event.interface'
 
 //i18
 import { withTranslation } from 'react-i18next'
 
-// //data
-// import events_data from '@db/event'
-
 const Explore = ({ t }: any) => {
-  const [params, setParams] = useState<IParamsEvent>(initParamsEvent)
+  const [params, setParams] = useState<any>(initParamsEvent)
   const [search, setSearch] = useState('')
   const debouncedSearchTerm = useDebounce(search, 500)
 
@@ -35,7 +32,7 @@ const Explore = ({ t }: any) => {
   const pagination = usePagination(data?.metadata?.totalCount, data?.metadata?.pageSize)
 
   useEffect(() => {
-    setParams((prev) => ({ ...prev, page: pagination.currentPage }))
+    setParams({ ...params, page: pagination.currentPage })
   }, [pagination.currentPage])
 
   useEffect(() => {
@@ -58,7 +55,7 @@ const Explore = ({ t }: any) => {
                   { value: 'DESC', label: t('desc') }
                 ]}
                 onChange={(value: any) => {
-                  setParams((prev) => ({ ...prev, orderDesc: value.value === 'ASC' ? true : false }))
+                  setParams({ ...params, orderDesc: value.value === 'ASC' ? true : false })
                 }}
               />
             </div>

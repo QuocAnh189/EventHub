@@ -12,6 +12,8 @@ import { apiReview } from './apis/review.api'
 import { apiMessage } from './apis/message.api'
 import { apiPayment } from './apis/payment.api'
 import { apiConversation } from './apis/conversation.api'
+import { apiCoupon } from './apis/coupon.api'
+import { apiExpense } from './apis/expense.api'
 // import { apiRole } from './apis/roles.api'
 import { apiTicket } from './apis/ticket.api'
 import { apiUser } from './apis/user.api'
@@ -23,7 +25,8 @@ import userReducer, { UserSliceKey } from '@redux/slices/user.slice'
 import categoryReducer, { CategorySliceKey } from './slices/category.slice'
 import eventReducer, { EventSliceKey } from './slices/event.slice'
 import socketReducer, { SocketSliceKey } from './slices/socket.slice'
-import conservationReducer, { ConservationSliceKey } from './slices/conservation.slice'
+import conversationReducer, { ConversationSliceKey } from './slices/conversation.slice'
+import couponReducer, { CouponSliceKey } from './slices/coupon.slice'
 
 const persistConfig = {
   key: 'root',
@@ -35,7 +38,8 @@ const combinedReducer: any = combineReducers({
   [UserSliceKey]: userReducer,
   [EventSliceKey]: eventReducer,
   [SocketSliceKey]: socketReducer,
-  [ConservationSliceKey]: conservationReducer
+  [ConversationSliceKey]: conversationReducer,
+  [CouponSliceKey]: couponReducer
 })
 
 const rootReducer = (state: any, action: any) => {
@@ -51,6 +55,8 @@ const store = configureStore({
     [apiCategory.reducerPath]: apiCategory.reducer,
     [apiCommand.reducerPath]: apiCommand.reducer,
     [apiEvent.reducerPath]: apiEvent.reducer,
+    [apiCoupon.reducerPath]: apiCoupon.reducer,
+    [apiExpense.reducerPath]: apiExpense.reducer,
     [apiReview.reducerPath]: apiReview.reducer,
     [apiMessage.reducerPath]: apiMessage.reducer,
     [apiPayment.reducerPath]: apiPayment.reducer,
@@ -68,6 +74,8 @@ const store = configureStore({
       apiCategory.middleware,
       apiCommand.middleware,
       apiEvent.middleware,
+      apiCoupon.middleware,
+      apiExpense.middleware,
       apiReview.middleware,
       apiMessage.middleware,
       apiPayment.middleware,
