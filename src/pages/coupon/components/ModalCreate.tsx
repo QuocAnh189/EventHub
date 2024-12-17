@@ -1,4 +1,8 @@
+//hook
+import { useForm } from 'react-hook-form'
+
 //components
+import Loading from '@components/Loading'
 import ModalBase from '@ui/ModalBase'
 import MediaDropPlaceholder from '@ui/MediaDropPlaceholder'
 
@@ -8,15 +12,41 @@ import { BiTrash } from 'react-icons/bi'
 //util
 import classNames from 'classnames'
 
+//interface
+import { ICreateCouponPayload } from '@dtos/coupon.dto'
+import { useAppSelector } from '@hooks/useRedux'
+
+//util
+import dayjs from 'dayjs'
+
 interface IProps {
   modalOpen: boolean
   setModalOpen: (value: boolean) => void
+  onCreate: (data: ICreateCouponPayload) => void
+  isLoading: boolean
 }
 
 const ModalCreateCoupon = (props: IProps) => {
-  const { modalOpen, setModalOpen } = props
+  const { modalOpen, setModalOpen, onCreate, isLoading } = props
 
-  const coverImage = false
+  const userId: string = useAppSelector((state) => state.persistedReducer.user.user?.id)
+
+  const { register, handleSubmit, watch } = useForm<ICreateCouponPayload>({
+    defaultValues: {
+      userId: userId,
+      coverImageUrl: 'https://picsum.photos/640/480?random=212',
+      name: '',
+      description: '',
+      minPrice: 0,
+      minQuantity: 0,
+      percentageValue: 0,
+      expireDate: dayjs(new Date()).format('YYYY-MM-DD')
+    }
+  })
+
+  const onSubmit = (data: ICreateCouponPayload) => {
+    onCreate(data)
+  }
 
   return (
     <ModalBase open={modalOpen} onClose={() => setModalOpen(false)}>
@@ -29,12 +59,14 @@ const ModalCreateCoupon = (props: IProps) => {
           <i className='icon-circle-xmark-regular' />
         </button>
         <h6 className='h6'>Create Coupon</h6>
-        <div className='flex flex-col gap-4 mt-4'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4 mt-4'>
           <div className='relative lg:w-full h-[100px] flex items-center justify-center text-white rounded-xl media-dropzone 2xl:col-span-2'>
             <img
               loading='lazy'
-              className={`absolute h-full w-full rounded-[8px] outline-none opacity-${coverImage ? '1' : '0'}`}
-              src={coverImage ? URL.createObjectURL(coverImage) : ''}
+              className={`absolute h-full w-full rounded-[8px] outline-none opacity-${
+                watch().coverImageUrl ? '1' : '0'
+              }`}
+              src={watch().coverImageUrl ? watch().coverImageUrl : ''}
             />
             <input
               aria-label=''
@@ -46,7 +78,7 @@ const ModalCreateCoupon = (props: IProps) => {
               alt='No avatar'
               onClick={(event: any) => (event.target.value = null)}
             />
-            {!coverImage ? (
+            {!watch().coverImageUrl ? (
               <div className='absolute'>
                 <MediaDropPlaceholder text='CoverImage' />
               </div>
@@ -72,7 +104,7 @@ const ModalCreateCoupon = (props: IProps) => {
               id='name'
               defaultValue=''
               placeholder='Enter name'
-              // {...register('brandName', { required: true })}
+              {...register('name', { required: true })}
             />
           </div>
           <div className='field-wrapper'>
@@ -86,7 +118,7 @@ const ModalCreateCoupon = (props: IProps) => {
               id='description'
               defaultValue=''
               placeholder='Enter description'
-              // {...register('description', { required: true })}
+              {...register('description', { required: true })}
             />
           </div>
           <div className='flex items-center justify-between gap-4'>
@@ -96,9 +128,9 @@ const ModalCreateCoupon = (props: IProps) => {
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
-                id='dimensions'
+                id='minPrice'
                 defaultValue=''
-                // {...register('dimensions', { required: true })}
+                {...register('minPrice', { required: true })}
               />
             </div>
             <div className='field-wrapper'>
@@ -107,8 +139,8 @@ const ModalCreateCoupon = (props: IProps) => {
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
-                id='weight'
-                // {...register('weight', { required: true, pattern: /^[0-9]*$/ })}
+                id='minQuantity'
+                {...register('minQuantity', { required: true, pattern: /^[0-9]*$/ })}
               />
             </div>
             <div className='field-wrapper'>
@@ -117,8 +149,8 @@ const ModalCreateCoupon = (props: IProps) => {
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
-                id='weight'
-                // {...register('weight', { required: true, pattern: /^[0-9]*$/ })}
+                id='percentageValue'
+                {...register('percentageValue', { required: true, pattern: /^[0-9]*$/ })}
               />
             </div>
           </div>
@@ -129,14 +161,15 @@ const ModalCreateCoupon = (props: IProps) => {
             <input
               type='date'
               className={classNames('field-input', { 'field-input--error': false })}
-              id='name'
+              id='expireDate'
               defaultValue=''
-              placeholder='Enter name'
-              // {...register('brandName', { required: true })}
+              {...register('expireDate', { required: true })}
             />
           </div>
-          <button className='btn btn-primary hover:bg-primary-300'>Create Coupon</button>
-        </div>
+          <button type='submit' className='btn btn-primary hover:bg-primary-300'>
+            {isLoading ? <Loading /> : ' Create Coupon'}
+          </button>
+        </form>
       </div>
     </ModalBase>
   )

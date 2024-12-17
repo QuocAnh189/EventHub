@@ -17,26 +17,30 @@ interface IProps {
   t: any
   reviews: IReview[]
   pagination: IPagination
+  search: string
+  setSearch: (search: string) => void
 }
 const LatestAcceptedReviews = (props: IProps) => {
-  const { t, reviews, pagination } = props
+  const { t, reviews, pagination, search, setSearch } = props
 
   return (
     <Spring className='flex flex-1 flex-col gap-[26px]'>
       <div className='card !p-0 flex-1'>
         <div className='flex flex-col p-5 gap-2.5 md:flex-row md:justify-between md:items-center md:px-[26px]'>
           <h5 className='h5'>{t('main.title')}</h5>
+          <input
+            className='field-input w-[300px] md:w-[300px]'
+            type='search'
+            placeholder='Search...'
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
         <span className='block h-[1px] bg-input-border opacity-60' />
         <div>
-          {reviews.map((review: IReview, index: number) => (
+          {reviews?.map((review: IReview, index: number) => (
             <Review key={`review-${index}`} review={review} index={index} />
           ))}
-          {reviews.length === 0 && (
-            <div className='h-[500px]'>
-              <p>There is no review</p>
-            </div>
-          )}
         </div>
       </div>
       {pagination && pagination.maxPage > 1 && <Pagination pagination={pagination} />}

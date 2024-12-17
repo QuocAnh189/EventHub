@@ -4,6 +4,7 @@ import { usePagination } from '@hooks/usePagination'
 import { useDebounce } from '@hooks/useDebounce'
 
 //components
+import Loading from '@components/Loading'
 import Loader from '@components/Loader'
 import CardMyEvent from '@components/events/CardMyEvent'
 import Pagination from '@ui/Pagination'
@@ -19,7 +20,6 @@ import { withTranslation } from 'react-i18next'
 //interface vs type
 import { IMyEvent } from '@interfaces/contents/event.interface'
 import { IPagination } from '@interfaces/common.interface'
-import { CircularProgress } from '@mui/material'
 
 interface IParamMyTrashEvent {
   search: string
@@ -107,7 +107,7 @@ const EventManagementTrash = ({ t }: any) => {
     <div className='flex flex-col flex-1'>
       <div className='flex items-center justify-between'>
         <button onClick={handleRestoreEvents} className='btn bg-primary flex text-white !gap-[5px]'>
-          {isLoading ? <CircularProgress /> : 'Restore'}
+          {isLoading ? <Loading /> : 'Restore'}
         </button>
         <input
           className='field-input w-[300px] md:w-[300px]'

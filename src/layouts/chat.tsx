@@ -20,7 +20,10 @@ import MessageItem from '@components/message/MessageItem'
 //redux
 import { useAppSelector } from '@hooks/useRedux'
 import { useGetMessageByConversationIdQuery } from '@redux/apis/conversation.api'
+
+//interface
 import { IMessage } from '@interfaces/contents/conversation.interface'
+import { IUser } from '@interfaces/systems'
 
 const ChatLayout = ({ children }: PropsWithChildren) => {
   const loadMoreIntersect = useRef(null)
@@ -34,8 +37,9 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
 
   const [params] = useState({ pageSize: 10 })
   const conversation = useAppSelector((state) => state.persistedReducer.conversation.conversation)
+  const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
-  const { data } = useGetMessageByConversationIdQuery({ conversationId: conversation.id, params })
+  const { data } = useGetMessageByConversationIdQuery({ conversationId: conversation?.id, params })
 
   return (
     <div className='relative min-h-screen bg-body'>
@@ -43,14 +47,21 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
         <MessageIcon onClick={handleOpenLiveChat} />
         <ModalMessage>
           <>
-            {false && (
+            {!user && (
+              <div className='flex flex-col gap-8 justify-center items-center text-center h-full opacity-35'>
+                <div className='text-2xl md:text-4xl p-16'>Please login to chat</div>
+                <ChatBubbleLeftRightIcon className='w-32 h-32 inline-block' />
+              </div>
+            )}
+
+            {!conversation && user && (
               <div className='flex flex-col gap-8 justify-center items-center text-center h-full opacity-35'>
                 <div className='text-2xl md:text-4xl p-16'>Please select conversation to see messages</div>
                 <ChatBubbleLeftRightIcon className='w-32 h-32 inline-block' />
               </div>
             )}
 
-            {true && (
+            {conversation && data && user && (
               <>
                 <ConversationHeader
                   imageUrl={conversation.event.coverImageUrl}

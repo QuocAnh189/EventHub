@@ -9,8 +9,7 @@ import Tabs from '@mui/material/Tabs'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import Comments from '@components/Comments'
-// import LocationEvent from '@components/Location'
-import Information from '@components/Information'
+import EventInformation from '@components/events/EventInformation'
 import EventsRelate from './components/EventRelate'
 import Payment from './components/Payment'
 import Loader from '@components/Loader'
@@ -139,7 +138,7 @@ const EventDetail = () => {
             </Tabs>
           </Box>
           <TabPanel value='1' sx={{ width: '100%' }}>
-            <Information event={event!} />
+            <EventInformation event={event!} />
           </TabPanel>
           <TabPanel value='2' sx={{ width: '100%' }}>
             <Comments eventId={event?.id!} ownerId={event?.creator.id!} />

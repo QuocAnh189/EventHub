@@ -21,7 +21,7 @@ import { IConversation } from '@interfaces/contents/conversation.interface'
 const ModalMessage = ({ children }: PropsWithChildren) => {
   const [tabActive, setTabActive] = useState('Event')
 
-  const userId: string = useAppSelector((state) => state.persistedReducer.user.user.id)
+  const userId: string = useAppSelector((state) => state.persistedReducer.user.user?.id)
 
   const [params, setParams] = useState({ pageSize: 20, search: '' })
   const [search, setSearch] = useState('')

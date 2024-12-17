@@ -3,9 +3,9 @@ import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //components
+import Loading from '@components/Loading'
+import FormToChat from '@components/FormToChat'
 import { toast } from 'react-toastify'
-import FormToChat from './FormToChat'
-import { CircularProgress } from '@mui/material'
 
 //icons
 import { FaRegCalendarAlt } from 'react-icons/fa'
@@ -28,11 +28,14 @@ import userDefault from '@assets/images/common/user_default.png'
 import { useAppSelector } from '@hooks/useRedux'
 import { useFollowUserMutation, useUnFollowUserMutation, useCheckFollowerQuery } from '@redux/apis/user.api'
 
-interface Props {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+interface IProps {
   event: IEvent
 }
 
-const Information = (props: Props) => {
+const EventInformation = (props: IProps) => {
   const { event } = props
 
   const navigate = useNavigate()
@@ -112,7 +115,7 @@ const Information = (props: Props) => {
               <p className='font-semibold text-header'>{event?.creator.userName}</p>
               <button onClick={handleFollowUser}>
                 {loadingFollower || loadingUnFollower ? (
-                  <CircularProgress size={24} color='primary' />
+                  <Loading />
                 ) : (
                   <div className='flex items-center gap-1 px-2 py-1 rounded-md bg-primary hover:bg-primary-300'>
                     {isFollow ? <RiSubtractLine color='white' size={24} /> : <IoMdAdd color='white' size={24} />}
@@ -166,4 +169,4 @@ const Information = (props: Props) => {
   )
 }
 
-export default Information
+export default withTranslation('event')(EventInformation)

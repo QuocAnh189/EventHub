@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 //components
+import Loading from '@components/Loading'
 import { toast } from 'react-toastify'
-import CircularProgress from '@mui/material/CircularProgress'
 
 //validate
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -164,7 +164,7 @@ const FormSignIn = (props: Props) => {
             type='submit'
             className='flex w-full btn hover:bg-blue-light2 bg-blue-light3 text-white'
           >
-            {loadingSignIn ? <CircularProgress size={28} color='info' /> : t('login.signin_btn')}
+            {loadingSignIn ? <Loading /> : t('login.signin_btn')}
           </button>
         </motion.div>
       </form>

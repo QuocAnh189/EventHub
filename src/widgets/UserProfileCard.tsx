@@ -11,16 +11,17 @@ import Spring from '@components/Spring'
 import { useSignOutMutation } from '@redux/apis/auth.api'
 import { setUser } from '@redux/slices/user.slice'
 import { setConversation } from '@redux/slices/conversation.slice'
+import { setCoupons } from '@redux/slices/coupon.slice'
 
 //interface
 import { IUpdateUserProfilePayload } from '@dtos/user.dto'
+import { IRole } from '@interfaces/systems'
 
 //assets
 import userDefault from '@assets/images/common/user_default.png'
 
 //i18n
 import { withTranslation } from 'react-i18next'
-import { IRole } from '@interfaces/systems'
 
 interface IProps {
   t: any
@@ -50,6 +51,7 @@ const UserProfileCard = (props: IProps) => {
       localStorage.removeItem('token')
       dispatch(setUser(null))
       dispatch(setConversation(null))
+      dispatch(setCoupons(null))
       // dispatch(setSocket(null))
       navigate('/')
     }

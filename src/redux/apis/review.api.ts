@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //interface
-import { IReview } from '@interfaces/contents/review.interface'
 import { IListData } from '@interfaces/common.interface'
+import { IReview } from '@interfaces/contents/review.interface'
 
 export const apiReview = createApi({
   reducerPath: 'apiReview',
@@ -18,12 +18,17 @@ export const apiReview = createApi({
   }),
   keepUnusedDataFor: 20,
   tagTypes: ['Review'],
+
   endpoints: (builder) => ({
-    getReviews: builder.query<IReview[], void>({
-      query: () => ({
+    getReviews: builder.query<IReview[], any>({
+      query: (params) => ({
         url: '/reviews',
-        method: 'GET'
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Review']
     }),
 
@@ -39,11 +44,15 @@ export const apiReview = createApi({
       providesTags: ['Review']
     }),
 
-    getReviewsByUserId: builder.query<IReview[], string>({
-      query: (userId) => ({
+    getReviewsByUserId: builder.query<IReview[], { userId: string; params: any }>({
+      query: ({ userId, params }) => ({
         url: `/reviews/get-by-user/${userId}`,
-        method: 'GET'
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Review']
     }),
 
@@ -59,7 +68,7 @@ export const apiReview = createApi({
       providesTags: ['Review']
     }),
 
-    addReview: builder.mutation<any, any>({
+    createReview: builder.mutation<any, FormData>({
       query: (data) => ({
         url: `/reviews/`,
         method: 'POST',
@@ -68,7 +77,7 @@ export const apiReview = createApi({
       invalidatesTags: ['Review']
     }),
 
-    updateReview: builder.mutation<IReview, any>({
+    updateReview: builder.mutation<IReview, FormData>({
       query: (formData) => ({
         url: `/reviews/${formData.get('id')}`,
         method: 'PUT',
@@ -92,7 +101,7 @@ export const {
   useGetReviewsByEventIdQuery,
   useGetReviewsByUserIdQuery,
   useGetReviewsByCreatedEventsQuery,
-  useAddReviewMutation,
+  useCreateReviewMutation,
   useUpdateReviewMutation,
   useDeleteReviewMutation
 } = apiReview

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //components
-import CircularProgress from '@mui/material/CircularProgress'
+import Loading from '@components/Loading'
 import ConfirmDialog from '@components/Dialog'
 import Checkbox from '@mui/material/Checkbox'
 import Spring from '@components/Spring'
@@ -114,7 +114,7 @@ const CardMyEvent = (props: Props) => {
               >
                 {event.deletedAt ? (
                   loadingRestore ? (
-                    <CircularProgress size={24} />
+                    <Loading />
                   ) : (
                     t('management.button_restore')
                   )

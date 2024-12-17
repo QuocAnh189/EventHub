@@ -1,9 +1,6 @@
 import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-//type
-import { IReviewEventPayload } from '@dtos/event.dto'
-
 //interface
 import { IEvent, IEventFavorite } from 'interfaces/contents/event.interface'
 import queryString from 'query-string'
@@ -138,15 +135,6 @@ export const apiEvent = createApi({
       providesTags: ['Event']
     }),
 
-    addReview: builder.mutation<any, { eventId: string; data: IReviewEventPayload }>({
-      query: ({ eventId, data }) => ({
-        url: `/events/${eventId}/reviews`,
-        method: 'POST',
-        body: data
-      }),
-      invalidatesTags: ['Review']
-    }),
-
     getReviewsByEventId: builder.query<any, any>({
       query: (params) => ({
         url: `/events/${params.eventId}/reviews`,
@@ -165,23 +153,6 @@ export const apiEvent = createApi({
         method: 'GET'
       }),
       providesTags: ['Review']
-    }),
-
-    updateReview: builder.mutation<any, { eventId: string; reviewId: string; data: IReviewEventPayload }>({
-      query: ({ eventId, reviewId, data }) => ({
-        url: `/events/${eventId}/reviews/${reviewId}`,
-        method: 'PUT',
-        body: data
-      }),
-      invalidatesTags: ['Review']
-    }),
-
-    deleteReview: builder.mutation<any, { eventId: string; reviewId: string }>({
-      query: ({ eventId, reviewId }) => ({
-        url: `/events/${eventId}/reviews/${reviewId}`,
-        method: 'DELETE'
-      }),
-      invalidatesTags: ['Review']
     }),
 
     favouriteEvent: builder.mutation<any, string>({
@@ -264,11 +235,8 @@ export const {
   useDeletePermanentEventMutation,
   useRestoreEventMutation,
   useGetTrashEventsQuery,
-  useAddReviewMutation,
   useGetReviewsByEventIdQuery,
   useGetReviewByIdQuery,
-  useUpdateReviewMutation,
-  useDeleteReviewMutation,
   useFavouriteEventMutation,
   useUnfavouriteEventMutation,
   useGetFavouriteEventQuery,

@@ -65,7 +65,7 @@ const EventCardSearchHome = (props: Props) => {
         </div>
         <h5 className='text-[12px] font-medium m-0 mt-1 leading-4 text-right'>
           {event?.categories[0]?.name} <br />
-          {event.eventPaymentType === EEventPaymentTicket.PAID ? (
+          {event.eventPaymentType === EEventPaymentTicket.Paid ? (
             <p className='font-bold text-primary'>100.000 VND</p>
           ) : (
             <p className='font-bold text-primary'>{event.eventPaymentType}</p>

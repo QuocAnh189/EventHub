@@ -9,7 +9,6 @@ import { apiCategory } from './apis/category.api'
 import { apiCommand } from './apis/command.api'
 import { apiEvent } from './apis/event.api'
 import { apiReview } from './apis/review.api'
-import { apiMessage } from './apis/message.api'
 import { apiPayment } from './apis/payment.api'
 import { apiConversation } from './apis/conversation.api'
 import { apiCoupon } from './apis/coupon.api'
@@ -58,7 +57,6 @@ const store = configureStore({
     [apiCoupon.reducerPath]: apiCoupon.reducer,
     [apiExpense.reducerPath]: apiExpense.reducer,
     [apiReview.reducerPath]: apiReview.reducer,
-    [apiMessage.reducerPath]: apiMessage.reducer,
     [apiPayment.reducerPath]: apiPayment.reducer,
     [apiConversation.reducerPath]: apiConversation.reducer,
     [apiTicket.reducerPath]: apiTicket.reducer,
@@ -77,7 +75,6 @@ const store = configureStore({
       apiCoupon.middleware,
       apiExpense.middleware,
       apiReview.middleware,
-      apiMessage.middleware,
       apiPayment.middleware,
       apiConversation.middleware,
       apiTicket.middleware,

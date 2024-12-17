@@ -2,8 +2,8 @@
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form'
 
 //component
+import Loading from '@components/Loading'
 import Switch from 'react-switch'
-import { CircularProgress } from '@mui/material'
 
 //icons
 import { IoLocationOutline } from 'react-icons/io5'
@@ -11,7 +11,7 @@ import { FaRegCalendarAlt } from 'react-icons/fa'
 import { IoMdTime } from 'react-icons/io'
 
 //type
-import { ICreateEventPayload } from '@type/event.type'
+import { ICreateEventPayload } from '@dtos/event.dto'
 
 //assets
 import useDefault from '@assets/images/common/user_default.png'
@@ -176,7 +176,7 @@ const ReviewEventCreate = (props: Props) => {
           {t('button_back')}
         </button>
         <button disabled={disabled} type='submit' className='btn btn-primary'>
-          {disabled ? <CircularProgress size={24} /> : create ? t('review.button_create') : t('review.button_update')}
+          {disabled ? <Loading /> : create ? t('review.button_create') : t('review.button_update')}
         </button>
       </div>
     </div>

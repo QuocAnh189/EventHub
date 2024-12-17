@@ -1,8 +1,8 @@
 // components
+import Loading from '@components/Loading'
 import { NavLink } from 'react-router-dom'
 import RatingStars from '@ui/RatingStars'
 import Spring from '@components/Spring'
-import { CircularProgress } from '@mui/material'
 
 //interface
 import { IEventFavorite } from '@interfaces/contents/event.interface'
@@ -49,7 +49,7 @@ const EventFavouriteItem = (props: Props) => {
             View
           </NavLink>
           <button onClick={() => onRemove(event.id)} className='btn btn--outline red !text-sm'>
-            {isLoading ? <CircularProgress size={20} /> : 'Remove'}
+            {isLoading ? <Loading /> : 'Remove'}
           </button>
         </div>
       </div>

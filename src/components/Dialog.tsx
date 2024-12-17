@@ -1,5 +1,5 @@
 //component
-import CircularProgress from '@mui/material/CircularProgress'
+import Loading from './Loading'
 import ModalBase from '@ui/ModalBase'
 
 interface Props {
@@ -32,7 +32,7 @@ const ConfirmDialog = (props: Props) => {
             <span className='text-black'>Cancel</span>
           </button>
           <button className='btn bg-red' onClick={onHandle}>
-            {disabled ? <CircularProgress size='20px' /> : <span className='text-white'>{action}</span>}
+            {disabled ? <Loading /> : <span className='text-white'>{action}</span>}
           </button>
         </div>
       </div>

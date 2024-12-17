@@ -20,8 +20,6 @@ const UserInfo = () => {
   const params = useParams()
   const { data } = useGetUserByIdQuery(params.id!)
 
-  console.log(data)
-
   return (
     <ProtectedLayout>
       <PageHeader title='Profile User' />

@@ -7,7 +7,6 @@ import { toast } from 'react-toastify'
 //redux
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { setSocket } from '@redux/slices/socket.slice'
-import { updateConversationUser, updateMessagesCurrent } from '@redux/slices/conversation.slice'
 
 //socket
 import { HttpTransportType, HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr'
@@ -37,12 +36,10 @@ const AppSocketProvider = ({ children }: PropsWithChildren) => {
       try {
         conn.on('JoinChatRoom', (conversation: any) => {
           console.log('🚀 ~ conn.on ~ conversation:', conversation)
-          dispatch(updateConversationUser(conversation))
         })
 
         conn.on('ReceiveMessage', (result: any) => {
           console.log('🚀 ~ conn.on ~ result:', result)
-          dispatch(updateMessagesCurrent(result))
         })
 
         await conn.start()

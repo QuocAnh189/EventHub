@@ -21,14 +21,14 @@ import dayjs from 'dayjs'
 import { useDeleteReviewMutation } from '@redux/apis/review.api'
 import { toast } from 'react-toastify'
 
-interface Props {
+interface IProps {
   index: number
   review: IReview
   ownerId: string
   userId: string
 }
 
-const ItemReview = (props: Props) => {
+const ItemReview = (props: IProps) => {
   const { index, review, ownerId, userId } = props
 
   const { anchorEl, open, handleClick, handleClose } = useSubmenu()
@@ -104,7 +104,7 @@ const ItemReview = (props: Props) => {
       </div>
       <Divider />
 
-      <ModalUpdate modalOpen={modalUpdate} setModalOpen={setModalUpdate} review={review} />
+      {modalUpdate && <ModalUpdate modalOpen={modalUpdate} setModalOpen={setModalUpdate} review={review} />}
 
       {openDialog && (
         <ConfirmDialog

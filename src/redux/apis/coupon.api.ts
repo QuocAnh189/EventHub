@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //interface
-import { ICoupon } from '@interfaces/contents/coupon.interface'
 import { IListData } from '@interfaces/common.interface'
+import { ICoupon } from '@interfaces/contents/coupon.interface'
 
 export const apiCoupon = createApi({
   reducerPath: 'apiCoupon',
@@ -19,11 +19,15 @@ export const apiCoupon = createApi({
   keepUnusedDataFor: 20,
   tagTypes: ['Coupon'],
   endpoints: (builder) => ({
-    getCoupons: builder.query<IListData<any>, void>({
-      query: () => ({
+    getCoupons: builder.query<IListData<any>, any>({
+      query: (params) => ({
         url: '/coupons/',
-        method: 'GET'
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Coupon']
     }),
 
@@ -39,12 +43,13 @@ export const apiCoupon = createApi({
       providesTags: ['Coupon']
     }),
 
-    addCoupon: builder.mutation<any, FormData>({
+    createCoupon: builder.mutation<any, FormData>({
       query: (data) => ({
         url: `/coupons/`,
         method: 'POST',
         body: data
       }),
+      transformResponse: (response: any) => response.data,
       invalidatesTags: ['Coupon']
     }),
 
@@ -70,7 +75,7 @@ export const apiCoupon = createApi({
 export const {
   useGetCouponsQuery,
   useGetCouponsByCreatedQuery,
-  useAddCouponMutation,
+  useCreateCouponMutation,
   useUpdateCouponMutation,
   useDeleteCouponMutation
 } = apiCoupon

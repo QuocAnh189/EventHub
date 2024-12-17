@@ -20,9 +20,15 @@ import { IReview } from 'interfaces/contents/review.interface'
 //utils
 import dayjs from 'dayjs'
 
+//icon
+import { HiTrash } from 'react-icons/hi'
+
 //assets
 import userDefault from '@assets/images/common/user_default.png'
-import { HiTrash } from 'react-icons/hi'
+
+//redux
+import { useDeleteReviewMutation } from '@redux/apis/review.api'
+import { toast } from 'react-toastify'
 
 interface UserProps {
   userName: string
@@ -81,12 +87,12 @@ const EventModal = (props: IEventProps) => {
   )
 }
 
-interface Props {
+interface IProps {
   review: IReview
   index: number
 }
 
-const Review = (props: Props) => {
+const Review = (props: IProps) => {
   const { index, review } = props
 
   const { theme } = useTheme()
@@ -96,6 +102,21 @@ const Review = (props: Props) => {
   const bgColor = theme === 'light' ? 'var(--body)' : 'rgba(39,50,65,.2)'
 
   const [modalOpen, setModalOpen] = useState(false)
+
+  const [DeleteReview, { isLoading: loadingDelete }] = useDeleteReviewMutation()
+
+  const handleDelete = async () => {
+    try {
+      const result = await DeleteReview(review.id).unwrap()
+      if (result) {
+        toast.success('Delete review successfully')
+      }
+    } catch (error) {
+      console.error('Delete review error:', error)
+    } finally {
+      setOpenDialog(false)
+    }
+  }
 
   useEffect(() => {
     setModalOpen(false)
@@ -197,8 +218,8 @@ const Review = (props: Props) => {
             setOpenDialog(value)
           }}
           action='Delete'
-          onHandle={() => {}}
-          disabled={false}
+          onHandle={handleDelete}
+          disabled={loadingDelete}
         />
       )}
     </Spring>

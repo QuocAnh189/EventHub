@@ -1,9 +1,11 @@
-import { IChangePasswordsPayload } from '@dtos/user.dto'
-import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //interface
+import { IListData } from '@interfaces/common.interface'
 import { IUser } from 'interfaces/systems/user.interface'
+
+//dto
+import { IChangePasswordsPayload } from '@dtos/user.dto'
 
 export const apiUser = createApi({
   reducerPath: 'apiUser',
@@ -21,6 +23,7 @@ export const apiUser = createApi({
   }),
   keepUnusedDataFor: 20,
   tagTypes: ['User'],
+
   endpoints: (builder) => ({
     getUsers: builder.query<IUser[], any>({
       query: (params) => ({

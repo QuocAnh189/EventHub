@@ -6,8 +6,8 @@ import ModalBase from '@ui/ModalBase'
 import { toast } from 'react-toastify'
 
 //redux
+import Loading from '@components/Loading'
 import { useUpdateReviewMutation } from '@redux/apis/review.api'
-import { CircularProgress } from '@mui/material'
 
 interface Props {
   review: any
@@ -75,7 +75,7 @@ const ModalUpdate = (props: Props) => {
           className='bg-input-bg text-justify rounded-md border border-input-border h-[100px] p-4 overflow-y-auto'
         />
         <button className='btn btn-primary mt-4' onClick={handleUpdateReview}>
-          {loadingUpdateReview ? <CircularProgress /> : 'Update'}
+          {loadingUpdateReview ? <Loading /> : 'Update'}
         </button>
       </div>
     </ModalBase>

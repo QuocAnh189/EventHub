@@ -69,7 +69,7 @@ const ModalApplyCoupon = (props: IProps) => {
         <h6 className='h6'>Apply coupon</h6>
         <div className='flex flex-col h-full justify-end mt-4'>
           <div className='flex-1 h-[1000px] mb-[35px] grid content-start gap-[26px] grid-cols-3 overflow-scroll'>
-            {coupons.map((item: ICoupon, index: number) => (
+            {coupons?.map((item: ICoupon, index: number) => (
               <CouponApplyItem
                 key={index}
                 index={index}

@@ -1,5 +1,6 @@
 //hooks
 import { useEffect, useState } from 'react'
+import { useDebounce } from '@hooks/useDebounce'
 
 //layout
 import ProtectedLayout from '@layouts/protected'
@@ -36,17 +37,24 @@ interface IStatistics {
 }
 
 const Review = ({ t }: any) => {
-  const [params, setParams] = useState({ pageSize: 10, page: 1 })
+  const [params, setParams] = useState({ pageSize: 10, page: 1, search: '' })
 
   const { data } = useGetReviewsByCreatedEventsQuery(params)
+  const [search, setSearch] = useState('')
+  const debouncedSearchTerm = useDebounce(search, 500)
 
   const pagination: IPagination = usePagination(data?.metadata?.totalCount, data?.metadata.pageSize)
   useEffect(() => {
     setParams({ ...params, page: pagination.currentPage })
   }, [pagination.currentPage])
 
+  useEffect(() => {
+    setParams({ ...params, search: debouncedSearchTerm })
+  }, [debouncedSearchTerm])
+
   const statistic: IStatistics = data?.statistic
 
+  console.log(statistic?.averageRate)
   return (
     <ProtectedLayout>
       <PageHeader title={t('header.title')} />
@@ -76,7 +84,14 @@ const Review = ({ t }: any) => {
           </div>
           <ReviewsRate data={statistic?.totalPerNumberRate} />
         </div>
-        {<LatestAcceptedReviews reviews={data?.items || []} pagination={pagination} />}
+        {
+          <LatestAcceptedReviews
+            reviews={data?.items || []}
+            pagination={pagination}
+            search={search}
+            setSearch={setSearch}
+          />
+        }
       </div>
     </ProtectedLayout>
   )

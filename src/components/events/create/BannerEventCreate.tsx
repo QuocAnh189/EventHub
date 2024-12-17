@@ -5,7 +5,7 @@ import { UseFormSetValue } from 'react-hook-form'
 import MediaDropPlaceholder from '@ui/MediaDropPlaceholder'
 
 //interface & type
-import { ICreateEventPayload } from '@type/event.type'
+import { ICreateEventPayload } from '@dtos/event.dto'
 
 //i18n
 import { withTranslation } from 'react-i18next'

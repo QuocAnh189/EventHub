@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react'
 
 // //component
 import ItemReview from './ItemReview'
-import CircularProgress from '@mui/material/CircularProgress'
+import Loading from './Loading'
 import { toast } from 'react-toastify'
 import Pagination from '@ui/Pagination'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'
-import { useAddReviewMutation, useGetReviewsByEventIdQuery } from '@redux/apis/review.api'
+import { useCreateReviewMutation, useGetReviewsByEventIdQuery } from '@redux/apis/review.api'
 
 //util
 import classNames from 'classnames'
@@ -39,7 +39,7 @@ const Comments = (props: Props) => {
 
   const [params, setParams] = useState(initParams)
   const { data } = useGetReviewsByEventIdQuery({ eventId, params })
-  const [AddReview, { isLoading }] = useAddReviewMutation()
+  const [AddReview, { isLoading }] = useCreateReviewMutation()
 
   const [rate, setRate] = useState<number>(0.0)
   const [content, setContent] = useState<string>('')
@@ -115,7 +115,7 @@ const Comments = (props: Props) => {
           onChange={(e) => setContent(e.target.value)}
         />
         <button disabled={isLoading} onClick={handleAddReviews} className='btn btn-primary hover:bg-primary-400 w-40'>
-          {isLoading ? <CircularProgress size={24} /> : 'Post comment'}
+          {isLoading ? <Loading /> : 'Post comment'}
         </button>
       </div>
     </div>

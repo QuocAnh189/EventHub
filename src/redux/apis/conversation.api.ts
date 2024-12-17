@@ -1,5 +1,7 @@
-import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+//interface
+import { IListData } from '@interfaces/common.interface'
 
 export const apiConversation = createApi({
   reducerPath: 'apiConversation',

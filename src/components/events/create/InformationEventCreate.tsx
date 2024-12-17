@@ -16,7 +16,7 @@ import { EEventStyle } from '@constants/enum.constant'
 
 //interface & type
 // import { ICategory } from '@interfaces/contents/category.interface'
-import { ICreateEventPayload } from '@type/event.type'
+import { ICreateEventPayload } from '@dtos/event.dto'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'

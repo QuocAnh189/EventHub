@@ -37,7 +37,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: false,
     ticketTypes: [
@@ -60,7 +60,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2', 'This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -101,7 +101,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: false,
     ticketTypes: [
@@ -124,7 +124,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -165,7 +165,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: false,
     ticketTypes: [
@@ -188,7 +188,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -229,7 +229,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: false,
     ticketTypes: [
@@ -252,7 +252,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -293,7 +293,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: false,
     ticketTypes: [
@@ -316,7 +316,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -357,7 +357,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: false,
     ticketTypes: [
@@ -380,7 +380,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -422,7 +422,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: true,
     ticketTypes: [
@@ -445,7 +445,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -486,7 +486,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: true,
     ticketTypes: [
@@ -509,7 +509,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -550,7 +550,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: true,
     ticketTypes: [
@@ -573,7 +573,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -615,7 +615,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: true,
     ticketTypes: [
@@ -638,7 +638,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -679,7 +679,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: true,
     ticketTypes: [
@@ -702,7 +702,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()
@@ -744,7 +744,7 @@ const events = [
     startTime: new Date(),
     endTime: new Date(),
     eventCycleType: EEventStyle.RECURRING,
-    eventPaymentType: EEventPaymentTicket.PAID,
+    eventPaymentType: EEventPaymentTicket.Paid,
     isPrivate: false,
     isTrash: true,
     ticketTypes: [
@@ -767,7 +767,7 @@ const events = [
     numberOfShares: 100,
     numberOfSoldTickets: 20,
     averageRating: 4.5,
-    status: EEventStatus.UPCOMING,
+    status: EEventStatus.Upcoming,
     reasons: ['This is reasons 1', 'This is reasons 2, This is reasons 3'],
     createdAt: new Date(),
     updatedAt: new Date()

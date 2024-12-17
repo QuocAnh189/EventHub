@@ -11,11 +11,12 @@ import Pagination from '@ui/Pagination'
 import { toast } from 'react-toastify'
 
 //redux
-import { useGetCouponsByCreatedQuery, useDeleteCouponMutation } from '@redux/apis/coupon.api'
-import { setCoupons } from '@redux/slices/coupon.slice'
+import { useGetCouponsByCreatedQuery, useDeleteCouponMutation, useCreateCouponMutation } from '@redux/apis/coupon.api'
+import { addCoupons } from '@redux/slices/coupon.slice'
 
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
+import { ICreateCouponPayload } from '@dtos/coupon.dto'
 
 const CouponsGrid = () => {
   const dispatch = useAppDispatch()
@@ -26,14 +27,9 @@ const CouponsGrid = () => {
 
   const { data } = useGetCouponsByCreatedQuery(params)
   const [DeleteCoupon, { isLoading: isDeleteLoading }] = useDeleteCouponMutation()
+  const [CreateCoupon, { isLoading: isCreateLoading }] = useCreateCouponMutation()
 
   const pagination = usePagination(data?.metadata.totalCount, data?.metadata.pageSize)
-
-  useEffect(() => {
-    if (data && data.items) {
-      dispatch(setCoupons(data.items))
-    }
-  }, [data])
 
   useEffect(() => {
     setParams({ ...params, page: pagination.currentPage })
@@ -55,6 +51,27 @@ const CouponsGrid = () => {
     } catch (error) {
       console.error(error)
       toast.success('Something went wrong')
+    }
+  }
+
+  const handleCreateCoupon = async (data: ICreateCouponPayload) => {
+    const formData = new FormData()
+
+    for (const key in data) {
+      formData.append(key, data[key as keyof ICreateCouponPayload] as string)
+    }
+
+    try {
+      const result = await CreateCoupon(formData).unwrap()
+      if (result) {
+        console.log(result)
+        toast.success('Coupon created successfully')
+        setModalOpen(false)
+        dispatch(addCoupons(result))
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error('Something went wrong')
     }
   }
 
@@ -91,7 +108,12 @@ const CouponsGrid = () => {
         </div>
         {pagination && pagination.maxPage > 1 && <Pagination pagination={pagination} />}
       </div>
-      <ModalCreateCoupon modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      <ModalCreateCoupon
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        onCreate={handleCreateCoupon}
+        isLoading={isCreateLoading}
+      />
     </div>
   )
 }

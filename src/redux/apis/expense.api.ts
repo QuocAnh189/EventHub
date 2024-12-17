@@ -3,6 +3,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 //interface
 import { IExpense } from '@interfaces/contents/expense.interface'
 import { IListData } from '@interfaces/common.interface'
+
+//dto
 import {
   ICreateExpensePayload,
   IUpdateExpensePayload,
@@ -25,15 +27,19 @@ export const apiExpense = createApi({
   keepUnusedDataFor: 20,
   tagTypes: ['Expense'],
   endpoints: (builder) => ({
-    getExpenses: builder.query<IListData<any>, void>({
-      query: () => ({
+    getExpenses: builder.query<IListData<any>, any>({
+      query: (params) => ({
         url: '/expenses/',
-        method: 'GET'
+        method: 'GET',
+        params
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Expense']
     }),
 
-    getExpensesByEvent: builder.query<IListData<any>, any>({
+    getExpensesByEvent: builder.query<IListData<any>, { eventId: string; params: any }>({
       query: ({ eventId, params }) => ({
         url: `/expenses/get-by-event/${eventId}`,
         method: 'GET',

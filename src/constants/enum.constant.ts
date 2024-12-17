@@ -18,13 +18,6 @@ export enum EEventStatus {
   Closed = 'Closed'
 }
 
-export enum EEventType {
-  ALL = 'ALL',
-  UPCOMING = 'UPCOMING',
-  OPENING = 'OPENING',
-  CLOSED = 'CLOSED'
-}
-
 export enum EEventStyle {
   SINGLE = 'SINGLE',
   RECURRING = 'RECURRING'
@@ -62,18 +55,4 @@ export enum ETicketStatus {
   ACTIVE = 'ACTIVE',
   CHECKEDIN = 'CHECKEDIN',
   INACTIVE = 'INACTIVE'
-}
-
-export enum EUserStatus {
-  ACTIVE = 'ACTIVE',
-  INACTIVE = 'INACTIVE'
-}
-
-export enum EFileContainer {
-  USERS = 'users',
-  EVENTS = 'events',
-  CATEGORIES = 'categories',
-  BANKS = 'banks',
-  PAYMENTS = 'payments',
-  MESSAGES = 'messages'
 }

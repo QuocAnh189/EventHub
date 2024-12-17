@@ -17,11 +17,15 @@ const couponSlice = createSlice({
   reducers: {
     setCoupons: (state, action: PayloadAction<any | null>) => {
       state.coupons = action.payload
+    },
+
+    addCoupons: (state, action: PayloadAction<any | null>) => {
+      state.coupons?.push(action.payload)
     }
   }
 })
 
-export const { setCoupons } = couponSlice.actions
+export const { setCoupons, addCoupons } = couponSlice.actions
 
 const couponReducer = couponSlice.reducer
 export default couponReducer
