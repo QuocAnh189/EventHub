@@ -29,7 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     if (isSuccessCoupons && coupons) {
-      dispatch(setCoupons(coupons))
+      dispatch(setCoupons(coupons.items))
     }
   }, [isSuccessCoupons])
 

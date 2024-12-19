@@ -1,8 +1,6 @@
 //hook
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { formEventSchema } from '@utils/validation'
-import { zodResolver } from '@hookform/resolvers/zod'
 
 //components
 import PageHeader from '@layouts/components/PageHeader'
@@ -41,6 +39,9 @@ import { withTranslation } from 'react-i18next'
 //data
 import createdSampleData from '@data/created_sample'
 
+//interface
+import { IUser } from '@interfaces/systems'
+
 const CREATE_STEP = ['Information', 'Banner Image', 'Set Ticket', 'Review']
 
 interface Props {
@@ -53,7 +54,7 @@ interface Props {
 const ModifyEvent = (props: Props) => {
   const { t, title, create, event } = props
 
-  const user = useAppSelector((state) => state.persistedReducer.user.user)
+  const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
   const [createEvent, { isLoading: loadingCreateEvent }] = useCreateEventMutation()
   const [updateEvent, { isLoading: loadingUpdateEvent }] = useUpdateEventMutation()
@@ -69,9 +70,7 @@ const ModifyEvent = (props: Props) => {
     reset,
     formState: { errors }
   } = useForm<any>({
-    resolver: zodResolver(formEventSchema),
-    defaultValues: event ? { ...event, creatorId: user?.id } : { ...InitCreateEventPayload, creatorId: user?.id },
-    mode: 'onChange'
+    defaultValues: event ? { ...event, creatorId: user?.id } : { ...InitCreateEventPayload, userId: user?.id }
   })
 
   // useEffect(() => {
@@ -99,18 +98,18 @@ const ModifyEvent = (props: Props) => {
     messages.map((message: any) => toast.error(message.message))
   }, [errors])
 
-  const onSubmit: SubmitHandler<ICreateEventPayload> = async (data: ICreateEventPayload | any) => {
+  const onSubmit: SubmitHandler<ICreateEventPayload> = async (data: ICreateEventPayload) => {
     const formData: any = new FormData()
 
     for (const key in data) {
-      if (key === 'ticketTypes' || key === 'categoryIds' || key === 'eventSubImages' || key === 'reasons') {
-        if (key === 'ticketTypes') {
+      if (key === 'ticketTypeItems' || key === 'categoryIds' || key === 'subImageItems' || key === 'reasonItems') {
+        if (key === 'ticketTypeItems') {
           data[key].forEach((item: any) => formData.append(key, JSON.stringify(item)))
         } else {
           data[key].forEach((item: any) => formData.append(key, item))
         }
       } else {
-        formData.append(key, data[key])
+        formData.append(key, data[key as keyof ICreateEventPayload])
       }
     }
 
@@ -124,21 +123,24 @@ const ModifyEvent = (props: Props) => {
     }
   }
 
-  const handleFileImport = (e: any) => {
+  const handleFileImport = async (e: any) => {
     e.preventDefault()
     readXlsxFile(e.target.files[0])
       .then((rows: any) => {
+        setValue('userId', user.id)
         setValue('name', rows[1][0].toString())
         setValue('eventCycleType', rows[1][1].toString())
         setValue('startTime', rows[1][2].toString())
         setValue('endTime', rows[1][3].toString())
         setValue('location', rows[1][4].toString())
-        setValue('pathLocation', rows[1][5].toString())
-        setValue('description', rows[1][6].toString())
-        setValue('reasons', JSON.parse(rows[1][7].toString()))
-        setValue('eventPaymentType', rows[1][8].toString())
-        setValue('ticketTypes', JSON.parse(rows[1][9].toString()))
-        setValue('isPrivate', JSON.parse(rows[1][10].toString()))
+        setValue('description', rows[1][5].toString())
+        setValue('reasonItems', JSON.parse(rows[1][6].toString()))
+        setValue('eventPaymentType', rows[1][7].toString())
+        setValue('ticketTypeItems', JSON.parse(rows[1][8].toString()))
+        setValue('isPrivate', JSON.parse(rows[1][9].toString()))
+        setValue('categoryIds', [])
+        setValue('coverImage', null)
+        setValue('subImageItems', [])
       })
       .then(() => {
         setActive(0)
@@ -169,6 +171,8 @@ const ModifyEvent = (props: Props) => {
               type='file'
               accept='.xlsx, .xls'
               onChange={(e) => handleFileImport(e)}
+              onAbort={(e) => console.log(e)}
+              onClick={(event: any) => (event.target.value = null)}
             />
             <div className='absolute z-[0] h-full w-full rounded-lg flex flex-col items-center justify-center gap-2'>
               <BiImport size={42} color='var(--header)' />
@@ -222,7 +226,7 @@ const ModifyEvent = (props: Props) => {
         {active === 1 && (
           <BannerEventCreate
             coverImage={watch().coverImage}
-            subImage={watch().eventSubImages}
+            subImage={watch().subImageItems}
             setValue={setValue}
             setActive={(value) => {
               setActive(value)
@@ -239,7 +243,7 @@ const ModifyEvent = (props: Props) => {
             setActive={(value) => {
               setActive(value)
             }}
-            ticketTypes={watch().ticketTypes}
+            ticketTypes={watch().ticketTypeItems}
           />
         )}
 

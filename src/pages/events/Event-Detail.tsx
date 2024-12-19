@@ -29,6 +29,7 @@ import { LuClipboardType } from 'react-icons/lu'
 
 //util
 import dayjs from 'dayjs'
+import RatingStars from '@ui/RatingStars'
 
 const EventDetail = () => {
   const params = useParams()
@@ -91,7 +92,13 @@ const EventDetail = () => {
         </div>
         <div className='flex flex-col mdl:flex-row justify-between'>
           <div className='flex flex-col w-full gap-4'>
+            <RatingStars rating={event?.averageRate} />
             <div className='flex flex-col gap-y-3'>
+              <h4 className='h4 text-header'>Categories</h4>
+              <div className='flex items-center gap-1'>
+                <img src={event?.categories[0].iconImageUrl} alt='' className='w-8 h-8 rounded-full' />
+                <h6 className='text-header'>{event?.categories[0].name}</h6>
+              </div>
               <h4 className='h4 text-header'>Date and Time</h4>
               <div className='flex items-center gap-1'>
                 <FaRegCalendarAlt color='gray' size='24px' />
@@ -125,7 +132,7 @@ const EventDetail = () => {
             </div>
           </div>
 
-          <Payment ticketTypes={null} />
+          <Payment ticketTypes={event?.ticketTypes!} coupons={event?.coupons!} />
         </div>
       </div>
 

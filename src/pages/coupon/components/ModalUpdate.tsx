@@ -19,6 +19,7 @@ import { ICoupon } from '@interfaces/contents/coupon.interface'
 //redux
 import { useUpdateCouponMutation } from '@redux/apis/coupon.api'
 import Loading from '@components/Loading'
+import { IUpdateCouponPayload } from '@dtos/coupon.dto'
 
 interface IProps {
   modalOpen: boolean
@@ -31,18 +32,24 @@ const ModalUpdateCoupon = (props: IProps) => {
 
   const [UpdateCoupon, { isLoading }] = useUpdateCouponMutation()
 
-  const { register, handleSubmit, watch } = useForm<ICoupon>({
+  const { register, handleSubmit, setValue, watch } = useForm<IUpdateCouponPayload>({
     defaultValues: {
       id: coupon.id,
       name: coupon.name,
       description: coupon.description,
       coverImageUrl: coupon.coverImageUrl,
+      image: null,
       minPrice: coupon.minPrice,
       minQuantity: coupon.minQuantity,
       percentageValue: coupon.percentageValue,
       expireDate: dayjs(coupon.expireDate).format('YYYY-MM-DD')
     }
   })
+
+  const convertCoverImageToBase64 = (e: any) => {
+    const image = e.target.files[0]
+    setValue('image', image)
+  }
 
   const onSubmit: SubmitHandler<ICoupon> = async (data: ICoupon) => {
     const formData = new FormData()
@@ -83,9 +90,9 @@ const ModalUpdateCoupon = (props: IProps) => {
             <img
               loading='lazy'
               className={`absolute h-full w-full rounded-[8px] outline-none opacity-${
-                watch().coverImageUrl ? '1' : '0'
+                watch().coverImageUrl || watch().image ? '1' : '0'
               }`}
-              src={watch().coverImageUrl}
+              src={watch().image ? URL.createObjectURL(watch().image) : watch().coverImageUrl}
             />
             <input
               aria-label=''
@@ -93,7 +100,7 @@ const ModalUpdateCoupon = (props: IProps) => {
               accept='image/*'
               type='file'
               className='h-full w-full bg-transparent rounded-xl hover:cursor-pointer z-[999] outline-none opacity-0'
-              onChange={() => {}}
+              onChange={convertCoverImageToBase64}
               alt='No avatar'
               onClick={(event: any) => (event.target.value = null)}
             />
@@ -103,14 +110,16 @@ const ModalUpdateCoupon = (props: IProps) => {
               </div>
             ) : (
               <div className='absolute z-[1000] hover:cursor-pointer right-4 bottom-4'>
-                <BiTrash
-                  size={32}
-                  // onClick={() => {
-                  //   URL.revokeObjectURL(coverImage)
-                  //   setValue('coverImage', '')
-                  // }}
-                  // color={coverImage ? 'white' : '#333'}
-                />
+                {watch().image && (
+                  <BiTrash
+                    size={20}
+                    onClick={() => {
+                      URL.revokeObjectURL(watch().image)
+                      setValue('image', null)
+                    }}
+                    color='white'
+                  />
+                )}
               </div>
             )}
           </div>

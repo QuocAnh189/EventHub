@@ -12,6 +12,7 @@ import { IoMdTime } from 'react-icons/io'
 
 //type
 import { ICreateEventPayload } from '@dtos/event.dto'
+import { EEventPaymentTicket } from '@constants/enum.constant'
 
 //assets
 import useDefault from '@assets/images/common/user_default.png'
@@ -25,6 +26,9 @@ import { useAppSelector } from '@hooks/useRedux'
 //i18n
 import { withTranslation } from 'react-i18next'
 
+//interface
+import { IUser } from '@interfaces/systems'
+
 interface Props {
   t: any
   watch: UseFormWatch<ICreateEventPayload>
@@ -37,7 +41,7 @@ interface Props {
 const ReviewEventCreate = (props: Props) => {
   const { t, setActive, watch, setValue, disabled, create } = props
 
-  const user = useAppSelector((state) => state.persistedReducer.user.user)
+  const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
   return (
     <div className='px-4 mdl:w-full lgl:px-40 mt-10 mx-auto'>
@@ -90,17 +94,18 @@ const ReviewEventCreate = (props: Props) => {
                 <div className='flex items-center gap-1 text-[12px] mdl:text-sm text-right'>
                   <p className='h6 text-header'>
                     {t('review.ticket_type')}:{' '}
-                    {watch().eventPaymentType === 'Free' ? t('review.free') : t('review.fee')}
+                    {watch().eventPaymentType === EEventPaymentTicket.Free ? t('review.free') : t('review.fee')}
                   </p>
                 </div>
-                {watch().ticketTypes.map((ticket, index: number) => (
-                  <p key={`ticket-${index}`} className='w-full flex justify-between gap-2'>
-                    <span className='text-header'>
-                      {index + 1}. <span className='font-bold'>{ticket.name}:</span>
-                    </span>
-                    <span className='text-primary font-bold'>{ticket.price}.000 VND</span>
-                  </p>
-                ))}
+                {watch().eventPaymentType === EEventPaymentTicket.Paid &&
+                  watch().ticketTypeItems.map((ticket, index: number) => (
+                    <p key={`ticket-${index}`} className='w-full flex justify-between gap-2'>
+                      <span className='text-header'>
+                        {index + 1}. <span className='font-bold'>{ticket.name}:</span>
+                      </span>
+                      <span className='text-primary font-bold'>{ticket.price}.000 VND</span>
+                    </p>
+                  ))}
               </div>
             </div>
 
@@ -123,7 +128,7 @@ const ReviewEventCreate = (props: Props) => {
                 <h5 className='h5'>{t('review.organization_title')}</h5>
                 <div className='flex items-center gap-3'>
                   <img
-                    src={user?.avatar ? user.avatar : useDefault}
+                    src={user.avatarUrl ? user.avatarUrl : useDefault}
                     alt=''
                     className='w-[50px] h-[50px] object-cover rounded-full'
                   />
@@ -138,9 +143,9 @@ const ReviewEventCreate = (props: Props) => {
 
               <div className='space-y-1'>
                 <h5 className='h5'>
-                  {watch().reasons.length} {t('review.reasons_event')}:
+                  {watch().reasonItems.length} {t('review.reasons_event')}:
                 </h5>
-                {watch().reasons.map((reason, index: number) => (
+                {watch().reasonItems.map((reason, index: number) => (
                   <p key={`reason-${index}`} className='text-header'>
                     {index + 1}. {reason}.
                   </p>
@@ -149,7 +154,7 @@ const ReviewEventCreate = (props: Props) => {
             </div>
 
             <div className='w-full flex items-center gap-8 justify-center flex-wrap'>
-              {watch().eventSubImages.map(
+              {watch().subImageItems.map(
                 (image: any, index: number) =>
                   image && (
                     <img

@@ -1,8 +1,7 @@
 export interface ITicketType {
-  id?: string | number
-  eventId?: string
+  id: string
   name: string
   quantity: number
-  numberOfSoldTickets: number
+  sale: number
   price: number
 }

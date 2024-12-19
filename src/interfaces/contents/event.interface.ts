@@ -1,16 +1,11 @@
 import { EEventPaymentTicket, EEventStyle } from '@constants/enum.constant'
 import { ICategory } from './category.interface'
 import { ICoupon } from './coupon.interface'
+import { ITicketType } from './ticketType.interface'
 
 export interface IEvent {
   id: string
-  creator: {
-    id: string
-    avatarUrl: string
-    email: string
-    fullName: string
-    userName: string
-  }
+  creator: ICreator
   name: string
   description: string
   coverImageUrl: string
@@ -23,14 +18,18 @@ export interface IEvent {
   isPrivate: boolean
   categories: ICategory[]
   subImages: ISubImage[]
+  coupons: ICoupon[]
+  ticketTypes: ITicketType[]
   averageRate: number
   reasons: IReason[]
-  // ticketTypes: ITicketType[]
-  // numberOfFavourites: number
-  // numberOfShares: number
-  // numberOfSoldTickets: number
-  // status: EEventStatus
-  // priceRange: IPriceRange
+}
+
+interface ICreator {
+  id: string
+  avatarUrl: string
+  email: string
+  fullName: string
+  userName: string
 }
 
 export interface IReason {

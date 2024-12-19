@@ -57,7 +57,7 @@ const CouponCard = (props: Props) => {
           </button>
         </div>
       </Spring>
-      {coupon && <ModalUpdateCoupon modalOpen={modalOpen} setModalOpen={setModalOpen} coupon={coupon} />}
+      {modalOpen && <ModalUpdateCoupon modalOpen={modalOpen} setModalOpen={setModalOpen} coupon={coupon} />}
       {openDialog && (
         <ConfirmDialog
           title='Delete Coupon'

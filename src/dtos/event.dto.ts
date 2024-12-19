@@ -14,39 +14,37 @@ export const InitCreateTicketPayload = {
 } as ICreateTicketPayload
 
 export interface ICreateEventPayload {
-  id?: string
-  creatorId?: string
+  userId: string
   name: string
-  categoryIds: string[]
-  eventCycleType: EEventStyle
+  description: string
+  coverImage: any
+  subImageItems: any[]
   startTime: any
   endTime: any
   location: any
-  pathLocation: string
-  description: string
-  reasons: string[]
-  coverImage: any
-  eventSubImages: any[]
+  eventCycleType: EEventStyle
   eventPaymentType: EEventPaymentTicket
-  ticketTypes: ICreateTicketPayload[]
   isPrivate: boolean
+  categoryIds: string[]
+  ticketTypeItems: ICreateTicketPayload[]
+  reasonItems: string[]
 }
 
 export const InitCreateEventPayload = {
+  userId: '',
   name: '',
-  categoryIds: [],
-  eventCycleType: EEventStyle.SINGLE,
+  description: '',
+  coverImage: null,
+  subImageItems: [],
   startTime: null,
   endTime: null,
   location: '',
-  pathLocation: '',
-  description: '',
-  reasons: [],
-  coverImage: '',
-  eventSubImages: [],
+  eventCycleType: EEventStyle.Single,
   eventPaymentType: EEventPaymentTicket.Free,
-  ticketTypes: [],
-  isPrivate: false
+  isPrivate: false,
+  categoryIds: [],
+  ticketTypeItems: [],
+  reasonItems: ['aaa']
 } as ICreateEventPayload
 
 export interface IFavoriteEventPayload {

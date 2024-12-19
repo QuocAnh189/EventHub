@@ -19,8 +19,8 @@ export enum EEventStatus {
 }
 
 export enum EEventStyle {
-  SINGLE = 'SINGLE',
-  RECURRING = 'RECURRING'
+  Single = 'Single',
+  Recurring = 'Recurring'
 }
 
 export enum EEventPaymentTicket {

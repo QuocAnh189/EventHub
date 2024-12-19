@@ -1,7 +1,6 @@
 export * from './category.interface'
 export * from './creator.interface'
 export * from './email.interface'
-export * from './event_detail.interface'
 export * from './event.interface'
 export * from './location.interface'
 export * from './payment.interface'

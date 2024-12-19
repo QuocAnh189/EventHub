@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Control, useFieldArray, UseFormRegister, UseFormWatch, UseFormSetValue, FieldErrors } from 'react-hook-form'
 
 //constant
-import { EVENT_CATEGORIES, IOptionSelect } from '@constants/options.constant'
+import { IOptionSelect } from '@constants/options.constant'
 
 //icon
 import { IoMdAddCircleOutline } from 'react-icons/io'
@@ -47,12 +47,12 @@ const InformationEvent = (props: Props) => {
   const categoriesStore = useAppSelector((state) => state.persistedReducer.category.categories)
 
   const {
-    fields: reasons,
+    fields: reasonItems,
     append: appendReasons,
     remove: removeReasons
   } = useFieldArray({
     control,
-    name: 'reasons'
+    name: 'reasonItems'
   })
 
   return (
@@ -81,7 +81,7 @@ const InformationEvent = (props: Props) => {
           <SelectMultipleCategory
             placeholder={t('information.event.category_placeholder')}
             id='category'
-            options={EVENT_CATEGORIES || categoriesStore}
+            options={categoriesStore || []}
             onChange={(e: IOptionSelect) => {
               watch().categoryIds.push(e.id!)
             }}
@@ -109,7 +109,7 @@ const InformationEvent = (props: Props) => {
             <input
               id='eventStyle'
               type='radio'
-              value={EEventStyle.SINGLE}
+              value={EEventStyle.Single}
               className={classNames('field-input w-6', { 'field-input--error': false })}
               placeholder={t('information.event_detail.event_title_placeholder')}
               {...register('eventCycleType')}
@@ -123,7 +123,7 @@ const InformationEvent = (props: Props) => {
               id='eventStyle'
               type='radio'
               className={classNames('field-input w-6', { 'field-input--error': false })}
-              value={EEventStyle.RECURRING}
+              value={EEventStyle.Recurring}
               placeholder={t('information.event_detail.event_title_placeholder')}
               {...register('eventCycleType')}
             />
@@ -184,17 +184,6 @@ const InformationEvent = (props: Props) => {
               placeholder={t('information.location.placeholder')}
               {...register('location', { required: true })}
             />
-
-            <input
-              className={classNames('field-input', { 'field-input--error': false })}
-              id='path_location'
-              placeholder={t('information.location.path_placeholder')}
-              {...register('pathLocation', { required: true })}
-            />
-
-            {watch().pathLocation && (
-              <iframe className='rounded-sm w-full' src={watch().pathLocation} height='250' loading='lazy' />
-            )}
           </div>
         </div>
       </div>
@@ -241,14 +230,14 @@ const InformationEvent = (props: Props) => {
           </div>
 
           <div className='space-y-3'>
-            {reasons?.map((field: any, index: number) => (
+            {reasonItems?.map((field: any, index: number) => (
               <div key={field.id} className='w-4/5 mdl:w-[600px] text-header flex flex-row items-center gap-2'>
                 <input
                   className={classNames('field-input', { 'field-input--error': false })}
-                  id={`reasons.${index}`}
+                  id={`reasonItems.${index}`}
                   defaultValue=''
                   placeholder={`${t('information.reason.placeholder')} ${index + 1}`}
-                  {...register(`reasons.${index}`)}
+                  {...register(`reasonItems.${index}`)}
                 />
                 <button
                   onClick={() => {

@@ -1,5 +1,4 @@
 //hooks
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '@hooks/useRedux'
 import { UseFormSetValue } from 'react-hook-form'
@@ -17,32 +16,29 @@ import { setCoupons } from '@redux/slices/coupon.slice'
 import { IUpdateUserProfilePayload } from '@dtos/user.dto'
 import { IRole } from '@interfaces/systems'
 
-//assets
-import userDefault from '@assets/images/common/user_default.png'
-
 //i18n
 import { withTranslation } from 'react-i18next'
+import { HiTrash } from 'react-icons/hi'
 
 interface IProps {
   t: any
-  avatar: string
+  avatarUrl: string
+  avatar: any
   fullName: string
   setValue: UseFormSetValue<IUpdateUserProfilePayload>
   roles: IRole[]
 }
 
 const UserProfileCard = (props: IProps) => {
-  const { t, avatar, setValue, fullName, roles } = props
+  const { t, avatar, avatarUrl, setValue, fullName, roles } = props
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   const [signOut, { isLoading: loadingLogout }] = useSignOutMutation()
-  const [avatarUser, setAvatarUser] = useState<string>(avatar)
 
   const handleChangeAvatar = (e: any) => {
     const image = e.target.files[0]
-    setAvatarUser(URL.createObjectURL(image))
-    setValue('newAvatar', image)
+    setValue('avatar', image)
   }
 
   const handleSignOut = async () => {
@@ -63,9 +59,19 @@ const UserProfileCard = (props: IProps) => {
         <img
           loading='lazy'
           className='relative rounded-full w-[110px] h-[110px]'
-          src={avatarUser ? avatarUser : userDefault}
+          src={avatar ? URL.createObjectURL(avatar) : avatarUrl}
           alt=''
         />
+        {avatar && (
+          <button
+            onClick={() => setValue('avatar', null)}
+            className='absolute z-10 right-0 top-0 h-10 w-10 bg-red text-widget rounded-full border-[3px]
+                        border-widget border-solid transition hover:bg-red hover:cursor-pointer'
+            aria-label='Change profile picture'
+          >
+            <HiTrash className='ml-1 h-6 w-6' />
+          </button>
+        )}
 
         <button
           className='absolute z-10 right-0 bottom-0 h-10 w-10 bg-green text-widget rounded-full border-[3px]
@@ -80,6 +86,7 @@ const UserProfileCard = (props: IProps) => {
           type='file'
           accept='*/*'
           onChange={handleChangeAvatar}
+          onClick={(event: any) => (event.target.value = null)}
         />
       </div>
       <h4>{fullName ? fullName : 'Tran Phuoc Anh Quoc'}</h4>

@@ -3,7 +3,7 @@ import { EGender } from '@constants/enum.constant'
 export interface IUpdateUserProfilePayload {
   id: string
   avatarUrl: string
-  newAvatar: any
+  avatar: any
   email: string
   userName: string
   fullName: string

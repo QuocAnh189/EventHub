@@ -3,7 +3,7 @@ import { EEventPaymentTicket, EEventStyle } from '@constants/enum.constant'
 const createdSampleData: any = [
   {
     Name: 'Happy New Year 2025',
-    EventCycleType: EEventStyle.RECURRING,
+    EventCycleType: EEventStyle.Recurring,
     StartTime: '2025-01-01T07:00',
     EndTime: '2025-01-02T17:00',
     location: 'University Of Information Technology',

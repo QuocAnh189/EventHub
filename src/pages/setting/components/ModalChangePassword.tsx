@@ -75,7 +75,7 @@ const ModalChangePassword = (props: IProps) => {
             <div className='relative'>
               <input
                 type={showPassWord ? 'text' : 'password'}
-                className={classNames('field-input', { 'field-input--error': !password })}
+                className={classNames('field-input')}
                 id='password'
                 placeholder='Enter password'
                 value={password}
@@ -103,7 +103,7 @@ const ModalChangePassword = (props: IProps) => {
             <div className='relative'>
               <input
                 type={showNewPassWord ? 'text' : 'password'}
-                className={classNames('field-input', { 'field-input--error': !password })}
+                className={classNames('field-input')}
                 id='new_password'
                 placeholder='Enter new password'
                 value={newPassword}

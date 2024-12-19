@@ -43,7 +43,7 @@ const TicketEventCreate = (props: Props) => {
     remove
   } = useFieldArray({
     control,
-    name: 'ticketTypes'
+    name: 'ticketTypeItems'
   })
 
   const handleNextStep = () => {
@@ -147,7 +147,7 @@ const TicketEventCreate = (props: Props) => {
                     id='ticket_name'
                     className={classNames('field-input', { 'field-input--error': false })}
                     placeholder={t('ticket.ticket_name_placeholder')}
-                    {...register(`ticketTypes.${index}.name`)}
+                    {...register(`ticketTypeItems.${index}.name`)}
                   />
                 </div>
               </div>
@@ -162,7 +162,7 @@ const TicketEventCreate = (props: Props) => {
                     id='ticket_quantity'
                     defaultValue={0}
                     placeholder='Enter the name of the ticket'
-                    {...register(`ticketTypes.${index}.quantity`)}
+                    {...register(`ticketTypeItems.${index}.quantity`)}
                   />
                 </div>
               </div>
@@ -177,7 +177,7 @@ const TicketEventCreate = (props: Props) => {
                     id='ticket_price'
                     defaultValue={0}
                     placeholder='Enter the name of the ticket'
-                    {...register(`ticketTypes.${index}.price`)}
+                    {...register(`ticketTypeItems.${index}.price`)}
                   />
                 </div>
               </div>

@@ -65,9 +65,9 @@ const CouponsGrid = () => {
       const result = await CreateCoupon(formData).unwrap()
       if (result) {
         console.log(result)
-        toast.success('Coupon created successfully')
         setModalOpen(false)
         dispatch(addCoupons(result))
+        toast.success('Coupon created successfully')
       }
     } catch (error) {
       console.error(error)

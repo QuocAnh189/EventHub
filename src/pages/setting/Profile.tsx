@@ -48,6 +48,7 @@ const Profile = ({ t }: any) => {
     defaultValues: {
       id: user.id,
       avatarUrl: user.avatarUrl,
+      avatar: null,
       email: user.email,
       userName: user.userName,
       fullName: user.fullName,
@@ -69,6 +70,7 @@ const Profile = ({ t }: any) => {
       const result = await UpdateUser({ userId: user?.id!, formData: formData }).unwrap()
       if (result) {
         toast.success('Profile updated successfully')
+        setValue('avatar', null)
         dispatch(setUser(result))
       }
     } catch (err) {
@@ -85,7 +87,13 @@ const Profile = ({ t }: any) => {
         className='widgets-grid md:!grid-cols-2 xl:!grid-cols-[340px,_minmax(0,1fr)]'
       >
         <div className='widgets-grid md:!grid-cols-2 md:col-span-2 xl:!grid-cols-1 xl:col-span-1'>
-          <UserProfileCard avatar={watch().avatarUrl} setValue={setValue} fullName={user.fullName} roles={user.roles} />
+          <UserProfileCard
+            avatarUrl={watch().avatarUrl}
+            avatar={watch().avatar}
+            setValue={setValue}
+            fullName={user.fullName}
+            roles={user.roles}
+          />
           <div className='widgets-grid'>
             <UserProfilePanel />
             <UserProfileInfo
@@ -107,7 +115,7 @@ const Profile = ({ t }: any) => {
           setModalOpen={setModalOpen}
         />
       </form>
-      <ModalChangePassword modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      {modalOpen && <ModalChangePassword modalOpen={modalOpen} setModalOpen={setModalOpen} />}
     </ProtectedLayout>
   )
 }

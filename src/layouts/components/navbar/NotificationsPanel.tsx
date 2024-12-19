@@ -52,8 +52,8 @@ const NotificationsPanel = (props: Props) => {
   }
 
   const handleViewProfile = (id: string) => {
-    navigate(`/organization/profile/${id}`)
     onClose()
+    navigate(`/organization/profile/${id}`)
   }
 
   return (

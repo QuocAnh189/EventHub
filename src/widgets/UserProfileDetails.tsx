@@ -46,8 +46,6 @@ const UserProfileDetails = (props: Props) => {
     localStorage.setItem('type_sidebar', sidebarCurrent)
   }, [sidebarCurrent])
 
-  console.log(watch())
-
   return (
     <Spring
       className='card flex flex-col gap-[30px] md:gap-12 md:row-start-2 md:col-span-2 md:!pb-[50px]

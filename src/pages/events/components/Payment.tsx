@@ -1,45 +1,52 @@
 //hooks
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-//components
-import { Button, Divider } from 'antd'
+//component
+import ItemTicketPayment from './ItemTicketPayment'
+import ModalChooseDiscount from './ModalChooseDiscount'
 
 //interface
 import { ITicketType } from '@interfaces/contents/ticketType.interface'
+import { ICoupon } from '@interfaces/contents/coupon.interface'
 
 interface IProps {
-  ticketTypes: ITicketType[] | null
+  ticketTypes: ITicketType[]
+  coupons: ICoupon[]
 }
 
 const Payment = (props: IProps) => {
+  const { ticketTypes, coupons } = props
   const navigate = useNavigate()
 
-  const { ticketTypes } = props
+  console.log(coupons)
+
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
 
   return (
-    <div className='flex flex-col gap-3 p-6 rounded-md bg-primary-100 mdl:w-[400px]'>
-      <h3 className='mb-4 text-2xl font-bold text-black'>Payment Information</h3>
+    <div className='card flex flex-col gap-3 p-6 rounded-md bg-primary-100 mdl:w-[700px]'>
+      <div className='flex items-center justify-between'>
+        <h3 className='h3 mb-4 text-2xl font-bold text-black'>Payment Information</h3>
+        <button
+          className='text-btn'
+          onClick={() => {
+            setModalOpen(true)
+          }}
+        >
+          View Discount
+        </button>
+      </div>
       <div className='flex flex-col flex-1 gap-4'>
-        {ticketTypes?.map((type) => (
-          <div key={type.id} className='flex justify-between'>
-            <span className='font-bold text-black'>{type.name.toUpperCase()}</span>
-            {type?.price && type.price > 0 ? (
-              <span className='text-black'>{`${type.price}.000 VNĐ`}</span>
-            ) : (
-              <span className='text-green-darker'>FREE</span>
-            )}
-          </div>
+        {ticketTypes?.map((ticketType, index: number) => (
+          <ItemTicketPayment key={index} ticketType={ticketType} />
         ))}
       </div>
-      <Divider type='horizontal' />
-      <Button
-        type='primary'
-        size='large'
-        onClick={() => navigate('checkout')}
-        className='btn btn-primary w-full rounded-md'
-      >
+
+      <button onClick={() => navigate('checkout')} className='btn btn-primary w-full rounded-md'>
         Checkout
-      </Button>
+      </button>
+
+      {modalOpen && <ModalChooseDiscount modalOpen={modalOpen} setModalOpen={setModalOpen} coupons={coupons} />}
     </div>
   )
 }

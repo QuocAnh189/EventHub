@@ -31,7 +31,7 @@ const BannerEvent = (props: Props) => {
   const convertSubImageToBase64 = (e: any, index: number) => {
     const newSubImage: any[] = [...subImage]
     newSubImage[index] = e.target.files[0]
-    setValue('eventSubImages', newSubImage)
+    setValue('subImageItems', newSubImage)
   }
 
   return (
@@ -103,7 +103,7 @@ const BannerEvent = (props: Props) => {
                       const newsubImage: any = [...subImage]
                       newsubImage[index] = ''
                       setValue(
-                        'eventSubImages',
+                        'subImageItems',
                         newsubImage.filter((item: any) => item !== '')
                       )
                     }}

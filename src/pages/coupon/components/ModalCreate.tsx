@@ -1,4 +1,5 @@
 //hook
+// import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 //components
@@ -31,10 +32,10 @@ const ModalCreateCoupon = (props: IProps) => {
 
   const userId: string = useAppSelector((state) => state.persistedReducer.user.user?.id)
 
-  const { register, handleSubmit, watch } = useForm<ICreateCouponPayload>({
+  const { register, handleSubmit, watch, setValue } = useForm<ICreateCouponPayload>({
     defaultValues: {
       userId: userId,
-      coverImageUrl: 'https://picsum.photos/640/480?random=212',
+      image: null,
       name: '',
       description: '',
       minPrice: 0,
@@ -43,6 +44,11 @@ const ModalCreateCoupon = (props: IProps) => {
       expireDate: dayjs(new Date()).format('YYYY-MM-DD')
     }
   })
+
+  const convertCoverImageToBase64 = (e: any) => {
+    const image = e.target.files[0]
+    setValue('image', image)
+  }
 
   const onSubmit = (data: ICreateCouponPayload) => {
     onCreate(data)
@@ -63,10 +69,8 @@ const ModalCreateCoupon = (props: IProps) => {
           <div className='relative lg:w-full h-[100px] flex items-center justify-center text-white rounded-xl media-dropzone 2xl:col-span-2'>
             <img
               loading='lazy'
-              className={`absolute h-full w-full rounded-[8px] outline-none opacity-${
-                watch().coverImageUrl ? '1' : '0'
-              }`}
-              src={watch().coverImageUrl ? watch().coverImageUrl : ''}
+              className={`absolute h-full w-full rounded-[8px] outline-none opacity-${watch().image ? '1' : '0'}`}
+              src={watch().image ? URL.createObjectURL(watch().image) : ''}
             />
             <input
               aria-label=''
@@ -74,23 +78,22 @@ const ModalCreateCoupon = (props: IProps) => {
               accept='image/*'
               type='file'
               className='h-full w-full bg-transparent rounded-xl hover:cursor-pointer z-[999] outline-none opacity-0'
-              onChange={() => {}}
+              onChange={convertCoverImageToBase64}
               alt='No avatar'
               onClick={(event: any) => (event.target.value = null)}
             />
-            {!watch().coverImageUrl ? (
+            {!watch().image ? (
               <div className='absolute'>
                 <MediaDropPlaceholder text='CoverImage' />
               </div>
             ) : (
               <div className='absolute z-[1000] hover:cursor-pointer right-4 bottom-4'>
                 <BiTrash
-                  size={32}
-                  // onClick={() => {
-                  //   URL.revokeObjectURL(coverImage)
-                  //   setValue('coverImage', '')
-                  // }}
-                  // color={coverImage ? 'white' : '#333'}
+                  size={20}
+                  onClick={() => {
+                    setValue('image', null)
+                  }}
+                  color={watch().image ? 'white' : '#333'}
                 />
               </div>
             )}

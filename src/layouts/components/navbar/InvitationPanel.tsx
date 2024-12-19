@@ -41,8 +41,8 @@ const InvitationsPanel = (props: Props) => {
   }
 
   const handleViewEvent = (id: string) => {
-    navigate(`/organization/event/${id}`)
     onClose()
+    navigate(`/organization/event/${id}`)
   }
 
   return (
