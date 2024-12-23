@@ -3,15 +3,12 @@ import Spring from '@components/Spring'
 import Review from '@components/Review'
 import Pagination from '@ui/Pagination'
 
-// data placeholder
-// import reviews from '@db/reviews'
-
 //interface
 import { IReview } from 'interfaces/contents/review.interface'
+import { IPagination } from '@interfaces/common.interface'
 
 //i18n
 import { withTranslation } from 'react-i18next'
-import { IPagination } from '@interfaces/common.interface'
 
 interface IProps {
   t: any
@@ -29,9 +26,9 @@ const LatestAcceptedReviews = (props: IProps) => {
         <div className='flex flex-col p-5 gap-2.5 md:flex-row md:justify-between md:items-center md:px-[26px]'>
           <h5 className='h5'>{t('main.title')}</h5>
           <input
-            className='field-input w-[300px] md:w-[300px]'
+            className='field-input w-[300px]'
             type='search'
-            placeholder='Search...'
+            placeholder={t('search')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

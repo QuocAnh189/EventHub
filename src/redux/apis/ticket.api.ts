@@ -1,3 +1,4 @@
+import { IListData } from '@interfaces/common.interface'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 //interface
@@ -6,7 +7,14 @@ import { ITicketType } from 'interfaces/contents/ticketType.interface'
 export const apiTicket = createApi({
   reducerPath: 'apiTicket',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API_URL
+    baseUrl: import.meta.env.VITE_API_URL,
+    prepareHeaders: (headers) => {
+      const token = JSON.parse(localStorage.getItem('token')!)?.accessToken
+      if (token) {
+        headers.set('authorization', `Bearer ${token}`)
+      }
+      return headers
+    }
   }),
   keepUnusedDataFor: 20,
   tagTypes: ['Ticket'],
@@ -16,6 +24,18 @@ export const apiTicket = createApi({
         url: '/tickets',
         method: 'GET'
       }),
+      providesTags: ['Ticket']
+    }),
+
+    getTicketsByCreated: builder.query<IListData<any>, any>({
+      query: (params) => ({
+        url: `/tickets/get-created-tickets`,
+        method: 'GET',
+        params
+      }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       providesTags: ['Ticket']
     }),
 
@@ -57,6 +77,7 @@ export const apiTicket = createApi({
 
 export const {
   useGetTicketByIdQuery,
+  useGetTicketsByCreatedQuery,
   useGetTicketsQuery,
   useCreateTicketMutation,
   useUpdateTicketMutation,

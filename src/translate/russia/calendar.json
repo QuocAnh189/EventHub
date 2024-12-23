@@ -1,1 +1,5 @@
-{}
+{
+  "header": { "title": "Календарь" },
+  "body": { "events": "События" },
+  "status": { "closed": "Закрыто", "happening": "Происходит", "upcoming": "Предстоящие" }
+}

@@ -1,1 +1,32 @@
-{}
+{
+  "header": {
+    "title": "Panoramica"
+  },
+  "main_overview": {
+    "title": "I miei eventi",
+    "description": "Di seguito sono riportate le statistiche generali per la tua organizzazione nel tempo.",
+    "average_rate": "Tasso medio 2024",
+    "revenue": "Entrate",
+    "expense": "Spese",
+    "orders": "Ordini totali",
+    "view_profile": "Visualizza profilo",
+    "contact": "Contatti",
+    "share": "Condividi"
+  },
+  "total_balance": "Saldo totale",
+  "chart": {
+    "title": "Statistiche di vendita 2024",
+    "revenue": "Entrate",
+    "expense": "Spese"
+  },
+  "total_report": {
+    "title": "Rapporto totale",
+    "description": "Tutti i periodi per",
+    "revenue": "Entrate",
+    "expense": "Spese",
+    "profit": "Profitto",
+    "more_detail": "Maggiori dettagli",
+    "share": "Condividi",
+    "print": "Stampa"
+  }
+}

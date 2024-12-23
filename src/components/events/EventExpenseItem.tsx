@@ -6,13 +6,17 @@ import Spring from '@components/Spring'
 //interface
 import { IMyEventAnalysis } from '@interfaces/contents/event.interface'
 
+//i18n
+import { withTranslation } from 'react-i18next'
+
 interface Props {
+  t: any
   event: IMyEventAnalysis
   index: number
 }
 
 const EventExpenseItem = (props: Props) => {
-  const { event, index } = props
+  const { t, event, index } = props
 
   return (
     <Spring type='slideUp' index={index}>
@@ -27,16 +31,12 @@ const EventExpenseItem = (props: Props) => {
         </h6>
         <RatingStars rating={event.averageRate || 0} />
         <div className='flex flex-col flex-1 gap-1 mt-1.5'>
-          <p className='font-heading font-bold text-sm leading-[1.4] text-green'>
-            Total SubExpense : {event.totalSale || 0}
-          </p>
-          <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
-            Total Expense : {event.totalFavourite || 0}
-          </p>
+          <p className='font-heading font-bold text-sm leading-[1.4] text-green'>{t('total_sub_expense')} : 3</p>
+          <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>{t('total_expense')} : 500</p>
         </div>
       </NavLink>
     </Spring>
   )
 }
 
-export default EventExpenseItem
+export default withTranslation('my_expense')(EventExpenseItem)

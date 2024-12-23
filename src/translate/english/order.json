@@ -2,6 +2,8 @@
   "header": {
     "title": "Orders"
   },
+  "period": "Period",
+  "search": "Search...",
   "middle": {
     "box_one": {
       "average_rate": "Average Rate",

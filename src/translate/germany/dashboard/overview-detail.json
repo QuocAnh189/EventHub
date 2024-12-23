@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "title": "Umsatzübersicht"
+  },
+  "sales_period": "Verkaufszeitraum",
+  "sales_volume": "Verkaufsvolumen",
+  "revenue": "Umsatz",
+  "expense": "Ausgaben",
+  "profit": "Gewinn",
+  "order": "Bestellung",
+  "profit_performance": "Gewinnleistung",
+  "conversion_rate": {
+    "title": "Konversionsrate",
+    "regular_customers": "Reguläre Kunden",
+    "new_customers": "Neue Kunden",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "Teilen",
+      "print": "Drucken"
+    }
+  },
+  "average_referral_rate": {
+    "title": "Durchschnittliche Empfehlungsrate"
+  },
+  "total": {
+    "revenue": "Gesamtumsatz",
+    "expense": "Gesamtausgaben",
+    "profit": "Gesamtgewinn"
+  }
+}

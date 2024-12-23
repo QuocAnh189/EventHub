@@ -6,6 +6,9 @@ import fourPeopleImg from '@assets/images/landing/four_people.webp'
 import bgPurpleImg from '@assets/images/landing/bg_gradient.webp'
 import joyWorkImg from '@assets/images/landing/joy_work.webp'
 
+//i18n
+import { withTranslation } from 'react-i18next'
+
 const feedbacks = [
   {
     name: 'Trần Ngọc Nhật Vy',
@@ -41,7 +44,7 @@ const feedbacks = [
   }
 ]
 
-const Feedback = () => {
+const Feedback = ({ t }: any) => {
   return (
     <section id='feedback'>
       <div className='relative flex flex-col items-center text-center'>
@@ -50,11 +53,11 @@ const Feedback = () => {
         </div>
         <div className='relative flex flex-col items-center justify-center gap-y-10 text-center'>
           <h3 className='my-0 font-sans text-[2em] font-extrabold leading-[1px] tracking-[-0.025em] text-white mdl:text-[4em]'>
-            Trusted by more than
+            {t('feedback.title')}
           </h3>
           <div className='flex flex-col items-center gap-4 mdl:flex-row'>
             <span className='relative bg-gradient-feedback bg-clip-text text-center font-sans text-[3em] font-bold text-transparent'>
-              2,500 membership
+              {t('feedback.description')}
             </span>
             <span className=''>
               <img
@@ -75,7 +78,6 @@ const Feedback = () => {
           <img
             loading='lazy'
             src={bgPurpleImg}
-            alt=''
             className='absolute bottom-[-20%] inline-block h-auto w-[47em] max-w-full opacity-[0.65]'
           />
         </div>
@@ -84,4 +86,4 @@ const Feedback = () => {
   )
 }
 
-export default Feedback
+export default withTranslation('landing')(Feedback)

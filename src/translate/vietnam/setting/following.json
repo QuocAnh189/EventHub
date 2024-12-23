@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Đang theo dõi"
+  },
+  "my_following": "Đang theo dõi",
+  "search": "Tìm kiếm ...",
+  "action": {
+    "view_profile": "Xem hồ sơ",
+    "unfollow_profile": "Hủy theo dõi"
+  }
+}

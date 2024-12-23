@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "title": "Evento Papelera"
+  },
+  "restore": "Restaurar",
+  "search": "Buscar ...",
+  "view_events": "Eventos"
+}

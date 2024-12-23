@@ -22,7 +22,7 @@ interface Props {
 }
 
 const InvitationItem = (props: Props) => {
-  const { invitation, index, onView } = props
+  const { t, invitation, index, onView } = props
 
   return (
     <Spring className='notification with-border flex gap-6' index={index}>
@@ -31,7 +31,7 @@ const InvitationItem = (props: Props) => {
       </div>
       <div>
         <span className='h6 !text-sm truncate max-w-[210px]'>{invitation.inviter.fullName}</span>
-        <p>Mời bạn thích sự kiện</p>
+        <p>{t('invitation.favourite_text')}</p>
         <TruncatedText className='flex-1 font-bold' text={invitation.event.name} />
         <p className='flex items-center gap-1.5 mt-1 mb-2 text-xs font-medium text-gray'>
           <span>{dayjs(invitation.createdAt).fromNow()}</span>
@@ -44,7 +44,7 @@ const InvitationItem = (props: Props) => {
               onView(invitation.event.id)
             }}
           >
-            View
+            {t('invitation.view_event')}
           </button>
         </div>
       </div>

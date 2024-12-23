@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "title": "Panoramica dei ricavi"
+  },
+  "sales_period": "Periodo di vendita",
+  "sales_volume": "Volume delle vendite",
+  "revenue": "Ricavi",
+  "expense": "Spese",
+  "profit": "Profitto",
+  "order": "Ordine",
+  "profit_performance": "Performance del profitto",
+  "conversion_rate": {
+    "title": "Tasso di conversione",
+    "regular_customers": "Clienti abituali",
+    "new_customers": "Nuovi clienti",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "Condividi",
+      "print": "Stampa"
+    }
+  },
+  "average_referral_rate": {
+    "title": "Tasso medio di riferimento"
+  },
+  "total": {
+    "revenue": "Ricavi totali",
+    "expense": "Spese totali",
+    "profit": "Profitto totale"
+  }
+}

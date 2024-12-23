@@ -27,7 +27,10 @@ import { ICreateExpensePayload } from '@dtos/expense.dto'
 //utils
 import classNames from 'classnames'
 
-const MyExpenseDetail = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const MyExpenseDetail = ({ t }: any) => {
   const params = useParams()
 
   const [title, setTitle] = useState<string>('')
@@ -59,33 +62,33 @@ const MyExpenseDetail = () => {
 
   return (
     <ProtectedLayout>
-      <PageHeader title='My Expense Detail' />
+      <PageHeader title={t('header.title')} />
       <div className='flex w-full h-screen'>
-        <div className='flex w-full overflow-x-scroll bg-inherit'>
+        <div className='flex w-full overflow-scroll bg-inherit'>
           {isFetching && <Loader />}
           {data?.items.map((expense: IExpense, index) => (
             <ColumnExpense key={`expense-${index}`} expense={expense} index={index} />
           ))}
           {!openNewColumnForm ? (
-            <div className='min-w-[250px] max-w-250 mx-2 rounded-6 h-fit-content' onClick={toggleOpenNewColumnForm}>
+            <div className='min-w-[300px] mx-2 rounded-6 h-fit-content' onClick={toggleOpenNewColumnForm}>
               <button className='flex items-center w-full btn btn-primary'>
                 <MdOutlineNoteAdd size={20} />
-                Add new expense
+                {t('add_new_expense')}
               </button>
             </div>
           ) : (
-            <div className='min-w-[250px] max-w-250 mx-2 p-1 rounded-6 h-fit-content bg-white3d'>
+            <div className='min-w-[250px] mx-2 p-1 rounded-6 h-fit-content bg-white3d'>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
                 id='title'
                 value={title}
-                placeholder='Enter sub expense'
+                placeholder={t('expense_placeholder')}
                 onChange={(e) => setTitle(e.target.value)}
               />
               <div className='flex items-center justify-between mt-4'>
                 <button onClick={handleCreateExpense} className='flex w-4/5 h-[40px] items-center btn btn-primary'>
                   <MdOutlineNoteAdd size={20} />
-                  {isLoading ? <Loading /> : ' Add Expense'}
+                  {isLoading ? <Loading /> : t('add_new_expense')}
                 </button>
                 <IoMdClose size={20} onClick={toggleOpenNewColumnForm} color='black' className='cursor-pointer' />
               </div>
@@ -97,4 +100,4 @@ const MyExpenseDetail = () => {
   )
 }
 
-export default MyExpenseDetail
+export default withTranslation('my_expense_detail')(MyExpenseDetail)

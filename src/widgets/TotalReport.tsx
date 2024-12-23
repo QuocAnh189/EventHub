@@ -24,11 +24,11 @@ const TotalReport = ({ t }: any) => {
     <Spring className='card flex flex-col lg:col-span-3 xl:col-span-1'>
       <div>
         <div className='flex items-center justify-between'>
-          <h4 className='h4'>{t('total-report.title')}</h4>
+          <h4 className='h4'>{t('total_report.title')}</h4>
           <InfoBtn onClick={handleClick} />
         </div>
         <p className='mt-1.5 mb-4 text-sm md:text-base text-header'>
-          {t('total-report.description')} 01/01/2024 - 31/12/2024
+          {t('total_report.description')} 01/01/2024 - 31/12/2024
         </p>
       </div>
       <div className='flex flex-col flex-1 gap-6 mb-6'>
@@ -40,7 +40,7 @@ const TotalReport = ({ t }: any) => {
         className='btn bg-primary rounded-full text-white hover:bg-primary-500'
         to='/organization/dashboard/overview-detail'
       >
-        {t('total-report.more-detail')}
+        {t('total_report.more_detail')}
       </NavLink>
       <Submenu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <div className='flex flex-col items-start gap-5 p-5'>

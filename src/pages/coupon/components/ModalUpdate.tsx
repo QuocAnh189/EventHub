@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import ModalBase from '@ui/ModalBase'
 import MediaDropPlaceholder from '@ui/MediaDropPlaceholder'
 import { toast } from 'react-toastify'
+import Loading from '@components/Loading'
 
 //icon
 import { BiTrash } from 'react-icons/bi'
@@ -15,20 +16,23 @@ import dayjs from 'dayjs'
 
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
+import { IUpdateCouponPayload } from '@dtos/coupon.dto'
 
 //redux
 import { useUpdateCouponMutation } from '@redux/apis/coupon.api'
-import Loading from '@components/Loading'
-import { IUpdateCouponPayload } from '@dtos/coupon.dto'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 interface IProps {
+  t: any
   modalOpen: boolean
   setModalOpen: (value: boolean) => void
   coupon: ICoupon
 }
 
 const ModalUpdateCoupon = (props: IProps) => {
-  const { modalOpen, setModalOpen, coupon } = props
+  const { t, modalOpen, setModalOpen, coupon } = props
 
   const [UpdateCoupon, { isLoading }] = useUpdateCouponMutation()
 
@@ -84,7 +88,7 @@ const ModalUpdateCoupon = (props: IProps) => {
         >
           <i className='icon-circle-xmark-regular' />
         </button>
-        <h6 className='h6'>Update Coupon</h6>
+        <h6 className='h6'>{t('modal.update_coupon')}</h6>
         <div className='flex flex-col gap-4 mt-4'>
           <div className='relative lg:w-full h-[100px] flex items-center justify-center text-white rounded-xl media-dropzone 2xl:col-span-2'>
             <img
@@ -125,19 +129,19 @@ const ModalUpdateCoupon = (props: IProps) => {
           </div>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='brandName'>
-              Name
+              {t('modal.name_label')}
             </label>
             <input
               className={classNames('field-input', { 'field-input--error': false })}
               id='name'
               defaultValue=''
-              placeholder='Enter name'
+              placeholder={t('modal.name_placeholder')}
               {...register('name', { required: true })}
             />
           </div>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='description'>
-              Description
+              {t('modal.description_label')}
             </label>
             <textarea
               className={classNames(`field-input !h-[80px] !py-[15px] !overflow-y-auto`, {
@@ -145,14 +149,14 @@ const ModalUpdateCoupon = (props: IProps) => {
               })}
               id='description'
               defaultValue=''
-              placeholder='Enter description'
+              placeholder={t('modal.description_placeholder')}
               {...register('description', { required: true })}
             />
           </div>
           <div className='flex items-center justify-between gap-4'>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='dimensions'>
-                Min Price
+                {t('modal.min_price_label')}
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
@@ -163,7 +167,7 @@ const ModalUpdateCoupon = (props: IProps) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='weight'>
-                Min Quantity
+                {t('modal.min_quantity_label')}
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
@@ -173,7 +177,7 @@ const ModalUpdateCoupon = (props: IProps) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='weight'>
-                Percent
+                {t('modal.percent_label')}
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
@@ -184,19 +188,19 @@ const ModalUpdateCoupon = (props: IProps) => {
           </div>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='brandName'>
-              Expire Date
+              {t('modal.expire_label')}
             </label>
             <input
+              id='date'
               type='date'
               className={classNames('field-input', { 'field-input--error': false })}
-              id='name'
               value={dayjs(coupon.expireDate).format('YYYY-MM-DD')}
               placeholder='Enter name'
               {...register('expireDate', { required: true })}
             />
           </div>
           <button type='submit' className='btn btn-primary hover:bg-primary-300'>
-            {isLoading ? <Loading /> : 'Update'}
+            {isLoading ? <Loading /> : t('modal.update_coupon')}
           </button>
         </div>
       </form>
@@ -204,4 +208,4 @@ const ModalUpdateCoupon = (props: IProps) => {
   )
 }
 
-export default ModalUpdateCoupon
+export default withTranslation('coupon')(ModalUpdateCoupon)

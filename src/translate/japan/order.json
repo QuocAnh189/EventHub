@@ -1,1 +1,37 @@
-{}
+{
+  "header": {
+    "title": "注文"
+  },
+  "period": "期間",
+  "search": "検索...",
+  "middle": {
+    "box_one": {
+      "average_rate": "平均評価",
+      "event_view": "イベントビュー",
+      "total_tickets": "合計チケット"
+    },
+    "order": "注文",
+    "box_completed": {
+      "completed": "完了"
+    },
+    "box_confirmed": {
+      "confirmed": "確認済み"
+    },
+    "box_canceled": {
+      "canceled": "キャンセル済み"
+    },
+    "box_refunded": {
+      "refunded": "返金済み"
+    }
+  },
+  "table_header": {
+    "order": "注文",
+    "event": "イベント",
+    "ticket": "チケット",
+    "category": "カテゴリー",
+    "payment": "支払い",
+    "order_status": "注文ステータス",
+    "rate": "評価",
+    "actions": "アクション"
+  }
+}

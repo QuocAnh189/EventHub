@@ -1,1 +1,24 @@
-{}
+{
+  "header": {
+    "title": "Детали события"
+  },
+  "transaction": "Транзакции",
+  "customer_review": "Отзывы клиентов",
+  "total": {
+    "user": "Общее количество пользователей",
+    "order": "Общее количество заказов"
+  },
+  "period_sales_revenue": "Доход от продаж за период",
+  "review_by_customer": {
+    "title": "Отзывы клиентов",
+    "positive": "Положительный",
+    "negative": "Отрицательный",
+    "review_rate": "Рейтинг отзыва",
+    "from": "От",
+    "response": "Ответ",
+    "view_all_reviews": "Просмотреть все отзывы"
+  },
+  "revenue": "Доход",
+  "expense": "Расходы",
+  "profit": "Прибыль"
+}

@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "소개",
+    "manage": "관리",
+    "overview": "개요",
+    "feedback": "피드백",
+    "contact": "연락처",
+    "login": "로그인",
+    "register": "가입",
+    "get_started": "시작하기"
+  },
+  "intro": {
+    "text_one": "모든 이벤트가 있는 곳",
+    "text_two": "순간을 연결하다",
+    "text_three": "- 쉽게 그리고 효율적으로",
+    "text_four": "사람들, 열정, 목적을 하나로 모아 모든 이벤트 순간을 공유합니다",
+    "try_now": "지금 시도하기"
+  },
+  "manage": {
+    "project_management": "프로젝트 관리"
+  },
+  "automatic": {
+    "select_my": "내",
+    "event": "이벤트 선택"
+  },
+  "feedback": {
+    "title": "2,500명 이상의 회원이 신뢰합니다",
+    "description": "2,500명 이상의 회원"
+  },
+  "contact": {
+    "text_one": "친구 초대하기",
+    "text_two": "EventHub와 함께",
+    "text_three": "14일 동안 무료로 사용해보세요",
+    "text_four": "신용카드가 필요 없습니다.",
+    "try_now": "지금 시도하기",
+    "email_placeholder": "이메일을 입력하세요"
+  }
+}

@@ -2,30 +2,30 @@
   "header": {
     "title": "Overview"
   },
-  "main-overview": {
+  "main_overview": {
     "title": "My Events",
     "description": "Below are general statistics for your organization over time.",
-    "average-rate": "Average Rate 2024",
+    "average_rate": "Average Rate 2024",
     "revenue": "Revenue",
     "expense": "Expense",
     "orders": "Total Orders",
-    "view-profile": "View Profile",
+    "view_profile": "View Profile",
     "contact": "Contacts",
     "share": "Share"
   },
-  "total-balance": "Total Balance",
+  "total_balance": "Total Balance",
   "chart": {
     "title": "Sales Statistic 2024",
     "revenue": "Revenue",
     "expense": "Expense"
   },
-  "total-report": {
+  "total_report": {
     "title": "Total Report",
     "description": "All Periods per",
     "revenue": "Revenue",
     "expense": "Expense",
     "profit": "Profit",
-    "more-detail": "More Details",
+    "more_detail": "More Details",
     "share": "Share",
     "print": "Print"
   }

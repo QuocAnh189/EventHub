@@ -73,7 +73,7 @@ const InvitationsPanel = (props: Props) => {
           onClick={handleLoadMore}
           disabled={data?.items.length === data?.metadata.totalCount}
         >
-          Load More
+          {t('invitation.load_more')}
         </button>
       </div>
     </DrawerBase>

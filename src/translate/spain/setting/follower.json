@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "Seguidor"
+  },
+  "my_follower": "Mis seguidores",
+  "search": "Buscar ...",
+  "action": {
+    "view_profile": "Ver perfil"
+  }
+}

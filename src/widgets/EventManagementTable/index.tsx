@@ -230,6 +230,11 @@ const EventManagement = ({ t }: any) => {
     }
   }
 
+  const filterCategories: any[] = categories.map((category: ICategory) => {
+    return { value: category.id, label: category.name }
+  })
+  filterCategories.unshift({ value: '', label: 'All' })
+
   return (
     <div className='flex flex-col flex-1'>
       <div className='flex flex-col-reverse gap-4 mb-5 md:flex-col lg:flex-row lg:justify-between'>
@@ -240,7 +245,7 @@ const EventManagement = ({ t }: any) => {
             }}
             className='btn btn--primary'
           >
-            {t('body.title')} <i className='icon-circle-plus-regular' />
+            {t('add_new')} <i className='icon-circle-plus-regular' />
           </button>
           <button
             onClick={() => {
@@ -248,12 +253,12 @@ const EventManagement = ({ t }: any) => {
             }}
             className='btn btn--outline blue !h-[44px]'
           >
-            {t('body.link_csv')} <i className='icon-file-export-solid' />
+            {t('export_csv')} <i className='icon-file-export-solid' />
           </button>
         </div>
       </div>
       <div className='flex flex-wrap gap-2 mb-4'>
-        <span className='text-header'>{t('management.label_event')}:</span>
+        <span className='text-header'>{t('event_label')}:</span>
         <div>
           {EVENT_MANAGEMENT_OPTIONS.map((option: IOptionSelect, index: number) => (
             <FilterItem
@@ -280,8 +285,6 @@ const EventManagement = ({ t }: any) => {
             </label>
             <Select
               options={EVENT_STATUS_OPTIONS}
-              value={{ value: params.status, label: params.status || 'Status' }}
-              placeholder={t('management.label_status')}
               onChange={(e: IOptionSelect) => setParams({ ...params, status: e.value, page: 1 })}
             />
           </div>
@@ -290,10 +293,7 @@ const EventManagement = ({ t }: any) => {
               {t('management.label_category')}
             </label>
             <Select
-              options={categories.map((category: ICategory) => {
-                return { value: category.id, label: category.name }
-              })}
-              placeholder={t('management.label_category')}
+              options={filterCategories}
               onChange={(e: IOptionSelect) => setParams({ ...params, categoryIds: [e.value], page: 1 })}
             />
           </div>
@@ -303,7 +303,6 @@ const EventManagement = ({ t }: any) => {
             </label>
             <Select
               options={EVENT_SELLER_OPTIONS}
-              value={{ value: params.paymentType, label: params.paymentType || 'Price' }}
               onChange={(e: any) => setParams({ ...params, paymentType: e.value, page: 1 })}
             />
           </div>
@@ -312,7 +311,7 @@ const EventManagement = ({ t }: any) => {
         <input
           className='field-input w-[300px] md:w-[300px]'
           type='search'
-          placeholder='Search...'
+          placeholder={t('management.search')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

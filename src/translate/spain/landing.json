@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "Introducción",
+    "manage": "Gestionar",
+    "overview": "Resumen",
+    "feedback": "Comentarios",
+    "contact": "Contacto",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "get_started": "Empezar"
+  },
+  "intro": {
+    "text_one": "Donde cada evento",
+    "text_two": "Conecta momentos",
+    "text_three": "- fácil y eficientemente",
+    "text_four": "Uniendo personas, pasión y propósito en cada momento compartido",
+    "try_now": "Prueba ahora"
+  },
+  "manage": {
+    "project_management": "Gestión de proyectos"
+  },
+  "automatic": {
+    "select_my": "Seleccionar mi",
+    "event": "Evento"
+  },
+  "feedback": {
+    "title": "Confiado por más de 2,500 miembros",
+    "description": "Más de 2,500 miembros"
+  },
+  "contact": {
+    "text_one": "Invitar amigos",
+    "text_two": "con EventHub",
+    "text_three": "Pruébalo 14 días gratis",
+    "text_four": "no se requiere tarjeta de crédito.",
+    "try_now": "Prueba ahora",
+    "email_placeholder": "Ingrese su correo electrónico"
+  }
+}

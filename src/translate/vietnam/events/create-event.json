@@ -6,6 +6,12 @@
     "description": "Bạn đã có sẵn sự kiện?",
     "example_file": "Tải thư mục tại đây"
   },
+  "step": {
+    "information": "Thông tin chung",
+    "banner": "Ảnh",
+    "ticket": "Vé",
+    "review": "Tổng quan"
+  },
   "information": {
     "event": {
       "name": "Tên sự kiện",
@@ -35,7 +41,10 @@
       "placeholder": "Lời khuyên"
     }
   },
-  "banner": { "cover_image": "Ảnh sự kiện", "subs_image": "Ảnh phụ" },
+  "banner": {
+    "cover_image": "Ảnh sự kiện",
+    "subs_image": "Ảnh phụ"
+  },
   "ticket": {
     "title": "Loại hình cho sự kiện của bạn là gì ?",
     "option_one": { "label": "Sự kiện trả phí", "description": "Sự kiện bao gồm những vé thanh toán" },

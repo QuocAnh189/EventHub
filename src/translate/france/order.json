@@ -1,35 +1,37 @@
 {
   "header": {
-    "title": "Orders"
+    "title": "Commandes"
   },
+  "period": "Période",
+  "search": "Recherche...",
   "middle": {
     "box_one": {
-      "average_rate": "Average Rate",
-      "event_view": "Event Views",
-      "total_tickets": "Total ticket"
+      "average_rate": "Note moyenne",
+      "event_view": "Vues de l'événement",
+      "total_tickets": "Total des billets"
     },
-    "order": "Orders",
+    "order": "Commandes",
     "box_completed": {
-      "completed": "Completed"
+      "completed": "Terminé"
     },
     "box_confirmed": {
-      "confirmed": "Confirmed"
+      "confirmed": "Confirmé"
     },
     "box_canceled": {
-      "canceled": "Canceled"
+      "canceled": "Annulé"
     },
     "box_refunded": {
-      "refunded": "Refunded"
+      "refunded": "Remboursé"
     }
   },
   "table_header": {
-    "order": "Order",
-    "event": "Event",
-    "ticket": "Ticket",
-    "category": "Category",
-    "payment": "Payment",
-    "order_status": "Order Status",
-    "rate": "Rate",
+    "order": "Commande",
+    "event": "Événement",
+    "ticket": "Billet",
+    "category": "Catégorie",
+    "payment": "Paiement",
+    "order_status": "Statut de la commande",
+    "rate": "Note",
     "actions": "Actions"
   }
 }

@@ -37,31 +37,30 @@ const Landing = lazy(() => import('@pages/landing/Landing'))
 const SignIn = lazy(() => import('@pages/auth/Signin'))
 const SignUp = lazy(() => import('@pages/auth/Signup'))
 const Home = lazy(() => import('@pages/home/Home'))
+const Explore = lazy(() => import('@pages/explore/Explore'))
+const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
 const Overview = lazy(() => import('@pages/dashboard/Overview'))
 const OverviewDetail = lazy(() => import('@pages/dashboard/Overview-Detail'))
 const EventAnalysis = lazy(() => import('@pages/dashboard/Event-Analysis'))
 const EventAnalysisDetail = lazy(() => import('@pages/dashboard/Event-Analysis-Detail'))
 const Customer = lazy(() => import('@pages/dashboard/Customer'))
-const Payment = lazy(() => import('@pages/dashboard/Payment'))
-const EventDetail = lazy(() => import('@pages/events/Event-Detail'))
+const Transaction = lazy(() => import('@pages/dashboard/Transaction'))
+const MyFavourite = lazy(() => import('@pages/events/My-Favourite'))
+const MyEvent = lazy(() => import('@pages/events/My-Event'))
+const TrashEvent = lazy(() => import('@pages/events/Trash-Event'))
+const CreateEvent = lazy(() => import('@pages/events/Create-Event'))
+const UpdateEvent = lazy(() => import('@pages/events/Update-Event'))
+const MyExpense = lazy(() => import('@pages/events/My-Expense'))
+const MyExpenseDetail = lazy(() => import('@pages/events/My-Expense-Detail'))
+const Coupon = lazy(() => import('@pages/coupon/Coupon'))
+const MyTicket = lazy(() => import('@pages/ticket/MyTicket'))
+const Calendar = lazy(() => import('@pages/calendar/Calendar'))
+const Order = lazy(() => import('@pages/order/Order'))
+const Review = lazy(() => import('@pages/review/Review'))
 const Profile = lazy(() => import('@pages/setting/Profile'))
 const UserInformation = lazy(() => import('@pages/common/UserInfo'))
 const Follower = lazy(() => import('@pages/setting/Follower'))
 const Following = lazy(() => import('@pages/setting/Following'))
-const Explore = lazy(() => import('@pages/explore/Explore'))
-const CreateEvent = lazy(() => import('@pages/events/Create-Event'))
-const UpdateEvent = lazy(() => import('@pages/events/Update-Event'))
-const MyFavourite = lazy(() => import('@pages/events/My-Favourite'))
-const MyEvent = lazy(() => import('@pages/events/My-Event'))
-const TrashEvent = lazy(() => import('@pages/events/Trash-Event'))
-const MyExpense = lazy(() => import('@pages/events/My-Expense'))
-const MyExpenseDetail = lazy(() => import('@pages/events/My-Expense-Detail'))
-const Coupon = lazy(() => import('@pages/coupon/Coupon'))
-const CouponEvent = lazy(() => import('@pages/coupon/CouponEvent'))
-const MyTicket = lazy(() => import('@pages/ticket/MyTicket'))
-const Calendar = lazy(() => import('@pages/calendar/Calendar'))
-const Order = lazy(() => import('@pages/order/index'))
-const Review = lazy(() => import('@pages/review/Review'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
@@ -94,7 +93,7 @@ function App() {
               <Route path='/organization/dashboard/event-analysis' element={<EventAnalysis />} />
               <Route path='/organization/dashboard/event-analysis/:id' element={<EventAnalysisDetail />} />
               <Route path='/organization/dashboard/customer' element={<Customer />} />
-              <Route path='/organization/dashboard/payment' element={<Payment />} />
+              <Route path='/organization/dashboard/transaction' element={<Transaction />} />
               <Route path='/organization/explore' element={<Explore />} />
               <Route path='/organization/event/:id' element={<EventDetail />} />
               <Route path='/organization/create-event' element={<CreateEvent />} />
@@ -105,7 +104,6 @@ function App() {
               <Route path='/organization/my-expense' element={<MyExpense />} />
               <Route path='/organization/my-expense/:id' element={<MyExpenseDetail />} />
               <Route path='/organization/coupon' element={<Coupon />} />
-              <Route path='/organization/coupon/:id/events' element={<CouponEvent />} />
               <Route path='/organization/ticket' element={<MyTicket />} />
               <Route path='/organization/calendar' element={<Calendar />} />
               <Route path='/organization/order' element={<Order />} />

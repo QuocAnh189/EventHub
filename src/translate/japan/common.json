@@ -1,66 +1,72 @@
 {
   "header": {
-    "search": "検索..."
+    "search": "検索...",
+    "signin_btn": "ログイン"
   },
-  "not_data": {
-    "text": "申し訳ありませんが、データが利用できないか、更新されていません"
-  },
-  "signin_btn": "サインイン",
   "notification": {
     "title": "通知",
-    "all": "すべて",
     "follow": "フォロー",
     "order": "注文",
     "follow_text": "があなたをフォローしました",
     "order_text": "があなたのイベントを注文しました",
-    "hours ago": "時間前",
-    "confirm_btn": "確認",
-    "decline_btn": "辞退"
-  },
-  "message": {
-    "title": "メッセージ",
-    "all": "すべて",
-    "latest": "最新",
-    "archived": "アーカイブ",
-    "reply_btn": "返信",
-    "mark_btn": "既読にする"
+    "view_profile": "プロフィールを見る",
+    "view_order": "注文を見る",
+    "load_more": "もっと読み込む"
   },
   "invitation": {
-    "title": "招待",
-    "view_btn": "表示",
-    "mark_btn": "既読にする"
+    "title": "招待状",
+    "favourite_text": "がお気に入りに追加するよう招待しました",
+    "view_event": "イベントを見る",
+    "load_more": "もっと読み込む"
+  },
+  "box_message": {
+    "left": {
+      "title": "私の会話",
+      "placeholder": "検索...",
+      "event": "イベント",
+      "user": "ユーザー"
+    },
+    "right": {
+      "organizer": "主催者",
+      "user": "ユーザー",
+      "login_to_chat": "チャットするにはログインしてください",
+      "select_conversation": "メッセージを表示するには会話を選択してください",
+      "no_message": "メッセージが見つかりません",
+      "send": "送信",
+      "placeholder": "メッセージを入力..."
+    }
   },
   "category": {
     "label": "カテゴリー",
-    "Visual Arts": "視覚芸術",
-    "Sports & Active Life": "スポーツとアクティブライフ",
-    "Politics": "政治",
-    "Performing Arts": "パフォーミングアーツ",
-    "Other": "その他",
-    "Nightlife": "ナイトライフ",
-    "Music": "音楽",
-    "Lectures & Books": "講演と書籍",
-    "Kids & Family": "子供と家族",
-    "Holidays": "休日",
-    "Food & Drink": "飲食",
-    "Film": "映画",
-    "Festivals & Fairs": "フェスティバルとフェア",
+    "Business": "ビジネス",
+    "Gaming": "ゲーム",
+    "Food & Beverage": "飲食",
+    "Education": "教育",
+    "Home & Garden": "家庭と庭",
+    "Parenting": "育児",
     "Fashion": "ファッション",
-    "Concerts": "コンサート",
-    "Conferences": "会議",
-    "Community": "コミュニティ",
-    "Charities": "慈善",
-    "Anniversary": "記念日",
-    "Academic": "学術"
+    "Travel": "旅行",
+    "Finance & Investment": "金融と投資",
+    "Movies & TV": "映画とテレビ",
+    "Books & Literature": "本と文学",
+    "Photography": "写真",
+    "Sport": "スポーツ",
+    "Music": "音楽",
+    "Pet & Animals": "ペットと動物",
+    "Health & Fitness": "健康とフィットネス",
+    "Art & Design": "アートとデザイン",
+    "Science": "科学",
+    "Technology": "技術",
+    "Personal Development": "自己開発"
   },
   "filter": {
-    "ALL": "すべて",
-    "PUBLIC": "公開",
-    "PRIVATE": "非公開"
+    "All": "すべて",
+    "Public": "公開",
+    "Private": "非公開"
   },
   "footer": {
     "left": {
-      "description": "すべてのイベントをつなぎ、瞬間を簡単かつ効率的に共有します",
+      "description": "すべてのイベントが簡単かつ効率的に瞬間をつなぐ場所",
       "or": "または"
     },
     "right": {
@@ -87,27 +93,11 @@
       },
       "box_four": {
         "title": "比較",
-        "sub_one": "Jira と比較",
-        "sub_two": "Notion と比較",
-        "sub_three": "Trello と比較",
-        "sub_four": "Smartsheet と比較"
+        "sub_one": "vs Jira",
+        "sub_two": "vs Notion",
+        "sub_three": "vs Trello",
+        "sub_four": "vs Smartsheet"
       }
-    }
-  },
-  "box_message": {
-    "left": {
-      "placeholder": "検索...",
-      "my_event": "マイイベント",
-      "chat_event": "イベントチャット"
-    },
-    "right": {
-      "to": "宛先",
-      "first": "メッセージを送信して会話を開始",
-      "nochat_text_one": "ようこそ",
-      "nochat_text_two": "チャットを選択してメッセージを開始",
-      "nologin_text_one": "こんにちは",
-      "nologin_text_two": "チャットするにはログインしてください",
-      "placeholder": "メッセージを送信"
     }
   },
   "routes": {
@@ -115,26 +105,28 @@
     "dashboard": {
       "parent": "ダッシュボード",
       "overview": "概要",
-      "event analysis": "イベント分析",
+      "event_analysis": "イベント分析",
       "customer": "顧客",
-      "payment": "支払い"
+      "transaction": "取引"
     },
     "event": {
       "parent": "イベント",
-      "my favourite": "私のお気に入り",
-      "my events": "マイイベント",
-      "trash events": "ゴミ箱",
-      "create event": "イベントを作成"
+      "my_favourite": "お気に入り",
+      "my_events": "私のイベント",
+      "trash_events": "削除されたイベント",
+      "create_event": "イベントを作成",
+      "my_expense": "私の支出"
     },
     "coupon": "クーポン",
-    "expense": "費用",
+    "ticket": "マイチケット",
     "calendar": "カレンダー",
     "orders": "注文",
     "reviews": "レビュー",
     "settings": {
       "parent": "設定",
-      "profile": "プロフィール"
-    },
-    "permissions": "権限"
+      "profile": "プロフィール",
+      "follower": "フォロワー",
+      "following": "フォロー中"
+    }
   }
 }

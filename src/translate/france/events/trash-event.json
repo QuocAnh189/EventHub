@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "title": "Événement de la corbeille"
+  },
+  "restore": "Restaurer",
+  "search": "Rechercher ...",
+  "view_events": "Événements"
+}

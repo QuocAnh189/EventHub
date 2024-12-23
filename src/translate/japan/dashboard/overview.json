@@ -1,1 +1,32 @@
-{}
+{
+  "header": {
+    "title": "概要"
+  },
+  "main_overview": {
+    "title": "私のイベント",
+    "description": "以下は、時間を通じてあなたの組織の一般的な統計です。",
+    "average_rate": "2024年平均レート",
+    "revenue": "収益",
+    "expense": "費用",
+    "orders": "総注文",
+    "view_profile": "プロフィールを表示",
+    "contact": "連絡先",
+    "share": "共有"
+  },
+  "total_balance": "総残高",
+  "chart": {
+    "title": "2024年の販売統計",
+    "revenue": "収益",
+    "expense": "費用"
+  },
+  "total_report": {
+    "title": "総報告書",
+    "description": "すべての期間について",
+    "revenue": "収益",
+    "expense": "費用",
+    "profit": "利益",
+    "more_detail": "詳細を見る",
+    "share": "共有",
+    "print": "印刷"
+  }
+}

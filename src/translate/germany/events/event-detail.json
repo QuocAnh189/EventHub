@@ -1,1 +1,55 @@
-{}
+{
+  "event": {
+    "categories": "Kategorien",
+    "date_time": "Datum und Uhrzeit",
+    "location": "Standort"
+  },
+  "payment": {
+    "title": "Zahlungsinformationen",
+    "view_discount": "Rabatt ansehen",
+    "free": "Kostenlos",
+    "quantity": "Menge",
+    "total_amount": "Gesamtbetrag",
+    "buy": "Kaufen"
+  },
+  "apply_coupon": {
+    "title": "Gutschein anwenden",
+    "apply": "Anwenden"
+  },
+  "checkout": {
+    "title": "Checkout-Informationen",
+    "name_label": "Kundenname",
+    "name_placeholder": "Name eingeben",
+    "email_label": "Kunden-E-Mail",
+    "email_placeholder": "E-Mail eingeben",
+    "phone_label": "Kundentelefon",
+    "phone_placeholder": "Telefon eingeben",
+    "total_price": "Gesamtpreis",
+    "discount": "Rabatt",
+    "final_price": "Endpreis",
+    "submit": "Zur Kasse"
+  },
+  "information": {
+    "time": "Zeit",
+    "location": "Ort",
+    "happen": "Geschehen",
+    "participant": "Teilnehmer",
+    "organization_by": "Organisiert von",
+    "follow": "Folgen",
+    "unfollow": "Nicht mehr folgen",
+    "description": "Beschreibung",
+    "reasons_to_attend_the_event": "Gründe für die Teilnahme an der Veranstaltung"
+  },
+  "conversation": {
+    "title": "Gespräch",
+    "description_one": "Wenn Sie Fragen oder Probleme zu dieser Veranstaltung haben.",
+    "description_two": "Bitte wenden Sie sich an den Veranstalter für weitere Informationen.",
+    "name_label": "Name",
+    "email_label": "E-Mail",
+    "event_label": "Veranstaltung",
+    "start_chat": "Chat starten"
+  },
+  "related": {
+    "title": "Verwandte Veranstaltungen"
+  }
+}

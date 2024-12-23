@@ -1,1 +1,32 @@
-{}
+{
+  "header": {
+    "title": "概览"
+  },
+  "main_overview": {
+    "title": "我的活动",
+    "description": "以下是您组织的总体统计数据。",
+    "average_rate": "2024年平均率",
+    "revenue": "收入",
+    "expense": "费用",
+    "orders": "总订单",
+    "view_profile": "查看资料",
+    "contact": "联系人",
+    "share": "分享"
+  },
+  "total_balance": "总余额",
+  "chart": {
+    "title": "2024年销售统计",
+    "revenue": "收入",
+    "expense": "费用"
+  },
+  "total_report": {
+    "title": "总报告",
+    "description": "每个期间的所有数据",
+    "revenue": "收入",
+    "expense": "费用",
+    "profit": "利润",
+    "more_detail": "更多详情",
+    "share": "分享",
+    "print": "打印"
+  }
+}

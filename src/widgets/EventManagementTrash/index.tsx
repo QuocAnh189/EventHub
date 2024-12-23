@@ -107,12 +107,12 @@ const EventManagementTrash = ({ t }: any) => {
     <div className='flex flex-col flex-1'>
       <div className='flex items-center justify-between'>
         <button onClick={handleRestoreEvents} className='btn bg-primary flex text-white !gap-[5px]'>
-          {isLoading ? <Loading /> : 'Restore'}
+          {isLoading ? <Loading /> : t('restore')}
         </button>
         <input
           className='field-input w-[300px] md:w-[300px]'
           type='search'
-          placeholder='Search...'
+          placeholder={t('search')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -120,7 +120,7 @@ const EventManagementTrash = ({ t }: any) => {
 
       <div className='flex flex-col-reverse gap-4 mt-4 mb-5 md:flex-row md:justify-between md:items-end md:mt-5 md:mb-6'>
         <p className='text-header'>
-          {t('management.view_events')}: {pagination.showingOf()}
+          {t('view_events')}: {pagination.showingOf()}
         </p>
       </div>
 
@@ -145,4 +145,4 @@ const EventManagementTrash = ({ t }: any) => {
   )
 }
 
-export default withTranslation('my_event')(EventManagementTrash)
+export default withTranslation('trash_event')(EventManagementTrash)

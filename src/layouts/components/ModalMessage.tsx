@@ -16,9 +16,14 @@ import { useGetConversationsByUserIdQuery } from '@redux/apis/conversation.api'
 import { useGetConversationsByOrganizerIdQuery } from '@redux/apis/conversation.api'
 
 //interface
-import { IConversation } from '@interfaces/contents/conversation.interface'
+import { IConversation } from '@interfaces/websockets/conversation.interface'
 
-const ModalMessage = ({ children }: PropsWithChildren) => {
+//i18n
+import { withTranslation, WithTranslation } from 'react-i18next'
+
+interface ModalMessageProps extends PropsWithChildren, WithTranslation {}
+
+const ModalMessage = ({ children, t }: ModalMessageProps) => {
   const [tabActive, setTabActive] = useState('Event')
 
   const userId: string = useAppSelector((state) => state.persistedReducer.user.user?.id)
@@ -39,7 +44,7 @@ const ModalMessage = ({ children }: PropsWithChildren) => {
       <div className='flex-1 w-full flex overflow-hidden'>
         <div className='transition-all w-full sm:w-[220px] bg-slate-300 md:w-[300px] flex flex-col overflow-hidden sm:ml-0'>
           <div className='flex items-center py-2 px-3 text-xl font-medium text-gray-200 hover:text-gray-200'>
-            My Conversation
+            {t('box_message.left.title')}
           </div>
           <div role='tablist' className='tabs tabs-boxed px-2'>
             <button
@@ -47,14 +52,14 @@ const ModalMessage = ({ children }: PropsWithChildren) => {
               role='tab'
               className={`tab ${tabActive === 'Event' && 'tab-active'}`}
             >
-              Event
+              {t('box_message.left.event')}
             </button>
             <button
               onClick={() => setTabActive('User')}
               role='tab'
               className={`tab ${tabActive === 'User' && 'tab-active'}`}
             >
-              User
+              {t('box_message.left.user')}
             </button>
           </div>
           <div className='p-3'>
@@ -62,7 +67,7 @@ const ModalMessage = ({ children }: PropsWithChildren) => {
               onKeyUp={(e: any) => {
                 setSearch(e.target.value)
               }}
-              placeholder='Search conversation'
+              placeholder={t('box_message.left.placeholder')}
               className='w-full'
             />
           </div>
@@ -100,4 +105,4 @@ const ModalMessage = ({ children }: PropsWithChildren) => {
   )
 }
 
-export default ModalMessage
+export default withTranslation('common')(ModalMessage)

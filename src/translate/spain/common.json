@@ -1,95 +1,98 @@
 {
   "header": {
-    "search": "Buscar..."
+    "search": "Buscar...",
+    "signin_btn": "Iniciar sesión"
   },
-  "not_data": {
-    "text": "Lo siento, los datos no están disponibles o no se han actualizado."
-  },
-  "signin_btn": "Iniciar sesión",
   "notification": {
     "title": "Notificaciones",
-    "all": "Todo",
-    "follow": "Siguiendo",
-    "order": "Pedidos",
-    "follow_text": "te sigue",
-    "order_text": "ordenó tu evento",
-    "hours ago": "hace horas",
-    "confirm_btn": "Confirmar",
-    "decline_btn": "Rechazar"
-  },
-  "message": {
-    "title": "Mensajes",
-    "all": "Todo",
-    "latest": "Últimos",
-    "archived": "Archivados",
-    "reply_btn": "Responder",
-    "mark_btn": "Marcar como leído"
+    "follow": "Seguir",
+    "order": "Pedido",
+    "follow_text": "te ha seguido",
+    "order_text": "ha pedido tu evento",
+    "view_profile": "Ver perfil",
+    "view_order": "Ver pedido",
+    "load_more": "Cargar más"
   },
   "invitation": {
     "title": "Invitaciones",
-    "view_btn": "Ver",
-    "mark_btn": "Marcar como leído"
+    "favourite_text": "te ha invitado a añadir a favoritos",
+    "view_event": "Ver evento",
+    "load_more": "Cargar más"
+  },
+  "box_message": {
+    "left": {
+      "title": "Mis conversaciones",
+      "placeholder": "Buscar...",
+      "event": "Evento",
+      "user": "Usuario"
+    },
+    "right": {
+      "organizer": "Organizador",
+      "user": "Usuario",
+      "login_to_chat": "Inicia sesión para chatear",
+      "select_conversation": "Selecciona una conversación para ver los mensajes",
+      "no_message": "No se encontraron mensajes",
+      "send": "Enviar",
+      "placeholder": "Escribe un mensaje..."
+    }
   },
   "category": {
     "label": "Categoría",
-    "Visual Arts": "Artes Visuales",
-    "Sports & Active Life": "Deportes y Vida Activa",
-    "Politics": "Política",
-    "Performing Arts": "Artes Escénicas",
-    "Other": "Otro",
-    "Nightlife": "Vida Nocturna",
-    "Music": "Música",
-    "Lectures & Books": "Conferencias y Libros",
-    "Kids & Family": "Niños y Familia",
-    "Holidays": "Vacaciones",
-    "Food & Drink": "Comida y Bebidas",
-    "Film": "Cine",
-    "Festivals & Fairs": "Festivales y Ferias",
+    "Business": "Negocios",
+    "Gaming": "Juegos",
+    "Food & Beverage": "Comida y bebida",
+    "Education": "Educación",
+    "Home & Garden": "Hogar y jardín",
+    "Parenting": "Crianza",
     "Fashion": "Moda",
-    "Concerts": "Conciertos",
-    "Conferences": "Conferencias",
-    "Community": "Comunidad",
-    "Charities": "Caridad",
-    "Anniversary": "Aniversario",
-    "Academic": "Académico"
+    "Travel": "Viajes",
+    "Finance & Investment": "Finanzas e inversiones",
+    "Movies & TV": "Películas y TV",
+    "Books & Literature": "Libros y literatura",
+    "Photography": "Fotografía",
+    "Sport": "Deportes",
+    "Music": "Música",
+    "Pet & Animals": "Mascotas y animales",
+    "Health & Fitness": "Salud y bienestar",
+    "Art & Design": "Arte y diseño",
+    "Science": "Ciencia",
+    "Technology": "Tecnología",
+    "Personal Development": "Desarrollo personal"
   },
   "filter": {
-    "ALL": "Todo",
-    "PUBLIC": "Público",
-    "PRIVATE": "Privado"
+    "All": "Todos",
+    "Public": "Público",
+    "Private": "Privado"
   },
   "footer": {
     "left": {
-      "description": "Donde cada evento conecta momentos, fácil y eficientemente.",
+      "description": "Donde cada evento conecta momentos de manera simple y eficiente",
       "or": "o"
     },
     "right": {
       "box_one": {
-        "title": "Mi Cuenta",
-        "sub_one": "Mi Cuenta",
+        "title": "Mi cuenta",
+        "sub_one": "Mi cuenta",
         "sub_two": "Reseñas",
         "sub_three": "Estado",
-        "sub_four": "Lista de Deseos"
+        "sub_four": "Lista de deseos"
       },
-
       "box_two": {
         "title": "Ayuda",
-        "sub_one": "Contacto",
-        "sub_two": "Preguntas Frecuentes",
-        "sub_three": "Términos y Condiciones",
-        "sub_four": "Política de Privacidad"
+        "sub_one": "Contáctanos",
+        "sub_two": "Preguntas frecuentes",
+        "sub_three": "Términos y condiciones",
+        "sub_four": "Política de privacidad"
       },
-
       "box_three": {
-        "title": "Funciones",
-        "sub_one": "Gráfico de Gantt",
-        "sub_two": "Tableros",
-        "sub_three": "Mapas Mentales",
+        "title": "Características",
+        "sub_one": "Diagrama de Gantt",
+        "sub_two": "Tablero",
+        "sub_three": "Mapa mental",
         "sub_four": "Automatización"
       },
-
       "box_four": {
-        "title": "Comparar",
+        "title": "Comparaciones",
         "sub_one": "vs Jira",
         "sub_two": "vs Notion",
         "sub_three": "vs Trello",
@@ -97,47 +100,33 @@
       }
     }
   },
-  "box_message": {
-    "left": {
-      "placeholder": "Buscar...",
-      "my_event": "Mi Evento",
-      "chat_event": "Evento de Chat"
-    },
-    "right": {
-      "to": "A",
-      "first": "Envía un mensaje para comenzar la conversación",
-      "nochat_text_one": "Bienvenido",
-      "nochat_text_two": "Selecciona un chat para comenzar a mensajear",
-      "nologin_text_one": "Hola",
-      "nologin_text_two": "Inicia sesión para chatear",
-      "placeholder": "Enviar un mensaje"
-    }
-  },
   "routes": {
     "home": "Inicio",
     "dashboard": {
       "parent": "Tablero",
-      "overview": "Visión General",
-      "event analysis": "Análisis de Eventos",
-      "customer": "Clientes",
-      "payment": "Pagos"
+      "overview": "Resumen",
+      "event_analysis": "Análisis del evento",
+      "customer": "Cliente",
+      "transaction": "Transacción"
     },
     "event": {
       "parent": "Evento",
-      "my favourite": "Mi Favorito",
-      "my events": "Mis Eventos",
-      "trash events": "Eventos Eliminados",
-      "create event": "Crear Evento"
+      "my_favourite": "Mis favoritos",
+      "my_events": "Mis eventos",
+      "trash_events": "Eventos eliminados",
+      "create_event": "Crear evento",
+      "my_expense": "Mis gastos"
     },
     "coupon": "Cupón",
-    "expense": "Gastos",
+    "ticket": "Mi entrada",
     "calendar": "Calendario",
     "orders": "Pedidos",
     "reviews": "Reseñas",
     "settings": {
       "parent": "Configuraciones",
-      "profile": "Perfil"
-    },
-    "permissions": "Permisos"
+      "profile": "Perfil",
+      "follower": "Seguidores",
+      "following": "Siguiendo"
+    }
   }
 }

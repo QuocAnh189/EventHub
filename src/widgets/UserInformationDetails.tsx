@@ -28,13 +28,13 @@ const UserInformationDetails = (props: IProps) => {
                 xl:row-start-1 xl:col-start-2 xl:col-span-1'
     >
       <div className='flex flex-col gap-5'>
-        <h5>My Profile</h5>
+        <h5>{t('profile_detail.title')}</h5>
 
         <div className='grid gap-4 md:grid-cols-2 md:gap-5'>
           <div className='grid gap-4'>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='userName'>
-                {t('profile detail.user_name')}
+                {t('profile_detail.user_name')}
               </label>
               <input
                 readOnly
@@ -46,7 +46,7 @@ const UserInformationDetails = (props: IProps) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='fullName'>
-                {t('profile detail.full_name')}
+                {t('profile_detail.full_name')}
               </label>
               <input
                 readOnly
@@ -59,7 +59,7 @@ const UserInformationDetails = (props: IProps) => {
 
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='email'>
-                {t('profile detail.email')}
+                {t('profile_detail.email')}
               </label>
               <input
                 readOnly
@@ -71,7 +71,7 @@ const UserInformationDetails = (props: IProps) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='phone'>
-                {t('profile detail.phone_number')}
+                {t('profile_detail.phone_number')}
               </label>
               <input
                 readOnly
@@ -85,7 +85,7 @@ const UserInformationDetails = (props: IProps) => {
           <div className='grid gap-4'>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='city'>
-                {t('profile detail.gender')}
+                {t('profile_detail.gender')}
               </label>
               <input
                 readOnly
@@ -96,11 +96,11 @@ const UserInformationDetails = (props: IProps) => {
               />
             </div>
             <div className='field-wrapper'>
-              <label className='field-label text-header' htmlFor='state'>
-                {t('profile detail.dob')}
+              <label className='field-label' htmlFor='state'>
+                {t('profile_detail.dob')}
               </label>
               <input
-                className='field-input text-header'
+                className={classNames('field-input text-header')}
                 type='date'
                 id='state'
                 placeholder='State'
@@ -109,7 +109,7 @@ const UserInformationDetails = (props: IProps) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='firstName'>
-                {t('profile detail.role')}
+                {t('profile_detail.role')}
               </label>
               <input
                 readOnly
@@ -122,7 +122,7 @@ const UserInformationDetails = (props: IProps) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='address'>
-                {t('profile detail.bio')}
+                {t('profile_detail.bio')}
               </label>
               <input readOnly className='field-input text-header' type='text' id='Bio' value={user?.bio} />
             </div>
@@ -133,4 +133,4 @@ const UserInformationDetails = (props: IProps) => {
   )
 }
 
-export default withTranslation('profile')(UserInformationDetails)
+export default withTranslation('userinfo')(UserInformationDetails)

@@ -1,1 +1,75 @@
-{}
+{
+  "header": { "title_create": "创建活动", "update_create": "更新活动" },
+  "option_one": { "title": "创建活动", "description": "您将需要手动创建活动" },
+  "option_two": {
+    "title": "导入活动",
+    "description": "您已经有一个活动了吗？",
+    "example_file": "示例文件在这里"
+  },
+  "step": {
+    "information": "信息",
+    "banner": "横幅",
+    "ticket": "票务",
+    "review": "评论"
+  },
+  "information": {
+    "event": {
+      "name": "名称",
+      "name_placeholder": "请输入活动名称",
+      "category": "类别",
+      "category_placeholder": "选择活动类别",
+      "type": { "name": "活动类型", "single_event": "单次活动", "recurring_event": "重复活动" }
+    },
+    "datetime": {
+      "title": "日期与时间",
+      "session": { "title": "场次", "start_time": "开始时间", "end_time": "结束时间" }
+    },
+    "location": {
+      "title": "选择地点",
+      "label": "活动将在哪举行",
+      "placeholder": "请输入地点名称",
+      "path_placeholder": "请输入位置路径（谷歌地图）"
+    },
+    "description": {
+      "title": "附加信息",
+      "label": "活动描述",
+      "placeholder": "请输入活动描述"
+    },
+    "reason": {
+      "title": "原因",
+      "label": "活动原因",
+      "placeholder": "请输入原因"
+    }
+  },
+  "banner": {
+    "cover_image": "封面图",
+    "subs_image": "附加图"
+  },
+  "ticket": {
+    "title": "您正在举办什么类型的活动？",
+    "option_one": { "label": "收费活动", "description": "我的活动包括入场票" },
+    "option_two": { "label": "免费活动", "description": "我正在举办免费活动" },
+    "ticket_title": "您在销售什么票？",
+    "ticket_name": "票名称",
+    "ticket_name_placeholder": "请输入名称",
+    "ticket_quantity": "票数量",
+    "ticket_price": "票价"
+  },
+  "review": {
+    "public": "公开",
+    "date_time_label": "日期与时间",
+    "ticket_information": "票务信息",
+    "ticket_type": "票类型",
+    "free": "免费",
+    "fee": "费用",
+    "ticket_sub": "票",
+    "location_title": "地点",
+    "organization_title": "组织者",
+    "description_title": "活动描述",
+    "reasons_event": "参加活动的理由",
+    "button_create": "创建活动",
+    "button_update": "更新活动"
+  },
+  "button_back": "返回",
+  "button_continue": "继续"
+}

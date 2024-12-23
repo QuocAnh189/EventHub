@@ -1,95 +1,98 @@
 {
   "header": {
-    "search": "Suche..."
+    "search": "Поиск...",
+    "signin_btn": "Войти"
   },
-  "not_data": {
-    "text": "Entschuldigung, Daten sind nicht verfügbar oder wurden nicht aktualisiert."
-  },
-  "signin_btn": "Anmelden",
   "notification": {
-    "title": "Benachrichtigungen",
-    "all": "Alle",
-    "follow": "Folgen",
-    "order": "Bestellungen",
-    "follow_text": "folgt Ihnen",
-    "order_text": "bestellt Ihr Event",
-    "hours ago": "vor Stunden",
-    "confirm_btn": "Bestätigen",
-    "decline_btn": "Ablehnen"
-  },
-  "message": {
-    "title": "Nachrichten",
-    "all": "Alle",
-    "latest": "Neueste",
-    "archived": "Archiviert",
-    "reply_btn": "Antworten",
-    "mark_btn": "Als gelesen markieren"
+    "title": "Уведомления",
+    "follow": "Подписаться",
+    "order": "Заказы",
+    "follow_text": "подписался на вас",
+    "order_text": "заказал ваше событие",
+    "view_profile": "Посмотреть профиль",
+    "view_order": "Посмотреть заказ",
+    "load_more": "Загрузить больше"
   },
   "invitation": {
-    "title": "Einladungen",
-    "view_btn": "Ansehen",
-    "mark_btn": "Als gelesen markieren"
+    "title": "Приглашения",
+    "favourite_text": "пригласил вас добавить в избранное",
+    "view_event": "Посмотреть событие",
+    "load_more": "Загрузить больше"
+  },
+  "box_message": {
+    "left": {
+      "title": "Мои беседы",
+      "placeholder": "Поиск...",
+      "event": "Событие",
+      "user": "Пользователь"
+    },
+    "right": {
+      "organizer": "Организатор",
+      "user": "Пользователь",
+      "login_to_chat": "Пожалуйста, войдите в систему, чтобы общаться",
+      "select_conversation": "Выберите беседу, чтобы посмотреть сообщения",
+      "no_message": "Сообщений не найдено",
+      "send": "Отправить",
+      "placeholder": "Введите сообщение..."
+    }
   },
   "category": {
-    "label": "Kategorie",
-    "Visual Arts": "Bildende Kunst",
-    "Sports & Active Life": "Sport & Aktives Leben",
-    "Politics": "Politik",
-    "Performing Arts": "Darstellende Kunst",
-    "Other": "Sonstige",
-    "Nightlife": "Nachtleben",
-    "Music": "Musik",
-    "Lectures & Books": "Vorträge & Bücher",
-    "Kids & Family": "Kinder & Familie",
-    "Holidays": "Feiertage",
-    "Food & Drink": "Essen & Trinken",
-    "Film": "Film",
-    "Festivals & Fairs": "Festivals & Messen",
-    "Fashion": "Mode",
-    "Concerts": "Konzerte",
-    "Conferences": "Konferenzen",
-    "Community": "Gemeinschaft",
-    "Charities": "Wohltätigkeitsorganisationen",
-    "Anniversary": "Jahrestag",
-    "Academic": "Akademisch"
+    "label": "Категория",
+    "Business": "Бизнес",
+    "Gaming": "Игры",
+    "Food & Beverage": "Еда и напитки",
+    "Education": "Образование",
+    "Home & Garden": "Дом и сад",
+    "Parenting": "Воспитание детей",
+    "Fashion": "Мода",
+    "Travel": "Путешествия",
+    "Finance & Investment": "Финансы и инвестиции",
+    "Movies & TV": "Кино и ТВ",
+    "Books & Literature": "Книги и литература",
+    "Photography": "Фотография",
+    "Sport": "Спорт",
+    "Music": "Музыка",
+    "Pet & Animals": "Домашние животные и животные",
+    "Health & Fitness": "Здоровье и фитнес",
+    "Art & Design": "Искусство и дизайн",
+    "Science": "Наука",
+    "Technology": "Технологии",
+    "Personal Development": "Личностное развитие"
   },
   "filter": {
-    "ALL": "Alle",
-    "PUBLIC": "Öffentlich",
-    "PRIVATE": "Privat"
+    "All": "Все",
+    "Public": "Публичный",
+    "Private": "Приватный"
   },
   "footer": {
     "left": {
-      "description": "Der Ort, an dem jedes Event verbindet, Momente einfach und effizient.",
-      "or": "oder"
+      "description": "Где каждое событие соединяет моменты легко и эффективно",
+      "or": "или"
     },
     "right": {
       "box_one": {
-        "title": "Mein Konto",
-        "sub_one": "Mein Konto",
-        "sub_two": "Bewertungen",
-        "sub_three": "Status",
-        "sub_four": "Wunschliste"
+        "title": "Мой аккаунт",
+        "sub_one": "Мой аккаунт",
+        "sub_two": "Отзывы",
+        "sub_three": "Статус",
+        "sub_four": "Список желаний"
       },
-
       "box_two": {
-        "title": "Hilfe",
-        "sub_one": "Kontakt",
-        "sub_two": "Häufig gestellte Fragen",
-        "sub_three": "Allgemeine Geschäftsbedingungen",
-        "sub_four": "Datenschutzrichtlinie"
+        "title": "Помощь",
+        "sub_one": "Связаться с нами",
+        "sub_two": "Часто задаваемые вопросы",
+        "sub_three": "Условия использования",
+        "sub_four": "Политика конфиденциальности"
       },
-
       "box_three": {
-        "title": "Funktionen",
-        "sub_one": "Gantt-Diagramm",
-        "sub_two": "Dashboards",
-        "sub_three": "Mind Maps",
-        "sub_four": "Automatisierungen"
+        "title": "Функции",
+        "sub_one": "Диаграмма Ганта",
+        "sub_two": "Дашборды",
+        "sub_three": "Ментальные карты",
+        "sub_four": "Автоматизация"
       },
-
       "box_four": {
-        "title": "Vergleichen",
+        "title": "Сравнение",
         "sub_one": "vs Jira",
         "sub_two": "vs Notion",
         "sub_three": "vs Trello",
@@ -97,47 +100,33 @@
       }
     }
   },
-  "box_message": {
-    "left": {
-      "placeholder": "Suche...",
-      "my_event": "Mein Event",
-      "chat_event": "Chat-Event"
-    },
-    "right": {
-      "to": "An",
-      "first": "Senden Sie eine Nachricht, um das Gespräch zu beginnen",
-      "nochat_text_one": "Willkommen",
-      "nochat_text_two": "Wählen Sie einen Chat aus, um mit dem Messaging zu beginnen",
-      "nologin_text_one": "Hallo",
-      "nologin_text_two": "Melden Sie sich an, um zu chatten",
-      "placeholder": "Nachricht senden"
-    }
-  },
   "routes": {
-    "home": "Startseite",
+    "home": "Главная",
     "dashboard": {
-      "parent": "Dashboard",
-      "overview": "Überblick",
-      "event analysis": "Ereignisanalyse",
-      "customer": "Kunde",
-      "payment": "Zahlung"
+      "parent": "Панель управления",
+      "overview": "Обзор",
+      "event_analysis": "Анализ событий",
+      "customer": "Клиенты",
+      "transaction": "Транзакции"
     },
     "event": {
-      "parent": "Ereignis",
-      "my favourite": "Мой любимый",
-      "my events": "Meine Ereignisse",
-      "trash events": "Papierkorbevents",
-      "create event": "Ereignis erstellen"
+      "parent": "Событие",
+      "my_favourite": "Мои избранные",
+      "my_events": "Мои события",
+      "trash_events": "Удаленные события",
+      "create_event": "Создать событие",
+      "my_expense": "Мои расходы"
     },
     "coupon": "Купон",
-    "expense": "Расход",
-    "calendar": "Kalender",
-    "orders": "Bestellungen",
-    "reviews": "Bewertungen",
+    "ticket": "Мой билет",
+    "calendar": "Календарь",
+    "orders": "Заказы",
+    "reviews": "Отзывы",
     "settings": {
-      "parent": "Einstellungen",
-      "profile": "Profil"
-    },
-    "permissions": "Berechtigungen"
+      "parent": "Настройки",
+      "profile": "Профиль",
+      "follower": "Подписчики",
+      "following": "Подписки"
+    }
   }
 }

@@ -1,1 +1,45 @@
-{}
+{
+  "header": {
+    "title": "探索"
+  },
+  "sort": "按日期排序",
+  "asc": "升序",
+  "desc": "降序",
+  "search": "搜索 ...",
+  "sidebar": {
+    "rate": {
+      "label": "评分",
+      "star": "星"
+    },
+    "status": {
+      "label": "状态",
+      "all": "所有",
+      "upcoming": "即将到来",
+      "opening": "开放",
+      "closed": "关闭"
+    },
+    "category": {
+      "label": "类别",
+      "Business": "商业",
+      "Gaming": "游戏",
+      "Food & Beverage": "食品和饮料",
+      "Education": "教育",
+      "Home & Garden": "家居与花园",
+      "Parenting": "育儿",
+      "Fashion": "时尚",
+      "Travel": "旅行",
+      "Finance & Investment": "金融与投资",
+      "Movies & TV": "电影与电视",
+      "Books & Literature": "书籍与文学",
+      "Photography": "摄影",
+      "Sport": "运动",
+      "Music": "音乐",
+      "Pet & Animals": "宠物与动物",
+      "Health & Fitness": "健康与健身",
+      "Art & Design": "艺术与设计",
+      "Science": "科学",
+      "Technology": "科技",
+      "Personal Development": "个人发展"
+    }
+  }
+}

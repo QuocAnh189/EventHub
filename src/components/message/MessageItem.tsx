@@ -8,7 +8,7 @@ import MessageAttachments from './MessageAttachments'
 import MessageOptionsDropdown from './MessageOptionsDropdown'
 
 //interface
-import { IMessage } from '@interfaces/contents/conversation.interface'
+import { IMessage } from '@interfaces/websockets/conversation.interface'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'

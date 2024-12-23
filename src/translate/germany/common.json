@@ -1,66 +1,72 @@
 {
   "header": {
-    "search": "Suche..."
+    "search": "Suchen...",
+    "signin_btn": "Anmelden"
   },
-  "not_data": {
-    "text": "Entschuldigung, Daten sind nicht verfügbar oder wurden nicht aktualisiert."
-  },
-  "signin_btn": "Anmelden",
   "notification": {
     "title": "Benachrichtigungen",
-    "all": "Alle",
     "follow": "Folgen",
     "order": "Bestellungen",
-    "follow_text": "folgt Ihnen",
-    "order_text": "bestellt Ihr Event",
-    "hours ago": "vor Stunden",
-    "confirm_btn": "Bestätigen",
-    "decline_btn": "Ablehnen"
-  },
-  "message": {
-    "title": "Nachrichten",
-    "all": "Alle",
-    "latest": "Neueste",
-    "archived": "Archiviert",
-    "reply_btn": "Antworten",
-    "mark_btn": "Als gelesen markieren"
+    "follow_text": "folgt dir",
+    "order_text": "hat dein Event bestellt",
+    "view_profile": "Profil ansehen",
+    "view_order": "Bestellung ansehen",
+    "load_more": "Mehr laden"
   },
   "invitation": {
     "title": "Einladungen",
-    "view_btn": "Ansehen",
-    "mark_btn": "Als gelesen markieren"
+    "favourite_text": "hat mich eingeladen, zu Favoriten hinzuzufügen",
+    "view_event": "Event ansehen",
+    "load_more": "Mehr laden"
+  },
+  "box_message": {
+    "left": {
+      "title": "Meine Unterhaltungen",
+      "placeholder": "Suchen...",
+      "event": "Event",
+      "user": "Benutzer"
+    },
+    "right": {
+      "organizer": "Organisator",
+      "user": "Benutzer",
+      "login_to_chat": "Bitte melden Sie sich an, um zu chatten",
+      "select_conversation": "Bitte wählen Sie ein Gespräch aus, um Nachrichten anzuzeigen",
+      "no_message": "Keine Nachrichten gefunden",
+      "send": "Senden",
+      "placeholder": "Nachricht eingeben..."
+    }
   },
   "category": {
     "label": "Kategorie",
-    "Visual Arts": "Bildende Kunst",
-    "Sports & Active Life": "Sport & Aktives Leben",
-    "Politics": "Politik",
-    "Performing Arts": "Darstellende Kunst",
-    "Other": "Sonstige",
-    "Nightlife": "Nachtleben",
-    "Music": "Musik",
-    "Lectures & Books": "Vorträge & Bücher",
-    "Kids & Family": "Kinder & Familie",
-    "Holidays": "Feiertage",
-    "Food & Drink": "Essen & Trinken",
-    "Film": "Film",
-    "Festivals & Fairs": "Festivals & Messen",
+    "Business": "Geschäft",
+    "Gaming": "Spiele",
+    "Food & Beverage": "Essen & Trinken",
+    "Education": "Bildung",
+    "Home & Garden": "Haus & Garten",
+    "Parenting": "Erziehung",
     "Fashion": "Mode",
-    "Concerts": "Konzerte",
-    "Conferences": "Konferenzen",
-    "Community": "Gemeinschaft",
-    "Charities": "Wohltätigkeitsorganisationen",
-    "Anniversary": "Jahrestag",
-    "Academic": "Akademisch"
+    "Travel": "Reise",
+    "Finance & Investment": "Finanzen & Investitionen",
+    "Movies & TV": "Filme & TV",
+    "Books & Literature": "Bücher & Literatur",
+    "Photography": "Fotografie",
+    "Sport": "Sport",
+    "Music": "Musik",
+    "Pet & Animals": "Haustiere & Tiere",
+    "Health & Fitness": "Gesundheit & Fitness",
+    "Art & Design": "Kunst & Design",
+    "Science": "Wissenschaft",
+    "Technology": "Technologie",
+    "Personal Development": "Persönliche Entwicklung"
   },
   "filter": {
-    "ALL": "Alle",
-    "PUBLIC": "Öffentlich",
-    "PRIVATE": "Privat"
+    "All": "Alle",
+    "Public": "Öffentlich",
+    "Private": "Privat"
   },
   "footer": {
     "left": {
-      "description": "Der Ort, an dem jedes Event verbindet, Momente einfach und effizient.",
+      "description": "Wo jedes Event Momente verbindet, einfach und effizient",
       "or": "oder"
     },
     "right": {
@@ -71,25 +77,22 @@
         "sub_three": "Status",
         "sub_four": "Wunschliste"
       },
-
       "box_two": {
         "title": "Hilfe",
         "sub_one": "Kontakt",
-        "sub_two": "Häufig gestellte Fragen",
-        "sub_three": "Allgemeine Geschäftsbedingungen",
+        "sub_two": "FAQ",
+        "sub_three": "AGB",
         "sub_four": "Datenschutzrichtlinie"
       },
-
       "box_three": {
         "title": "Funktionen",
         "sub_one": "Gantt-Diagramm",
         "sub_two": "Dashboards",
-        "sub_three": "Mind Maps",
+        "sub_three": "Mindmaps",
         "sub_four": "Automatisierungen"
       },
-
       "box_four": {
-        "title": "Vergleichen",
+        "title": "Vergleich",
         "sub_one": "vs Jira",
         "sub_two": "vs Notion",
         "sub_three": "vs Trello",
@@ -97,47 +100,33 @@
       }
     }
   },
-  "box_message": {
-    "left": {
-      "placeholder": "Suche...",
-      "my_event": "Mein Event",
-      "chat_event": "Chat-Event"
-    },
-    "right": {
-      "to": "An",
-      "first": "Senden Sie eine Nachricht, um das Gespräch zu beginnen",
-      "nochat_text_one": "Willkommen",
-      "nochat_text_two": "Wählen Sie einen Chat aus, um mit dem Messaging zu beginnen",
-      "nologin_text_one": "Hallo",
-      "nologin_text_two": "Melden Sie sich an, um zu chatten",
-      "placeholder": "Nachricht senden"
-    }
-  },
   "routes": {
     "home": "Startseite",
     "dashboard": {
       "parent": "Dashboard",
       "overview": "Überblick",
-      "event analysis": "Ereignisanalyse",
+      "event_analysis": "Eventanalyse",
       "customer": "Kunde",
-      "payment": "Zahlung"
+      "transaction": "Transaktion"
     },
     "event": {
-      "parent": "Ereignis",
-      "my favourite": "Mein Favorit",
-      "my events": "Meine Ereignisse",
-      "trash events": "Papierkorbevents",
-      "create event": "Ereignis erstellen"
+      "parent": "Event",
+      "my_favourite": "Meine Favoriten",
+      "my_events": "Meine Events",
+      "trash_events": "Gelöschte Events",
+      "create_event": "Event erstellen",
+      "my_expense": "Meine Ausgaben"
     },
-    "coupon": "Coupon",
-    "expense": "Kosten",
+    "coupon": "Gutschein",
+    "ticket": "Mein Ticket",
     "calendar": "Kalender",
     "orders": "Bestellungen",
     "reviews": "Bewertungen",
     "settings": {
       "parent": "Einstellungen",
-      "profile": "Profil"
-    },
-    "permissions": "Berechtigungen"
+      "profile": "Profil",
+      "follower": "Follower",
+      "following": "Folgt"
+    }
   }
 }

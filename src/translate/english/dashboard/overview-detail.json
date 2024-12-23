@@ -2,32 +2,24 @@
   "header": {
     "title": "Revenue Overview"
   },
-  "sales-period": "Sales period",
-  "popular-tags": {
-    "title": "Popular Tags",
-    "top-rated": "Top Rated",
-    "new-in": "New In",
-    "best-sellers": "Best Sellers",
-    "a-z": "A-Z",
-    "reviews": "Reviews"
-  },
-  "sales-volume": "Sales Volume",
+  "sales_period": "Sales period",
+  "sales_volume": "Sales Volume",
   "revenue": "Revenue",
   "expense": "Expense",
   "profit": "Profit",
   "order": "Order",
-  "profit-performance": "Profit Performance",
-  "conversion-rate": {
+  "profit_performance": "Profit Performance",
+  "conversion_rate": {
     "title": "Conversion Rate",
-    "regular-customers": "Regular Customers",
-    "new-customers": "New Customers",
+    "regular_customers": "Regular Customers",
+    "new_customers": "New Customers",
     "submenu": {
       "description": "Pellentesque eget orci at lacus tincidunt maximus",
       "share": "Share",
       "print": "Print"
     }
   },
-  "average-referral-rate": {
+  "average_referral_rate": {
     "title": "Average Referral Rate"
   },
   "total": {

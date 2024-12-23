@@ -15,7 +15,10 @@ import logoText_Img from '@assets/images/common/logo_text.png'
 //animation
 import { motion } from 'framer-motion'
 
-const Navbar = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const Navbar = ({ t }: any) => {
   const navigate = useNavigate()
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -49,7 +52,7 @@ const Navbar = () => {
             </motion.a>
           </div>
           <nav className='relative float-right hidden flex-1 flex-row items-center justify-end gap-[1em] xl:flex'>
-            <ul className='relative z-[1] flex flex-row items-center justify-between gap-1 rounded-[1em] bg-white px-3 shadow-white'>
+            <ul className='relative z-[1] flex flex-row items-center justify-between gap-2 rounded-[1em] bg-white px-3 shadow-white'>
               <a href={'#intro'} onClick={handleScroll}>
                 <motion.li
                   initial={{ y: -10, opacity: 0 }}
@@ -64,7 +67,7 @@ const Navbar = () => {
                           <FcHome className='w-[20px]' />
                         </span>
                       </div>
-                      <div className='text-[1em] leading-snug'>Intro</div>
+                      <div className='text-[1em] leading-snug min-w-[80px] text-left'>{t('navbar.intro')}</div>
                     </div>
                   </div>
                 </motion.li>
@@ -83,7 +86,7 @@ const Navbar = () => {
                           <FcManager className='w-[20px]' />
                         </span>
                       </div>
-                      <div className='inline-block leading-snug'>Manage</div>
+                      <div className='inline-block leading-snug min-w-[80px] text-left'>{t('navbar.manage')}</div>
                     </div>
                   </div>
                 </motion.li>
@@ -102,7 +105,7 @@ const Navbar = () => {
                           <FcViewDetails className='w-[20px]' />
                         </span>
                       </div>
-                      <div className='text-[1em] leading-snug'>Overview</div>
+                      <div className='text-[1em] leading-snug min-w-[86px] text-left'>{t('navbar.overview')}</div>
                     </div>
                   </div>
                 </motion.li>
@@ -121,7 +124,7 @@ const Navbar = () => {
                           <FcFeedback className='w-[20px]' />
                         </span>
                       </div>
-                      <span className='text-[1em] leading-snug'>Feedback</span>
+                      <span className='text-[1em] leading-snug min-w-[80px] text-left'>{t('navbar.feedback')}</span>
                     </div>
                   </div>
                 </motion.li>
@@ -140,7 +143,7 @@ const Navbar = () => {
                           <FcContacts className='w-[20px]' />
                         </span>
                       </div>
-                      <span className='text-[1em] leading-snug'>Contact</span>
+                      <span className='text-[1em] leading-snug min-w-[60px] text-left'>{t('navbar.contact')}</span>
                     </div>
                   </div>
                 </motion.li>
@@ -168,7 +171,7 @@ const Navbar = () => {
                 >
                   <div className='relative z-[900] mx-auto inline-block cursor-pointer rounded-xl hover:underline'>
                     <div className='min-w-auto flex w-auto flex-row items-center gap-1 px-2 py-2 tracking-wide'>
-                      <div className='text-[1em] leading-snug'>Login</div>
+                      <div className='text-[1em] leading-snug min-w-[60px] text-left'>{t('navbar.login')}</div>
                     </div>
                   </div>
                 </motion.li>
@@ -186,7 +189,7 @@ const Navbar = () => {
                 >
                   <div className='relative z-[900] mx-auto inline-block cursor-pointer rounded-xl hover:underline'>
                     <div className='min-w-auto flex w-auto flex-row items-center gap-1 px-2 py-2 tracking-wide'>
-                      <div className='text-[1em] leading-snug'>Register</div>
+                      <div className='text-[1em] leading-snug min-w-[60px] text-left'>{t('navbar.register')}</div>
                     </div>
                   </div>
                 </motion.li>
@@ -211,12 +214,12 @@ const Navbar = () => {
                 </div>
               </motion.div>
               <motion.div
-                className='font-sans'
+                className='font-sans min-w-[90px]'
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.1, delay: 0.9 }}
               >
-                Get Started
+                {t('navbar.get_started')}
               </motion.div>
             </button>
           </nav>
@@ -232,4 +235,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default withTranslation('landing')(Navbar)

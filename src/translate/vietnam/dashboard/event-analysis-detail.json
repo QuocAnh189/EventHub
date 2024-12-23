@@ -3,13 +3,13 @@
     "title": "Chi tiết sự kiện"
   },
   "transaction": "Giao dịch",
-  "customer-review": "Đánh giá người dùng",
+  "customer_review": "Đánh giá người dùng",
   "total": {
     "user": "Tổng khách hàng",
     "order": "Tổng đơn hàng"
   },
-  "period-sales-revenue": "Doanh thu bán hàng trong kỳ",
-  "review-by-customer": {
+  "period_sales_revenue": "Doanh thu bán hàng trong kỳ",
+  "review_by_customer": {
     "title": "Đánh giá từ người dùng",
     "positive": "Tích cực",
     "negative": "Tiêu cực",

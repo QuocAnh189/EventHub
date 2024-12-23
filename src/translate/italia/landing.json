@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "Introduzione",
+    "manage": "Gestisci",
+    "overview": "Panoramica",
+    "feedback": "Feedback",
+    "contact": "Contatto",
+    "login": "Accedi",
+    "register": "Registrati",
+    "get_started": "Inizia"
+  },
+  "intro": {
+    "text_one": "Dove ogni evento",
+    "text_two": "Connetti i momenti",
+    "text_three": "- facilmente ed efficacemente",
+    "text_four": "Unendo persone, passione e scopo in ogni momento condiviso",
+    "try_now": "Prova ora"
+  },
+  "manage": {
+    "project_management": "Gestione dei progetti"
+  },
+  "automatic": {
+    "select_my": "Seleziona il mio",
+    "event": "Evento"
+  },
+  "feedback": {
+    "title": "Affidato da oltre",
+    "description": "2.500 membri"
+  },
+  "contact": {
+    "text_one": "Invita amici",
+    "text_two": "con EventHub",
+    "text_three": "Provalo gratuitamente per 14 giorni",
+    "text_four": "nessuna carta di credito richiesta.",
+    "try_now": "Prova ora",
+    "email_placeholder": "Inserisci la tua email"
+  }
+}

@@ -20,7 +20,11 @@ import { useAppSelector } from '@hooks/useRedux'
 //util
 import dayjs from 'dayjs'
 
+//18n
+import { withTranslation } from 'react-i18next'
+
 interface IProps {
+  t: any
   modalOpen: boolean
   setModalOpen: (value: boolean) => void
   onCreate: (data: ICreateCouponPayload) => void
@@ -28,7 +32,7 @@ interface IProps {
 }
 
 const ModalCreateCoupon = (props: IProps) => {
-  const { modalOpen, setModalOpen, onCreate, isLoading } = props
+  const { t, modalOpen, setModalOpen, onCreate, isLoading } = props
 
   const userId: string = useAppSelector((state) => state.persistedReducer.user.user?.id)
 
@@ -64,7 +68,7 @@ const ModalCreateCoupon = (props: IProps) => {
         >
           <i className='icon-circle-xmark-regular' />
         </button>
-        <h6 className='h6'>Create Coupon</h6>
+        <h6 className='h6'>{t('modal.create_coupon')}</h6>
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4 mt-4'>
           <div className='relative lg:w-full h-[100px] flex items-center justify-center text-white rounded-xl media-dropzone 2xl:col-span-2'>
             <img
@@ -100,45 +104,42 @@ const ModalCreateCoupon = (props: IProps) => {
           </div>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='brandName'>
-              Name
+              {t('modal.name_label')}
             </label>
             <input
               className={classNames('field-input', { 'field-input--error': false })}
               id='name'
-              defaultValue=''
-              placeholder='Enter name'
+              placeholder={t('modal.name_placeholder')}
               {...register('name', { required: true })}
             />
           </div>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='description'>
-              Description
+              {t('modal.description_label')}
             </label>
             <textarea
               className={classNames(`field-input !h-[80px] !py-[15px] !overflow-y-auto`, {
                 'field-input--error': false
               })}
               id='description'
-              defaultValue=''
-              placeholder='Enter description'
+              placeholder={t('modal.description_placeholder')}
               {...register('description', { required: true })}
             />
           </div>
           <div className='flex items-center justify-between gap-4'>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='dimensions'>
-                Min Price
+                {t('modal.min_price_label')}
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
                 id='minPrice'
-                defaultValue=''
                 {...register('minPrice', { required: true })}
               />
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='weight'>
-                Min Quantity
+                {t('modal.min_quantity_label')}
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
@@ -148,7 +149,7 @@ const ModalCreateCoupon = (props: IProps) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='weight'>
-                Percent
+                {t('modal.percent_label')}
               </label>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
@@ -159,7 +160,7 @@ const ModalCreateCoupon = (props: IProps) => {
           </div>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='brandName'>
-              Expire Date
+              {t('modal.expire_label')}
             </label>
             <input
               type='date'
@@ -170,7 +171,7 @@ const ModalCreateCoupon = (props: IProps) => {
             />
           </div>
           <button type='submit' className='btn btn-primary hover:bg-primary-300'>
-            {isLoading ? <Loading /> : ' Create Coupon'}
+            {isLoading ? <Loading /> : t('modal.create_coupon')}
           </button>
         </form>
       </div>
@@ -178,4 +179,4 @@ const ModalCreateCoupon = (props: IProps) => {
   )
 }
 
-export default ModalCreateCoupon
+export default withTranslation('coupon')(ModalCreateCoupon)

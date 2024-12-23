@@ -35,8 +35,8 @@ const EventAnalysisDetail = ({ t }: any) => {
   const { width } = useWindowSize()
 
   const data = [
-    { name: t('review-by-customer.positive'), value: 80, color: 'green' },
-    { name: t('review-by-customer.negative'), value: 20, color: 'red' }
+    { name: t('review_by_customer.positive'), value: 80, color: 'green' },
+    { name: t('review_by_customer.negative'), value: 20, color: 'red' }
   ]
 
   return (
@@ -46,7 +46,7 @@ const EventAnalysisDetail = ({ t }: any) => {
         <EventProfilePreview />
         <TransactionsInfobox title={t('transaction')} />
         <div className='widgets-grid grid-cols-1 md:col-span-3 md:grid-cols-2'>
-          <ProfitPerformance title={t('customer-review')} data={data} />
+          <ProfitPerformance title={t('customer_review')} data={data} />
           <div className='widgets-grid grid-cols-1'>
             <WalletBadge label={t('total.user')} value={32100} image={credit} />
             <WalletBadge label={t('total.order')} value={144100} image={wallet} />
@@ -58,11 +58,11 @@ const EventAnalysisDetail = ({ t }: any) => {
             <SalesProfitByCategory
               data={data}
               translate={{
-                title: t('review-by-customer.title'),
-                review_rate: t('review-by-customer.review_rate'),
-                from: t('review-by-customer.from'),
-                response: t('review-by-customer.response'),
-                view_all_review: t('review-by-customer.view_all_reviews')
+                title: t('review_by_customer.title'),
+                review_rate: t('review_by_customer.review_rate'),
+                from: t('review_by_customer.from'),
+                response: t('review_by_customer.response'),
+                view_all_review: t('review_by_customer.view_all_reviews')
               }}
             />
             {(width < 1024 || width >= 1440) && <Boxes t={t} />}

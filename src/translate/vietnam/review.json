@@ -2,12 +2,13 @@
   "header": {
     "title": "Đánh giá"
   },
+  "search": "Tìm kiếm...",
   "middle": {
     "review_score": "Điểm đánh giá",
     "customers": "Khách hàng",
     "total": "Tổng cộng",
-    "new": "Mới nhất",
-    "regular": "Thương xuyên"
+    "positive": "Tích cực",
+    "negative": "Tiêu cực"
   },
   "main": {
     "title": "Những đánh giá gần nhất"

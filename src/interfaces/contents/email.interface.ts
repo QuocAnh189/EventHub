@@ -1,18 +1,5 @@
-export interface IEmailAttachment {
-  id?: string
-  emailContentId: string
-  attachmentFileName: string
-  AttachmentUrl: string
-  content: string
-  attachmentUrl: string
-  isDeleted: boolean
-  deletedAt: Date
-  createdAt: Date
-  updatedAt: Date
-}
-
 export interface IEmailContent {
-  id?: string
+  id: string
   eventId: string
   content: string
   isDeleted: boolean
@@ -21,11 +8,13 @@ export interface IEmailContent {
   updatedAt: Date
 }
 
-export interface IEmailLogger {
-  id?: string
+export interface IEmailAttachment {
+  id: string
   emailContentId: string
-  sendEmail: string
-  receiveEmail: string
+  attachmentFileName: string
+  AttachmentUrl: string
+  content: string
+  attachmentUrl: string
   isDeleted: boolean
   deletedAt: Date
   createdAt: Date

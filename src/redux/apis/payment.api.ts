@@ -136,6 +136,26 @@ export const apiPayment = createApi({
       transformResponse: (response: ApiListResponse<IPayment[]>) => {
         return response.data
       }
+    }),
+
+    getTransactions: builder.query<IListData<IPayment[]>, any>({
+      query: (params) => ({
+        url: `/payments/get-transactions`,
+        method: 'GET',
+        params: params
+      }),
+      providesTags: ['Payment'],
+      transformResponse: (response: any) => response.data
+    }),
+
+    getOrders: builder.query<IListData<IPayment[]>, any>({
+      query: (params) => ({
+        url: `/payments/get-orders`,
+        method: 'GET',
+        params: params
+      }),
+      providesTags: ['Payment'],
+      transformResponse: (response: any) => response.data
     })
   })
 })
@@ -152,5 +172,7 @@ export const {
   useGetPaymentsByCreatorIdQuery,
   useAcceptOrderMutation,
   useRejectOrderMutation,
-  useUpdateOrderStatusMutation
+  useUpdateOrderStatusMutation,
+  useGetTransactionsQuery,
+  useGetOrdersQuery
 } = apiPayment

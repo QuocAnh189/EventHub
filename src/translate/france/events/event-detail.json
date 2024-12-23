@@ -1,1 +1,55 @@
-{}
+{
+  "event": {
+    "categories": "Catégories",
+    "date_time": "Date et Heure",
+    "location": "Lieu"
+  },
+  "payment": {
+    "title": "Informations de Paiement",
+    "view_discount": "Voir la Réduction",
+    "free": "Gratuit",
+    "quantity": "Quantité",
+    "total_amount": "Montant Total",
+    "buy": "Acheter"
+  },
+  "apply_coupon": {
+    "title": "Appliquer un Coupon",
+    "apply": "Appliquer"
+  },
+  "checkout": {
+    "title": "Informations de Paiement",
+    "name_label": "Nom du Client",
+    "name_placeholder": "Entrez le Nom",
+    "email_label": "Email du Client",
+    "email_placeholder": "Entrez l'Email",
+    "phone_label": "Téléphone du Client",
+    "phone_placeholder": "Entrez le Téléphone",
+    "total_price": "Prix Total",
+    "discount": "Réduction",
+    "final_price": "Prix Final",
+    "submit": "Payer"
+  },
+  "information": {
+    "time": "Temps",
+    "location": "Lieu",
+    "happen": "Se produire",
+    "participant": "Participant",
+    "organization_by": "Organisé par",
+    "follow": "Suivre",
+    "unfollow": "Ne plus suivre",
+    "description": "Description",
+    "reasons_to_attend_the_event": "Raisons de participer à l'événement"
+  },
+  "conversation": {
+    "title": "Conversation",
+    "description_one": "Si vous avez des questions ou des problèmes concernant cet événement.",
+    "description_two": "Veuillez contacter l'organisateur pour plus d'informations.",
+    "name_label": "Nom",
+    "email_label": "Email",
+    "event_label": "Événement",
+    "start_chat": "Commencer la discussion"
+  },
+  "related": {
+    "title": "Événements associés"
+  }
+}

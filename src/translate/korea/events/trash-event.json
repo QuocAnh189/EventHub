@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "title": "휴지통 이벤트"
+  },
+  "restore": "복원",
+  "search": "검색 ...",
+  "view_events": "이벤트"
+}

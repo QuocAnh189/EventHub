@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "介绍",
+    "manage": "管理",
+    "overview": "概览",
+    "feedback": "反馈",
+    "contact": "联系我们",
+    "login": "登录",
+    "register": "注册",
+    "get_started": "开始"
+  },
+  "intro": {
+    "text_one": "每个活动都在这里",
+    "text_two": "连接时刻",
+    "text_three": "- 简单高效",
+    "text_four": "在每一个共享的精彩时刻中团结人们、激情和目标",
+    "try_now": "立即尝试"
+  },
+  "manage": {
+    "project_management": "项目管理"
+  },
+  "automatic": {
+    "select_my": "选择我的",
+    "event": "活动"
+  },
+  "feedback": {
+    "title": "超过",
+    "description": "2,500名会员的信赖"
+  },
+  "contact": {
+    "text_one": "邀请朋友",
+    "text_two": "通过 EventHub",
+    "text_three": "免费试用 14 天",
+    "text_four": "无需信用卡。",
+    "try_now": "立即尝试",
+    "email_placeholder": "输入您的电子邮件"
+  }
+}

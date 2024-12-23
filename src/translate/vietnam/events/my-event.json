@@ -1,20 +1,24 @@
 {
-  "header": { "title": "Sự kiện của tôi", "trash": "Thùng rác" },
-  "body": { "title": "Thêm sự kiện mới", "link_csv": "Tải xuống CSV" },
+  "header": { "title": "Sự kiện của tôi" },
+  "add_new": "Thêm sự kiện mới",
+  "export_csv": "Xuất file CSV",
+  "event_label": "Sự kiện",
   "management": {
     "label_event": "Sự kiện",
     "label_status": "Trạng thái",
     "label_category": "Thể loại",
     "label_price": "Giá",
-    "filter": "Lọc",
-    "clear": "Xóa",
-    "search_event": "Tìm kiếm sự kiện",
+    "search": "Tìm kiếm sự kiện",
     "view_events": "Đang xem",
     "select_action": "Chọn phương thức",
-    "select_all": "Chọn tất cả",
     "button_edit": "Chỉnh sửa",
     "button_restore": "Phục hồi",
     "button_trash": "Thùng rác",
-    "button_delete": "Xóa"
+    "button_delete": "Xóa",
+    "apply_coupons": "Áp dụng giảm giá"
+  },
+  "apply_coupon": {
+    "title": "Áp dụng giảm giá",
+    "apply": "Áp dụng"
   }
 }

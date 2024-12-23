@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "Mi Boleto"
+  },
+  "search": "Buscar...",
+  "card": {
+    "ticket_no": "Número de boleto",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "ticket_type": "Tipo de boleto",
+    "status": "Estado"
+  }
+}

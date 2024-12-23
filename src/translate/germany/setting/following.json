@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Folgen"
+  },
+  "my_following": "Meine Abonnements",
+  "search": "Suche ...",
+  "action": {
+    "view_profile": "Profil ansehen",
+    "unfollow_profile": "Entfolgen"
+  }
+}

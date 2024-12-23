@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "title": "Обзор доходов"
+  },
+  "sales_period": "Период продаж",
+  "sales_volume": "Объем продаж",
+  "revenue": "Доход",
+  "expense": "Расходы",
+  "profit": "Прибыль",
+  "order": "Заказ",
+  "profit_performance": "Показатель прибыли",
+  "conversion_rate": {
+    "title": "Коэффициент конверсии",
+    "regular_customers": "Постоянные клиенты",
+    "new_customers": "Новые клиенты",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "Поделиться",
+      "print": "Печать"
+    }
+  },
+  "average_referral_rate": {
+    "title": "Средний коэффициент рекомендаций"
+  },
+  "total": {
+    "revenue": "Общий доход",
+    "expense": "Общие расходы",
+    "profit": "Общая прибыль"
+  }
+}

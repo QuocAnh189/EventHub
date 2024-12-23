@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "Configuración"
+  },
+  "profile pannel": {
+    "logout": "Cerrar sesión",
+    "notifications": "Notificaciones",
+    "messages": "Mensajes",
+    "number_of_events": "Número de eventos",
+    "follwing": "Siguiendo",
+    "follower": "Seguidores"
+  },
+  "profile_detail": {
+    "title": "Mi perfil",
+    "user_name": "Nombre de usuario",
+    "gender": "Género",
+    "full_name": "Nombre completo",
+    "dob": "Fecha de nacimiento",
+    "email": "Correo electrónico",
+    "status": "Estado",
+    "password": "Contraseña",
+    "role": "Rol",
+    "phone_number": "Número de teléfono",
+    "bio": "Biografía",
+    "change_password": "Cambiar contraseña",
+    "update_information": "Actualizar información",
+    "admin_panel_tools": "Herramientas del panel de administración",
+    "connected_apps": "Aplicaciones conectadas",
+    "payment_methods": "Métodos de pago",
+    "appearance": "Apariencia",
+    "security_assets": "Recursos de seguridad",
+    "configuration_settings": "Configuraciones de configuración",
+    "view_mode": "Modo de vista",
+    "sidebar_position": "Posición de la barra lateral"
+  }
+}

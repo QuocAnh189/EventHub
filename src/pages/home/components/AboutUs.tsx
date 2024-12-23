@@ -5,10 +5,10 @@ const AboutUs = ({ t }: any) => {
   return (
     <div className='container pt-14 text-header'>
       <div className='py-10'>
-        <h1 className='h1 my-8 border-l-8 py-2 pl-2  text-primary'>{t('about us.title')}</h1>
-        <p className='text-justify'>{t('about us.description_one')}</p>
+        <h1 className='h1 my-8 border-l-8 py-2 pl-2  text-primary'>{t('about_us.title')}</h1>
+        <h6 className='text-justify'>{t('about_us.description_one')}</h6>
         <br />
-        <p className='text-justify'>{t('about us.description_two')}</p>
+        <h6 className='text-justify'>{t('about_us.description_two')}</h6>
       </div>
       <div className='flex w-full items-center justify-center'>
         <iframe

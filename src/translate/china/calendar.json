@@ -1,1 +1,5 @@
-{}
+{
+  "header": { "title": "日历" },
+  "body": { "events": "事件" },
+  "status": { "closed": "已结束", "happening": "进行中", "upcoming": "即将开始" }
+}

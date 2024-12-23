@@ -1,1 +1,82 @@
-{}
+{
+  "header": { "title_create": "Veranstaltung erstellen", "update_create": "Veranstaltung aktualisieren" },
+  "option_one": { "title": "Veranstaltung erstellen", "description": "Sie müssen die Veranstaltung manuell erstellen" },
+  "option_two": {
+    "title": "Veranstaltung importieren",
+    "description": "Haben Sie bereits eine Veranstaltung?",
+    "example_file": "Beispieldatei hier"
+  },
+  "step": {
+    "information": "Information",
+    "banner": "Banner",
+    "ticket": "Ticket",
+    "review": "Bewertung"
+  },
+  "information": {
+    "event": {
+      "name": "Name",
+      "name_placeholder": "Geben Sie den Namen der Veranstaltung ein",
+      "category": "Kategorie",
+      "category_placeholder": "Wählen Sie die Kategorie der Veranstaltung",
+      "type": {
+        "name": "Veranstaltungsstil",
+        "single_event": "Einzelne Veranstaltung",
+        "recurring_event": "Wiederkehrende Veranstaltung"
+      }
+    },
+    "datetime": {
+      "title": "Datum & Uhrzeit",
+      "session": { "title": "Sitzung", "start_time": "Startzeit", "end_time": "Endzeit" }
+    },
+    "location": {
+      "title": "Wählen Sie den Veranstaltungsort",
+      "label": "Wo wird Ihre Veranstaltung stattfinden",
+      "placeholder": "Geben Sie den Namen des Veranstaltungsorts ein",
+      "path_placeholder": "Geben Sie den Pfad des Standorts ein (Google Maps)"
+    },
+    "description": {
+      "title": "Zusätzliche Informationen",
+      "label": "Veranstaltungsbeschreibung",
+      "placeholder": "Geben Sie die Beschreibung der Veranstaltung ein"
+    },
+    "reason": {
+      "title": "Grund",
+      "label": "Grund der Veranstaltung",
+      "placeholder": "Geben Sie den Grund ein"
+    }
+  },
+  "banner": {
+    "cover_image": "Titelbild",
+    "subs_image": "Zusatzbild"
+  },
+  "ticket": {
+    "title": "Welche Art von Veranstaltung veranstalten Sie?",
+    "option_one": { "label": "BEZAHLTE Veranstaltung", "description": "Meine Veranstaltung umfasst Eintrittskarten" },
+    "option_two": {
+      "label": "KOSTENLOSE Veranstaltung",
+      "description": "Ich veranstalte eine kostenlose Veranstaltung"
+    },
+    "ticket_title": "Welches Ticket verkaufen Sie?",
+    "ticket_name": "Ticketname",
+    "ticket_name_placeholder": "Geben Sie den Namen ein",
+    "ticket_quantity": "Ticketanzahl",
+    "ticket_price": "Ticketpreis"
+  },
+  "review": {
+    "public": "Öffentlich",
+    "date_time_label": "Datum und Uhrzeit",
+    "ticket_information": "Ticketinformationen",
+    "ticket_type": "Tickettyp",
+    "free": "Kostenlos",
+    "fee": "Gebühr",
+    "ticket_sub": "Ticket",
+    "location_title": "Ort",
+    "organization_title": "Veranstalter",
+    "description_title": "Veranstaltungsbeschreibung",
+    "reasons_event": "Gründe, an der Veranstaltung teilzunehmen",
+    "button_create": "Veranstaltung erstellen",
+    "button_update": "Veranstaltung aktualisieren"
+  },
+  "button_back": "Zurück",
+  "button_continue": "Weiter"
+}

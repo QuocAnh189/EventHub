@@ -1,1 +1,36 @@
-{}
+{
+  "header": {
+    "title": "Mis Favoritos"
+  },
+  "search": "Buscar evento",
+  "item": {
+    "category": "Categoría",
+    "date": "Fecha"
+  },
+  "category": {
+    "label": "Categoría",
+    "Gaming": "Juegos",
+    "Food & Beverage": "Comida y Bebidas",
+    "Education": "Educación",
+    "Home & Garden": "Hogar y Jardín",
+    "Parenting": "Paternidad",
+    "Fashion": "Moda",
+    "Travel": "Viajes",
+    "Finance & Investment": "Finanzas e Inversiones",
+    "Movies & TV": "Películas y TV",
+    "Books & Literature": "Libros y Literatura",
+    "Photography": "Fotografía",
+    "Sport": "Deportes",
+    "Music": "Música",
+    "Pet & Animals": "Mascotas y Animales",
+    "Health & Fitness": "Salud y Bienestar",
+    "Art & Design": "Arte y Diseño",
+    "Science": "Ciencia",
+    "Technology": "Tecnología",
+    "Personal Development": "Desarrollo Personal"
+  },
+  "action": {
+    "view": "Ver",
+    "remove": "Eliminar"
+  }
+}

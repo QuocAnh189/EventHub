@@ -25,12 +25,16 @@ import { IExpense, ISubExpense } from '@interfaces/contents/expense.interface'
 import { useCreateSubExpenseMutation, useDeleteExpenseMutation } from '@redux/apis/expense.api'
 import { ICreatedSubExpensePayload } from '@dtos/expense.dto'
 
+//i18n
+import { withTranslation } from 'react-i18next'
+
 interface IProps {
+  t: any
   index: number
   expense: IExpense
 }
 const ColumnExpense = (props: IProps) => {
-  const { index, expense } = props
+  const { t, index, expense } = props
 
   const [name, setName] = useState<string>('')
   const [price, setPrice] = useState<number>(0)
@@ -41,9 +45,6 @@ const ColumnExpense = (props: IProps) => {
 
   const [DeleteExpense, { isLoading: loadingDelete }] = useDeleteExpenseMutation()
   const [CreateExpense, { isLoading: loadingCreate }] = useCreateSubExpenseMutation()
-
-  console.log('render')
-  console.log(expense.subExpenses)
 
   const handleDeleteExpense = async () => {
     try {
@@ -77,11 +78,7 @@ const ColumnExpense = (props: IProps) => {
   }
 
   return (
-    <Spring
-      type='fade-up'
-      index={index}
-      className='min-w-[400px] h-auto bg-[#ebecf0] ml-2 rounded-6 h-fit-content rounded-xl'
-    >
+    <Spring type='fade-up' index={index} className='min-w-[400px] h-auto bg-[#ebecf0] ml-2 rounded-6 rounded-xl'>
       <div className='flex h-[50px] p-4 items-center justify-between'>
         <div className='flex items-center gap-2'>
           <h5 className='h5 text-primary'>{expense.title}</h5>
@@ -117,7 +114,7 @@ const ColumnExpense = (props: IProps) => {
               onClick={toggleOpenNewCardForm}
             >
               <AddCardIcon />
-              Add new Sub Expense
+              {t('add_new_sub_expense')}
             </button>
           </div>
         ) : (
@@ -127,7 +124,7 @@ const ColumnExpense = (props: IProps) => {
               id='name'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder='Enter name'
+              placeholder={t('sub_expense_placeholder')}
             />
             <input
               className={classNames('field-input', { 'field-input--error': false })}
@@ -162,4 +159,4 @@ const ColumnExpense = (props: IProps) => {
   )
 }
 
-export default ColumnExpense
+export default withTranslation('my_expense_detail')(ColumnExpense)

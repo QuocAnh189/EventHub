@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "设置"
+  },
+  "profile pannel": {
+    "logout": "登出",
+    "notifications": "通知",
+    "messages": "消息",
+    "number_of_events": "事件数量",
+    "follwing": "关注",
+    "follower": "粉丝"
+  },
+  "profile_detail": {
+    "title": "我的个人资料",
+    "user_name": "用户名",
+    "gender": "性别",
+    "full_name": "全名",
+    "dob": "出生日期",
+    "email": "电子邮件",
+    "status": "状态",
+    "password": "密码",
+    "role": "角色",
+    "phone_number": "电话号码",
+    "bio": "简介",
+    "change_password": "更改密码",
+    "update_information": "更新信息",
+    "admin_panel_tools": "管理员面板工具",
+    "connected_apps": "已连接的应用",
+    "payment_methods": "支付方式",
+    "appearance": "外观",
+    "security_assets": "安全资产",
+    "configuration_settings": "配置设置",
+    "view_mode": "查看模式",
+    "sidebar_position": "侧边栏位置"
+  }
+}

@@ -15,6 +15,7 @@ const StyledTable = styled(Table)`
 
     &:last-child {
       text-align: right;
+      text-align: center !important;
     }
   }
 
@@ -28,6 +29,7 @@ const StyledTable = styled(Table)`
 
   .ant-table-cell {
     border-color: var(--input-border) !important;
+    text-align: center !important;
   }
 
   // large desktop

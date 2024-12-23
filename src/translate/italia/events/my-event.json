@@ -1,1 +1,20 @@
-{}
+{
+  "header": { "title": "Il mio evento" },
+  "add_new": "Aggiungi un nuovo evento",
+  "export_csv": "Esporta CSV",
+  "event_label": "Evento",
+  "management": {
+    "label_event": "Eventi",
+    "label_status": "Stato",
+    "label_category": "Categoria",
+    "label_price": "Prezzo",
+    "search": "Cerca evento",
+    "view_events": "Visualizza eventi",
+    "select_action": "Seleziona azione",
+    "button_edit": "Modifica",
+    "button_restore": "Ripristina",
+    "button_trash": "Cestino",
+    "button_delete": "Elimina",
+    "apply_coupons": "Applica coupon"
+  }
+}

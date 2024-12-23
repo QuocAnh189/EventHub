@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "title": "Trash Event"
+  },
+  "restore": "Restore",
+  "search": "Search ...",
+  "view_events": "Events"
+}

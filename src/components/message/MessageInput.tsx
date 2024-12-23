@@ -22,7 +22,10 @@ import EmojiPicker from 'emoji-picker-react'
 //util
 import { isAudio, isImage } from '@utils/helpers'
 
-const MessageInput = ({ conversation = null }: any) => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const MessageInput = ({ conversation = null, t }: any) => {
   const [newMessage, setNewMessage] = useState('')
   const [inputErrorMessage, setInputErrorMessage] = useState('')
   const [messageSending, setMessageSending] = useState(false)
@@ -30,7 +33,7 @@ const MessageInput = ({ conversation = null }: any) => {
   const [uploadProgress, setUploadProgress] = useState(0)
 
   const onFileChange = () => {
-    console.log(conversation)
+    console.log(conversation, messageSending)
     setInputErrorMessage('')
     setMessageSending(false)
     setUploadProgress(0)
@@ -69,14 +72,14 @@ const MessageInput = ({ conversation = null }: any) => {
       <div className='order-2 px-2 xs:p-0 min-w-[220px] basic-full xs:basic-0 xs:order-2 flex-1 relative'>
         <div className='flex h-full'>
           <NewMessageInput
+            placeholder={t('box_message.right.placeholder')}
             value={newMessage}
             onSend={onSendClick}
             onChange={(e: any) => setNewMessage(e.target.value)}
           />
           <button onClick={onSendClick} className='btn btn-info rounded-l-none'>
-            {messageSending && <span className='loading loading-spinner loading-xs'>Send</span>}
             <PaperAirplaneIcon className='w-4 h-4' />
-            <span className='hidden sm:inline'>Send</span>
+            <span className='hidden sm:inline'>{t('box_message.right.send')}</span>
           </button>
         </div>
         {!!uploadProgress && (
@@ -127,4 +130,4 @@ const MessageInput = ({ conversation = null }: any) => {
   )
 }
 
-export default MessageInput
+export default withTranslation('common')(MessageInput)

@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "팔로워"
+  },
+  "my_follower": "내 팔로워",
+  "search": "검색 ...",
+  "action": {
+    "view_profile": "프로필 보기"
+  }
+}

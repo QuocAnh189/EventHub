@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "設定"
+  },
+  "profile pannel": {
+    "logout": "ログアウト",
+    "notifications": "通知",
+    "messages": "メッセージ",
+    "number_of_events": "イベントの数",
+    "follwing": "フォロー中",
+    "follower": "フォロワー"
+  },
+  "profile_detail": {
+    "title": "私のプロフィール",
+    "user_name": "ユーザー名",
+    "gender": "性別",
+    "full_name": "フルネーム",
+    "dob": "生年月日",
+    "email": "メールアドレス",
+    "status": "ステータス",
+    "password": "パスワード",
+    "role": "役割",
+    "phone_number": "電話番号",
+    "bio": "バイオ",
+    "change_password": "パスワードを変更する",
+    "update_information": "情報を更新する",
+    "admin_panel_tools": "管理パネルツール",
+    "connected_apps": "接続されたアプリ",
+    "payment_methods": "支払い方法",
+    "appearance": "外観",
+    "security_assets": "セキュリティ資産",
+    "configuration_settings": "構成設定",
+    "view_mode": "表示モード",
+    "sidebar_position": "サイドバーの位置"
+  }
+}

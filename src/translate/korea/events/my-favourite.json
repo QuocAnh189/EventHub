@@ -1,1 +1,36 @@
-{}
+{
+  "header": {
+    "title": "내 즐겨찾기"
+  },
+  "search": "이벤트 검색",
+  "item": {
+    "category": "카테고리",
+    "date": "날짜"
+  },
+  "category": {
+    "label": "카테고리",
+    "Gaming": "게임",
+    "Food & Beverage": "음식 및 음료",
+    "Education": "교육",
+    "Home & Garden": "집과 정원",
+    "Parenting": "육아",
+    "Fashion": "패션",
+    "Travel": "여행",
+    "Finance & Investment": "금융 및 투자",
+    "Movies & TV": "영화 및 TV",
+    "Books & Literature": "책과 문학",
+    "Photography": "사진",
+    "Sport": "스포츠",
+    "Music": "음악",
+    "Pet & Animals": "반려동물과 동물",
+    "Health & Fitness": "건강과 피트니스",
+    "Art & Design": "예술과 디자인",
+    "Science": "과학",
+    "Technology": "기술",
+    "Personal Development": "개인 개발"
+  },
+  "action": {
+    "view": "보기",
+    "remove": "제거"
+  }
+}

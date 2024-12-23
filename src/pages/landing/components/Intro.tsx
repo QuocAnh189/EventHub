@@ -9,7 +9,10 @@ import logoImg from '@assets/images/common/logo.png'
 //animation
 import { motion } from 'framer-motion'
 
-const Intro = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const Intro = ({ t }: any) => {
   const navigate = useNavigate()
 
   return (
@@ -35,7 +38,7 @@ const Intro = () => {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className='mt-[-0.1em] text-[2em] font-bold leading-[1.1] tracking-[-0.035em] mdl:text-[4em] xl:text-[6.25em]'
               >
-                Where Every Event
+                {t('intro.text_one')}
               </motion.div>
               <motion.div
                 initial={{ y: 10, opacity: 0 }}
@@ -56,7 +59,7 @@ const Intro = () => {
               transition={{ duration: 0.5, delay: 0.9 }}
               className='mt-[-0.1em] flex items-center justify-center gap-x-10 self-center text-[2em] font-bold mdl:text-[4em] xl:text-[6.25em]'
             >
-              Connecting Moments
+              {t('intro.text_two')}
             </motion.div>
             <motion.div
               initial={{ y: 10, opacity: 0 }}
@@ -65,12 +68,10 @@ const Intro = () => {
               className='flex items-center justify-center'
             >
               <div className='mt-[-0.1em] block text-center text-[2em] font-bold leading-[1.1] tracking-[-0.035em] text-primary-500 mdl:text-[4em] xl:text-[6.25em]'>
-                - easily and efficiently
+                {t('intro.text_three')}
               </div>
               <div className='border-l-solid -mb-6 ml-[1.13em] block border-l-[1px] border-l-textGray py-[0.63em] pl-[1.13em] mdl:max-w-[12em]'>
-                <div className='my-0 block text-[1em] font-semibold leading-[1.4]'>
-                  Uniting People, Passion, and Purpose in Every Eventful Moment Shared
-                </div>
+                <div className='my-0 block text-[1em] font-semibold leading-[1.4]'>{t('intro.text_four')}</div>
               </div>
             </motion.div>
 
@@ -92,7 +93,7 @@ const Intro = () => {
                     <img loading='lazy' src={logoImg} className='h-3/5 w-3/5 max-w-full' alt='' />
                   </div>
                 </div>
-                <div className='my-0 block text-[1.13em] leading-[1.45]'>Try now</div>
+                <div className='my-0 block text-[1.13em] leading-[1.45]'>{t('intro.try_now')}</div>
               </button>
             </motion.div>
           </div>
@@ -104,4 +105,4 @@ const Intro = () => {
   )
 }
 
-export default Intro
+export default withTranslation('landing')(Intro)

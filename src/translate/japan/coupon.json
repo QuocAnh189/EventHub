@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "クーポン"
+  },
+  "add_new_coupon": "新しいクーポンを追加",
+  "search": "検索...",
+  "modal": {
+    "create_coupon": "クーポンを作成",
+    "update_coupon": "クーポンを更新",
+    "name_label": "名前",
+    "name_placeholder": "名前を入力",
+    "description_label": "説明",
+    "description_placeholder": "説明を入力",
+    "min_price_label": "最低価格",
+    "min_quantity_label": "最小数量",
+    "percent_label": "パーセンテージ",
+    "expire_label": "有効期限"
+  },
+  "card": {
+    "view_edit": "表示 編集",
+    "delete": "削除"
+  }
+}

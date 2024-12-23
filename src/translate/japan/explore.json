@@ -1,1 +1,45 @@
-{}
+{
+  "header": {
+    "title": "探索"
+  },
+  "sort": "日付順で並べる",
+  "asc": "昇順",
+  "desc": "降順",
+  "search": "検索 ...",
+  "sidebar": {
+    "rate": {
+      "label": "評価",
+      "star": "星"
+    },
+    "status": {
+      "label": "ステータス",
+      "all": "すべて",
+      "upcoming": "今後のイベント",
+      "opening": "オープン中",
+      "closed": "終了"
+    },
+    "category": {
+      "label": "カテゴリー",
+      "Business": "ビジネス",
+      "Gaming": "ゲーム",
+      "Food & Beverage": "食品 & 飲料",
+      "Education": "教育",
+      "Home & Garden": "ホーム & ガーデン",
+      "Parenting": "子育て",
+      "Fashion": "ファッション",
+      "Travel": "旅行",
+      "Finance & Investment": "金融 & 投資",
+      "Movies & TV": "映画 & テレビ",
+      "Books & Literature": "書籍 & 文学",
+      "Photography": "写真",
+      "Sport": "スポーツ",
+      "Music": "音楽",
+      "Pet & Animals": "ペット & 動物",
+      "Health & Fitness": "健康 & フィットネス",
+      "Art & Design": "アート & デザイン",
+      "Science": "科学",
+      "Technology": "テクノロジー",
+      "Personal Development": "個人開発"
+    }
+  }
+}

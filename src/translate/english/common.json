@@ -1,57 +1,63 @@
 {
   "header": {
-    "search": "Search..."
+    "search": "Search...",
+    "signin_btn": "Sign In"
   },
-  "not_data": {
-    "text": "Sorry, data is not available or data has not been updated"
-  },
-  "signin_btn": "Sign In",
   "notification": {
     "title": "Notifications",
-    "all": "All",
     "follow": "Following",
     "order": "Orders",
     "follow_text": "follow you",
     "order_text": "order your event",
-    "hours ago": "hours ago",
-    "confirm_btn": "Confirm",
-    "decline_btn": "Decline"
-  },
-  "message": {
-    "title": "Messages",
-    "all": "All",
-    "latest": "Latest",
-    "archived": "Archived",
-    "reply_btn": "Reply",
-    "mark_btn": "Mark as read"
+    "view_profile": "View Profile",
+    "view_order": "View Order",
+    "load_more": "Load More"
   },
   "invitation": {
     "title": "Invitations",
-    "view_btn": "View",
-    "mark_btn": "Mark as read"
+    "favourite_text": "Invited me to favourite",
+    "view_event": "View Event",
+    "load_more": "Load More"
+  },
+  "box_message": {
+    "left": {
+      "title": "My Conversation",
+      "placeholder": "Search...",
+      "event": "Event",
+      "user": "User"
+    },
+    "right": {
+      "organizer": "Organizer",
+      "user": "User",
+      "login_to_chat": "Please login to chat",
+      "select_conversation": "Please select conversation to see messages",
+      "no_message": "No message found",
+      "send": "Send",
+      "placeholder": "Type a message..."
+    }
   },
   "category": {
     "label": "Category",
-    "Visual Arts": "Visual Arts",
-    "Sports & Active Life": "Sports & Active Life",
-    "Politics": "Politics",
-    "Performing Arts": "Performing Arts",
-    "Other": "Other",
-    "Nightlife": "Nightlife",
-    "Music": "Music",
-    "Lectures & Books": "Lectures & Books",
-    "Kids & Family": "Kids & Family",
-    "Holidays": "Holidays",
-    "Food & Drink": "Food & Drink",
-    "Film": "Film",
-    "Festivals & Fairs": "Festivals & Fairs",
+    "Business": "Business",
+    "Gaming": "Gaming",
+    "Food & Beverage": "Food & Beverage",
+    "Education": "Education",
+    "Home & Garden": "Home & Garden",
+    "Parenting": "Parenting",
     "Fashion": "Fashion",
-    "Concerts": "Concerts",
-    "Conferences": "Conferences",
-    "Community": "Community",
-    "Charities": "Charities",
-    "Anniversary": "Anniversary",
-    "Academic": "Academic"
+    "Travel": "Travel",
+    "Finance & Investment": "Finance & Investment",
+    "Movies & TV": "Movies & TV",
+    "Books & Literature": "Books & Literature",
+    "Photography": "Photography",
+    "Sport": "Sport",
+    "Music": "Music",
+    "Pet & Animals": "Pet & Animals",
+    "Health & Fitness": "Health & Fitness",
+    "Art & Design": "Art & Design",
+    "Science": "Science",
+    "Technology": "Technology",
+    "Personal Development": "Personal Development"
   },
   "filter": {
     "All": "All",
@@ -97,38 +103,22 @@
       }
     }
   },
-  "box_message": {
-    "left": {
-      "placeholder": "Search...",
-      "my_event": "My Event",
-      "chat_event": "Chat Event"
-    },
-    "right": {
-      "to": "To",
-      "first": "Send a message to start the conversation",
-      "nochat_text_one": "Welcome",
-      "nochat_text_two": "Select a chat to start messaging",
-      "nologin_text_one": "Hello guy",
-      "nologin_text_two": "Login to chat",
-      "placeholder": "Send a message"
-    }
-  },
   "routes": {
     "home": "Home",
     "dashboard": {
       "parent": "Dashboard",
       "overview": "Overview",
-      "event analysis": "Event Analysis",
+      "event_analysis": "Event Analysis",
       "customer": "Customer",
-      "payment": "Payment"
+      "transaction": "Transaction"
     },
     "event": {
       "parent": "Event",
-      "my favourite": "My Favourite",
-      "my events": "My Events",
-      "trash events": "Trash Events",
-      "create event": "Create Event",
-      "my expense": "My Expense"
+      "my_favourite": "My Favourite",
+      "my_events": "My Events",
+      "trash_events": "Trash Events",
+      "create_event": "Create Event",
+      "my_expense": "My Expense"
     },
     "coupon": "Coupon",
     "ticket": "My Ticket",
@@ -140,7 +130,6 @@
       "profile": "Profile",
       "follower": "Follower",
       "following": "Following"
-    },
-    "permissions": "Permission"
+    }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "Meine Ausgabedetails"
+  },
+  "add_new_expense": "Neue Ausgabe hinzufügen",
+  "expense_placeholder": "Geben Sie den Ausgabennamen ein",
+  "add_new_sub_expense": "Neue Unterausgabe hinzufügen",
+  "sub_expense_placeholder": "Geben Sie den Namen ein"
+}

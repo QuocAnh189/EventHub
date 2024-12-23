@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "My Ticket"
+  },
+  "search": "Search...",
+  "card": {
+    "ticket_no": "Ticket No",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "ticket_type": "Ticket Type",
+    "status": "Status"
+  }
+}

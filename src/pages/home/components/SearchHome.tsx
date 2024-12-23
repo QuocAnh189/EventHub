@@ -73,33 +73,33 @@ const SearchHome = ({ t }: any) => {
       </div>
       <div className='relative w-full h-[90%] z-[1000]'>
         <div className='sml:w-[500px] h-auto text-white px-[30px] pt-[30px] pb-[100px]'>
-          <p className='sml:text-[2em] text-white sml:leading-10 font-extrabold'>{t('search home.title')}</p>
-          <p className='text-white mt-2 font-medium sml:text-sm'>{t('search home.sub_title')}</p>
+          <p className='sml:text-[2em] text-white sml:leading-10 font-extrabold'>{t('search_home.title')}</p>
+          <p className='text-white mt-2 font-medium sml:text-sm'>{t('search_home.sub_title')}</p>
           <button
             className='btn btn-primary mt-6'
             onClick={() => {
               navigate('explore')
             }}
           >
-            {t('search home.explore')}
+            {t('search_home.explore')}
           </button>
         </div>
         <div className='trip_bx bg-primary-200 relative w-[95%] h-[340px] m-auto before:absolute before:w-full before:rounded-[10px] before:bg-input-border before:z-[-1] before:backdrop-blur-sm rounded-xl'>
           <div className='flex items-center flex-wrap pr-[10px] bg-body rounded-md shadow-md z-[1] absolute -top-10 left-0 lg:h-20'>
             <div className='h-full shadow-none px-4 py-2 space-y-1'>
-              <h4 className='text-sm m-0 font-bold text-header'>{t('search home.event')}</h4>
+              <h4 className='text-sm m-0 font-bold text-header'>{t('search_home.event')}</h4>
               <input
                 className={classNames('field-input text-header', { 'field-input--error': false })}
                 type='text'
-                placeholder={t('search home.event_placeholder')}
+                placeholder={t('search_home.event_placeholder')}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
             <div className='lg:w-[200px] h-full shadow-none px-4 py-2 space-y-1'>
-              <h4 className='text-[15px] m-0 font-bold text-header'>{t('search home.status')}</h4>
+              <h4 className='text-[15px] m-0 font-bold text-header'>{t('search_home.status')}</h4>
               <Select
-                placeholder={t('search home.All')}
+                placeholder={t('search_home.All')}
                 id='status'
                 options={EVENT_STATUS_OPTIONS || []}
                 onChange={(e: IOptionSelect) => {
@@ -108,9 +108,9 @@ const SearchHome = ({ t }: any) => {
               />
             </div>
             <div className='w-[300px] h-full shadow-none px-4 py-2 space-y-1'>
-              <h4 className='text-[15px] m-0 font-bold text-header'>{t('search home.category')}</h4>
+              <h4 className='text-[15px] m-0 font-bold text-header'>{t('search_home.category')}</h4>
               <Select
-                placeholder={t('search home.All')}
+                placeholder={t('search_home.All')}
                 id='category'
                 options={categoriesOptions}
                 onChange={(e: IOptionSelect) => {

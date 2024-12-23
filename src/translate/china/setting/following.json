@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "关注"
+  },
+  "my_following": "我的关注",
+  "search": "搜索 ...",
+  "action": {
+    "view_profile": "查看个人资料",
+    "unfollow_profile": "取消关注"
+  }
+}

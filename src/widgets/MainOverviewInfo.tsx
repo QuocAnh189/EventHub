@@ -32,12 +32,12 @@ const MainOverviewInfo = ({ t }: any) => {
       </div>
       <div className='flex flex-1 flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <h3 className='h3'>{t('main-overview.title')}</h3>
-          <p className='text-header'>{t('main-overview.description')}</p>
+          <h3 className='h3'>{t('main_overview.title')}</h3>
+          <p className='text-header'>{t('main_overview.description')}</p>
         </div>
         <div className='flex flex-col gap-6'>
           <div className='flex items-center gap-4'>
-            <h5 className='h5'>{t('main-overview.average-rate')}</h5>
+            <h5 className='h5'>{t('main_overview.average_rate')}</h5>
             <InfoBtn onClick={handleClick} />
           </div>
           <div className='flex-1 grid grid-cols-1 gap-6 md:grid-cols-2 lg:flex justify-between xl:max-w-[670px]'>
@@ -51,7 +51,7 @@ const MainOverviewInfo = ({ t }: any) => {
                   num={15412}
                   prefix='$'
                 />
-                <span className='block label-text mb-2 text-header'>{t('main-overview.revenue')}</span>
+                <span className='block label-text mb-2 text-header'>{t('main_overview.revenue')}</span>
                 <Trend value={45.21} />
               </div>
             </div>
@@ -65,7 +65,7 @@ const MainOverviewInfo = ({ t }: any) => {
                   num={53487}
                   prefix='$'
                 />
-                <span className='block label-text mb-2 text-header'>{t('main-overview.expense')}</span>
+                <span className='block label-text mb-2 text-header'>{t('main_overview.expense')}</span>
                 <Trend value={-12} />
               </div>
             </div>
@@ -78,7 +78,7 @@ const MainOverviewInfo = ({ t }: any) => {
                   className='block -mt-1 font-heading font-semibold leading-[1.1] text-header text-[26px] md:text-[32px]'
                   num={5412}
                 />
-                <span className='block label-text mb-2 text-header'>{t('main-overview.orders')}</span>
+                <span className='block label-text mb-2 text-header'>{t('main_overview.orders')}</span>
                 <Trend value={14.36} />
               </div>
             </div>
@@ -91,19 +91,19 @@ const MainOverviewInfo = ({ t }: any) => {
             <span className='icon-wrapper'>
               <i className='icon icon-chart-pie-solid' />
             </span>
-            {t('main-overview.view-profile')}
+            {t('main_overview.view-profile')}
           </NavLink>
           <button className='menu-btn subheading-2'>
             <span className='icon-wrapper'>
               <i className='icon icon-link-solid' />
             </span>
-            {t('main-overview.contact')}
+            {t('main_overview.contact')}
           </button>
           <button className='menu-btn subheading-2'>
             <span className='icon-wrapper'>
               <i className='icon icon-share-solid' />
             </span>
-            {t('main-overview.share')}
+            {t('main_overview.share')}
           </button>
         </div>
       </Submenu>

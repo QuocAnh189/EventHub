@@ -4,12 +4,16 @@ import { ITicketType } from '@interfaces/contents'
 import { Divider } from 'antd'
 import { QuantityButton } from './ButtonQuantity'
 
+//i18n
+import { withTranslation } from 'react-i18next'
+
 interface IProps {
+  t: any
   ticketType: ITicketType
 }
 
 const ItemTicketPayment = (props: IProps) => {
-  const { ticketType } = props
+  const { t, ticketType } = props
   return (
     <div>
       <div className='flex justify-between'>
@@ -17,15 +21,15 @@ const ItemTicketPayment = (props: IProps) => {
         {ticketType?.price && ticketType.price > 0 ? (
           <h6 className='h6 text-primary'>{`${ticketType.price}.000 VNĐ`}</h6>
         ) : (
-          <h6 className='h6 text-green-darker'>FREE</h6>
+          <h6 className='h6 text-green-darker'>{t('payment.free')}</h6>
         )}
       </div>
       <div className='flex items-center justify-between mt-4'>
-        <h6 className='font-bold text-black'>Quantity</h6>
+        <h6 className='font-bold text-black'>{t('payment.quantity')}</h6>
         <QuantityButton onDecrease={() => {}} onIncrease={() => {}} quantity={10} />
       </div>
       <div className='flex justify-between mt-4'>
-        <h6 className='font-bold text-black'>Total Amount</h6>
+        <h6 className='font-bold text-black'>{t('payment.total_amount')}</h6>
         <h6 className='font-bold text-black'>100.000 VND</h6>
       </div>
       <Divider type='horizontal' />
@@ -33,4 +37,4 @@ const ItemTicketPayment = (props: IProps) => {
   )
 }
 
-export default ItemTicketPayment
+export default withTranslation('event_detail')(ItemTicketPayment)

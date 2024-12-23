@@ -1,1 +1,21 @@
-{}
+{
+  "header": {
+    "title": "Bewertungen"
+  },
+  "search": "Suche...",
+  "middle": {
+    "review_score": "Bewertung",
+    "customers": "Kunden",
+    "total": "Gesamt",
+    "positive": "Positiv",
+    "negative": "Negativ"
+  },
+  "main": {
+    "title": "Neueste angenommene Bewertungen"
+  },
+  "modal": {
+    "date": "Datum",
+    "username": "Benutzername",
+    "rate": "Bewertung"
+  }
+}

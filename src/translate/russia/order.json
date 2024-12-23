@@ -1,1 +1,37 @@
-{}
+{
+  "header": {
+    "title": "Заказы"
+  },
+  "period": "Период",
+  "search": "Поиск...",
+  "middle": {
+    "box_one": {
+      "average_rate": "Средняя оценка",
+      "event_view": "Просмотры события",
+      "total_tickets": "Общее количество билетов"
+    },
+    "order": "Заказы",
+    "box_completed": {
+      "completed": "Завершено"
+    },
+    "box_confirmed": {
+      "confirmed": "Подтверждено"
+    },
+    "box_canceled": {
+      "canceled": "Отменено"
+    },
+    "box_refunded": {
+      "refunded": "Возвращено"
+    }
+  },
+  "table_header": {
+    "order": "Заказ",
+    "event": "Событие",
+    "ticket": "Билет",
+    "category": "Категория",
+    "payment": "Оплата",
+    "order_status": "Статус заказа",
+    "rate": "Оценка",
+    "actions": "Действия"
+  }
+}

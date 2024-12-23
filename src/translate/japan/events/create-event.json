@@ -1,1 +1,75 @@
-{}
+{
+  "header": { "title_create": "イベント作成", "update_create": "イベント更新" },
+  "option_one": { "title": "イベント作成", "description": "イベントを手動で作成する必要があります" },
+  "option_two": {
+    "title": "イベントインポート",
+    "description": "すでにイベントがありますか？",
+    "example_file": "例のファイルはこちら"
+  },
+  "step": {
+    "information": "情報",
+    "banner": "バナー",
+    "ticket": "チケット",
+    "review": "レビュー"
+  },
+  "information": {
+    "event": {
+      "name": "名前",
+      "name_placeholder": "イベントの名前を入力してください",
+      "category": "カテゴリー",
+      "category_placeholder": "イベントのカテゴリーを選択してください",
+      "type": { "name": "イベントスタイル", "single_event": "単一イベント", "recurring_event": "繰り返しイベント" }
+    },
+    "datetime": {
+      "title": "日付と時間",
+      "session": { "title": "セッション", "start_time": "開始時間", "end_time": "終了時間" }
+    },
+    "location": {
+      "title": "場所を選択",
+      "label": "イベントはどこで開催されますか",
+      "placeholder": "場所の名前を入力してください",
+      "path_placeholder": "場所のパスを入力してください (Google Map)"
+    },
+    "description": {
+      "title": "追加情報",
+      "label": "イベントの説明",
+      "placeholder": "イベントの説明を入力してください"
+    },
+    "reason": {
+      "title": "理由",
+      "label": "イベントの理由",
+      "placeholder": "理由を入力してください"
+    }
+  },
+  "banner": {
+    "cover_image": "カバー画像",
+    "subs_image": "サブ画像"
+  },
+  "ticket": {
+    "title": "どの種類のイベントを開催していますか？",
+    "option_one": { "label": "有料イベント", "description": "私のイベントは入場券を含みます" },
+    "option_two": { "label": "無料イベント", "description": "私は無料イベントを開催しています" },
+    "ticket_title": "どのチケットを販売していますか？",
+    "ticket_name": "チケット名",
+    "ticket_name_placeholder": "名前を入力",
+    "ticket_quantity": "チケットの数量",
+    "ticket_price": "チケットの価格"
+  },
+  "review": {
+    "public": "公開",
+    "date_time_label": "日時",
+    "ticket_information": "チケット情報",
+    "ticket_type": "チケットタイプ",
+    "free": "無料",
+    "fee": "料金",
+    "ticket_sub": "チケット",
+    "location_title": "場所",
+    "organization_title": "主催者",
+    "description_title": "イベント説明",
+    "reasons_event": "イベントに参加する理由",
+    "button_create": "イベント作成",
+    "button_update": "イベント更新"
+  },
+  "button_back": "戻る",
+  "button_continue": "続ける"
+}

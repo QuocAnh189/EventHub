@@ -1,1 +1,37 @@
-{}
+{
+  "header": {
+    "title": "주문"
+  },
+  "period": "기간",
+  "search": "검색...",
+  "middle": {
+    "box_one": {
+      "average_rate": "평균 평점",
+      "event_view": "이벤트 조회",
+      "total_tickets": "총 티켓"
+    },
+    "order": "주문",
+    "box_completed": {
+      "completed": "완료"
+    },
+    "box_confirmed": {
+      "confirmed": "확인됨"
+    },
+    "box_canceled": {
+      "canceled": "취소됨"
+    },
+    "box_refunded": {
+      "refunded": "환불됨"
+    }
+  },
+  "table_header": {
+    "order": "주문",
+    "event": "이벤트",
+    "ticket": "티켓",
+    "category": "카테고리",
+    "payment": "결제",
+    "order_status": "주문 상태",
+    "rate": "평점",
+    "actions": "조치"
+  }
+}

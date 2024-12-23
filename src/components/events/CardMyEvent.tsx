@@ -89,7 +89,7 @@ const CardMyEvent = (props: Props) => {
                 setModalCoupons(true)
               }}
             >
-              Apply Coupon
+              {t('management.apply_coupons')}
             </button>
           )}
           <div>

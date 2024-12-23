@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "Vé của tôi"
+  },
+  "search": "Tìm kiếm...",
+  "card": {
+    "ticket_no": "Mã vé",
+    "name": "Tên",
+    "email": "Địa chỉ email",
+    "phone": "Số điện thoại",
+    "ticket_type": "Loại vé",
+    "status": "Trạng thái"
+  }
+}

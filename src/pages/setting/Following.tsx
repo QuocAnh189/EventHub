@@ -15,7 +15,10 @@ import Loader from '@components/Loader'
 import { useGetFollowingByUserIdQuery } from '@redux/apis/user.api'
 import { useAppSelector } from '@hooks/useRedux'
 
-const Following = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const Following = ({ t }: any) => {
   const userId: string = useAppSelector((state) => state.persistedReducer.user.user.id)
 
   const [params, setParams] = useState({ page: 1, pageSize: 10, search: '' })
@@ -36,18 +39,18 @@ const Following = () => {
 
   return (
     <ProtectedLayout>
-      <PageHeader title='Followings' />
+      <PageHeader title={t('header.title')} />
       <Spring
         className='card flex flex-col gap-[30px] md:gap-12 md:row-start-2 md:col-span-2 md:!pb-[50px]
                 xl:row-start-1 xl:col-start-2 xl:col-span-1 mx-[200px]'
       >
         <div className='flex flex-col gap-5'>
           <div className='flex items-center justify-between'>
-            <h5>My Following</h5>
+            <h5>{t('my_following')}</h5>
             <input
-              className='field-input w-[300px] md:w-[400px]'
+              className='field-input w-[300px]'
               type='search'
-              placeholder='Search...'
+              placeholder={t('search')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -59,7 +62,14 @@ const Following = () => {
             <div className='grid gap-4 md:grid-cols-2 md:gap-5'>
               {data?.items &&
                 data?.items.map((item: any, index: number) => (
-                  <UserItem key={`follower-${index}`} index={index} user={item} following={true} />
+                  <UserItem
+                    key={`follower-${index}`}
+                    index={index}
+                    user={item}
+                    following={true}
+                    view_profile_text={t('action.view_profile')}
+                    un_follower_text={t('action.unfollow_profile')}
+                  />
                 ))}
             </div>
           )}
@@ -71,4 +81,4 @@ const Following = () => {
   )
 }
 
-export default Following
+export default withTranslation('following')(Following)

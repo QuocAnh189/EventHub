@@ -1,20 +1,21 @@
 {
   "header": {
-    "title": "Reviews"
+    "title": "Avis"
   },
+  "search": "Rechercher...",
   "middle": {
-    "review_score": "Review score",
-    "customers": "Customers",
+    "review_score": "Note de l'avis",
+    "customers": "Clients",
     "total": "Total",
-    "new": "New",
-    "regular": "Regular"
+    "positive": "Positif",
+    "negative": "Négatif"
   },
   "main": {
-    "title": "Latest Accepted Reviews"
+    "title": "Derniers avis acceptés"
   },
   "modal": {
     "date": "Date",
-    "username": "UserName",
-    "rate": "Rate"
+    "username": "Nom d'utilisateur",
+    "rate": "Note"
   }
 }

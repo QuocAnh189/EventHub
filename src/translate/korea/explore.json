@@ -1,1 +1,45 @@
-{}
+{
+  "header": {
+    "title": "탐색"
+  },
+  "sort": "날짜별 정렬",
+  "asc": "오름차순",
+  "desc": "내림차순",
+  "search": "검색 ...",
+  "sidebar": {
+    "rate": {
+      "label": "평점",
+      "star": "별"
+    },
+    "status": {
+      "label": "상태",
+      "all": "모두",
+      "upcoming": "다가오는",
+      "opening": "열기",
+      "closed": "닫힘"
+    },
+    "category": {
+      "label": "카테고리",
+      "Business": "비즈니스",
+      "Gaming": "게임",
+      "Food & Beverage": "음식 & 음료",
+      "Education": "교육",
+      "Home & Garden": "홈 & 가든",
+      "Parenting": "육아",
+      "Fashion": "패션",
+      "Travel": "여행",
+      "Finance & Investment": "금융 & 투자",
+      "Movies & TV": "영화 & TV",
+      "Books & Literature": "도서 & 문학",
+      "Photography": "사진",
+      "Sport": "스포츠",
+      "Music": "음악",
+      "Pet & Animals": "애완동물 & 동물",
+      "Health & Fitness": "건강 & 피트니스",
+      "Art & Design": "예술 & 디자인",
+      "Science": "과학",
+      "Technology": "기술",
+      "Personal Development": "개인 개발"
+    }
+  }
+}

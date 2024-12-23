@@ -1,6 +1,16 @@
+//hook
 import { useRef, useEffect } from 'react'
 
-const NewMessageInput = ({ value, onChange, onSend }: any) => {
+//i18n
+interface IProps {
+  placeholder: string
+  value: string
+  onChange: (e: any) => void
+  onSend: () => void
+}
+
+const NewMessageInput = (props: IProps) => {
+  const { placeholder, value, onChange, onSend } = props
   const input: any = useRef(null)
 
   const onInputKeyDown = (ev: any) => {
@@ -32,14 +42,11 @@ const NewMessageInput = ({ value, onChange, onSend }: any) => {
     <input
       ref={input}
       value={value}
-      // rows={1}
-      placeholder='Type a message'
+      placeholder={placeholder}
       onKeyDown={onInputKeyDown}
       onChange={(ev) => onChangeEvent(ev)}
       className='input w-full resize-r-none resize-none overflow-y-auto max-h-40 focus:outline-none'
-      name=''
-      id=''
-    ></input>
+    />
   )
 }
 

@@ -1,14 +1,18 @@
+//component
 import PageHeader from '@layouts/components/PageHeader'
 import ProtectedLayout from '@layouts/protected'
 import EventExpenseGrid from '@widgets/EventExpenseGrid'
 
-const MyExpense = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const MyExpense = ({ t }: any) => {
   return (
     <ProtectedLayout>
-      <PageHeader title='My Expense' />
-      <EventExpenseGrid search_label='Search Expense' />
+      <PageHeader title={t('header.title')} />
+      <EventExpenseGrid search_label={t('search')} />
     </ProtectedLayout>
   )
 }
 
-export default MyExpense
+export default withTranslation('my_expense')(MyExpense)

@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "Detalle de Mis Gastos"
+  },
+  "add_new_expense": "Agregar nuevo gasto",
+  "expense_placeholder": "Ingrese el nombre del gasto",
+  "add_new_sub_expense": "Agregar nuevo subgasto",
+  "sub_expense_placeholder": "Ingrese el nombre"
+}

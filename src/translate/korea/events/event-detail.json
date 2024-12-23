@@ -1,1 +1,55 @@
-{}
+{
+  "event": {
+    "categories": "카테고리",
+    "date_time": "날짜 및 시간",
+    "location": "위치"
+  },
+  "payment": {
+    "title": "결제 정보",
+    "view_discount": "할인 보기",
+    "free": "무료",
+    "quantity": "수량",
+    "total_amount": "총 금액",
+    "buy": "구매"
+  },
+  "apply_coupon": {
+    "title": "쿠폰 적용",
+    "apply": "적용"
+  },
+  "checkout": {
+    "title": "결제 정보",
+    "name_label": "고객 이름",
+    "name_placeholder": "이름 입력",
+    "email_label": "고객 이메일",
+    "email_placeholder": "이메일 입력",
+    "phone_label": "고객 전화",
+    "phone_placeholder": "전화 입력",
+    "total_price": "총 가격",
+    "discount": "할인",
+    "final_price": "최종 가격",
+    "submit": "결제"
+  },
+  "information": {
+    "time": "시간",
+    "location": "위치",
+    "happen": "발생",
+    "participant": "참가자",
+    "organization_by": "주최자",
+    "follow": "팔로우",
+    "unfollow": "팔로우 취소",
+    "description": "설명",
+    "reasons_to_attend_the_event": "이벤트에 참석할 이유"
+  },
+  "conversation": {
+    "title": "대화",
+    "description_one": "이 이벤트와 관련하여 질문이나 문제가 있으면",
+    "description_two": "자세한 내용은 주최자에게 문의하세요.",
+    "name_label": "이름",
+    "email_label": "이메일",
+    "event_label": "이벤트",
+    "start_chat": "채팅 시작"
+  },
+  "related": {
+    "title": "관련 이벤트"
+  }
+}

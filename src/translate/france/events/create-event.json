@@ -1,66 +1,79 @@
 {
-  "header": { "title_create": "Create Event", "update_create": "Update Event" },
-  "option_one": { "title": "Create Event", "description": "You will have to create the event one way handmade" },
+  "header": { "title_create": "Créer un événement", "update_create": "Mettre à jour l'événement" },
+  "option_one": { "title": "Créer un événement", "description": "Vous devrez créer l'événement manuellement" },
   "option_two": {
-    "title": "Import Event",
-    "description": "Do you already have an event?",
-    "example_file": "Example file here"
+    "title": "Importer un événement",
+    "description": "Avez-vous déjà un événement ?",
+    "example_file": "Exemple de fichier ici"
+  },
+  "step": {
+    "information": "Information",
+    "banner": "Bannière",
+    "ticket": "Billet",
+    "review": "Critique"
   },
   "information": {
-    "event_detail": {
-      "title": "Event Details",
-      "event_title": "Event Title",
-      "event_title_placeholder": "Enter the name of the events",
-      "event_category": "Event Category",
-      "event_category_placeholder": "Enter the name of the events",
-      "event_type": { "title": "Event Title", "label_one": "Single Event", "label_two": "Recurring Event" }
+    "event": {
+      "name": "Nom",
+      "name_placeholder": "Entrez le nom de l'événement",
+      "category": "Catégorie",
+      "category_placeholder": "Sélectionnez la catégorie de l'événement",
+      "type": {
+        "name": "Style de l'événement",
+        "single_event": "Événement unique",
+        "recurring_event": "Événement récurrent"
+      }
     },
-    "event_datetime": {
-      "title": "Date & Time",
-      "seesion": { "title": "Seesion", "label_one": "Start Date", "label_two": "End Date" }
+    "datetime": {
+      "title": "Date et heure",
+      "session": { "title": "Session", "start_time": "Heure de début", "end_time": "Heure de fin" }
     },
     "location": {
-      "title": "Choose Location",
-      "label": "Where will you event take place",
-      "placeholder": "Enter the name of location"
+      "title": "Choisir un lieu",
+      "label": "Où aura lieu votre événement",
+      "placeholder": "Entrez le nom du lieu",
+      "path_placeholder": "Entrez l'URL du lieu (Google Map)"
     },
     "description": {
-      "title": "Additional Information",
-      "label": "Event Description",
-      "placeholder": "Enter description of event"
+      "title": "Informations supplémentaires",
+      "label": "Description de l'événement",
+      "placeholder": "Entrez la description de l'événement"
     },
     "reason": {
-      "title": "Reason",
-      "label": "Event Reason",
-      "placeholder": "Reason"
+      "title": "Raison",
+      "label": "Raison de l'événement",
+      "placeholder": "Entrez la raison"
     }
   },
   "banner": {
-    "cover_image": "Cover Image",
-    "subs_image": "Subs Image"
+    "cover_image": "Image de couverture",
+    "subs_image": "Image supplémentaire"
   },
   "ticket": {
-    "title": "What type of event are you running ?",
-    "option_one": { "label": "PAID Event", "description": "My event require tickets for entry" },
-    "option_two": { "label": "FREE Event", "description": "I'm running free event" },
-    "ticket_title": "What ticket are you selling ?",
-    "ticket_name": "Ticket name",
-    "ticket_quantity": "Ticket quantity",
-    "ticket_price": "Ticket Price"
+    "title": "Quel type d'événement organisez-vous ?",
+    "option_one": { "label": "Événement PAYANT", "description": "Mon événement inclut des billets d'entrée" },
+    "option_two": { "label": "Événement GRATUIT", "description": "J'organise un événement gratuit" },
+    "ticket_title": "Quel billet vendez-vous ?",
+    "ticket_name": "Nom du billet",
+    "ticket_name_placeholder": "Entrez le nom",
+    "ticket_quantity": "Quantité de billets",
+    "ticket_price": "Prix du billet"
   },
   "review": {
     "public": "Public",
-    "datet_time_label": "Date and Time",
-    "ticket_information": "Ticket Information",
-    "ticket_type": "Ticket type",
-    "ticket_sub": "Ticket",
-    "location_title": "Location",
-    "organization_title": "Organization By",
-    "description_title": "Event Description",
-    "reasons_event": "Reasons to attend the event",
-    "button_create": "Create Event",
-    "button_update": "Update Event"
+    "date_time_label": "Date et heure",
+    "ticket_information": "Informations sur les billets",
+    "ticket_type": "Type de billet",
+    "free": "Gratuit",
+    "fee": "Frais",
+    "ticket_sub": "Billet",
+    "location_title": "Lieu",
+    "organization_title": "Organisé par",
+    "description_title": "Description de l'événement",
+    "reasons_event": "Raisons de participer à l'événement",
+    "button_create": "Créer un événement",
+    "button_update": "Mettre à jour l'événement"
   },
-  "button_back": "Go back",
-  "button_continue": "Continue"
+  "button_back": "Retour",
+  "button_continue": "Continuer"
 }

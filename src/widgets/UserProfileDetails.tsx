@@ -52,13 +52,13 @@ const UserProfileDetails = (props: Props) => {
                 xl:row-start-1 xl:col-start-2 xl:col-span-1'
     >
       <div className='flex flex-col gap-5'>
-        <h5>My Profile</h5>
+        <h5>{t('profile_detail.title')}</h5>
 
         <div className='grid gap-4 md:grid-cols-2 md:gap-5'>
           <div className='grid gap-4'>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='firstName'>
-                {t('profile detail.user_name')}
+                {t('profile_detail.user_name')}
               </label>
               <input
                 className={classNames('field-input text-header', { 'field-input--error': errors.userName })}
@@ -71,7 +71,7 @@ const UserProfileDetails = (props: Props) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='lastName'>
-                {t('profile detail.full_name')}
+                {t('profile_detail.full_name')}
               </label>
               <input
                 className={classNames('field-input text-header', { 'field-input--error': errors.fullName })}
@@ -85,7 +85,7 @@ const UserProfileDetails = (props: Props) => {
 
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='email'>
-                {t('profile detail.email')}
+                {t('profile_detail.email')}
               </label>
               <input
                 className={classNames('field-input text-header', { 'field-input--error': errors.email })}
@@ -98,7 +98,7 @@ const UserProfileDetails = (props: Props) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='lastName'>
-                {t('profile detail.password')}
+                {t('profile_detail.password')}
               </label>
               <input
                 className={classNames('field-input text-header', { 'field-input--error': errors.fullName })}
@@ -110,7 +110,7 @@ const UserProfileDetails = (props: Props) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='phone'>
-                {t('profile detail.phone_number')}
+                {t('profile_detail.phone_number')}
               </label>
               <Controller
                 name='phoneNumber'
@@ -130,7 +130,7 @@ const UserProfileDetails = (props: Props) => {
           <div className='grid gap-4'>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='city'>
-                {t('profile detail.gender')}
+                {t('profile_detail.gender')}
               </label>
               <Select
                 placeholder='Gender'
@@ -143,8 +143,8 @@ const UserProfileDetails = (props: Props) => {
               />
             </div>
             <div className='field-wrapper'>
-              <label className='field-label text-header' htmlFor='state'>
-                {t('profile detail.dob')}
+              <label className='field-label' htmlFor='state'>
+                {t('profile_detail.dob')}
               </label>
               <input
                 className='field-input text-header'
@@ -156,7 +156,7 @@ const UserProfileDetails = (props: Props) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='zip'>
-                {t('profile detail.status')}
+                {t('profile_detail.status')}
               </label>
               <input
                 readOnly
@@ -169,7 +169,7 @@ const UserProfileDetails = (props: Props) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='firstName'>
-                {t('profile detail.role')}
+                {t('profile_detail.role')}
               </label>
               <input
                 readOnly
@@ -182,7 +182,7 @@ const UserProfileDetails = (props: Props) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='address'>
-                {t('profile detail.bio')}
+                {t('profile_detail.bio')}
               </label>
               <input className='field-input text-header' type='text' id='Bio' placeholder='Bio' {...register('bio')} />
             </div>
@@ -190,16 +190,16 @@ const UserProfileDetails = (props: Props) => {
         </div>
         <div className='mt-2.5 flex justify-between'>
           <button onClick={() => setModalOpen(true)} className='text-btn' type='button'>
-            {t('profile detail.change_password')}
+            {t('profile_detail.change_password')}
           </button>
           <button disabled={isLoading} type='submit' className='btn btn-primary hover:bg-primary-400 w-[260px] mt-5'>
-            {isLoading ? <Loading /> : t('profile detail.update_information')}
+            {isLoading ? <Loading /> : t('profile_detail.update_information')}
           </button>
         </div>
         {width < 1920 && (
           <div className='mt-2.5 flex gap-2'>
             <label className='field-label' htmlFor='firstName'>
-              {t('profile detail.sidebar_position')}
+              {t('profile_detail.sidebar_position')}
             </label>
             <Select
               placeholder='Gender'
@@ -217,43 +217,43 @@ const UserProfileDetails = (props: Props) => {
         )}
       </div>
       <div>
-        <h5>{t('profile detail.admin_panel_tools')}</h5>
+        <h5>{t('profile_detail.admin_panel_tools')}</h5>
         <div className='grid gap-4 mt-5 md:grid-cols-2 md:gap-y-8 md:gap-x-[50px] md:mt-8 lg:grid-cols-3 lg:max-w-[780px]'>
           <NavLink className='tool-btn text-header' to='/connected-apps'>
             <span className='icon-wrapper'>
               <i className='icon icon-window-solid' />
             </span>
-            <span>{t('profile detail.connected_apps')}</span>
+            <span>{t('profile_detail.connected_apps')}</span>
           </NavLink>
           <NavLink className='tool-btn text-header' to='/payment-method'>
             <span className='icon-wrapper'>
               <i className='icon icon-money-check-dollar-pen-solid' style={{ fontSize: 16 }} />
             </span>
-            {t('profile detail.payment_methods')}
+            {t('profile_detail.payment_methods')}
           </NavLink>
           <NavLink className='tool-btn text-header' to='/appearance'>
             <span className='icon-wrapper'>
               <i className='icon icon-screwdriver-wrench-solid' />
             </span>
-            {t('profile detail.appearance')}
+            {t('profile_detail.appearance')}
           </NavLink>
           <NavLink className='tool-btn text-header' to='/security-assets'>
             <span className='icon-wrapper'>
               <i className='icon icon-shield-halved-solid' />
             </span>
-            {t('profile detail.security_assets')}
+            {t('profile_detail.security_assets')}
           </NavLink>
           <NavLink className='tool-btn text-header' to='/configuration-settings'>
             <span className='icon-wrapper'>
               <i className='icon icon-sliders-solid' />
             </span>
-            {t('profile detail.configuration_settings')}
+            {t('profile_detail.configuration_settings')}
           </NavLink>
           <button type='button' className='tool-btn text-header' aria-label='Change theme' onClick={toggleTheme}>
             <span className='icon-wrapper'>
               <i className={`icon icon-${theme === 'light' ? 'sun-bright' : 'moon'}-solid`} />
             </span>
-            {t('profile detail.view_mode')}
+            {t('profile_detail.view_mode')}
           </button>
         </div>
       </div>

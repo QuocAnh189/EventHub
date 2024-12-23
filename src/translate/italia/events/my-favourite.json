@@ -1,1 +1,36 @@
-{}
+{
+  "header": {
+    "title": "I miei preferiti"
+  },
+  "search": "Cerca evento",
+  "item": {
+    "category": "Categoria",
+    "date": "Data"
+  },
+  "category": {
+    "label": "Categoria",
+    "Gaming": "Giochi",
+    "Food & Beverage": "Cibo e bevande",
+    "Education": "Educazione",
+    "Home & Garden": "Casa e giardino",
+    "Parenting": "Genitorialità",
+    "Fashion": "Moda",
+    "Travel": "Viaggi",
+    "Finance & Investment": "Finanza e investimenti",
+    "Movies & TV": "Film e TV",
+    "Books & Literature": "Libri e letteratura",
+    "Photography": "Fotografia",
+    "Sport": "Sport",
+    "Music": "Musica",
+    "Pet & Animals": "Animali e animali domestici",
+    "Health & Fitness": "Salute e fitness",
+    "Art & Design": "Arte e design",
+    "Science": "Scienza",
+    "Technology": "Tecnologia",
+    "Personal Development": "Sviluppo personale"
+  },
+  "action": {
+    "view": "Visualizza",
+    "remove": "Rimuovere"
+  }
+}

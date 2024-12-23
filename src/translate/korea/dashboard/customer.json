@@ -1,1 +1,33 @@
-{}
+{
+  "header": {
+    "title": "고객"
+  },
+  "all": "모두",
+  "new": "새로운",
+  "regular": "정기적인",
+  "conversion_rate": {
+    "title": "전환율",
+    "year": "연도",
+    "customers": "고객",
+    "orders": "주문",
+    "revenue": "수익"
+  },
+  "customer_retention_rate": {
+    "title": "고객 유지율",
+    "total_customer": "총 고객 수",
+    "in": "에",
+    "description": "CRR을 계산하려면 기간 종료 시 총 고객 수에서 신규 고객 수를 빼고, 기간 시작 시 고객 수로 나눈 후 100을 곱합니다. 고객을 유지하는 것이 신규 고객을 확보하는 것보다 더 비용 효율적이기 때문에, CRR은 기업이 성장과 안정을 도모하는 데 중요한 목표입니다.",
+    "new_customers": "신규 고객",
+    "regular_customers": "정기 고객",
+    "which_is": "이는",
+    "visitors": "방문자"
+  },
+  "demographic": {
+    "title": "연령별 인구 통계 세분화",
+    "age": "나이",
+    "segmentation_by_gender": {
+      "title": "성별 세분화",
+      "description": "성비율은 당신의 이벤트가 어떤 성별로 구분되는지 알려줍니다"
+    }
+  }
+}

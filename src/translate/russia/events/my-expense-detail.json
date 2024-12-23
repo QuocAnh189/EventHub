@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "Детали моих расходов"
+  },
+  "add_new_expense": "Добавить новый расход",
+  "expense_placeholder": "Введите название расхода",
+  "add_new_sub_expense": "Добавить новый подрасход",
+  "sub_expense_placeholder": "Введите имя"
+}

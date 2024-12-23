@@ -1,1 +1,33 @@
-{}
+{
+  "header": {
+    "title": "客户"
+  },
+  "all": "全部",
+  "new": "新客户",
+  "regular": "常规客户",
+  "conversion_rate": {
+    "title": "转化率",
+    "year": "年份",
+    "customers": "客户",
+    "orders": "订单",
+    "revenue": "收入"
+  },
+  "customer_retention_rate": {
+    "title": "客户保持率",
+    "total_customer": "总客户",
+    "in": "在",
+    "description": "计算CRR时，从期末的总客户数中减去新客户数，再除以期初的客户数，最后乘以100。保持现有客户通常比获得新客户更具成本效益，因此，CRR是公司推动增长和稳定的关键指标。",
+    "new_customers": "新客户",
+    "regular_customers": "常规客户",
+    "which_is": "即",
+    "visitors": "访客"
+  },
+  "demographic": {
+    "title": "按年龄的市场细分",
+    "age": "年龄",
+    "segmentation_by_gender": {
+      "title": "按性别划分",
+      "description": "性别比率会告诉你活动的性别分布"
+    }
+  }
+}

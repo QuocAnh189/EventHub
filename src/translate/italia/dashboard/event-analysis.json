@@ -1,1 +1,10 @@
-{}
+{
+  "header": {
+    "title": "Elenco eventi"
+  },
+  "search": "Cerca evento",
+  "item": {
+    "sales": "Vendite",
+    "favourite": "Preferiti"
+  }
+}

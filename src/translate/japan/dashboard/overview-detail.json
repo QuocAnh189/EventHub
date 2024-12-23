@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "title": "収益概要"
+  },
+  "sales_period": "販売期間",
+  "sales_volume": "販売量",
+  "revenue": "収益",
+  "expense": "費用",
+  "profit": "利益",
+  "order": "注文",
+  "profit_performance": "利益のパフォーマンス",
+  "conversion_rate": {
+    "title": "転換率",
+    "regular_customers": "定期顧客",
+    "new_customers": "新規顧客",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "シェア",
+      "print": "印刷"
+    }
+  },
+  "average_referral_rate": {
+    "title": "平均紹介率"
+  },
+  "total": {
+    "revenue": "総収益",
+    "expense": "総費用",
+    "profit": "総利益"
+  }
+}

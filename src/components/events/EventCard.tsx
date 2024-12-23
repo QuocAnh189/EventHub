@@ -50,6 +50,22 @@ const EventCard = (props: Props) => {
       <div className='space-y-4 p-3'>
         <div className='min-h-36'>
           <h1 className='line-clamp-1 font-bold text-xl'>{event.name}</h1>
+          <div
+            className='flex items-center gap-2 rounded-xl px-2'
+            style={{ backgroundColor: event.categories[0].color }}
+          >
+            <img
+              loading='lazy'
+              src={
+                event.categories[0].iconImageUrl
+                  ? event.categories[0].iconImageUrl
+                  : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
+              }
+              alt='No image'
+              className='w-[20px] h-[20px] object-cover rounded-full'
+            />
+            <h6 className='my-2 text-white'>{event.categories[0].name}</h6>
+          </div>
           <div className='flex items-center gap-2 opacity-70'>
             <FaCalendarAlt />
             <span>{dayjs(event.startTime).format('DD/MM/YYYY dddd hh:mm A').toString()}</span>

@@ -44,6 +44,7 @@ export interface ISubImage {
 
 export interface ICardEvent {
   id: string
+  categories: ICategory[]
   coverImageUrl: string
   name: string
   startTime: string

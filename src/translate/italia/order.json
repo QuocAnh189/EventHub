@@ -1,1 +1,37 @@
-{}
+{
+  "header": {
+    "title": "Ordini"
+  },
+  "period": "Periodo",
+  "search": "Cerca...",
+  "middle": {
+    "box_one": {
+      "average_rate": "Valutazione media",
+      "event_view": "Visualizzazioni evento",
+      "total_tickets": "Totale biglietti"
+    },
+    "order": "Ordini",
+    "box_completed": {
+      "completed": "Completato"
+    },
+    "box_confirmed": {
+      "confirmed": "Confermato"
+    },
+    "box_canceled": {
+      "canceled": "Annullato"
+    },
+    "box_refunded": {
+      "refunded": "Rimborsato"
+    }
+  },
+  "table_header": {
+    "order": "Ordine",
+    "event": "Evento",
+    "ticket": "Biglietto",
+    "category": "Categoria",
+    "payment": "Pagamento",
+    "order_status": "Stato dell'ordine",
+    "rate": "Valutazione",
+    "actions": "Azioni"
+  }
+}

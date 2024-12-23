@@ -1,1 +1,24 @@
-{}
+{
+  "header": {
+    "title": "Dettagli dell'evento"
+  },
+  "transaction": "Transazioni",
+  "customer_review": "Recensione del cliente",
+  "total": {
+    "user": "Totale utenti",
+    "order": "Totale ordini"
+  },
+  "period_sales_revenue": "Entrate dalle vendite del periodo",
+  "review_by_customer": {
+    "title": "Recensione del cliente",
+    "positive": "Positivo",
+    "negative": "Negativo",
+    "review_rate": "Tasso di recensione",
+    "from": "Da",
+    "response": "Risposta",
+    "view_all_reviews": "Visualizza tutte le recensioni"
+  },
+  "revenue": "Entrate",
+  "expense": "Spesa",
+  "profit": "Profitto"
+}

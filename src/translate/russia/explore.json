@@ -1,1 +1,45 @@
-{}
+{
+  "header": {
+    "title": "Исследовать"
+  },
+  "sort": "Сортировать по дате",
+  "asc": "По возрастанию",
+  "desc": "По убыванию",
+  "search": "Поиск ...",
+  "sidebar": {
+    "rate": {
+      "label": "Рейтинг",
+      "star": "звезда"
+    },
+    "status": {
+      "label": "Статус",
+      "all": "Все",
+      "upcoming": "Предстоящие",
+      "opening": "Открыто",
+      "closed": "Закрыто"
+    },
+    "category": {
+      "label": "Категория",
+      "Business": "Бизнес",
+      "Gaming": "Игры",
+      "Food & Beverage": "Еда и напитки",
+      "Education": "Образование",
+      "Home & Garden": "Дом и сад",
+      "Parenting": "Родительство",
+      "Fashion": "Мода",
+      "Travel": "Путешествия",
+      "Finance & Investment": "Финансы и инвестиции",
+      "Movies & TV": "Фильмы и ТВ",
+      "Books & Literature": "Книги и литература",
+      "Photography": "Фотография",
+      "Sport": "Спорт",
+      "Music": "Музыка",
+      "Pet & Animals": "Питомцы и животные",
+      "Health & Fitness": "Здоровье и фитнес",
+      "Art & Design": "Искусство и дизайн",
+      "Science": "Наука",
+      "Technology": "Технологии",
+      "Personal Development": "Личностное развитие"
+    }
+  }
+}

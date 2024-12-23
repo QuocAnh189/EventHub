@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "Il mio biglietto"
+  },
+  "search": "Cerca...",
+  "card": {
+    "ticket_no": "Numero biglietto",
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefono",
+    "ticket_type": "Tipo di biglietto",
+    "status": "Stato"
+  }
+}

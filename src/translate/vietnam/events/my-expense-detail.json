@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "Chi phí chi tiết"
+  },
+  "add_new_expense": "Thêm chi phí",
+  "expense_placeholder": "Nhập tên chi tiêu",
+  "add_new_sub_expense": "Thêm chi phí phát sinh",
+  "sub_expense_placeholder": "Nhập tên"
+}

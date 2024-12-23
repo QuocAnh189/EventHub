@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "Détail de mes Dépenses"
+  },
+  "add_new_expense": "Ajouter une nouvelle dépense",
+  "expense_placeholder": "Entrez le nom de la dépense",
+  "add_new_sub_expense": "Ajouter une nouvelle sous-dépense",
+  "sub_expense_placeholder": "Entrez le nom"
+}

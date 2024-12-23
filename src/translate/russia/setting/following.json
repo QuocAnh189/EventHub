@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Подписка"
+  },
+  "my_following": "Мои подписки",
+  "search": "Поиск ...",
+  "action": {
+    "view_profile": "Посмотреть профиль",
+    "unfollow_profile": "Отписаться"
+  }
+}

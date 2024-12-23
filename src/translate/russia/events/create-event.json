@@ -1,1 +1,79 @@
-{}
+{
+  "header": { "title_create": "Создать событие", "update_create": "Обновить событие" },
+  "option_one": { "title": "Создать событие", "description": "Вам нужно создать событие вручную" },
+  "option_two": {
+    "title": "Импортировать событие",
+    "description": "У вас уже есть событие?",
+    "example_file": "Пример файла здесь"
+  },
+  "step": {
+    "information": "Информация",
+    "banner": "Баннер",
+    "ticket": "Билет",
+    "review": "Обзор"
+  },
+  "information": {
+    "event": {
+      "name": "Название",
+      "name_placeholder": "Введите название события",
+      "category": "Категория",
+      "category_placeholder": "Выберите категорию события",
+      "type": {
+        "name": "Тип события",
+        "single_event": "Единовременное событие",
+        "recurring_event": "Повторяющееся событие"
+      }
+    },
+    "datetime": {
+      "title": "Дата и время",
+      "session": { "title": "Сессия", "start_time": "Время начала", "end_time": "Время окончания" }
+    },
+    "location": {
+      "title": "Выберите местоположение",
+      "label": "Где будет проходить ваше событие",
+      "placeholder": "Введите название места",
+      "path_placeholder": "Введите путь к местоположению (Google Map)"
+    },
+    "description": {
+      "title": "Дополнительная информация",
+      "label": "Описание события",
+      "placeholder": "Введите описание события"
+    },
+    "reason": {
+      "title": "Причина",
+      "label": "Причина события",
+      "placeholder": "Введите причину"
+    }
+  },
+  "banner": {
+    "cover_image": "Изображение обложки",
+    "subs_image": "Дополнительное изображение"
+  },
+  "ticket": {
+    "title": "Какой тип события вы организуете?",
+    "option_one": { "label": "ПЛАТНОЕ событие", "description": "Мое событие включает билеты для входа" },
+    "option_two": { "label": "БЕСПЛАТНОЕ событие", "description": "Я организую бесплатное событие" },
+    "ticket_title": "Какой билет вы продаете?",
+    "ticket_name": "Название билета",
+    "ticket_name_placeholder": "Введите название",
+    "ticket_quantity": "Количество билетов",
+    "ticket_price": "Цена билета"
+  },
+  "review": {
+    "public": "Публично",
+    "date_time_label": "Дата и время",
+    "ticket_information": "Информация о билетах",
+    "ticket_type": "Тип билета",
+    "free": "Бесплатно",
+    "fee": "Плата",
+    "ticket_sub": "Билет",
+    "location_title": "Местоположение",
+    "organization_title": "Организатор",
+    "description_title": "Описание события",
+    "reasons_event": "Причины для посещения события",
+    "button_create": "Создать событие",
+    "button_update": "Обновить событие"
+  },
+  "button_back": "Назад",
+  "button_continue": "Продолжить"
+}

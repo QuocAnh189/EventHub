@@ -18,7 +18,10 @@ import { addCoupons } from '@redux/slices/coupon.slice'
 import { ICoupon } from '@interfaces/contents/coupon.interface'
 import { ICreateCouponPayload } from '@dtos/coupon.dto'
 
-const CouponsGrid = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const CouponsGrid = ({ t }: any) => {
   const dispatch = useAppDispatch()
   const [params, setParams] = useState({ page: 1, pageSize: 8, search: '' })
   const [search, setSearch] = useState<string>('')
@@ -80,12 +83,12 @@ const CouponsGrid = () => {
       <div className='flex flex-col gap-4'>
         <div className='flex flex-col gap-5 md:flex-row md:justify-between'>
           <button className='btn btn-primary text-white' onClick={() => setModalOpen(true)}>
-            Add New Coupon <i className='icon-circle-plus-regular' />
+            {t('add_new_coupon')} <i className='icon-circle-plus-regular' />
           </button>
           <input
             className='field-input w-[300px] md:w-[300px]'
             type='search'
-            placeholder='Search...'
+            placeholder={t('search')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -118,4 +121,4 @@ const CouponsGrid = () => {
   )
 }
 
-export default CouponsGrid
+export default withTranslation('coupon')(CouponsGrid)

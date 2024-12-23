@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "쿠폰"
+  },
+  "add_new_coupon": "새 쿠폰 추가",
+  "search": "검색...",
+  "modal": {
+    "create_coupon": "쿠폰 만들기",
+    "update_coupon": "쿠폰 업데이트",
+    "name_label": "이름",
+    "name_placeholder": "이름 입력",
+    "description_label": "설명",
+    "description_placeholder": "설명 입력",
+    "min_price_label": "최소 가격",
+    "min_quantity_label": "최소 수량",
+    "percent_label": "백분율",
+    "expire_label": "만료일"
+  },
+  "card": {
+    "view_edit": "보기 편집",
+    "delete": "삭제"
+  }
+}

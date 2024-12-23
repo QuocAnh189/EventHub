@@ -1,1 +1,24 @@
-{}
+{
+  "header": {
+    "title": "事件详情"
+  },
+  "transaction": "交易",
+  "customer_review": "客户评论",
+  "total": {
+    "user": "总用户",
+    "order": "总订单"
+  },
+  "period_sales_revenue": "期间销售收入",
+  "review_by_customer": {
+    "title": "客户评论",
+    "positive": "积极的",
+    "negative": "负面的",
+    "review_rate": "评论率",
+    "from": "来自",
+    "response": "回应",
+    "view_all_reviews": "查看所有评论"
+  },
+  "revenue": "收入",
+  "expense": "费用",
+  "profit": "利润"
+}

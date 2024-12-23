@@ -1,1 +1,37 @@
-{}
+{
+  "header": {
+    "title": "订单"
+  },
+  "period": "期间",
+  "search": "搜索...",
+  "middle": {
+    "box_one": {
+      "average_rate": "平均评分",
+      "event_view": "事件浏览",
+      "total_tickets": "总票数"
+    },
+    "order": "订单",
+    "box_completed": {
+      "completed": "已完成"
+    },
+    "box_confirmed": {
+      "confirmed": "已确认"
+    },
+    "box_canceled": {
+      "canceled": "已取消"
+    },
+    "box_refunded": {
+      "refunded": "已退款"
+    }
+  },
+  "table_header": {
+    "order": "订单",
+    "event": "事件",
+    "ticket": "票",
+    "category": "类别",
+    "payment": "支付",
+    "order_status": "订单状态",
+    "rate": "评分",
+    "actions": "操作"
+  }
+}

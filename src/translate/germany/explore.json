@@ -1,1 +1,45 @@
-{}
+{
+  "header": {
+    "title": "Entdecken"
+  },
+  "sort": "Nach Datum sortieren",
+  "asc": "Aufsteigend",
+  "desc": "Absteigend",
+  "search": "Suchen ...",
+  "sidebar": {
+    "rate": {
+      "label": "Bewertung",
+      "star": "Stern"
+    },
+    "status": {
+      "label": "Status",
+      "all": "Alle",
+      "upcoming": "Kommend",
+      "opening": "Offen",
+      "closed": "Geschlossen"
+    },
+    "category": {
+      "label": "Kategorie",
+      "Business": "Business",
+      "Gaming": "Gaming",
+      "Food & Beverage": "Essen & Trinken",
+      "Education": "Bildung",
+      "Home & Garden": "Zuhause & Garten",
+      "Parenting": "Elternschaft",
+      "Fashion": "Mode",
+      "Travel": "Reisen",
+      "Finance & Investment": "Finanzen & Investitionen",
+      "Movies & TV": "Filme & TV",
+      "Books & Literature": "Bücher & Literatur",
+      "Photography": "Fotografie",
+      "Sport": "Sport",
+      "Music": "Musik",
+      "Pet & Animals": "Haustiere & Tiere",
+      "Health & Fitness": "Gesundheit & Fitness",
+      "Art & Design": "Kunst & Design",
+      "Science": "Wissenschaft",
+      "Technology": "Technologie",
+      "Personal Development": "Persönliche Entwicklung"
+    }
+  }
+}

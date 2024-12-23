@@ -1,1 +1,36 @@
-{}
+{
+  "header": {
+    "title": "我的收藏"
+  },
+  "search": "搜索活动",
+  "item": {
+    "category": "类别",
+    "date": "日期"
+  },
+  "category": {
+    "label": "类别",
+    "Gaming": "游戏",
+    "Food & Beverage": "食品和饮料",
+    "Education": "教育",
+    "Home & Garden": "家居和花园",
+    "Parenting": "育儿",
+    "Fashion": "时尚",
+    "Travel": "旅行",
+    "Finance & Investment": "金融与投资",
+    "Movies & TV": "电影和电视",
+    "Books & Literature": "书籍与文学",
+    "Photography": "摄影",
+    "Sport": "运动",
+    "Music": "音乐",
+    "Pet & Animals": "宠物与动物",
+    "Health & Fitness": "健康与健身",
+    "Art & Design": "艺术与设计",
+    "Science": "科学",
+    "Technology": "技术",
+    "Personal Development": "个人发展"
+  },
+  "action": {
+    "view": "查看",
+    "remove": "移除"
+  }
+}

@@ -1,1 +1,20 @@
-{}
+{
+  "header": { "title": "내 이벤트" },
+  "add_new": "새 이벤트 추가",
+  "export_csv": "CSV 내보내기",
+  "event_label": "이벤트",
+  "management": {
+    "label_event": "이벤트",
+    "label_status": "상태",
+    "label_category": "카테고리",
+    "label_price": "가격",
+    "search": "이벤트 검색",
+    "view_events": "이벤트 보기",
+    "select_action": "작업 선택",
+    "button_edit": "편집",
+    "button_restore": "복원",
+    "button_trash": "휴지통",
+    "button_delete": "삭제",
+    "apply_coupons": "쿠폰 적용"
+  }
+}

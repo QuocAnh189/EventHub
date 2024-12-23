@@ -1,1 +1,69 @@
-{}
+{
+  "header": { "title_create": "Crear evento", "update_create": "Actualizar evento" },
+  "option_one": { "title": "Crear evento", "description": "Deberás crear el evento de manera manual" },
+  "option_two": {
+    "title": "Importar evento",
+    "description": "¿Ya tienes un evento?",
+    "example_file": "Archivo de ejemplo aquí"
+  },
+  "information": {
+    "event": {
+      "name": "Nombre",
+      "name_placeholder": "Ingresa el nombre del evento",
+      "category": "Categoría",
+      "category_placeholder": "Selecciona la categoría del evento",
+      "type": { "name": "Estilo de evento", "single_event": "Evento único", "recurring_event": "Evento recurrente" }
+    },
+    "datetime": {
+      "title": "Fecha y hora",
+      "session": { "title": "Sesión", "start_time": "Hora de inicio", "end_time": "Hora de finalización" }
+    },
+    "location": {
+      "title": "Elegir ubicación",
+      "label": "¿Dónde se llevará a cabo tu evento?",
+      "placeholder": "Ingresa el nombre del lugar",
+      "path_placeholder": "Ingresa la ruta de ubicación (Google Map)"
+    },
+    "description": {
+      "title": "Información adicional",
+      "label": "Descripción del evento",
+      "placeholder": "Ingresa la descripción del evento"
+    },
+    "reason": {
+      "title": "Razón",
+      "label": "Razón del evento",
+      "placeholder": "Ingresa la razón"
+    }
+  },
+  "banner": {
+    "cover_image": "Imagen de portada",
+    "subs_image": "Imagen adicional"
+  },
+  "ticket": {
+    "title": "¿Qué tipo de evento estás organizando?",
+    "option_one": { "label": "Evento PAGADO", "description": "Mi evento incluye boletos de entrada" },
+    "option_two": { "label": "Evento GRATIS", "description": "Estoy organizando un evento gratuito" },
+    "ticket_title": "¿Qué boleto estás vendiendo?",
+    "ticket_name": "Nombre del boleto",
+    "ticket_name_placeholder": "Ingresa el nombre",
+    "ticket_quantity": "Cantidad de boletos",
+    "ticket_price": "Precio del boleto"
+  },
+  "review": {
+    "public": "Público",
+    "date_time_label": "Fecha y hora",
+    "ticket_information": "Información del boleto",
+    "ticket_type": "Tipo de boleto",
+    "free": "Gratis",
+    "fee": "Cuota",
+    "ticket_sub": "Boleto",
+    "location_title": "Ubicación",
+    "organization_title": "Organizado por",
+    "description_title": "Descripción del evento",
+    "reasons_event": "Razones para asistir al evento",
+    "button_create": "Crear evento",
+    "button_update": "Actualizar evento"
+  },
+  "button_back": "Regresar",
+  "button_continue": "Continuar"
+}

@@ -1,62 +1,68 @@
 {
   "header": {
-    "search": "Tìm kiếm..."
+    "search": "Tìm kiếm...",
+    "signin_btn": "Đăng nhập"
   },
-  "not_data": {
-    "text": "Dữ liệu của bạn không có sẵn hoặc không tìm thấy"
-  },
-  "signin_btn": "Đăng nhập",
   "notification": {
     "title": "Thông báo",
-    "all": "Tất cả",
-    "follow": "Theo dõi",
-    "order": "Mua hàng",
+    "follow": "Người theo dõi",
+    "order": "Đơn hàng",
     "follow_text": "đã theo dõi bạn",
-    "order_text": "đã mua vé của bạn",
-    "hours ago": "giờ trước",
-    "confirm_btn": "Xác nhận",
-    "decline_btn": "Từ chối"
-  },
-  "message": {
-    "title": "Tin nhắn",
-    "all": "Tất cả",
-    "latest": "Gần nhất",
-    "archived": "Bỏ lỡ",
-    "reply_btn": "Phản hồi",
-    "mark_btn": "Đánh dấu"
+    "order_text": "đã đặt vé của bạn",
+    "view_profile": "Xem hồ sơ",
+    "view_order": "Xem đơn hàng",
+    "load_more": "Tải thêm"
   },
   "invitation": {
     "title": "Lời mời",
-    "view_btn": "Xem",
-    "mark_btn": "Đánh dấu đã đọc"
+    "favourite_text": "đã mời bạn thích",
+    "view_event": "Xem sự kiện",
+    "load_more": "Tải thêm"
+  },
+  "box_message": {
+    "left": {
+      "title": "Trò chuyện",
+      "placeholder": "Tìm kiếm...",
+      "event": "Sự kiện",
+      "user": "Khách hàng"
+    },
+    "right": {
+      "organizer": "Nhà tổ chức",
+      "user": "Khách hàng",
+      "login_to_chat": "Đăng nhập để trò chuyện",
+      "select_conversation": "Chọn cuộc trò chuyện để xem tin nhắn",
+      "no_message": "Không có tin nhắn nào",
+      "send": "Gửi",
+      "placeholder": "Nhập tin nhắn..."
+    }
   },
   "category": {
-    "label": "Danh mục",
-    "Visual Arts": "Nghệ thuật",
-    "Sports & Active Life": "Thể thao cuộc sống",
-    "Politics": "Chính trị",
-    "Performing Arts": "Thể hiện nghệ thuật",
-    "Other": "Khác",
-    "Nightlife": "Cuộc sống về đêm",
-    "Music": "Âm nhạc",
-    "Lectures & Books": "Bài giảng và sách",
-    "Kids & Family": "Gia đình",
-    "Holidays": "Kỳ nghĩ",
-    "Food & Drink": "Âm thực",
-    "Film": "Phim",
-    "Festivals & Fairs": "Lễ hội",
+    "label": "Thể loại",
+    "Business": "Business",
+    "Gaming": "Trò chơi",
+    "Food & Beverage": "Đồ ăn & Thức Uống",
+    "Education": "Giáo dục",
+    "Home & Garden": "Nhà & Vườn",
+    "Parenting": "Gia đình",
     "Fashion": "Thời trang",
-    "Concerts": "Hòa nhạc",
-    "Conferences": "Hội nghị",
-    "Community": "Cộng đồng",
-    "Charities": "Từ thiện",
-    "Anniversary": "Kỉ niệm",
-    "Academic": "Học vấn"
+    "Travel": "Du lịch",
+    "Finance & Investment": "Tài chính & Đầu tư",
+    "Movies & TV": "Phim & TV",
+    "Books & Literature": "Sách & Văn học",
+    "Photography": "Nhiếp ảnh gia",
+    "Sport": "Thể thao",
+    "Music": "Âm nhạc",
+    "Pet & Animals": "Thú cưng & Động vật",
+    "Health & Fitness": "Sức khỏe & Thể chất",
+    "Art & Design": "Nghệ thuật & Thiết kế",
+    "Science": "Khoa học",
+    "Technology": "Công nghệ",
+    "Personal Development": "Phát triển cá nhân"
   },
   "filter": {
-    "ALL": "Tất cả",
-    "PUBLIC": "Công khai",
-    "PRIVATE": "Cá nhân"
+    "All": "Tất cả",
+    "Public": "Công khai",
+    "Private": "Riêng tư"
   },
   "footer": {
     "left": {
@@ -97,47 +103,33 @@
       }
     }
   },
-  "box_message": {
-    "left": {
-      "placeholder": "Tìm kiếm...",
-      "my_event": "Sự kiện của tôi",
-      "chat_event": "Trò chuyện"
-    },
-    "right": {
-      "to": "Đến",
-      "first": "Gửi tin nhắn để bắt đầu cuộc trò chuyện",
-      "nochat_text_one": "Xin chào",
-      "nochat_text_two": "Chọn một cuộc hội thoại để trò chuyện",
-      "nologin_text_one": "Xin chào bạn",
-      "nologin_text_two": "Đăng nhập để trò chuyện",
-      "placeholder": "Gửi tin nhắn"
-    }
-  },
   "routes": {
     "home": "Trang chủ",
     "dashboard": {
       "parent": "Quản lý",
       "overview": "Tổng quan",
-      "event analysis": "Phân tích sự kiện",
+      "event_analysis": "Phân tích sự kiện",
       "customer": "Khách hàng",
       "payment": "Thanh toán"
     },
     "event": {
       "parent": "Sự kiện",
-      "top events": "Sự kiện nổi bật",
-      "my events": "Sự kiện của tôi",
-      "trash events": "Thùng rác",
-      "create event": "Tạo sự kiện"
+      "my_favourite": "Danh sách yêu thích",
+      "my_events": "Sự kiện của tôi",
+      "trash_events": "Thùng rác",
+      "create_event": "Tạo sự kiện",
+      "my_expense": "Chi phí"
     },
     "coupon": "Khuyến mãi",
-    "expense": "Chi Phí",
+    "ticket": "Vé sự kiện",
     "calendar": "Lịch trình",
     "orders": "Đơn hàng",
     "reviews": "Đánh giá",
     "settings": {
       "parent": "Cài đặt",
-      "profile": "Hồ sơ"
-    },
-    "permissions": "Quản lý cấp bậc"
+      "profile": "Hồ sơ",
+      "follower": "Người theo dõi",
+      "following": "Đã theo dõi"
+    }
   }
 }

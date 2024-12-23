@@ -1,1 +1,20 @@
-{}
+{
+  "header": { "title": "私のイベント" },
+  "add_new": "新しいイベントを追加",
+  "export_csv": "CSVをエクスポート",
+  "event_label": "イベント",
+  "management": {
+    "label_event": "イベント",
+    "label_status": "ステータス",
+    "label_category": "カテゴリー",
+    "label_price": "価格",
+    "search": "イベントを検索",
+    "view_events": "イベントを見る",
+    "select_action": "アクションを選択",
+    "button_edit": "編集",
+    "button_restore": "復元",
+    "button_trash": "ゴミ箱",
+    "button_delete": "削除",
+    "apply_coupons": "クーポンを適用"
+  }
+}

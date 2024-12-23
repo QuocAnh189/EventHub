@@ -1,6 +1,10 @@
 {
   "header": {
-    "title": "Events List"
+    "title": "Liste des événements"
   },
-  "search": "Search Event"
+  "search": "Rechercher un événement",
+  "item": {
+    "sales": "Ventes",
+    "favourite": "Favoris"
+  }
 }

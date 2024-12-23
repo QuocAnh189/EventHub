@@ -13,6 +13,7 @@ import RatingStars from '@ui/RatingStars'
 import Timestamp from '@ui/Timestamp'
 import ModalBase from '@ui/ModalBase'
 import ConfirmDialog from './Dialog'
+import { toast } from 'react-toastify'
 
 //interfaces
 import { IReview } from 'interfaces/contents/review.interface'
@@ -28,7 +29,9 @@ import userDefault from '@assets/images/common/user_default.png'
 
 //redux
 import { useDeleteReviewMutation } from '@redux/apis/review.api'
-import { toast } from 'react-toastify'
+
+//i18n
+import { withTranslation } from 'react-i18next'
 
 interface UserProps {
   userName: string
@@ -88,12 +91,13 @@ const EventModal = (props: IEventProps) => {
 }
 
 interface IProps {
+  t: any
   review: IReview
   index: number
 }
 
 const Review = (props: IProps) => {
-  const { index, review } = props
+  const { t, index, review } = props
 
   const { theme } = useTheme()
   const { width } = useWindowSize()
@@ -186,15 +190,15 @@ const Review = (props: IProps) => {
           </button>
           <EventModal coverImage={review.event.coverImageUrl} name={review.event.name} wrapperClass='gap-4 mb-5' />
           <p className='flex gap-4 mb-2'>
-            <span className='label-text'>Date: </span>
+            <span className='label-text'>{t('modal.date')}: </span>
             <span className='text-sm font-medium'>{dayjs(review.createdAt).format('DD/MM/YYYY, hh:mm A')}</span>
           </p>
           <p className='flex gap-4 mb-2'>
-            <span className='label-text'>UserName: </span>
+            <span className='label-text'>{t('modal.username')}: </span>
             <span className='text-sm font-medium'>{review.user.userName}</span>
           </p>
           <div className='flex gap-4 mb-6'>
-            <span className='label-text'>Rate:</span>
+            <span className='label-text'>{t('modal.rate')}:</span>
             <RatingStars rating={review.rate} />
           </div>
           <p
@@ -226,4 +230,4 @@ const Review = (props: IProps) => {
   )
 }
 
-export default Review
+export default withTranslation('review')(Review)

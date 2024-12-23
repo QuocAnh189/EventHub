@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "フォロー中"
+  },
+  "my_following": "私のフォロー中",
+  "search": "検索 ...",
+  "action": {
+    "view_profile": "プロフィールを見る",
+    "unfollow_profile": "フォロー解除"
+  }
+}

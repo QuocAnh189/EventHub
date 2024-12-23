@@ -2,6 +2,8 @@
   "header": {
     "title": "Đơn hàng"
   },
+  "search": "Tìm kiếm...",
+  "period": "Giai đoạn",
   "middle": {
     "box_one": {
       "average_rate": "Tỉ lệ trung bình",

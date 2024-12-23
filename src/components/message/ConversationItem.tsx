@@ -5,7 +5,7 @@ import Avatar from './Avatar'
 import dayjs from 'dayjs'
 
 //interface
-import { IConversation } from '@interfaces/contents/conversation.interface'
+import { IConversation } from '@interfaces/websockets/conversation.interface'
 
 //redux
 import { useAppDispatch } from '@hooks/useRedux'

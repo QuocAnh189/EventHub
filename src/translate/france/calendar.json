@@ -1,5 +1,5 @@
 {
-  "header": { "title": "Calendar" },
-  "body": { "events": "Events" },
-  "status": { "closed": "Closed", "happening": "Happening", "upcoming": "Upcoming" }
+  "header": { "title": "Calendrier" },
+  "body": { "events": "Événements" },
+  "status": { "closed": "Fermé", "happening": "En cours", "upcoming": "À venir" }
 }

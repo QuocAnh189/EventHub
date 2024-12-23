@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "Paramètres"
+  },
+  "profile pannel": {
+    "logout": "Se déconnecter",
+    "notifications": "Notifications",
+    "messages": "Messages",
+    "number_of_events": "Nombre d'événements",
+    "follwing": "Abonnements",
+    "follower": "Abonnés"
+  },
+  "profile_detail": {
+    "title": "Mon Profil",
+    "user_name": "Nom d'utilisateur",
+    "gender": "Genre",
+    "full_name": "Nom complet",
+    "dob": "Date de naissance",
+    "email": "E-mail",
+    "status": "Statut",
+    "password": "Mot de passe",
+    "role": "Rôle",
+    "phone_number": "Numéro de téléphone",
+    "bio": "Bio",
+    "change_password": "Changer le mot de passe",
+    "update_information": "Mettre à jour les informations",
+    "admin_panel_tools": "Outils du panneau admin",
+    "connected_apps": "Applications connectées",
+    "payment_methods": "Méthodes de paiement",
+    "appearance": "Apparence",
+    "security_assets": "Actifs de sécurité",
+    "configuration_settings": "Paramètres de configuration",
+    "view_mode": "Mode d'affichage",
+    "sidebar_position": "Position de la barre latérale"
+  }
+}

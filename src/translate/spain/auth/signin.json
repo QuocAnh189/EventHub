@@ -1,1 +1,30 @@
-{}
+{
+  "slogan": "Where every event finds its perfect audience, creating unforgettable moments and lasting connections",
+  "login": {
+    "title": "Login",
+    "identify_placeholder": "Enter account (email or username)",
+    "password_placeholder": "Password",
+    "signin_btn": "Sign In",
+    "option": "No account ? Sign up for FREE",
+    "forgot_text": "I forgot my password",
+    "signin_google": "Sign in with Google",
+    "signin_facebook": "Sign in with Facebook"
+  },
+  "forgot_password": {
+    "title": "Forgot password",
+    "email_placeholder": "Enter email"
+  },
+  "verify_opt": {
+    "title": "Verify OTP",
+    "opt_placeholder": "Enter opt"
+  },
+  "reset_password": {
+    "title": "Reset password",
+    "password_placeholder": "New password",
+    "confirm_password_placeholder": "Confirm password"
+  },
+  "submit_btn": "Submit",
+  "back_btn": "Back",
+  "footer_one": "©2024 Event Hub",
+  "footer_two": "Imprint & Privacy Policy"
+}

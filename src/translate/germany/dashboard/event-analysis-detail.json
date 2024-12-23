@@ -1,1 +1,24 @@
-{}
+{
+  "header": {
+    "title": "Ereignisdetails"
+  },
+  "transaction": "Transaktionen",
+  "customer_review": "Kundenbewertung",
+  "total": {
+    "user": "Gesamtbenutzer",
+    "order": "Gesamtbestellung"
+  },
+  "period_sales_revenue": "Periodenumsatz",
+  "review_by_customer": {
+    "title": "Bewertung durch Kunden",
+    "positive": "Positiv",
+    "negative": "Negativ",
+    "review_rate": "Bewertungsrate",
+    "from": "Von",
+    "response": "Antwort",
+    "view_all_reviews": "Alle Bewertungen anzeigen"
+  },
+  "revenue": "Einnahmen",
+  "expense": "Ausgaben",
+  "profit": "Gewinn"
+}

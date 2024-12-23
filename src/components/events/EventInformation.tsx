@@ -32,11 +32,12 @@ import { useFollowUserMutation, useUnFollowUserMutation, useCheckFollowerQuery }
 import { withTranslation } from 'react-i18next'
 
 interface IProps {
+  t: any
   event: IEvent
 }
 
 const EventInformation = (props: IProps) => {
-  const { event } = props
+  const { t, event } = props
 
   const navigate = useNavigate()
 
@@ -79,32 +80,32 @@ const EventInformation = (props: IProps) => {
       <div className='flex justify-center bg-body flex-wrap'>
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <FaRegCalendarAlt color='#3D56F0' size={50} />
-          <p className='h6 text-header'>Time</p>
+          <p className='h6 text-header'>{t('information.time')}</p>
           <p className='text-sm text-header'>{dayjs(event?.startTime).format('dddd, DD/MM/YYYY hh:mm A').toString()}</p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <IoLocationOutline color='#3D56F0' size={50} />
-          <p className='h6 text-header'>Location</p>
+          <p className='h6 text-header'>{t('information.location')}</p>
           <p className='text-sm text-header'>{event?.location}</p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <IoMdTime color='#3D56F0' size={50} />
-          <p className='h6 text-header'>Happen</p>
+          <p className='h6 text-header'>{t('information.happen')}</p>
           <p className='text-sm text-header'>9 day</p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <FaUsers color='#3D56F0' size={50} />
-          <p className='h6 text-header'>Participant</p>
+          <p className='h6 text-header'>{t('information.participant')}</p>
           <p className='text-sm text-header'>{totalQuantity || 200}</p>
         </div>
       </div>
 
       <div className='flex flex-col px-[100px] gap-8'>
         <div className='space-y-2'>
-          <h5 className='h5'>Organization By</h5>
+          <h5 className='h5'>{t('information.organization_by')}</h5>
           <div className='flex items-center gap-3'>
             <img
               src={event?.creator.avatarUrl ? event?.creator.avatarUrl : userDefault}
@@ -119,7 +120,7 @@ const EventInformation = (props: IProps) => {
                 ) : (
                   <div className='flex items-center gap-1 px-2 py-1 rounded-md bg-primary hover:bg-primary-300'>
                     {isFollow ? <RiSubtractLine color='white' size={24} /> : <IoMdAdd color='white' size={24} />}
-                    <p className='text-white'>{isFollow ? 'Unfollow' : 'Follow'}</p>
+                    <p className='text-white'>{isFollow ? t('information.follow') : t('information.unfollow')}</p>
                   </div>
                 )}
               </button>
@@ -128,9 +129,9 @@ const EventInformation = (props: IProps) => {
         </div>
 
         <div className='space-y-1'>
-          <h5 className='h4'> Description</h5>
+          <h5 className='h4'>{t('information.description')}</h5>
           <p className='text-header'>{event?.description}</p>
-          <h6 className='h4 text-header'>3 Reasons to attend the event:</h6>
+          <h6 className='h4 text-header'>3 {t('information.reasons_to_attend_the_event')}:</h6>
 
           {event?.reasons?.map((reason: IReason, index: number) => (
             <p key={`reason-${index}`} className='text-header'>
@@ -169,4 +170,4 @@ const EventInformation = (props: IProps) => {
   )
 }
 
-export default withTranslation('event')(EventInformation)
+export default withTranslation('event_detail')(EventInformation)

@@ -1,1 +1,20 @@
-{}
+{
+  "header": { "title": "Mein Ereignis" },
+  "add_new": "Neues Ereignis hinzufügen",
+  "export_csv": "CSV exportieren",
+  "event_label": "Ereignis",
+  "management": {
+    "label_event": "Ereignisse",
+    "label_status": "Status",
+    "label_category": "Kategorie",
+    "label_price": "Preis",
+    "search": "Ereignis suchen",
+    "view_events": "Ereignisse anzeigen",
+    "select_action": "Aktion auswählen",
+    "button_edit": "Bearbeiten",
+    "button_restore": "Wiederherstellen",
+    "button_trash": "Papierkorb",
+    "button_delete": "Löschen",
+    "apply_coupons": "Gutscheine anwenden"
+  }
+}

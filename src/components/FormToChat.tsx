@@ -7,7 +7,11 @@ import { AppSocketContext } from '@contexts/socket.context'
 //util
 import classNames from 'classnames'
 
-interface Props {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+interface IProps {
+  t: any
   userId: string
   eventId: string
   hostId: string
@@ -16,25 +20,25 @@ interface Props {
   userFullName: string
 }
 
-const FormToChat = (props: Props) => {
-  const { userId, eventId, hostId, eventName, userEmail, userFullName } = props
+const FormToChat = (props: IProps) => {
+  const { t, userId, eventId, hostId, eventName, userEmail, userFullName } = props
 
   const { handleJoinChatRoom } = useContext(AppSocketContext)
 
   return (
     <div className='flex px-[100px] gap-8'>
       <div className='flex flex-col flex-auto gap-5 p-8 rounded-md shadow-xl bg-body'>
-        <h1 className='text-2xl font-bold text-header'>Conversation</h1>
-        <p className='text-header'>
-          If you have any questions or problems related to this event.
+        <h1 className='text-2xl font-bold text-header'>{t('conversation.title')}</h1>
+        <p className='h6 text-header'>
+          {t('conversation.description_one')}
           <br />
-          Do not hesitate to contact me.
+          {t('conversation.description_two')}
         </p>
         <div className='flex flex-col gap-3'>
           <div className='flex items-center gap-4 text-header'>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='qty'>
-                Name
+                {t('conversation.name_label')}
               </label>
               <input
                 readOnly
@@ -46,7 +50,7 @@ const FormToChat = (props: Props) => {
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='qty'>
-                Email
+                {t('conversation.email_label')}
               </label>
               <input
                 readOnly
@@ -59,7 +63,7 @@ const FormToChat = (props: Props) => {
           </div>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='qty'>
-              Event
+              {t('conversation.event_label')}
             </label>
             <input readOnly className={classNames('field-input')} id='qty' value={eventName} />
           </div>
@@ -68,11 +72,11 @@ const FormToChat = (props: Props) => {
           onClick={() => handleJoinChatRoom && handleJoinChatRoom({ eventId, hostId, userId })}
           className='btn btn-primary w-40 hover:bg-primary-500'
         >
-          Start Chat
+          {t('conversation.start_chat')}
         </button>
       </div>
     </div>
   )
 }
 
-export default FormToChat
+export default withTranslation('event_detail')(FormToChat)

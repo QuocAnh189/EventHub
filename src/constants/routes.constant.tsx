@@ -22,22 +22,22 @@ const ROUTES: Route[] = [
     links: [
       { name: 'overview', path: '/organization/dashboard/overview' },
       {
-        name: 'event analysis',
+        name: 'event_analysis',
         path: '/organization/dashboard/event-analysis'
       },
       { name: 'customer', path: '/organization/dashboard/customer' },
-      { name: 'payment', path: '/organization/dashboard/payment' }
+      { name: 'transaction', path: '/organization/dashboard/transaction' }
     ]
   },
   {
     name: 'event',
     icon: <MdEventAvailable size={20} />,
     links: [
-      { name: 'my favourite', path: '/organization/my-favourite' },
-      { name: 'my events', path: '/organization/my-event' },
-      { name: 'trash events', path: '/organization/trash-event' },
-      { name: 'create event', path: '/organization/create-event' },
-      { name: 'my expense', path: '/organization/my-expense' }
+      { name: 'my_favourite', path: '/organization/my-favourite' },
+      { name: 'my_events', path: '/organization/my-event' },
+      { name: 'trash_events', path: '/organization/trash-event' },
+      { name: 'create_event', path: '/organization/create-event' },
+      { name: 'my_expense', path: '/organization/my-expense' }
     ]
   },
   {

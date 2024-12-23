@@ -38,7 +38,7 @@ const EventFavouriteItem = (props: Props) => {
         <RatingStars rating={event.averageRate} />
         <div className='flex flex-col flex-1 gap-1 mt-1.5'>
           <p className='font-heading font-bold text-sm leading-[1.4] text-green'>
-            {t('item.category')}: {event.categories[0].name}
+            {t('item.category')}: {t(`category.${event.categories[0].name}`)}
           </p>
           <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
             {t('item.date')}: {dayjs(event.startTime).format('DD/MM/YYYY')}
@@ -46,10 +46,10 @@ const EventFavouriteItem = (props: Props) => {
         </div>
         <div className='grid grid-cols-2 gap-1.5 mt-4'>
           <NavLink to={`/organization/event/${event.id}`} className='btn btn--outline blue !text-sm'>
-            View
+            {t('action.view')}
           </NavLink>
           <button onClick={() => onRemove(event.id)} className='btn btn--outline red !text-sm'>
-            {isLoading ? <Loading /> : 'Remove'}
+            {isLoading ? <Loading /> : t('action.remove')}
           </button>
         </div>
       </div>

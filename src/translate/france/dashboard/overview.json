@@ -1,32 +1,32 @@
 {
   "header": {
-    "title": "Overview"
+    "title": "Aperçu"
   },
-  "main-overview": {
-    "title": "My Events",
-    "description": "Below are general statistics for your organization over time.",
-    "average-rate": "Average Rate 2024",
-    "income": "Income",
-    "expense": "Expense",
-    "orders": "New Orders",
-    "view-profile": "View Profile",
+  "main_overview": {
+    "title": "Mes événements",
+    "description": "Voici les statistiques générales de votre organisation au fil du temps.",
+    "average_rate": "Taux moyen 2024",
+    "revenue": "Revenu",
+    "expense": "Dépense",
+    "orders": "Commandes totales",
+    "view_profile": "Voir le profil",
     "contact": "Contacts",
-    "share": "Share"
+    "share": "Partager"
   },
-  "total-balance": "Total Balance",
+  "total_balance": "Solde total",
   "chart": {
-    "title": "Sales Statistic 2024",
-    "revenue": "Revenue",
-    "expense": "Expense"
+    "title": "Statistiques des ventes 2024",
+    "revenue": "Revenu",
+    "expense": "Dépense"
   },
-  "total-report": {
-    "title": "Total Report",
-    "description": "All Periods per 01/01/2024 - 01/10/2024",
-    "revenue": "Revenue",
-    "expense": "Expense",
-    "profit": "Profit",
-    "more-detail": "More Details",
-    "share": "Share",
-    "print": "Print"
+  "total_report": {
+    "title": "Rapport total",
+    "description": "Toutes les périodes par",
+    "revenue": "Revenu",
+    "expense": "Dépense",
+    "profit": "Bénéfice",
+    "more_detail": "Plus de détails",
+    "share": "Partager",
+    "print": "Imprimer"
   }
 }

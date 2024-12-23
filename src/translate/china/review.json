@@ -1,1 +1,21 @@
-{}
+{
+  "header": {
+    "title": "评论"
+  },
+  "search": "搜索...",
+  "middle": {
+    "review_score": "评分",
+    "customers": "客户",
+    "total": "总数",
+    "positive": "积极",
+    "negative": "负面"
+  },
+  "main": {
+    "title": "最新接受的评论"
+  },
+  "modal": {
+    "date": "日期",
+    "username": "用户名",
+    "rate": "评分"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "Coupon"
+  },
+  "add_new_coupon": "Ajouter un nouveau coupon",
+  "search": "Rechercher...",
+  "modal": {
+    "create_coupon": "Créer un coupon",
+    "update_coupon": "Mettre à jour le coupon",
+    "name_label": "Nom",
+    "name_placeholder": "Entrez le nom",
+    "description_label": "Description",
+    "description_placeholder": "Entrez la description",
+    "min_price_label": "Prix minimum",
+    "min_quantity_label": "Quantité minimale",
+    "percent_label": "Pourcentage",
+    "expire_label": "Date d'expiration"
+  },
+  "card": {
+    "view_edit": "Voir modifier",
+    "delete": "Supprimer"
+  }
+}

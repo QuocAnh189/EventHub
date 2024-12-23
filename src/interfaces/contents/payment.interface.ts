@@ -49,3 +49,36 @@ export interface IPaymentMethod {
   }
   paymentAccountNumber: string
 }
+
+export interface IPaymentTransaction {
+  id: string
+  event: {
+    name: string
+    coverImageUrl: string
+  }
+  customerName: string
+  ticketQuantity: number
+  totalPrice: number
+  discountPrice: number
+  finalPrice: number
+  status: EPaymentStatus
+  createdAt: string
+}
+
+export interface IPaymentOrder {
+  id: string
+  event: {
+    name: string
+    coverImageUrl: string
+    creator: {
+      userName: string
+      avatarUrl: string
+    }
+  }
+  ticketQuantity: number
+  totalPrice: number
+  discountPrice: number
+  finalPrice: number
+  status: EPaymentStatus
+  createdAt: string
+}

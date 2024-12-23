@@ -16,13 +16,13 @@ import { withTranslation } from 'react-i18next'
 //redux
 import { useGetUserByIdQuery } from '@redux/apis/user.api'
 
-const UserInfo = () => {
+const UserInfo = ({ t }: any) => {
   const params = useParams()
   const { data } = useGetUserByIdQuery(params.id!)
 
   return (
     <ProtectedLayout>
-      <PageHeader title='Profile User' />
+      <PageHeader title={t('header.title')} />
       <div className='widgets-grid md:!grid-cols-2 xl:!grid-cols-[340px,_minmax(0,1fr)]'>
         <div className='widgets-grid md:!grid-cols-2 md:col-span-2 xl:!grid-cols-1 xl:col-span-1'>
           <UserInformationCard avatarUrl={data?.avatarUrl!} fullName={data?.fullName!} roles={data?.roles!} />
@@ -41,4 +41,4 @@ const UserInfo = () => {
   )
 }
 
-export default withTranslation('profile')(UserInfo)
+export default withTranslation('userinfo')(UserInfo)

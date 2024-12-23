@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "title": "Papierkorb-Ereignis"
+  },
+  "restore": "Wiederherstellen",
+  "search": "Suchen ...",
+  "view_events": "Ereignisse"
+}

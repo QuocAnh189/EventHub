@@ -2,9 +2,35 @@
   "header": {
     "title": "My Favourites"
   },
-  "search": "Search Event",
+  "search": "Search event",
   "item": {
     "category": "Category",
     "date": "Date"
+  },
+  "category": {
+    "label": "Category",
+    "Gaming": "Gaming",
+    "Food & Beverage": "Food & Beverage",
+    "Education": "Education",
+    "Home & Garden": "Home & Garden",
+    "Parenting": "Parenting",
+    "Fashion": "Fashion",
+    "Travel": "Travel",
+    "Finance & Investment": "Finance & Investment",
+    "Movies & TV": "Movies & TV",
+    "Books & Literature": "Books & Literature",
+    "Photography": "Photography",
+    "Sport": "Sport",
+    "Music": "Music",
+    "Pet & Animals": "Pet & Animals",
+    "Health & Fitness": "Health & Fitness",
+    "Art & Design": "Art & Design",
+    "Science": "Science",
+    "Technology": "Technology",
+    "Personal Development": "Personal Development"
+  },
+  "action": {
+    "view": "View",
+    "remove": "Remove"
   }
 }

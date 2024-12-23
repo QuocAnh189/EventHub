@@ -19,11 +19,11 @@ const ConversionRateWithChart = ({ t }: any) => {
   return (
     <Spring className='card md:col-span-2 lg:col-span-1 2xl:col-span-1'>
       <div className='flex items-center justify-between mb-1.5'>
-        <h4 className='h4'>{t('conversion-rate.title')}</h4>
+        <h4 className='h4'>{t('conversion_rate.title')}</h4>
         <InfoBtn onClick={handleClick} />
         <Submenu anchorEl={anchorEl} open={open} onClose={handleClose}>
           <div className='py-5 pl-6 pr-8'>
-            <p className='text-sm max-w-[160px] mb-2'>{t('conversion-rate.submenu.description')}</p>
+            <p className='text-sm max-w-[160px] mb-2'>{t('conversion_rate.submenu.description')}</p>
             <div className='flex flex-col gap-3'>
               <button className='menu-btn subheading-2'>
                 <span className='icon-wrapper'>
@@ -47,12 +47,12 @@ const ConversionRateWithChart = ({ t }: any) => {
           <div className='flex flex-col gap-3 xs:flex-row xs:gap-5 md:gap-[28px]'>
             <div className='flex flex-col'>
               <Counter className='h3' num={32547} />
-              <span className='label-text mt-1 mb-[6px] text-header'>{t('conversion-rate.regular-customers')}</span>
+              <span className='label-text mt-1 mb-[6px] text-header'>{t('conversion_rate.regular_customers')}</span>
               <Trend value={14.08} />
             </div>
             <div className='flex flex-col'>
               <Counter className='h3' num={12345} prefix='+' />
-              <span className='label-text mt-1 mb-[6px] text-header'>{t('conversion-rate.new-customers')}</span>
+              <span className='label-text mt-1 mb-[6px] text-header'>{t('conversion_rate.new_customers')}</span>
               <Trend value={23} />
             </div>
           </div>

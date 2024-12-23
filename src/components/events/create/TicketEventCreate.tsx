@@ -79,10 +79,10 @@ const TicketEventCreate = (props: Props) => {
     <div className='relative pt-10 pb-20 px-10 mdl:px-40 space-y-10 min-h-screen'>
       <div className='space-y-4'>
         <p className='h4 mdl:text-xl font-bold tracking-wider text-header'>{t('ticket.title')}</p>
-        <div className='flex flex-col mdl:flex-row mdl:items-center gap-8'>
+        <div className=' flex flex-col mdl:flex-row mdl:items-center gap-8'>
           <div
             onClick={() => setValue('eventPaymentType', EEventPaymentTicket.Paid)}
-            className={`border-[2px] border-solid ${
+            className={`card border-[2px] border-solid ${
               eventTicketType === EEventPaymentTicket.Paid ? 'border-primary' : 'border-textGray'
             } rounded-lg py-4 px-12 flex flex-col items-center justify-center hover:cursor-pointer`}
           >
@@ -103,7 +103,7 @@ const TicketEventCreate = (props: Props) => {
               setValue('eventPaymentType', EEventPaymentTicket.Free)
               // setValue('ticketTypes', [] as any)
             }}
-            className={`border-[2px] border-solid ${
+            className={`card border-[2px] border-solid ${
               eventTicketType === EEventPaymentTicket.Free ? 'border-primary' : 'border-textGray'
             } rounded-lg py-4 px-12 flex flex-col items-center justify-center hover:cursor-pointer`}
           >
@@ -161,7 +161,6 @@ const TicketEventCreate = (props: Props) => {
                     className={classNames('field-input', { 'field-input--error': false })}
                     id='ticket_quantity'
                     defaultValue={0}
-                    placeholder='Enter the name of the ticket'
                     {...register(`ticketTypeItems.${index}.quantity`)}
                   />
                 </div>
@@ -176,7 +175,6 @@ const TicketEventCreate = (props: Props) => {
                     className={classNames('field-input', { 'field-input--error': false })}
                     id='ticket_price'
                     defaultValue={0}
-                    placeholder='Enter the name of the ticket'
                     {...register(`ticketTypeItems.${index}.price`)}
                   />
                 </div>

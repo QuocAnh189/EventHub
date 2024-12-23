@@ -54,7 +54,6 @@ const Review = ({ t }: any) => {
 
   const statistic: IStatistics = data?.statistic
 
-  console.log(statistic?.averageRate)
   return (
     <ProtectedLayout>
       <PageHeader title={t('header.title')} />

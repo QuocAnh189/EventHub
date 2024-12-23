@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "title": "垃圾事件"
+  },
+  "restore": "恢复",
+  "search": "搜索 ...",
+  "view_events": "事件"
+}

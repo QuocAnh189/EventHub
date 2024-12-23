@@ -1,1 +1,37 @@
-{}
+{
+  "header": {
+    "title": "Bestellungen"
+  },
+  "period": "Zeitraum",
+  "search": "Suche...",
+  "middle": {
+    "box_one": {
+      "average_rate": "Durchschnittsbewertung",
+      "event_view": "Ereignisansichten",
+      "total_tickets": "Gesamtzahl der Tickets"
+    },
+    "order": "Bestellungen",
+    "box_completed": {
+      "completed": "Abgeschlossen"
+    },
+    "box_confirmed": {
+      "confirmed": "Bestätigt"
+    },
+    "box_canceled": {
+      "canceled": "Storniert"
+    },
+    "box_refunded": {
+      "refunded": "Erstattet"
+    }
+  },
+  "table_header": {
+    "order": "Bestellung",
+    "event": "Ereignis",
+    "ticket": "Ticket",
+    "category": "Kategorie",
+    "payment": "Zahlung",
+    "order_status": "Bestellstatus",
+    "rate": "Bewertung",
+    "actions": "Aktionen"
+  }
+}

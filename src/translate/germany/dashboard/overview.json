@@ -1,1 +1,32 @@
-{}
+{
+  "header": {
+    "title": "Übersicht"
+  },
+  "main_overview": {
+    "title": "Meine Veranstaltungen",
+    "description": "Nachfolgend finden Sie allgemeine Statistiken für Ihre Organisation im Laufe der Zeit.",
+    "average_rate": "Durchschnittlicher Satz 2024",
+    "revenue": "Einnahmen",
+    "expense": "Ausgaben",
+    "orders": "Gesamtbestellungen",
+    "view_profile": "Profil ansehen",
+    "contact": "Kontakte",
+    "share": "Teilen"
+  },
+  "total_balance": "Gesamtguthaben",
+  "chart": {
+    "title": "Verkaufsstatistik 2024",
+    "revenue": "Einnahmen",
+    "expense": "Ausgaben"
+  },
+  "total_report": {
+    "title": "Gesamtbericht",
+    "description": "Alle Perioden pro",
+    "revenue": "Einnahmen",
+    "expense": "Ausgaben",
+    "profit": "Gewinn",
+    "more_detail": "Mehr Details",
+    "share": "Teilen",
+    "print": "Drucken"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "header": {
+    "title": "Profile User"
+  },
+  "profile_pannel": {
+    "number_of_events": "Number of Events",
+    "follwing": "Following",
+    "follower": "Follower"
+  },
+  "profile_detail": {
+    "title": "User",
+    "user_name": "User Name",
+    "gender": "Gender",
+    "full_name": "Full name",
+    "dob": "Day of birth",
+    "email": "Email",
+    "role": "Role",
+    "phone_number": "Phone Number",
+    "bio": "Bio"
+  }
+}

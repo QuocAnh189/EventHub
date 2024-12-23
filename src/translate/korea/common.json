@@ -1,66 +1,72 @@
 {
   "header": {
-    "search": "검색..."
+    "search": "검색...",
+    "signin_btn": "로그인"
   },
-  "not_data": {
-    "text": "죄송합니다, 데이터가 이용 가능하지 않거나 업데이트되지 않았습니다."
-  },
-  "signin_btn": "로그인",
   "notification": {
     "title": "알림",
-    "all": "전체",
     "follow": "팔로우",
     "order": "주문",
-    "follow_text": "님이 팔로우합니다",
-    "order_text": "님이 귀하의 이벤트를 주문했습니다",
-    "hours ago": "시간 전",
-    "confirm_btn": "확인",
-    "decline_btn": "거절"
-  },
-  "message": {
-    "title": "메시지",
-    "all": "전체",
-    "latest": "최신",
-    "archived": "보관",
-    "reply_btn": "답장",
-    "mark_btn": "읽음으로 표시"
+    "follow_text": "님이 당신을 팔로우했습니다",
+    "order_text": "님이 당신의 이벤트를 주문했습니다",
+    "view_profile": "프로필 보기",
+    "view_order": "주문 보기",
+    "load_more": "더 보기"
   },
   "invitation": {
     "title": "초대",
-    "view_btn": "보기",
-    "mark_btn": "읽음으로 표시"
+    "favourite_text": "님이 즐겨찾기에 추가하도록 초대했습니다",
+    "view_event": "이벤트 보기",
+    "load_more": "더 보기"
+  },
+  "box_message": {
+    "left": {
+      "title": "내 대화",
+      "placeholder": "검색...",
+      "event": "이벤트",
+      "user": "사용자"
+    },
+    "right": {
+      "organizer": "주최자",
+      "user": "사용자",
+      "login_to_chat": "채팅하려면 로그인하세요",
+      "select_conversation": "메시지를 보려면 대화를 선택하세요",
+      "no_message": "메시지가 없습니다",
+      "send": "보내기",
+      "placeholder": "메시지 입력..."
+    }
   },
   "category": {
     "label": "카테고리",
-    "Visual Arts": "시각 예술",
-    "Sports & Active Life": "스포츠 및 액티브 라이프",
-    "Politics": "정치",
-    "Performing Arts": "공연 예술",
-    "Other": "기타",
-    "Nightlife": "나이트 라이프",
-    "Music": "음악",
-    "Lectures & Books": "강연 및 책",
-    "Kids & Family": "아이와 가족",
-    "Holidays": "휴일",
-    "Food & Drink": "음식과 음료",
-    "Film": "영화",
-    "Festivals & Fairs": "축제와 박람회",
+    "Business": "비즈니스",
+    "Gaming": "게임",
+    "Food & Beverage": "음식 및 음료",
+    "Education": "교육",
+    "Home & Garden": "집 및 정원",
+    "Parenting": "육아",
     "Fashion": "패션",
-    "Concerts": "콘서트",
-    "Conferences": "회의",
-    "Community": "커뮤니티",
-    "Charities": "자선",
-    "Anniversary": "기념일",
-    "Academic": "학술"
+    "Travel": "여행",
+    "Finance & Investment": "금융 및 투자",
+    "Movies & TV": "영화 및 TV",
+    "Books & Literature": "책 및 문학",
+    "Photography": "사진",
+    "Sport": "스포츠",
+    "Music": "음악",
+    "Pet & Animals": "애완동물 및 동물",
+    "Health & Fitness": "건강 및 피트니스",
+    "Art & Design": "예술 및 디자인",
+    "Science": "과학",
+    "Technology": "기술",
+    "Personal Development": "개인 개발"
   },
   "filter": {
-    "ALL": "전체",
-    "PUBLIC": "공개",
-    "PRIVATE": "비공개"
+    "All": "모두",
+    "Public": "공개",
+    "Private": "비공개"
   },
   "footer": {
     "left": {
-      "description": "모든 이벤트가 연결되는 곳, 순간을 쉽게 그리고 효율적으로 공유하세요",
+      "description": "모든 이벤트가 순간을 쉽게 연결하는 곳",
       "or": "또는"
     },
     "right": {
@@ -71,7 +77,6 @@
         "sub_three": "상태",
         "sub_four": "위시리스트"
       },
-
       "box_two": {
         "title": "도움말",
         "sub_one": "문의하기",
@@ -79,7 +84,6 @@
         "sub_three": "이용 약관",
         "sub_four": "개인정보 보호정책"
       },
-
       "box_three": {
         "title": "기능",
         "sub_one": "간트 차트",
@@ -87,30 +91,13 @@
         "sub_three": "마인드맵",
         "sub_four": "자동화"
       },
-
       "box_four": {
         "title": "비교",
-        "sub_one": "Jira와 비교",
-        "sub_two": "Notion과 비교",
-        "sub_three": "Trello와 비교",
-        "sub_four": "Smartsheet와 비교"
+        "sub_one": "vs Jira",
+        "sub_two": "vs Notion",
+        "sub_three": "vs Trello",
+        "sub_four": "vs Smartsheet"
       }
-    }
-  },
-  "box_message": {
-    "left": {
-      "placeholder": "검색...",
-      "my_event": "내 이벤트",
-      "chat_event": "채팅 이벤트"
-    },
-    "right": {
-      "to": "받는 사람",
-      "first": "대화를 시작하려면 메시지를 보내세요",
-      "nochat_text_one": "환영합니다",
-      "nochat_text_two": "메시지를 시작하려면 채팅을 선택하세요",
-      "nologin_text_one": "안녕하세요",
-      "nologin_text_two": "로그인하여 채팅하세요",
-      "placeholder": "메시지 보내기"
     }
   },
   "routes": {
@@ -118,26 +105,28 @@
     "dashboard": {
       "parent": "대시보드",
       "overview": "개요",
-      "event analysis": "이벤트 분석",
+      "event_analysis": "이벤트 분석",
       "customer": "고객",
-      "payment": "결제"
+      "transaction": "거래"
     },
     "event": {
       "parent": "이벤트",
-      "my favourite": "내가 가장 좋아하는",
-      "my events": "내 이벤트",
-      "trash events": "휴지통 이벤트",
-      "create event": "이벤트 생성"
+      "my_favourite": "내 즐겨찾기",
+      "my_events": "내 이벤트",
+      "trash_events": "삭제된 이벤트",
+      "create_event": "이벤트 생성",
+      "my_expense": "내 지출"
     },
     "coupon": "쿠폰",
-    "expense": "비용",
+    "ticket": "내 티켓",
     "calendar": "캘린더",
     "orders": "주문",
     "reviews": "리뷰",
     "settings": {
       "parent": "설정",
-      "profile": "프로필"
-    },
-    "permissions": "권한"
+      "profile": "프로필",
+      "follower": "팔로워",
+      "following": "팔로잉"
+    }
   }
 }

@@ -1,1 +1,33 @@
-{}
+{
+  "header": {
+    "title": "Kunde"
+  },
+  "all": "Alle",
+  "new": "Neu",
+  "regular": "Regulär",
+  "conversion_rate": {
+    "title": "Konversionsrate",
+    "year": "Jahr",
+    "customers": "Kunden",
+    "orders": "Bestellungen",
+    "revenue": "Einnahmen"
+  },
+  "customer_retention_rate": {
+    "title": "Kundenbindungsrate",
+    "total_customer": "Gesamtzahl der Kunden",
+    "in": "im",
+    "description": "Um den CRR zu berechnen, ziehen Sie die Anzahl neuer Kunden von der Gesamtzahl der Kunden am Ende des Zeitraums ab, teilen sie durch die Anzahl der Kunden zu Beginn und multiplizieren mit 100. Die Bindung von Kunden ist oft kostengünstiger als die Akquise neuer Kunden, was den CRR zu einem wichtigen Ziel für Unternehmen macht, die Wachstum und Stabilität fördern wollen.",
+    "new_customers": "Neue Kunden",
+    "regular_customers": "Reguläre Kunden",
+    "which_is": "was",
+    "visitors": "Besucher"
+  },
+  "demographic": {
+    "title": "Demografische Segmentierung nach Alter",
+    "age": "Alter",
+    "segmentation_by_gender": {
+      "title": "Segmentierung nach Geschlecht",
+      "description": "Das Geschlechterverhältnis zeigt Ihnen, welche Zielgruppe Ihre Veranstaltung hat"
+    }
+  }
+}

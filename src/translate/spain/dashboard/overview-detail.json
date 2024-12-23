@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "title": "Resumen de Ingresos"
+  },
+  "sales_period": "Período de ventas",
+  "sales_volume": "Volumen de ventas",
+  "revenue": "Ingresos",
+  "expense": "Gastos",
+  "profit": "Beneficio",
+  "order": "Pedido",
+  "profit_performance": "Desempeño del beneficio",
+  "conversion_rate": {
+    "title": "Tasa de conversión",
+    "regular_customers": "Clientes regulares",
+    "new_customers": "Nuevos clientes",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "Compartir",
+      "print": "Imprimir"
+    }
+  },
+  "average_referral_rate": {
+    "title": "Tasa promedio de referencia"
+  },
+  "total": {
+    "revenue": "Ingresos totales",
+    "expense": "Gastos totales",
+    "profit": "Beneficio total"
+  }
+}

@@ -1,1 +1,55 @@
-{}
+{
+  "event": {
+    "categories": "Категории",
+    "date_time": "Дата и Время",
+    "location": "Местоположение"
+  },
+  "payment": {
+    "title": "Информация о платеже",
+    "view_discount": "Посмотреть скидку",
+    "free": "Бесплатно",
+    "quantity": "Количество",
+    "total_amount": "Общая сумма",
+    "buy": "Купить"
+  },
+  "apply_coupon": {
+    "title": "Применить купон",
+    "apply": "Применить"
+  },
+  "checkout": {
+    "title": "Информация о проверке",
+    "name_label": "Имя клиента",
+    "name_placeholder": "Введите имя",
+    "email_label": "Электронная почта клиента",
+    "email_placeholder": "Введите электронную почту",
+    "phone_label": "Телефон клиента",
+    "phone_placeholder": "Введите телефон",
+    "total_price": "Общая цена",
+    "discount": "Скидка",
+    "final_price": "Конечная цена",
+    "submit": "Оформить заказ"
+  },
+  "information": {
+    "time": "Время",
+    "location": "Местоположение",
+    "happen": "Произошло",
+    "participant": "Участник",
+    "organization_by": "Организовано",
+    "follow": "Подписаться",
+    "unfollow": "Отписаться",
+    "description": "Описание",
+    "reasons_to_attend_the_event": "Причины посетить событие"
+  },
+  "conversation": {
+    "title": "Беседа",
+    "description_one": "Если у вас есть вопросы или проблемы, связанные с этим событием,",
+    "description_two": "Пожалуйста, свяжитесь с организатором для получения дополнительной информации.",
+    "name_label": "Имя",
+    "email_label": "Электронная почта",
+    "event_label": "Событие",
+    "start_chat": "Начать чат"
+  },
+  "related": {
+    "title": "Похожие события"
+  }
+}

@@ -1,1 +1,10 @@
-{}
+{
+  "header": {
+    "title": "Ereignisliste"
+  },
+  "search": "Ereignis suchen",
+  "item": {
+    "sales": "Verkäufe",
+    "favourite": "Favoriten"
+  }
+}

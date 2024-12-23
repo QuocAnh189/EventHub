@@ -2,183 +2,159 @@ import { faker } from '@faker-js/faker'
 
 const transactions = [
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Visa',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'waiting',
-    country: 'USA',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Albo E-Store',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Visa',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'USA',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Ecom',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Maestro',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'Australia',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Albo E-Store',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'PayPal',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'Israel',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Ecom',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Switch',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'cancelled',
-    country: 'Italy',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Delight',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Visa',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'rejected',
-    country: 'USA',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Delight',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Mastercard',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'France',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Whale',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'PayPal',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'France',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Academy',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Visa',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'Latvia',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Academy',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'PayPal',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'cancelled',
-    country: 'Poland',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Oakley Store',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Maestro',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'Canada',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Oakley Store',
-      logo: ''
+      coverImageUrl: ''
     }
   },
   {
-    sku: faker.finance.accountNumber(5),
-    timestamp: faker.date.past(),
-    method: 'Mastercard',
-    type: faker.finance.transactionType(),
+    created_at: faker.date.past(),
+    customerName: 'Anh Quoc',
     status: 'approved',
-    country: 'Sweden',
-    currency: faker.finance.currencyCode(),
-    fee: faker.finance.amount(1, 10000, 2),
-    tax: faker.finance.amount(0, 1, 1),
-    seller: {
+    quantity: 2,
+    totalPrice: 100,
+    discount: '20',
+    finalPrice: 80,
+    event: {
       name: 'Albo E-Store',
-      logo: ''
+      coverImageUrl: ''
     }
   }
 ]

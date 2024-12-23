@@ -5,11 +5,13 @@ import imageRunImg from '@assets/images/landing/image_automation.png'
 import raiseHandImg from '@assets/images/landing/hand_raise.webp'
 
 //animation
-// import Slider from 'react-slick'
 import Marquee from 'react-fast-marquee'
 import { motion } from 'framer-motion'
 
-const AutomaticRun = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const AutomaticRun = ({ t }: any) => {
   return (
     <motion.section
       initial={{ y: -10, opacity: 0 }}
@@ -23,17 +25,14 @@ const AutomaticRun = () => {
           <img
             loading='lazy'
             src={gradientPurpleImg}
-            alt=''
             className='w-[70em] h-auto absolute inline-block max-w-full z-[1]'
           />
           <div className='flex flex-col gap-y-[2.75em]'>
-            {/* <div className='flex text-center'> */}
             <Marquee loop={0}>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
@@ -41,7 +40,6 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
@@ -49,7 +47,6 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
@@ -57,7 +54,6 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
@@ -65,19 +61,15 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
             </Marquee>
-            {/* </div> */}
-            {/* <div className='flex text-center'> */}
             <Marquee direction='right' loop={0}>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
@@ -85,7 +77,6 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
@@ -93,7 +84,6 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
@@ -101,7 +91,6 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
@@ -109,34 +98,30 @@ const AutomaticRun = () => {
                 <img
                   loading='lazy'
                   src={imageRunImg}
-                  alt=''
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
             </Marquee>
-            {/* </div> */}
           </div>
           <div className='z-[2] text-center absolute top-[7.19em] flex flex-col items-center gap-10'>
             <div className='text-center block leading-[1] font-bold text-[4em] mdl:text-[6em] xl:text-[10em] tracking-[-0.025em]'>
-              Select my
+              {t('automatic.select_my')}
               <br />
             </div>
             <div className='block mt-[-2.1em]'>
               <div className='block text-center leading-[1] font-bold text-[4em] mdl:text-[6em] xl:text-[10em] tracking-[-0.025em]'>
-                Event
+                {t('automatic.event')}
               </div>
             </div>
           </div>
           <img
             loading='lazy'
             src={raiseHandImg}
-            alt=''
             className='w-[30.75em] h-[30.75em] max-w-full inline-block absolute bottom-[-4em] object-contain z-[4]'
           />
           <img
             loading='lazy'
             src={heartImg}
-            alt=''
             className='w-[10.25em] h-auto inline-block max-w-full absolute z-[3] bottom-[0] translate-x-[19%] translate-y-[-28em]'
           />
           <img
@@ -148,7 +133,6 @@ const AutomaticRun = () => {
           <img
             loading='lazy'
             src={heartImg}
-            alt=''
             className='z-[1] bottom-[0] h-auto max-w-full inline-bock align-middle absolute w-[2.75em] translate-x-[-3.4em] translate-y-[-34em]'
           />
         </div>
@@ -157,4 +141,4 @@ const AutomaticRun = () => {
   )
 }
 
-export default AutomaticRun
+export default withTranslation('landing')(AutomaticRun)

@@ -6,7 +6,10 @@ import PhillipImg from '@assets/images/landing/manager_phillip.webp'
 //animation
 import { motion } from 'framer-motion'
 
-const Manage = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const Manage = ({ t }: any) => {
   return (
     <motion.section
       initial={{ y: -10, opacity: 0 }}
@@ -49,7 +52,7 @@ const Manage = () => {
           </div>
           <div className='rounded-[60px] bg-blue-light4 px-[30px] pb-[16px] pt-0 text-blue'>
             <div className='my-0 font-sans text-[4em] font-extrabold leading-[1] tracking-tight'>
-              project management
+              {t('manage.project_management')}
             </div>
           </div>
         </div>
@@ -61,4 +64,4 @@ const Manage = () => {
   )
 }
 
-export default Manage
+export default withTranslation('landing')(Manage)

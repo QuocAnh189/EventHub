@@ -3,13 +3,16 @@ import ProtectedLayout from '@layouts/protected'
 import PageHeader from '@layouts/components/PageHeader'
 import CouponsGrid from '@widgets/CouponsGrid'
 
-const Coupon = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const Coupon = ({ t }: any) => {
   return (
     <ProtectedLayout>
-      <PageHeader title='Coupon' />
+      <PageHeader title={t('header.title')} />
       <CouponsGrid />
     </ProtectedLayout>
   )
 }
 
-export default Coupon
+export default withTranslation('coupon')(Coupon)

@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "Giới thiệu",
+    "manage": "Quản lý",
+    "overview": "Tổng quan",
+    "feedback": "Phản hồi",
+    "contact": "Kết nối",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "get_started": "Bắt đầu"
+  },
+  "intro": {
+    "text_one": "Mỗi Sự Kiện",
+    "text_two": "Kết Nối Khoảnh Khắc",
+    "text_three": "- dễ dàng và tiện lợi",
+    "text_four": "Kết nối Mọi Người, Đam Mê và Mục Đích trong Mỗi Khoảnh Khắc Sự Kiện",
+    "try_now": "Thử ngay"
+  },
+  "manage": {
+    "project_management": "Quản lý dự án"
+  },
+  "automatic": {
+    "select_my": "Hãy chọn",
+    "event": "Sự kiện"
+  },
+  "feedback": {
+    "title": "Tin tưởng với hơn",
+    "description": "2,500 thành viên"
+  },
+  "contact": {
+    "text_one": "Mời bạn bè",
+    "text_two": "với EventHub",
+    "text_three": "Thử nó 14 ngày miễn phí",
+    "text_four": " - không cần thẻ tín dụng.",
+    "try_now": "Thử ngay",
+    "email_placeholder": "Nhập địa chỉ email"
+  }
+}

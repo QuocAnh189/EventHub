@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "优惠券"
+  },
+  "add_new_coupon": "添加新优惠券",
+  "search": "搜索...",
+  "modal": {
+    "create_coupon": "创建优惠券",
+    "update_coupon": "更新优惠券",
+    "name_label": "名称",
+    "name_placeholder": "输入名称",
+    "description_label": "描述",
+    "description_placeholder": "输入描述",
+    "min_price_label": "最低价格",
+    "min_quantity_label": "最小数量",
+    "percent_label": "百分比",
+    "expire_label": "过期日期"
+  },
+  "card": {
+    "view_edit": "查看编辑",
+    "delete": "删除"
+  }
+}

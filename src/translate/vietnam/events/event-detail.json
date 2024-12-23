@@ -1,1 +1,55 @@
-{}
+{
+  "event": {
+    "categories": "Thể loại",
+    "date_time": "Ngày và giờ",
+    "location": "Địa điểm"
+  },
+  "payment": {
+    "title": "Thông tin thanh toán",
+    "view_discount": "Xem giảm giá",
+    "free": "Miễn phí",
+    "quantity": "Số lượng",
+    "total_amount": "Tổng giá trị",
+    "buy": "Mua"
+  },
+  "apply_coupon": {
+    "title": "Áp dụng mã giảm giá",
+    "apply": "Áp dụng"
+  },
+  "checkout": {
+    "title": "Thông tin than toán",
+    "name_label": "Tên khách hàng",
+    "name_placeholder": "Nhập tên",
+    "email_label": "Email khách hàng",
+    "email_placeholder": "Nhập Email",
+    "phone_label": "Số điện thoại",
+    "phone_placeholder": "Nhập số điện thoại",
+    "total_price": "Tổng giá",
+    "discount": "Giảm giá",
+    "final_price": "Thành tiền",
+    "submit": "Thanh toán"
+  },
+  "information": {
+    "time": "Thời gian",
+    "location": "Địa điểm",
+    "happen": "Nơi diễn ra",
+    "participant": "Người tham dự",
+    "organization_by": "Tổ chức bởi",
+    "follow": "Theo dõi",
+    "unfollow": "Bỏ theo dõi",
+    "description": "Mô tả",
+    "reasons_to_attend_the_event": "lý do để tham dự sự kiện"
+  },
+  "conversation": {
+    "title": "Cuộc trò chuyện",
+    "description_one": "Nếu bạn có bất kỳ câu hỏi hoặc vấn đề liên quan đến sự kiện này.",
+    "description_two": "Vui lòng liên hệ với tổ chức để biết thêm thông tin.",
+    "name_label": "Tên",
+    "email_label": "Địa chỉ Email",
+    "event_label": "Sự kiện",
+    "start_chat": "Trò chuyện"
+  },
+  "related": {
+    "title": "Sự kiện liên quan"
+  }
+}

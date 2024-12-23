@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "私の費用詳細"
+  },
+  "add_new_expense": "新しい費用を追加",
+  "expense_placeholder": "費用名を入力",
+  "add_new_sub_expense": "新しいサブ費用を追加",
+  "sub_expense_placeholder": "名前を入力"
+}

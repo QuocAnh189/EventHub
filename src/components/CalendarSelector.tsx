@@ -5,17 +5,18 @@ interface Props {
   wrapperClass: string
   label?: string
   id: string
+  onChange?: any
 }
 
 const CalendarSelector = (props: Props) => {
-  const { wrapperClass, label = 'Sales period', id } = props
+  const { wrapperClass, label = 'Period', id, onChange } = props
 
   return (
     <div className={`${wrapperClass || ''} flex flex-col gap-2.5 w-full`}>
       <label className='h5 w-fit' htmlFor={id}>
         {label}:
       </label>
-      <RangeDatePicker id={id} />
+      <RangeDatePicker onChange={onChange} id={id} />
     </div>
   )
 }

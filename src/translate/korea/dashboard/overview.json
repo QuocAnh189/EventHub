@@ -1,1 +1,32 @@
-{}
+{
+  "header": {
+    "title": "개요"
+  },
+  "main_overview": {
+    "title": "내 이벤트",
+    "description": "아래는 시간이 지나면서 귀하의 조직에 대한 일반적인 통계입니다.",
+    "average_rate": "2024년 평균 비율",
+    "revenue": "수익",
+    "expense": "비용",
+    "orders": "총 주문",
+    "view_profile": "프로필 보기",
+    "contact": "연락처",
+    "share": "공유"
+  },
+  "total_balance": "총 잔액",
+  "chart": {
+    "title": "2024년 판매 통계",
+    "revenue": "수익",
+    "expense": "비용"
+  },
+  "total_report": {
+    "title": "전체 보고서",
+    "description": "모든 기간별",
+    "revenue": "수익",
+    "expense": "비용",
+    "profit": "이익",
+    "more_detail": "더 많은 세부 사항",
+    "share": "공유",
+    "print": "인쇄"
+  }
+}

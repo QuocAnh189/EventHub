@@ -6,20 +6,24 @@ import useMeasure from 'react-use-measure'
 import Spring from './Spring'
 import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 import ModalUpdateCoupon from '@pages/coupon/components/ModalUpdate'
+import ConfirmDialog from './Dialog'
 
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
-import ConfirmDialog from './Dialog'
 
-interface Props {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+interface IProps {
+  t: any
   coupon: ICoupon
   index: number
   onDelete: (id: string) => void
   isDeleteLoading: boolean
 }
 
-const CouponCard = (props: Props) => {
-  const { coupon, index, onDelete, isDeleteLoading } = props
+const CouponCard = (props: IProps) => {
+  const { t, coupon, index, onDelete, isDeleteLoading } = props
 
   const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [modalOpen, setModalOpen] = useState<boolean>(false)
@@ -41,7 +45,7 @@ const CouponCard = (props: Props) => {
               <TruncatedText text={coupon.name} width={titleWidth} lines={2} />
             </h6>
           </div>
-          <div className='flex items-center justify-center bg-primary-600 w-12 h-12 rounded-full'>
+          <div className='flex items-center justify-center bg-green w-12 h-12 rounded-full'>
             <p className='text-white font-bold'>{coupon.percentageValue}%</p>
           </div>
         </div>
@@ -50,10 +54,10 @@ const CouponCard = (props: Props) => {
         </p>
         <div className='flex items-center justify-between'>
           <button className='text-btn' onClick={() => setModalOpen(true)}>
-            View Edit
+            {t('card.view_edit')}
           </button>
           <button onClick={() => setOpenDialog(true)} className='text-btn text-error'>
-            Delete
+            {t('card.delete')}
           </button>
         </div>
       </Spring>
@@ -78,4 +82,4 @@ const CouponCard = (props: Props) => {
   )
 }
 
-export default CouponCard
+export default withTranslation('coupon')(CouponCard)

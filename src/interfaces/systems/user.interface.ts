@@ -1,4 +1,5 @@
 import { EGender } from '@constants/enum.constant'
+import { IRole } from './role.interface'
 
 export interface IUser {
   id: string
@@ -21,9 +22,4 @@ export interface IUserFollower {
   avatarUrl: string
   email: string
   userName: string
-}
-
-interface IRole {
-  id: string
-  name: string
 }

@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "설정"
+  },
+  "profile pannel": {
+    "logout": "로그아웃",
+    "notifications": "알림",
+    "messages": "메시지",
+    "number_of_events": "이벤트 수",
+    "follwing": "팔로잉",
+    "follower": "팔로워"
+  },
+  "profile_detail": {
+    "title": "내 프로필",
+    "user_name": "사용자 이름",
+    "gender": "성별",
+    "full_name": "성명",
+    "dob": "생년월일",
+    "email": "이메일",
+    "status": "상태",
+    "password": "비밀번호",
+    "role": "역할",
+    "phone_number": "전화번호",
+    "bio": "바이오",
+    "change_password": "비밀번호 변경",
+    "update_information": "정보 업데이트",
+    "admin_panel_tools": "관리자 패널 도구",
+    "connected_apps": "연결된 앱",
+    "payment_methods": "결제 방법",
+    "appearance": "외관",
+    "security_assets": "보안 자산",
+    "configuration_settings": "구성 설정",
+    "view_mode": "보기 모드",
+    "sidebar_position": "사이드바 위치"
+  }
+}

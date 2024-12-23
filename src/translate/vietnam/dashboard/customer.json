@@ -13,13 +13,12 @@
     "revenue": "Doanh thu"
   },
   "customer_retention_rate": {
+    "title": "Tỷ lệ giữ chân khách hàng",
     "total_customer": "Tổng khách hàng",
-    "in": "trong",
+    "in": "trong năm",
     "description": "Để tính CRR, hãy trừ số lượng khách hàng mới khỏi tổng số khách hàng vào cuối kỳ, chia cho số lượng khách hàng đầu kỳ và nhân với 100. Việc giữ chân khách hàng thường tiết kiệm chi phí hơn so với việc có được khách hàng mới, khiến CRR là trọng tâm thiết yếu của các công ty nhằm thúc đẩy tăng trưởng và ổn định.",
     "new_customers": "Khách hàng mới",
-    "frequent_customers": "Khách hàng thường xuyên",
-    "idle_users": "Khách hàng nhàn rỗi",
-    "cart_abandoners": "Người bỏ giỏ hàng",
+    "regular_customers": "Khách hàng thường xuyên",
     "which_is": "đó là",
     "visitors": "người ghé thăm"
   },

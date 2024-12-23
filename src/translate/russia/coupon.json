@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "Купон"
+  },
+  "add_new_coupon": "Добавить новый купон",
+  "search": "Поиск...",
+  "modal": {
+    "create_coupon": "Создать купон",
+    "update_coupon": "Обновить купон",
+    "name_label": "Название",
+    "name_placeholder": "Введите название",
+    "description_label": "Описание",
+    "description_placeholder": "Введите описание",
+    "min_price_label": "Минимальная цена",
+    "min_quantity_label": "Минимальное количество",
+    "percent_label": "Процент",
+    "expire_label": "Дата истечения"
+  },
+  "card": {
+    "view_edit": "Просмотр редактирования",
+    "delete": "Удалить"
+  }
+}

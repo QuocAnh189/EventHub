@@ -61,9 +61,9 @@ const Explore = ({ t }: any) => {
             </div>
 
             <input
-              className='field-input w-[300px] md:w-[400px]'
+              className='field-input w-[300px]'
               type='search'
-              placeholder='Search...'
+              placeholder={t('search')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />

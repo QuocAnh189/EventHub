@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "내 티켓"
+  },
+  "search": "검색...",
+  "card": {
+    "ticket_no": "티켓 번호",
+    "name": "이름",
+    "email": "이메일",
+    "phone": "전화",
+    "ticket_type": "티켓 유형",
+    "status": "상태"
+  }
+}

@@ -1,20 +1,20 @@
 {
-  "header": { "title": "My Event", "trash": "Trash Event" },
-  "body": { "title": "Add new event", "link_csv": "Export CSV" },
+  "header": { "title": "Mon événement" },
+  "add_new": "Ajouter un nouvel événement",
+  "export_csv": "Exporter en CSV",
+  "event_label": "Événement",
   "management": {
-    "label_event": "Events",
-    "label_status": "Status",
-    "label_category": "Category",
-    "label_price": "Price",
-    "filter": "Filter",
-    "clear": "Clear",
-    "search_event": "Search Event",
-    "view_events": "View events",
-    "select_action": "Select Action",
-    "select_all": "Select All",
-    "button_edit": "Edit",
-    "button_restore": "Restore",
-    "button_trash": "Trash",
-    "button_delete": "Delete"
+    "label_event": "Événements",
+    "label_status": "Statut",
+    "label_category": "Catégorie",
+    "label_price": "Prix",
+    "search": "Rechercher un événement",
+    "view_events": "Voir les événements",
+    "select_action": "Sélectionner l'action",
+    "button_edit": "Éditer",
+    "button_restore": "Restaurer",
+    "button_trash": "Corbeille",
+    "button_delete": "Supprimer",
+    "apply_coupons": "Appliquer les coupons"
   }
 }

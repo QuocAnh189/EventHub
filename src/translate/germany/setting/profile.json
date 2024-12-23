@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "Einstellungen"
+  },
+  "profile pannel": {
+    "logout": "Abmelden",
+    "notifications": "Benachrichtigungen",
+    "messages": "Nachrichten",
+    "number_of_events": "Anzahl der Ereignisse",
+    "follwing": "Folgt",
+    "follower": "Follower"
+  },
+  "profile_detail": {
+    "title": "Mein Profil",
+    "user_name": "Benutzername",
+    "gender": "Geschlecht",
+    "full_name": "Vollständiger Name",
+    "dob": "Geburtsdatum",
+    "email": "E-Mail",
+    "status": "Status",
+    "password": "Passwort",
+    "role": "Rolle",
+    "phone_number": "Telefonnummer",
+    "bio": "Bio",
+    "change_password": "Passwort ändern",
+    "update_information": "Informationen aktualisieren",
+    "admin_panel_tools": "Admin-Panel-Tools",
+    "connected_apps": "Verbundene Apps",
+    "payment_methods": "Zahlungsmethoden",
+    "appearance": "Aussehen",
+    "security_assets": "Sicherheitsressourcen",
+    "configuration_settings": "Konfigurationseinstellungen",
+    "view_mode": "Ansichtsmodus",
+    "sidebar_position": "Seitenleistenposition"
+  }
+}

@@ -105,14 +105,14 @@ export const getStatusColor = (status: any) => {
     default:
     case 'approved':
     case 'completed':
-    case EPaymentStatus.PAID:
-      return 'accent'
+    case EPaymentStatus.Success:
+      return 'green'
     case 'waiting':
     case 'confirmed':
-    case EPaymentStatus.PENDING:
-      return 'green'
+    case EPaymentStatus.Pending:
+      return 'accent'
     case 'cancelled':
-    case EPaymentStatus.FAILED:
+    case EPaymentStatus.Reject:
       return 'red'
     case 'rejected':
     case 'refunded':

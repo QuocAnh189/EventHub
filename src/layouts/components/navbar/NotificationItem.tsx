@@ -21,7 +21,7 @@ interface Props {
 }
 
 const NotificationItem = (props: Props) => {
-  const { notification, index, onView } = props
+  const { t, notification, index, onView } = props
 
   return (
     <Spring className='notification with-border flex gap-6' index={index}>
@@ -31,7 +31,7 @@ const NotificationItem = (props: Props) => {
       <div>
         <span className='h6 !text-sm truncate max-w-[210px]'>{notification.follower.fullName}</span>
         <p>
-          <span>{notification.follower.userName}</span> đã theo dõi bạn
+          <span>{notification.follower.userName}</span> {t('notification.follow_text')}
         </p>
         <p className='flex items-center gap-1.5 mt-1 mb-2 text-xs font-medium text-gray'>
           <span>{dayjs(notification.createdAt).fromNow()}</span>
@@ -39,7 +39,7 @@ const NotificationItem = (props: Props) => {
         </p>
         <div className='flex gap-2.5'>
           <button className='text-btn' onClick={() => onView(notification.follower.id)}>
-            View Profile
+            {t('notification.view_profile')}
           </button>
         </div>
       </div>

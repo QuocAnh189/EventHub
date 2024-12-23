@@ -40,4 +40,4 @@ const UserInformationCard = (props: IProps) => {
   )
 }
 
-export default withTranslation('profile')(UserInformationCard)
+export default withTranslation('userinfo')(UserInformationCard)

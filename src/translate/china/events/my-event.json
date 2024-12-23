@@ -1,1 +1,20 @@
-{}
+{
+  "header": { "title": "我的事件" },
+  "add_new": "添加新事件",
+  "export_csv": "导出CSV",
+  "event_label": "事件",
+  "management": {
+    "label_event": "事件",
+    "label_status": "状态",
+    "label_category": "类别",
+    "label_price": "价格",
+    "search": "搜索事件",
+    "view_events": "查看事件",
+    "select_action": "选择操作",
+    "button_edit": "编辑",
+    "button_restore": "恢复",
+    "button_trash": "垃圾箱",
+    "button_delete": "删除",
+    "apply_coupons": "应用优惠券"
+  }
+}

@@ -1,1 +1,5 @@
-{}
+{
+  "header": { "title": "달력" },
+  "body": { "events": "이벤트" },
+  "status": { "closed": "종료", "happening": "진행 중", "upcoming": "예정" }
+}

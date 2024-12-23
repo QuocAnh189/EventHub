@@ -10,11 +10,11 @@ const TrashEvent = ({ t }: any) => {
   return (
     <ProtectedLayout>
       <div className='min-h-screen'>
-        <PageHeader title={t('header.trash')} />
+        <PageHeader title={t('header.title')} />
         <EventManagementTrash />
       </div>
     </ProtectedLayout>
   )
 }
 
-export default withTranslation('my_event')(TrashEvent)
+export default withTranslation('trash_event')(TrashEvent)

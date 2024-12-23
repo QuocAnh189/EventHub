@@ -1,1 +1,75 @@
-{}
+{
+  "header": { "title_create": "Crea evento", "update_create": "Aggiorna evento" },
+  "option_one": { "title": "Crea evento", "description": "Dovrai creare l'evento manualmente" },
+  "option_two": {
+    "title": "Importa evento",
+    "description": "Hai già un evento?",
+    "example_file": "File di esempio qui"
+  },
+  "step": {
+    "information": "Informazioni",
+    "banner": "Banner",
+    "ticket": "Biglietto",
+    "review": "Recensione"
+  },
+  "information": {
+    "event": {
+      "name": "Nome",
+      "name_placeholder": "Inserisci il nome dell'evento",
+      "category": "Categoria",
+      "category_placeholder": "Seleziona la categoria dell'evento",
+      "type": { "name": "Stile dell'evento", "single_event": "Evento singolo", "recurring_event": "Evento ricorrente" }
+    },
+    "datetime": {
+      "title": "Data e ora",
+      "session": { "title": "Sessione", "start_time": "Ora di inizio", "end_time": "Ora di fine" }
+    },
+    "location": {
+      "title": "Scegli la location",
+      "label": "Dove si terrà il tuo evento",
+      "placeholder": "Inserisci il nome della location",
+      "path_placeholder": "Inserisci il percorso della location (Google Maps)"
+    },
+    "description": {
+      "title": "Informazioni aggiuntive",
+      "label": "Descrizione dell'evento",
+      "placeholder": "Inserisci la descrizione dell'evento"
+    },
+    "reason": {
+      "title": "Motivo",
+      "label": "Motivo dell'evento",
+      "placeholder": "Inserisci il motivo"
+    }
+  },
+  "banner": {
+    "cover_image": "Immagine di copertura",
+    "subs_image": "Immagine aggiuntiva"
+  },
+  "ticket": {
+    "title": "Che tipo di evento stai organizzando?",
+    "option_one": { "label": "Evento a PAGAMENTO", "description": "Il mio evento include biglietti per l'ingresso" },
+    "option_two": { "label": "Evento GRATUITO", "description": "Sto organizzando un evento gratuito" },
+    "ticket_title": "Quale biglietto stai vendendo?",
+    "ticket_name": "Nome del biglietto",
+    "ticket_name_placeholder": "Inserisci il nome",
+    "ticket_quantity": "Quantità di biglietti",
+    "ticket_price": "Prezzo del biglietto"
+  },
+  "review": {
+    "public": "Pubblico",
+    "date_time_label": "Data e ora",
+    "ticket_information": "Informazioni sul biglietto",
+    "ticket_type": "Tipo di biglietto",
+    "free": "Gratis",
+    "fee": "Tariffa",
+    "ticket_sub": "Biglietto",
+    "location_title": "Location",
+    "organization_title": "Organizzato da",
+    "description_title": "Descrizione dell'evento",
+    "reasons_event": "Motivi per partecipare all'evento",
+    "button_create": "Crea evento",
+    "button_update": "Aggiorna evento"
+  },
+  "button_back": "Indietro",
+  "button_continue": "Continua"
+}

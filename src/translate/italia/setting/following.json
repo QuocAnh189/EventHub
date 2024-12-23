@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Seguito"
+  },
+  "my_following": "I miei seguiti",
+  "search": "Cerca ...",
+  "action": {
+    "view_profile": "Vedi il profilo",
+    "unfollow_profile": "Smettere di seguire"
+  }
+}

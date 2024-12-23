@@ -1,1 +1,5 @@
-{}
+{
+  "header": { "title": "カレンダー" },
+  "body": { "events": "イベント" },
+  "status": { "closed": "終了", "happening": "開催中", "upcoming": "近日開催" }
+}

@@ -1,28 +1,41 @@
-export interface Conversation {
-  id?: string
-  eventId: string
-  event: ConversationEvent
-  hostId: string
-  userId: string
-  user: ConversationUser
-  lastMessage?: ConversationLastMessage
-  isDeleted: boolean
-  deletedAt: Date
-  createdAt: Date
-  updatedAt: Date
+export interface IConversation {
+  id: string
+  event: Event
+  organizer?: User
+  user: User
+  lastMessage: LastMessage
+  createdAt: string
+  updatedAt: string
 }
 
-export interface ConversationEvent {
+interface Event {
+  id: string
   name: string
-  coverImage: string
+  coverImageUrl: string
 }
 
-export interface ConversationUser {
+interface User {
+  id: string
+  email: string
   fullName: string
-  avatar: string
+  userName: string
+  avatarUrl: string
 }
 
-export interface ConversationLastMessage {
-  content: string
+interface LastMessage {
   senderId: string
+  receiverId: string
+  content: string
+  createdAt: string
+  updatedAt: string
+  deletedAt: string
+}
+
+export interface IMessage {
+  id: string
+  senderId: string
+  receiverId: string
+  content: string
+  createdAt: string
+  updatedAt: string
 }

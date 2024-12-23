@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "我的票"
+  },
+  "search": "搜索...",
+  "card": {
+    "ticket_no": "票号",
+    "name": "姓名",
+    "email": "电子邮件",
+    "phone": "电话",
+    "ticket_type": "票种",
+    "status": "状态"
+  }
+}

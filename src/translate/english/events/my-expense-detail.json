@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "My Expense Detail"
+  },
+  "add_new_expense": "Add new expense",
+  "expense_placeholder": "Enter expense name",
+  "add_new_sub_expense": "Add new sub expense",
+  "sub_expense_placeholder": "Enter name"
+}

@@ -1,1 +1,21 @@
-{}
+{
+  "header": {
+    "title": "レビュー"
+  },
+  "search": "検索...",
+  "middle": {
+    "review_score": "レビューの評価",
+    "customers": "顧客",
+    "total": "合計",
+    "positive": "ポジティブ",
+    "negative": "ネガティブ"
+  },
+  "main": {
+    "title": "最新の承認されたレビュー"
+  },
+  "modal": {
+    "date": "日付",
+    "username": "ユーザー名",
+    "rate": "評価"
+  }
+}

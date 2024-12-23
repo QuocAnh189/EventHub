@@ -1,5 +1,5 @@
 {
-  "search home": {
+  "search_home": {
     "title": "El destino adecuado para ti y tus amigos",
     "sub_title": "Participar en muchos eventos te ayudará a descubrir mejor tu personalidad",
     "explore": "Explorar ahora",
@@ -12,40 +12,18 @@
     "view_event_btn": "Ver",
     "All": "Todos",
     "Upcoming": "Próximos",
-    "Opening": "Apertura",
-    "Closed": "Cerrado",
-    "categories": {
-      "Visual Arts": "Artes visuales",
-      "Sports & Active Life": "Deportes y vida activa",
-      "Politics": "Política",
-      "Performing Arts": "Artes escénicas",
-      "Other": "Otros",
-      "Nightlife": "Vida nocturna",
-      "Music": "Música",
-      "Lectures & Books": "Conferencias y libros",
-      "Kids & Family": "Niños y familia",
-      "Holidays": "Vacaciones",
-      "Food & Drink": "Comida y bebida",
-      "Film": "Cine",
-      "Festivals & Fairs": "Festivales y ferias",
-      "Fashion": "Moda",
-      "Concerts": "Conciertos",
-      "Conferences": "Conferencias",
-      "Community": "Comunidad",
-      "Charities": "Caridad",
-      "Anniversary": "Aniversario",
-      "Academic": "Académico"
-    }
+    "Opening": "Abierto",
+    "Closed": "Cerrado"
   },
-  "best events": {
+  "best_events": {
     "title": "Mejores eventos para visitar"
   },
-  "upcoming events": {
+  "upcoming_events": {
     "title": "Eventos próximos"
   },
-  "about us": {
+  "about_us": {
     "title": "Sobre nosotros",
-    "description_one": "La gestión de eventos y la venta de entradas es tu destino principal para soluciones de planificación de eventos y venta de entradas sin problemas. Con un equipo dedicado de profesionales, nos especializamos en crear experiencias inolvidables personalizadas según tu visión única. Desde conferencias corporativas hasta festivales de música y todo lo demás, nos encargamos de cada aspecto de la coordinación del evento con precisión y creatividad. Nuestra plataforma fácil de usar garantiza transacciones fluidas para organizadores y asistentes, haciendo que la gestión de eventos sea fácil y eficiente. Confía en nosotros para hacer realidad tus eventos y dejar una impresión duradera y recuerdos inolvidables.",
-    "description_two": "Ya sea que estés organizando una pequeña reunión o un evento a gran escala, nuestra atención al detalle y el compromiso con la excelencia garantizan el éxito en cada ocasión. Déjanos encargarnos del estrés de la planificación de eventos mientras te concentras en lo que realmente importa: crear momentos inolvidables para tus invitados."
+    "description_one": "La gestión de eventos y la venta de entradas es su principal destino para soluciones de planificación de eventos y venta de entradas sin interrupciones. Con un equipo dedicado de profesionales, nos especializamos en crear experiencias inolvidables adaptadas a su visión única. Desde conferencias corporativas hasta festivales de música y todo lo que hay en medio, nos encargamos de todos los aspectos de la coordinación de eventos con precisión y creatividad. Nuestra plataforma de venta de entradas fácil de usar garantiza transacciones sin problemas tanto para los organizadores como para los participantes, haciendo que la gestión de eventos sea fácil y eficiente. Confíe en nosotros para dar vida a sus eventos, dejando impresiones duraderas y recuerdos inolvidables.",
+    "description_two": "Ya sea que esté organizando una reunión pequeña o un gran evento, nuestra atención al detalle y nuestro compromiso con la excelencia garantizan el éxito cada vez. Permítanos encargarnos del estrés de la planificación del evento para que usted pueda concentrarse en lo que realmente importa: crear momentos memorables para sus invitados."
   }
 }

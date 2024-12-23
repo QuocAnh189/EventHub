@@ -1,45 +1,45 @@
 {
   "header": {
-    "title": "Explore"
+    "title": "Explorer"
   },
-  "sort": "Sort by date",
-  "asc": "ASC",
-  "desc": "DESC",
-  "search": "Search Event",
+  "sort": "Trier par date",
+  "asc": "Ascendant",
+  "desc": "Descendant",
+  "search": "Rechercher ...",
   "sidebar": {
     "rate": {
-      "label": "Rating",
-      "star": "star"
+      "label": "Évaluation",
+      "star": "étoile"
     },
     "status": {
-      "label": "Status",
-      "all": "All",
-      "upcoming": "Upcoming",
-      "opening": "Opening",
-      "closed": "Closed"
+      "label": "Statut",
+      "all": "Tous",
+      "upcoming": "À venir",
+      "opening": "Ouvert",
+      "closed": "Fermé"
     },
     "category": {
-      "label": "Category",
-      "Visual Arts": "Visual Arts",
-      "Sports & Active Life": "Sports & Active Life",
-      "Politics": "Politics",
-      "Performing Arts": "Performing Arts",
-      "Other": "Other",
-      "Nightlife": "Nightlife",
-      "Music": "Music",
-      "Lectures & Books": "Lectures & Books",
-      "Kids & Family": "Kids & Family",
-      "Holidays": "Holidays",
-      "Food & Drink": "Food & Drink",
-      "Film": "Film",
-      "Festivals & Fairs": "Festivals & Fairs",
-      "Fashion": "Fashion",
-      "Concerts": "Concerts",
-      "Conferences": "Conferences",
-      "Community": "Community",
-      "Charities": "Charities",
-      "Anniversary": "Anniversary",
-      "Academic": "Academic"
+      "label": "Catégorie",
+      "Business": "Affaires",
+      "Gaming": "Jeux",
+      "Food & Beverage": "Aliments et Boissons",
+      "Education": "Éducation",
+      "Home & Garden": "Maison et Jardin",
+      "Parenting": "Parentalité",
+      "Fashion": "Mode",
+      "Travel": "Voyages",
+      "Finance & Investment": "Finance et Investissement",
+      "Movies & TV": "Films et TV",
+      "Books & Literature": "Livres et Littérature",
+      "Photography": "Photographie",
+      "Sport": "Sport",
+      "Music": "Musique",
+      "Pet & Animals": "Animaux et Animaux de Compagnie",
+      "Health & Fitness": "Santé et Fitness",
+      "Art & Design": "Art et Design",
+      "Science": "Science",
+      "Technology": "Technologie",
+      "Personal Development": "Développement Personnel"
     }
   }
 }

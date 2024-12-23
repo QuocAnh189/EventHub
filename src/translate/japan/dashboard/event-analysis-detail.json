@@ -1,1 +1,24 @@
-{}
+{
+  "header": {
+    "title": "イベント詳細"
+  },
+  "transaction": "取引",
+  "customer_review": "顧客レビュー",
+  "total": {
+    "user": "総ユーザー",
+    "order": "総注文"
+  },
+  "period_sales_revenue": "期間売上収益",
+  "review_by_customer": {
+    "title": "顧客のレビュー",
+    "positive": "ポジティブ",
+    "negative": "ネガティブ",
+    "review_rate": "レビュー率",
+    "from": "から",
+    "response": "回答",
+    "view_all_reviews": "すべてのレビューを見る"
+  },
+  "revenue": "収益",
+  "expense": "経費",
+  "profit": "利益"
+}

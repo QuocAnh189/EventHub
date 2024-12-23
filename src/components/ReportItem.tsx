@@ -24,7 +24,7 @@ const ReportItem = (props: Props) => {
             alt={data.title}
           />
         </div>
-        <h6>{t(`total-report.${data.dataKey}`)}</h6>
+        <h6>{t(`total_report.${data.dataKey}`)}</h6>
       </div>
       <span className='h6 !text-sm'>${commaFormatter(data.amount)}</span>
       <Trend wrapperClass='hidden w-[90px] xs:flex' value={data.trend} />

@@ -15,6 +15,7 @@ import Payment from './components/Payment'
 import Loader from '@components/Loader'
 import ConfirmDialog from '@components/Dialog'
 import { toast } from 'react-toastify'
+import RatingStars from '@ui/RatingStars'
 
 //redux
 import { useGetEventByIdQuery, useFavouriteEventMutation, useUnfavouriteEventMutation } from '@redux/apis/event.api'
@@ -29,9 +30,11 @@ import { LuClipboardType } from 'react-icons/lu'
 
 //util
 import dayjs from 'dayjs'
-import RatingStars from '@ui/RatingStars'
 
-const EventDetail = () => {
+//i18n
+import { withTranslation } from 'react-i18next'
+
+const EventDetail = ({ t }: any) => {
   const params = useParams()
 
   const { data: event, isFetching } = useGetEventByIdQuery(params.id!)
@@ -94,12 +97,12 @@ const EventDetail = () => {
           <div className='flex flex-col w-full gap-4'>
             <RatingStars rating={event?.averageRate} />
             <div className='flex flex-col gap-y-3'>
-              <h4 className='h4 text-header'>Categories</h4>
+              <h4 className='h4 text-header'>{t('event.categories')}</h4>
               <div className='flex items-center gap-1'>
                 <img src={event?.categories[0].iconImageUrl} alt='' className='w-8 h-8 rounded-full' />
                 <h6 className='text-header'>{event?.categories[0].name}</h6>
               </div>
-              <h4 className='h4 text-header'>Date and Time</h4>
+              <h4 className='h4 text-header'>{t('event.date_time')}</h4>
               <div className='flex items-center gap-1'>
                 <FaRegCalendarAlt color='gray' size='24px' />
                 <p className='text-header'>{dayjs(event?.startTime).format('dddd, D MMMM YYYY').toString()}</p>
@@ -118,7 +121,7 @@ const EventDetail = () => {
             </div>
 
             <div className='flex flex-col gap-2'>
-              <h4 className='h4 text-header'>Location</h4>
+              <h4 className='h4 text-header'>{t('event.location')}</h4>
               <div className='flex gap-1'>
                 <IoLocationOutline color='gray' size='24px' />
                 <p className='max-w-[500px] text-header'>{event?.location}</p>
@@ -153,7 +156,7 @@ const EventDetail = () => {
         </TabContext>
       </div>
 
-      <EventsRelate categoryId={event?.categories[0].id!} />
+      <EventsRelate title={t('related.title')} categoryId={event?.categories[0].id!} />
 
       {openDialog && (
         <ConfirmDialog
@@ -170,4 +173,4 @@ const EventDetail = () => {
   )
 }
 
-export default EventDetail
+export default withTranslation('event_detail')(EventDetail)

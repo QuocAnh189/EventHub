@@ -1,1 +1,55 @@
-{}
+{
+  "event": {
+    "categories": "カテゴリ",
+    "date_time": "日付と時間",
+    "location": "場所"
+  },
+  "payment": {
+    "title": "支払い情報",
+    "view_discount": "割引を表示",
+    "free": "無料",
+    "quantity": "数量",
+    "total_amount": "総額",
+    "buy": "購入"
+  },
+  "apply_coupon": {
+    "title": "クーポンを適用",
+    "apply": "適用"
+  },
+  "checkout": {
+    "title": "チェックアウト情報",
+    "name_label": "顧客名",
+    "name_placeholder": "名前を入力",
+    "email_label": "顧客メール",
+    "email_placeholder": "メールアドレスを入力",
+    "phone_label": "顧客電話番号",
+    "phone_placeholder": "電話番号を入力",
+    "total_price": "合計金額",
+    "discount": "割引",
+    "final_price": "最終金額",
+    "submit": "チェックアウト"
+  },
+  "information": {
+    "time": "時間",
+    "location": "場所",
+    "happen": "発生",
+    "participant": "参加者",
+    "organization_by": "主催者",
+    "follow": "フォロー",
+    "unfollow": "フォロー解除",
+    "description": "説明",
+    "reasons_to_attend_the_event": "イベントに参加する理由"
+  },
+  "conversation": {
+    "title": "会話",
+    "description_one": "このイベントに関する質問や問題があれば、",
+    "description_two": "詳細については主催者にお問い合わせください。",
+    "name_label": "名前",
+    "email_label": "メール",
+    "event_label": "イベント",
+    "start_chat": "チャットを開始"
+  },
+  "related": {
+    "title": "関連イベント"
+  }
+}

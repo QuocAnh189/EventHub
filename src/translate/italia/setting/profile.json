@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "Impostazioni"
+  },
+  "profile pannel": {
+    "logout": "Disconnetti",
+    "notifications": "Notifiche",
+    "messages": "Messaggi",
+    "number_of_events": "Numero di eventi",
+    "follwing": "Seguiti",
+    "follower": "Follower"
+  },
+  "profile_detail": {
+    "title": "Il Mio Profilo",
+    "user_name": "Nome utente",
+    "gender": "Genere",
+    "full_name": "Nome completo",
+    "dob": "Data di nascita",
+    "email": "Email",
+    "status": "Stato",
+    "password": "Password",
+    "role": "Ruolo",
+    "phone_number": "Numero di telefono",
+    "bio": "Biografia",
+    "change_password": "Cambia password",
+    "update_information": "Aggiorna informazioni",
+    "admin_panel_tools": "Strumenti del pannello admin",
+    "connected_apps": "App connesse",
+    "payment_methods": "Metodi di pagamento",
+    "appearance": "Aspetto",
+    "security_assets": "Risorse di sicurezza",
+    "configuration_settings": "Impostazioni di configurazione",
+    "view_mode": "Modalità di visualizzazione",
+    "sidebar_position": "Posizione della barra laterale"
+  }
+}

@@ -1,1 +1,21 @@
-{}
+{
+  "header": {
+    "title": "Reseñas"
+  },
+  "search": "Buscar...",
+  "middle": {
+    "review_score": "Puntuación de la reseña",
+    "customers": "Clientes",
+    "total": "Total",
+    "positive": "Positivo",
+    "negative": "Negativo"
+  },
+  "main": {
+    "title": "Últimas reseñas aceptadas"
+  },
+  "modal": {
+    "date": "Fecha",
+    "username": "Nombre de usuario",
+    "rate": "Puntuación"
+  }
+}

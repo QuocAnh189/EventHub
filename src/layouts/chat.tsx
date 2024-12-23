@@ -22,10 +22,15 @@ import { useAppSelector } from '@hooks/useRedux'
 import { useGetMessageByConversationIdQuery } from '@redux/apis/conversation.api'
 
 //interface
-import { IMessage } from '@interfaces/contents/conversation.interface'
+import { IMessage } from '@interfaces/websockets/conversation.interface'
 import { IUser } from '@interfaces/systems'
 
-const ChatLayout = ({ children }: PropsWithChildren) => {
+//i18n
+import { withTranslation, WithTranslation } from 'react-i18next'
+
+interface ModalMessageProps extends PropsWithChildren, WithTranslation {}
+
+const ChatLayout = ({ children, t }: ModalMessageProps) => {
   const loadMoreIntersect = useRef(null)
   const messagesCtrRef = useRef(null)
   const [openLiveChat, setOpenLiveChat] = useState<boolean>(false)
@@ -49,14 +54,14 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
           <>
             {!user && (
               <div className='flex flex-col gap-8 justify-center items-center text-center h-full opacity-35'>
-                <div className='text-2xl md:text-4xl p-16'>Please login to chat</div>
+                <div className='text-2xl md:text-4xl p-16'>{t('box_message.right.login_to_chat')}</div>
                 <ChatBubbleLeftRightIcon className='w-32 h-32 inline-block' />
               </div>
             )}
 
             {!conversation && user && (
               <div className='flex flex-col gap-8 justify-center items-center text-center h-full opacity-35'>
-                <div className='text-2xl md:text-4xl p-16'>Please select conversation to see messages</div>
+                <div className='text-2xl md:text-4xl p-16'>{t('box_message.right.select_conversation')}</div>
                 <ChatBubbleLeftRightIcon className='w-32 h-32 inline-block' />
               </div>
             )}
@@ -72,7 +77,7 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
                 <div ref={messagesCtrRef} className='flex-1 overflow-y-auto p-5'>
                   {data && data.items?.length === 0 && (
                     <div className='flex justify-center items-center h-full'>
-                      <div className='text-lg text-slate-200'>No messages found</div>
+                      <div className='text-lg text-slate-200'>{t('box_message.right.no_message')}</div>
                     </div>
                   )}
                   {data && data.items?.length > 0 && (
@@ -101,4 +106,4 @@ const ChatLayout = ({ children }: PropsWithChildren) => {
   )
 }
 
-export default ChatLayout
+export default withTranslation('common')(ChatLayout)

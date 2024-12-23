@@ -104,7 +104,7 @@ const NotificationsPanel = (props: Props) => {
           onClick={handleLoadMore}
           disabled={notification_followings?.items.length === notification_followings?.metadata.totalCount}
         >
-          Load More
+          {t('notification.load_more')}
         </button>
       </div>
     </DrawerBase>

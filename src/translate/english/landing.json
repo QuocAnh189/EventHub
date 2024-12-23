@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "Intro",
+    "manage": "Manage",
+    "overview": "Overview",
+    "feedback": "Feedback",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "get_started": "Get Started"
+  },
+  "intro": {
+    "text_one": "Where Every Event",
+    "text_two": "Connecting Moments",
+    "text_three": "- easily and efficiently",
+    "text_four": "Uniting People, Passion, and Purpose in Every Eventful Moment Shared",
+    "try_now": "Try now"
+  },
+  "manage": {
+    "project_management": "Project Management"
+  },
+  "automatic": {
+    "select_my": "Select my",
+    "event": "Event"
+  },
+  "feedback": {
+    "title": "Trusted by more than",
+    "description": "2,500 membership"
+  },
+  "contact": {
+    "text_one": "Invite friends",
+    "text_two": "with EventHub",
+    "text_three": "Try it 14 days for free",
+    "text_four": "no credit card required.",
+    "try_now": "Try now",
+    "email_placeholder": "Enter your email"
+  }
+}

@@ -1,1 +1,10 @@
-{}
+{
+  "header": {
+    "title": "事件列表"
+  },
+  "search": "搜索事件",
+  "item": {
+    "sales": "销售",
+    "favourite": "收藏"
+  }
+}

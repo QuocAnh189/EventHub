@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "Giảm giá"
+  },
+  "add_new_coupon": "Thêm phiếu giảm giá",
+  "search": "Tìm kiếm...",
+  "modal": {
+    "create_coupon": "Tạo phiếu giảm giá",
+    "update_coupon": "Cập nhập phiếu giảm giá",
+    "name_label": "Tên",
+    "name_placeholder": "Nhập tên",
+    "description_label": "Nhập mô tả",
+    "description_placeholder": "Nhập mô tả",
+    "min_price_label": "Giá thấp nhất",
+    "min_quantity_label": "Số lượng tối thiểu",
+    "percent_label": "Phần trăm",
+    "expire_label": "Ngày hết hạn"
+  },
+  "card": {
+    "view_edit": "Chi tiết",
+    "delete": "Xóa"
+  }
+}

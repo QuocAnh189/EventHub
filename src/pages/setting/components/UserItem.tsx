@@ -22,9 +22,11 @@ interface Props {
   index: number
   user: IUserFollower
   following?: boolean
+  view_profile_text: string
+  un_follower_text?: string
 }
 const UserItem = (props: Props) => {
-  const { index, user, following } = props
+  const { index, user, following, view_profile_text, un_follower_text } = props
 
   const navigate = useNavigate()
 
@@ -67,14 +69,14 @@ const UserItem = (props: Props) => {
                 <span className='icon-wrapper'>
                   <i className='icon icon-user' />
                 </span>
-                View Profile
+                {view_profile_text}
               </button>
               {following && (
                 <button onClick={handleUnfollowUser} className='menu-btn subheading-2'>
                   <span className='icon-wrapper'>
                     <i className='icon icon-user' />
                   </span>
-                  {isLoading ? <Loading /> : 'Unfollow'}
+                  {isLoading ? <Loading /> : un_follower_text}
                 </button>
               )}
             </div>

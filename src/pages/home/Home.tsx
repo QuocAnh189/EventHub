@@ -14,18 +14,27 @@ import { useGetCategoriesQuery } from '@redux/apis/category.api'
 import { useGetCouponsByCreatedQuery } from '@redux/apis/coupon.api'
 import { setCategories } from '@redux/slices/category.slice'
 import { setCoupons } from '@redux/slices/coupon.slice'
+import { useGetFavouriteEventQuery } from '@redux/apis/event.api'
+import { setCategoryIdsWishlist } from '@redux/slices/event.slice'
 
 const Home = () => {
   const dispatch = useAppDispatch()
 
   const { data: categories, isSuccess: isSuccessCategories } = useGetCategoriesQuery()
   const { data: coupons, isSuccess: isSuccessCoupons } = useGetCouponsByCreatedQuery({ pageSize: 20 })
+  const { data: events, isSuccess: isSuccessEvents } = useGetFavouriteEventQuery({ pageSize: 20 })
 
   useEffect(() => {
     if (isSuccessCategories && categories) {
       dispatch(setCategories(categories))
     }
   }, [isSuccessCategories])
+
+  useEffect(() => {
+    if (isSuccessEvents && events) {
+      dispatch(setCategoryIdsWishlist(events.items))
+    }
+  }, [isSuccessEvents])
 
   useEffect(() => {
     if (isSuccessCoupons && coupons) {

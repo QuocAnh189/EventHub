@@ -6,6 +6,12 @@
     "description": "Do you already have an event?",
     "example_file": "Example file here"
   },
+  "step": {
+    "information": "Information",
+    "banner": "Banner",
+    "ticket": "Ticket",
+    "review": "Review"
+  },
   "information": {
     "event": {
       "name": "Name",

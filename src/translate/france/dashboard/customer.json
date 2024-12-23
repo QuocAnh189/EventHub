@@ -1,35 +1,33 @@
 {
   "header": {
-    "title": "Customer"
+    "title": "Client"
   },
-  "all": "All",
-  "new": "New",
-  "regular": "Regular",
+  "all": "Tous",
+  "new": "Nouveau",
+  "regular": "Régulier",
   "conversion_rate": {
-    "title": "Conversion Rate",
-    "year": "Year",
-    "customers": "Customers",
-    "trend": "Trend",
-    "revenue": "Revenue"
+    "title": "Taux de conversion",
+    "year": "Année",
+    "customers": "Clients",
+    "orders": "Commandes",
+    "revenue": "Revenu"
   },
   "customer_retention_rate": {
-    "title": "Customer Retention Rate",
-    "total_customer": "Total Customers",
-    "in": "in",
-    "description": " To calculate CRR, subtract the number of new customers from the total customers at the end of the period, divide by the number of customers at the start, and multiply by 100. Retaining customers is often more cost-effective than acquiring new ones, making CRR an essential focus for companies aiming to foster growth and stability.",
-    "new_customers": "New Customers",
-    "frequent_customers": "Frequent Customers",
-    "idle_users": "Idle Users",
-    "cart_abandoners": "Cart Abandoners",
-    "which_is": "which is",
-    "visitors": "visitors"
+    "title": "Taux de fidélisation des clients",
+    "total_customer": "Clients totaux",
+    "in": "dans",
+    "description": "Pour calculer le CRR, soustrayez le nombre de nouveaux clients du nombre total de clients à la fin de la période, divisez par le nombre de clients au début, puis multipliez par 100. Fidéliser les clients est souvent plus rentable que d'en acquérir de nouveaux, ce qui fait du CRR un objectif essentiel pour les entreprises cherchant à favoriser la croissance et la stabilité.",
+    "new_customers": "Nouveaux clients",
+    "regular_customers": "Clients réguliers",
+    "which_is": "qui est",
+    "visitors": "visiteurs"
   },
   "demographic": {
-    "title": "Demographic segmentation by Age",
-    "age": "Age",
+    "title": "Segmentation démographique par âge",
+    "age": "Âge",
     "segmentation_by_gender": {
-      "title": "Segmentation by Gender",
-      "description": "Gender ratio will tell you what genre your event is"
+      "title": "Segmentation par genre",
+      "description": "Le ratio hommes/femmes vous indiquera le genre de votre événement"
     }
   }
 }

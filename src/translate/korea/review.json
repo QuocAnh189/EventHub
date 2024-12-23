@@ -1,1 +1,21 @@
-{}
+{
+  "header": {
+    "title": "리뷰"
+  },
+  "search": "검색...",
+  "middle": {
+    "review_score": "리뷰 점수",
+    "customers": "고객",
+    "total": "총",
+    "positive": "긍정적",
+    "negative": "부정적"
+  },
+  "main": {
+    "title": "최신 승인된 리뷰"
+  },
+  "modal": {
+    "date": "날짜",
+    "username": "사용자 이름",
+    "rate": "평점"
+  }
+}

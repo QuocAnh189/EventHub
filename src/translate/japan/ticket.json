@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "私のチケット"
+  },
+  "search": "検索...",
+  "card": {
+    "ticket_no": "チケット番号",
+    "name": "名前",
+    "email": "メール",
+    "phone": "電話",
+    "ticket_type": "チケットタイプ",
+    "status": "ステータス"
+  }
+}

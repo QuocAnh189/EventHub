@@ -1,1 +1,24 @@
-{}
+{
+  "header": {
+    "title": "이벤트 상세"
+  },
+  "transaction": "거래",
+  "customer_review": "고객 리뷰",
+  "total": {
+    "user": "전체 사용자",
+    "order": "전체 주문"
+  },
+  "period_sales_revenue": "기간 판매 수익",
+  "review_by_customer": {
+    "title": "고객 리뷰",
+    "positive": "긍정적",
+    "negative": "부정적",
+    "review_rate": "리뷰 비율",
+    "from": "출처",
+    "response": "응답",
+    "view_all_reviews": "모든 리뷰 보기"
+  },
+  "revenue": "수익",
+  "expense": "비용",
+  "profit": "이익"
+}

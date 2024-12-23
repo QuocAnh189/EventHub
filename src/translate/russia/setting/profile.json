@@ -1,0 +1,36 @@
+{
+  "header profile": {
+    "title": "Настройки"
+  },
+  "profile pannel": {
+    "logout": "Выйти",
+    "notifications": "Уведомления",
+    "messages": "Сообщения",
+    "number_of_events": "Количество событий",
+    "follwing": "Подписки",
+    "follower": "Подписчики"
+  },
+  "profile_detail": {
+    "title": "Мой профиль",
+    "user_name": "Имя пользователя",
+    "gender": "Пол",
+    "full_name": "Полное имя",
+    "dob": "Дата рождения",
+    "email": "Электронная почта",
+    "status": "Статус",
+    "password": "Пароль",
+    "role": "Роль",
+    "phone_number": "Телефонный номер",
+    "bio": "Би",
+    "change_password": "Изменить пароль",
+    "update_information": "Обновить информацию",
+    "admin_panel_tools": "Инструменты панели администратора",
+    "connected_apps": "Подключенные приложения",
+    "payment_methods": "Способы оплаты",
+    "appearance": "Внешний вид",
+    "security_assets": "Активы безопасности",
+    "configuration_settings": "Настройки конфигурации",
+    "view_mode": "Режим просмотра",
+    "sidebar_position": "Расположение боковой панели"
+  }
+}

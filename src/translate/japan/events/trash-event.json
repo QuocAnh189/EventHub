@@ -1,1 +1,8 @@
-{}
+{
+  "header": {
+    "title": "ゴミ箱イベント"
+  },
+  "restore": "復元",
+  "search": "検索 ...",
+  "view_events": "イベント"
+}

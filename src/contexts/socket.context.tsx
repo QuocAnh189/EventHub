@@ -11,9 +11,6 @@ import { setSocket } from '@redux/slices/socket.slice'
 //socket
 import { HttpTransportType, HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr'
 
-//interface and types
-import { JoinChatRoomParams, SendMessageParams } from '@interfaces/websockets/message.interface'
-
 const AppSocketProvider = ({ children }: PropsWithChildren) => {
   const dispatch = useAppDispatch()
   const user = useAppSelector((state) => state.persistedReducer.user.user)
@@ -62,7 +59,7 @@ const AppSocketProvider = ({ children }: PropsWithChildren) => {
     }
   }, [user, dispatch])
 
-  const handleJoinChatRoom = async ({ eventId, hostId, userId }: JoinChatRoomParams) => {
+  const handleJoinChatRoom = async ({ eventId, hostId, userId }: any) => {
     try {
       await connection?.invoke('JoinChatRoom', { eventId, hostId, userId })
     } catch (error: any) {
@@ -81,7 +78,7 @@ const AppSocketProvider = ({ children }: PropsWithChildren) => {
     videoUrl,
     audioId,
     audioUrl
-  }: SendMessageParams) => {
+  }: any) => {
     try {
       await connection?.invoke('SendMessage', {
         userId,
@@ -115,8 +112,8 @@ const AppSocketProvider = ({ children }: PropsWithChildren) => {
 }
 
 export interface AppSocketContextProps {
-  handleJoinChatRoom: (params: JoinChatRoomParams) => Promise<void>
-  handleSendMessage: (params: SendMessageParams) => Promise<void>
+  handleJoinChatRoom: (params: any) => Promise<void>
+  handleSendMessage: (params: any) => Promise<void>
   connection: HubConnection
 }
 

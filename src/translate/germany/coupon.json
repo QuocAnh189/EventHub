@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "Gutschein"
+  },
+  "add_new_coupon": "Neuen Gutschein hinzufügen",
+  "search": "Suchen...",
+  "modal": {
+    "create_coupon": "Gutschein erstellen",
+    "update_coupon": "Gutschein aktualisieren",
+    "name_label": "Name",
+    "name_placeholder": "Name eingeben",
+    "description_label": "Beschreibung",
+    "description_placeholder": "Beschreibung eingeben",
+    "min_price_label": "Mindestpreis",
+    "min_quantity_label": "Mindestmenge",
+    "percent_label": "Prozentsatz",
+    "expire_label": "Ablaufdatum"
+  },
+  "card": {
+    "view_edit": "Ansehen Bearbeiten",
+    "delete": "Löschen"
+  }
+}

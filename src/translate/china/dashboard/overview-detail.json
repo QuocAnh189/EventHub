@@ -1,1 +1,30 @@
-{}
+{
+  "header": {
+    "title": "收入概览"
+  },
+  "sales_period": "销售周期",
+  "sales_volume": "销售量",
+  "revenue": "收入",
+  "expense": "支出",
+  "profit": "利润",
+  "order": "订单",
+  "profit_performance": "利润表现",
+  "conversion_rate": {
+    "title": "转化率",
+    "regular_customers": "常规客户",
+    "new_customers": "新客户",
+    "submenu": {
+      "description": "Pellentesque eget orci at lacus tincidunt maximus",
+      "share": "分享",
+      "print": "打印"
+    }
+  },
+  "average_referral_rate": {
+    "title": "平均推荐率"
+  },
+  "total": {
+    "revenue": "总收入",
+    "expense": "总支出",
+    "profit": "总利润"
+  }
+}

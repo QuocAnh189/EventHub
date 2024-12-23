@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "イントロ",
+    "manage": "管理",
+    "overview": "概要",
+    "feedback": "フィードバック",
+    "contact": "お問い合わせ",
+    "login": "ログイン",
+    "register": "登録",
+    "get_started": "始める"
+  },
+  "intro": {
+    "text_one": "すべてのイベントがここに",
+    "text_two": "瞬間をつなぐ",
+    "text_three": "- 簡単かつ効率的に",
+    "text_four": "人々、情熱、目的を結びつけ、共有されたすべてのイベントの瞬間を一つに",
+    "try_now": "今すぐ試す"
+  },
+  "manage": {
+    "project_management": "プロジェクト管理"
+  },
+  "automatic": {
+    "select_my": "私の",
+    "event": "イベントを選択"
+  },
+  "feedback": {
+    "title": "2500人以上のメンバーに信頼されています",
+    "description": "2,500人以上のメンバー"
+  },
+  "contact": {
+    "text_one": "友達を招待",
+    "text_two": "EventHubで",
+    "text_three": "14日間無料でお試しください",
+    "text_four": "クレジットカードは不要です。",
+    "try_now": "今すぐ試す",
+    "email_placeholder": "メールアドレスを入力してください"
+  }
+}

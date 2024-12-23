@@ -21,11 +21,11 @@ import { IEventFavorite } from '@interfaces/contents'
 import { useGetFavouriteEventQuery } from '@redux/apis/event.api'
 import { useUnfavouriteEventMutation } from '@redux/apis/event.api'
 
-interface Props {
+interface IProps {
   search_label: string
 }
 
-const EventFavouriteGrid = (props: Props) => {
+const EventFavouriteGrid = (props: IProps) => {
   const { search_label } = props
 
   const [params, setParams] = useState({ page: 1, pageSize: 12, search: '' })

@@ -1,22 +1,24 @@
 {
   "header": {
-    "title": "Event Details"
+    "title": "Détails de l'événement"
   },
   "transaction": "Transactions",
-  "sale_activity": "Sale Activity",
+  "customer_review": "Avis des clients",
   "total": {
-    "expense": "Total Expense",
-    "profit": "Total Profit"
+    "user": "Utilisateur total",
+    "order": "Commande totale"
   },
-  "period-sales-revenue": "Period Sales Revenue",
-  "sales-profit-by-category": {
-    "title": "Sales Profit by Category",
-    "review_rate": "Review Rate",
-    "from": "From",
-    "response": "Response",
-    "view_all_reviews": "View All Reviews"
+  "period_sales_revenue": "Revenu des ventes de la période",
+  "review_by_customer": {
+    "title": "Avis des clients",
+    "positive": "Positif",
+    "negative": "Négatif",
+    "review_rate": "Taux d'avis",
+    "from": "De",
+    "response": "Réponse",
+    "view_all_reviews": "Voir tous les avis"
   },
-  "income": "Income",
-  "new_orders": "New Orders",
-  "expense": "Expense"
+  "revenue": "Revenu",
+  "expense": "Dépense",
+  "profit": "Bénéfice"
 }

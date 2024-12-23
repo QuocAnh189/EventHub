@@ -45,14 +45,19 @@ export enum EPaymentMethod {
 }
 
 export enum EPaymentStatus {
-  PAID = 'PAID',
-  PENDING = 'PENDING',
-  FAILED = 'FAILED',
-  REJECTED = 'REJECTED'
+  Pending = 'Pending',
+  Failed = 'Failed',
+  Reject = 'Reject',
+  Success = 'Success'
 }
 
 export enum ETicketStatus {
   ACTIVE = 'ACTIVE',
   CHECKEDIN = 'CHECKEDIN',
   INACTIVE = 'INACTIVE'
+}
+
+export enum EStatusTicket {
+  Active = 'Active',
+  Inactive = 'Inactive'
 }

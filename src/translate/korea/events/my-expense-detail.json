@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "내 비용 세부 사항"
+  },
+  "add_new_expense": "새 비용 추가",
+  "expense_placeholder": "비용 이름을 입력하세요",
+  "add_new_sub_expense": "새 하위 비용 추가",
+  "sub_expense_placeholder": "이름을 입력하세요"
+}

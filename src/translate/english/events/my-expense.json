@@ -1,0 +1,8 @@
+{
+  "header": {
+    "title": "My Expense"
+  },
+  "search": "Search ...",
+  "total_expense": "Total Expense",
+  "total_sub_expense": "Total SubExpense"
+}

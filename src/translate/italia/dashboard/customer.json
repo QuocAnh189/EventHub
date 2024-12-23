@@ -1,1 +1,33 @@
-{}
+{
+  "header": {
+    "title": "Cliente"
+  },
+  "all": "Tutti",
+  "new": "Nuovo",
+  "regular": "Regolare",
+  "conversion_rate": {
+    "title": "Tasso di conversione",
+    "year": "Anno",
+    "customers": "Clienti",
+    "orders": "Ordini",
+    "revenue": "Entrate"
+  },
+  "customer_retention_rate": {
+    "title": "Tasso di fidelizzazione dei clienti",
+    "total_customer": "Clienti totali",
+    "in": "in",
+    "description": "Per calcolare il CRR, sottrai il numero di nuovi clienti dal numero totale di clienti alla fine del periodo, dividi per il numero di clienti all'inizio e moltiplica per 100. Mantenere i clienti esistenti è spesso più economico che acquisirne di nuovi, rendendo il CRR un obiettivo fondamentale per le aziende che vogliono favorire la crescita e la stabilità.",
+    "new_customers": "Nuovi clienti",
+    "regular_customers": "Clienti regolari",
+    "which_is": "che è",
+    "visitors": "visitatori"
+  },
+  "demographic": {
+    "title": "Segmentazione demografica per età",
+    "age": "Età",
+    "segmentation_by_gender": {
+      "title": "Segmentazione per genere",
+      "description": "Il rapporto di genere ti dirà quale genere predomina nel tuo evento"
+    }
+  }
+}

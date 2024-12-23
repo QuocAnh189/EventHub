@@ -1,1 +1,36 @@
-{}
+{
+  "header": {
+    "title": "お気に入り"
+  },
+  "search": "イベントを検索",
+  "item": {
+    "category": "カテゴリー",
+    "date": "日付"
+  },
+  "category": {
+    "label": "カテゴリー",
+    "Gaming": "ゲーム",
+    "Food & Beverage": "食品と飲料",
+    "Education": "教育",
+    "Home & Garden": "家と庭",
+    "Parenting": "育児",
+    "Fashion": "ファッション",
+    "Travel": "旅行",
+    "Finance & Investment": "金融と投資",
+    "Movies & TV": "映画とテレビ",
+    "Books & Literature": "本と文学",
+    "Photography": "写真",
+    "Sport": "スポーツ",
+    "Music": "音楽",
+    "Pet & Animals": "ペットと動物",
+    "Health & Fitness": "健康とフィットネス",
+    "Art & Design": "アートとデザイン",
+    "Science": "科学",
+    "Technology": "技術",
+    "Personal Development": "個人開発"
+  },
+  "action": {
+    "view": "表示",
+    "remove": "削除"
+  }
+}

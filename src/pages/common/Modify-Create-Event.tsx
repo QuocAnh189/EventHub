@@ -42,8 +42,6 @@ import createdSampleData from '@data/created_sample'
 //interface
 import { IUser } from '@interfaces/systems'
 
-const CREATE_STEP = ['Information', 'Banner Image', 'Set Ticket', 'Review']
-
 interface Props {
   t: any
   title: string
@@ -53,6 +51,8 @@ interface Props {
 
 const ModifyEvent = (props: Props) => {
   const { t, title, create, event } = props
+
+  const CREATE_STEP = [t('step.information'), t('step.banner'), t('step.ticket'), t('step.review')]
 
   const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 

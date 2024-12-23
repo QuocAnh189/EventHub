@@ -1,1 +1,33 @@
-{}
+{
+  "header": {
+    "title": "顧客"
+  },
+  "all": "すべて",
+  "new": "新規",
+  "regular": "通常",
+  "conversion_rate": {
+    "title": "転換率",
+    "year": "年",
+    "customers": "顧客",
+    "orders": "注文",
+    "revenue": "収益"
+  },
+  "customer_retention_rate": {
+    "title": "顧客維持率",
+    "total_customer": "総顧客数",
+    "in": "に",
+    "description": "CRRを計算するには、期間終了時の総顧客数から新規顧客数を引き、その後、期間開始時の顧客数で割り、100を掛けます。顧客を維持することは新規顧客を獲得するよりもコスト効率が高いため、CRRは企業の成長と安定性を促進するための重要な指標です。",
+    "new_customers": "新規顧客",
+    "regular_customers": "通常顧客",
+    "which_is": "それは",
+    "visitors": "訪問者"
+  },
+  "demographic": {
+    "title": "年齢別の市場セグメンテーション",
+    "age": "年齢",
+    "segmentation_by_gender": {
+      "title": "性別によるセグメンテーション",
+      "description": "性別比率は、あなたのイベントがどのジャンルに属するかを教えてくれます"
+    }
+  }
+}

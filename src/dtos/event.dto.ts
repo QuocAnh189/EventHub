@@ -44,7 +44,7 @@ export const InitCreateEventPayload = {
   isPrivate: false,
   categoryIds: [],
   ticketTypeItems: [],
-  reasonItems: ['aaa']
+  reasonItems: []
 } as ICreateEventPayload
 
 export interface IFavoriteEventPayload {

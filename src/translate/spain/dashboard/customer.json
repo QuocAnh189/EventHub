@@ -1,1 +1,33 @@
-{}
+{
+  "header": {
+    "title": "Cliente"
+  },
+  "all": "Todos",
+  "new": "Nuevo",
+  "regular": "Regular",
+  "conversion_rate": {
+    "title": "Tasa de conversión",
+    "year": "Año",
+    "customers": "Clientes",
+    "orders": "Pedidos",
+    "revenue": "Ingresos"
+  },
+  "customer_retention_rate": {
+    "title": "Tasa de retención de clientes",
+    "total_customer": "Clientes totales",
+    "in": "en",
+    "description": "Para calcular el CRR, reste el número de nuevos clientes del número total de clientes al final del período, divídalo por el número de clientes al principio y multiplíquelo por 100. Mantener a los clientes es a menudo más rentable que adquirir nuevos, lo que hace que el CRR sea un objetivo esencial para las empresas que buscan fomentar el crecimiento y la estabilidad.",
+    "new_customers": "Nuevos clientes",
+    "regular_customers": "Clientes regulares",
+    "which_is": "lo cual es",
+    "visitors": "visitantes"
+  },
+  "demographic": {
+    "title": "Segmentación demográfica por edad",
+    "age": "Edad",
+    "segmentation_by_gender": {
+      "title": "Segmentación por género",
+      "description": "La proporción de género le dirá qué género domina su evento"
+    }
+  }
+}

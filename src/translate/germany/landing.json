@@ -1,1 +1,38 @@
-{}
+{
+  "navbar": {
+    "intro": "Einführung",
+    "manage": "Verwalten",
+    "overview": "Übersicht",
+    "feedback": "Feedback",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "get_started": "Loslegen"
+  },
+  "intro": {
+    "text_one": "Wo jedes Ereignis",
+    "text_two": "Momente verbindet",
+    "text_three": "- einfach und effizient",
+    "text_four": "Menschen, Leidenschaft und Zweck in jedem gemeinsam erlebten Moment vereinen",
+    "try_now": "Jetzt ausprobieren"
+  },
+  "manage": {
+    "project_management": "Projektmanagement"
+  },
+  "automatic": {
+    "select_my": "Wähle mein",
+    "event": "Ereignis"
+  },
+  "feedback": {
+    "title": "Vertraut von mehr als",
+    "description": "2.500 Mitgliedern"
+  },
+  "contact": {
+    "text_one": "Freunde einladen",
+    "text_two": "mit EventHub",
+    "text_three": "14 Tage kostenlos ausprobieren",
+    "text_four": "keine Kreditkarte erforderlich.",
+    "try_now": "Jetzt ausprobieren",
+    "email_placeholder": "Geben Sie Ihre E-Mail ein"
+  }
+}

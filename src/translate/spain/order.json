@@ -1,1 +1,37 @@
-{}
+{
+  "header": {
+    "title": "Pedidos"
+  },
+  "period": "Período",
+  "search": "Buscar...",
+  "middle": {
+    "box_one": {
+      "average_rate": "Puntuación promedio",
+      "event_view": "Vistas del evento",
+      "total_tickets": "Total de boletos"
+    },
+    "order": "Pedidos",
+    "box_completed": {
+      "completed": "Completado"
+    },
+    "box_confirmed": {
+      "confirmed": "Confirmado"
+    },
+    "box_canceled": {
+      "canceled": "Cancelado"
+    },
+    "box_refunded": {
+      "refunded": "Reembolsado"
+    }
+  },
+  "table_header": {
+    "order": "Pedido",
+    "event": "Evento",
+    "ticket": "Boleto",
+    "category": "Categoría",
+    "payment": "Pago",
+    "order_status": "Estado del pedido",
+    "rate": "Puntuación",
+    "actions": "Acciones"
+  }
+}

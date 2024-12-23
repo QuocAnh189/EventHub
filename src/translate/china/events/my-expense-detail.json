@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "我的费用详情"
+  },
+  "add_new_expense": "添加新费用",
+  "expense_placeholder": "请输入费用名称",
+  "add_new_sub_expense": "添加新子费用",
+  "sub_expense_placeholder": "请输入名称"
+}

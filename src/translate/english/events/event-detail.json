@@ -1,1 +1,55 @@
-{}
+{
+  "event": {
+    "categories": "Categories",
+    "date_time": "Date and Time",
+    "location": "Location"
+  },
+  "payment": {
+    "title": "Payment Information",
+    "view_discount": "View Discount",
+    "free": "Free",
+    "quantity": "Quantity",
+    "total_amount": "Total Amount",
+    "buy": "Buy"
+  },
+  "apply_coupon": {
+    "title": "Apply Coupon",
+    "apply": "Apply"
+  },
+  "checkout": {
+    "title": "Checkout Information",
+    "name_label": "Customer Name",
+    "name_placeholder": "Enter Name",
+    "email_label": "Customer Email",
+    "email_placeholder": "Enter Email",
+    "phone_label": "Customer Phone",
+    "phone_placeholder": "Enter Phone",
+    "total_price": "Total Price",
+    "discount": "Discount",
+    "final_price": "Final Price",
+    "submit": "Checkout"
+  },
+  "information": {
+    "time": "Time",
+    "location": "Location",
+    "happen": "Happen",
+    "participant": "Participant",
+    "organization_by": "Organization By",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "description": "Description",
+    "reasons_to_attend_the_event": "Reasons to attend the event"
+  },
+  "conversation": {
+    "title": "Conversation",
+    "description_one": "If you have any questions or problems related to this event.",
+    "description_two": "Please contact the organizer for more information.",
+    "name_label": "Name",
+    "email_label": "Email",
+    "event_label": "Event",
+    "start_chat": "Start Chat"
+  },
+  "related": {
+    "title": "Related Events"
+  }
+}

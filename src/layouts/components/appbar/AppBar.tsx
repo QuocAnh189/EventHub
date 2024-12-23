@@ -13,6 +13,8 @@ import Search from '@ui/Search'
 import ModalBase from '@ui/ModalBase'
 import NotificationsPanel from '../navbar/NotificationsPanel'
 import SelectLanguage from '@components/SelectLanguage'
+import ToggleDarkLight from './switch/ToggleDarkLight'
+import InvitationPanel from '../navbar/InvitationPanel'
 
 //constants
 import { LOCALES } from '@constants/options.constant'
@@ -25,8 +27,6 @@ import useDefault from '@assets/images/common/user_default.png'
 
 //i18
 import { useTranslation, withTranslation } from 'react-i18next'
-import ToggleDarkLight from './switch/ToggleDarkLight'
-import InvitationPanel from '../navbar/InvitationPanel'
 
 //interfaces
 import { IUser } from '@interfaces/systems'
@@ -51,7 +51,6 @@ const AppBar = ({ t }: any) => {
   const activeLocale = LOCALES.find((l: any) => l.value === locale)
 
   const handleChangeLangue = (value: any) => {
-    console.log(value)
     setLocale(value)
     i18n.changeLanguage(value)
     localStorage.setItem('language', value)
@@ -145,7 +144,7 @@ const AppBar = ({ t }: any) => {
               </>
             ) : (
               <button onClick={() => navigate('/signin')} className='btn btn-primary w-36'>
-                {t('signin_btn')}
+                {t('header.signin_btn')}
               </button>
             )}
           </div>
@@ -154,7 +153,7 @@ const AppBar = ({ t }: any) => {
       {width < 768 && (
         <ModalBase open={searchModalOpen} onClose={() => setSearchModalOpen(false)}>
           <div className='card max-w-[360px] w-full'>
-            <h3 className='mb-3'>Search</h3>
+            <h3 className='mb-3'>{t('header.search')}</h3>
             <Search placeholder='What are you looking for?' />
           </div>
         </ModalBase>

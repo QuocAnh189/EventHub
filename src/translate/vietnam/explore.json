@@ -3,7 +3,7 @@
     "title": "Khám phá"
   },
   "sort": "Sắp xếp theo ngày",
-  "search": "Tìm kiếm sự kiện",
+  "search": "Tìm kiếm ...",
   "asc": "Tăng dần",
   "desc": "Giảm dần",
   "sidebar": {
@@ -19,27 +19,27 @@
       "closed": "Đã kết thúc"
     },
     "category": {
-      "label": "Danh mục",
-      "Visual Arts": "Nghệ thuật",
-      "Sports & Active Life": "Thể thao cuộc sống",
-      "Politics": "Chính trị",
-      "Performing Arts": "Thể hiện nghệ thuật",
-      "Other": "Khác",
-      "Nightlife": "Cuộc sống về đêm",
-      "Music": "Âm nhạc",
-      "Lectures & Books": "Bài giảng và sách",
-      "Kids & Family": "Gia đình",
-      "Holidays": "Kỳ nghĩ",
-      "Food & Drink": "Âm thực",
-      "Film": "Phim",
-      "Festivals & Fairs": "Lễ hội",
+      "label": "Thể loại",
+      "Business": "Business",
+      "Gaming": "Trò chơi",
+      "Food & Beverage": "Đồ ăn & Thức Uống",
+      "Education": "Giáo dục",
+      "Home & Garden": "Nhà & Vườn",
+      "Parenting": "Gia đình",
       "Fashion": "Thời trang",
-      "Concerts": "Hòa nhạc",
-      "Conferences": "Hội nghị",
-      "Community": "Cộng đồng",
-      "Charities": "Từ thiện",
-      "Anniversary": "Kỉ niệm",
-      "Academic": "Học vấn"
+      "Travel": "Du lịch",
+      "Finance & Investment": "Tài chính & Đầu tư",
+      "Movies & TV": "Phim & TV",
+      "Books & Literature": "Sách & Văn học",
+      "Photography": "Nhiếp ảnh gia",
+      "Sport": "Thể thao",
+      "Music": "Âm nhạc",
+      "Pet & Animals": "Thú cưng & Động vật",
+      "Health & Fitness": "Sức khỏe & Thể chất",
+      "Art & Design": "Nghệ thuật & Thiết kế",
+      "Science": "Khoa học",
+      "Technology": "Công nghệ",
+      "Personal Development": "Phát triển cá nhân"
     }
   }
 }

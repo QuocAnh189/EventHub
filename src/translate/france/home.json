@@ -1,51 +1,29 @@
 {
-  "search home": {
+  "search_home": {
     "title": "La bonne destination pour vous et vos amis",
     "sub_title": "Participer à de nombreux événements vous aidera à mieux découvrir votre personnalité",
     "explore": "Explorer maintenant",
     "event": "Événement",
-    "event_placeholder": "Entrez le nom de l'événement",
+    "event_placeholder": "Entrez le nom de votre événement",
     "status": "Statut",
     "category": "Catégorie",
-    "search": "Rechercher",
+    "search": "Recherche",
     "events_to_explore": "Événements à explorer",
     "view_event_btn": "Voir",
     "All": "Tous",
     "Upcoming": "À venir",
     "Opening": "Ouverture",
-    "Closed": "Fermé",
-    "categories": {
-      "Visual Arts": "Arts Visuels",
-      "Sports & Active Life": "Sports & Vie active",
-      "Politics": "Politique",
-      "Performing Arts": "Arts de la scène",
-      "Other": "Autre",
-      "Nightlife": "Vie nocturne",
-      "Music": "Musique",
-      "Lectures & Books": "Conférences et Livres",
-      "Kids & Family": "Enfants et Famille",
-      "Holidays": "Vacances",
-      "Food & Drink": "Nourriture et boissons",
-      "Film": "Film",
-      "Festivals & Fairs": "Festivals et Foires",
-      "Fashion": "Mode",
-      "Concerts": "Concerts",
-      "Conferences": "Conférences",
-      "Community": "Communauté",
-      "Charities": "Œuvres de charité",
-      "Anniversary": "Anniversaire",
-      "Academic": "Académique"
-    }
+    "Closed": "Fermé"
   },
-  "best events": {
+  "best_events": {
     "title": "Meilleurs événements à visiter"
   },
-  "upcoming events": {
+  "upcoming_events": {
     "title": "Événements à venir"
   },
-  "about us": {
+  "about_us": {
     "title": "À propos de nous",
-    "description_one": "La gestion d'événements et la billetterie sont votre destination principale pour des solutions de planification d'événements et de billetterie sans tracas. Avec une équipe de professionnels dédiée, nous nous spécialisons dans la création d'expériences inoubliables adaptées à votre vision unique. Des conférences d'entreprise aux festivals de musique et bien plus encore, nous nous occupons de chaque aspect de la coordination de l'événement avec précision et créativité. Notre plateforme de billetterie conviviale garantit des transactions fluides pour les organisateurs et les participants, rendant la gestion des événements facile et efficace. Faites-nous confiance pour donner vie à vos événements et laisser des impressions durables et des souvenirs inoubliables.",
-    "description_two": "Que vous organisiez une petite réunion ou un événement à grande échelle, notre souci du détail et notre engagement envers l'excellence garantissent le succès à chaque fois. Laissez-nous nous occuper du stress de la planification des événements, afin que vous puissiez vous concentrer sur ce qui compte vraiment : créer des moments inoubliables pour vos invités."
+    "description_one": "La gestion des événements et la billetterie sont votre destination privilégiée pour des solutions de planification d'événements et de billetterie sans faille. Avec une équipe dédiée de professionnels, nous nous spécialisons dans la création d'expériences inoubliables adaptées à votre vision unique. Des conférences d'entreprise aux festivals de musique et tout ce qui se trouve entre les deux, nous gérons tous les aspects de la coordination d'événements avec précision et créativité. Notre plateforme de billetterie conviviale garantit des transactions fluides pour les organisateurs et les participants, rendant la gestion des événements simple et efficace. Faites-nous confiance pour donner vie à vos événements et laisser des impressions durables et des souvenirs inoubliables.",
+    "description_two": "Que vous organisiez une petite réunion ou un grand événement, notre attention aux détails et notre engagement envers l'excellence garantissent le succès à chaque fois. Laissez-nous vous débarrasser du stress de la planification d'événements afin que vous puissiez vous concentrer sur ce qui compte vraiment : créer des moments mémorables pour vos invités."
   }
 }

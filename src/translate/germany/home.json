@@ -1,51 +1,29 @@
 {
-  "search home": {
-    "title": "Das richtige Ziel für dich und deine Freunde",
-    "sub_title": "Die Teilnahme an vielen Veranstaltungen hilft dir, deine Persönlichkeit besser zu entdecken",
+  "search_home": {
+    "title": "Das richtige Ziel für Sie und Ihre Freunde",
+    "sub_title": "Die Teilnahme an vielen Veranstaltungen hilft Ihnen, Ihre Persönlichkeit besser zu entdecken",
     "explore": "Jetzt entdecken",
     "event": "Veranstaltung",
-    "event_placeholder": "Gib den Namen deiner Veranstaltung ein",
+    "event_placeholder": "Geben Sie den Namen Ihrer Veranstaltung ein",
     "status": "Status",
     "category": "Kategorie",
     "search": "Suche",
     "events_to_explore": "Veranstaltungen zum Entdecken",
     "view_event_btn": "Ansehen",
     "All": "Alle",
-    "Upcoming": "Bevorstehend",
+    "Upcoming": "Kommend",
     "Opening": "Eröffnung",
-    "Closed": "Geschlossen",
-    "categories": {
-      "Visual Arts": "Bildende Kunst",
-      "Sports & Active Life": "Sport & Aktives Leben",
-      "Politics": "Politik",
-      "Performing Arts": "Darstellende Kunst",
-      "Other": "Andere",
-      "Nightlife": "Nachtleben",
-      "Music": "Musik",
-      "Lectures & Books": "Vorlesungen & Bücher",
-      "Kids & Family": "Kinder & Familie",
-      "Holidays": "Feiertage",
-      "Food & Drink": "Essen & Trinken",
-      "Film": "Film",
-      "Festivals & Fairs": "Festivals & Messen",
-      "Fashion": "Mode",
-      "Concerts": "Konzerte",
-      "Conferences": "Konferenzen",
-      "Community": "Gemeinschaft",
-      "Charities": "Wohltätigkeit",
-      "Anniversary": "Jubiläum",
-      "Academic": "Akademisch"
-    }
+    "Closed": "Geschlossen"
   },
-  "best events": {
+  "best_events": {
     "title": "Beste Veranstaltungen zum Besuchen"
   },
-  "upcoming events": {
+  "upcoming_events": {
     "title": "Bevorstehende Veranstaltungen"
   },
-  "about us": {
+  "about_us": {
     "title": "Über uns",
-    "description_one": "Event Management und Ticketing ist dein bevorzugtes Ziel für nahtlose Eventplanung und Ticketlösungen. Mit einem engagierten Team von Fachleuten spezialisieren wir uns auf die Erstellung unvergesslicher Erlebnisse, die auf deine einzigartige Vision zugeschnitten sind. Vom Unternehmenskonferenz bis zum Musikfestival – wir kümmern uns um jedes Detail der Eventkoordination mit Präzision und Kreativität. Unsere benutzerfreundliche Ticketplattform sorgt für reibungslose Transaktionen für Veranstalter und Teilnehmer und macht Eventmanagement mühelos und effizient. Vertraue uns, um deine Veranstaltungen zum Leben zu erwecken und bleibende Eindrücke und unvergessliche Erinnerungen zu hinterlassen.",
-    "description_two": "Ob du eine kleine Versammlung oder eine Großveranstaltung organisierst, unsere Liebe zum Detail und unser Engagement für Exzellenz garantieren jedes Mal den Erfolg. Lass uns den Stress der Eventplanung nehmen, damit du dich auf das Wesentliche konzentrieren kannst: Unvergessliche Momente für deine Gäste zu schaffen."
+    "description_one": "Eventmanagement und Ticketing ist Ihre erste Anlaufstelle für reibungslose Eventplanung und Ticketlösungen. Mit einem engagierten Team von Fachleuten haben wir uns darauf spezialisiert, unvergessliche Erlebnisse zu schaffen, die auf Ihre einzigartige Vision abgestimmt sind. Vom Firmenkonferenz bis zum Musikfestival und alles dazwischen kümmern wir uns mit Präzision und Kreativität um alle Aspekte der Eventkoordination. Unsere benutzerfreundliche Ticketplattform sorgt für reibungslose Transaktionen sowohl für Veranstalter als auch für Teilnehmer, sodass Eventmanagement einfach und effizient wird. Vertrauen Sie uns, um Ihre Veranstaltungen zum Leben zu erwecken und bleibende Eindrücke und unvergessliche Erinnerungen zu hinterlassen.",
+    "description_two": "Egal, ob Sie ein kleines Treffen oder ein großes Event organisieren, unsere Liebe zum Detail und unser Engagement für Exzellenz garantieren jedes Mal den Erfolg. Lassen Sie uns den Stress der Eventplanung übernehmen, damit Sie sich auf das Wesentliche konzentrieren können: Unvergessliche Momente für Ihre Gäste zu schaffen."
   }
 }

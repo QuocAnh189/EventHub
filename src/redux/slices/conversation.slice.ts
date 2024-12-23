@@ -1,4 +1,4 @@
-import { IConversation } from '@interfaces/contents/conversation.interface'
+import { IConversation } from '@interfaces/websockets/conversation.interface'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 export const ConversationSliceKey = 'conversation'

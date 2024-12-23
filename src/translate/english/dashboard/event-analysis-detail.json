@@ -3,13 +3,13 @@
     "title": "Event Details"
   },
   "transaction": "Transactions",
-  "customer-review": "Customer Review",
+  "customer_review": "Customer Review",
   "total": {
     "user": "Total User",
     "order": "Total Order"
   },
-  "period-sales-revenue": "Period Sales Revenue",
-  "review-by-customer": {
+  "period_sales_revenue": "Period Sales Revenue",
+  "review_by_customer": {
     "title": "Review By Customer",
     "positive": "Positive",
     "negative": "Negative",
