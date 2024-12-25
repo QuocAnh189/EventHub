@@ -49,9 +49,9 @@ const ReviewEventCreate = (props: Props) => {
         <div className='h-[200px] lgl:h-[500px]'>
           <img
             src={
-              watch().coverImage
+              watch().coverImage && typeof watch().coverImage !== 'string'
                 ? URL.createObjectURL(watch().coverImage)
-                : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
+                : watch().coverImage || ''
             }
             alt='coverImage'
             loading='lazy'
@@ -161,7 +161,7 @@ const ReviewEventCreate = (props: Props) => {
                       key={`subimage-${index}`}
                       loading='lazy'
                       className='h-[200px] w-[200px] rounded-lg'
-                      src={image ? URL.createObjectURL(image) : ''}
+                      src={image && typeof image !== 'string' ? URL.createObjectURL(image) : image || ''}
                       alt=''
                     />
                   )
@@ -180,7 +180,7 @@ const ReviewEventCreate = (props: Props) => {
         >
           {t('button_back')}
         </button>
-        <button disabled={disabled} type='submit' className='btn btn-primary'>
+        <button disabled={disabled} type='submit' className='w-[150px] btn btn-primary'>
           {disabled ? <Loading /> : create ? t('review.button_create') : t('review.button_update')}
         </button>
       </div>

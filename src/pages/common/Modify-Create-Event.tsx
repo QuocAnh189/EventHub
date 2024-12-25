@@ -32,6 +32,7 @@ import { useAppSelector } from '@hooks/useRedux'
 
 //util
 // import { URLtoFile } from '@utils/url_to_file'
+import dayjs from 'dayjs'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -56,8 +57,8 @@ const ModifyEvent = (props: Props) => {
 
   const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
-  const [createEvent, { isLoading: loadingCreateEvent }] = useCreateEventMutation()
-  const [updateEvent, { isLoading: loadingUpdateEvent }] = useUpdateEventMutation()
+  const [CreateEvent, { isLoading: loadingCreateEvent }] = useCreateEventMutation()
+  const [UpdateEvent, { isLoading: loadingUpdateEvent }] = useUpdateEventMutation()
 
   const [active, setActive] = useState<number>(create ? -1 : 0)
 
@@ -70,7 +71,27 @@ const ModifyEvent = (props: Props) => {
     reset,
     formState: { errors }
   } = useForm<any>({
-    defaultValues: event ? { ...event, creatorId: user?.id } : { ...InitCreateEventPayload, userId: user?.id }
+    defaultValues: event
+      ? {
+          id: event.id,
+          userId: event.creator.id,
+          name: event.name,
+          eventCycleType: event.eventCycleType,
+          eventPaymentType: event.eventPaymentType,
+          location: event.location,
+          description: event.description,
+          startTime: dayjs(event.startTime).format('YYYY-MM-DDTHH:mm'),
+          endTime: dayjs(event.endTime).format('YYYY-MM-DDTHH:mm'),
+          categoryIds: event.categories.map((item) => item.id),
+          reasonItems: event.reasons.map((item) => item.content),
+          subImageItems: event.subImages.map((item) => item.imageUrl),
+          coverImage: event.coverImageUrl,
+          coverImageUrl: event.coverImageUrl,
+          ticketTypeItems: event.ticketTypes,
+          pathLocation: event.pathLocation,
+          isPrivate: event.isPrivate
+        }
+      : { ...InitCreateEventPayload, userId: user?.id }
   })
 
   // useEffect(() => {
@@ -114,12 +135,13 @@ const ModifyEvent = (props: Props) => {
     }
 
     try {
-      const result = create ? await createEvent(formData).unwrap() : await updateEvent(formData).unwrap()
+      const result = create ? await CreateEvent(formData).unwrap() : await UpdateEvent(formData).unwrap()
       if (result) {
         toast.success(`${create ? 'Create' : 'Update'} event successfully`)
       }
     } catch (error) {
       console.log(error)
+      toast.error('Something went wrong')
     }
   }
 

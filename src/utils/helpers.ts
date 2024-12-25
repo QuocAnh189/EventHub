@@ -16,6 +16,10 @@ export const getTotal = (arr: any) => {
   return arr.reduce((acc: any, item: any) => acc + item.value, 0)
 }
 
+export const formatNumber = (num: number): string => {
+  return new Intl.NumberFormat('de-DE').format(num) // Dùng định dạng số của Đức (de-DE) để thêm dấu chấm
+}
+
 /**
  *
  * @param num - number to be formatted

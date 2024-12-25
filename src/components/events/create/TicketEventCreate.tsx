@@ -24,7 +24,7 @@ import noFeeImg from '@assets/images/ticket/no-fee.png'
 //util
 import classNames from 'classnames'
 
-interface Props {
+interface IProps {
   t: any
   register: UseFormRegister<ICreateEventPayload>
   eventTicketType: EEventPaymentTicket
@@ -34,7 +34,7 @@ interface Props {
   ticketTypes: any[]
 }
 
-const TicketEventCreate = (props: Props) => {
+const TicketEventCreate = (props: IProps) => {
   const { t, setActive, control, register, eventTicketType, setValue, ticketTypes } = props
 
   const {
@@ -161,7 +161,9 @@ const TicketEventCreate = (props: Props) => {
                     className={classNames('field-input', { 'field-input--error': false })}
                     id='ticket_quantity'
                     defaultValue={0}
-                    {...register(`ticketTypeItems.${index}.quantity`)}
+                    {...register(`ticketTypeItems.${index}.quantity`, {
+                      valueAsNumber: true
+                    })}
                   />
                 </div>
               </div>
@@ -175,7 +177,9 @@ const TicketEventCreate = (props: Props) => {
                     className={classNames('field-input', { 'field-input--error': false })}
                     id='ticket_price'
                     defaultValue={0}
-                    {...register(`ticketTypeItems.${index}.price`)}
+                    {...register(`ticketTypeItems.${index}.price`, {
+                      valueAsNumber: true
+                    })}
                   />
                 </div>
               </div>

@@ -48,19 +48,19 @@ export const apiEvent = createApi({
     }),
 
     createEvent: builder.mutation<IEvent, FormData>({
-      query: (data) => ({
+      query: (formData) => ({
         url: '/events/',
         method: 'POST',
-        body: data
+        body: formData
       }),
       invalidatesTags: ['Event']
     }),
 
     updateEvent: builder.mutation<IEvent, FormData>({
-      query: (data) => ({
-        url: `/events/${data.get('id')}`,
+      query: (formData) => ({
+        url: `/events/${formData.get('id')}`,
         method: 'PUT',
-        body: data
+        body: formData
       }),
       invalidatesTags: ['Event']
     }),

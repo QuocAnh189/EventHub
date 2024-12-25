@@ -30,6 +30,7 @@ import { useFollowUserMutation, useUnFollowUserMutation, useCheckFollowerQuery }
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import TimeDifference from '@utils/time_difference'
 
 interface IProps {
   t: any
@@ -46,15 +47,19 @@ const EventInformation = (props: IProps) => {
   const { data: isFollow } = useCheckFollowerQuery(event?.creator.id!)
 
   const totalQuantity = useMemo(() => {
-    // const calculation = event?.ticketTypes?.reduce((total: any, currentValue: any) => {
-    //   return total + currentValue.quantity
-    // }, 0)
-    // return calculation
-    return 100
+    const totalQuantity = event?.ticketTypes?.reduce((total: any, currentValue: any) => {
+      return total + currentValue.quantity
+    }, 0)
+    return totalQuantity
   }, [])
 
   const [FollowUser, { isLoading: loadingFollower }] = useFollowUserMutation()
   const [UnfollowUser, { isLoading: loadingUnFollower }] = useUnFollowUserMutation()
+
+  const timeDifference = useMemo(() => {
+    const { hours, days, minutes } = TimeDifference(event?.startTime!, event?.endTime!)
+    return { hours, days, minutes }
+  }, [])
 
   const handleFollowUser = async () => {
     if (!user) {
@@ -93,7 +98,11 @@ const EventInformation = (props: IProps) => {
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <IoMdTime color='#3D56F0' size={50} />
           <p className='h6 text-header'>{t('information.happen')}</p>
-          <p className='text-sm text-header'>9 day</p>
+          <p className='text-sm text-header'>
+            {timeDifference.days ? `${timeDifference.days} days` : ''}
+            {timeDifference.hours ? `${timeDifference.hours} hour` : ''}
+            {timeDifference.minutes ? `${timeDifference.minutes} minute` : ''}
+          </p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>

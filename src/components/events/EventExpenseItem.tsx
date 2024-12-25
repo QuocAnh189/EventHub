@@ -1,22 +1,30 @@
+//hook
+import { useMemo } from 'react'
+
 // components
 import { NavLink } from 'react-router-dom'
 import RatingStars from '@ui/RatingStars'
 import Spring from '@components/Spring'
 
 //interface
-import { IMyEventAnalysis } from '@interfaces/contents/event.interface'
+import { IMyEventExpense } from '@interfaces/contents/event.interface'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import { formatNumber } from '@utils/helpers'
 
 interface Props {
   t: any
-  event: IMyEventAnalysis
+  event: IMyEventExpense
   index: number
 }
 
 const EventExpenseItem = (props: Props) => {
   const { t, event, index } = props
+
+  const totalExpense = useMemo(() => {
+    return event.expenses.reduce((acc, expense) => acc + expense.total, 0)
+  }, [])
 
   return (
     <Spring type='slideUp' index={index}>
@@ -31,8 +39,12 @@ const EventExpenseItem = (props: Props) => {
         </h6>
         <RatingStars rating={event.averageRate || 0} />
         <div className='flex flex-col flex-1 gap-1 mt-1.5'>
-          <p className='font-heading font-bold text-sm leading-[1.4] text-green'>{t('total_sub_expense')} : 3</p>
-          <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>{t('total_expense')} : 500</p>
+          <p className='font-heading font-bold text-sm leading-[1.4] text-green'>
+            {t('total_sub_expense')} : {event.expenses.length}
+          </p>
+          <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
+            {t('total_expense')} : {formatNumber(totalExpense)}.000 VND
+          </p>
         </div>
       </NavLink>
     </Spring>

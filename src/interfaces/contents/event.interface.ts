@@ -10,7 +10,7 @@ export interface IEvent {
   description: string
   coverImageUrl: string
   location: string
-  locationPath: string
+  pathLocation: string
   startTime: string
   endTime: string
   eventCycleType: EEventStyle
@@ -91,4 +91,17 @@ export interface IMyEventAnalysis {
   averageRate: number
   totalSale: number
   totalFavourite: number
+}
+
+export interface IMyEventExpense {
+  id: string
+  name: string
+  coverImageUrl: string
+  averageRate: number
+  expenses: IExpense[]
+}
+
+export interface IExpense {
+  id: string
+  total: number
 }

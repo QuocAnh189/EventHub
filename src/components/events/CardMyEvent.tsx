@@ -50,7 +50,7 @@ const CardMyEvent = (props: Props) => {
   }
 
   const handleEditEvent = () => {
-    navigate(`update-event/${event.id}`)
+    navigate(`/organization/update-event/${event.id}`)
   }
 
   const handleTrashEvent = async () => {

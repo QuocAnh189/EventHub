@@ -78,8 +78,10 @@ const InformationEvent = (props: Props) => {
           <span className='text-red'>*</span>
         </div>
         <div className='w-4/5 mdl:w-[600px] text-header'>
+          <label className='field-label' htmlFor='startTime'>
+            {t('information.event.category_placeholder')}
+          </label>
           <SelectMultipleCategory
-            placeholder={t('information.event.category_placeholder')}
             id='category'
             options={categoriesStore || []}
             onChange={(e: IOptionSelect) => {

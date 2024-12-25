@@ -48,37 +48,36 @@ const SelectMultipleCategory = (props: Props) => {
     const selectedCategories = props.options.filter((category: any) => categoryIds.includes(category.id))
 
     return (
-      <components.Control className={`${variant === 'basic' ? 'field-input gap-2' : ''}`} {...props}>
+      <components.Control className={``} {...props}>
         <div className='flex h-full w-full items-center gap-4'>
           {selectedCategories.map((category: any, index: number) => (
             <div
               key={index}
-              className='relative flex items-center justify-center gap-2 bg-primary-400 p-1 text-white rounded-md'
+              className='min-w-[150px] relative flex items-center justify-between gap-2 bg-primary-400 p-1 text-white rounded-md'
             >
+              <div className='flex items-center gap-2'>
+                <img
+                  style={{ backgroundColor: category.color }}
+                  className='w-5 p-[2px]'
+                  src={category.iconImageUrl}
+                  alt=''
+                />
+                {category.name}
+              </div>
               <button
                 type='button'
-                className='absolute top-1 right-[2px] icon text-[18px] transition hover:text-red'
+                className='top-1 right-[2px] icon text-[18px] transition hover:text-red'
                 onClick={() => {
                   removeCategory(category.id)
-                  console.log('remove category')
                 }}
                 aria-label='Close'
               >
                 <i className='icon-circle-xmark-regular' />
               </button>
-              <img
-                style={{ backgroundColor: category.color }}
-                className='w-5 p-[2px]'
-                src={category.iconImageUrl}
-                alt=''
-              />
-              {category.name}
-              {children}
             </div>
           ))}
         </div>
         {children}
-        <i className='icon icon-caret-down-solid' />
       </components.Control>
     )
   }
@@ -93,7 +92,7 @@ const SelectMultipleCategory = (props: Props) => {
             <img
               src={props.data.iconImageUrl ? props.data.iconImageUrl : image_default}
               alt={props.data.name}
-              className={`w-8 h-8 p-1`}
+              className='w-8 h-8 p-1'
               style={{ backgroundColor }}
             />
             {props.data.name}

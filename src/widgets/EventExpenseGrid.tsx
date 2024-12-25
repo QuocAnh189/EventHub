@@ -9,7 +9,7 @@ import Pagination from '@ui/Pagination'
 import Loader from '@components/Loader'
 
 //interfaces
-import { IMyEventAnalysis } from '@interfaces/contents'
+import { IMyEventExpense } from '@interfaces/contents'
 import { IPagination } from '@interfaces/common.interface'
 
 //redux
@@ -65,7 +65,7 @@ const EventExpenseGrid = (props: Props) => {
                  md:mt-[27px] xl:grid-cols-5 2xl:grid-cols-6'
       >
         {isFetching && <Loader />}
-        {data?.items.map((event: IMyEventAnalysis, index: number) => (
+        {data?.items.map((event: IMyEventExpense, index: number) => (
           <EventExpenseItem key={`event-${index}`} event={event} index={index} />
         ))}
       </div>

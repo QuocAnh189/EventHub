@@ -45,8 +45,6 @@ const Calendar = ({ t }: any) => {
   const [params, setParams] = useState<IPramsEventCalendar>(initParams)
   const { data } = useGetEventsQuery(params)
 
-  console.log('data', data)
-
   const handleEventClick = (selected: any) => {
     navigate(`/organization/event/${selected.event._def.publicId}`, {
       state: { event: events_data.find((item: any) => item.id === selected.event._def.publicId) }
@@ -56,9 +54,6 @@ const Calendar = ({ t }: any) => {
   const handleDatesSet = (info: any) => {
     const startDate = dayjs(info.start).format('YYYY-MM-DD')
     const endDate = dayjs(info.end).format('YYYY-MM-DD')
-
-    console.log('startDate', startDate)
-    console.log('endDate', endDate)
 
     setParams({ ...params, startTimeRange: startDate, endTimeRange: endDate })
   }
@@ -119,17 +114,21 @@ const Calendar = ({ t }: any) => {
   )
 }
 
-const StatusEvent = (day: any) => {
-  if (dayjs(day).format('DD/MM/YY') < dayjs(new Date()).format('DD/MM/YY')) {
-    return 'Closed'
-  } else if (dayjs(day).format('DD/MM/YY') === dayjs(new Date()).format('DD/MM/YY')) {
-    return 'Opening'
+const StatusEvent = (day: any): string => {
+  const today = dayjs()
+  const eventDay = dayjs(day)
+
+  if (eventDay.isBefore(today, 'day')) {
+    return EEventStatus.Closed
+  } else if (eventDay.isSame(today, 'day')) {
+    return EEventStatus.Opening
   } else {
-    return 'Upcoming'
+    return EEventStatus.Upcoming
   }
 }
 
 function renderEventContent(eventInfo: any) {
+  console.log(eventInfo.event._def.extendedProps.status)
   const statusEvent = (status: EEventStatus) => {
     switch (status) {
       case EEventStatus.Closed:

@@ -13,14 +13,14 @@ import { withTranslation } from 'react-i18next'
 //icon
 import { BiTrash } from 'react-icons/bi'
 
-interface Props {
+interface IProps {
   t: any
   coverImage: any
   subImage: any[]
   setActive: (value: number) => void
   setValue: UseFormSetValue<ICreateEventPayload>
 }
-const BannerEvent = (props: Props) => {
+const BannerEvent = (props: IProps) => {
   const { t, setActive, setValue, coverImage, subImage } = props
 
   const convertCoverImageToBase64 = (e: any) => {
@@ -42,7 +42,7 @@ const BannerEvent = (props: Props) => {
           <img
             loading='lazy'
             className={`absolute h-full w-full rounded-[8px] outline-none opacity-${coverImage ? '1' : '0'}`}
-            src={coverImage ? URL.createObjectURL(coverImage) : ''}
+            src={coverImage && typeof coverImage !== 'string' ? URL.createObjectURL(coverImage) : coverImage || ''}
           />
           <input
             aria-label=''
@@ -79,8 +79,11 @@ const BannerEvent = (props: Props) => {
               <img
                 loading='lazy'
                 className={`absolute h-full w-full rounded-[6px] outline-none opacity-${subImage[index] ? '1' : '0'}`}
-                src={subImage[index] ? URL.createObjectURL(subImage[index]) : ''}
-                alt=''
+                src={
+                  subImage[index] && typeof subImage[index] !== 'string'
+                    ? URL.createObjectURL(subImage[index])
+                    : subImage[index] || ''
+                }
               />
               <input
                 title=''
