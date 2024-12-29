@@ -1,6 +1,5 @@
-/* eslint-disable no-constant-binary-expression */
 // hooks
-import { PropsWithChildren, useRef } from 'react'
+import { PropsWithChildren, useRef, useEffect } from 'react'
 import { useState } from 'react'
 import useOpenLiveChatAnimation from '@hooks/useOpenLiveChat'
 
@@ -43,8 +42,30 @@ const ChatLayout = ({ children, t }: ModalMessageProps) => {
   const [params] = useState({ pageSize: 10 })
   const conversation = useAppSelector((state) => state.persistedReducer.conversation.conversation)
   const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
+  const socket = useAppSelector((state) => state.socket.socket)
 
+  const [messages, setMessages] = useState<IMessage[]>([])
   const { data } = useGetMessageByConversationIdQuery({ conversationId: conversation?.id, params })
+
+  useEffect(() => {
+    socket?.on('receive_message', (result: any) => {
+      const newMessage = {
+        senderId: result.sender_id,
+        receiverId: conversation?.user?.id || conversation?.organizer?.id,
+        content: result.message,
+        createdAt: new Date().toString(),
+        updatedAt: new Date().toString()
+      }
+      setMessages((prev) => [...prev, newMessage])
+    })
+    return () => socket?.off('receive_message')
+  }, [socket])
+
+  useEffect(() => {
+    if (data && data.items) {
+      setMessages(data.items)
+    }
+  }, [data?.items])
 
   return (
     <div className='relative min-h-screen bg-body'>
@@ -80,13 +101,14 @@ const ChatLayout = ({ children, t }: ModalMessageProps) => {
                       <div className='text-lg text-slate-200'>{t('box_message.right.no_message')}</div>
                     </div>
                   )}
-                  {data && data.items?.length > 0 && (
+                  {messages && messages?.length > 0 && (
                     <div className='flex-1 flex flex-col'>
                       <div ref={loadMoreIntersect} className=''></div>
-                      {data.items?.map((message: IMessage, index: number) => (
+                      {messages?.map((message: IMessage, index: number) => (
                         <MessageItem
                           key={index}
                           message={message}
+
                           // user={auth.user}
                           // attachmentClick={onAttachmentClick}
                         />
@@ -95,7 +117,10 @@ const ChatLayout = ({ children, t }: ModalMessageProps) => {
                   )}
                 </div>
 
-                <MessageInput conversation={[]} />
+                <MessageInput
+                  conversationId={conversation.id}
+                  receiverId={conversation?.user?.id || conversation?.organizer?.id}
+                />
               </>
             )}
           </>

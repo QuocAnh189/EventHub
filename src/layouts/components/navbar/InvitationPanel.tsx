@@ -1,7 +1,6 @@
 //hooks
 import { useState } from 'react'
 import useMeasure from 'react-use-measure'
-import { useNavigate } from 'react-router-dom'
 
 //components
 import DrawerBase from '@ui/DrawerBase'
@@ -26,8 +25,6 @@ interface Props {
 const InvitationsPanel = (props: Props) => {
   const { t, open, onOpen, onClose } = props
 
-  const navigate = useNavigate()
-
   const [headerRef, { height: headerHeight }] = useMeasure()
   const [footerRef, { height: footerHeight }] = useMeasure()
   const [displayed, setDisplayed] = useState(step)
@@ -38,11 +35,6 @@ const InvitationsPanel = (props: Props) => {
   const handleLoadMore = () => {
     setDisplayed(displayed + step)
     setParams({ pageSize: params.pageSize + 6 })
-  }
-
-  const handleViewEvent = (id: string) => {
-    onClose()
-    navigate(`/organization/event/${id}`)
   }
 
   return (
@@ -64,7 +56,7 @@ const InvitationsPanel = (props: Props) => {
         style={{ height: `calc(100vh - ${headerHeight + footerHeight}px)` }}
       >
         {data?.items.map((invitation: IInvitation, index: number) => (
-          <InvitationItem key={`invitation-${index}`} invitation={invitation} index={index} onView={handleViewEvent} />
+          <InvitationItem key={`invitation-${index}`} invitation={invitation} index={index} onClose={onClose} />
         ))}
       </div>
       <div className='p-[30px]' ref={footerRef}>

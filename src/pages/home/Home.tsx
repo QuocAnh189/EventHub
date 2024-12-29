@@ -10,19 +10,42 @@ import UpcomingEvents from './components/UpComingEvents'
 import AboutUs from './components/AboutUs'
 
 //redux
+import { useAppSelector } from '@hooks/useRedux'
 import { useGetCategoriesQuery } from '@redux/apis/category.api'
 import { useGetCouponsByCreatedQuery } from '@redux/apis/coupon.api'
 import { setCategories } from '@redux/slices/category.slice'
 import { setCoupons } from '@redux/slices/coupon.slice'
 import { useGetFavouriteEventQuery } from '@redux/apis/event.api'
 import { setCategoryIdsWishlist } from '@redux/slices/event.slice'
+import { setSocket } from '@redux/slices/socket.slice'
+
+//socket
+import io from 'socket.io-client'
+
+//interface
+import { IUser } from '@interfaces/systems'
 
 const Home = () => {
   const dispatch = useAppDispatch()
 
+  const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
+  // const socket = useAppSelector((state) => state.socket.socket)
+
   const { data: categories, isSuccess: isSuccessCategories } = useGetCategoriesQuery()
   const { data: coupons, isSuccess: isSuccessCoupons } = useGetCouponsByCreatedQuery({ pageSize: 20 })
   const { data: events, isSuccess: isSuccessEvents } = useGetFavouriteEventQuery({ pageSize: 20 })
+
+  useEffect(() => {
+    if (user?.id) {
+      const socket = io('http://localhost:9000', {
+        transports: ['websocket'],
+        query: { id: user.id },
+        reconnection: false
+      })
+
+      dispatch(setSocket(socket))
+    }
+  }, [])
 
   useEffect(() => {
     if (isSuccessCategories && categories) {

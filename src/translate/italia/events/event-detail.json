@@ -12,6 +12,12 @@
     "total_amount": "Importo Totale",
     "buy": "Acquista"
   },
+  "invitation": {
+    "title": "Utente",
+    "search_label": "Cerca ...",
+    "invited": "Invitato",
+    "invite": "Invitare"
+  },
   "apply_coupon": {
     "title": "Applica Coupon",
     "apply": "Applica"

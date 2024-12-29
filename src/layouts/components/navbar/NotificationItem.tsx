@@ -1,5 +1,6 @@
 //components
 import Spring from '@components/Spring'
+import { NavLink } from 'react-router-dom'
 
 //utils
 import dayjs from 'dayjs'
@@ -17,11 +18,11 @@ interface Props {
   t: any
   notification: INotificationFollowing
   index: number
-  onView: (id: string) => void
+  onClose: () => void
 }
 
 const NotificationItem = (props: Props) => {
-  const { t, notification, index, onView } = props
+  const { t, notification, index, onClose } = props
 
   return (
     <Spring className='notification with-border flex gap-6' index={index}>
@@ -38,9 +39,9 @@ const NotificationItem = (props: Props) => {
           <i className='icon-circle-solid text-[4px]' />
         </p>
         <div className='flex gap-2.5'>
-          <button className='text-btn' onClick={() => onView(notification.follower.id)}>
+          <NavLink to={`/organization/profile/${notification.follower.id}`} className='text-btn' onClick={onClose}>
             {t('notification.view_profile')}
-          </button>
+          </NavLink>
         </div>
       </div>
     </Spring>

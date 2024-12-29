@@ -12,6 +12,12 @@
     "total_amount": "Monto Total",
     "buy": "Comprar"
   },
+  "invitation": {
+    "title": "Usuario",
+    "search_label": "Buscar ...",
+    "invited": "Invitado",
+    "invite": "Invitar"
+  },
   "apply_coupon": {
     "title": "Aplicar Cupón",
     "apply": "Aplicar"

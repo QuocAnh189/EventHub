@@ -12,6 +12,12 @@
     "total_amount": "Tổng giá trị",
     "buy": "Mua"
   },
+  "invitation": {
+    "title": "Người dùng",
+    "search_label": "Tìm kiếm ...",
+    "invited": "Đã mời",
+    "invite": "Mời"
+  },
   "apply_coupon": {
     "title": "Áp dụng mã giảm giá",
     "apply": "Áp dụng"

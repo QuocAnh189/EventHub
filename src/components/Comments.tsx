@@ -16,9 +16,6 @@ import classNames from 'classnames'
 import { IReview } from '@interfaces/contents'
 import { usePagination } from '@hooks/usePagination'
 
-// //data
-// import reviews_data from '@db/reviews'
-
 //interface
 import { IUser } from '@interfaces/systems'
 // import { IReviewEventPayload } from '@type/event.type'
@@ -51,7 +48,6 @@ const Comments = (props: Props) => {
     formData.append('content', content)
     formData.append('rate', rate.toString())
 
-    // const data: IReviewEventPayload = { userId: user?.id!, eventId, content, rate }
     try {
       const result = await AddReview(formData).unwrap()
       if (result) {

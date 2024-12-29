@@ -1,4 +1,5 @@
 //hooks
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '@hooks/useRedux'
 import { UseFormSetValue } from 'react-hook-form'
@@ -15,10 +16,18 @@ import { setCoupons } from '@redux/slices/coupon.slice'
 //interface
 import { IUpdateUserProfilePayload } from '@dtos/user.dto'
 import { IRole } from '@interfaces/systems'
+// import type { Socket } from 'socket.io-client'
 
 //i18n
 import { withTranslation } from 'react-i18next'
 import { HiTrash } from 'react-icons/hi'
+
+//redux
+import { useAppSelector } from '@hooks/useRedux'
+// import { setSocket } from '@redux/slices/socket.slice'
+
+//context
+import { AppSocketContext } from '@contexts/socket_io.context'
 
 interface IProps {
   t: any
@@ -30,9 +39,13 @@ interface IProps {
 }
 
 const UserProfileCard = (props: IProps) => {
+  const { SocketLogout } = useContext(AppSocketContext)
+
   const { t, avatar, avatarUrl, setValue, fullName, roles } = props
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+
+  const socket = useAppSelector((state) => state.socket.socket)
 
   const [signOut, { isLoading: loadingLogout }] = useSignOutMutation()
 
@@ -48,7 +61,9 @@ const UserProfileCard = (props: IProps) => {
       dispatch(setUser(null))
       dispatch(setConversation(null))
       dispatch(setCoupons(null))
-      // dispatch(setSocket(null))
+      if (socket && SocketLogout) {
+        SocketLogout(socket)
+      }
       navigate('/')
     }
   }

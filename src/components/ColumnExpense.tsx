@@ -5,9 +5,9 @@ import { useState } from 'react'
 import Spring from './Spring'
 import CardExpense from './CardExpense'
 import ModalUpdateExpense from '@pages/events/components/ModalUpdateExpense'
-import { toast } from 'react-toastify'
 import ConfirmDialog from './Dialog'
 import Loading from './Loading'
+import { toast } from 'react-toastify'
 
 //icon
 import AddCardIcon from '@mui/icons-material/AddCard'
@@ -17,13 +17,14 @@ import { MdDelete } from 'react-icons/md'
 
 //utils
 import classNames from 'classnames'
+import { formatNumber } from '@utils/helpers'
 
 //interface
 import { IExpense, ISubExpense } from '@interfaces/contents/expense.interface'
+import { ICreatedSubExpensePayload } from '@dtos/expense.dto'
 
 //redux
 import { useCreateSubExpenseMutation, useDeleteExpenseMutation } from '@redux/apis/expense.api'
-import { ICreatedSubExpensePayload } from '@dtos/expense.dto'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -78,7 +79,11 @@ const ColumnExpense = (props: IProps) => {
   }
 
   return (
-    <Spring type='fade-up' index={index} className='min-w-[400px] h-auto bg-[#ebecf0] ml-2 rounded-6 rounded-xl'>
+    <Spring
+      type='fade-up'
+      index={index}
+      className='min-w-[400px] max-w-[400px] h-auto bg-[#ebecf0] ml-2 rounded-6 rounded-xl'
+    >
       <div className='flex h-[50px] p-4 items-center justify-between'>
         <div className='flex items-center gap-2'>
           <h5 className='h5 text-primary'>{expense.title}</h5>
@@ -97,7 +102,7 @@ const ColumnExpense = (props: IProps) => {
             <MdDelete size={20} color='red' />
           </button>
         </div>
-        <h6 className='h6 text-error'>{expense.total.toFixed(2)} VND</h6>
+        <h6 className='h6 text-error'>{formatNumber(expense.total)} VND</h6>
       </div>
 
       <div className='flex flex-col overflow-x-hidden overflow-y-auto gap-2 mx-[5px] px-[5px] pr-[5px]'>

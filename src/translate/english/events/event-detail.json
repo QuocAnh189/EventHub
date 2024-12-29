@@ -12,6 +12,12 @@
     "total_amount": "Total Amount",
     "buy": "Buy"
   },
+  "invitation": {
+    "title": "User",
+    "search_label": "Search ...",
+    "invited": "Invited",
+    "invite": "Invite"
+  },
   "apply_coupon": {
     "title": "Apply Coupon",
     "apply": "Apply"

@@ -12,6 +12,12 @@
     "total_amount": "Gesamtbetrag",
     "buy": "Kaufen"
   },
+  "invitation": {
+    "title": "Benutzer",
+    "search_label": "Suchen ...",
+    "invited": "Eingeladen",
+    "invite": "Einladen"
+  },
   "apply_coupon": {
     "title": "Gutschein anwenden",
     "apply": "Anwenden"

@@ -73,6 +73,7 @@ const ModalMessage = ({ children, t }: ModalMessageProps) => {
           </div>
           <div className='flex-1 overflow-auto'>
             {tabActive === 'Event' &&
+              userId &&
               conversation_user_self &&
               conversation_user_self.items?.map((conversation: IConversation, index: number) => (
                 <ConversationItem
@@ -86,6 +87,7 @@ const ModalMessage = ({ children, t }: ModalMessageProps) => {
               ))}
 
             {tabActive === 'User' &&
+              userId &&
               conversation_organizer_self &&
               conversation_organizer_self.items?.map((conversation: IConversation, index: number) => (
                 <ConversationItem

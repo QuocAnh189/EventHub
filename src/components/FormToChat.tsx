@@ -1,8 +1,8 @@
 //hooks
-import { useContext } from 'react'
+// import { useContext } from 'react'
 
 //context
-import { AppSocketContext } from '@contexts/socket.context'
+// import { AppSocketContext } from '@contexts/socket.context'
 
 //util
 import classNames from 'classnames'
@@ -10,6 +10,8 @@ import classNames from 'classnames'
 //i18n
 import { withTranslation } from 'react-i18next'
 
+//redux
+import { useAppSelector } from '@hooks/useRedux'
 interface IProps {
   t: any
   userId: string
@@ -23,7 +25,14 @@ interface IProps {
 const FormToChat = (props: IProps) => {
   const { t, userId, eventId, hostId, eventName, userEmail, userFullName } = props
 
-  const { handleJoinChatRoom } = useContext(AppSocketContext)
+  // const { handleJoinChatRoom } = useContext(AppSocketContext)
+
+  const socket = useAppSelector((state) => state.socket.socket)
+
+  const handleChatRoom = () => {
+    console.log(userId, eventId, hostId)
+    socket.emit('message', 'Chat room created')
+  }
 
   return (
     <div className='flex px-[100px] gap-8'>
@@ -69,7 +78,8 @@ const FormToChat = (props: IProps) => {
           </div>
         </div>
         <button
-          onClick={() => handleJoinChatRoom && handleJoinChatRoom({ eventId, hostId, userId })}
+          onClick={handleChatRoom}
+          // onClick={() => handleJoinChatRoom && handleJoinChatRoom({ eventId, hostId, userId })}
           className='btn btn-primary w-40 hover:bg-primary-500'
         >
           {t('conversation.start_chat')}

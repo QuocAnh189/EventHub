@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 
 //components
@@ -25,21 +25,57 @@ import { isAudio, isImage } from '@utils/helpers'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-const MessageInput = ({ conversation = null, t }: any) => {
+//redux
+import { useAppSelector } from '@hooks/useRedux'
+import { useAddMessageToConversationMutation } from '@redux/apis/conversation.api'
+
+//context
+import { AppSocketContext } from '@contexts/socket_io.context'
+import Loading from '@components/Loading'
+
+interface IProps {
+  t: any
+  conversationId: string
+  receiverId: string
+}
+const MessageInput = (props: IProps) => {
+  const { t, conversationId, receiverId } = props
+  const { SocketSendMessage } = useContext(AppSocketContext)
+
+  const socket = useAppSelector((state) => state.socket.socket)
+  const userId = useAppSelector((state) => state.persistedReducer.user.user.id)
+
   const [newMessage, setNewMessage] = useState('')
   const [inputErrorMessage, setInputErrorMessage] = useState('')
-  const [messageSending, setMessageSending] = useState(false)
   const [chosenFiles, setChosenFiles] = useState([])
   const [uploadProgress, setUploadProgress] = useState(0)
 
+  const [AddMessage, { isLoading }] = useAddMessageToConversationMutation()
+
   const onFileChange = () => {
-    console.log(conversation, messageSending)
     setInputErrorMessage('')
-    setMessageSending(false)
     setUploadProgress(0)
   }
 
-  const onSendClick = () => {}
+  const onSendClick = async () => {
+    const formData = new FormData()
+    formData.append('conversationId', conversationId)
+    formData.append('senderId', userId)
+    formData.append('receiverId', receiverId)
+    formData.append('content', newMessage)
+
+    try {
+      const result = await AddMessage(formData).unwrap()
+      if (result) {
+        if (socket && SocketSendMessage) {
+          SocketSendMessage(socket, userId, conversationId, newMessage)
+          setNewMessage('')
+        }
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   const onLikeClick = () => {}
 
@@ -78,8 +114,14 @@ const MessageInput = ({ conversation = null, t }: any) => {
             onChange={(e: any) => setNewMessage(e.target.value)}
           />
           <button onClick={onSendClick} className='btn btn-info rounded-l-none'>
-            <PaperAirplaneIcon className='w-4 h-4' />
-            <span className='hidden sm:inline'>{t('box_message.right.send')}</span>
+            {isLoading ? (
+              <Loading />
+            ) : (
+              <>
+                <PaperAirplaneIcon className='w-4 h-4' />
+                <span className='hidden sm:inline'>{t('box_message.right.send')}</span>
+              </>
+            )}
           </button>
         </div>
         {!!uploadProgress && (

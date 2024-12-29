@@ -23,3 +23,10 @@ export interface IUserFollower {
   email: string
   userName: string
 }
+
+export interface IUserInvitation {
+  id?: string
+  avatarUrl: string
+  email: string
+  userName: string
+}

@@ -24,7 +24,7 @@ export interface IEvent {
   reasons: IReason[]
 }
 
-interface ICreator {
+export interface ICreator {
   id: string
   avatarUrl: string
   email: string
@@ -98,10 +98,8 @@ export interface IMyEventExpense {
   name: string
   coverImageUrl: string
   averageRate: number
-  expenses: IExpense[]
-}
-
-export interface IExpense {
-  id: string
-  total: number
+  expenses: {
+    id: string
+    total: number
+  }[]
 }

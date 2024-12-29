@@ -1,6 +1,5 @@
 //hooks
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import useMeasure from 'react-use-measure'
 
 //components
@@ -31,8 +30,6 @@ interface Props {
 const NotificationsPanel = (props: Props) => {
   const { t, open, onOpen, onClose } = props
 
-  const navigate = useNavigate()
-
   const [headerRef, { height: headerHeight }] = useMeasure()
   const [footerRef, { height: footerHeight }] = useMeasure()
   const [filter, setFilter] = useState<string>('follow')
@@ -49,11 +46,6 @@ const NotificationsPanel = (props: Props) => {
   const getQty = (category: any) => {
     if (category === 'all') return notifications.length
     return notifications.filter((notification: any) => notification.category === category).length
-  }
-
-  const handleViewProfile = (id: string) => {
-    onClose()
-    navigate(`/organization/profile/${id}`)
   }
 
   return (
@@ -94,7 +86,7 @@ const NotificationsPanel = (props: Props) => {
               key={`notification-${index}`}
               notification={notification}
               index={index}
-              onView={handleViewProfile}
+              onClose={onClose}
             />
           ))}
       </div>

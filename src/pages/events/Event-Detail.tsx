@@ -16,6 +16,7 @@ import Loader from '@components/Loader'
 import ConfirmDialog from '@components/Dialog'
 import { toast } from 'react-toastify'
 import RatingStars from '@ui/RatingStars'
+import ModalInvitation from './components/ModalInvitation'
 
 //redux
 import { useGetEventByIdQuery, useFavouriteEventMutation, useUnfavouriteEventMutation } from '@redux/apis/event.api'
@@ -45,6 +46,7 @@ const EventDetail = ({ t }: any) => {
 
   const [value, setValue] = useState<string>('1')
   const [openDialog, setOpenDialog] = useState<boolean>(false)
+  const [modalInvitation, setModalInvitation] = useState<boolean>(false)
 
   const handleChange = (_event: any, newValue: string) => {
     setValue(newValue)
@@ -88,7 +90,7 @@ const EventDetail = ({ t }: any) => {
             <button onClick={handleLikeEvent}>
               {isFavourite != undefined && <FaHeart color={isFavourite ? 'red' : 'gray'} size='36px' />}
             </button>
-            <button>
+            <button onClick={() => setModalInvitation(true)}>
               <IoShareSocialOutline color='gray' size='36px' />
             </button>
           </div>
@@ -158,6 +160,13 @@ const EventDetail = ({ t }: any) => {
 
       <EventsRelate title={t('related.title')} categoryId={event?.categories[0].id!} />
 
+      {modalInvitation && (
+        <ModalInvitation
+          eventId={event?.id!}
+          modalOpen={modalInvitation}
+          setModalOpen={(value: any) => setModalInvitation(value)}
+        />
+      )}
       {openDialog && (
         <ConfirmDialog
           title='Buy Ticket'

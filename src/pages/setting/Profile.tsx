@@ -46,16 +46,16 @@ const Profile = ({ t }: any) => {
     watch
   } = useForm<IUpdateUserProfilePayload>({
     defaultValues: {
-      id: user.id,
-      avatarUrl: user.avatarUrl,
+      id: user?.id,
+      avatarUrl: user?.avatarUrl,
       avatar: null,
-      email: user.email,
-      userName: user.userName,
-      fullName: user.fullName,
-      phoneNumber: user.phoneNumber,
-      gender: user.gender,
-      dob: dayjs(user.dob).format('YYYY-MM-DD'),
-      bio: user.bio
+      email: user?.email,
+      userName: user?.userName,
+      fullName: user?.fullName,
+      phoneNumber: user?.phoneNumber,
+      gender: user?.gender,
+      dob: dayjs(user?.dob).format('YYYY-MM-DD'),
+      bio: user?.bio
     }
   })
 
@@ -82,39 +82,41 @@ const Profile = ({ t }: any) => {
   return (
     <ProtectedLayout>
       <PageHeader title={t('header profile.title')} />
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className='widgets-grid md:!grid-cols-2 xl:!grid-cols-[340px,_minmax(0,1fr)]'
-      >
-        <div className='widgets-grid md:!grid-cols-2 md:col-span-2 xl:!grid-cols-1 xl:col-span-1'>
-          <UserProfileCard
-            avatarUrl={watch().avatarUrl}
-            avatar={watch().avatar}
-            setValue={setValue}
-            fullName={user.fullName}
-            roles={user.roles}
-          />
-          <div className='widgets-grid'>
-            <UserProfilePanel />
-            <UserProfileInfo
-              email={user.email}
-              totalEvent={user.totalEvent}
-              totalFollower={user.totalFollower}
-              totalFollowing={user.totalFollowing}
+      {user && (
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className='widgets-grid md:!grid-cols-2 xl:!grid-cols-[340px,_minmax(0,1fr)]'
+        >
+          <div className='widgets-grid md:!grid-cols-2 md:col-span-2 xl:!grid-cols-1 xl:col-span-1'>
+            <UserProfileCard
+              avatarUrl={watch().avatarUrl}
+              avatar={watch().avatar}
+              setValue={setValue}
+              fullName={user.fullName}
+              roles={user.roles}
             />
+            <div className='widgets-grid'>
+              <UserProfilePanel />
+              <UserProfileInfo
+                email={user.email}
+                totalEvent={user.totalEvent}
+                totalFollower={user.totalFollower}
+                totalFollowing={user.totalFollowing}
+              />
+            </div>
           </div>
-        </div>
-        <UserProfileDetails
-          register={register}
-          watch={watch}
-          setValue={setValue}
-          control={control}
-          errors={errors}
-          isLoading={isLoading}
-          roles={user.roles}
-          setModalOpen={setModalOpen}
-        />
-      </form>
+          <UserProfileDetails
+            register={register}
+            watch={watch}
+            setValue={setValue}
+            control={control}
+            errors={errors}
+            isLoading={isLoading}
+            roles={user.roles}
+            setModalOpen={setModalOpen}
+          />
+        </form>
+      )}
       {modalOpen && <ModalChangePassword modalOpen={modalOpen} setModalOpen={setModalOpen} />}
     </ProtectedLayout>
   )

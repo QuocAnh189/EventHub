@@ -25,13 +25,14 @@ export const apiUser = createApi({
   tagTypes: ['User'],
 
   endpoints: (builder) => ({
-    getUsers: builder.query<IUser[], any>({
+    getUsers: builder.query<IListData<any>, any>({
       query: (params) => ({
-        url: '/users',
+        url: '/users/',
         method: 'GET',
         params: params
       }),
-      providesTags: ['User']
+      providesTags: ['User'],
+      transformResponse: (response: any) => response.data
     }),
 
     getProfile: builder.query<IUser, void>({
@@ -144,6 +145,24 @@ export const apiUser = createApi({
       transformResponse: (response: any) => response.data
     }),
 
+    checkInvitation: builder.query<any, string>({
+      query: (inviteeId) => ({
+        url: `/users/check-invitation/${inviteeId}`,
+        method: 'GET'
+      }),
+      providesTags: ['User'],
+      transformResponse: (response: any) => response.data
+    }),
+
+    invitationUsers: builder.mutation<any, { userIds: string[]; eventId: string }>({
+      query: (data) => ({
+        url: '/users/invitations',
+        method: 'PATCH',
+        body: data
+      }),
+      invalidatesTags: ['User']
+    }),
+
     getNotificationFollowings: builder.query<IListData<any>, any>({
       query: (params) => ({
         url: '/users/notification-following',
@@ -169,5 +188,7 @@ export const {
   useUnFollowUserMutation,
   useCheckFollowerQuery,
   useGetInvitationsQuery,
+  useCheckInvitationQuery,
+  useInvitationUsersMutation,
   useGetNotificationFollowingsQuery
 } = apiUser

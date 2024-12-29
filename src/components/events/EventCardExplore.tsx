@@ -1,5 +1,4 @@
-//hooks
-import { useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 //interface
 import { ICardEvent } from '@interfaces/contents/event.interface'
@@ -19,19 +18,10 @@ interface Props {
 
 const EventCardExplore = (props: Props) => {
   const { event } = props
-  const navigate = useNavigate()
-
-  const handleViewEvent = () => {
-    navigate(`/organization/event/${event.id}`, {
-      state: {
-        event: event
-      }
-    })
-  }
 
   return (
-    <button
-      onClick={handleViewEvent}
+    <NavLink
+      to={`/organization/event/${event.id}`}
       className='card flex flex-row gap-2 h-[200px] items-center rounded-md shadow-lg hover:cursor-pointer'
     >
       <div className='w-1/2 h-full flex flex-1'>
@@ -65,7 +55,7 @@ const EventCardExplore = (props: Props) => {
           <RatingStars value={event.averageRate} />
         </div>
       </div>
-    </button>
+    </NavLink>
   )
 }
 

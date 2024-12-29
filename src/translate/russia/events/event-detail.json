@@ -12,6 +12,12 @@
     "total_amount": "Общая сумма",
     "buy": "Купить"
   },
+  "invitation": {
+    "title": "Пользователь",
+    "search_label": "Поиск ...",
+    "invited": "Приглашен",
+    "invite": "Пригласить"
+  },
   "apply_coupon": {
     "title": "Применить купон",
     "apply": "Применить"

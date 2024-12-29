@@ -12,6 +12,12 @@
     "total_amount": "총 금액",
     "buy": "구매"
   },
+  "invitation": {
+    "title": "사용자",
+    "search_label": "검색 ...",
+    "invited": "초대됨",
+    "invite": "초대"
+  },
   "apply_coupon": {
     "title": "쿠폰 적용",
     "apply": "적용"

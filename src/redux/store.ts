@@ -36,7 +36,7 @@ const combinedReducer: any = combineReducers({
   [CategorySliceKey]: categoryReducer,
   [UserSliceKey]: userReducer,
   [EventSliceKey]: eventReducer,
-  [SocketSliceKey]: socketReducer,
+  // [SocketSliceKey]: socketReducer,
   [ConversationSliceKey]: conversationReducer,
   [CouponSliceKey]: couponReducer
 })
@@ -49,6 +49,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 const store = configureStore({
   reducer: {
     persistedReducer,
+    [SocketSliceKey]: socketReducer,
 
     [apiAuth.reducerPath]: apiAuth.reducer,
     [apiCategory.reducerPath]: apiCategory.reducer,

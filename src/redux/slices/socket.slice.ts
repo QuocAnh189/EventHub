@@ -1,10 +1,10 @@
-import { HubConnection } from '@microsoft/signalr'
+// import { HubConnection } from '@microsoft/signalr'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 export const SocketSliceKey = 'socket'
 
 type InitialType = {
-  socket: HubConnection | null
+  socket: any
 }
 
 const initialState = {
@@ -15,7 +15,7 @@ const socketSlice = createSlice({
   name: SocketSliceKey,
   initialState,
   reducers: {
-    setSocket: (state, action: PayloadAction<HubConnection | null>) => {
+    setSocket: (state, action: PayloadAction<any>) => {
       state.socket = action.payload
     }
   }

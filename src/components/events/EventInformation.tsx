@@ -1,5 +1,5 @@
 //hooks
-import { useMemo } from 'react'
+import { useMemo, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //components
@@ -32,6 +32,9 @@ import { useFollowUserMutation, useUnFollowUserMutation, useCheckFollowerQuery }
 import { withTranslation } from 'react-i18next'
 import TimeDifference from '@utils/time_difference'
 
+//context
+import { AppSocketContext } from '@contexts/socket_io.context'
+
 interface IProps {
   t: any
   event: IEvent
@@ -41,8 +44,10 @@ const EventInformation = (props: IProps) => {
   const { t, event } = props
 
   const navigate = useNavigate()
+  const { SocketFollow } = useContext(AppSocketContext)
 
   const user = useAppSelector((state) => state.persistedReducer.user.user)
+  const socket = useAppSelector((state) => state.socket.socket)
 
   const { data: isFollow } = useCheckFollowerQuery(event?.creator.id!)
 
@@ -72,7 +77,12 @@ const EventInformation = (props: IProps) => {
         : await FollowUser(event?.creator.id).unwrap()
 
       if (result) {
-        toast.success(isFollow ? 'UnFollow successfully' : 'Follow successfully')
+        if (!isFollow) {
+          if (socket && SocketFollow) {
+            SocketFollow(socket, user.id, event?.creator.id)
+          }
+        }
+        toast.success(isFollow ? 'Unfollow successfully' : 'Follow successfully')
       }
     } catch (e) {
       toast.error('Something went wrong')
@@ -129,7 +139,7 @@ const EventInformation = (props: IProps) => {
                 ) : (
                   <div className='flex items-center gap-1 px-2 py-1 rounded-md bg-primary hover:bg-primary-300'>
                     {isFollow ? <RiSubtractLine color='white' size={24} /> : <IoMdAdd color='white' size={24} />}
-                    <p className='text-white'>{isFollow ? t('information.follow') : t('information.unfollow')}</p>
+                    <p className='text-white'>{isFollow ? t('information.unfollow') : t('information.follow')}</p>
                   </div>
                 )}
               </button>

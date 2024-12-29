@@ -1,6 +1,7 @@
 //components
 import Spring from '@components/Spring'
 import { TruncatedText } from './TruncatedText'
+import { NavLink } from 'react-router-dom'
 
 //utils
 import dayjs from 'dayjs'
@@ -18,11 +19,11 @@ interface Props {
   t: any
   invitation: IInvitation
   index: number
-  onView: (id: string) => void
+  onClose: () => void
 }
 
 const InvitationItem = (props: Props) => {
-  const { t, invitation, index, onView } = props
+  const { t, invitation, index, onClose } = props
 
   return (
     <Spring className='notification with-border flex gap-6' index={index}>
@@ -38,14 +39,9 @@ const InvitationItem = (props: Props) => {
           <i className='icon-circle-solid text-[4px]' />
         </p>
         <div className='flex gap-2.5'>
-          <button
-            className='text-btn'
-            onClick={() => {
-              onView(invitation.event.id)
-            }}
-          >
+          <NavLink to={`/organization/event/${invitation.event.id}`} className='text-btn' onClick={onClose}>
             {t('invitation.view_event')}
-          </button>
+          </NavLink>
         </div>
       </div>
     </Spring>

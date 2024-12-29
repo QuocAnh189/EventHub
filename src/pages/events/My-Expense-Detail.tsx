@@ -77,7 +77,7 @@ const MyExpenseDetail = ({ t }: any) => {
               </button>
             </div>
           ) : (
-            <div className='min-w-[250px] mx-2 p-1 rounded-6 h-fit-content bg-white3d'>
+            <div className='min-w-[250px] max-w-[250px] mx-2 p-1 rounded-6 h-fit-content bg-white3d'>
               <input
                 className={classNames('field-input', { 'field-input--error': false })}
                 id='title'

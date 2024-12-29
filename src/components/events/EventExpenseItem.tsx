@@ -13,13 +13,13 @@ import { IMyEventExpense } from '@interfaces/contents/event.interface'
 import { withTranslation } from 'react-i18next'
 import { formatNumber } from '@utils/helpers'
 
-interface Props {
+interface IProps {
   t: any
   event: IMyEventExpense
   index: number
 }
 
-const EventExpenseItem = (props: Props) => {
+const EventExpenseItem = (props: IProps) => {
   const { t, event, index } = props
 
   const totalExpense = useMemo(() => {
@@ -43,7 +43,7 @@ const EventExpenseItem = (props: Props) => {
             {t('total_sub_expense')} : {event.expenses.length}
           </p>
           <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
-            {t('total_expense')} : {formatNumber(totalExpense)}.000 VND
+            {t('total_expense')} : {formatNumber(totalExpense)} VND
           </p>
         </div>
       </NavLink>

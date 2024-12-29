@@ -12,6 +12,12 @@
     "total_amount": "总金额",
     "buy": "购买"
   },
+  "invitation": {
+    "title": "用户",
+    "search_label": "搜索 ...",
+    "invited": "已邀请",
+    "invite": "邀请"
+  },
   "apply_coupon": {
     "title": "应用优惠券",
     "apply": "应用"

@@ -30,9 +30,13 @@ import { useTranslation, withTranslation } from 'react-i18next'
 
 //interfaces
 import { IUser } from '@interfaces/systems'
+import { toast } from 'react-toastify'
 
 const AppBar = ({ t }: any) => {
   const navigate = useNavigate()
+
+  const [notification, setNotification] = useState<number>(7)
+  const [invitation, setInvitation] = useState<number>(5)
   const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false)
   const [notificationsPanelOpen, setNotificationsPanelOpen] = useState<boolean>(false)
   const [invitePanelOpen, setInvitePanelOpen] = useState<boolean>(false)
@@ -47,6 +51,7 @@ const AppBar = ({ t }: any) => {
   const { setOpen } = useSidebar()
 
   const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
+  const socket = useAppSelector((state) => state.socket.socket)
 
   const activeLocale = LOCALES.find((l: any) => l.value === locale)
 
@@ -63,6 +68,30 @@ const AppBar = ({ t }: any) => {
   useEffect(() => {
     localStorage.setItem('language', i18n.language)
   }, [i18n.language])
+
+  useEffect(() => {
+    socket?.on('notify_follow', (data: any) => {
+      toast.success('You have a new notification')
+      console.log(data)
+      setNotification(notification + 1)
+    })
+
+    return () => {
+      socket?.off('notify_follow')
+    }
+  }, [socket])
+
+  useEffect(() => {
+    socket?.on('notify_invitation', (data: any) => {
+      toast.success('You have a new invitation')
+      console.log(data)
+      setInvitation(invitation + 1)
+    })
+
+    return () => {
+      socket?.off('notify_invitation')
+    }
+  }, [socket])
 
   return (
     <>
@@ -110,7 +139,9 @@ const AppBar = ({ t }: any) => {
                     className='absolute w-3 h-3 rounded-full bg-red -top-1.5 -right-1.5 border-[2px] border-body
                                   xl:w-6 xl:h-6 xl:-top-5 xl:-right-4 xl:flex xl:items-center xl:justify-center'
                   >
-                    <span className='hidden text-xs font-bold text-white dark:text-[#00193B] xl:block'>7</span>
+                    <span className='hidden text-xs font-bold text-white dark:text-[#00193B] xl:block'>
+                      {notification}
+                    </span>
                   </span>
                 </div>
                 <div className='relative h-fit mt-1.5 xl:self-end xl:mt-0 xl:mr-1.5'>
@@ -125,7 +156,9 @@ const AppBar = ({ t }: any) => {
                     className='absolute w-3 h-3 rounded-full bg-green -top-1.5 -right-1.5 border-[2px] border-body
                                   xl:w-6 xl:h-6 xl:-top-5 xl:-right-4 xl:flex xl:items-center xl:justify-center'
                   >
-                    <span className='hidden text-xs font-bold text-white dark:text-[#00193B] xl:block'>4</span>
+                    <span className='hidden text-xs font-bold text-white dark:text-[#00193B] xl:block'>
+                      {invitation}
+                    </span>
                   </span>
                 </div>
                 <div className='relative'>

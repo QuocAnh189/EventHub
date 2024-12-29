@@ -12,6 +12,12 @@
     "total_amount": "総額",
     "buy": "購入"
   },
+  "invitation": {
+    "title": "ユーザー",
+    "search_label": "検索 ...",
+    "invited": "招待済み",
+    "invite": "招待"
+  },
   "apply_coupon": {
     "title": "クーポンを適用",
     "apply": "適用"

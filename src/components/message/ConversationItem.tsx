@@ -1,3 +1,6 @@
+//hook
+import { useContext } from 'react'
+
 //components
 import Avatar from './Avatar'
 
@@ -8,8 +11,11 @@ import dayjs from 'dayjs'
 import { IConversation } from '@interfaces/websockets/conversation.interface'
 
 //redux
-import { useAppDispatch } from '@hooks/useRedux'
+import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { setConversation } from '@redux/slices/conversation.slice'
+
+//context
+import { AppSocketContext } from '@contexts/socket_io.context'
 
 interface IProps {
   conversation: IConversation | any
@@ -19,16 +25,23 @@ interface IProps {
   userId: string
 }
 
-const ConversationItem = (prop: IProps) => {
-  const { conversation, online, user_role, userId } = prop
-
+const ConversationItem = (props: IProps) => {
   const dispatch = useAppDispatch()
+
+  const { conversation, online, user_role, userId } = props
+  const { JoinConversation } = useContext(AppSocketContext)
+  const socket = useAppSelector((state) => state.socket.socket)
+
+  const handleJoinConversation = () => {
+    if (socket && JoinConversation) {
+      JoinConversation(socket, conversation.id)
+    }
+    dispatch(setConversation(conversation))
+  }
 
   return (
     <div
-      onClick={() => {
-        dispatch(setConversation(conversation))
-      }}
+      onClick={handleJoinConversation}
       className={
         'conversation-item flex items-center p-2 gap-2 text-gray-300 transition-all cursor-pointer border-l-4 hover:bg-black/30 pr-4'
       }

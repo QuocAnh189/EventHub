@@ -9,7 +9,6 @@ export const apiConversation = createApi({
     baseUrl: import.meta.env.VITE_API_URL,
     prepareHeaders: (headers) => {
       const token = JSON.parse(localStorage.getItem('token')!)?.accessToken
-      headers.set('Content-Type', 'application/json')
 
       if (token) {
         headers.set('Authorization', `Bearer ${token}`)
@@ -49,6 +48,15 @@ export const apiConversation = createApi({
       }),
       transformResponse: (response: any) => response?.data,
       providesTags: ['Conversation']
+    }),
+
+    addMessageToConversation: builder.mutation<any, FormData>({
+      query: (formData) => ({
+        url: `/conversations/${formData.get('conversationId')}/messages`,
+        method: 'POST',
+        body: formData
+      }),
+      invalidatesTags: ['Conversation']
     })
   })
 })
@@ -56,5 +64,6 @@ export const apiConversation = createApi({
 export const {
   useGetConversationsByOrganizerIdQuery,
   useGetConversationsByUserIdQuery,
-  useGetMessageByConversationIdQuery
+  useGetMessageByConversationIdQuery,
+  useAddMessageToConversationMutation
 } = apiConversation
