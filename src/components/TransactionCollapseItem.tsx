@@ -3,7 +3,7 @@ import Collapse from '@mui/material/Collapse'
 
 // utils
 import PropTypes from 'prop-types'
-import dayjs from 'dayjs'
+import formatDate from '@utils/dayjs'
 import { getStatusColor } from '@utils/helpers'
 
 interface IProps {
@@ -24,7 +24,7 @@ const TransactionCollapseItem = (props: IProps) => {
           <span className='h6 hidden truncate xs:inline'>My Event</span>
         </div>
         <div className='flex items-center gap-2.5 shrink-0'>
-          <p className='text-sm font-medium'>{dayjs(transaction.timestamp).format('DD.MM.YY, hh:mm')}</p>
+          <p className='text-sm font-medium'>{formatDate(transaction.timestamp)}</p>
           <button
             className={`collapse-btn ${activeCollapse === transaction.quantity ? 'active' : ''}`}
             aria-label='Toggle view'

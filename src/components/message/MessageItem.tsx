@@ -2,8 +2,8 @@
 import ReactMarkdown from 'react-markdown'
 import Avatar from './Avatar'
 
-//dayjs
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 import MessageAttachments from './MessageAttachments'
 import MessageOptionsDropdown from './MessageOptionsDropdown'
 
@@ -39,7 +39,7 @@ const MessageItem = (props: IProps) => {
       <div className='chat-header'>
         {message.senderId === user.id ? user.fullName : conversation.user?.fullName || conversation.organizer?.fullName}
 
-        <time className='text-xs opacity-50 ml-2'>{dayjs(message.createdAt).format('DD/MM h:mm A')}</time>
+        <time className='text-xs opacity-50 ml-2'>{formatDate(message.createdAt)}</time>
       </div>
 
       <div className={'chat-bubble relative ' + (message.senderId === user.id ? ' chat-bubble-info' : ' chat-start')}>

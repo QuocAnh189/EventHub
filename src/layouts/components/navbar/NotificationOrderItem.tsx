@@ -2,13 +2,10 @@
 import Spring from '@components/Spring'
 
 //utils
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
+import formatDate from '@utils/dayjs'
 
 //i18n
 import { withTranslation } from 'react-i18next'
-
-dayjs.extend(relativeTime)
 
 const placeholder = {
   timestamp: new Date(),
@@ -21,13 +18,13 @@ const placeholder = {
   }
 }
 
-interface Props {
+interface IProps {
   t: any
   notification: any
   index: number
 }
 
-const NotificationItem = (props: Props) => {
+const NotificationItem = (props: IProps) => {
   const { notification = placeholder, index } = props
 
   return (
@@ -39,7 +36,7 @@ const NotificationItem = (props: Props) => {
         <span className='h6 !text-sm truncate max-w-[210px]'>{notification.user.fullName}</span>
         <p>{notification.text}</p>
         <p className='flex items-center gap-1.5 mt-1 mb-2 text-xs font-medium text-gray'>
-          <span>{dayjs(notification.timestamp).fromNow()}</span>
+          <span>{formatDate(notification.timestamp, '', true)}</span>
           <i className='icon-circle-solid text-[4px]' />
         </p>
         <div className='flex gap-2.5'>

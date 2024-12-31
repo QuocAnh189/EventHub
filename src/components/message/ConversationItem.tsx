@@ -4,8 +4,8 @@ import { useContext } from 'react'
 //components
 import Avatar from './Avatar'
 
-//dayjs
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
 //interface
 import { IConversation } from '@interfaces/websockets/conversation.interface'
@@ -54,7 +54,7 @@ const ConversationItem = (props: IProps) => {
             {user_role ? conversation.event.name : conversation.user.userName}
           </h3>
           {conversation.lastMessage && (
-            <span className='text-nowrap'>{dayjs(conversation.lastMessage.createdAt).format('DD/MM HH:mm A')}</span>
+            <span className='text-nowrap'>{formatDate(conversation.lastMessage.createdAt)}</span>
           )}
         </div>
         {conversation.lastMessage && (

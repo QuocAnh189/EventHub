@@ -93,6 +93,17 @@ const AppBar = ({ t }: any) => {
     }
   }, [socket])
 
+  useEffect(() => {
+    socket?.on('notify_review', (data: any) => {
+      console.log(data)
+      toast.success(`You have a new review from ${data.userName}`)
+    })
+
+    return () => {
+      socket?.off('notify_review')
+    }
+  }, [socket])
+
   return (
     <>
       <Headroom>

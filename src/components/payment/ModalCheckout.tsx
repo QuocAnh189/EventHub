@@ -7,6 +7,10 @@ import classNames from 'classnames'
 //i18n
 import { withTranslation } from 'react-i18next'
 
+//redux
+import { useCheckoutMutation } from '@redux/apis/payment.api'
+import Loading from '@components/Loading'
+
 interface IProps {
   t: any
   modalOpen: boolean
@@ -15,6 +19,30 @@ interface IProps {
 
 const ModalCheckout = (props: IProps) => {
   const { t, modalOpen, setModalOpen } = props
+
+  const [Checkout, { isLoading }] = useCheckoutMutation()
+
+  const handleCheckout = async () => {
+    const data = {
+      email: 'anhquoc18092003@gmail.com',
+      line_items: [
+        {
+          type: 'Vip',
+          quantity: 3,
+          price: 100
+        }
+      ]
+    }
+    try {
+      const result = await Checkout(data).unwrap()
+      if (result) {
+        setModalOpen(false)
+        console.log(result)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <ModalBase open={modalOpen} onClose={() => setModalOpen(false)}>
@@ -28,7 +56,7 @@ const ModalCheckout = (props: IProps) => {
           <i className='icon-circle-xmark-regular' />
         </button>
         <h6 className='h6'>{t('checkout.title')}</h6>
-        <form className='flex flex-col gap-4 mt-4'>
+        <div className='flex flex-col gap-4 mt-4'>
           <div className='field-wrapper'>
             <label className='field-label' htmlFor='brandName'>
               {t('checkout.name_label')}
@@ -79,10 +107,10 @@ const ModalCheckout = (props: IProps) => {
               <input className={classNames('field-input', { 'field-input--error': false })} id='finalPrice' />
             </div>
           </div>
-          <button type='submit' className='btn btn-primary hover:bg-primary-300'>
-            {t('checkout.submit')}
+          <button onClick={handleCheckout} className='btn btn-primary hover:bg-primary-300'>
+            {isLoading ? <Loading /> : t('checkout.submit')}
           </button>
-        </form>
+        </div>
       </div>
     </ModalBase>
   )

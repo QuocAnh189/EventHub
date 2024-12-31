@@ -111,6 +111,7 @@ const ModalInvitation = (props: IProps) => {
                     key={`follower-${index}`}
                     index={index}
                     user={item}
+                    eventId={eventId}
                     checked={userIds.includes(item.id)}
                     text_invited={t('invitation.invited')}
                     onChange={(id: string) => handleChangeUserIds(id)}

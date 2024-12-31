@@ -19,7 +19,7 @@ import { toast } from 'react-toastify'
 import { IReview } from 'interfaces/contents/review.interface'
 
 //utils
-import dayjs from 'dayjs'
+import formatDate from '@utils/dayjs'
 
 //icon
 import { HiTrash } from 'react-icons/hi'
@@ -191,7 +191,7 @@ const Review = (props: IProps) => {
           <EventModal coverImage={review.event.coverImageUrl} name={review.event.name} wrapperClass='gap-4 mb-5' />
           <p className='flex gap-4 mb-2'>
             <span className='label-text'>{t('modal.date')}: </span>
-            <span className='text-sm font-medium'>{dayjs(review.createdAt).format('DD/MM/YYYY, hh:mm A')}</span>
+            <span className='text-sm font-medium'>{formatDate(review.createdAt)}</span>
           </p>
           <p className='flex gap-4 mb-2'>
             <span className='label-text'>{t('modal.username')}: </span>

@@ -3,16 +3,13 @@ import Spring from '@components/Spring'
 import { NavLink } from 'react-router-dom'
 
 //utils
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
+import formatDate from '@utils/dayjs'
 
 //i18n
 import { withTranslation } from 'react-i18next'
 
 //interface
 import { INotificationFollowing } from '@interfaces/systems/notification.interface'
-
-dayjs.extend(relativeTime)
 
 interface Props {
   t: any
@@ -35,7 +32,7 @@ const NotificationItem = (props: Props) => {
           <span>{notification.follower.userName}</span> {t('notification.follow_text')}
         </p>
         <p className='flex items-center gap-1.5 mt-1 mb-2 text-xs font-medium text-gray'>
-          <span>{dayjs(notification.createdAt).fromNow()}</span>
+          <span>{formatDate(notification.createdAt, '', true)}</span>
           <i className='icon-circle-solid text-[4px]' />
         </p>
         <div className='flex gap-2.5'>

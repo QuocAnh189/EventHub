@@ -14,13 +14,14 @@ interface IProps {
   index: number
   checked: boolean
   user: IUserInvitation
+  eventId: string
   text_invited?: string
   onChange: (id: any) => void
 }
 const InvitationUserItem = (props: IProps) => {
-  const { index, user, checked, onChange, text_invited } = props
+  const { index, user, checked, onChange, text_invited, eventId } = props
 
-  const { data: isInvitation } = useCheckInvitationQuery(user.id!)
+  const { data: isInvitation } = useCheckInvitationQuery({ inviteeId: user.id!, eventId: eventId })
 
   return (
     <Spring type='slideUp' index={index} className='card flex flex-row items-center justify-between'>

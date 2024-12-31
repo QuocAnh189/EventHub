@@ -142,13 +142,15 @@ export const apiUser = createApi({
         params
       }),
       providesTags: ['User'],
-      transformResponse: (response: any) => response.data
+      transformResponse: (response: any) => response.data,
+      keepUnusedDataFor: 3
     }),
 
-    checkInvitation: builder.query<any, string>({
-      query: (inviteeId) => ({
+    checkInvitation: builder.query<any, { inviteeId: string; eventId: string }>({
+      query: ({ inviteeId, eventId }) => ({
         url: `/users/check-invitation/${inviteeId}`,
-        method: 'GET'
+        method: 'GET',
+        params: { inviteeId, eventId }
       }),
       providesTags: ['User'],
       transformResponse: (response: any) => response.data
@@ -170,7 +172,8 @@ export const apiUser = createApi({
         params
       }),
       providesTags: ['User'],
-      transformResponse: (response: any) => response.data
+      transformResponse: (response: any) => response.data,
+      keepUnusedDataFor: 3
     })
   })
 })

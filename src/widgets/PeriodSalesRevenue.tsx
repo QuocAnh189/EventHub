@@ -8,7 +8,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } fro
 import { useWindowSize } from 'react-use'
 
 // utils
-import dayjs from 'dayjs'
+import formatDate from '@utils/dayjs'
 import { numFormatter } from '@utils/helpers'
 
 const data = [
@@ -96,7 +96,7 @@ const PeriodSalesRevenue = (props: Props) => {
               dy={9}
               hide={width < 768 || (width >= 1024 && width < 1280)}
               tick={{ fill: 'var(--header)' }}
-              tickFormatter={(value) => dayjs(value).format('DD MMM')}
+              tickFormatter={(value) => formatDate(value, 'DD MMM')}
             />
             <YAxis
               tickLine={false}

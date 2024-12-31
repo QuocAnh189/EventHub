@@ -18,8 +18,8 @@ import { RiSubtractLine } from 'react-icons/ri'
 //interfaces
 import { IEvent, IReason, ISubImage } from 'interfaces/contents/event.interface'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
 //assets
 import userDefault from '@assets/images/common/user_default.png'
@@ -96,7 +96,7 @@ const EventInformation = (props: IProps) => {
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>
           <FaRegCalendarAlt color='#3D56F0' size={50} />
           <p className='h6 text-header'>{t('information.time')}</p>
-          <p className='text-sm text-header'>{dayjs(event?.startTime).format('dddd, DD/MM/YYYY hh:mm A').toString()}</p>
+          <p className='text-sm text-header'>{formatDate(event?.startTime)}</p>
         </div>
 
         <div className='min-w-[200px] flex flex-col items-center justify-center gap-2 px-8 py-4 border-b-2 border-gray300'>

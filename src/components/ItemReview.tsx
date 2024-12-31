@@ -15,7 +15,9 @@ import { IReview } from '@interfaces/contents'
 
 //assets
 import userDefault from '@assets/images/common/user_default.png'
-import dayjs from 'dayjs'
+
+//utils
+import formatDate from '@utils/dayjs'
 
 //redux
 import { useDeleteReviewMutation } from '@redux/apis/review.api'
@@ -69,7 +71,7 @@ const ItemReview = (props: IProps) => {
             </div>
           </div>
         </div>
-        <p className='text-sm text-gray500'>{dayjs(review.createdAt).format('DD/MM/YYYY hh:mm A').toString()}</p>
+        <p className='text-sm text-gray500'>{formatDate(review.createdAt)}</p>
       </div>
       <div className='flex items-center justify-between gap-2'>
         <p className='text-gray500'>{review.content}.</p>

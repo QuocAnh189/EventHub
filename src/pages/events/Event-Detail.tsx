@@ -29,8 +29,8 @@ import { IoMdTime } from 'react-icons/io'
 import { FaHeart } from 'react-icons/fa6'
 import { LuClipboardType } from 'react-icons/lu'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
 //i18n
 import { withTranslation } from 'react-i18next'
@@ -107,13 +107,13 @@ const EventDetail = ({ t }: any) => {
               <h4 className='h4 text-header'>{t('event.date_time')}</h4>
               <div className='flex items-center gap-1'>
                 <FaRegCalendarAlt color='gray' size='24px' />
-                <p className='text-header'>{dayjs(event?.startTime).format('dddd, D MMMM YYYY').toString()}</p>
+                <p className='text-header'>{formatDate(event?.startTime!, 'dddd, D MMMM YYYY')}</p>
               </div>
               <div className='flex items-center gap-1'>
                 <IoMdTime color='gray' size='24px' />
                 <p className='text-header'>
-                  {dayjs(event?.startTime).format('hh:mm A YYYY/MM/DD')?.toString()} -{' '}
-                  {dayjs(event?.endTime).format('hh:mm A YYYY/MM/DD')?.toString()}
+                  {formatDate(event?.startTime!, 'hh:mm A YYYY/MM/DD')} -{' '}
+                  {formatDate(event?.endTime!, 'hh:mm A YYYY/MM/DD')}
                 </p>
               </div>
               <div className='flex items-center gap-1'>

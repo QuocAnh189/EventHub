@@ -17,8 +17,8 @@ import { IoLocationSharp } from 'react-icons/io5'
 //interfaces
 import { IMyEvent } from '@interfaces/contents/event.interface'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
 //redux
 import { useDeleteEventMutation } from '@redux/apis/event.api'
@@ -98,7 +98,7 @@ const CardMyEvent = (props: Props) => {
             </p>
             <div className='flex items-center gap-2 opacity-70 text-gray'>
               <FaCalendarAlt />
-              <span className='h6'>{dayjs(event.startTime).format('DD/MM/YYYY dddd - hh:mm A').toString()}</span>
+              <span className='h6'>{formatDate(event.startTime)}</span>
             </div>
             <div className='flex items-center gap-2 opacity-70 text-gray mt-4'>
               <IoLocationSharp />

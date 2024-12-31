@@ -8,8 +8,8 @@ import { EEventPaymentTicket } from '@constants/enum.constant'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 import { getStatusEventColor } from '@utils/helpers'
 
 //interface
@@ -68,7 +68,7 @@ const EventCard = (props: Props) => {
           </div>
           <div className='flex items-center gap-2 opacity-70'>
             <FaCalendarAlt />
-            <span>{dayjs(event.startTime).format('DD/MM/YYYY dddd hh:mm A').toString()}</span>
+            <span>{formatDate(event.startTime)}</span>
           </div>
           <div className='flex items-center gap-2 opacity-70'>
             <IoLocationSharp />

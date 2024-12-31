@@ -7,7 +7,7 @@ import StyledRangePicker from './styles'
 //utils
 import dayjs from 'dayjs'
 
-interface Props {
+interface IProps {
   id: string
   value?: any
   onChange?: any
@@ -15,7 +15,7 @@ interface Props {
   disableFuture?: boolean
 }
 
-const RangeDatePicker = (props: Props) => {
+const RangeDatePicker = (props: IProps) => {
   const { id, value, onChange, innerRef, disableFuture = true } = props
   const [open, setOpen] = useState(false)
 

@@ -17,8 +17,8 @@ import { EEventPaymentTicket } from '@constants/enum.constant'
 //assets
 import useDefault from '@assets/images/common/user_default.png'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'
@@ -78,14 +78,13 @@ const ReviewEventCreate = (props: Props) => {
                 <div className='flex items-center gap-1'>
                   <FaRegCalendarAlt color='gray' size='24px' />
 
-                  <p className='text-header'>{dayjs(watch().startTime).format('dddd, DD MMMM YYYY')?.toString()}</p>
+                  <p className='text-header'>{formatDate(watch().startTime)}</p>
                 </div>
                 <div className='flex items-center gap-1'>
                   <IoMdTime color='gray' size='24px' />
 
                   <p className='text-header'>
-                    {dayjs(watch().startTime).format('hh:mm A YYYY/MM/DD')?.toString()} -{' '}
-                    {dayjs(watch().endTime).format('hh:mm A YYYY/MM/DD')?.toString()}
+                    {formatDate(watch().startTime)} - {formatDate(watch().endTime)}
                   </p>
                 </div>
               </div>

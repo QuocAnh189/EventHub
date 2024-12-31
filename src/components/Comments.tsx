@@ -1,5 +1,5 @@
 // hook
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 // //component
 import ItemReview from './ItemReview'
@@ -20,19 +20,25 @@ import { usePagination } from '@hooks/usePagination'
 import { IUser } from '@interfaces/systems'
 // import { IReviewEventPayload } from '@type/event.type'
 
+//context
+import { AppSocketContext } from '@contexts/socket_io.context'
+
 const initParams = {
   page: 1,
   pageSize: 5
 }
 
-interface Props {
+interface IProps {
   eventId: string
   ownerId: string
 }
 
-const Comments = (props: Props) => {
+const Comments = (props: IProps) => {
   const { eventId, ownerId } = props
   const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
+  const socket: IUser = useAppSelector((state) => state.socket.socket)
+
+  const { SocketReview } = useContext(AppSocketContext)
 
   const [params, setParams] = useState(initParams)
   const { data } = useGetReviewsByEventIdQuery({ eventId, params })
@@ -53,8 +59,10 @@ const Comments = (props: Props) => {
       if (result) {
         setRate(0)
         setContent('')
-        console.log('result', result)
         toast.success('Add review successfully')
+        if (socket && SocketReview) {
+          SocketReview(socket, user?.userName, ownerId)
+        }
       }
     } catch (e: any) {
       if (e.data.errors[0] === 'Rate is required') {

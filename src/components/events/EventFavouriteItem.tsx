@@ -10,10 +10,10 @@ import { IEventFavorite } from '@interfaces/contents/event.interface'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
-interface Props {
+interface IProps {
   t: any
   event: IEventFavorite
   index: number
@@ -21,7 +21,7 @@ interface Props {
   isLoading: boolean
 }
 
-const EventFavouriteItem = (props: Props) => {
+const EventFavouriteItem = (props: IProps) => {
   const { t, event, index, onRemove, isLoading } = props
 
   return (
@@ -41,7 +41,7 @@ const EventFavouriteItem = (props: Props) => {
             {t('item.category')}: {t(`category.${event.categories[0].name}`)}
           </p>
           <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
-            {t('item.date')}: {dayjs(event.startTime).format('DD/MM/YYYY')}
+            {t('item.date')}: {formatDate(event.startTime)}
           </p>
         </div>
         <div className='grid grid-cols-2 gap-1.5 mt-4'>

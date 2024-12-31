@@ -23,6 +23,7 @@ import { EEventStatus } from '@constants/enum.constant'
 
 //utils
 import dayjs from 'dayjs'
+import formatDate from '@utils/dayjs'
 
 //data
 import events_data from '@db/event'
@@ -36,8 +37,8 @@ interface IPramsEventCalendar {
 
 const initParams = {
   pageSize: 400,
-  startTimeRange: dayjs(new Date()).format('YYYY-MM-DD'),
-  endTimeRange: dayjs(new Date()).format('YYYY-MM-DD')
+  startTimeRange: formatDate(new Date().toString(), 'YYYY-MM-DD'),
+  endTimeRange: formatDate(new Date().toString(), 'YYYY-MM-DD')
 }
 
 const Calendar = ({ t }: any) => {
@@ -52,8 +53,8 @@ const Calendar = ({ t }: any) => {
   }
 
   const handleDatesSet = (info: any) => {
-    const startDate = dayjs(info.start).format('YYYY-MM-DD')
-    const endDate = dayjs(info.end).format('YYYY-MM-DD')
+    const startDate = formatDate(info.start, 'YYYY-MM-DD')
+    const endDate = formatDate(info.end, 'YYYY-MM-DD')
 
     setParams({ ...params, startTimeRange: startDate, endTimeRange: endDate })
   }
@@ -85,7 +86,7 @@ const Calendar = ({ t }: any) => {
                   id: item.id,
                   title: item.name,
                   coverImage: item.coverImageUrl,
-                  date: dayjs(item.startTime).format('YYYY-MM-DD').toString(),
+                  date: formatDate(item.startTime, 'YYYY-MM-DD'),
                   status: StatusEvent(item.startTime)
                 }
               })}

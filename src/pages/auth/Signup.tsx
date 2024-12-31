@@ -32,7 +32,7 @@ import { withTranslation } from 'react-i18next'
 import authImg from '@assets/images/auth/bg_auth.png'
 import logoText_Img from '@assets/images/common/logo_text.png'
 
-//util
+//utils
 import dayjs from 'dayjs'
 
 const SignUp = ({ t }: any) => {

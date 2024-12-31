@@ -19,8 +19,8 @@ import ProtectedLayout from '@layouts/protected'
 import { useUpdateUserMutation } from '@redux/apis/user.api'
 import { setUser } from '@redux/slices/user.slice'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
 //interface
 import { IUser } from '@interfaces/systems/user.interface'
@@ -54,7 +54,7 @@ const Profile = ({ t }: any) => {
       fullName: user?.fullName,
       phoneNumber: user?.phoneNumber,
       gender: user?.gender,
-      dob: dayjs(user?.dob).format('YYYY-MM-DD'),
+      dob: formatDate(user?.dob, 'YYYY-MM-DD'),
       bio: user?.bio
     }
   })

@@ -4,8 +4,7 @@ import { TruncatedText } from './TruncatedText'
 import { NavLink } from 'react-router-dom'
 
 //utils
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
+import formatDate from '@utils/dayjs'
 
 //interface
 import { IInvitation } from '@interfaces/systems/invitation.interface'
@@ -13,16 +12,14 @@ import { IInvitation } from '@interfaces/systems/invitation.interface'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-dayjs.extend(relativeTime)
-
-interface Props {
+interface IProps {
   t: any
   invitation: IInvitation
   index: number
   onClose: () => void
 }
 
-const InvitationItem = (props: Props) => {
+const InvitationItem = (props: IProps) => {
   const { t, invitation, index, onClose } = props
 
   return (
@@ -35,7 +32,7 @@ const InvitationItem = (props: Props) => {
         <p>{t('invitation.favourite_text')}</p>
         <TruncatedText className='flex-1 font-bold' text={invitation.event.name} />
         <p className='flex items-center gap-1.5 mt-1 mb-2 text-xs font-medium text-gray'>
-          <span>{dayjs(invitation.createdAt).fromNow()}</span>
+          <span>{formatDate(invitation.createdAt, '', true)}</span>
           <i className='icon-circle-solid text-[4px]' />
         </p>
         <div className='flex gap-2.5'>

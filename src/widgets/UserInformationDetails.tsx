@@ -9,10 +9,9 @@ import { withTranslation } from 'react-i18next'
 
 //interface
 import { IRole, IUser } from '@interfaces/systems'
-import dayjs from 'dayjs'
 
-// interface IProps {
-// }
+//utils
+import dayjs from 'dayjs'
 
 interface IProps {
   t: any

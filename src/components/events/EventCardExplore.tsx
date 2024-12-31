@@ -8,15 +8,15 @@ import { FaCalendarAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
 import { BiPurchaseTagAlt } from 'react-icons/bi'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 import RatingStars from '@ui/RatingStars'
 
-interface Props {
+interface IProps {
   event: ICardEvent
 }
 
-const EventCardExplore = (props: Props) => {
+const EventCardExplore = (props: IProps) => {
   const { event } = props
 
   return (
@@ -40,7 +40,7 @@ const EventCardExplore = (props: Props) => {
         <p className='line-clamp-1 text-2xl text-left text-header'>{event.name}</p>
         <div className='flex items-center gap-2'>
           <FaCalendarAlt size={20} color='var(--header)' />
-          <p className='text-header'>{dayjs(event.startTime).format('DD/MM/YYYY dddd').toString()}</p>
+          <p className='text-header'>{formatDate(event.startTime)}</p>
         </div>
         <div className='flex items-center gap-2 justify-start'>
           <IoLocationSharp size={20} color='var(--header)' />

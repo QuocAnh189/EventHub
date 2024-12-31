@@ -17,8 +17,8 @@ import classNames from 'classnames'
 import { ICreateCouponPayload } from '@dtos/coupon.dto'
 import { useAppSelector } from '@hooks/useRedux'
 
-//util
-import dayjs from 'dayjs'
+//utils
+import formatDate from '@utils/dayjs'
 
 //18n
 import { withTranslation } from 'react-i18next'
@@ -45,7 +45,7 @@ const ModalCreateCoupon = (props: IProps) => {
       minPrice: 0,
       minQuantity: 0,
       percentageValue: 0,
-      expireDate: dayjs(new Date()).format('YYYY-MM-DD')
+      expireDate: formatDate(new Date().toString(), 'YYYY-MM-DD')
     }
   })
 

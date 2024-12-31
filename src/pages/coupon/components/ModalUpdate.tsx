@@ -12,7 +12,7 @@ import { BiTrash } from 'react-icons/bi'
 
 //util
 import classNames from 'classnames'
-import dayjs from 'dayjs'
+import formatDate from '@utils/dayjs'
 
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
@@ -46,7 +46,7 @@ const ModalUpdateCoupon = (props: IProps) => {
       minPrice: coupon.minPrice,
       minQuantity: coupon.minQuantity,
       percentageValue: coupon.percentageValue,
-      expireDate: dayjs(coupon.expireDate).format('YYYY-MM-DD')
+      expireDate: formatDate(coupon.expireDate, 'YYYY-MM-DD')
     }
   })
 
@@ -194,7 +194,7 @@ const ModalUpdateCoupon = (props: IProps) => {
               id='date'
               type='date'
               className={classNames('field-input', { 'field-input--error': false })}
-              value={dayjs(coupon.expireDate).format('YYYY-MM-DD')}
+              value={formatDate(coupon.expireDate, 'YYYY-MM-DD')}
               placeholder='Enter name'
               {...register('expireDate', { required: true })}
             />

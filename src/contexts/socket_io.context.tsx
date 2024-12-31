@@ -19,6 +19,13 @@ const AppSocketIOProvider = ({ children }: PropsWithChildren) => {
     })
   }
 
+  const SocketReview = (socket: any, userName: string, organizerId: string) => {
+    socket.emit('send_review', {
+      user_name: userName,
+      organizer_id: organizerId
+    })
+  }
+
   const SocketInvitation = (socket: any, inviteeIds: string[]) => {
     socket.emit('invitation', inviteeIds)
   }
@@ -37,7 +44,7 @@ const AppSocketIOProvider = ({ children }: PropsWithChildren) => {
 
   return (
     <AppSocketContext.Provider
-      value={{ SocketLogout, SocketFollow, JoinConversation, SocketSendMessage, SocketInvitation }}
+      value={{ SocketLogout, SocketFollow, SocketReview, JoinConversation, SocketSendMessage, SocketInvitation }}
     >
       {children}
     </AppSocketContext.Provider>
@@ -47,6 +54,7 @@ const AppSocketIOProvider = ({ children }: PropsWithChildren) => {
 export interface AppSocketIOContextProps {
   SocketLogout: (socket: any) => void
   SocketFollow: (socket: any, followerId: string, followeeId: string) => void
+  SocketReview: (socket: any, userName: string, organizerId: string) => void
   JoinConversation: (socket: any, conversationId: string) => void
   SocketSendMessage: (socket: any, senderId: string, conversationId: string, message: string) => void
   SocketInvitation: (socket: any, inviteeIds: string[]) => void
