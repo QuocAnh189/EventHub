@@ -50,10 +50,10 @@ const EventExpenseGrid = (props: Props) => {
   }, [debouncedSearchTerm])
 
   return (
-    <div className='flex flex-1 flex-col'>
+    <div className='flex flex-1 flex-col px-4 md:px-0'>
       <div className='flex justify-end'>
         <input
-          className='field-input w-[300px] md:w-[300px]'
+          className='field-input w-full md:w-[300px]'
           type='search'
           placeholder={search_label}
           value={search}

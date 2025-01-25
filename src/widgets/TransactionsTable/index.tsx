@@ -57,7 +57,7 @@ const TransactionsTable = ({ t }: any) => {
 
   return (
     <>
-      <div className='flex flex-col gap-4 mb-5 md:flex-row justify-between'>
+      <div className='flex flex-col gap-4 mb-5 md:flex-row justify-between px-4 xl:px-0'>
         <CalendarSelector
           onChange={(e: any) => {
             handleChangeTime(e)
@@ -71,7 +71,7 @@ const TransactionsTable = ({ t }: any) => {
             {t('view_transaction')}: {pagination.showingOf()}
           </p>
           <input
-            className='field-input w-[300px] md:w-[250px]'
+            className='field-input w-full md:w-[300px]'
             type='search'
             placeholder={t('search')}
             value={search}

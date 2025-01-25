@@ -1,6 +1,9 @@
 //hooks
 import { useNavigate } from 'react-router-dom'
 
+//components
+import RatingStars from '@ui/RatingStars'
+
 //constant
 import { EEventPaymentTicket } from '@constants/enum.constant'
 
@@ -10,17 +13,15 @@ import { IoLocationSharp } from 'react-icons/io5'
 
 //utils
 import formatDate from '@utils/dayjs'
-import { getStatusEventColor } from '@utils/helpers'
 
 //interface
 import { ICardEvent } from '@interfaces/contents'
-import RatingStars from '@ui/RatingStars'
 
-interface Props {
+interface IProps {
   event: ICardEvent
 }
 
-const EventCard = (props: Props) => {
+const EventCard = (props: IProps) => {
   const { event } = props
 
   const navigate = useNavigate()
@@ -77,22 +78,13 @@ const EventCard = (props: Props) => {
           <p className='line-clamp-2 pt-2'>{event.description}</p>
         </div>
         <div className='flex items-center justify-between border-t-2 py-3 !mt-3'>
-          <div className='opacity-70'>
-            <span
-              className='badge-status badge-status--lg'
-              style={{ backgroundColor: `var(--${getStatusEventColor('Upcoming')})` }}
-            >
-              {/* {event.status} */}
-              Upcoming
-            </span>
-          </div>
+          <RatingStars rating={event.averageRate} />
           <div className='text-primary text-right'>
             {event.eventPaymentType === EEventPaymentTicket.Paid ? (
-              <p className='text-2xl font-bold'>100.000 VND</p>
+              <p className='text-2xl font-bold'>{event.ticketTypes[0].price}$</p>
             ) : (
               <p className='text-2xl font-bold'>{event.eventPaymentType}</p>
             )}
-            <RatingStars rating={event.averageRate} />
           </div>
         </div>
       </div>

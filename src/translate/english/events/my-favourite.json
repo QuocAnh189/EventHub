@@ -2,7 +2,7 @@
   "header": {
     "title": "My Favourites"
   },
-  "search": "Search event",
+  "search": "Search ...",
   "item": {
     "category": "Category",
     "date": "Date"

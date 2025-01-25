@@ -40,43 +40,42 @@ const Following = ({ t }: any) => {
   return (
     <ProtectedLayout>
       <PageHeader title={t('header.title')} />
-      <Spring
-        className='card flex flex-col gap-[30px] md:gap-12 md:row-start-2 md:col-span-2 md:!pb-[50px]
-                xl:row-start-1 xl:col-start-2 xl:col-span-1 mx-[200px]'
-      >
-        <div className='flex flex-col gap-5'>
-          <div className='flex items-center justify-between'>
-            <h5>{t('my_following')}</h5>
-            <input
-              className='field-input w-[300px]'
-              type='search'
-              placeholder={t('search')}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <div className='grid gap-4 md:grid-cols-2 md:gap-5'>
-              {data?.items &&
-                data?.items.map((item: any, index: number) => (
-                  <UserItem
-                    key={`follower-${index}`}
-                    index={index}
-                    user={item}
-                    following={true}
-                    view_profile_text={t('action.view_profile')}
-                    un_follower_text={t('action.unfollow_profile')}
-                  />
-                ))}
+      <div className='flex justify-center'>
+        <Spring className='card md:w-3/5 h-screen overflow-y-auto'>
+          <div className='flex flex-col gap-5'>
+            <div className='flex items-center justify-between'>
+              <h5>{t('my_following')}</h5>
+              <input
+                className='field-input w-[200px] md:w-[300px]'
+                type='search'
+                placeholder={t('search')}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
             </div>
-          )}
-          {!data?.items && <div className='w-full flex items-center justify-center'>No follower found.</div>}
-        </div>
-        <div>{pagination && pagination.maxPage != 1 && <Pagination pagination={pagination} />}</div>
-      </Spring>
+
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <div className='grid gap-4 md:grid-cols-2 md:gap-5'>
+                {data?.items &&
+                  data?.items.map((item: any, index: number) => (
+                    <UserItem
+                      key={`follower-${index}`}
+                      index={index}
+                      user={item}
+                      following={true}
+                      view_profile_text={t('action.view_profile')}
+                      un_follower_text={t('action.unfollow_profile')}
+                    />
+                  ))}
+              </div>
+            )}
+            {!data?.items && <div className='w-full flex items-center justify-center'>No follower found.</div>}
+          </div>
+          <div>{pagination && pagination.maxPage != 1 && <Pagination pagination={pagination} />}</div>
+        </Spring>
+      </div>
     </ProtectedLayout>
   )
 }

@@ -143,7 +143,7 @@ const InformationEvent = (props: Props) => {
               {t('information.datetime.session.title')} <span className='text-red'>*</span>
             </p>
           </div>
-          <div className='w-4/5 mdl:w-[600px] flex items-center text-header space-y-2 mdl:space-y-0 mdl:space-x-8'>
+          <div className='w-4/5 mdl:w-[600px] flex flex-col md:flex-row items-center text-header space-y-2 mdl:space-y-0 mdl:space-x-8'>
             <div className='flex mdl:w-[300px] flex-col'>
               <label className='field-label' htmlFor='startTime'>
                 {t('information.datetime.session.start_time')}
@@ -174,7 +174,7 @@ const InformationEvent = (props: Props) => {
         <div className='w-4/5 mdl:pl-20'>
           <p className='h5 mb-4 text-header'>{t('information.location.title')}</p>
         </div>
-        <div className='w-full flex flex-col mdl:flex-row gap-2'>
+        <div className='w-full flex flex-col mdl:flex-row items-center gap-2'>
           <div className='w-4/5 mdl:w-[200px] flex mdl:justify-end gap-2'>
             <p className='h6 text-right text-header'>{t('information.location.label')}</p>
             <span className='text-red'>*</span>
@@ -194,7 +194,7 @@ const InformationEvent = (props: Props) => {
         <div className='w-4/5 mdl:pl-20'>
           <p className='h5 mb-4 text-header'>{t('information.description.title')}</p>
         </div>
-        <div className='w-full flex flex-col mdl:flex-row gap-2'>
+        <div className='w-full flex flex-col mdl:flex-row items-center gap-2'>
           <div className='w-4/5 mdl:w-[200px] flex mdl:justify-end gap-2'>
             <p className='h6 text-header'>
               {t('information.description.label')} <span className='text-red'>*</span>
@@ -226,14 +226,17 @@ const InformationEvent = (props: Props) => {
             <IoMdAddCircleOutline color='var(--header)' size={30} />
           </button>
         </div>
-        <div className='w-full flex flex-col mdl:flex-row gap-2'>
+        <div className='w-full flex flex-col mdl:flex-row items-center gap-2'>
           <div className='w-4/5 mdl:w-[200px] flex mdl:justify-end gap-2'>
             <p className='h6 text-header'>{t('information.reason.label')}</p>
           </div>
 
           <div className='space-y-3'>
             {reasonItems?.map((field: any, index: number) => (
-              <div key={field.id} className='w-4/5 mdl:w-[600px] text-header flex flex-row items-center gap-2'>
+              <div
+                key={field.id}
+                className='w-full md:w-4/5 mdl:w-[600px] text-header flex flex-row md:items-center gap-2'
+              >
                 <input
                   className={classNames('field-input', { 'field-input--error': false })}
                   id={`reasonItems.${index}`}

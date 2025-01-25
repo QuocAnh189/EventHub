@@ -19,6 +19,7 @@ import Loading from '@components/Loading'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import isExpired from '@utils/compare_date'
 
 interface IProps {
   t: any
@@ -61,7 +62,7 @@ const ModalApplyCoupon = (props: IProps) => {
 
   return (
     <ModalBase open={modalOpen} onClose={() => setModalOpen(false)}>
-      <div className='card relative no-hover flex flex-col h-4/5 w-3/5 will-change-transform'>
+      <div className='card relative no-hover flex flex-col h-4/5 xl:w-3/5 will-change-transform'>
         <button
           type='button'
           className='absolute top-5 right-5 icon text-[18px] transition hover:text-red'
@@ -72,10 +73,11 @@ const ModalApplyCoupon = (props: IProps) => {
         </button>
         <h6 className='h6'>{t('apply_coupon.title')}</h6>
         <div className='flex flex-col h-full justify-end mt-4'>
-          <div className='flex-1 h-[1000px] mb-[35px] grid content-start gap-[26px] grid-cols-3 overflow-scroll'>
+          <div className='flex-1 h-[1000px] mb-[35px] grid content-start gap-[26px] md:grid-cols-3 overflow-scroll'>
             {coupons &&
               coupons?.map((item: ICoupon, index: number) => (
                 <CouponApplyItem
+                  isExpire={isExpired(item.expireDate)}
                   key={index}
                   index={index}
                   coupon={item}

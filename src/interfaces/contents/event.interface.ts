@@ -53,6 +53,7 @@ export interface ICardEvent {
   eventPaymentType: string
   averageRate: number
   endTime: string
+  ticketTypes: ITicketType[]
 }
 
 export interface ICardSearchHome {

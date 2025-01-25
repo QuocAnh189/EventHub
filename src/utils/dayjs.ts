@@ -11,7 +11,7 @@ dayjs.extend(relativeTime)
 dayjs.extend(duration)
 
 function formatDate(datetime: string, format?: string, fromNow?: boolean): string {
-  const utcDatetime = dayjs.tz(datetime).toISOString()
+  const utcDatetime = dayjs?.tz(datetime)?.toISOString()
   const defaultFormat = 'DD/MM/YYYY hh:mm A'
 
   if (fromNow) {

@@ -68,7 +68,7 @@ const CardMyEvent = (props: Props) => {
   return (
     <Spring type='slideUp' index={index}>
       <div className='card flex flex-row w-full h-[200px] rounded-lg shadow-2xl transition-transform hover:scale-[1.005] dark:bg-gray-800'>
-        <div className='relative flex w-[400px] h-full items-center justify-between max-md:hidden'>
+        <div className='relative flex w-[400px] h-full items-center justify-between'>
           <img
             loading='lazy'
             className='w-full h-full rounded-l-lg object-cover transition duration-700 hover:skew-x-2 hover:scale-110'

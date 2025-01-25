@@ -19,12 +19,12 @@ const EventsRelate = (props: IProps) => {
   const { data: events, isFetching } = useGetEventsQuery({ pageSize: 3, categoryId: categoryId })
 
   return (
-    <div className='flex flex-col items-center px-[150px] py-8 gap-6'>
+    <div className='flex flex-col items-center px-10 md:px-[150px] py-8 gap-6'>
       <h1 className='text-header font-bold text-3xl'>{title}</h1>
       {isFetching ? (
         <Loader />
       ) : (
-        <div className='grid grid-flow-col auto-cols-fr gap-4'>
+        <div className='grid md:grid-flow-col gap-4'>
           {events?.items.map((event: ICardEvent, index: number) => (
             <EventCard key={`event-${index}`} event={event} />
           ))}

@@ -1,11 +1,12 @@
 //hooks
 import { useState, useEffect } from 'react'
+import { useWindowSize } from 'react-use'
 
 //components
 import DocumentTitle from '@components/DocumentTitle'
 
 //utils
-import formatDate from '@utils/dayjs'
+import dayjs from 'dayjs'
 
 interface IProps {
   title: string
@@ -14,6 +15,8 @@ interface IProps {
 const PageHeader = (props: IProps) => {
   const { title } = props
   const [currentTime, setCurrentTime] = useState(new Date())
+  const { width } = useWindowSize()
+  const dateFormat = width < 768 ? 'MM.DD.YYYY' : 'MMMM DD, YYYY'
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,9 +37,9 @@ const PageHeader = (props: IProps) => {
           className='h-11 bg-body flex items-center justify-center rounded-md px-9 font-heading font-bold
                     text-header text-sm border border-input-border lg:w-[310px]'
         >
-          {formatDate(currentTime.toString())}
+          {dayjs(currentTime).format(`${dateFormat} HH`)}
           <span className='animate-pulse-fast'>:</span>
-          {formatDate(currentTime.toString())}
+          {dayjs(currentTime).format('mm A')}
         </div>
       </div>
     </>

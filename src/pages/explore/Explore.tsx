@@ -44,8 +44,8 @@ const Explore = ({ t }: any) => {
       <PageHeader title={t('header.title')} />
       <form className='flex gap-8 py-8'>
         <SidebarExplore params={params} setParams={setParams} />
-        <div className='relative flex flex-1 flex-col items-center mb-10'>
-          <div className='w-full flex items-center justify-between pb-4 px-4 mdl:px-0'>
+        <div className='w-full relative flex flex-1 flex-col items-center mb-10 px-4 md:px-0'>
+          <div className='w-full flex flex-col md:flex-row md:items-center gap-2 justify-between pb-4 px-4 mdl:px-0'>
             <div className='flex items-center gap-2'>
               <p className='text-gray500 inline-block text-header'>{t('sort')}: </p>
               <Select
@@ -55,7 +55,7 @@ const Explore = ({ t }: any) => {
                   { value: 'DESC', label: t('desc') }
                 ]}
                 onChange={(value: any) => {
-                  setParams({ ...params, orderDesc: value.value === 'ASC' ? true : false })
+                  setParams({ ...params, orderDesc: value.value === 'ASC' ? false : true })
                 }}
               />
             </div>
@@ -69,7 +69,7 @@ const Explore = ({ t }: any) => {
             />
           </div>
 
-          <SideBarExploreResponsive />
+          <SideBarExploreResponsive params={params} setParams={setParams} />
 
           {isFetching && (
             <div className='relative w-full h-[300px] flex items-center justify-center'>
@@ -84,13 +84,8 @@ const Explore = ({ t }: any) => {
               ))}
             </div>
           )}
-          {data?.items.length === 0 && !isFetching && (
-            <div className='w-full flex items-center justify-center'>
-              <p>No events here</p>
-            </div>
-          )}
 
-          <div className='absolute w-full -bottom-10 left-0 right-0 flex items-center justify-center'>
+          <div className='flex items-center justify-center mt-10'>
             {pagination && pagination.maxPage > 1 && <Pagination pagination={pagination} />}
           </div>
         </div>

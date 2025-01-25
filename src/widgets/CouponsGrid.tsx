@@ -67,26 +67,25 @@ const CouponsGrid = ({ t }: any) => {
     try {
       const result = await CreateCoupon(formData).unwrap()
       if (result) {
-        console.log(result)
         setModalOpen(false)
         dispatch(addCoupons(result))
-        toast.success('Coupon created successfully')
+        toast.success('created successfully')
       }
     } catch (error) {
       console.error(error)
-      toast.error('Something went wrong')
+      toast.error('something went wrong')
     }
   }
 
   return (
-    <div className='flex flex-col flex-1'>
+    <div className='flex flex-col flex-1 px-4 xl:px-0'>
       <div className='flex flex-col gap-4'>
         <div className='flex flex-col gap-5 md:flex-row md:justify-between'>
           <button className='btn btn-primary text-white' onClick={() => setModalOpen(true)}>
             {t('add_new_coupon')} <i className='icon-circle-plus-regular' />
           </button>
           <input
-            className='field-input w-[300px] md:w-[300px]'
+            className='field-input w-full md:w-[300px]'
             type='search'
             placeholder={t('search')}
             value={search}
@@ -96,7 +95,7 @@ const CouponsGrid = ({ t }: any) => {
       </div>
       <div className='mt-5 flex flex-col flex-1'>
         <div
-          className='flex-1 mb-[35px] grid content-start gap-[26px] grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
+          className='flex-1 mb-[35px] grid content-start gap-[26px] grid-cols-1 md:grid-cols-2 xl:grid-cols-3
                              2xl:grid-cols-4'
         >
           {data?.items?.map((item: ICoupon, index: number) => (

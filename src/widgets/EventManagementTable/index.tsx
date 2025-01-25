@@ -236,7 +236,7 @@ const EventManagement = ({ t }: any) => {
   filterCategories.unshift({ value: '', label: 'All' })
 
   return (
-    <div className='flex flex-col flex-1'>
+    <div className='flex flex-col flex-1 px-4 xl:px-0'>
       <div className='flex flex-col-reverse gap-4 mb-5 md:flex-col lg:flex-row lg:justify-between'>
         <div className='flex flex-col gap-4 md:flex-row md:gap-[14px]'>
           <button
@@ -277,8 +277,8 @@ const EventManagement = ({ t }: any) => {
           ))}
         </div>
       </div>
-      <div className='flex items-center justify-between'>
-        <div className='grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-x-6 xl:grid-cols-6'>
+      <div className='flex gap-4 flex-col md:flex-row md:items-end justify-between'>
+        <div className='grid grid-cols-3 md:gap-x-6 xl:grid-cols-6 gap-4'>
           <div>
             <label className='field-label text-sm' htmlFor='startTime'>
               {t('management.label_status')}
@@ -309,7 +309,7 @@ const EventManagement = ({ t }: any) => {
         </div>
 
         <input
-          className='field-input w-[300px] md:w-[300px]'
+          className='field-input w-full md:w-[300px]'
           type='search'
           placeholder={t('management.search')}
           value={search}
@@ -320,7 +320,7 @@ const EventManagement = ({ t }: any) => {
         <p className='text-header'>
           {t('management.view_events')}: {pagination.showingOf()}
         </p>
-        <div className='md:min-w-[280px]'>
+        <div className='md:min-w-[300px]'>
           <Select
             options={
               visibility === 'All'
@@ -335,7 +335,7 @@ const EventManagement = ({ t }: any) => {
 
       <div className='flex flex-col gap-[22px]'>
         {isFetching && <Loader />}
-        <div className='w-full grid grid-cols-1 mdl:grid-cols-2 gap-10'>
+        <div className='w-full grid grid-cols-1 xl:grid-cols-2 gap-10'>
           {data?.items.map((event: IMyEvent, index: number) => (
             <CardMyEvent
               key={`event-${index}`}

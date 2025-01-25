@@ -43,14 +43,14 @@ import createdSampleData from '@data/created_sample'
 //interface
 import { IUser } from '@interfaces/systems'
 
-interface Props {
+interface IProps {
   t: any
   title: string
   create?: boolean
   event?: IEvent
 }
 
-const ModifyEvent = (props: Props) => {
+const ModifyEvent = (props: IProps) => {
   const { t, title, create, event } = props
 
   const CREATE_STEP = [t('step.information'), t('step.banner'), t('step.ticket'), t('step.review')]
@@ -173,14 +173,14 @@ const ModifyEvent = (props: Props) => {
     return (
       <div className='min-h-screen'>
         <PageHeader title={title} />
-        <div className='w-full flex mt-40 justify-center gap-12'>
+        <div className='w-full flex flex-col md:flex-row md:mt-40 justify-center gap-12 px-4 md:px-0'>
           <div className='card'>
             <button
               onClick={() => {
                 setActive(0)
                 reset()
               }}
-              className='w-[300px] h-[200px] rounded-lg flex flex-col items-center justify-center gap-2 hover:cursor-pointer'
+              className='w-full h-[200px] max-w-[300px] rounded-lg flex flex-col items-center justify-center gap-2 hover:cursor-pointer'
             >
               <IoCreate size={42} color='var(--header)' />
               <p className='h4 font-bold text-header'>{t('option_one.title')}</p>
@@ -189,7 +189,7 @@ const ModifyEvent = (props: Props) => {
           </div>
           <div className='card flex items-center justify-center'>
             <input
-              className='h-full w-full opacity-0 z-[1] hover:cursor-pointer'
+              className='w-full h-[200px] opacity-0 z-[1] hover:cursor-pointer'
               type='file'
               accept='.xlsx, .xls'
               onChange={(e) => handleFileImport(e)}

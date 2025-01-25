@@ -37,11 +37,24 @@ const EventFavouriteItem = (props: IProps) => {
         </h6>
         <RatingStars rating={event.averageRate} />
         <div className='flex flex-col flex-1 gap-1 mt-1.5'>
-          <p className='font-heading font-bold text-sm leading-[1.4] text-green'>
-            {t('item.category')}: {t(`category.${event.categories[0].name}`)}
-          </p>
+          <div
+            className='flex items-center gap-2 rounded-lg px-2'
+            style={{ backgroundColor: event.categories[0].color }}
+          >
+            <img
+              loading='lazy'
+              src={
+                event.categories[0].iconImageUrl
+                  ? event.categories[0].iconImageUrl
+                  : 'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
+              }
+              alt='No image'
+              className='w-[20px] h-[20px] object-cover rounded-full'
+            />
+            <h6 className='my-2 text-white truncate'>{event.categories[0].name}</h6>
+          </div>
           <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
-            {t('item.date')}: {formatDate(event.startTime)}
+            {t('item.date')}: {formatDate(event.startTime, 'DD/MM/YYYY')}
           </p>
         </div>
         <div className='grid grid-cols-2 gap-1.5 mt-4'>

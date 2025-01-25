@@ -30,6 +30,7 @@ export const apiEvent = createApi({
         method: 'GET',
         params
       }),
+      keepUnusedDataFor: 2,
       providesTags: ['Event'],
       transformResponse: (response: any) => {
         return response.data

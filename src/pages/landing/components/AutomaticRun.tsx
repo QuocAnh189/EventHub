@@ -1,8 +1,18 @@
 //images
 import gradientPurpleImg from '@assets/images/landing/bg_gradient_two.webp'
 import heartImg from '@assets/images/landing/heart.png'
-import imageRunImg from '@assets/images/landing/image_automation.png'
 import raiseHandImg from '@assets/images/landing/hand_raise.webp'
+
+import landing from '@assets/images/landing/screens/landing.png'
+import signin from '@assets/images/landing/screens/signin.png'
+import coupon from '@assets/images/landing/screens/coupon.png'
+import customer from '@assets/images/landing/screens/customer.png'
+import detail from '@assets/images/landing/screens/detail.png'
+import home from '@assets/images/landing/screens/home.png'
+import list_event from '@assets/images/landing/screens/list_event.png'
+import overview from '@assets/images/landing/screens/overview.png'
+import ticket from '@assets/images/landing/screens/ticket.png'
+import transaction from '@assets/images/landing/screens/transaction.png'
 
 //animation
 import Marquee from 'react-fast-marquee'
@@ -32,35 +42,35 @@ const AutomaticRun = ({ t }: any) => {
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={landing}
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={signin}
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={coupon}
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={customer}
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={detail}
                   className='w-full h-full max-w-full relative inline-block object-cover'
                 />
               </div>
@@ -69,35 +79,35 @@ const AutomaticRun = ({ t }: any) => {
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={home}
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={list_event}
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={overview}
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={ticket}
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>
               <div className='w-[35.38em] rounded-xl flex flex-none mx-4'>
                 <img
                   loading='lazy'
-                  src={imageRunImg}
+                  src={transaction}
                   className='relative w-full h-full max-w-full inline-block object-cover'
                 />
               </div>

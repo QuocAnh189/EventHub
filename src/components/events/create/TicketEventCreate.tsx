@@ -54,17 +54,17 @@ const TicketEventCreate = (props: IProps) => {
     }
 
     ticketTypes.forEach((ticket) => {
-      if (ticket.name === '') {
+      if (eventTicketType === EEventPaymentTicket.Paid && ticket.name === '') {
         isContinue = false
         toast.error('Please enter ticket name')
         return
       }
-      if (ticket.quantity <= 0) {
+      if (eventTicketType === EEventPaymentTicket.Paid && ticket.quantity <= 0) {
         isContinue = false
         toast.error('Please enter ticket quantity again, at least 1')
         return
       }
-      if (ticket.price <= 0) {
+      if (eventTicketType === EEventPaymentTicket.Paid && ticket.price <= 0) {
         isContinue = false
         toast.error('Please enter ticket price again, at least 1')
         return

@@ -78,14 +78,16 @@ const ReviewEventCreate = (props: Props) => {
                 <div className='flex items-center gap-1'>
                   <FaRegCalendarAlt color='gray' size='24px' />
 
-                  <p className='text-header'>{formatDate(watch().startTime)}</p>
+                  {watch().startTime && <p className='text-header'>{formatDate(watch().startTime)}</p>}
                 </div>
                 <div className='flex items-center gap-1'>
                   <IoMdTime color='gray' size='24px' />
 
-                  <p className='text-header'>
-                    {formatDate(watch().startTime)} - {formatDate(watch().endTime)}
-                  </p>
+                  {watch().startTime && watch().endTime && (
+                    <p className='text-header'>
+                      {formatDate(watch().startTime)} - {formatDate(watch().endTime)}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className='flex flex-col gap-2 items-end'>

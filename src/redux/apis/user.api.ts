@@ -21,7 +21,7 @@ export const apiUser = createApi({
       return headers
     }
   }),
-  keepUnusedDataFor: 20,
+  keepUnusedDataFor: 10,
   tagTypes: ['User'],
 
   endpoints: (builder) => ({

@@ -104,7 +104,7 @@ const EventManagementTrash = ({ t }: any) => {
   }
 
   return (
-    <div className='flex flex-col flex-1'>
+    <div className='flex flex-col flex-1 px-4 xl:px-0'>
       <div className='flex items-center justify-between'>
         <button onClick={handleRestoreEvents} className='btn bg-primary flex text-white !gap-[5px]'>
           {isLoading ? <Loading /> : t('restore')}

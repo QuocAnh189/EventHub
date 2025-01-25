@@ -53,19 +53,19 @@ const EventFavouriteGrid = (props: IProps) => {
         if (data?.items.length === 1 && pagination.currentPage > 1) {
           setParams({ ...params, page: pagination.currentPage - 1 })
         }
-        toast.success('Remove event from whist list successfully')
+        toast.success('remove successfully')
       }
     } catch (e) {
-      toast.error('Something went wrong')
+      toast.error('something went wrong')
       console.log(e)
     }
   }
 
   return (
-    <div className='flex flex-1 flex-col'>
+    <div className='flex flex-1 flex-col px-4 xl:px-0'>
       <div className='flex justify-end'>
         <input
-          className='field-input w-[300px]'
+          className='field-input w-full md:w-[300px]'
           type='search'
           placeholder={search_label}
           value={search}

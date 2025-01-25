@@ -65,12 +65,12 @@ const ModalUpdateCoupon = (props: IProps) => {
       const result = await UpdateCoupon(formData).unwrap()
       if (result) {
         console.log(result)
-        toast.success('Coupon updated successfully')
+        toast.success('updated successfully')
         setModalOpen(false)
       }
     } catch (error) {
       console.error(error)
-      toast.error('Something went wrong')
+      toast.error('something went wrong')
     }
   }
 

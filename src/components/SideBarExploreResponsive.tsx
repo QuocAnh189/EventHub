@@ -1,21 +1,29 @@
+//hooks
+import { Dispatch, SetStateAction } from 'react'
+
 //components
 import Select from '@ui/Select'
 
 //constants
-import { EVENT_CATEGORIES, EVENT_RATE_OPTIONS, EVENT_STATUS_OPTIONS } from '@constants/options.constant'
+import { EVENT_RATE_OPTIONS, EVENT_STATUS_OPTIONS } from '@constants/options.constant'
 
 //i18
 import { withTranslation } from 'react-i18next'
+import { useAppSelector } from '@hooks/useRedux'
 
-interface Props {
+interface IProps {
   t: any
+  params: any
+  setParams: Dispatch<SetStateAction<any>>
 }
 
-const SidebarExploreResponsive = (props: Props) => {
+const SidebarExploreResponsive = (props: IProps) => {
   const { t } = props
 
+  const categories = useAppSelector((state) => state.persistedReducer.category.categories)
+
   return (
-    <div className='w-full flex items-center gap-4 pb-4 px-4 mdl:hidden'>
+    <div className='w-full flex flex-col gap-4 pb-4 px-4 mdl:hidden'>
       <div className='flex items-center gap-2'>
         <p className='text-gray500 inline-block text-header'>{t('sidebar.rate.label')}: </p>
         <Select
@@ -43,7 +51,7 @@ const SidebarExploreResponsive = (props: Props) => {
         <p className='text-gray500 inline-block text-header'>{t('sidebar.category.label')}: </p>
         <Select
           placeholder={t('asc')}
-          options={EVENT_CATEGORIES || []}
+          options={categories || []}
           onChange={(value: any) => {
             console.log(value)
           }}

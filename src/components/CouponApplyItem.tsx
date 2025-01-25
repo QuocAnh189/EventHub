@@ -8,15 +8,20 @@ import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
 
-interface Props {
+//util
+import formatDate from '@utils/dayjs'
+import isExpired from '@utils/compare_date'
+
+interface IProps {
+  isExpire: boolean
   coupon: ICoupon
   index: number
   checked: boolean
   onSelect: (id: string) => void
 }
 
-const CouponApplyItem = (props: Props) => {
-  const { coupon, index, checked, onSelect } = props
+const CouponApplyItem = (props: IProps) => {
+  const { isExpire, coupon, index, checked, onSelect } = props
 
   const [titleRef, { width: titleWidth }] = useMeasure()
   const [descriptionRef, { width: descriptionWidth }] = useMeasure()
@@ -32,9 +37,17 @@ const CouponApplyItem = (props: Props) => {
             >
               <img className='h-9 w-auto' src={coupon.coverImageUrl} alt={coupon.name} />
             </div>
-            <h6 className='h6 max-w-[165px] w-full leading-[1.4]' ref={titleRef}>
-              <TruncatedText text={coupon.name} width={titleWidth} lines={2} />
-            </h6>
+            <div>
+              <h6 className='h6 max-w-[165px] w-full leading-[1.4]' ref={titleRef}>
+                <TruncatedText text={coupon.name} width={titleWidth} lines={2} />
+              </h6>
+              <p>
+                Expire:{' '}
+                <span className={`px-1 rounded-lg text-white ${isExpired(coupon.expireDate) ? 'bg-red' : 'bg-green'}`}>
+                  {formatDate(coupon.expireDate, 'DD/MM/YYYY')}
+                </span>
+              </p>
+            </div>
           </div>
         </div>
         <p className='text-sm flex-1 max-w-[300px]' ref={descriptionRef}>
@@ -45,6 +58,7 @@ const CouponApplyItem = (props: Props) => {
             <p className='text-white font-bold'>{coupon.percentageValue}%</p>
           </div>
           <input
+            disabled={isExpire}
             onChange={() => {
               onSelect(coupon.id)
             }}

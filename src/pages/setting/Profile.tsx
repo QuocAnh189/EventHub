@@ -1,5 +1,5 @@
 //hooks
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
@@ -16,7 +16,7 @@ import { toast } from 'react-toastify'
 import ProtectedLayout from '@layouts/protected'
 
 //redux
-import { useUpdateUserMutation } from '@redux/apis/user.api'
+import { useUpdateUserMutation, useGetProfileQuery } from '@redux/apis/user.api'
 import { setUser } from '@redux/slices/user.slice'
 
 //utils
@@ -34,6 +34,8 @@ const Profile = ({ t }: any) => {
 
   const user: IUser = useAppSelector((state) => state.persistedReducer.user.user)
 
+  const { data: profile } = useGetProfileQuery()
+
   const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [UpdateUser, { isLoading }] = useUpdateUserMutation()
 
@@ -44,20 +46,20 @@ const Profile = ({ t }: any) => {
     control,
     setValue,
     watch
-  } = useForm<IUpdateUserProfilePayload>({
-    defaultValues: {
-      id: user?.id,
-      avatarUrl: user?.avatarUrl,
-      avatar: null,
-      email: user?.email,
-      userName: user?.userName,
-      fullName: user?.fullName,
-      phoneNumber: user?.phoneNumber,
-      gender: user?.gender,
-      dob: formatDate(user?.dob, 'YYYY-MM-DD'),
-      bio: user?.bio
-    }
-  })
+  } = useForm<IUpdateUserProfilePayload>()
+
+  useEffect(() => {
+    setValue('id', user?.id)
+    setValue('avatarUrl', user?.avatarUrl)
+    setValue('email', user?.email)
+    setValue('avatar', null)
+    setValue('userName', user?.userName)
+    setValue('fullName', user?.fullName)
+    setValue('phoneNumber', user?.phoneNumber)
+    setValue('gender', user.gender)
+    setValue('dob', formatDate(user?.dob, 'YYYY-MM-DD'))
+    setValue('bio', user?.bio)
+  }, [profile])
 
   const onSubmit: SubmitHandler<IUpdateUserProfilePayload> = async (data: IUpdateUserProfilePayload) => {
     const formData = new FormData()
@@ -69,20 +71,20 @@ const Profile = ({ t }: any) => {
     try {
       const result = await UpdateUser({ userId: user?.id!, formData: formData }).unwrap()
       if (result) {
-        toast.success('Profile updated successfully')
+        toast.success('updated successfully')
         setValue('avatar', null)
         dispatch(setUser(result))
       }
     } catch (err) {
       console.log(err)
-      toast.error('Some thing is wrong')
+      toast.error('some thing is wrong')
     }
   }
 
   return (
     <ProtectedLayout>
       <PageHeader title={t('header profile.title')} />
-      {user && (
+      {profile && (
         <form
           onSubmit={handleSubmit(onSubmit)}
           className='widgets-grid md:!grid-cols-2 xl:!grid-cols-[340px,_minmax(0,1fr)]'
@@ -98,10 +100,10 @@ const Profile = ({ t }: any) => {
             <div className='widgets-grid'>
               <UserProfilePanel />
               <UserProfileInfo
-                email={user.email}
-                totalEvent={user.totalEvent}
-                totalFollower={user.totalFollower}
-                totalFollowing={user.totalFollowing}
+                email={watch().email}
+                totalEvent={profile.totalEvent}
+                totalFollower={profile.totalFollower}
+                totalFollowing={profile.totalFollowing}
               />
             </div>
           </div>

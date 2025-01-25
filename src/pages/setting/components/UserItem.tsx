@@ -52,7 +52,7 @@ const UserItem = (props: Props) => {
         <img className='avatar w-20 rounded-lg' src={user.avatarUrl ? user.avatarUrl : defaultAvatar} />
         <div>
           <h5 className='h5 text-lg'>{user.userName}</h5>
-          <p className='text-sm text-muted'>{user.email}i</p>
+          <p className='text-sm text-muted text-header'>{user.email}i</p>
         </div>
       </div>
       <div>
