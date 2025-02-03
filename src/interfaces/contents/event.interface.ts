@@ -63,6 +63,7 @@ export interface ICardSearchHome {
   eventPaymentType: string
   categories: ICategory[]
   averageRate: number
+  ticketTypes: ITicketType[]
 }
 
 export interface IEventFavorite {

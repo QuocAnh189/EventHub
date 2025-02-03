@@ -19,6 +19,7 @@ import useDefault from '@assets/images/common/user_default.png'
 
 //utils
 import formatDate from '@utils/dayjs'
+import { formatNumber } from '@utils/helpers'
 
 //redux
 import { useAppSelector } from '@hooks/useRedux'
@@ -104,7 +105,7 @@ const ReviewEventCreate = (props: Props) => {
                       <span className='text-header'>
                         {index + 1}. <span className='font-bold'>{ticket.name}:</span>
                       </span>
-                      <span className='text-primary font-bold'>{ticket.price}.000 VND</span>
+                      <span className='text-primary font-bold'>{formatNumber(ticket.price)} VND</span>
                     </p>
                   ))}
               </div>

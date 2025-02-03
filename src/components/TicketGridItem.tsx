@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import { formatNumber } from '@utils/helpers'
 
 interface IProps {
   t: any
@@ -47,10 +48,16 @@ const TicketGridItem = (props: IProps) => {
         <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
           {t('card.phone')}: {ticket.customerPhone}
         </p>
-        <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
-          {t('card.ticket_type')} : {ticket.ticketType.name}
-        </p>
-        <p className='font-heading font-bold text-sm leading-[1.4] text-error'>{t('card.status')} : Active</p>
+        <div className='flex flex-row justify-between items-center'>
+          <div>
+            <p className='font-heading font-bold text-sm leading-[1.4] text-accent'>
+              {t('card.ticket_type')} : {ticket.ticketType.name}
+            </p>
+          </div>
+          <div className='bg-primary-300 rounded-xl p-2'>
+            <p className='h6 text-primary'>{formatNumber(ticket.ticketType.price)} VND</p>
+          </div>
+        </div>
       </div>
     </Wrapper>
   )

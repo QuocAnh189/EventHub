@@ -82,3 +82,18 @@ export interface IPaymentOrder {
   status: EPaymentStatus
   createdAt: string
 }
+
+export interface IPaymentCheckout {
+  eventId: string
+  userId: string
+  couponId: string
+  customerEmail: string
+  customerPhone: string
+  customerName: string
+  tickets: any[]
+  discountPrice: number
+  finalPrice: number
+  totalPrice: number
+  sessionId: string
+  paymentId: string
+}

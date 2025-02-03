@@ -61,6 +61,8 @@ const Profile = lazy(() => import('@pages/setting/Profile'))
 const UserInformation = lazy(() => import('@pages/common/UserInfo'))
 const Follower = lazy(() => import('@pages/setting/Follower'))
 const Following = lazy(() => import('@pages/setting/Following'))
+const PaymentSuccess = lazy(() => import('@pages/payment/Success'))
+const PaymentFailure = lazy(() => import('@pages/payment/Failure'))
 const NotFound = lazy(() => import('@pages/errors/NotFound'))
 
 function App() {
@@ -113,6 +115,8 @@ function App() {
               <Route path='/organization/settings/follower' element={<Follower />} />
               <Route path='/organization/settings/following' element={<Following />} />
             </Route>
+            <Route path='/payment/successfully' element={<PaymentSuccess />} />
+            <Route path='/payment/failure' element={<PaymentFailure />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
         </div>

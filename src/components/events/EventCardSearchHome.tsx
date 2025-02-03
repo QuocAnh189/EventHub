@@ -1,14 +1,21 @@
 //hooks
 import { useNavigate } from 'react-router-dom'
 
+//components
+import RatingStars from '@ui/RatingStars'
+
 //interface
 import { ICardSearchHome } from 'interfaces/contents/event.interface'
 
 //i18
 import { withTranslation } from 'react-i18next'
-import { getStatusEventColor } from '@utils/helpers'
-import RatingStars from '@ui/RatingStars'
+
+//constant
 import { EEventPaymentTicket } from '@constants/enum.constant'
+
+//utils
+import getBasePrice from '@utils/base_price'
+import { formatNumber } from '@utils/helpers'
 
 interface Props {
   t: any
@@ -54,19 +61,12 @@ const EventCardSearchHome = (props: Props) => {
       />
       <div className='flex items-center justify-between'>
         <div className=''>
-          <span
-            className='badge-status badge-status--sm mt-1'
-            style={{ backgroundColor: `var(--${getStatusEventColor('Upcoming')})` }}
-          >
-            {/* {event.status} */}
-            Upcomming
-          </span>
           <RatingStars rating={event.averageRate} />
         </div>
         <h5 className='text-[12px] font-medium m-0 mt-1 leading-4 text-right'>
-          {event?.categories[0]?.name} <br />
+          <p className='truncate'>{event?.categories[0]?.name}</p> <br />
           {event.eventPaymentType === EEventPaymentTicket.Paid ? (
-            <p className='font-bold text-primary'>100.000 VND</p>
+            <p className='font-bold text-primary'>{formatNumber(getBasePrice(event.ticketTypes))} VND</p>
           ) : (
             <p className='font-bold text-primary'>{event.eventPaymentType}</p>
           )}

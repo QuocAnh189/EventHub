@@ -13,7 +13,7 @@ export const apiPayment = createApi({
     baseUrl: import.meta.env.VITE_API_URL,
     prepareHeaders: (headers) => {
       const token = JSON.parse(localStorage.getItem('token')!)?.accessToken
-      // headers.set('Content-Type', 'application/json')
+      headers.set('Content-Type', 'application/json')
 
       if (token) {
         headers.set('Authorization', `Bearer ${token}`)
@@ -111,6 +111,9 @@ export const apiPayment = createApi({
         method: 'POST',
         body: data
       }),
+      transformResponse: (response: any) => {
+        return response.data
+      },
       invalidatesTags: ['Payment']
     }),
 

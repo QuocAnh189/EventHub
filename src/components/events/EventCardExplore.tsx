@@ -1,5 +1,9 @@
 import { NavLink } from 'react-router-dom'
 
+//components
+import formatDate from '@utils/dayjs'
+import RatingStars from '@ui/RatingStars'
+
 //interface
 import { ICardEvent } from '@interfaces/contents/event.interface'
 
@@ -9,8 +13,8 @@ import { IoLocationSharp } from 'react-icons/io5'
 import { BiPurchaseTagAlt } from 'react-icons/bi'
 
 //utils
-import formatDate from '@utils/dayjs'
-import RatingStars from '@ui/RatingStars'
+import { formatNumber } from '@utils/helpers'
+import getBasePrice from '@utils/base_price'
 
 interface IProps {
   event: ICardEvent
@@ -49,7 +53,7 @@ const EventCardExplore = (props: IProps) => {
 
         <div className='flex items-center gap-1'>
           <BiPurchaseTagAlt color='#3D56F0' size='24px' />
-          <p className='text-primary text-xl'>100.000 VND</p>
+          <p className='text-primary text-xl'>{formatNumber(getBasePrice(event.ticketTypes))}</p>
         </div>
         <div className='flex items-center gap-1 label-text leading-none w-[30px] hover:cursor-pointer pb-2'>
           <RatingStars value={event.averageRate} />

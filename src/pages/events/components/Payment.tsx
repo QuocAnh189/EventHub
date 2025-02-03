@@ -14,12 +14,13 @@ import { ICoupon } from '@interfaces/contents/coupon.interface'
 import { withTranslation } from 'react-i18next'
 
 //redux
-import { useAppSelector } from '@hooks/useRedux'
+import { useAppDispatch, useAppSelector } from '@hooks/useRedux'
 import { useCreateSessionMutation } from '@redux/apis/payment.api'
 
 //dto
 import { ICheckoutPayload } from '@dtos/payment.dto'
 import { toast } from 'react-toastify'
+import { setSessionCheckouts } from '@redux/slices/payment.slice'
 
 interface IProps {
   t: any
@@ -30,6 +31,8 @@ interface IProps {
 
 const Payment = (props: IProps) => {
   const { t, eventId, ticketTypes, coupons } = props
+
+  const dispatch = useAppDispatch()
 
   const [CreateSession, { isLoading }] = useCreateSessionMutation()
 
@@ -77,8 +80,11 @@ const Payment = (props: IProps) => {
     try {
       const result = await CreateSession(data).unwrap()
       if (result) {
-        // console.log(result.data.checkoutUrl)
-        window.location.href = result.data.sessionUrl
+        const data = { ...result.data, paymentId: result.paymentId, sessionId: result.sessionId }
+        console.log(data)
+        dispatch(setSessionCheckouts(data))
+        // window.location.href = result.sessionUrl
+        window.open(result.sessionUrl, '_blank')
       }
     } catch (e: any) {
       toast.error(e.data.message)

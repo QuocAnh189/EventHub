@@ -17,6 +17,7 @@ import { formatNumber } from '@utils/helpers'
 
 //interface
 import { ICardEvent } from '@interfaces/contents'
+import getBasePrice from '@utils/base_price'
 
 interface IProps {
   event: ICardEvent
@@ -82,7 +83,7 @@ const EventCard = (props: IProps) => {
           <RatingStars rating={event.averageRate} />
           <div className='text-primary text-right'>
             {event.eventPaymentType === EEventPaymentTicket.Paid ? (
-              <p className='text-2xl font-bold'>{formatNumber(event.ticketTypes[0].price)} VND</p>
+              <p className='text-2xl font-bold'>{formatNumber(getBasePrice(event.ticketTypes))} VND</p>
             ) : (
               <p className='text-2xl font-bold'>{event.eventPaymentType}</p>
             )}

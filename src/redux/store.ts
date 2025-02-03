@@ -26,6 +26,7 @@ import eventReducer, { EventSliceKey } from './slices/event.slice'
 import socketReducer, { SocketSliceKey } from './slices/socket.slice'
 import conversationReducer, { ConversationSliceKey } from './slices/conversation.slice'
 import couponReducer, { CouponSliceKey } from './slices/coupon.slice'
+import paymentReducer, { PaymentSliceKey } from './slices/payment.slice'
 
 const persistConfig = {
   key: 'root',
@@ -38,7 +39,8 @@ const combinedReducer: any = combineReducers({
   [EventSliceKey]: eventReducer,
   // [SocketSliceKey]: socketReducer,
   [ConversationSliceKey]: conversationReducer,
-  [CouponSliceKey]: couponReducer
+  [CouponSliceKey]: couponReducer,
+  [PaymentSliceKey]: paymentReducer
 })
 
 const rootReducer = (state: any, action: any) => {
@@ -50,6 +52,7 @@ const store = configureStore({
   reducer: {
     persistedReducer,
     [SocketSliceKey]: socketReducer,
+    // [PaymentSliceKey]: paymentReducer,
 
     [apiAuth.reducerPath]: apiAuth.reducer,
     [apiCategory.reducerPath]: apiCategory.reducer,
