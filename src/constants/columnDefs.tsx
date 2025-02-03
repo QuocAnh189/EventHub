@@ -87,14 +87,14 @@ export const ORDERS_COLUMN_DEFS: any = [
     title: 'Total Price',
     dataIndex: 'totalPrice',
     render: (totalPrice: number) => {
-      return <h1 className='font-heading font-semibold text-header text-center'>${totalPrice}</h1>
+      return <h1 className='font-heading font-semibold text-header text-center'>{totalPrice} VND</h1>
     }
   },
   {
     title: 'Discount',
     dataIndex: 'discountPrice',
     render: (discountPrice: number) => {
-      return <h1 className='font-heading font-semibold text-header text-center'>${discountPrice}</h1>
+      return <h1 className='font-heading font-semibold text-header text-center'>{discountPrice} VND</h1>
     }
   },
   {
@@ -103,7 +103,7 @@ export const ORDERS_COLUMN_DEFS: any = [
     render: (_: any, record: any) => {
       const total = record.totalPrice - record.discountPrice
 
-      return <h1 className='font-heading font-semibold text-header text-center'>${total}</h1>
+      return <h1 className='font-heading font-semibold text-header text-center'>{total} VND</h1>
     }
   }
 ]
@@ -168,14 +168,14 @@ export const TRANSACTIONS_COLUMN_DEFS: any = [
     title: 'Total Price',
     dataIndex: 'totalPrice',
     render: (totalPrice: number) => {
-      return <h1 className='font-heading font-semibold text-header text-center'>${totalPrice}</h1>
+      return <h1 className='font-heading font-semibold text-header text-center'>{totalPrice} VND</h1>
     }
   },
   {
     title: 'Discount',
     dataIndex: 'discountPrice',
     render: (discountPrice: number) => {
-      return <h1 className='font-heading font-semibold text-header text-center'>${discountPrice}</h1>
+      return <h1 className='font-heading font-semibold text-header text-center'>{discountPrice} VND</h1>
     }
   },
   {
@@ -184,7 +184,7 @@ export const TRANSACTIONS_COLUMN_DEFS: any = [
     render: (_: any, record: any) => {
       const total = record.totalPrice - record.discountPrice
 
-      return <h1 className='font-heading font-semibold text-header text-center'>${total}</h1>
+      return <h1 className='font-heading font-semibold text-header text-center'>{total} VND</h1>
     }
   }
 ]

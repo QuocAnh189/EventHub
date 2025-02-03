@@ -13,6 +13,7 @@ import { IoLocationSharp } from 'react-icons/io5'
 
 //utils
 import formatDate from '@utils/dayjs'
+import { formatNumber } from '@utils/helpers'
 
 //interface
 import { ICardEvent } from '@interfaces/contents'
@@ -81,7 +82,7 @@ const EventCard = (props: IProps) => {
           <RatingStars rating={event.averageRate} />
           <div className='text-primary text-right'>
             {event.eventPaymentType === EEventPaymentTicket.Paid ? (
-              <p className='text-2xl font-bold'>{event.ticketTypes[0].price}$</p>
+              <p className='text-2xl font-bold'>{formatNumber(event.ticketTypes[0].price)} VND</p>
             ) : (
               <p className='text-2xl font-bold'>{event.eventPaymentType}</p>
             )}

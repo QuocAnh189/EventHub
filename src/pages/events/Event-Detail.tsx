@@ -137,7 +137,7 @@ const EventDetail = ({ t }: any) => {
             </div>
           </div>
 
-          <Payment ticketTypes={event?.ticketTypes!} coupons={event?.coupons!} />
+          <Payment eventId={event?.id!} ticketTypes={event?.ticketTypes!} coupons={event?.coupons!} />
         </div>
       </div>
 

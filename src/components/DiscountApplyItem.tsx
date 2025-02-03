@@ -8,14 +8,15 @@ import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
 
-interface Props {
+interface IProps {
   coupon: ICoupon
+  active: boolean
   index: number
   onSelect: (id: string) => void
 }
 
-const DiscountApplyItem = (props: Props) => {
-  const { coupon, index, onSelect } = props
+const DiscountApplyItem = (props: IProps) => {
+  const { active, coupon, index, onSelect } = props
 
   const [titleRef, { width: titleWidth }] = useMeasure()
   const [descriptionRef, { width: descriptionWidth }] = useMeasure()
@@ -52,6 +53,7 @@ const DiscountApplyItem = (props: Props) => {
             className='w-6 h-6'
             type='radio'
             name='discount'
+            checked={active}
           />
         </div>
       </Spring>

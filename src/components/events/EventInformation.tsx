@@ -177,10 +177,10 @@ const EventInformation = (props: IProps) => {
 
       {user?.id !== event?.creator?.id && (
         <FormToChat
-          eventId={event.id!}
-          hostId={event.creator.id!}
+          eventId={event?.id!}
+          hostId={event?.creator.id!}
           userId={user?.id!}
-          eventName={event.name}
+          eventName={event?.name}
           userEmail={event?.creator?.email!}
           userFullName={event?.creator?.fullName!}
         />

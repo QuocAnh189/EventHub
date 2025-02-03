@@ -1,48 +1,44 @@
 //component
 import ModalBase from '@ui/ModalBase'
+import Loading from '@components/Loading'
 
 //utils
 import classNames from 'classnames'
+import { formatNumber } from '@utils/helpers'
 
 //i18n
 import { withTranslation } from 'react-i18next'
 
-//redux
-import { useCheckoutMutation } from '@redux/apis/payment.api'
-import Loading from '@components/Loading'
-
 interface IProps {
   t: any
+  customerName: string
+  customerEmail: string
+  customerPhone: string
+  totalPrice: number
+  discountPrice: number
+  finalPrice: number
   modalOpen: boolean
+  onSubmit: () => void
+  onChange: (name: string, value: any) => void
   setModalOpen: (value: boolean) => void
+  isLoading: boolean
 }
 
 const ModalCheckout = (props: IProps) => {
-  const { t, modalOpen, setModalOpen } = props
-
-  const [Checkout, { isLoading }] = useCheckoutMutation()
-
-  const handleCheckout = async () => {
-    const data = {
-      email: 'anhquoc18092003@gmail.com',
-      line_items: [
-        {
-          type: 'Vip',
-          quantity: 3,
-          price: 100
-        }
-      ]
-    }
-    try {
-      const result = await Checkout(data).unwrap()
-      if (result) {
-        setModalOpen(false)
-        console.log(result)
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  const {
+    t,
+    customerName,
+    customerEmail,
+    customerPhone,
+    totalPrice,
+    discountPrice,
+    finalPrice,
+    onSubmit,
+    onChange,
+    modalOpen,
+    setModalOpen,
+    isLoading
+  } = props
 
   return (
     <ModalBase open={modalOpen} onClose={() => setModalOpen(false)}>
@@ -65,6 +61,8 @@ const ModalCheckout = (props: IProps) => {
               className={classNames('field-input', { 'field-input--error': false })}
               id='name'
               placeholder={t('checkout.name_placeholder')}
+              onChange={(e) => onChange('customerName', e.target.value)}
+              value={customerName}
             />
           </div>
           <div className='field-wrapper'>
@@ -75,6 +73,8 @@ const ModalCheckout = (props: IProps) => {
               className={classNames('field-input', { 'field-input--error': false })}
               id='email'
               placeholder={t('checkout.email_placeholder')}
+              onChange={(e) => onChange('customerEmail', e.target.value)}
+              value={customerEmail}
             />
           </div>
           <div className='field-wrapper'>
@@ -85,6 +85,8 @@ const ModalCheckout = (props: IProps) => {
               className={classNames('field-input', { 'field-input--error': false })}
               id='phone'
               placeholder={t('checkout.phone_placeholder')}
+              onChange={(e) => onChange('customerPhone', e.target.value)}
+              value={customerPhone}
             />
           </div>
           <div className='flex items-center justify-between gap-4'>
@@ -92,22 +94,37 @@ const ModalCheckout = (props: IProps) => {
               <label className='field-label' htmlFor='dimensions'>
                 {t('checkout.total_price')}
               </label>
-              <input readOnly className={classNames('field-input', { 'field-input--error': false })} id='totalPrice' />
+              <input
+                readOnly
+                className={classNames('field-input', { 'field-input--error': false })}
+                id='totalPrice'
+                value={formatNumber(totalPrice)}
+              />
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='weight'>
                 {t('checkout.discount')}
               </label>
-              <input className={classNames('field-input', { 'field-input--error': false })} id='discount' />
+              <input
+                readOnly
+                className={classNames('field-input', { 'field-input--error': false })}
+                id='discount'
+                value={formatNumber(discountPrice)}
+              />
             </div>
             <div className='field-wrapper'>
               <label className='field-label' htmlFor='weight'>
                 {t('checkout.final_price')}
               </label>
-              <input className={classNames('field-input', { 'field-input--error': false })} id='finalPrice' />
+              <input
+                readOnly
+                className={classNames('field-input', { 'field-input--error': false })}
+                id='finalPrice'
+                value={formatNumber(finalPrice)}
+              />
             </div>
           </div>
-          <button onClick={handleCheckout} className='btn btn-primary hover:bg-primary-300'>
+          <button onClick={onSubmit} className='btn btn-primary hover:bg-primary-300'>
             {isLoading ? <Loading /> : t('checkout.submit')}
           </button>
         </div>

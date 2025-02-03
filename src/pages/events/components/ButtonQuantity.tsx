@@ -16,7 +16,7 @@ export function QuantityButton(props: IProps) {
     <div className='w-[100px] flex p-1 items-center justify-around border border-solid border-gray300 rounded-3xl'>
       <button
         onClick={onDecrease}
-        className='flex items-center justify-center p-[6px] rounded-full bg-primary-200 hover:bg-gray200'
+        className='flex items-center justify-center p-[6px] rounded-full bg-primary-200 hover:bg-primary-300'
       >
         <GrSubtract color='#333' />
       </button>

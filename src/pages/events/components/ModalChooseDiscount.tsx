@@ -1,5 +1,3 @@
-//hook
-
 //component
 import ModalBase from '@ui/ModalBase'
 
@@ -15,22 +13,31 @@ import { ICoupon } from '@interfaces/contents/coupon.interface'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import { useState } from 'react'
 
 interface IProps {
   t: any
+  totalPrice: number
+  activeCouponId: string
   modalOpen: boolean
   setModalOpen: (value: boolean) => void
   coupons: ICoupon[]
+  onChange: (name: string, value: any) => void
+  setActiveCoupon: (value: ICoupon) => void
 }
 
 const ModalChooseDiscount = (props: IProps) => {
-  const { t, modalOpen, setModalOpen, coupons } = props
+  const { t, activeCouponId, modalOpen, setModalOpen, coupons, onChange, setActiveCoupon } = props
 
-  const handleSelectCoupon = (id: string) => {
-    console.log(id)
+  const [selectCouponId, setSelectCouponId] = useState<string>('')
+
+  const handleApplyCoupon = async () => {
+    onChange('couponId', selectCouponId)
+    const coupon = coupons.find((item) => item.id === selectCouponId)
+    setActiveCoupon(coupon!)
+
+    setModalOpen(false)
   }
-
-  const handleApplyCoupon = async () => {}
 
   return (
     <ModalBase open={modalOpen} onClose={() => setModalOpen(false)}>
@@ -49,10 +56,11 @@ const ModalChooseDiscount = (props: IProps) => {
             {coupons &&
               coupons?.map((item: ICoupon, index: number) => (
                 <DiscountApplyItem
+                  active={selectCouponId === item.id ? selectCouponId === item.id : activeCouponId === item.id}
                   key={index}
                   index={index}
                   coupon={item}
-                  onSelect={(id: string) => handleSelectCoupon(id)}
+                  onSelect={(id: string) => setSelectCouponId(id)}
                 />
               ))}
           </div>

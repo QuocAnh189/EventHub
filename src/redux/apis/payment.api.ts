@@ -105,11 +105,21 @@ export const apiPayment = createApi({
       providesTags: ['Payment']
     }),
 
-    checkout: builder.mutation<{ id: string }, any>({
+    createSession: builder.mutation<any, any>({
+      query: (data) => ({
+        url: '/payments/create-session',
+        method: 'POST',
+        body: data
+      }),
+      invalidatesTags: ['Payment']
+    }),
+
+    checkout: builder.mutation<any, any>({
       query: (data) => ({
         url: '/payments/checkout',
         method: 'POST',
-        body: data
+        body: data,
+        mode: 'cors'
       }),
       invalidatesTags: ['Payment']
     }),
@@ -167,6 +177,7 @@ export const {
   useUpdatePaymentMutation,
   useDeletePaymentMutation,
   useGetPaymentMethodsQuery,
+  useCreateSessionMutation,
   useCheckoutMutation,
   useGetPaymentsByUserIdQuery,
   useGetPaymentsByCreatorIdQuery,
