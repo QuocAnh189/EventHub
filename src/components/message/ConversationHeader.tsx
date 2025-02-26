@@ -14,7 +14,7 @@ interface IProps {
 const ConversationHeader = (props: IProps) => {
   const { t, imageUrl, title, organizerFullName, userFullName } = props
   return (
-    <div className='p-3 flex justify-between items-center border-b border-slate-700'>
+    <div className='p-3 flex justify-between items-center border-b border-slate-700 truncate'>
       <div className='flex items-center gap-3'>
         <Avatar imageUrl={imageUrl} />
         <div className=''>

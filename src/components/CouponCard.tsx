@@ -13,6 +13,7 @@ import { ICoupon } from '@interfaces/contents/coupon.interface'
 
 //i18n
 import { withTranslation } from 'react-i18next'
+import formatDate from '@utils/dayjs'
 
 interface IProps {
   t: any
@@ -27,7 +28,6 @@ const CouponCard = (props: IProps) => {
 
   const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [modalOpen, setModalOpen] = useState<boolean>(false)
-  const [titleRef, { width: titleWidth }] = useMeasure()
   const [descriptionRef, { width: descriptionWidth }] = useMeasure()
 
   return (
@@ -41,9 +41,10 @@ const CouponCard = (props: IProps) => {
             >
               <img className='h-9 w-auto' src={coupon.coverImageUrl} alt={coupon.name} />
             </div>
-            <h6 className='h6 max-w-[165px] w-full leading-[1.4]' ref={titleRef}>
-              <TruncatedText text={coupon.name} width={titleWidth} lines={2} />
-            </h6>
+            <div>
+              <h6 className='h6 max-w-[165px] w-full leading-[1.4] truncate'>{coupon.name}</h6>
+              <p className='text-sm text-input-text'>{formatDate(coupon.expireDate)}</p>
+            </div>
           </div>
           <div className='flex items-center justify-center bg-green w-12 h-12 rounded-full'>
             <p className='text-white font-bold'>{coupon.percentageValue}%</p>

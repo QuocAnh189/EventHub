@@ -2,10 +2,6 @@
 
 ===========================================================
 
-### Features :
-
-- Updating ...
-
 # 1. How to run the app (Development Environment)
 
 1. Clone the repo and cd into it

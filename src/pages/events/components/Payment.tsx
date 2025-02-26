@@ -62,7 +62,7 @@ const Payment = (props: IProps) => {
   }
 
   useEffect(() => {
-    if (activeCoupon) {
+    if (activeCoupon && dataCheckout.totalPrice >= activeCoupon.minPrice) {
       const discountPrice = Math.floor(dataCheckout.totalPrice * (activeCoupon.percentageValue / 100))
       setDataCheckout({
         ...dataCheckout,
@@ -74,14 +74,18 @@ const Payment = (props: IProps) => {
   const handleCheckout = async () => {
     const data = {
       ...dataCheckout,
+      couponId: activeCoupon?.couponId,
       finalPrice: dataCheckout.totalPrice - dataCheckout.discountPrice
     }
 
     try {
       const result = await CreateSession(data).unwrap()
       if (result) {
-        const data = { ...result.data, paymentId: result.paymentId, sessionId: result.sessionId }
-        console.log(data)
+        const data = {
+          ...result.data,
+          paymentId: result.paymentId,
+          sessionId: result.sessionId
+        }
         dispatch(setSessionCheckouts(data))
         // window.location.href = result.sessionUrl
         window.open(result.sessionUrl, '_blank')

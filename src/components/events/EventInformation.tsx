@@ -133,16 +133,18 @@ const EventInformation = (props: IProps) => {
             />
             <div>
               <p className='font-semibold text-header'>{event?.creator.userName}</p>
-              <button onClick={handleFollowUser}>
-                {loadingFollower || loadingUnFollower ? (
-                  <Loading />
-                ) : (
-                  <div className='flex items-center gap-1 px-2 py-1 rounded-md bg-primary hover:bg-primary-300'>
-                    {isFollow ? <RiSubtractLine color='white' size={24} /> : <IoMdAdd color='white' size={24} />}
-                    <p className='text-white'>{isFollow ? t('information.unfollow') : t('information.follow')}</p>
-                  </div>
-                )}
-              </button>
+              {user?.id !== event?.creator?.id && (
+                <button onClick={handleFollowUser}>
+                  {loadingFollower || loadingUnFollower ? (
+                    <Loading />
+                  ) : (
+                    <div className='flex items-center gap-1 px-2 py-1 rounded-md bg-primary hover:bg-primary-300'>
+                      {isFollow ? <RiSubtractLine color='white' size={24} /> : <IoMdAdd color='white' size={24} />}
+                      <p className='text-white'>{isFollow ? t('information.unfollow') : t('information.follow')}</p>
+                    </div>
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </div>

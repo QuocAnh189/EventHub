@@ -1,5 +1,6 @@
 export interface ICoupon {
   id: string
+  couponId: string
   coverImageUrl: string
   name: string
   description: string

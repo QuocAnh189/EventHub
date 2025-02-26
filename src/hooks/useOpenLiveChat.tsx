@@ -11,7 +11,7 @@ function useOpenLiveChatAnimation(isOpen: boolean) {
       ' .main',
       {
         clipPath: isOpen ? 'inset(0% 0% 0% 0% round 10px)' : 'inset(90% 0% 10% 100% round 10px)',
-        transform: 'translateX(-15%) translateY(-40%)'
+        transform: 'translateX(-30%) translateY(-50%)'
       },
       {
         type: 'spring',

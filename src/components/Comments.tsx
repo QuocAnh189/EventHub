@@ -59,7 +59,7 @@ const Comments = (props: IProps) => {
       if (result) {
         setRate(0)
         setContent('')
-        toast.success('Add review successfully')
+        toast.success('add review successfully')
         if (socket && SocketReview) {
           SocketReview(socket, user?.userName, ownerId)
         }

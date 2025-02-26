@@ -7,6 +7,7 @@ import { TruncatedText } from '@layouts/components/navbar/TruncatedText'
 
 //interface
 import { ICoupon } from '@interfaces/contents/coupon.interface'
+import { formatNumber } from '@utils/helpers'
 
 interface IProps {
   coupon: ICoupon
@@ -39,8 +40,7 @@ const DiscountApplyItem = (props: IProps) => {
         </div>
         <p className='text-sm flex-1 max-w-[300px] space-y-2' ref={descriptionRef}>
           <TruncatedText className='text-header' text={coupon.description} width={descriptionWidth} lines={2} />
-          <p className='h6'>Min Quantity: {coupon.minQuantity}</p>
-          <p className='h6'>Min Price: {coupon.minPrice}</p>
+          <p className='h6'>Min Price: {formatNumber(coupon.minPrice)} VND</p>
         </p>
         <div className='flex items-center justify-between'>
           <div className='flex items-center justify-center w-12 bg-primary-600 rounded-full'>

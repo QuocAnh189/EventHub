@@ -57,7 +57,7 @@ const Profile = ({ t }: any) => {
     setValue('fullName', user?.fullName)
     setValue('phoneNumber', user?.phoneNumber)
     setValue('gender', user.gender)
-    setValue('dob', formatDate(user?.dob, 'YYYY-MM-DD'))
+    setValue('dob', user?.dob ? formatDate(user?.dob, 'YYYY-MM-DD') : '')
     setValue('bio', user?.bio)
   }, [profile])
 

@@ -21,7 +21,7 @@ import { withTranslation } from 'react-i18next'
 const Follower = ({ t }: any) => {
   const userId: string = useAppSelector((state) => state.persistedReducer.user.user.id)
 
-  const [params, setParams] = useState({ page: 1, pageSize: 10, search: '' })
+  const [params, setParams] = useState({ page: 1, pageSize: 8, search: '' })
   const [search, setSearch] = useState('')
   const debouncedSearchTerm = useDebounce(search, 500)
 
@@ -70,7 +70,7 @@ const Follower = ({ t }: any) => {
               </div>
             )}
           </div>
-          <div>{pagination && pagination.maxPage != 1 && <Pagination pagination={pagination} />}</div>
+          <div className='mt-4'>{pagination && pagination.maxPage != 1 && <Pagination pagination={pagination} />}</div>
         </Spring>
       </div>
     </ProtectedLayout>

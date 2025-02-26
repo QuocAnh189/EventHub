@@ -11,8 +11,6 @@ import { useAppSelector } from '@hooks/useRedux'
 const Success = () => {
   const dataCheckout = useAppSelector((state) => state.persistedReducer.payment.sessionCheckout)
 
-  console.log(dataCheckout)
-
   useEffect(() => {
     if (dataCheckout) {
       fetch(`${import.meta.env.VITE_API_URL!}/payments/checkout`, {

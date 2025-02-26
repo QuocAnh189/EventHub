@@ -69,7 +69,7 @@ const ChatLayout = ({ children, t }: ModalMessageProps) => {
 
   return (
     <div className='relative min-h-screen bg-body'>
-      <div className='menu' ref={scope}>
+      <div className='' ref={scope}>
         <MessageIcon onClick={handleOpenLiveChat} />
         <ModalMessage>
           <>

@@ -23,7 +23,6 @@ interface IProps {
 const CouponApplyItem = (props: IProps) => {
   const { isExpire, coupon, index, checked, onSelect } = props
 
-  const [titleRef, { width: titleWidth }] = useMeasure()
   const [descriptionRef, { width: descriptionWidth }] = useMeasure()
 
   return (
@@ -38,11 +37,8 @@ const CouponApplyItem = (props: IProps) => {
               <img className='h-9 w-auto' src={coupon.coverImageUrl} alt={coupon.name} />
             </div>
             <div>
-              <h6 className='h6 max-w-[165px] w-full leading-[1.4]' ref={titleRef}>
-                <TruncatedText text={coupon.name} width={titleWidth} lines={2} />
-              </h6>
+              <h6 className='h6 max-w-[165px] w-full leading-[1.4] truncate'>{coupon.name}</h6>
               <p>
-                Expire:{' '}
                 <span className={`px-1 rounded-lg text-white ${isExpired(coupon.expireDate) ? 'bg-red' : 'bg-green'}`}>
                   {formatDate(coupon.expireDate, 'DD/MM/YYYY')}
                 </span>

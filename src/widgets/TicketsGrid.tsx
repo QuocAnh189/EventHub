@@ -14,25 +14,6 @@ import { useGetTicketsByCreatedQuery } from '@redux/apis/ticket.api'
 //i18n
 import { withTranslation } from 'react-i18next'
 
-// const ticket: ITicket = {
-//   id: '1',
-//   ticketNo: 'No123456',
-//   event: {
-//     id: '1',
-//     name: 'My Event',
-//     coverImageUrl:
-//       'https://res.cloudinary.com/dadvtny30/image/upload/v1712409123/eventhub/event/w3xvrrue35iu1gncudsa.jpg'
-//   },
-//   customerName: 'Cristiano Ronaldo',
-//   customerEmail: 'anhquoc18092003@gmail.com',
-//   customerPhone: '0702465814',
-//   ticketType: {
-//     id: '1',
-//     name: 'Vip',
-//     price: 100
-//   }
-// }
-
 const TicketsGrid = ({ t }: any) => {
   const [params, setParams] = useState({ page: 1, pageSize: 8, search: '' })
   const [search, setSearch] = useState<string>('')

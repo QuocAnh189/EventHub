@@ -101,7 +101,7 @@ const ModalMessage = ({ children, t }: ModalMessageProps) => {
               ))}
           </div>
         </div>
-        <div className='flex-1 flex flex-col overflow-hidden'>{children}</div>
+        <div className='flex flex-1 flex-col overflow-hidden'>{children}</div>
       </div>
     </div>
   )

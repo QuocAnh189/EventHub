@@ -82,7 +82,7 @@ const ModalInvitation = (props: IProps) => {
     <ModalBase open={modalOpen} onClose={() => setModalOpen(false)}>
       <div className='card relative no-hover flex flex-col h-4/5 xl:w-3/5 will-change-transform overflow-y-auto'>
         <button
-          className='absolute top-5 right-5 icon text-[18px] transition hover:text-red'
+          className='absolute top-2 right-2 icon text-[18px] transition hover:text-red'
           onClick={() => setModalOpen(false)}
           aria-label='Close'
         >
@@ -119,7 +119,7 @@ const ModalInvitation = (props: IProps) => {
             </div>
           )}
         </div>
-        <div>{pagination && pagination.maxPage != 1 && <Pagination pagination={pagination} />}</div>
+        <div className='mt-4'>{pagination && pagination.maxPage != 1 && <Pagination pagination={pagination} />}</div>
         <div className='flex items-center justify-end'>
           <button onClick={handleInvite} className='w-20 btn btn-primary'>
             {loadingInvite ? <Loading /> : t('invitation.invite')}

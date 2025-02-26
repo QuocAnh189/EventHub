@@ -29,6 +29,9 @@ import { useAppSelector } from '@hooks/useRedux'
 //context
 import { AppSocketContext } from '@contexts/socket_io.context'
 
+//assets
+import defaultAvatar from '@assets/images/common/user_default.png'
+
 interface IProps {
   t: any
   avatarUrl: string
@@ -74,7 +77,7 @@ const UserProfileCard = (props: IProps) => {
         <img
           loading='lazy'
           className='relative rounded-full w-[110px] h-[110px]'
-          src={avatar ? URL.createObjectURL(avatar) : avatarUrl}
+          src={avatar ? URL.createObjectURL(avatar) : avatarUrl ? avatarUrl : defaultAvatar}
           alt=''
         />
         {avatar && (
